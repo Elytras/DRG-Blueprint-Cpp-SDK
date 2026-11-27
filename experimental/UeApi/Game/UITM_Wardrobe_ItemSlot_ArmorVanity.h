@@ -15,8 +15,8 @@ class UITM_Wardrobe_ItemSlot_ArmorVanity : public ::Game::UI::Menu_Wardrobe::UIT
 {
 public:
     UE_CLASS("/Game/UI/Menu_Wardrobe/ITM_Wardrobe_ItemSlot_ArmorVanity", "ITM_Wardrobe_ItemSlot_ArmorVanity_C");
-    virtual void SetSelectedItem(class UVanityItem* Item);
     virtual void ReceiveToggleType(bool& success);
+    virtual void SetSelectedItem(class UVanityItem* Item);
 };
 
 using ITM_Wardrobe_ItemSlot_ArmorVanity_C = ::Game::UI::Menu_Wardrobe::UITM_Wardrobe_ItemSlot_ArmorVanity;

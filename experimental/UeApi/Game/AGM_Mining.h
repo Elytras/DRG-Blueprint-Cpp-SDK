@@ -15,8 +15,8 @@ class AGM_Mining : public ::Game::Game::ABP_NetworkPlayGameMode
 public:
     UE_CLASS("/Game/Game/GM_Mining", "GM_Mining_C");
     FPointerToUberGraphFrame UberGraphFrame_GM_Mining_C;
-    virtual void DonkeyButtonPressed();
     virtual void BndEvt__ObjectivesManager_K2Node_ComponentBoundEvent_0_DelegateEvent__DelegateSignature();
+    virtual void DonkeyButtonPressed();
     virtual void ExecuteUbergraph_GM_Mining(int EntryPoint);
 private:
     struct UeMarkers

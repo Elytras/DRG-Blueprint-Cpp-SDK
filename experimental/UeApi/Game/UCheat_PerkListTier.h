@@ -34,7 +34,7 @@ public:
     virtual void On_bosco_state_change(bool Is_Checked, class UItemUpgrade* Item, TEnum<EItemCategory> Item_Category);
     virtual void Initiate_Bosco_tier(FUpgradeTier Upgrade_struct, int Tier_Index, class UClass* Item_Class);
     virtual void On_state_change(bool Is_Checked, class UItemUpgrade* Item, TEnum<EItemCategory> Item_Category);
-    virtual void Initiate_widget(TEnum<EItemCategory> input_category, FUpgradeTier Upgrade_struct, int Tier_Index, class UClass* itemClass);
+    virtual void Initiate_Widget(TEnum<EItemCategory> input_category, FUpgradeTier Upgrade_struct, int Tier_Index, class UClass* itemClass);
 private:
     struct UeMarkers
     {
@@ -43,7 +43,7 @@ private:
         static constexpr const char* On_bosco_state_change__UeName = "On bosco state change";
         static constexpr const char* Initiate_Bosco_tier__UeName = "Initiate Bosco-tier";
         static constexpr const char* On_state_change__UeName = "On state change";
-        static constexpr const char* Initiate_widget__UeName = "Initiate widget";
+        static constexpr const char* Initiate_Widget__UeName = "Initiate Widget";
     };
 };
 

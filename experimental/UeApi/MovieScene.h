@@ -1260,29 +1260,38 @@ public:
     UE_CLASS("/Script/MovieScene", "MovieSceneBlenderSystem");
 };
 
-class UMovieSceneGenericBoundObjectInstantiator : public UMovieSceneEntityInstantiatorSystem
+class UMovieSceneBoolSection : public UMovieSceneSection
 {
 public:
-    UE_CLASS("/Script/MovieScene", "MovieSceneGenericBoundObjectInstantiator");
+    UE_CLASS("/Script/MovieScene", "MovieSceneBoolSection");
+    bool DefaultValue;
+    FMovieSceneBoolChannel BoolCurve;
 };
 
-class UMovieSceneNodeGroup : public UObject
+class IMovieSceneTrackTemplateProducer
 {
 public:
-    UE_CLASS("/Script/MovieScene", "MovieSceneNodeGroup");
+    UE_CLASS("/Script/MovieScene", "MovieSceneTrackTemplateProducer");
 };
 
-class UTestMovieSceneSequence : public UMovieSceneSequence
+class UMovieSceneTrackInstanceInstantiator : public UMovieSceneEntityInstantiatorSystem
 {
 public:
-    UE_CLASS("/Script/MovieScene", "TestMovieSceneSequence");
-    class UMovieScene* MovieScene;
+    UE_CLASS("/Script/MovieScene", "MovieSceneTrackInstanceInstantiator");
 };
 
-class IMovieScenePlaybackClient
+class UTestMovieSceneTrack : public UMovieSceneTrack
 {
 public:
-    UE_CLASS("/Script/MovieScene", "MovieScenePlaybackClient");
+    UE_CLASS("/Script/MovieScene", "TestMovieSceneTrack");
+    bool bHighPassFilter;
+    TArray<class UMovieSceneSection*> SectionArray;
+};
+
+class IMovieSceneEntityProvider
+{
+public:
+    UE_CLASS("/Script/MovieScene", "MovieSceneEntityProvider");
 };
 
 class IMovieSceneCustomClockSource
@@ -1301,28 +1310,28 @@ public:
     UE_CLASS("/Script/MovieScene", "MovieSceneDeterminismSource");
 };
 
-class IMovieSceneEntityProvider
-{
-public:
-    UE_CLASS("/Script/MovieScene", "MovieSceneEntityProvider");
-};
-
 class IMovieSceneEvaluationHook
 {
 public:
     UE_CLASS("/Script/MovieScene", "MovieSceneEvaluationHook");
 };
 
-class IMovieSceneTrackTemplateProducer
+class IMovieScenePlaybackClient
 {
 public:
-    UE_CLASS("/Script/MovieScene", "MovieSceneTrackTemplateProducer");
+    UE_CLASS("/Script/MovieScene", "MovieScenePlaybackClient");
 };
 
 class INodeAndChannelMappings
 {
 public:
     UE_CLASS("/Script/MovieScene", "NodeAndChannelMappings");
+};
+
+class UMovieSceneNodeGroup : public UObject
+{
+public:
+    UE_CLASS("/Script/MovieScene", "MovieSceneNodeGroup");
 };
 
 class UMovieSceneNodeGroupCollection : public UObject
@@ -1364,12 +1373,10 @@ public:
     UE_CLASS("/Script/MovieScene", "MovieSceneBindingOwnerInterface");
 };
 
-class UMovieSceneBoolSection : public UMovieSceneSection
+class UMovieSceneGenericBoundObjectInstantiator : public UMovieSceneEntityInstantiatorSystem
 {
 public:
-    UE_CLASS("/Script/MovieScene", "MovieSceneBoolSection");
-    bool DefaultValue;
-    FMovieSceneBoolChannel BoolCurve;
+    UE_CLASS("/Script/MovieScene", "MovieSceneGenericBoundObjectInstantiator");
 };
 
 class UMovieSceneBoundSceneComponentInstantiator : public UMovieSceneEntityInstantiatorSystem
@@ -1539,18 +1546,17 @@ public:
     FGuid ObjectGuid;
 };
 
-class UTestMovieSceneTrack : public UMovieSceneTrack
-{
-public:
-    UE_CLASS("/Script/MovieScene", "TestMovieSceneTrack");
-    bool bHighPassFilter;
-    TArray<class UMovieSceneSection*> SectionArray;
-};
-
 class UTestMovieSceneSection : public UMovieSceneSection
 {
 public:
     UE_CLASS("/Script/MovieScene", "TestMovieSceneSection");
+};
+
+class UTestMovieSceneSequence : public UMovieSceneSequence
+{
+public:
+    UE_CLASS("/Script/MovieScene", "TestMovieSceneSequence");
+    class UMovieScene* MovieScene;
 };
 
 class UTestMovieSceneSubTrack : public UMovieSceneSubTrack
@@ -1577,12 +1583,6 @@ class UTestMovieSceneEvalHookSection : public UMovieSceneHookSection
 {
 public:
     UE_CLASS("/Script/MovieScene", "TestMovieSceneEvalHookSection");
-};
-
-class UMovieSceneTrackInstanceInstantiator : public UMovieSceneEntityInstantiatorSystem
-{
-public:
-    UE_CLASS("/Script/MovieScene", "MovieSceneTrackInstanceInstantiator");
 };
 
 class UMovieSceneTrackInstanceSystem : public UMovieSceneEntitySystem

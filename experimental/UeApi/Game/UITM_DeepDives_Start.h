@@ -41,7 +41,7 @@ public:
     virtual void BndEvt__ITM_DeepDives_Start_PasswordField_K2Node_ComponentBoundEvent_9_OnTextCommitted__DelegateSignature(FText Text, uint8 CommitMethod);
     virtual void BndEvt__Hard_Launcher_K2Node_ComponentBoundEvent_8_OnRefresh__DelegateSignature(bool success);
     virtual void RefreshTimeout(bool success);
-    virtual void OnTimeout();
+    virtual void OnTimeOut();
     virtual void BndEvt__Normal_Launcher_K2Node_ComponentBoundEvent_7_OnRefresh__DelegateSignature(bool success);
     UE_COSMETIC virtual void PreConstruct(bool IsDesignTime);
     UE_COSMETIC virtual void Construct();

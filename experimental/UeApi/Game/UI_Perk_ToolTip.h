@@ -47,6 +47,7 @@ public:
     int Rank;
     int Tier;
     FTimerHandle DelayTimer;
+    bool PreviewNextRank;
     virtual void ExecuteUbergraph_UI_Perk_ToolTip(int EntryPoint);
     virtual void SetBorderColorForPerkMaintenace();
     virtual void ShowLockedTooltip(class UPerkAsset* PerkAsset_0, FText ToolTipText_0);
@@ -56,7 +57,7 @@ public:
     virtual void Show_Rank(bool InShowRank);
     virtual void Equip_Intro();
     virtual void KPI_Intro();
-    virtual void SetPerkAsset(class UPerkAsset* PerkAsset_0, int Rank_0, bool ShowRank, bool ShowCost);
+    virtual void SetPerkAsset(class UPerkAsset* PerkAsset_0, int Rank_0, bool ShowRank, bool ShowCost, bool PreviewNextRank_0);
     virtual void OnPerkClaimed_Event(class UPerkAsset* Perk, int ClaimedTier);
 private:
     struct UeMarkers

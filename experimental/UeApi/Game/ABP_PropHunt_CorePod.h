@@ -30,7 +30,7 @@ public:
     class USkeletalMeshComponent* SkeletalMesh;
     class USpotLightComponent* SpotLight1;
     class USpotLightComponent* SpotLight;
-    class UPointLightComponent* Bluelight;
+    class UPointLightComponent* BlueLight;
     class UPointLightComponent* PointLight;
     class UArrowComponent* Arrow;
     virtual void ExecuteUbergraph_BP_PropHunt_CorePod(int EntryPoint);
@@ -47,7 +47,7 @@ private:
         static constexpr const char* SkeletalMesh__UeScsNode = "d05aec0b9357f348ae9bf049c848b44e";
         static constexpr const char* SpotLight1__UeScsNode = "6470dabc1e0dd14aa32dad661a913a11";
         static constexpr const char* SpotLight__UeScsNode = "ab0d5efbea90a24499ebf2058b2dd808";
-        static constexpr const char* Bluelight__UeScsNode = "34ccacea6183854a9b3f1e5ca020ac17";
+        static constexpr const char* BlueLight__UeScsNode = "34ccacea6183854a9b3f1e5ca020ac17";
         static constexpr const char* PointLight__UeScsNode = "d57db81b0623d64086b19b3f8effdc43";
         static constexpr const char* Arrow__UeScsNode = "f4e14523f5c66843aeb626ee37d60300";
     };

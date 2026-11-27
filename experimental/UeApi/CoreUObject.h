@@ -2414,58 +2414,46 @@ private:
     };
 };
 
+class UGCObjectReferencer : public UObject
+{
+public:
+    UE_CLASS("/Script/CoreUObject", "GCObjectReferencer");
+};
+
+class UPropertyWrapper : public UObject
+{
+public:
+    UE_CLASS("/Script/CoreUObject", "PropertyWrapper");
+};
+
+class UMulticastDelegatePropertyWrapper : public UPropertyWrapper
+{
+public:
+    UE_CLASS("/Script/CoreUObject", "MulticastDelegatePropertyWrapper");
+};
+
 class UProperty : public UField
 {
 public:
     UE_CLASS("/Script/CoreUObject", "Property");
 };
 
-class UNumericProperty : public UProperty
+class UStrProperty : public UProperty
 {
 public:
-    UE_CLASS("/Script/CoreUObject", "NumericProperty");
+    UE_CLASS("/Script/CoreUObject", "StrProperty");
 };
 
-class UUInt16Property : public UNumericProperty
+class UObjectRedirector : public UObject
 {
 public:
-    UE_CLASS("/Script/CoreUObject", "UInt16Property");
-};
-
-class UEnumProperty : public UProperty
-{
-public:
-    UE_CLASS("/Script/CoreUObject", "EnumProperty");
+    UE_CLASS("/Script/CoreUObject", "ObjectRedirector");
 };
 
 class IInterface
 {
 public:
     UE_CLASS("/Script/CoreUObject", "Interface");
-};
-
-class UFunction : public UStruct
-{
-public:
-    UE_CLASS("/Script/CoreUObject", "Function");
-};
-
-class ULinkerPlaceholderFunction : public UFunction
-{
-public:
-    UE_CLASS("/Script/CoreUObject", "LinkerPlaceholderFunction");
-};
-
-class UPackage : public UObject
-{
-public:
-    UE_CLASS("/Script/CoreUObject", "Package");
-};
-
-class UByteProperty : public UNumericProperty
-{
-public:
-    UE_CLASS("/Script/CoreUObject", "ByteProperty");
 };
 
 class UTextBuffer : public UObject
@@ -2480,10 +2468,28 @@ public:
     UE_CLASS("/Script/CoreUObject", "LinkerPlaceholderClass");
 };
 
-class UGCObjectReferencer : public UObject
+class UPackage : public UObject
 {
 public:
-    UE_CLASS("/Script/CoreUObject", "GCObjectReferencer");
+    UE_CLASS("/Script/CoreUObject", "Package");
+};
+
+class UBoolProperty : public UProperty
+{
+public:
+    UE_CLASS("/Script/CoreUObject", "BoolProperty");
+};
+
+class UPackageMap : public UObject
+{
+public:
+    UE_CLASS("/Script/CoreUObject", "PackageMap");
+};
+
+class UFunction : public UStruct
+{
+public:
+    UE_CLASS("/Script/CoreUObject", "Function");
 };
 
 class UDelegateFunction : public UFunction
@@ -2504,12 +2510,6 @@ public:
     UE_CLASS("/Script/CoreUObject", "DynamicClass");
 };
 
-class UPackageMap : public UObject
-{
-public:
-    UE_CLASS("/Script/CoreUObject", "PackageMap");
-};
-
 class UEnum : public UField
 {
 public:
@@ -2522,16 +2522,22 @@ public:
     UE_CLASS("/Script/CoreUObject", "LinkerPlaceholderExportObject");
 };
 
+class ULinkerPlaceholderFunction : public UFunction
+{
+public:
+    UE_CLASS("/Script/CoreUObject", "LinkerPlaceholderFunction");
+};
+
 class UMetaData : public UObject
 {
 public:
     UE_CLASS("/Script/CoreUObject", "MetaData");
 };
 
-class UObjectRedirector : public UObject
+class UEnumProperty : public UProperty
 {
 public:
-    UE_CLASS("/Script/CoreUObject", "ObjectRedirector");
+    UE_CLASS("/Script/CoreUObject", "EnumProperty");
 };
 
 class UArrayProperty : public UProperty
@@ -2546,10 +2552,16 @@ public:
     UE_CLASS("/Script/CoreUObject", "ObjectPropertyBase");
 };
 
-class UBoolProperty : public UProperty
+class UNumericProperty : public UProperty
 {
 public:
-    UE_CLASS("/Script/CoreUObject", "BoolProperty");
+    UE_CLASS("/Script/CoreUObject", "NumericProperty");
+};
+
+class UByteProperty : public UNumericProperty
+{
+public:
+    UE_CLASS("/Script/CoreUObject", "ByteProperty");
 };
 
 class UObjectProperty : public UObjectPropertyBase
@@ -2666,16 +2678,16 @@ public:
     UE_CLASS("/Script/CoreUObject", "SoftClassProperty");
 };
 
-class UStrProperty : public UProperty
-{
-public:
-    UE_CLASS("/Script/CoreUObject", "StrProperty");
-};
-
 class UStructProperty : public UProperty
 {
 public:
     UE_CLASS("/Script/CoreUObject", "StructProperty");
+};
+
+class UUInt16Property : public UNumericProperty
+{
+public:
+    UE_CLASS("/Script/CoreUObject", "UInt16Property");
 };
 
 class UUInt32Property : public UNumericProperty
@@ -2700,18 +2712,6 @@ class UTextProperty : public UProperty
 {
 public:
     UE_CLASS("/Script/CoreUObject", "TextProperty");
-};
-
-class UPropertyWrapper : public UObject
-{
-public:
-    UE_CLASS("/Script/CoreUObject", "PropertyWrapper");
-};
-
-class UMulticastDelegatePropertyWrapper : public UPropertyWrapper
-{
-public:
-    UE_CLASS("/Script/CoreUObject", "MulticastDelegatePropertyWrapper");
 };
 
 class UMulticastInlineDelegatePropertyWrapper : public UMulticastDelegatePropertyWrapper

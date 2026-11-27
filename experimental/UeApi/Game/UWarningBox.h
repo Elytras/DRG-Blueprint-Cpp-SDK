@@ -23,9 +23,9 @@ public:
     class UImage* Image_0;
     class USizeBox* SizeBox_2;
     float Size;
-    virtual void ExecuteUbergraph_WarningBox(int EntryPoint);
+    UE_COSMETIC virtual void PreConstruct(bool IsDesignTime_PreConstruct);
     UE_COSMETIC virtual void Construct();
-    UE_COSMETIC virtual void PreConstruct(bool IsDesignTime);
+    virtual void ExecuteUbergraph_WarningBox(int EntryPoint);
 };
 
 using WarningBox_C = ::Game::UI::Global_UI_Elements::UWarningBox;

@@ -145,16 +145,6 @@ public:
     FName PlayerName;
 };
 
-class UMediaComponent : public UActorComponent
-{
-public:
-    UE_CLASS("/Script/MediaAssets", "MediaComponent");
-    UE_READONLY class UMediaTexture* MediaTexture;
-    UE_READONLY class UMediaPlayer* MediaPlayer;
-    UE_PURE class UMediaPlayer* GetMediaPlayer() const;
-    UE_PURE class UMediaTexture* GetMediaTexture() const;
-};
-
 class UFileMediaSource : public UBaseMediaSource
 {
 public:
@@ -164,6 +154,32 @@ public:
     void SetFilePath(FString Path);
 };
 
+class UStreamMediaSource : public UBaseMediaSource
+{
+public:
+    UE_CLASS("/Script/MediaAssets", "StreamMediaSource");
+    FString StreamUrl;
+};
+
+class UMediaPlaylist : public UObject
+{
+public:
+    UE_CLASS("/Script/MediaAssets", "MediaPlaylist");
+    TArray<class UMediaSource*> Items;
+    bool Add(class UMediaSource* MediaSource);
+    bool AddFile(FString FilePath);
+    bool AddUrl(FString URL);
+    class UMediaSource* Get(int Index_0);
+    class UMediaSource* GetNext(int& InOutIndex);
+    class UMediaSource* GetPrevious(int& InOutIndex);
+    class UMediaSource* GetRandom(int& OutIndex);
+    void Insert(class UMediaSource* MediaSource, int Index_0);
+    int Num();
+    bool Remove(class UMediaSource* MediaSource);
+    bool RemoveAt(int Index_0);
+    bool Replace(int Index_0, class UMediaSource* Replacement);
+};
+
 class UMediaBlueprintFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
@@ -171,6 +187,16 @@ public:
     static void EnumerateAudioCaptureDevices(TArray<FMediaCaptureDevice>& OutDevices, int Filter);
     static void EnumerateVideoCaptureDevices(TArray<FMediaCaptureDevice>& OutDevices, int Filter);
     static void EnumerateWebcamCaptureDevices(TArray<FMediaCaptureDevice>& OutDevices, int Filter);
+};
+
+class UMediaComponent : public UActorComponent
+{
+public:
+    UE_CLASS("/Script/MediaAssets", "MediaComponent");
+    UE_READONLY class UMediaTexture* MediaTexture;
+    UE_READONLY class UMediaPlayer* MediaPlayer;
+    UE_PURE class UMediaPlayer* GetMediaPlayer() const;
+    UE_PURE class UMediaTexture* GetMediaTexture() const;
 };
 
 class UMediaTimeStampInfo : public UObject
@@ -296,25 +322,6 @@ private:
     };
 };
 
-class UMediaPlaylist : public UObject
-{
-public:
-    UE_CLASS("/Script/MediaAssets", "MediaPlaylist");
-    TArray<class UMediaSource*> Items;
-    bool Add(class UMediaSource* MediaSource);
-    bool AddFile(FString FilePath);
-    bool AddUrl(FString URL);
-    class UMediaSource* Get(int Index_0);
-    class UMediaSource* GetNext(int& InOutIndex);
-    class UMediaSource* GetPrevious(int& InOutIndex);
-    class UMediaSource* GetRandom(int& OutIndex);
-    void Insert(class UMediaSource* MediaSource, int Index_0);
-    int Num();
-    bool Remove(class UMediaSource* MediaSource);
-    bool RemoveAt(int Index_0);
-    bool Replace(int Index_0, class UMediaSource* Replacement);
-};
-
 class UMediaTexture : public UTexture
 {
 public:
@@ -343,13 +350,6 @@ class UPlatformMediaSource : public UMediaSource
 public:
     UE_CLASS("/Script/MediaAssets", "PlatformMediaSource");
     class UMediaSource* MediaSource;
-};
-
-class UStreamMediaSource : public UBaseMediaSource
-{
-public:
-    UE_CLASS("/Script/MediaAssets", "StreamMediaSource");
-    FString StreamUrl;
 };
 
 class UTimeSynchronizableMediaSource : public UBaseMediaSource

@@ -29,12 +29,12 @@ public:
     class AActor* SpawnActor;
     virtual void ExecuteUbergraph_ENE_FacilityTentacle_Burrowing(int EntryPoint);
     UE_PROTECTED virtual void Recieve_OnRep_Owner();
-    virtual void HandleDeath();
     UE_MULTICAST virtual void PlayPreBurrowSound();
     virtual void ChildTentacleDied(class UHealthComponentBase* HealthComponent);
     virtual void BurrowingAttack(class AActor* AttackTarget, FVector BurrowLocation);
     UE_BLUEPRINT_PURE virtual void FindGroundLocation(bool& success, FVector& Location);
     virtual void PlaceEndTentacles(FVector PlayerLocation, bool& success, class AActor*& SpawnedTentacle);
+    virtual void HandleDeath();
     UE_BLUEPRINT_PURE virtual void GetTentacle(AENE_FacilityTentacle*& Tentacle);
 private:
     struct UeMarkers

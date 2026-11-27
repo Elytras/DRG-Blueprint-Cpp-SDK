@@ -162,6 +162,16 @@ struct FBodyInstanceCore
     FBodyInstanceCore(bool bSimulatePhysics, bool bOverrideMass, bool bEnableGravity, bool bAutoWeld, bool bStartAwake, bool bGenerateWakeEvents, bool bUpdateMassWhenScaleChanges) {}
 };
 
+class UBodySetupCore : public UObject
+{
+public:
+    UE_CLASS("/Script/PhysicsCore", "BodySetupCore");
+    FName BoneName;
+    TEnum<EPhysicsType> PhysicsType;
+    TEnum<ECollisionTraceFlag> CollisionTraceFlag;
+    TEnum<EBodyCollisionResponse> CollisionReponse;
+};
+
 class UPhysicsSettingsCore : public UDeveloperSettings
 {
 public:
@@ -189,16 +199,6 @@ public:
     bool bSimulateSkeletalMeshOnDedicatedServer;
     TEnum<ECollisionTraceFlag> DefaultShapeComplexity;
     FChaosSolverConfiguration SolverOptions;
-};
-
-class UBodySetupCore : public UObject
-{
-public:
-    UE_CLASS("/Script/PhysicsCore", "BodySetupCore");
-    FName BoneName;
-    TEnum<EPhysicsType> PhysicsType;
-    TEnum<ECollisionTraceFlag> CollisionTraceFlag;
-    TEnum<EBodyCollisionResponse> CollisionReponse;
 };
 
 class UPhysicalMaterial : public UObject

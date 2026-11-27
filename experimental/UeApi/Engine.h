@@ -12505,12 +12505,13 @@ private:
     };
 };
 
-class UUserDefinedStruct : public UScriptStruct
+class UAISystemBase : public UObject
 {
 public:
-    UE_CLASS("/Script/Engine", "UserDefinedStruct");
-    TEnum<EUserDefinedStructureStatus> Status;
-    FGuid Guid;
+    UE_CLASS("/Script/Engine", "AISystemBase");
+    FSoftClassPath AISystemClassName;
+    FName AISystemModuleName;
+    bool bInstantiateAISystemOnClient;
 };
 
 class UBlueprintFunctionLibrary : public UObject
@@ -12519,182 +12520,12 @@ public:
     UE_CLASS("/Script/Engine", "BlueprintFunctionLibrary");
 };
 
-class APawn : public AActor
+class UUserDefinedStruct : public UScriptStruct
 {
 public:
-    UE_CLASS("/Script/Engine", "Pawn");
-    bool bUseControllerRotationPitch;
-    bool bUseControllerRotationYaw;
-    bool bUseControllerRotationRoll;
-    UE_READONLY bool bCanAffectNavigationGeneration;
-    float BaseEyeHeight;
-    TEnum<EAutoReceiveInput> AutoPossessPlayer;
-    TEnum<EAutoPossessAI> AutoPossessAI;
-    uint8 RemoteViewPitch;
-    TSubclassOf<class AController> AIControllerClass;
-    UE_READONLY class APlayerState* PlayerState;
-    UE_READONLY class AController* LastHitBy;
-    class AController* Controller;
-    FVector ControlInputVector;
-    FVector LastControlInputVector;
-    UE_PURE static class AActor* GetMovementBaseActor(class APawn* Pawn);
-    void AddControllerPitchInput(float Val);
-    void AddControllerRollInput(float Val);
-    void AddControllerYawInput(float Val);
-    void AddMovementInput(FVector WorldDirection, float ScaleValue, bool bForce);
-    FVector ConsumeMovementInputVector();
-    void DetachFromControllerPendingDestroy();
-    void LaunchPawn(FVector LaunchVelocity, bool bXYOverride, bool bZOverride);
-    void OnRep_Controller();
-    void OnRep_PlayerState();
-    UE_AUTHORITY_ONLY void PawnMakeNoise(float Loudness, FVector NoiseLocation, bool bUseNoiseMakerLocation, class AActor* NoiseMaker);
-    void ReceivePossessed(class AController* NewController);
-    void ReceiveUnpossessed(class AController* OldController);
-    void SetCanAffectNavigationGeneration(bool bNewValue, bool bForceUpdate);
-    void SpawnDefaultController();
-    UE_PURE FRotator GetBaseAimRotation() const;
-    UE_PURE class AController* GetController() const;
-    UE_PURE FRotator GetControlRotation() const;
-    UE_PURE FVector GetLastMovementInputVector() const;
-    UE_PURE class UPawnMovementComponent* GetMovementComponent() const;
-    UE_PURE FVector GetNavAgentLocation() const;
-    UE_PURE FVector GetPendingMovementInputVector() const;
-    UE_PURE bool IsBotControlled() const;
-    UE_PURE bool IsControlled() const;
-    UE_PURE bool IsLocallyControlled() const;
-    UE_PURE bool IsMoveInputIgnored() const;
-    UE_PURE bool IsPawnControlled() const;
-    UE_PURE bool IsPlayerControlled() const;
-    UE_PURE FVector K2_GetMovementInputVector() const;
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* UeClassTail = "0x00800004 /Script/CoreUObject.Object Game";
-        static constexpr const char* RemoteViewPitch__Replicated = ":";
-        static constexpr const char* PlayerState__Replicated = "OnRep_PlayerState:";
-        static constexpr const char* Controller__Replicated = "OnRep_Controller:";
-    };
-};
-
-class ACharacter : public APawn
-{
-public:
-    UE_CLASS("/Script/Engine", "Character");
-    UE_READONLY class USkeletalMeshComponent* Mesh;
-    UE_READONLY class UCharacterMovementComponent* CharacterMovement;
-    UE_READONLY class UCapsuleComponent* CapsuleComponent;
-    FBasedMovementInfo BasedMovement;
-    FBasedMovementInfo ReplicatedBasedMovement;
-    float AnimRootMotionTranslationScale;
-    FVector BaseTranslationOffset;
-    FQuat BaseRotationOffset;
-    float ReplicatedServerLastTransformUpdateTimeStamp;
-    float ReplayLastTransformUpdateTimeStamp;
-    uint8 ReplicatedMovementMode;
-    bool bInBaseReplication;
-    float CrouchedEyeHeight;
-    UE_READONLY bool bIsCrouched;
-    bool bProxyIsJumpForceApplied;
-    UE_READONLY bool bPressedJump;
-    bool bClientUpdating;
-    bool bClientWasFalling;
-    bool bClientResimulateRootMotion;
-    bool bClientResimulateRootMotionSources;
-    bool bSimGravityDisabled;
-    bool bClientCheckEncroachmentOnNetUpdate;
-    bool bServerMoveIgnoreRootMotion;
-    UE_READONLY bool bWasJumping;
-    UE_READONLY float JumpKeyHoldTime;
-    UE_READONLY float JumpForceTimeRemaining;
-    UE_READONLY float ProxyJumpForceStartedTime;
-    float JumpMaxHoldTime;
-    int JumpMaxCount;
-    UE_READONLY int JumpCurrentCount;
-    UE_READONLY int JumpCurrentCountPreJump;
-    TMulticastInlineDelegate<void()> OnReachedJumpApex;
-    TMulticastInlineDelegate<void(class ACharacter* Character, EMovementMode PrevMovementMode, uint8 PreviousCustomMode)> MovementModeChangedDelegate;
-    TMulticastInlineDelegate<void(float DeltaSeconds, FVector OldLocation, FVector OldVelocity)> OnCharacterMovementUpdated;
-    FRootMotionSourceGroup SavedRootMotion;
-    FRootMotionMovementParams ClientRootMotionParams;
-    TArray<FSimulatedRootMotionReplicatedMove> RootMotionRepMoves;
-    FRepRootMotionMontage RepRootMotion;
-    void CacheInitialMeshOffset(FVector MeshRelativeLocation, FRotator MeshRelativeRotation);
-    UE_CLIENT void ClientAckGoodMove(float Timestamp);
-    UE_CLIENT void ClientAdjustPosition(float Timestamp, FVector NewLoc, FVector NewVel, class UPrimitiveComponent* NewBase, FName NewBaseBoneName, bool bHasBase, bool bBaseRelativePosition, uint8 ServerMovementMode);
-    UE_CLIENT void ClientAdjustRootMotionPosition(float Timestamp, float ServerMontageTrackPosition, FVector ServerLoc, FVector_NetQuantizeNormal ServerRotation, float ServerVelZ, class UPrimitiveComponent* ServerBase, FName ServerBoneName, bool bHasBase, bool bBaseRelativePosition, uint8 ServerMovementMode);
-    UE_CLIENT void ClientAdjustRootMotionSourcePosition(float Timestamp, FRootMotionSourceGroup ServerRootMotion, bool bHasAnimRootMotion, float ServerMontageTrackPosition, FVector ServerLoc, FVector_NetQuantizeNormal ServerRotation, float ServerVelZ, class UPrimitiveComponent* ServerBase, FName ServerBoneName, bool bHasBase, bool bBaseRelativePosition, uint8 ServerMovementMode);
-    UE_CLIENT UE_RELIABLE void ClientCheatFly();
-    UE_CLIENT UE_RELIABLE void ClientCheatGhost();
-    UE_CLIENT UE_RELIABLE void ClientCheatWalk();
-    UE_CLIENT void ClientMoveResponsePacked(const FCharacterMoveResponsePackedBits& PackedBits);
-    UE_CLIENT void ClientVeryShortAdjustPosition(float Timestamp, FVector NewLoc, class UPrimitiveComponent* NewBase, FName NewBaseBoneName, bool bHasBase, bool bBaseRelativePosition, uint8 ServerMovementMode);
-    void Crouch(bool bClientSimulation);
-    void Jump();
-    void K2_OnEndCrouch(float HalfHeightAdjust, float ScaledHalfHeightAdjust);
-    void K2_OnMovementModeChanged(TEnum<EMovementMode> PrevMovementMode, TEnum<EMovementMode> NewMovementMode, uint8 PrevCustomMode, uint8 NewCustomMode);
-    void K2_OnStartCrouch(float HalfHeightAdjust, float ScaledHalfHeightAdjust);
-    void K2_UpdateCustomMovement(float DeltaTime);
-    void LaunchCharacter(FVector LaunchVelocity, bool bXYOverride, bool bZOverride);
-    void OnJumped();
-    void OnLanded(const FHitResult& Hit);
-    void OnLaunched(FVector LaunchVelocity, bool bXYOverride, bool bZOverride);
-    void OnRep_IsCrouched();
-    void OnRep_ReplayLastTransformUpdateTimeStamp();
-    void OnRep_ReplicatedBasedMovement();
-    void OnRep_RootMotion();
-    void OnWalkingOffLedge(const FVector& PreviousFloorImpactNormal, const FVector& PreviousFloorContactNormal, const FVector& PreviousLocation, float TimeDelta);
-    float PlayAnimMontage(class UAnimMontage* AnimMontage, float InPlayRate, FName StartSectionName);
-    UE_CLIENT UE_RELIABLE void RootMotionDebugClientPrintOnScreen(FString inString);
-    UE_SERVER void ServerMove(float Timestamp, FVector_NetQuantize10 InAccel, FVector_NetQuantize100 ClientLoc, uint8 CompressedMoveFlags, uint8 ClientRoll, uint32 View, class UPrimitiveComponent* ClientMovementBase, FName ClientBaseBoneName, uint8 ClientMovementMode);
-    UE_SERVER void ServerMoveDual(float TimeStamp0, FVector_NetQuantize10 InAccel0, uint8 PendingFlags, uint32 View0, float Timestamp, FVector_NetQuantize10 InAccel, FVector_NetQuantize100 ClientLoc, uint8 NewFlags, uint8 ClientRoll, uint32 View, class UPrimitiveComponent* ClientMovementBase, FName ClientBaseBoneName, uint8 ClientMovementMode);
-    UE_SERVER void ServerMoveDualHybridRootMotion(float TimeStamp0, FVector_NetQuantize10 InAccel0, uint8 PendingFlags, uint32 View0, float Timestamp, FVector_NetQuantize10 InAccel, FVector_NetQuantize100 ClientLoc, uint8 NewFlags, uint8 ClientRoll, uint32 View, class UPrimitiveComponent* ClientMovementBase, FName ClientBaseBoneName, uint8 ClientMovementMode);
-    UE_SERVER void ServerMoveDualNoBase(float TimeStamp0, FVector_NetQuantize10 InAccel0, uint8 PendingFlags, uint32 View0, float Timestamp, FVector_NetQuantize10 InAccel, FVector_NetQuantize100 ClientLoc, uint8 NewFlags, uint8 ClientRoll, uint32 View, uint8 ClientMovementMode);
-    UE_SERVER void ServerMoveNoBase(float Timestamp, FVector_NetQuantize10 InAccel, FVector_NetQuantize100 ClientLoc, uint8 CompressedMoveFlags, uint8 ClientRoll, uint32 View, uint8 ClientMovementMode);
-    UE_SERVER void ServerMoveOld(float OldTimeStamp, FVector_NetQuantize10 OldAccel, uint8 OldMoveFlags);
-    UE_SERVER void ServerMovePacked(const FCharacterServerMovePackedBits& PackedBits);
-    void StopAnimMontage(class UAnimMontage* AnimMontage);
-    void StopJumping();
-    void UnCrouch(bool bClientSimulation);
-    UE_PURE bool CanCrouch() const;
-    UE_PURE bool CanJump() const;
-    bool CanJumpInternal() const;
-    UE_PURE float GetAnimRootMotionTranslationScale() const;
-    UE_PURE FRotator GetBaseRotationOffsetRotator() const;
-    UE_PURE FVector GetBaseTranslationOffset() const;
-    UE_PURE class UAnimMontage* GetCurrentMontage() const;
-    UE_PURE bool HasAnyRootMotion() const;
-    UE_PURE bool IsJumpProvidingForce() const;
-    UE_PURE bool IsPlayingNetworkedRootMotionMontage() const;
-    UE_PURE bool IsPlayingRootMotion() const;
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* ReplicatedBasedMovement__Replicated = "OnRep_ReplicatedBasedMovement:";
-        static constexpr const char* AnimRootMotionTranslationScale__Replicated = ":";
-        static constexpr const char* ReplicatedServerLastTransformUpdateTimeStamp__Replicated = ":";
-        static constexpr const char* ReplayLastTransformUpdateTimeStamp__Replicated = "OnRep_ReplayLastTransformUpdateTimeStamp:";
-        static constexpr const char* ReplicatedMovementMode__Replicated = ":";
-        static constexpr const char* bIsCrouched__Replicated = "OnRep_IsCrouched):";
-        static constexpr const char* bProxyIsJumpForceApplied__Replicated = ":";
-        static constexpr const char* JumpMaxHoldTime__Replicated = ":";
-        static constexpr const char* JumpMaxCount__Replicated = ":";
-        static constexpr const char* OnReachedJumpApex__UeDispatcher = "Assignable";
-        static constexpr const char* MovementModeChangedDelegate__UeDispatcher = "Assignable";
-        static constexpr const char* OnCharacterMovementUpdated__UeDispatcher = "Assignable";
-        static constexpr const char* RepRootMotion__Replicated = "OnRep_RootMotion:";
-        static constexpr const char* CapsuleComponent__UeSubobject = "CollisionCylinder /Script/Engine.CapsuleComponent";
-        static constexpr const char* CharacterMovement__UeSubobject = "CharMoveComp /Script/Engine.CharacterMovementComponent";
-        static constexpr const char* Mesh__UeSubobject = "CharacterMesh0 /Script/Engine.SkeletalMeshComponent";
-    };
-};
-
-class UAISystemBase : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "AISystemBase");
-    FSoftClassPath AISystemClassName;
-    FName AISystemModuleName;
-    bool bInstantiateAISystemOnClient;
+    UE_CLASS("/Script/Engine", "UserDefinedStruct");
+    TEnum<EUserDefinedStructureStatus> Status;
+    FGuid Guid;
 };
 
 class UDataAsset : public UObject
@@ -13052,6 +12883,175 @@ private:
         static constexpr const char* OnInputTouchEnd__UeDispatcher = "Assignable";
         static constexpr const char* OnInputTouchEnter__UeDispatcher = "Assignable";
         static constexpr const char* OnInputTouchLeave__UeDispatcher = "Assignable";
+    };
+};
+
+class APawn : public AActor
+{
+public:
+    UE_CLASS("/Script/Engine", "Pawn");
+    bool bUseControllerRotationPitch;
+    bool bUseControllerRotationYaw;
+    bool bUseControllerRotationRoll;
+    UE_READONLY bool bCanAffectNavigationGeneration;
+    float BaseEyeHeight;
+    TEnum<EAutoReceiveInput> AutoPossessPlayer;
+    TEnum<EAutoPossessAI> AutoPossessAI;
+    uint8 RemoteViewPitch;
+    TSubclassOf<class AController> AIControllerClass;
+    UE_READONLY class APlayerState* PlayerState;
+    UE_READONLY class AController* LastHitBy;
+    class AController* Controller;
+    FVector ControlInputVector;
+    FVector LastControlInputVector;
+    UE_PURE static class AActor* GetMovementBaseActor(class APawn* Pawn);
+    void AddControllerPitchInput(float Val);
+    void AddControllerRollInput(float Val);
+    void AddControllerYawInput(float Val);
+    void AddMovementInput(FVector WorldDirection, float ScaleValue, bool bForce);
+    FVector ConsumeMovementInputVector();
+    void DetachFromControllerPendingDestroy();
+    void LaunchPawn(FVector LaunchVelocity, bool bXYOverride, bool bZOverride);
+    void OnRep_Controller();
+    void OnRep_PlayerState();
+    UE_AUTHORITY_ONLY void PawnMakeNoise(float Loudness, FVector NoiseLocation, bool bUseNoiseMakerLocation, class AActor* NoiseMaker);
+    void ReceivePossessed(class AController* NewController);
+    void ReceiveUnpossessed(class AController* OldController);
+    void SetCanAffectNavigationGeneration(bool bNewValue, bool bForceUpdate);
+    void SpawnDefaultController();
+    UE_PURE FRotator GetBaseAimRotation() const;
+    UE_PURE class AController* GetController() const;
+    UE_PURE FRotator GetControlRotation() const;
+    UE_PURE FVector GetLastMovementInputVector() const;
+    UE_PURE class UPawnMovementComponent* GetMovementComponent() const;
+    UE_PURE FVector GetNavAgentLocation() const;
+    UE_PURE FVector GetPendingMovementInputVector() const;
+    UE_PURE bool IsBotControlled() const;
+    UE_PURE bool IsControlled() const;
+    UE_PURE bool IsLocallyControlled() const;
+    UE_PURE bool IsMoveInputIgnored() const;
+    UE_PURE bool IsPawnControlled() const;
+    UE_PURE bool IsPlayerControlled() const;
+    UE_PURE FVector K2_GetMovementInputVector() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeClassTail = "0x00800004 /Script/CoreUObject.Object Game";
+        static constexpr const char* RemoteViewPitch__Replicated = ":";
+        static constexpr const char* PlayerState__Replicated = "OnRep_PlayerState:";
+        static constexpr const char* Controller__Replicated = "OnRep_Controller:";
+    };
+};
+
+class ACharacter : public APawn
+{
+public:
+    UE_CLASS("/Script/Engine", "Character");
+    UE_READONLY class USkeletalMeshComponent* Mesh;
+    UE_READONLY class UCharacterMovementComponent* CharacterMovement;
+    UE_READONLY class UCapsuleComponent* CapsuleComponent;
+    FBasedMovementInfo BasedMovement;
+    FBasedMovementInfo ReplicatedBasedMovement;
+    float AnimRootMotionTranslationScale;
+    FVector BaseTranslationOffset;
+    FQuat BaseRotationOffset;
+    float ReplicatedServerLastTransformUpdateTimeStamp;
+    float ReplayLastTransformUpdateTimeStamp;
+    uint8 ReplicatedMovementMode;
+    bool bInBaseReplication;
+    float CrouchedEyeHeight;
+    UE_READONLY bool bIsCrouched;
+    bool bProxyIsJumpForceApplied;
+    UE_READONLY bool bPressedJump;
+    bool bClientUpdating;
+    bool bClientWasFalling;
+    bool bClientResimulateRootMotion;
+    bool bClientResimulateRootMotionSources;
+    bool bSimGravityDisabled;
+    bool bClientCheckEncroachmentOnNetUpdate;
+    bool bServerMoveIgnoreRootMotion;
+    UE_READONLY bool bWasJumping;
+    UE_READONLY float JumpKeyHoldTime;
+    UE_READONLY float JumpForceTimeRemaining;
+    UE_READONLY float ProxyJumpForceStartedTime;
+    float JumpMaxHoldTime;
+    int JumpMaxCount;
+    UE_READONLY int JumpCurrentCount;
+    UE_READONLY int JumpCurrentCountPreJump;
+    TMulticastInlineDelegate<void()> OnReachedJumpApex;
+    TMulticastInlineDelegate<void(class ACharacter* Character, EMovementMode PrevMovementMode, uint8 PreviousCustomMode)> MovementModeChangedDelegate;
+    TMulticastInlineDelegate<void(float DeltaSeconds, FVector OldLocation, FVector OldVelocity)> OnCharacterMovementUpdated;
+    FRootMotionSourceGroup SavedRootMotion;
+    FRootMotionMovementParams ClientRootMotionParams;
+    TArray<FSimulatedRootMotionReplicatedMove> RootMotionRepMoves;
+    FRepRootMotionMontage RepRootMotion;
+    void CacheInitialMeshOffset(FVector MeshRelativeLocation, FRotator MeshRelativeRotation);
+    UE_CLIENT void ClientAckGoodMove(float Timestamp);
+    UE_CLIENT void ClientAdjustPosition(float Timestamp, FVector NewLoc, FVector NewVel, class UPrimitiveComponent* NewBase, FName NewBaseBoneName, bool bHasBase, bool bBaseRelativePosition, uint8 ServerMovementMode);
+    UE_CLIENT void ClientAdjustRootMotionPosition(float Timestamp, float ServerMontageTrackPosition, FVector ServerLoc, FVector_NetQuantizeNormal ServerRotation, float ServerVelZ, class UPrimitiveComponent* ServerBase, FName ServerBoneName, bool bHasBase, bool bBaseRelativePosition, uint8 ServerMovementMode);
+    UE_CLIENT void ClientAdjustRootMotionSourcePosition(float Timestamp, FRootMotionSourceGroup ServerRootMotion, bool bHasAnimRootMotion, float ServerMontageTrackPosition, FVector ServerLoc, FVector_NetQuantizeNormal ServerRotation, float ServerVelZ, class UPrimitiveComponent* ServerBase, FName ServerBoneName, bool bHasBase, bool bBaseRelativePosition, uint8 ServerMovementMode);
+    UE_CLIENT UE_RELIABLE void ClientCheatFly();
+    UE_CLIENT UE_RELIABLE void ClientCheatGhost();
+    UE_CLIENT UE_RELIABLE void ClientCheatWalk();
+    UE_CLIENT void ClientMoveResponsePacked(const FCharacterMoveResponsePackedBits& PackedBits);
+    UE_CLIENT void ClientVeryShortAdjustPosition(float Timestamp, FVector NewLoc, class UPrimitiveComponent* NewBase, FName NewBaseBoneName, bool bHasBase, bool bBaseRelativePosition, uint8 ServerMovementMode);
+    void Crouch(bool bClientSimulation);
+    void Jump();
+    void K2_OnEndCrouch(float HalfHeightAdjust, float ScaledHalfHeightAdjust);
+    void K2_OnMovementModeChanged(TEnum<EMovementMode> PrevMovementMode, TEnum<EMovementMode> NewMovementMode, uint8 PrevCustomMode, uint8 NewCustomMode);
+    void K2_OnStartCrouch(float HalfHeightAdjust, float ScaledHalfHeightAdjust);
+    void K2_UpdateCustomMovement(float DeltaTime);
+    void LaunchCharacter(FVector LaunchVelocity, bool bXYOverride, bool bZOverride);
+    void OnJumped();
+    void OnLanded(const FHitResult& Hit);
+    void OnLaunched(FVector LaunchVelocity, bool bXYOverride, bool bZOverride);
+    void OnRep_IsCrouched();
+    void OnRep_ReplayLastTransformUpdateTimeStamp();
+    void OnRep_ReplicatedBasedMovement();
+    void OnRep_RootMotion();
+    void OnWalkingOffLedge(const FVector& PreviousFloorImpactNormal, const FVector& PreviousFloorContactNormal, const FVector& PreviousLocation, float TimeDelta);
+    float PlayAnimMontage(class UAnimMontage* AnimMontage, float InPlayRate, FName StartSectionName);
+    UE_CLIENT UE_RELIABLE void RootMotionDebugClientPrintOnScreen(FString inString);
+    UE_SERVER void ServerMove(float Timestamp, FVector_NetQuantize10 InAccel, FVector_NetQuantize100 ClientLoc, uint8 CompressedMoveFlags, uint8 ClientRoll, uint32 View, class UPrimitiveComponent* ClientMovementBase, FName ClientBaseBoneName, uint8 ClientMovementMode);
+    UE_SERVER void ServerMoveDual(float TimeStamp0, FVector_NetQuantize10 InAccel0, uint8 PendingFlags, uint32 View0, float Timestamp, FVector_NetQuantize10 InAccel, FVector_NetQuantize100 ClientLoc, uint8 NewFlags, uint8 ClientRoll, uint32 View, class UPrimitiveComponent* ClientMovementBase, FName ClientBaseBoneName, uint8 ClientMovementMode);
+    UE_SERVER void ServerMoveDualHybridRootMotion(float TimeStamp0, FVector_NetQuantize10 InAccel0, uint8 PendingFlags, uint32 View0, float Timestamp, FVector_NetQuantize10 InAccel, FVector_NetQuantize100 ClientLoc, uint8 NewFlags, uint8 ClientRoll, uint32 View, class UPrimitiveComponent* ClientMovementBase, FName ClientBaseBoneName, uint8 ClientMovementMode);
+    UE_SERVER void ServerMoveDualNoBase(float TimeStamp0, FVector_NetQuantize10 InAccel0, uint8 PendingFlags, uint32 View0, float Timestamp, FVector_NetQuantize10 InAccel, FVector_NetQuantize100 ClientLoc, uint8 NewFlags, uint8 ClientRoll, uint32 View, uint8 ClientMovementMode);
+    UE_SERVER void ServerMoveNoBase(float Timestamp, FVector_NetQuantize10 InAccel, FVector_NetQuantize100 ClientLoc, uint8 CompressedMoveFlags, uint8 ClientRoll, uint32 View, uint8 ClientMovementMode);
+    UE_SERVER void ServerMoveOld(float OldTimeStamp, FVector_NetQuantize10 OldAccel, uint8 OldMoveFlags);
+    UE_SERVER void ServerMovePacked(const FCharacterServerMovePackedBits& PackedBits);
+    void StopAnimMontage(class UAnimMontage* AnimMontage);
+    void StopJumping();
+    void UnCrouch(bool bClientSimulation);
+    UE_PURE bool CanCrouch() const;
+    UE_PURE bool CanJump() const;
+    bool CanJumpInternal() const;
+    UE_PURE float GetAnimRootMotionTranslationScale() const;
+    UE_PURE FRotator GetBaseRotationOffsetRotator() const;
+    UE_PURE FVector GetBaseTranslationOffset() const;
+    UE_PURE class UAnimMontage* GetCurrentMontage() const;
+    UE_PURE bool HasAnyRootMotion() const;
+    UE_PURE bool IsJumpProvidingForce() const;
+    UE_PURE bool IsPlayingNetworkedRootMotionMontage() const;
+    UE_PURE bool IsPlayingRootMotion() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* ReplicatedBasedMovement__Replicated = "OnRep_ReplicatedBasedMovement:";
+        static constexpr const char* AnimRootMotionTranslationScale__Replicated = ":";
+        static constexpr const char* ReplicatedServerLastTransformUpdateTimeStamp__Replicated = ":";
+        static constexpr const char* ReplayLastTransformUpdateTimeStamp__Replicated = "OnRep_ReplayLastTransformUpdateTimeStamp:";
+        static constexpr const char* ReplicatedMovementMode__Replicated = ":";
+        static constexpr const char* bIsCrouched__Replicated = "OnRep_IsCrouched):";
+        static constexpr const char* bProxyIsJumpForceApplied__Replicated = ":";
+        static constexpr const char* JumpMaxHoldTime__Replicated = ":";
+        static constexpr const char* JumpMaxCount__Replicated = ":";
+        static constexpr const char* OnReachedJumpApex__UeDispatcher = "Assignable";
+        static constexpr const char* MovementModeChangedDelegate__UeDispatcher = "Assignable";
+        static constexpr const char* OnCharacterMovementUpdated__UeDispatcher = "Assignable";
+        static constexpr const char* RepRootMotion__Replicated = "OnRep_RootMotion:";
+        static constexpr const char* CapsuleComponent__UeSubobject = "CollisionCylinder /Script/Engine.CapsuleComponent";
+        static constexpr const char* CharacterMovement__UeSubobject = "CharMoveComp /Script/Engine.CharacterMovementComponent";
+        static constexpr const char* Mesh__UeSubobject = "CharacterMesh0 /Script/Engine.SkeletalMeshComponent";
     };
 };
 
@@ -14169,45 +14169,10 @@ private:
     };
 };
 
-class USceneCaptureComponent : public USceneComponent
+class IRVOAvoidanceInterface
 {
 public:
-    UE_CLASS("/Script/Engine", "SceneCaptureComponent");
-    TEnum<ESceneCapturePrimitiveRenderMode> PrimitiveRenderMode;
-    TEnum<ESceneCaptureSource> CaptureSource;
-    bool bCaptureEveryFrame;
-    bool bCaptureOnMovement;
-    bool bAlwaysPersistRenderingState;
-    TArray<class AActor*> HiddenActors;
-    TArray<class AActor*> ShowOnlyActors;
-    float LODDistanceFactor;
-    float MaxViewDistanceOverride;
-    UE_READONLY int CaptureSortPriority;
-    bool bUseRayTracingIfEnabled;
-    TArray<FEngineShowFlagsSetting> ShowFlagSettings;
-    FString ProfilingEventName;
-    void ClearHiddenComponents();
-    void ClearShowOnlyComponents();
-    void HideActorComponents(class AActor* InActor, bool bIncludeFromChildActors);
-    void HideComponent(class UPrimitiveComponent* InComponent);
-    void RemoveShowOnlyActorComponents(class AActor* InActor, bool bIncludeFromChildActors);
-    void RemoveShowOnlyComponent(class UPrimitiveComponent* InComponent);
-    void SetCaptureSortPriority(int NewCaptureSortPriority);
-    void ShowOnlyActorComponents(class AActor* InActor, bool bIncludeFromChildActors);
-    void ShowOnlyComponent(class UPrimitiveComponent* InComponent);
-};
-
-class USceneCaptureComponentCube : public USceneCaptureComponent
-{
-public:
-    UE_CLASS("/Script/Engine", "SceneCaptureComponentCube");
-    class UTextureRenderTargetCube* TextureTarget;
-    bool bCaptureRotation;
-    class UTextureRenderTargetCube* TextureTargetLeft;
-    class UTextureRenderTargetCube* TextureTargetRight;
-    class UTextureRenderTarget2D* TextureTargetODS;
-    float IPD;
-    void CaptureScene();
+    UE_CLASS("/Script/Engine", "RVOAvoidanceInterface");
 };
 
 class UBlueprintCore : public UObject
@@ -14262,12 +14227,12 @@ public:
     UE_CLASS("/Script/Engine", "ParticleModuleColorBase");
 };
 
-class UParticleModuleColorOverLife : public UParticleModuleColorBase
+class UParticleModuleColor : public UParticleModuleColorBase
 {
 public:
-    UE_CLASS("/Script/Engine", "ParticleModuleColorOverLife");
-    FRawDistributionVector ColorOverLife;
-    FRawDistributionFloat AlphaOverLife;
+    UE_CLASS("/Script/Engine", "ParticleModuleColor");
+    FRawDistributionVector StartColor;
+    FRawDistributionFloat StartAlpha;
     bool bClampAlpha;
 };
 
@@ -14309,51 +14274,53 @@ public:
     bool bIsParameterExpression;
 };
 
-class UMaterialExpressionArccosineFast : public UMaterialExpression
+class UMaterialExpressionAppendVector : public UMaterialExpression
 {
 public:
-    UE_CLASS("/Script/Engine", "MaterialExpressionArccosineFast");
-    FExpressionInput Input;
+    UE_CLASS("/Script/Engine", "MaterialExpressionAppendVector");
+    FExpressionInput A;
+    FExpressionInput B;
 };
 
-class AReflectionCapture : public AActor
+class ASceneCapture : public AActor
 {
 public:
-    UE_CLASS("/Script/Engine", "ReflectionCapture");
-    UE_READONLY class UReflectionCaptureComponent* CaptureComponent;
-};
-
-class APlaneReflectionCapture : public AReflectionCapture
-{
-public:
-    UE_CLASS("/Script/Engine", "PlaneReflectionCapture");
+    UE_CLASS("/Script/Engine", "SceneCapture");
+    class UStaticMeshComponent* MeshComp;
+    UE_READONLY class USceneComponent* SceneComponent;
 private:
     struct UeMarkers
     {
-        static constexpr const char* CaptureComponent__UeSubobject = "NewReflectionComponent /Script/Engine.PlaneReflectionCaptureComponent";
+        static constexpr const char* RootComponent__UeSubobject = "SceneComponent /Script/Engine.SceneComponent";
+        static constexpr const char* SceneComponent__UeSubobject = "SceneComponent /Script/Engine.SceneComponent";
     };
 };
 
-class UMaterialExpressionQualitySwitch : public UMaterialExpression
+class APlanarReflection : public ASceneCapture
 {
 public:
-    UE_CLASS("/Script/Engine", "MaterialExpressionQualitySwitch");
-    FExpressionInput Default;
-    FExpressionInput Inputs[4];
+    UE_CLASS("/Script/Engine", "PlanarReflection");
+    UE_READONLY class UPlanarReflectionComponent* PlanarReflectionComponent;
+    bool bShowPreviewPlane;
+    void OnInterpToggle(bool bEnable);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* PlanarReflectionComponent__UeSubobject = "NewPlanarReflectionComponent /Script/Engine.PlanarReflectionComponent";
+        static constexpr const char* SceneComponent__UeSubobject = "SceneComponent /Script/Engine.SceneComponent";
+    };
 };
 
-class UPhysicalAnimationComponent : public UActorComponent
+class UMaterialExpressionPreSkinnedPosition : public UMaterialExpression
 {
 public:
-    UE_CLASS("/Script/Engine", "PhysicalAnimationComponent");
-    UE_READONLY float StrengthMultiplyer;
-    class USkeletalMeshComponent* SkeletalMeshComponent;
-    void ApplyPhysicalAnimationProfileBelow(FName BodyName, FName ProfileName, bool bIncludeSelf, bool bClearNotFound);
-    void ApplyPhysicalAnimationSettings(FName BodyName, const FPhysicalAnimationData& PhysicalAnimationData);
-    void ApplyPhysicalAnimationSettingsBelow(FName BodyName, const FPhysicalAnimationData& PhysicalAnimationData, bool bIncludeSelf);
-    void SetSkeletalMeshComponent(class USkeletalMeshComponent* InSkeletalMeshComponent);
-    void SetStrengthMultiplyer(float InStrengthMultiplyer);
-    UE_PURE FTransform GetBodyTargetTransform(FName BodyName) const;
+    UE_CLASS("/Script/Engine", "MaterialExpressionPreSkinnedPosition");
+};
+
+class IPathFollowingAgentInterface
+{
+public:
+    UE_CLASS("/Script/Engine", "PathFollowingAgentInterface");
 };
 
 class UOnlineEngineInterface : public UObject
@@ -14368,15 +14335,13 @@ public:
     UE_CLASS("/Script/Engine", "AsyncActionLoadPrimaryAssetBase");
 };
 
-class UAsyncActionChangePrimaryAssetBundles : public UAsyncActionLoadPrimaryAssetBase
+class UAsyncActionLoadPrimaryAssetList : public UAsyncActionLoadPrimaryAssetBase
 {
 public:
-    UE_CLASS("/Script/Engine", "AsyncActionChangePrimaryAssetBundles");
-    TMulticastInlineDelegate<void()> Completed;
-    static class UAsyncActionChangePrimaryAssetBundles* AsyncChangeBundleStateForMatchingPrimaryAssets(class UObject* WorldContextObject, const TArray<FName>& NewBundles, const TArray<FName>& OldBundles);
-    static class UAsyncActionChangePrimaryAssetBundles* AsyncChangeBundleStateForMatchingPrimaryAssets(const TArray<FName>& NewBundles, const TArray<FName>& OldBundles);
-    static class UAsyncActionChangePrimaryAssetBundles* AsyncChangeBundleStateForPrimaryAssetList(class UObject* WorldContextObject, const TArray<FPrimaryAssetId>& PrimaryAssetList, const TArray<FName>& AddBundles, const TArray<FName>& RemoveBundles);
-    static class UAsyncActionChangePrimaryAssetBundles* AsyncChangeBundleStateForPrimaryAssetList(const TArray<FPrimaryAssetId>& PrimaryAssetList, const TArray<FName>& AddBundles, const TArray<FName>& RemoveBundles);
+    UE_CLASS("/Script/Engine", "AsyncActionLoadPrimaryAssetList");
+    TMulticastInlineDelegate<void(TArray<class UObject*> Loaded)> Completed;
+    static class UAsyncActionLoadPrimaryAssetList* AsyncLoadPrimaryAssetList(class UObject* WorldContextObject, const TArray<FPrimaryAssetId>& PrimaryAssetList, const TArray<FName>& LoadBundles);
+    static class UAsyncActionLoadPrimaryAssetList* AsyncLoadPrimaryAssetList(const TArray<FPrimaryAssetId>& PrimaryAssetList, const TArray<FName>& LoadBundles);
 private:
     struct UeMarkers
     {
@@ -14384,69 +14349,79 @@ private:
     };
 };
 
-class UMaterialExpressionBlackBody : public UMaterialExpression
+class UMaterialExpressionAtmosphericLightVector : public UMaterialExpression
 {
 public:
-    UE_CLASS("/Script/Engine", "MaterialExpressionBlackBody");
-    FExpressionInput Temp;
+    UE_CLASS("/Script/Engine", "MaterialExpressionAtmosphericLightVector");
 };
 
-class ALight : public AActor
+class ANavigationObjectBase : public AActor
 {
 public:
-    UE_CLASS("/Script/Engine", "Light");
-    UE_READONLY class ULightComponent* LightComponent;
-    bool bEnabled;
-    void OnRep_bEnabled();
-    void SetAffectTranslucentLighting(bool bNewValue);
-    void SetBrightness(float NewBrightness);
-    void SetCastShadows(bool bNewValue);
-    void SetEnabled(bool bSetEnabled);
-    void SetLightColor(FLinearColor NewLightColor);
-    void SetLightFunctionFadeDistance(float NewLightFunctionFadeDistance);
-    void SetLightFunctionMaterial(class UMaterialInterface* NewLightFunctionMaterial);
-    void SetLightFunctionScale(FVector NewLightFunctionScale);
-    void ToggleEnabled();
-    UE_PURE float GetBrightness() const;
-    UE_PURE FLinearColor GetLightColor() const;
-    UE_PURE bool IsEnabled() const;
+    UE_CLASS("/Script/Engine", "NavigationObjectBase");
+    class UCapsuleComponent* CapsuleComponent;
+    class UBillboardComponent* GoodSprite;
+    class UBillboardComponent* BadSprite;
+    bool bIsPIEPlayerStart;
 private:
     struct UeMarkers
     {
-        static constexpr const char* bEnabled__Replicated = "OnRep_bEnabled):";
+        static constexpr const char* CapsuleComponent__UeSubobject = "CollisionCapsule /Script/Engine.CapsuleComponent";
+        static constexpr const char* RootComponent__UeSubobject = "CollisionCapsule /Script/Engine.CapsuleComponent";
     };
 };
 
-class APointLight : public ALight
+class APlayerStart : public ANavigationObjectBase
 {
 public:
-    UE_CLASS("/Script/Engine", "PointLight");
-    UE_READONLY class UPointLightComponent* PointLightComponent;
-    void SetLightFalloffExponent(float NewLightFalloffExponent);
-    void SetRadius(float NewRadius);
+    UE_CLASS("/Script/Engine", "PlayerStart");
+    FName PlayerStartTag;
 private:
     struct UeMarkers
     {
-        static constexpr const char* LightComponent__UeSubobject = "LightComponent0 /Script/Engine.PointLightComponent";
-        static constexpr const char* PointLightComponent__UeSubobject = "LightComponent0 /Script/Engine.PointLightComponent";
-        static constexpr const char* RootComponent__UeSubobject = "LightComponent0 /Script/Engine.PointLightComponent";
+        static constexpr const char* CapsuleComponent__UeSubobject = "CollisionCapsule /Script/Engine.CapsuleComponent";
+        static constexpr const char* RootComponent__UeSubobject = "CollisionCapsule /Script/Engine.CapsuleComponent";
     };
 };
 
-class UCameraShakeSourceComponent : public USceneComponent
+class APlayerStartPIE : public APlayerStart
 {
 public:
-    UE_CLASS("/Script/Engine", "CameraShakeSourceComponent");
-    TEnum<ECameraShakeAttenuation> Attenuation;
-    float InnerAttenuationRadius;
-    float OuterAttenuationRadius;
-    TSubclassOf<class UCameraShakeBase> CameraShake;
-    bool bAutoStart;
-    void Start();
-    void StartCameraShake(TSubclassOf<class UCameraShakeBase> InCameraShake, float Scale, TEnum<ECameraShakePlaySpace> PlaySpace, FRotator UserPlaySpaceRot);
-    void StopAllCameraShakes(bool bImmediately);
-    void StopAllCameraShakesOfType(TSubclassOf<class UCameraShakeBase> InCameraShake, bool bImmediately);
-    UE_PURE float GetAttenuationFactor(const FVector& Location) const;
+    UE_CLASS("/Script/Engine", "PlayerStartPIE");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* CapsuleComponent__UeSubobject = "CollisionCapsule /Script/Engine.CapsuleComponent";
+        static constexpr const char* RootComponent__UeSubobject = "CollisionCapsule /Script/Engine.CapsuleComponent";
+    };
+};
+
+class UCameraModifier : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "CameraModifier");
+    bool bDebug;
+    UE_READONLY bool bExclusive;
+    UE_READONLY uint8 Priority;
+    UE_READONLY class APlayerCameraManager* CameraOwner;
+    UE_READONLY float AlphaInTime;
+    UE_READONLY float AlphaOutTime;
+    UE_READONLY float alpha;
+    UE_COSMETIC void BlueprintModifyCamera(float DeltaTime, FVector ViewLocation, FRotator ViewRotation, float FOV, FVector& NewViewLocation, FRotator& NewViewRotation, float& NewFOV);
+    UE_COSMETIC void BlueprintModifyPostProcess(float DeltaTime, float& PostProcessBlendWeight, FPostProcessSettings& PostProcessSettings);
+    void DisableModifier(bool bImmediate);
+    void EnableModifier();
+    UE_PURE class AActor* GetViewTarget() const;
+    UE_PURE bool IsDisabled() const;
+};
+
+class UCameraModifier_CameraShake : public UCameraModifier
+{
+public:
+    UE_CLASS("/Script/Engine", "CameraModifier_CameraShake");
+    TArray<FActiveCameraShakeInfo> ActiveShakes;
+    TMap<TSubclassOf<class UCameraShakeBase>, FPooledCameraShakes> ExpiredPooledShakesMap;
+    float SplitScreenShakeScale;
 };
 
 class USoundNode : public UObject
@@ -14456,11 +14431,11 @@ public:
     TArray<class USoundNode*> ChildNodes;
 };
 
-class USoundNodeSoundClass : public USoundNode
+class USoundNodeQualityLevel : public USoundNode
 {
 public:
-    UE_CLASS("/Script/Engine", "SoundNodeSoundClass");
-    class USoundClass* SoundClassOverride;
+    UE_CLASS("/Script/Engine", "SoundNodeQualityLevel");
+    int CookedQualityLevelIndex;
 };
 
 class UMaterialExpressionTextureBase : public UMaterialExpression
@@ -14486,100 +14461,18 @@ public:
     FName Group;
 };
 
-class UMaterialExpressionTextureSampleParameterVolume : public UMaterialExpressionTextureSampleParameter
+class UMaterialExpressionTextureSampleParameterCube : public UMaterialExpressionTextureSampleParameter
 {
 public:
-    UE_CLASS("/Script/Engine", "MaterialExpressionTextureSampleParameterVolume");
+    UE_CLASS("/Script/Engine", "MaterialExpressionTextureSampleParameterCube");
 };
 
-class UMaterialInterface : public UObject
+class UPoseWatch : public UObject
 {
 public:
-    UE_CLASS("/Script/Engine", "MaterialInterface");
-    UE_READONLY class USubsurfaceProfile* SubsurfaceProfile;
-    FLightmassMaterialInterfaceSettings LightmassSettings;
-    TArray<FMaterialTextureInfo> TextureStreamingData;
-    TArray<class UAssetUserData*> AssetUserData;
-    class UMaterial* GetBaseMaterial();
-    void SetForceMipLevelsToBeResident(bool OverrideForceMiplevelsToBeResident, bool bForceMiplevelsToBeResidentValue, float ForceDuration, int CinematicTextureGroups, bool bFastResponse);
-    UE_PURE FMaterialParameterInfo GetParameterInfo(TEnum<EMaterialParameterAssociation> Association, FName ParameterName, class UMaterialFunctionInterface* LayerFunction) const;
-    UE_PURE class UPhysicalMaterial* GetPhysicalMaterial() const;
-    UE_PURE class UPhysicalMaterial* GetPhysicalMaterialFromMap(int Index_0) const;
-    UE_PURE class UPhysicalMaterialMask* GetPhysicalMaterialMask() const;
-};
-
-class UMaterialInstance : public UMaterialInterface
-{
-public:
-    UE_CLASS("/Script/Engine", "MaterialInstance");
-    class UPhysicalMaterial* PhysMaterial;
-    class UPhysicalMaterial* PhysicalMaterialMap[8];
-    UE_READONLY class UMaterialInterface* Parent;
-    bool bHasStaticPermutationResource;
-    UE_READONLY bool bOverrideSubsurfaceProfile;
-    UE_READONLY TArray<FScalarParameterValue> ScalarParameterValues;
-    UE_READONLY TArray<FVectorParameterValue> VectorParameterValues;
-    UE_READONLY TArray<FTextureParameterValue> TextureParameterValues;
-    UE_READONLY TArray<FRuntimeVirtualTextureParameterValue> RuntimeVirtualTextureParameterValues;
-    UE_READONLY TArray<FFontParameterValue> FontParameterValues;
-    FMaterialInstanceBasePropertyOverrides BasePropertyOverrides;
-    FStaticParameterSet StaticParameters;
-    FMaterialCachedParameters CachedLayerParameters;
-    TArray<class UObject*> CachedReferencedTextures;
-};
-
-class ABrush : public AActor
-{
-public:
-    UE_CLASS("/Script/Engine", "Brush");
-    TEnum<EBrushType> BrushType;
-    FColor BrushColor;
-    int PolyFlags;
-    bool bColored;
-    bool bSolidWhenSelected;
-    bool bPlaceableFromClassBrowser;
-    bool bNotForClientOrServer;
-    class UModel* Brush;
-    UE_READONLY class UBrushComponent* BrushComponent;
-    bool bInManipulation;
-    TArray<FGeomSelection> SavedSelections;
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* BrushComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
-        static constexpr const char* RootComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
-    };
-};
-
-class AVolume : public ABrush
-{
-public:
-    UE_CLASS("/Script/Engine", "Volume");
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* BrushComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
-        static constexpr const char* RootComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
-    };
-};
-
-class APostProcessVolume : public AVolume
-{
-public:
-    UE_CLASS("/Script/Engine", "PostProcessVolume");
-    FPostProcessSettings Settings;
-    float Priority;
-    float BlendRadius;
-    float BlendWeight;
-    bool bEnabled;
-    bool bUnbound;
-    void AddOrUpdateBlendable(TScriptInterface<class IBlendableInterface> InBlendableObject, float InWeight);
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* BrushComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
-        static constexpr const char* RootComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
-    };
+    UE_CLASS("/Script/Engine", "PoseWatch");
+    class UEdGraphNode* Node;
+    FColor PoseWatchColour;
 };
 
 class UParticleModuleAccelerationBase : public UParticleModule
@@ -14589,12 +14482,11 @@ public:
     bool bAlwaysInWorldSpace;
 };
 
-class UParticleModuleAccelerationDragScaleOverLife : public UParticleModuleAccelerationBase
+class UParticleModuleAccelerationConstant : public UParticleModuleAccelerationBase
 {
 public:
-    UE_CLASS("/Script/Engine", "ParticleModuleAccelerationDragScaleOverLife");
-    class UDistributionFloat* DragScale;
-    FRawDistributionFloat DragScaleRaw;
+    UE_CLASS("/Script/Engine", "ParticleModuleAccelerationConstant");
+    FVector Acceleration;
 };
 
 class UNetDriver : public UObject
@@ -14656,46 +14548,16 @@ public:
     TEnum<EAnimationCompressionFormat> ScaleCompressionFormat;
 };
 
-class UAnimCompress_RemoveLinearKeys : public UAnimCompress
+class UAnimCompress_BitwiseCompressOnly : public UAnimCompress
 {
 public:
-    UE_CLASS("/Script/Engine", "AnimCompress_RemoveLinearKeys");
-    float MaxPosDiff;
-    float MaxAngleDiff;
-    float MaxScaleDiff;
-    float MaxEffectorDiff;
-    float MinEffectorDiff;
-    float EffectorDiffSocket;
-    float ParentKeyScale;
-    bool bRetarget;
-    bool bActuallyFilterLinearKeys;
+    UE_CLASS("/Script/Engine", "AnimCompress_BitwiseCompressOnly");
 };
 
-class UAnimCompress_PerTrackCompression : public UAnimCompress_RemoveLinearKeys
+class UAnimCompress_LeastDestructive : public UAnimCompress_BitwiseCompressOnly
 {
 public:
-    UE_CLASS("/Script/Engine", "AnimCompress_PerTrackCompression");
-    float MaxZeroingThreshold;
-    float MaxPosDiffBitwise;
-    float MaxAngleDiffBitwise;
-    float MaxScaleDiffBitwise;
-    TArray<EAnimationCompressionFormat> AllowedRotationFormats;
-    TArray<EAnimationCompressionFormat> AllowedTranslationFormats;
-    TArray<EAnimationCompressionFormat> AllowedScaleFormats;
-    bool bResampleAnimation;
-    float ResampledFramerate;
-    int MinKeysForResampling;
-    bool bUseAdaptiveError;
-    bool bUseOverrideForEndEffectors;
-    int TrackHeightBias;
-    float ParentingDivisor;
-    float ParentingDivisorExponent;
-    bool bUseAdaptiveError2;
-    float RotationErrorSourceRatio;
-    float TranslationErrorSourceRatio;
-    float ScaleErrorSourceRatio;
-    float MaxErrorPerTrackRatio;
-    float PerturbationProbeSize;
+    UE_CLASS("/Script/Engine", "AnimCompress_LeastDestructive");
 };
 
 class ULightComponentBase : public USceneComponent
@@ -14850,35 +14712,103 @@ public:
     float CurveTension;
 };
 
-class UInterpTrackFloatMaterialParam : public UInterpTrackFloatBase
+class UInterpTrackFade : public UInterpTrackFloatBase
 {
 public:
-    UE_CLASS("/Script/Engine", "InterpTrackFloatMaterialParam");
-    TArray<class UMaterialInterface*> TargetMaterials;
-    FName ParamName;
+    UE_CLASS("/Script/Engine", "InterpTrackFade");
+    bool bPersistFade;
+    bool bFadeAudio;
+    FLinearColor FadeColor;
 };
 
-class UCurveEdPresetCurve : public UObject
+class ABrush : public AActor
 {
 public:
-    UE_CLASS("/Script/Engine", "CurveEdPresetCurve");
+    UE_CLASS("/Script/Engine", "Brush");
+    TEnum<EBrushType> BrushType;
+    FColor BrushColor;
+    int PolyFlags;
+    bool bColored;
+    bool bSolidWhenSelected;
+    bool bPlaceableFromClassBrowser;
+    bool bNotForClientOrServer;
+    class UModel* Brush;
+    UE_READONLY class UBrushComponent* BrushComponent;
+    bool bInManipulation;
+    TArray<FGeomSelection> SavedSelections;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* BrushComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
+        static constexpr const char* RootComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
+    };
 };
 
-class USCS_Node : public UObject
+class AVolume : public ABrush
 {
 public:
-    UE_CLASS("/Script/Engine", "SCS_Node");
-    class UClass* ComponentClass;
-    class UActorComponent* ComponentTemplate;
-    FBlueprintCookedComponentInstancingData CookedComponentInstancingData;
-    FName AttachToName;
-    FName ParentComponentOrVariableName;
-    FName ParentComponentOwnerClassName;
-    bool bIsParentComponentNative;
-    TArray<class USCS_Node*> ChildNodes;
-    TArray<FBPVariableMetaDataEntry> MetaDataArray;
-    FGuid VariableGuid;
-    FName InternalVariableName;
+    UE_CLASS("/Script/Engine", "Volume");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* BrushComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
+        static constexpr const char* RootComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
+    };
+};
+
+class ACullDistanceVolume : public AVolume
+{
+public:
+    UE_CLASS("/Script/Engine", "CullDistanceVolume");
+    UE_READONLY TArray<FCullDistanceSizePair> CullDistances;
+    UE_READONLY bool bEnabled;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* BrushComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
+        static constexpr const char* RootComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
+    };
+};
+
+class USceneCaptureComponent : public USceneComponent
+{
+public:
+    UE_CLASS("/Script/Engine", "SceneCaptureComponent");
+    TEnum<ESceneCapturePrimitiveRenderMode> PrimitiveRenderMode;
+    TEnum<ESceneCaptureSource> CaptureSource;
+    bool bCaptureEveryFrame;
+    bool bCaptureOnMovement;
+    bool bAlwaysPersistRenderingState;
+    TArray<class AActor*> HiddenActors;
+    TArray<class AActor*> ShowOnlyActors;
+    float LODDistanceFactor;
+    float MaxViewDistanceOverride;
+    UE_READONLY int CaptureSortPriority;
+    bool bUseRayTracingIfEnabled;
+    TArray<FEngineShowFlagsSetting> ShowFlagSettings;
+    FString ProfilingEventName;
+    void ClearHiddenComponents();
+    void ClearShowOnlyComponents();
+    void HideActorComponents(class AActor* InActor, bool bIncludeFromChildActors);
+    void HideComponent(class UPrimitiveComponent* InComponent);
+    void RemoveShowOnlyActorComponents(class AActor* InActor, bool bIncludeFromChildActors);
+    void RemoveShowOnlyComponent(class UPrimitiveComponent* InComponent);
+    void SetCaptureSortPriority(int NewCaptureSortPriority);
+    void ShowOnlyActorComponents(class AActor* InActor, bool bIncludeFromChildActors);
+    void ShowOnlyComponent(class UPrimitiveComponent* InComponent);
+};
+
+class USceneCaptureComponentCube : public USceneCaptureComponent
+{
+public:
+    UE_CLASS("/Script/Engine", "SceneCaptureComponentCube");
+    class UTextureRenderTargetCube* TextureTarget;
+    bool bCaptureRotation;
+    class UTextureRenderTargetCube* TextureTargetLeft;
+    class UTextureRenderTargetCube* TextureTargetRight;
+    class UTextureRenderTarget2D* TextureTargetODS;
+    float IPD;
+    void CaptureScene();
 };
 
 class UParticleModuleVelocityBase : public UParticleModule
@@ -14889,25 +14819,34 @@ public:
     bool bApplyOwnerScale;
 };
 
-class UParticleModuleVelocityOverLifetime : public UParticleModuleVelocityBase
+class UParticleModuleVelocityCone : public UParticleModuleVelocityBase
 {
 public:
-    UE_CLASS("/Script/Engine", "ParticleModuleVelocityOverLifetime");
-    FRawDistributionVector VelOverLife;
-    bool Absolute;
+    UE_CLASS("/Script/Engine", "ParticleModuleVelocityCone");
+    FRawDistributionFloat Angle;
+    FRawDistributionFloat Velocity;
+    FVector Direction;
 };
 
-class UMaterialExpressionDDY : public UMaterialExpression
+class UMaterialExpressionCustom : public UMaterialExpression
 {
 public:
-    UE_CLASS("/Script/Engine", "MaterialExpressionDDY");
-    FExpressionInput Value;
+    UE_CLASS("/Script/Engine", "MaterialExpressionCustom");
+    FString code;
+    TEnum<ECustomMaterialOutputType> OutputType;
+    FString Description;
+    TArray<FCustomInput> Inputs;
+    TArray<FCustomOutput> AdditionalOutputs;
+    TArray<FCustomDefine> AdditionalDefines;
+    TArray<FString> IncludeFilePaths;
 };
 
-class UMaterialExpressionSkinningVertexOffsets : public UMaterialExpression
+class UMaterialExpressionSine : public UMaterialExpression
 {
 public:
-    UE_CLASS("/Script/Engine", "MaterialExpressionSkinningVertexOffsets");
+    UE_CLASS("/Script/Engine", "MaterialExpressionSine");
+    FExpressionInput Input;
+    float Period;
 };
 
 class UCommandlet : public UObject
@@ -14927,16 +14866,107 @@ public:
     bool ShowProgress;
 };
 
-class ARigidBodyBase : public AActor
+class UBodySetup : public UBodySetupCore
 {
 public:
-    UE_CLASS("/Script/Engine", "RigidBodyBase");
+    UE_CLASS("/Script/Engine", "BodySetup");
+    FKAggregateGeom AggGeom;
+    bool bAlwaysFullAnimWeight;
+    bool bConsiderForBounds;
+    bool bMeshCollideAll;
+    bool bDoubleSidedGeometry;
+    bool bGenerateNonMirroredCollision;
+    bool bSharedCookedData;
+    bool bGenerateMirroredCollision;
+    bool bSupportUVsAndFaceRemap;
+    class UPhysicalMaterial* PhysMaterial;
+    FWalkableSlopeOverride WalkableSlopeOverride;
+    FBodyInstance DefaultInstance;
+    FVector BuildScale3D;
 };
 
-class IMatineeInterface
+class USkeletalBodySetup : public UBodySetup
 {
 public:
-    UE_CLASS("/Script/Engine", "MatineeInterface");
+    UE_CLASS("/Script/Engine", "SkeletalBodySetup");
+    bool bSkipScaleFromAnimation;
+    TArray<FPhysicalAnimationProfile> PhysicalAnimationData;
+};
+
+class AMatineeActor : public AActor
+{
+public:
+    UE_CLASS("/Script/Engine", "MatineeActor");
+    class UInterpData* MatineeData;
+    FName MatineeControllerName;
+    float PlayRate;
+    bool bPlayOnLevelLoad;
+    bool bForceStartPos;
+    float ForceStartPosition;
+    bool bLooping;
+    bool bRewindOnPlay;
+    bool bNoResetOnRewind;
+    bool bRewindIfAlreadyPlaying;
+    bool bDisableRadioFilter;
+    bool bClientSideOnly;
+    bool bSkipUpdateIfNotVisible;
+    bool bIsSkippable;
+    int PreferredSplitScreenNum;
+    bool bDisableMovementInput;
+    bool bDisableLookAtInput;
+    bool bHidePlayer;
+    bool bHideHud;
+    TArray<FInterpGroupActorInfo> GroupActorInfos;
+    bool bShouldShowGore;
+    TArray<class UInterpGroupInst*> GroupInst;
+    TArray<FCameraCutInfo> CameraCuts;
+    UE_READONLY bool bIsPlaying;
+    bool bReversePlayback;
+    bool bPaused;
+    bool bPendingStop;
+    UE_READONLY float InterpPosition;
+    uint8 ReplicationForceIsPlaying;
+    TMulticastInlineDelegate<void()> OnPlay;
+    TMulticastInlineDelegate<void()> OnStop;
+    TMulticastInlineDelegate<void()> OnPause;
+    void ChangePlaybackDirection();
+    void EnableGroupByName(FString GroupName, bool bEnable);
+    void Pause();
+    void Play();
+    void Reverse();
+    void SetLoopingState(bool bNewLooping);
+    void SetPosition(float NewPosition, bool bJump);
+    void Stop();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* MatineeData__Replicated = ":";
+        static constexpr const char* PlayRate__Replicated = ":";
+        static constexpr const char* bLooping__Replicated = ":";
+        static constexpr const char* GroupActorInfos__Replicated = ":";
+        static constexpr const char* bIsPlaying__Replicated = ":";
+        static constexpr const char* bReversePlayback__Replicated = ":";
+        static constexpr const char* bPaused__Replicated = ":";
+        static constexpr const char* bPendingStop__Replicated = ":";
+        static constexpr const char* InterpPosition__Replicated = ":";
+        static constexpr const char* ReplicationForceIsPlaying__Replicated = ":";
+        static constexpr const char* OnPlay__UeDispatcher = "Assignable";
+        static constexpr const char* OnStop__UeDispatcher = "Assignable";
+        static constexpr const char* OnPause__UeDispatcher = "Assignable";
+        static constexpr const char* RootComponent__UeSubobject = "SceneComp /Script/Engine.SceneComponent";
+    };
+};
+
+class AMatineeActorCameraAnim : public AMatineeActor
+{
+public:
+    UE_CLASS("/Script/Engine", "MatineeActorCameraAnim");
+    class UCameraAnim* CameraAnim;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* RootComponent__UeSubobject = "SceneComp /Script/Engine.SceneComponent";
+    };
 };
 
 class UOnlineSession : public UObject
@@ -14945,28 +14975,20 @@ public:
     UE_CLASS("/Script/Engine", "OnlineSession");
 };
 
-class USoundNodeAssetReferencer : public USoundNode
+class USoundGroups : public UObject
 {
 public:
-    UE_CLASS("/Script/Engine", "SoundNodeAssetReferencer");
+    UE_CLASS("/Script/Engine", "SoundGroups");
+    TArray<FSoundGroup> SoundGroupProfiles;
 };
 
-class UAnimCurveCompressionCodec : public UObject
+class UAnimCompress_RemoveTrivialKeys : public UAnimCompress
 {
 public:
-    UE_CLASS("/Script/Engine", "AnimCurveCompressionCodec");
-};
-
-class UAnimCurveCompressionCodec_CompressedRichCurve : public UAnimCurveCompressionCodec
-{
-public:
-    UE_CLASS("/Script/Engine", "AnimCurveCompressionCodec_CompressedRichCurve");
-};
-
-class UMaterialExpressionCustomOutput : public UMaterialExpression
-{
-public:
-    UE_CLASS("/Script/Engine", "MaterialExpressionCustomOutput");
+    UE_CLASS("/Script/Engine", "AnimCompress_RemoveTrivialKeys");
+    float MaxPosDiff;
+    float MaxAngleDiff;
+    float MaxScaleDiff;
 };
 
 class UInterpTrackInst : public UObject
@@ -14982,24 +15004,20 @@ public:
     class UObject* PropertyOuterObjectInst;
 };
 
-class UInterpTrackInstColorProp : public UInterpTrackInstProperty
+class UCurveBase : public UObject
 {
 public:
-    UE_CLASS("/Script/Engine", "InterpTrackInstColorProp");
-    FColor ResetColor;
+    UE_CLASS("/Script/Engine", "CurveBase");
+    void GetTimeRange(float& MinTime, float& MaxTime) const;
+    void GetValueRange(float& MinValue, float& MaxValue) const;
 };
 
-class UDataDrivenCVarEngineSubsystem : public UEngineSubsystem
+class UCurveVector : public UCurveBase
 {
 public:
-    UE_CLASS("/Script/Engine", "DataDrivenCVarEngineSubsystem");
-    TMulticastInlineDelegate<void(FString CVarName)> OnDataDrivenCVarDelegate;
-    static UDataDrivenCVarEngineSubsystem* Get();
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* OnDataDrivenCVarDelegate__UeDispatcher = "Assignable";
-    };
+    UE_CLASS("/Script/Engine", "CurveVector");
+    FRichCurve FloatCurves[3];
+    UE_PURE FVector GetVectorValue(float InTime) const;
 };
 
 class UParticleModuleVectorFieldBase : public UParticleModule
@@ -15008,18 +15026,31 @@ public:
     UE_CLASS("/Script/Engine", "ParticleModuleVectorFieldBase");
 };
 
-class UParticleModuleVectorFieldRotationRate : public UParticleModuleVectorFieldBase
+class UParticleModuleVectorFieldLocal : public UParticleModuleVectorFieldBase
 {
 public:
-    UE_CLASS("/Script/Engine", "ParticleModuleVectorFieldRotationRate");
-    FVector RotationRate;
+    UE_CLASS("/Script/Engine", "ParticleModuleVectorFieldLocal");
+    class UVectorField* VectorField;
+    FVector RelativeTranslation;
+    FRotator RelativeRotation;
+    FVector RelativeScale3D;
+    float Intensity;
+    float Tightness;
+    bool bIgnoreComponentTransform;
+    bool bTileX;
+    bool bTileY;
+    bool bTileZ;
+    bool bUseFixDT;
 };
 
-class USubsurfaceProfile : public UObject
+class UStereoLayerFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-    UE_CLASS("/Script/Engine", "SubsurfaceProfile");
-    FSubsurfaceProfileStruct Settings;
+    UE_CLASS("/Script/Engine", "StereoLayerFunctionLibrary");
+    static void EnableAutoLoadingSplashScreen(bool InAutoShowEnabled);
+    static void HideSplashScreen();
+    static void SetSplashScreen(class UTexture* Texture, FVector2D Scale, FVector Offset, bool bShowLoadingMovie, bool bShowOnSet);
+    static void ShowSplashScreen();
 };
 
 class UFXSystemComponent : public UPrimitiveComponent
@@ -15126,37 +15157,34 @@ public:
     bool bBakedDataSuccesfully;
 };
 
-class UDistributionVectorConstant : public UDistributionVector
+class UDistributionVectorConstantCurve : public UDistributionVector
 {
 public:
-    UE_CLASS("/Script/Engine", "DistributionVectorConstant");
-    FVector Constant;
+    UE_CLASS("/Script/Engine", "DistributionVectorConstantCurve");
+    FInterpCurveVector ConstantCurve;
     bool bLockAxes;
     TEnum<EDistributionVectorLockFlags> LockedAxes;
 };
 
-class UDistributionVectorParameterBase : public UDistributionVectorConstant
+class UParticleModuleLocationBase : public UParticleModule
 {
 public:
-    UE_CLASS("/Script/Engine", "DistributionVectorParameterBase");
-    FName ParameterName;
-    FVector MinInput;
-    FVector MaxInput;
-    FVector MinOutput;
-    FVector MaxOutput;
-    TEnum<EDistributionParamMode> ParamModes[3];
+    UE_CLASS("/Script/Engine", "ParticleModuleLocationBase");
 };
 
-class UDistributionVectorParticleParameter : public UDistributionVectorParameterBase
+class UParticleModuleLocation : public UParticleModuleLocationBase
 {
 public:
-    UE_CLASS("/Script/Engine", "DistributionVectorParticleParameter");
+    UE_CLASS("/Script/Engine", "ParticleModuleLocation");
+    FRawDistributionVector StartLocation;
+    float DistributeOverNPoints;
+    float DistributeThreshold;
 };
 
-class UParticleModuleMaterialBase : public UParticleModule
+class UParticleModuleLocationWorldOffset : public UParticleModuleLocation
 {
 public:
-    UE_CLASS("/Script/Engine", "ParticleModuleMaterialBase");
+    UE_CLASS("/Script/Engine", "ParticleModuleLocationWorldOffset");
 };
 
 class UMaterialFunctionInterface : public UObject
@@ -15167,32 +15195,42 @@ public:
     TEnum<EMaterialFunctionUsage> MaterialFunctionUsage;
 };
 
-class UMaterialFunctionInstance : public UMaterialFunctionInterface
+class UDPICustomScalingRule : public UObject
 {
 public:
-    UE_CLASS("/Script/Engine", "MaterialFunctionInstance");
-    UE_READONLY class UMaterialFunctionInterface* Parent;
-    class UMaterialFunctionInterface* Base;
-    TArray<FScalarParameterValue> ScalarParameterValues;
-    TArray<FVectorParameterValue> VectorParameterValues;
-    TArray<FTextureParameterValue> TextureParameterValues;
-    TArray<FFontParameterValue> FontParameterValues;
-    TArray<FStaticSwitchParameter> StaticSwitchParameterValues;
-    TArray<FStaticComponentMaskParameter> StaticComponentMaskParameterValues;
-    TArray<FRuntimeVirtualTextureParameterValue> RuntimeVirtualTextureParameterValues;
+    UE_CLASS("/Script/Engine", "DPICustomScalingRule");
 };
 
-class IInterface_AssetUserData
+class UDynamicBlueprintBinding : public UObject
 {
 public:
-    UE_CLASS("/Script/Engine", "Interface_AssetUserData");
+    UE_CLASS("/Script/Engine", "DynamicBlueprintBinding");
 };
 
-class UParticleModuleMeshMaterial : public UParticleModuleMaterialBase
+class UInputDelegateBinding : public UDynamicBlueprintBinding
 {
 public:
-    UE_CLASS("/Script/Engine", "ParticleModuleMeshMaterial");
-    TArray<class UMaterialInterface*> MeshMaterials;
+    UE_CLASS("/Script/Engine", "InputDelegateBinding");
+};
+
+class UInputAxisKeyDelegateBinding : public UInputDelegateBinding
+{
+public:
+    UE_CLASS("/Script/Engine", "InputAxisKeyDelegateBinding");
+    TArray<FBlueprintInputAxisKeyDelegateBinding> InputAxisKeyDelegateBindings;
+};
+
+class UInputVectorAxisDelegateBinding : public UInputAxisKeyDelegateBinding
+{
+public:
+    UE_CLASS("/Script/Engine", "InputVectorAxisDelegateBinding");
+};
+
+class UParticleModuleLocationWorldOffset_Seeded : public UParticleModuleLocationWorldOffset
+{
+public:
+    UE_CLASS("/Script/Engine", "ParticleModuleLocationWorldOffset_Seeded");
+    FParticleRandomSeedInfo RandomSeedInfo;
 };
 
 class USoundEffectSourcePreset : public USoundEffectPreset
@@ -15201,434 +15239,175 @@ public:
     UE_CLASS("/Script/Engine", "SoundEffectSourcePreset");
 };
 
-class UAnimSingleNodeInstance : public UAnimInstance
+class UAnimationAsset : public UObject
 {
 public:
-    UE_CLASS("/Script/Engine", "AnimSingleNodeInstance");
-    class UAnimationAsset* CurrentAsset;
-    TDelegate<void()> PostEvaluateAnimEvent;
-    float GetLength();
-    void PlayAnim(bool bIsLooping, float InPlayRate, float InStartPosition);
-    void SetAnimationAsset(class UAnimationAsset* NewAsset, bool bIsLooping, float InPlayRate);
-    void SetBlendSpaceInput(const FVector& InBlendInput);
-    void SetLooping(bool bIsLooping);
-    void SetPlaying(bool bIsPlaying);
-    void SetPlayRate(float InPlayRate);
-    void SetPosition(float InPosition, bool bFireNotifies);
-    void SetPositionWithPreviousTime(float InPosition, float InPreviousTime, bool bFireNotifies);
-    void SetPreviewCurveOverride(const FName& PoseName, float Value, bool bRemoveIfZero);
-    void SetReverse(bool bInReverse);
-    void StopAnim();
-    UE_PURE class UAnimationAsset* GetAnimationAsset() const;
+    UE_CLASS("/Script/Engine", "AnimationAsset");
+    class USkeleton* Skeleton;
+    TArray<class UAnimMetaData*> MetaData;
+    TArray<class UAssetUserData*> AssetUserData;
+};
+
+class UAnimSequenceBase : public UAnimationAsset
+{
+public:
+    UE_CLASS("/Script/Engine", "AnimSequenceBase");
+    TArray<FAnimNotifyEvent> Notifies;
+    UE_READONLY float SequenceLength;
+    float RateScale;
+    FRawCurveTracks RawCurveData;
+    float GetPlayLength();
+};
+
+class UAnimSequence : public UAnimSequenceBase
+{
+public:
+    UE_CLASS("/Script/Engine", "AnimSequence");
+    int NumFrames;
+    TArray<FTrackToSkeletonMap> TrackToSkeletonMapTable;
+    class UAnimBoneCompressionSettings* BoneCompressionSettings;
+    class UAnimCurveCompressionSettings* CurveCompressionSettings;
+    TEnum<EAdditiveAnimationType> AdditiveAnimType;
+    TEnum<EAdditiveBasePoseType> RefPoseType;
+    class UAnimSequence* RefPoseSeq;
+    int RefFrameIndex;
+    FName RetargetSource;
+    TArray<FTransform> RetargetSourceAssetReferencePose;
+    TEnum<EAnimInterpolationType> Interpolation;
+    bool bEnableRootMotion;
+    TEnum<ERootMotionRootLock> RootMotionRootLock;
+    bool bForceRootLock;
+    bool bUseNormalizedRootMotionScale;
+    bool bRootMotionSettingsCopiedFromMontage;
+    TArray<FAnimSyncMarker> AuthoredSyncMarkers;
+    TArray<FBakedCustomAttributePerBoneData> BakedPerBoneCustomAttributeData;
+};
+
+class UTimecodeProvider : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "TimecodeProvider");
+    float FrameDelay;
+    void FetchAndUpdate();
+    bool FetchTimecode(FQualifiedFrameTime& OutFrameTime);
+    UE_PURE FQualifiedFrameTime GetDelayedQualifiedFrameTime() const;
+    UE_PURE FTimecode GetDelayedTimecode() const;
+    UE_PURE FFrameRate GetFrameRate() const;
+    UE_PURE FQualifiedFrameTime GetQualifiedFrameTime() const;
+    UE_PURE TEnum<ETimecodeProviderSynchronizationState> GetSynchronizationState() const;
+    UE_PURE FTimecode GetTimecode() const;
+};
+
+class APhysicsVolume : public AVolume
+{
+public:
+    UE_CLASS("/Script/Engine", "PhysicsVolume");
+    float TerminalVelocity;
+    int Priority;
+    float FluidFriction;
+    bool bWaterVolume;
+    bool bPhysicsOnContact;
 private:
     struct UeMarkers
     {
-        static constexpr const char* UeClassTail = "0x00800000 /Script/Engine.SkeletalMeshComponent Engine";
+        static constexpr const char* BrushComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
+        static constexpr const char* RootComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
     };
 };
 
-class UKismetInputLibrary : public UBlueprintFunctionLibrary
+class AKillZVolume : public APhysicsVolume
 {
 public:
-    UE_CLASS("/Script/Engine", "KismetInputLibrary");
-    static void CalibrateTilt();
-    UE_PURE static bool EqualEqual_InputChordInputChord(FInputChord A, FInputChord B);
-    UE_PURE static bool EqualEqual_KeyKey(FKey A, FKey B);
-    UE_PURE static float GetAnalogValue(const FAnalogInputEvent& Input);
-    UE_PURE static FKey GetKey(const FKeyEvent& Input);
-    UE_PURE static int GetUserIndex(const FKeyEvent& Input);
-    UE_PURE static FText InputChord_GetDisplayName(const FInputChord& Key);
-    UE_PURE static bool InputEvent_IsAltDown(const FInputEvent& Input);
-    UE_PURE static bool InputEvent_IsCommandDown(const FInputEvent& Input);
-    UE_PURE static bool InputEvent_IsControlDown(const FInputEvent& Input);
-    UE_PURE static bool InputEvent_IsLeftAltDown(const FInputEvent& Input);
-    UE_PURE static bool InputEvent_IsLeftCommandDown(const FInputEvent& Input);
-    UE_PURE static bool InputEvent_IsLeftControlDown(const FInputEvent& Input);
-    UE_PURE static bool InputEvent_IsLeftShiftDown(const FInputEvent& Input);
-    UE_PURE static bool InputEvent_IsRepeat(const FInputEvent& Input);
-    UE_PURE static bool InputEvent_IsRightAltDown(const FInputEvent& Input);
-    UE_PURE static bool InputEvent_IsRightCommandDown(const FInputEvent& Input);
-    UE_PURE static bool InputEvent_IsRightControlDown(const FInputEvent& Input);
-    UE_PURE static bool InputEvent_IsRightShiftDown(const FInputEvent& Input);
-    UE_PURE static bool InputEvent_IsShiftDown(const FInputEvent& Input);
-    UE_PURE static FText Key_GetDisplayName(const FKey& Key);
-    UE_PURE static TEnum<EUINavigationAction> Key_GetNavigationAction(const FKey& InKey);
-    UE_PURE static TEnum<EUINavigationAction> Key_GetNavigationActionFromKey(const FKeyEvent& InKeyEvent);
-    UE_PURE static TEnum<EUINavigation> Key_GetNavigationDirectionFromAnalog(const FAnalogInputEvent& InAnalogEvent);
-    UE_PURE static TEnum<EUINavigation> Key_GetNavigationDirectionFromKey(const FKeyEvent& InKeyEvent);
-    UE_PURE static bool Key_IsAnalog(const FKey& Key);
-    UE_PURE static bool Key_IsAxis1D(const FKey& Key);
-    UE_PURE static bool Key_IsAxis2D(const FKey& Key);
-    UE_PURE static bool Key_IsAxis3D(const FKey& Key);
-    UE_PURE static bool Key_IsButtonAxis(const FKey& Key);
-    UE_PURE static bool Key_IsDigital(const FKey& Key);
-    UE_PURE static bool Key_IsGamepadKey(const FKey& Key);
-    UE_PURE static bool Key_IsKeyboardKey(const FKey& Key);
-    UE_PURE static bool Key_IsModifierKey(const FKey& Key);
-    UE_PURE static bool Key_IsMouseButton(const FKey& Key);
-    UE_PURE static bool Key_IsValid(const FKey& Key);
-    UE_PURE static bool Key_IsVectorAxis(const FKey& Key);
-    UE_PURE static FVector2D PointerEvent_GetCursorDelta(const FPointerEvent& Input);
-    UE_PURE static FKey PointerEvent_GetEffectingButton(const FPointerEvent& Input);
-    UE_PURE static FVector2D PointerEvent_GetGestureDelta(const FPointerEvent& Input);
-    UE_PURE static TEnum<ESlateGesture> PointerEvent_GetGestureType(const FPointerEvent& Input);
-    UE_PURE static FVector2D PointerEvent_GetLastScreenSpacePosition(const FPointerEvent& Input);
-    UE_PURE static int PointerEvent_GetPointerIndex(const FPointerEvent& Input);
-    UE_PURE static FVector2D PointerEvent_GetScreenSpacePosition(const FPointerEvent& Input);
-    UE_PURE static int PointerEvent_GetTouchpadIndex(const FPointerEvent& Input);
-    UE_PURE static int PointerEvent_GetUserIndex(const FPointerEvent& Input);
-    UE_PURE static float PointerEvent_GetWheelDelta(const FPointerEvent& Input);
-    UE_PURE static bool PointerEvent_IsMouseButtonDown(const FPointerEvent& Input, FKey MouseButton);
-    UE_PURE static bool PointerEvent_IsTouchEvent(const FPointerEvent& Input);
+    UE_CLASS("/Script/Engine", "KillZVolume");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* BrushComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
+        static constexpr const char* RootComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
+    };
 };
 
-class UMaterialExpressionBumpOffset : public UMaterialExpression
+class UMaterialExpressionBlendMaterialAttributes : public UMaterialExpression
 {
 public:
-    UE_CLASS("/Script/Engine", "MaterialExpressionBumpOffset");
-    FExpressionInput Coordinate;
-    FExpressionInput Height;
-    FExpressionInput HeightRatioInput;
-    float HeightRatio;
-    float ReferencePlane;
-    uint32 ConstCoordinate;
+    UE_CLASS("/Script/Engine", "MaterialExpressionBlendMaterialAttributes");
+    FMaterialAttributesInput A;
+    FMaterialAttributesInput B;
+    FExpressionInput alpha;
+    TEnum<EMaterialAttributeBlend> PixelAttributeBlendType;
+    TEnum<EMaterialAttributeBlend> VertexAttributeBlendType;
 };
 
-class UKismetSystemLibrary : public UBlueprintFunctionLibrary
+class UKismetStringLibrary : public UBlueprintFunctionLibrary
 {
 public:
-    UE_CLASS("/Script/Engine", "KismetSystemLibrary");
-    static FDebugFloatHistory AddFloatHistorySample(float Value, const FDebugFloatHistory& FloatHistory);
-    static int BeginTransaction(FString Context, FText Description, class UObject* PrimaryObject);
-    static bool BoxOverlapActors(class UObject* WorldContextObject, FVector BoxPos, FVector BoxExtent, const TArray<EObjectTypeQuery>& ObjectTypes, class UClass* ActorClassFilter, const TArray<class AActor*>& ActorsToIgnore, TArray<class AActor*>& OutActors);
-    static bool BoxOverlapActors(FVector BoxPos, FVector BoxExtent, const TArray<EObjectTypeQuery>& ObjectTypes, class UClass* ActorClassFilter, const TArray<class AActor*>& ActorsToIgnore, TArray<class AActor*>& OutActors);
-    static bool BoxOverlapComponents(class UObject* WorldContextObject, FVector BoxPos, FVector Extent, const TArray<EObjectTypeQuery>& ObjectTypes, class UClass* ComponentClassFilter, const TArray<class AActor*>& ActorsToIgnore, TArray<class UPrimitiveComponent*>& OutComponents);
-    static bool BoxOverlapComponents(FVector BoxPos, FVector Extent, const TArray<EObjectTypeQuery>& ObjectTypes, class UClass* ComponentClassFilter, const TArray<class AActor*>& ActorsToIgnore, TArray<class UPrimitiveComponent*>& OutComponents);
-    static bool BoxTraceMulti(class UObject* WorldContextObject, FVector Start, FVector End, FVector HalfSize, FRotator Orientation, TEnum<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool BoxTraceMulti(FVector Start, FVector End, FVector HalfSize, FRotator Orientation, TEnum<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool BoxTraceMultiByProfile(class UObject* WorldContextObject, FVector Start, FVector End, FVector HalfSize, FRotator Orientation, FName ProfileName, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool BoxTraceMultiByProfile(FVector Start, FVector End, FVector HalfSize, FRotator Orientation, FName ProfileName, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool BoxTraceMultiForObjects(class UObject* WorldContextObject, FVector Start, FVector End, FVector HalfSize, FRotator Orientation, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool BoxTraceMultiForObjects(FVector Start, FVector End, FVector HalfSize, FRotator Orientation, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool BoxTraceSingle(class UObject* WorldContextObject, FVector Start, FVector End, FVector HalfSize, FRotator Orientation, TEnum<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool BoxTraceSingle(FVector Start, FVector End, FVector HalfSize, FRotator Orientation, TEnum<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool BoxTraceSingleByProfile(class UObject* WorldContextObject, FVector Start, FVector End, FVector HalfSize, FRotator Orientation, FName ProfileName, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool BoxTraceSingleByProfile(FVector Start, FVector End, FVector HalfSize, FRotator Orientation, FName ProfileName, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool BoxTraceSingleForObjects(class UObject* WorldContextObject, FVector Start, FVector End, FVector HalfSize, FRotator Orientation, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool BoxTraceSingleForObjects(FVector Start, FVector End, FVector HalfSize, FRotator Orientation, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static void BreakSoftClassPath(FSoftClassPath InSoftClassPath, FString& PathString);
-    static void BreakSoftObjectPath(FSoftObjectPath InSoftObjectPath, FString& PathString);
-    static void CancelTransaction(int Index_0);
-    static bool CanLaunchURL(FString URL);
-    static bool CapsuleOverlapActors(class UObject* WorldContextObject, FVector CapsulePos, float Radius, float HalfHeight, const TArray<EObjectTypeQuery>& ObjectTypes, class UClass* ActorClassFilter, const TArray<class AActor*>& ActorsToIgnore, TArray<class AActor*>& OutActors);
-    static bool CapsuleOverlapActors(FVector CapsulePos, float Radius, float HalfHeight, const TArray<EObjectTypeQuery>& ObjectTypes, class UClass* ActorClassFilter, const TArray<class AActor*>& ActorsToIgnore, TArray<class AActor*>& OutActors);
-    static bool CapsuleOverlapComponents(class UObject* WorldContextObject, FVector CapsulePos, float Radius, float HalfHeight, const TArray<EObjectTypeQuery>& ObjectTypes, class UClass* ComponentClassFilter, const TArray<class AActor*>& ActorsToIgnore, TArray<class UPrimitiveComponent*>& OutComponents);
-    static bool CapsuleOverlapComponents(FVector CapsulePos, float Radius, float HalfHeight, const TArray<EObjectTypeQuery>& ObjectTypes, class UClass* ComponentClassFilter, const TArray<class AActor*>& ActorsToIgnore, TArray<class UPrimitiveComponent*>& OutComponents);
-    static bool CapsuleTraceMulti(class UObject* WorldContextObject, FVector Start, FVector End, float Radius, float HalfHeight, TEnum<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool CapsuleTraceMulti(FVector Start, FVector End, float Radius, float HalfHeight, TEnum<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool CapsuleTraceMultiByProfile(class UObject* WorldContextObject, FVector Start, FVector End, float Radius, float HalfHeight, FName ProfileName, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool CapsuleTraceMultiByProfile(FVector Start, FVector End, float Radius, float HalfHeight, FName ProfileName, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool CapsuleTraceMultiForObjects(class UObject* WorldContextObject, FVector Start, FVector End, float Radius, float HalfHeight, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool CapsuleTraceMultiForObjects(FVector Start, FVector End, float Radius, float HalfHeight, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool CapsuleTraceSingle(class UObject* WorldContextObject, FVector Start, FVector End, float Radius, float HalfHeight, TEnum<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool CapsuleTraceSingle(FVector Start, FVector End, float Radius, float HalfHeight, TEnum<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool CapsuleTraceSingleByProfile(class UObject* WorldContextObject, FVector Start, FVector End, float Radius, float HalfHeight, FName ProfileName, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool CapsuleTraceSingleByProfile(FVector Start, FVector End, float Radius, float HalfHeight, FName ProfileName, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool CapsuleTraceSingleForObjects(class UObject* WorldContextObject, FVector Start, FVector End, float Radius, float HalfHeight, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool CapsuleTraceSingleForObjects(FVector Start, FVector End, float Radius, float HalfHeight, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static void CollectGarbage();
-    static bool ComponentOverlapActors(class UPrimitiveComponent* Component, const FTransform& ComponentTransform, const TArray<EObjectTypeQuery>& ObjectTypes, class UClass* ActorClassFilter, const TArray<class AActor*>& ActorsToIgnore, TArray<class AActor*>& OutActors);
-    static bool ComponentOverlapComponents(class UPrimitiveComponent* Component, const FTransform& ComponentTransform, const TArray<EObjectTypeQuery>& ObjectTypes, class UClass* ComponentClassFilter, const TArray<class AActor*>& ActorsToIgnore, TArray<class UPrimitiveComponent*>& OutComponents);
-    static void ControlScreensaver(bool bAllowScreenSaver);
-    UE_PURE static TSoftClassPtr<class UClass> Conv_ClassToSoftClassReference(const TSubclassOf<class UObject>& Class_0);
-    UE_PURE static class UObject* Conv_InterfaceToObject(const TScriptInterface<class IInterface>& Interface);
-    UE_PURE static TSoftObjectPtr<class UObject> Conv_ObjectToSoftObjectReference(class UObject* Object);
-    UE_PURE static FString Conv_PrimaryAssetIdToString(FPrimaryAssetId PrimaryAssetId);
-    UE_PURE static FString Conv_PrimaryAssetTypeToString(FPrimaryAssetType PrimaryAssetType);
-    UE_PURE static TSoftClassPtr<class UClass> Conv_SoftClassPathToSoftClassRef(const FSoftClassPath& SoftClassPath);
-    UE_PURE static TSubclassOf<class UObject> Conv_SoftClassReferenceToClass(const TSoftClassPtr<class UClass>& SoftClass);
-    UE_PURE static FString Conv_SoftClassReferenceToString(const TSoftClassPtr<class UClass>& SoftClassReference);
-    UE_PURE static class UObject* Conv_SoftObjectReferenceToObject(const TSoftObjectPtr<class UObject>& SoftObject);
-    UE_PURE static FString Conv_SoftObjectReferenceToString(const TSoftObjectPtr<class UObject>& SoftObjectReference);
-    UE_PURE static TSoftObjectPtr<class UObject> Conv_SoftObjPathToSoftObjRef(const FSoftObjectPath& SoftObjectPath);
-    UE_PURE static FString ConvertToAbsolutePath(FString Filename);
-    UE_PURE static FString ConvertToRelativePath(FString Filename);
-    static void CreateCopyForUndoBuffer(class UObject* ObjectToModify);
-    static void Delay(class UObject* WorldContextObject, float Duration, FLatentActionInfo LatentInfo);
-    static void Delay(float Duration, FLatentActionInfo LatentInfo);
-    static void Delay(class UObject* WorldContextObject, float Duration);
-    static void Delay(float Duration);
-    UE_PURE static bool DoesImplementInterface(class UObject* TestObject, TSubclassOf<class IInterface> Interface);
-    static void DrawDebugArrow(class UObject* WorldContextObject, FVector LineStart, FVector LineEnd, float ArrowSize, FLinearColor LineColor, float Duration, float Thickness);
-    static void DrawDebugArrow(FVector LineStart, FVector LineEnd, float ArrowSize, FLinearColor LineColor, float Duration, float Thickness);
-    static void DrawDebugBox(class UObject* WorldContextObject, FVector Center, FVector Extent, FLinearColor LineColor, FRotator Rotation, float Duration, float Thickness);
-    static void DrawDebugBox(FVector Center, FVector Extent, FLinearColor LineColor, FRotator Rotation, float Duration, float Thickness);
-    static void DrawDebugCamera(class ACameraActor* CameraActor, FLinearColor CameraColor, float Duration);
-    static void DrawDebugCapsule(class UObject* WorldContextObject, FVector Center, float HalfHeight, float Radius, FRotator Rotation, FLinearColor LineColor, float Duration, float Thickness);
-    static void DrawDebugCapsule(FVector Center, float HalfHeight, float Radius, FRotator Rotation, FLinearColor LineColor, float Duration, float Thickness);
-    static void DrawDebugCircle(class UObject* WorldContextObject, FVector Center, float Radius, int NumSegments, FLinearColor LineColor, float Duration, float Thickness, FVector YAxis, FVector ZAxis, bool bDrawAxis);
-    static void DrawDebugCircle(FVector Center, float Radius, int NumSegments, FLinearColor LineColor, float Duration, float Thickness, FVector YAxis, FVector ZAxis, bool bDrawAxis);
-    static void DrawDebugCone(class UObject* WorldContextObject, FVector Origin, FVector Direction, float Length, float AngleWidth, float AngleHeight, int NumSides, FLinearColor LineColor, float Duration, float Thickness);
-    static void DrawDebugCone(FVector Origin, FVector Direction, float Length, float AngleWidth, float AngleHeight, int NumSides, FLinearColor LineColor, float Duration, float Thickness);
-    static void DrawDebugConeInDegrees(class UObject* WorldContextObject, FVector Origin, FVector Direction, float Length, float AngleWidth, float AngleHeight, int NumSides, FLinearColor LineColor, float Duration, float Thickness);
-    static void DrawDebugConeInDegrees(FVector Origin, FVector Direction, float Length, float AngleWidth, float AngleHeight, int NumSides, FLinearColor LineColor, float Duration, float Thickness);
-    static void DrawDebugCoordinateSystem(class UObject* WorldContextObject, FVector AxisLoc, FRotator AxisRot, float Scale, float Duration, float Thickness);
-    static void DrawDebugCoordinateSystem(FVector AxisLoc, FRotator AxisRot, float Scale, float Duration, float Thickness);
-    static void DrawDebugCylinder(class UObject* WorldContextObject, FVector Start, FVector End, float Radius, int Segments, FLinearColor LineColor, float Duration, float Thickness);
-    static void DrawDebugCylinder(FVector Start, FVector End, float Radius, int Segments, FLinearColor LineColor, float Duration, float Thickness);
-    static void DrawDebugFloatHistoryLocation(class UObject* WorldContextObject, const FDebugFloatHistory& FloatHistory, FVector DrawLocation, FVector2D DrawSize, FLinearColor DrawColor, float Duration);
-    static void DrawDebugFloatHistoryLocation(const FDebugFloatHistory& FloatHistory, FVector DrawLocation, FVector2D DrawSize, FLinearColor DrawColor, float Duration);
-    static void DrawDebugFloatHistoryTransform(class UObject* WorldContextObject, const FDebugFloatHistory& FloatHistory, const FTransform& DrawTransform, FVector2D DrawSize, FLinearColor DrawColor, float Duration);
-    static void DrawDebugFloatHistoryTransform(const FDebugFloatHistory& FloatHistory, const FTransform& DrawTransform, FVector2D DrawSize, FLinearColor DrawColor, float Duration);
-    static void DrawDebugFrustum(class UObject* WorldContextObject, const FTransform& FrustumTransform, FLinearColor FrustumColor, float Duration, float Thickness);
-    static void DrawDebugFrustum(const FTransform& FrustumTransform, FLinearColor FrustumColor, float Duration, float Thickness);
-    static void DrawDebugLine(class UObject* WorldContextObject, FVector LineStart, FVector LineEnd, FLinearColor LineColor, float Duration, float Thickness);
-    static void DrawDebugLine(FVector LineStart, FVector LineEnd, FLinearColor LineColor, float Duration, float Thickness);
-    static void DrawDebugPlane(class UObject* WorldContextObject, const FPlane& PlaneCoordinates, FVector Location, float Size, FLinearColor PlaneColor, float Duration);
-    static void DrawDebugPlane(const FPlane& PlaneCoordinates, FVector Location, float Size, FLinearColor PlaneColor, float Duration);
-    static void DrawDebugPoint(class UObject* WorldContextObject, FVector Position, float Size, FLinearColor PointColor, float Duration);
-    static void DrawDebugPoint(FVector Position, float Size, FLinearColor PointColor, float Duration);
-    static void DrawDebugSphere(class UObject* WorldContextObject, FVector Center, float Radius, int Segments, FLinearColor LineColor, float Duration, float Thickness);
-    static void DrawDebugSphere(FVector Center, float Radius, int Segments, FLinearColor LineColor, float Duration, float Thickness);
-    static void DrawDebugString(class UObject* WorldContextObject, FVector TextLocation, FString Text, class AActor* TestBaseActor, FLinearColor TextColor, float Duration);
-    static void DrawDebugString(FVector TextLocation, FString Text, class AActor* TestBaseActor, FLinearColor TextColor, float Duration);
-    static int EndTransaction();
-    UE_PURE static bool EqualEqual_PrimaryAssetId(FPrimaryAssetId A, FPrimaryAssetId B);
-    UE_PURE static bool EqualEqual_PrimaryAssetType(FPrimaryAssetType A, FPrimaryAssetType B);
-    UE_PURE static bool EqualEqual_SoftClassReference(const TSoftClassPtr<class UClass>& A, const TSoftClassPtr<class UClass>& B);
-    UE_PURE static bool EqualEqual_SoftObjectReference(const TSoftObjectPtr<class UObject>& A, const TSoftObjectPtr<class UObject>& B);
-    static void ExecuteConsoleCommand(class UObject* WorldContextObject, FString Command, class APlayerController* SpecificPlayer);
-    static void ExecuteConsoleCommand(FString Command, class APlayerController* SpecificPlayer);
-    static void FlushDebugStrings(class UObject* WorldContextObject);
-    static void FlushDebugStrings();
-    static void FlushPersistentDebugLines(class UObject* WorldContextObject);
-    static void FlushPersistentDebugLines();
-    static void ForceCloseAdBanner();
-    static void GetActorBounds(class AActor* Actor, FVector& Origin, FVector& BoxExtent);
-    static void GetActorListFromComponentList(const TArray<class UPrimitiveComponent*>& ComponentList, class UClass* ActorClassFilter, TArray<class AActor*>& OutActorList);
-    UE_PURE static int GetAdIDCount();
-    UE_PURE static FString GetClassDisplayName(class UClass* Class_0);
-    UE_PURE static TSubclassOf<class UObject> GetClassFromPrimaryAssetId(FPrimaryAssetId PrimaryAssetId);
-    static FString GetCommandLine();
-    static void GetComponentBounds(class USceneComponent* Component, FVector& Origin, FVector& BoxExtent, float& SphereRadius);
-    static bool GetConsoleVariableBoolValue(FString VariableName);
-    static float GetConsoleVariableFloatValue(FString VariableName);
-    static int GetConsoleVariableIntValue(FString VariableName);
-    static bool GetConvenientWindowedResolutions(TArray<FIntPoint>& Resolutions);
-    static bool GetCurrentBundleState(FPrimaryAssetId PrimaryAssetId, bool bForceCurrentState, TArray<FName>& OutBundles);
-    UE_PURE static FString GetDefaultLanguage();
-    UE_PURE static FString GetDefaultLocale();
-    UE_PURE static FString GetDeviceId();
-    UE_PURE static FString GetDisplayName(class UObject* Object);
-    UE_PURE static FString GetEngineVersion();
-    UE_PURE static int64 GetFrameCount();
-    UE_PURE static FString GetGameBundleId();
-    UE_PURE static FString GetGameName();
-    UE_PURE static class UTexture2D* GetGamepadButtonGlyph(FString ButtonKey, int ControllerIndex);
-    UE_PURE static FString GetGamepadControllerName(int ControllerId);
-    UE_PURE static float GetGameTimeInSeconds(class UObject* WorldContextObject);
-    UE_PURE static float GetGameTimeInSeconds();
-    static FString GetLocalCurrencyCode();
-    static FString GetLocalCurrencySymbol();
-    UE_PURE static int GetMinYResolutionFor3DView();
-    UE_PURE static int GetMinYResolutionForUI();
-    UE_PURE static class UObject* GetObjectFromPrimaryAssetId(FPrimaryAssetId PrimaryAssetId);
-    UE_PURE static FString GetObjectName(class UObject* Object);
-    UE_PURE static class UObject* GetOuterObject(class UObject* Object);
-    UE_PURE static FString GetPathName(class UObject* Object);
-    UE_PURE static FString GetPlatformUserDir();
-    UE_PURE static FString GetPlatformUserName();
-    static TArray<FString> GetPreferredLanguages();
-    UE_PURE static FPrimaryAssetId GetPrimaryAssetIdFromClass(TSubclassOf<class UObject> Class_0);
-    UE_PURE static FPrimaryAssetId GetPrimaryAssetIdFromObject(class UObject* Object);
-    UE_PURE static FPrimaryAssetId GetPrimaryAssetIdFromSoftClassReference(TSoftClassPtr<class UClass> SoftClassReference);
-    UE_PURE static FPrimaryAssetId GetPrimaryAssetIdFromSoftObjectReference(TSoftObjectPtr<class UObject> SoftObjectReference);
-    static void GetPrimaryAssetIdList(FPrimaryAssetType PrimaryAssetType, TArray<FPrimaryAssetId>& OutPrimaryAssetIdList);
-    static void GetPrimaryAssetsWithBundleState(const TArray<FName>& RequiredBundles, const TArray<FName>& ExcludedBundles, const TArray<FPrimaryAssetType>& ValidTypes, bool bForceCurrentState, TArray<FPrimaryAssetId>& OutPrimaryAssetIdList);
-    UE_PURE static FString GetProjectContentDirectory();
-    UE_PURE static FString GetProjectDirectory();
-    UE_PURE static FString GetProjectSavedDirectory();
-    UE_PURE static int GetRenderingDetailMode();
-    UE_PURE static int GetRenderingMaterialQualityLevel();
-    UE_PURE static TSoftClassPtr<class UClass> GetSoftClassReferenceFromPrimaryAssetId(FPrimaryAssetId PrimaryAssetId);
-    UE_PURE static TSoftObjectPtr<class UObject> GetSoftObjectReferenceFromPrimaryAssetId(FPrimaryAssetId PrimaryAssetId);
-    static bool GetSupportedFullscreenResolutions(TArray<FIntPoint>& Resolutions);
-    UE_PURE static FString GetSystemPath(class UObject* Object);
-    UE_PURE static FString GetUniqueDeviceId();
-    UE_PURE static bool GetVolumeButtonsHandledBySystem();
-    static void HideAdBanner();
-    UE_PURE static bool IsControllerAssignedToGamepad(int ControllerId);
-    UE_PURE static bool IsDedicatedServer(class UObject* WorldContextObject);
-    UE_PURE static bool IsDedicatedServer();
-    static bool IsInterstitialAdAvailable();
-    static bool IsInterstitialAdRequested();
-    UE_PURE static bool IsLoggedIn(class APlayerController* SpecificPlayer);
-    UE_PURE static bool IsPackagedForDistribution();
-    static bool IsScreensaverEnabled();
-    UE_PURE static bool IsServer(class UObject* WorldContextObject);
-    UE_PURE static bool IsServer();
-    UE_PURE static bool IsSplitScreen(class UObject* WorldContextObject);
-    UE_PURE static bool IsSplitScreen();
-    UE_PURE static bool IsStandalone(class UObject* WorldContextObject);
-    UE_PURE static bool IsStandalone();
-    UE_PURE static bool IsUnattended();
-    UE_PURE static bool IsValid(class UObject* Object);
-    UE_PURE static bool IsValidClass(class UClass* Class_0);
-    UE_PURE static bool IsValidPrimaryAssetId(FPrimaryAssetId PrimaryAssetId);
-    UE_PURE static bool IsValidPrimaryAssetType(FPrimaryAssetType PrimaryAssetType);
-    UE_PURE static bool IsValidSoftClassReference(const TSoftClassPtr<class UClass>& SoftClassReference);
-    UE_PURE static bool IsValidSoftObjectReference(const TSoftObjectPtr<class UObject>& SoftObjectReference);
-    static void K2_ClearAndInvalidateTimerHandle(class UObject* WorldContextObject, FTimerHandle& Handle);
-    static void K2_ClearAndInvalidateTimerHandle(FTimerHandle& Handle);
-    static void K2_ClearTimer(class UObject* Object, FString FunctionName);
-    static void K2_ClearTimerDelegate(TDelegate<void()> Delegate);
-    static void K2_ClearTimerHandle(class UObject* WorldContextObject, FTimerHandle Handle);
-    static void K2_ClearTimerHandle(FTimerHandle Handle);
-    UE_PURE static float K2_GetTimerElapsedTime(class UObject* Object, FString FunctionName);
-    UE_PURE static float K2_GetTimerElapsedTimeDelegate(TDelegate<void()> Delegate);
-    UE_PURE static float K2_GetTimerElapsedTimeHandle(class UObject* WorldContextObject, FTimerHandle Handle);
-    UE_PURE static float K2_GetTimerElapsedTimeHandle(FTimerHandle Handle);
-    UE_PURE static float K2_GetTimerRemainingTime(class UObject* Object, FString FunctionName);
-    UE_PURE static float K2_GetTimerRemainingTimeDelegate(TDelegate<void()> Delegate);
-    UE_PURE static float K2_GetTimerRemainingTimeHandle(class UObject* WorldContextObject, FTimerHandle Handle);
-    UE_PURE static float K2_GetTimerRemainingTimeHandle(FTimerHandle Handle);
-    static FTimerHandle K2_InvalidateTimerHandle(FTimerHandle& Handle);
-    UE_PURE static bool K2_IsTimerActive(class UObject* Object, FString FunctionName);
-    UE_PURE static bool K2_IsTimerActiveDelegate(TDelegate<void()> Delegate);
-    UE_PURE static bool K2_IsTimerActiveHandle(class UObject* WorldContextObject, FTimerHandle Handle);
-    UE_PURE static bool K2_IsTimerActiveHandle(FTimerHandle Handle);
-    UE_PURE static bool K2_IsTimerPaused(class UObject* Object, FString FunctionName);
-    UE_PURE static bool K2_IsTimerPausedDelegate(TDelegate<void()> Delegate);
-    UE_PURE static bool K2_IsTimerPausedHandle(class UObject* WorldContextObject, FTimerHandle Handle);
-    UE_PURE static bool K2_IsTimerPausedHandle(FTimerHandle Handle);
-    UE_PURE static bool K2_IsValidTimerHandle(FTimerHandle Handle);
-    static void K2_PauseTimer(class UObject* Object, FString FunctionName);
-    static void K2_PauseTimerDelegate(TDelegate<void()> Delegate);
-    static void K2_PauseTimerHandle(class UObject* WorldContextObject, FTimerHandle Handle);
-    static void K2_PauseTimerHandle(FTimerHandle Handle);
-    static FTimerHandle K2_SetTimer(class UObject* Object, FString FunctionName, float Time, bool bLooping, float InitialStartDelay, float InitialStartDelayVariance);
-    static FTimerHandle K2_SetTimerDelegate(TDelegate<void()> Delegate, float Time, bool bLooping, float InitialStartDelay, float InitialStartDelayVariance);
-    UE_PURE static bool K2_TimerExists(class UObject* Object, FString FunctionName);
-    UE_PURE static bool K2_TimerExistsDelegate(TDelegate<void()> Delegate);
-    UE_PURE static bool K2_TimerExistsHandle(class UObject* WorldContextObject, FTimerHandle Handle);
-    UE_PURE static bool K2_TimerExistsHandle(FTimerHandle Handle);
-    static void K2_UnPauseTimer(class UObject* Object, FString FunctionName);
-    static void K2_UnPauseTimerDelegate(TDelegate<void()> Delegate);
-    static void K2_UnPauseTimerHandle(class UObject* WorldContextObject, FTimerHandle Handle);
-    static void K2_UnPauseTimerHandle(FTimerHandle Handle);
-    static void LaunchURL(FString URL);
-    static bool LineTraceMulti(class UObject* WorldContextObject, FVector Start, FVector End, TEnum<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool LineTraceMulti(FVector Start, FVector End, TEnum<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool LineTraceMultiByProfile(class UObject* WorldContextObject, FVector Start, FVector End, FName ProfileName, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool LineTraceMultiByProfile(FVector Start, FVector End, FName ProfileName, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool LineTraceMultiForObjects(class UObject* WorldContextObject, FVector Start, FVector End, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool LineTraceMultiForObjects(FVector Start, FVector End, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool LineTraceSingle(class UObject* WorldContextObject, FVector Start, FVector End, TEnum<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool LineTraceSingle(FVector Start, FVector End, TEnum<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool LineTraceSingleByProfile(class UObject* WorldContextObject, FVector Start, FVector End, FName ProfileName, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool LineTraceSingleByProfile(FVector Start, FVector End, FName ProfileName, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool LineTraceSingleForObjects(class UObject* WorldContextObject, FVector Start, FVector End, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool LineTraceSingleForObjects(FVector Start, FVector End, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static void LoadAsset(class UObject* WorldContextObject, TSoftObjectPtr<class UObject> Asset, TDelegate<void(class UObject* Loaded)> OnLoaded, FLatentActionInfo LatentInfo);
-    static void LoadAsset(TSoftObjectPtr<class UObject> Asset, TDelegate<void(class UObject* Loaded)> OnLoaded, FLatentActionInfo LatentInfo);
-    static void LoadAsset(class UObject* WorldContextObject, TSoftObjectPtr<class UObject> Asset, TDelegate<void(class UObject* Loaded)> OnLoaded);
-    static void LoadAsset(TSoftObjectPtr<class UObject> Asset, TDelegate<void(class UObject* Loaded)> OnLoaded);
-    static class UObject* LoadAsset(class UObject* WorldContextObject, TSoftObjectPtr<class UObject> Asset);
-    static class UObject* LoadAsset(TSoftObjectPtr<class UObject> Asset);
-    static class UObject* LoadAsset_Blocking(TSoftObjectPtr<class UObject> Asset);
-    static void LoadAssetClass(class UObject* WorldContextObject, TSoftClassPtr<class UClass> AssetClass, TDelegate<void(TSubclassOf<class UObject> Loaded)> OnLoaded, FLatentActionInfo LatentInfo);
-    static void LoadAssetClass(TSoftClassPtr<class UClass> AssetClass, TDelegate<void(TSubclassOf<class UObject> Loaded)> OnLoaded, FLatentActionInfo LatentInfo);
-    static void LoadAssetClass(class UObject* WorldContextObject, TSoftClassPtr<class UClass> AssetClass, TDelegate<void(TSubclassOf<class UObject> Loaded)> OnLoaded);
-    static void LoadAssetClass(TSoftClassPtr<class UClass> AssetClass, TDelegate<void(TSubclassOf<class UObject> Loaded)> OnLoaded);
-    static TSubclassOf<class UObject> LoadAssetClass(class UObject* WorldContextObject, TSoftClassPtr<class UClass> AssetClass);
-    static TSubclassOf<class UObject> LoadAssetClass(TSoftClassPtr<class UClass> AssetClass);
-    static class UClass* LoadClassAsset_Blocking(TSoftClassPtr<class UClass> AssetClass);
-    static void LoadInterstitialAd(int AdIdIndex);
-    UE_PURE static bool MakeLiteralBool(bool Value);
-    UE_PURE static uint8 MakeLiteralByte(uint8 Value);
-    UE_PURE static float MakeLiteralFloat(float Value);
-    UE_PURE static int MakeLiteralInt(int Value);
-    UE_PURE static FName MakeLiteralName(FName Value);
-    UE_PURE static FString MakeLiteralString(FString Value);
-    UE_PURE static FText MakeLiteralText(FText Value);
-    UE_PURE static FSoftClassPath MakeSoftClassPath(FString PathString);
-    static FSoftObjectPath MakeSoftObjectPath(FString PathString);
-    static void MoveComponentTo(class USceneComponent* Component, FVector TargetRelativeLocation, FRotator TargetRelativeRotation, bool bEaseOut, bool bEaseIn, float OverTime, bool bForceShortestRotationPath, TEnum<EMoveComponentAction> MoveAction, FLatentActionInfo LatentInfo);
-    static void MoveComponentTo(class USceneComponent* Component, FVector TargetRelativeLocation, FRotator TargetRelativeRotation, bool bEaseOut, bool bEaseIn, float OverTime, bool bForceShortestRotationPath, TEnum<EMoveComponentAction> MoveAction);
-    UE_PURE static FString NormalizeFilename(FString InFilename);
-    UE_PURE static bool NotEqual_PrimaryAssetId(FPrimaryAssetId A, FPrimaryAssetId B);
-    UE_PURE static bool NotEqual_PrimaryAssetType(FPrimaryAssetType A, FPrimaryAssetType B);
-    UE_PURE static bool NotEqual_SoftClassReference(const TSoftClassPtr<class UClass>& A, const TSoftClassPtr<class UClass>& B);
-    UE_PURE static bool NotEqual_SoftObjectReference(const TSoftObjectPtr<class UObject>& A, const TSoftObjectPtr<class UObject>& B);
-    static void ParseCommandLine(FString InCmdLine, TArray<FString>& OutTokens, TArray<FString>& OutSwitches, TMap<FString, FString>& OutParams);
-    UE_PURE static bool ParseParam(FString inString, FString InParam);
-    static bool ParseParamValue(FString inString, FString InParam, FString& OutValue);
-    static void PrintString(class UObject* WorldContextObject, FString inString, bool bPrintToScreen, bool bPrintToLog, FLinearColor TextColor, float Duration);
-    static void PrintString(FString inString, bool bPrintToScreen, bool bPrintToLog, FLinearColor TextColor, float Duration);
-    static void PrintText(class UObject* WorldContextObject, FText InText, bool bPrintToScreen, bool bPrintToLog, FLinearColor TextColor, float Duration);
-    static void PrintText(FText InText, bool bPrintToScreen, bool bPrintToLog, FLinearColor TextColor, float Duration);
-    static void PrintWarning(FString inString);
-    static void QuitGame(class UObject* WorldContextObject, class APlayerController* SpecificPlayer, TEnum<EQuitPreference> QuitPreference, bool bIgnorePlatformRestrictions);
-    static void QuitGame(class APlayerController* SpecificPlayer, TEnum<EQuitPreference> QuitPreference, bool bIgnorePlatformRestrictions);
-    static void RegisterForRemoteNotifications();
-    static void ResetGamepadAssignments();
-    static void ResetGamepadAssignmentToController(int ControllerId);
-    static void RetriggerableDelay(class UObject* WorldContextObject, float Duration, FLatentActionInfo LatentInfo);
-    static void RetriggerableDelay(float Duration, FLatentActionInfo LatentInfo);
-    static void RetriggerableDelay(class UObject* WorldContextObject, float Duration);
-    static void RetriggerableDelay(float Duration);
-    static void SetBoolPropertyByName(class UObject* Object, FName PropertyName, bool Value);
-    static void SetBytePropertyByName(class UObject* Object, FName PropertyName, uint8 Value);
-    static void SetClassPropertyByName(class UObject* Object, FName PropertyName, TSubclassOf<class UObject> Value);
-    static void SetCollisionProfileNameProperty(class UObject* Object, FName PropertyName, const FCollisionProfileName& Value);
-    static void SetColorPropertyByName(class UObject* Object, FName PropertyName, const FColor& Value);
-    static void SetFloatPropertyByName(class UObject* Object, FName PropertyName, float Value);
-    static void SetGamepadsBlockDeviceFeedback(bool bBlock);
-    static void SetInt64PropertyByName(class UObject* Object, FName PropertyName, int64 Value);
-    static void SetInterfacePropertyByName(class UObject* Object, FName PropertyName, const TScriptInterface<class IInterface>& Value);
-    static void SetIntPropertyByName(class UObject* Object, FName PropertyName, int Value);
-    static void SetLinearColorPropertyByName(class UObject* Object, FName PropertyName, const FLinearColor& Value);
-    static void SetNamePropertyByName(class UObject* Object, FName PropertyName, const FName& Value);
-    static void SetObjectPropertyByName(class UObject* Object, FName PropertyName, class UObject* Value);
-    static void SetRotatorPropertyByName(class UObject* Object, FName PropertyName, const FRotator& Value);
-    static void SetSoftClassPropertyByName(class UObject* Object, FName PropertyName, const TSoftClassPtr<class UClass>& Value);
-    static void SetSoftObjectPropertyByName(class UObject* Object, FName PropertyName, const TSoftObjectPtr<class UObject>& Value);
-    static void SetStringPropertyByName(class UObject* Object, FName PropertyName, FString Value);
-    static void SetStructurePropertyByName(class UObject* Object, FName PropertyName, const FGenericStruct& Value);
-    static void SetSuppressViewportTransitionMessage(class UObject* WorldContextObject, bool bState);
-    static void SetSuppressViewportTransitionMessage(bool bState);
-    static void SetTextPropertyByName(class UObject* Object, FName PropertyName, const FText& Value);
-    static void SetTransformPropertyByName(class UObject* Object, FName PropertyName, const FTransform& Value);
-    static void SetUserActivity(const FUserActivity& UserActivity);
-    static void SetVectorPropertyByName(class UObject* Object, FName PropertyName, const FVector& Value);
-    static void SetVolumeButtonsHandledBySystem(bool bEnabled);
-    static void SetWindowTitle(const FText& Title);
-    static void ShowAdBanner(int AdIdIndex, bool bShowOnBottomOfScreen);
-    static void ShowInterstitialAd();
-    static void ShowPlatformSpecificAchievementsScreen(class APlayerController* SpecificPlayer);
-    static void ShowPlatformSpecificLeaderboardScreen(FString CategoryName);
-    static void SnapshotObject(class UObject* Object);
-    static bool SphereOverlapActors(class UObject* WorldContextObject, FVector SpherePos, float SphereRadius, const TArray<EObjectTypeQuery>& ObjectTypes, class UClass* ActorClassFilter, const TArray<class AActor*>& ActorsToIgnore, TArray<class AActor*>& OutActors);
-    static bool SphereOverlapActors(FVector SpherePos, float SphereRadius, const TArray<EObjectTypeQuery>& ObjectTypes, class UClass* ActorClassFilter, const TArray<class AActor*>& ActorsToIgnore, TArray<class AActor*>& OutActors);
-    static bool SphereOverlapComponents(class UObject* WorldContextObject, FVector SpherePos, float SphereRadius, const TArray<EObjectTypeQuery>& ObjectTypes, class UClass* ComponentClassFilter, const TArray<class AActor*>& ActorsToIgnore, TArray<class UPrimitiveComponent*>& OutComponents);
-    static bool SphereOverlapComponents(FVector SpherePos, float SphereRadius, const TArray<EObjectTypeQuery>& ObjectTypes, class UClass* ComponentClassFilter, const TArray<class AActor*>& ActorsToIgnore, TArray<class UPrimitiveComponent*>& OutComponents);
-    static bool SphereTraceMulti(class UObject* WorldContextObject, FVector Start, FVector End, float Radius, TEnum<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool SphereTraceMulti(FVector Start, FVector End, float Radius, TEnum<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool SphereTraceMultiByProfile(class UObject* WorldContextObject, FVector Start, FVector End, float Radius, FName ProfileName, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool SphereTraceMultiByProfile(FVector Start, FVector End, float Radius, FName ProfileName, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool SphereTraceMultiForObjects(class UObject* WorldContextObject, FVector Start, FVector End, float Radius, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool SphereTraceMultiForObjects(FVector Start, FVector End, float Radius, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool SphereTraceSingle(class UObject* WorldContextObject, FVector Start, FVector End, float Radius, TEnum<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool SphereTraceSingle(FVector Start, FVector End, float Radius, TEnum<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool SphereTraceSingleByProfile(class UObject* WorldContextObject, FVector Start, FVector End, float Radius, FName ProfileName, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool SphereTraceSingleByProfile(FVector Start, FVector End, float Radius, FName ProfileName, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool SphereTraceSingleForObjects(class UObject* WorldContextObject, FVector Start, FVector End, float Radius, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static bool SphereTraceSingleForObjects(FVector Start, FVector End, float Radius, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
-    static void StackTrace();
-    static void TransactObject(class UObject* Object);
-    static void UnloadPrimaryAsset(FPrimaryAssetId PrimaryAssetId);
-    static void UnloadPrimaryAssetList(const TArray<FPrimaryAssetId>& PrimaryAssetIdList);
-    static void UnregisterForRemoteNotifications();
+    UE_CLASS("/Script/Engine", "KismetStringLibrary");
+    UE_PURE static FString BuildString_Bool(FString AppendTo, FString Prefix, bool InBool, FString Suffix);
+    UE_PURE static FString BuildString_Color(FString AppendTo, FString Prefix, FLinearColor InColor, FString Suffix);
+    UE_PURE static FString BuildString_Float(FString AppendTo, FString Prefix, float InFloat, FString Suffix);
+    UE_PURE static FString BuildString_Int(FString AppendTo, FString Prefix, int inInt, FString Suffix);
+    UE_PURE static FString BuildString_IntVector(FString AppendTo, FString Prefix, FIntVector InIntVector, FString Suffix);
+    UE_PURE static FString BuildString_Name(FString AppendTo, FString Prefix, FName InName, FString Suffix);
+    UE_PURE static FString BuildString_Object(FString AppendTo, FString Prefix, class UObject* InObj, FString Suffix);
+    UE_PURE static FString BuildString_Rotator(FString AppendTo, FString Prefix, FRotator InRot, FString Suffix);
+    UE_PURE static FString BuildString_Vector(FString AppendTo, FString Prefix, FVector InVector, FString Suffix);
+    UE_PURE static FString BuildString_Vector2d(FString AppendTo, FString Prefix, FVector2D InVector2D, FString Suffix);
+    UE_PURE static FString Concat_StrStr(FString A, FString B);
+    UE_PURE static bool Contains(FString SearchIn, FString Substring, bool bUseCase, bool bSearchFromEnd);
+    UE_PURE static FString Conv_BoolToString(bool InBool);
+    UE_PURE static FString Conv_ByteToString(uint8 InByte);
+    UE_PURE static FString Conv_ColorToString(FLinearColor InColor);
+    UE_PURE static FString Conv_FloatToString(float InFloat);
+    UE_PURE static FString Conv_IntPointToString(FIntPoint InIntPoint);
+    UE_PURE static FString Conv_IntToString(int inInt);
+    UE_PURE static FString Conv_IntVectorToString(FIntVector InIntVec);
+    UE_PURE static FString Conv_MatrixToString(const FMatrix& InMatrix);
+    UE_PURE static FString Conv_NameToString(FName InName);
+    UE_PURE static FString Conv_ObjectToString(class UObject* InObj);
+    UE_PURE static FString Conv_RotatorToString(FRotator InRot);
+    static void Conv_StringToColor(FString inString, FLinearColor& OutConvertedColor, bool& OutIsValid);
+    UE_PURE static float Conv_StringToFloat(FString inString);
+    UE_PURE static int Conv_StringToInt(FString inString);
+    UE_PURE static FName Conv_StringToName(FString inString);
+    static void Conv_StringToRotator(FString inString, FRotator& OutConvertedRotator, bool& OutIsValid);
+    static void Conv_StringToVector(FString inString, FVector& OutConvertedVector, bool& OutIsValid);
+    static void Conv_StringToVector2D(FString inString, FVector2D& OutConvertedVector2D, bool& OutIsValid);
+    UE_PURE static FString Conv_TransformToString(const FTransform& InTrans);
+    UE_PURE static FString Conv_Vector2dToString(FVector2D InVec);
+    UE_PURE static FString Conv_VectorToString(FVector InVec);
+    static int CullArray(FString SourceString, TArray<FString>& inArray);
+    UE_PURE static bool EndsWith(FString SourceString, FString InSuffix, TEnum<ESearchCase> SearchCase);
+    UE_PURE static bool EqualEqual_StriStri(FString A, FString B);
+    UE_PURE static bool EqualEqual_StrStr(FString A, FString B);
+    UE_PURE static int FindSubstring(FString SearchIn, FString Substring, bool bUseCase, bool bSearchFromEnd, int StartPosition);
+    UE_PURE static TArray<FString> GetCharacterArrayFromString(FString SourceString);
+    UE_PURE static int GetCharacterAsNumber(FString SourceString, int Index_0);
+    UE_PURE static FString GetSubstring(FString SourceString, int StartIndex, int Length);
+    UE_PURE static bool isEmpty(FString inString);
+    UE_PURE static bool IsNumeric(FString SourceString);
+    UE_PURE static FString JoinStringArray(const TArray<FString>& SourceArray, FString Separator);
+    UE_PURE static FString Left(FString SourceString, int Count);
+    UE_PURE static FString LeftChop(FString SourceString, int Count);
+    UE_PURE static FString LeftPad(FString SourceString, int ChCount);
+    UE_PURE static int Len(FString S);
+    UE_PURE static bool MatchesWildcard(FString SourceString, FString Wildcard, TEnum<ESearchCase> SearchCase);
+    UE_PURE static FString Mid(FString SourceString, int Start, int Count);
+    UE_PURE static bool NotEqual_StriStri(FString A, FString B);
+    UE_PURE static bool NotEqual_StrStr(FString A, FString B);
+    UE_PURE static TArray<FString> ParseIntoArray(FString SourceString, FString Delimiter, bool CullEmptyStrings);
+    UE_PURE static FString Replace(FString SourceString, FString from, FString to, TEnum<ESearchCase> SearchCase);
+    static int ReplaceInline(FString& SourceString, FString SearchText, FString ReplacementText, TEnum<ESearchCase> SearchCase);
+    UE_PURE static FString Reverse(FString SourceString);
+    UE_PURE static FString Right(FString SourceString, int Count);
+    UE_PURE static FString RightChop(FString SourceString, int Count);
+    UE_PURE static FString RightPad(FString SourceString, int ChCount);
+    static bool Split(FString SourceString, FString InStr, FString& LeftS, FString& RightS, TEnum<ESearchCase> SearchCase, TEnum<ESearchDir> SearchDir);
+    UE_PURE static bool StartsWith(FString SourceString, FString InPrefix, TEnum<ESearchCase> SearchCase);
+    UE_PURE static FString TimeSecondsToString(float InSeconds);
+    UE_PURE static FString ToLower(FString SourceString);
+    UE_PURE static FString ToUpper(FString SourceString);
+    UE_PURE static FString Trim(FString SourceString);
+    UE_PURE static FString TrimTrailing(FString SourceString);
 };
 
 class USkinnedMeshComponent : public UMeshComponent
@@ -15713,34 +15492,10 @@ public:
     void TransformToBoneSpace(FName BoneName, FVector InPosition, FRotator InRotation, FVector& OutPosition, FRotator& OutRotation) const;
 };
 
-class UPhysicsSettings : public UPhysicsSettingsCore
+class UPhysicsFieldComponent : public USceneComponent
 {
 public:
-    UE_CLASS("/Script/Engine", "PhysicsSettings");
-    FRigidBodyErrorCorrection PhysicErrorCorrection;
-    TEnum<ESettingsLockedAxis> LockedAxis;
-    TEnum<ESettingsDOF> DefaultDegreesOfFreedom;
-    bool bSuppressFaceRemapTable;
-    bool bSupportUVFromHitResults;
-    bool bDisableActiveActors;
-    bool bDisableKinematicStaticPairs;
-    bool bDisableKinematicKinematicPairs;
-    bool bDisableCCD;
-    bool bEnableEnhancedDeterminism;
-    float AnimPhysicsMinDeltaTime;
-    bool bSimulateAnimPhysicsAfterReset;
-    float MaxPhysicsDeltaTime;
-    bool bSubstepping;
-    bool bSubsteppingAsync;
-    float MaxSubstepDeltaTime;
-    int MaxSubsteps;
-    float SyncSceneSmoothingFactor;
-    float InitialAverageFrameRate;
-    int PhysXTreeRebuildRate;
-    TArray<FPhysicalSurfaceName> PhysicalSurfaces;
-    FBroadphaseSettings DefaultBroadphaseSettings;
-    float MinDeltaVelocityForHitEvents;
-    FChaosPhysicsSettings ChaosSettings;
+    UE_CLASS("/Script/Engine", "PhysicsFieldComponent");
 };
 
 class UFXSystemAsset : public UObject
@@ -15751,35 +15506,136 @@ public:
     uint32 PoolPrimeSize;
 };
 
-class UInterpTrackBoolProp : public UInterpTrack
+class UInterpTrackVectorBase : public UInterpTrack
 {
 public:
-    UE_CLASS("/Script/Engine", "InterpTrackBoolProp");
-    TArray<FBoolTrackKey> BoolTrack;
-    FName PropertyName;
+    UE_CLASS("/Script/Engine", "InterpTrackVectorBase");
+    FInterpCurveVector VectorTrack;
+    float CurveTension;
 };
 
-class UParticleModuleLocationBase : public UParticleModule
+class UParticleModuleLocationPrimitiveBase : public UParticleModuleLocationBase
 {
 public:
-    UE_CLASS("/Script/Engine", "ParticleModuleLocationBase");
+    UE_CLASS("/Script/Engine", "ParticleModuleLocationPrimitiveBase");
+    bool Positive_X;
+    bool Positive_Y;
+    bool Positive_Z;
+    bool Negative_X;
+    bool Negative_Y;
+    bool Negative_Z;
+    bool SurfaceOnly;
+    bool Velocity;
+    FRawDistributionFloat VelocityScale;
+    FRawDistributionVector StartLocation;
 };
 
-class UParticleModuleLocationPrimitiveTriangle : public UParticleModuleLocationBase
+class UParticleModuleLocationPrimitiveSphere : public UParticleModuleLocationPrimitiveBase
 {
 public:
-    UE_CLASS("/Script/Engine", "ParticleModuleLocationPrimitiveTriangle");
-    FRawDistributionVector StartOffset;
-    FRawDistributionFloat Height;
-    FRawDistributionFloat Angle;
-    FRawDistributionFloat Thickness;
+    UE_CLASS("/Script/Engine", "ParticleModuleLocationPrimitiveSphere");
+    FRawDistributionFloat StartRadius;
 };
 
-class UMaterialExpressionCeil : public UMaterialExpression
+class UMovementComponent : public UActorComponent
 {
 public:
-    UE_CLASS("/Script/Engine", "MaterialExpressionCeil");
-    FExpressionInput Input;
+    UE_CLASS("/Script/Engine", "MovementComponent");
+    UE_READONLY class USceneComponent* UpdatedComponent;
+    UE_READONLY class UPrimitiveComponent* UpdatedPrimitive;
+    FVector Velocity;
+    UE_READONLY FVector PlaneConstraintNormal;
+    UE_READONLY FVector PlaneConstraintOrigin;
+    bool bUpdateOnlyIfRendered;
+    UE_READONLY bool bAutoUpdateTickRegistration;
+    UE_READONLY bool bTickBeforeOwner;
+    UE_READONLY bool bAutoRegisterUpdatedComponent;
+    UE_READONLY bool bConstrainToPlane;
+    UE_READONLY bool bSnapToPlaneAtStart;
+    UE_READONLY bool bAutoRegisterPhysicsVolumeUpdates;
+    UE_READONLY bool bComponentShouldUpdatePhysicsVolume;
+    TEnum<EPlaneConstraintAxisSetting> PlaneConstraintAxisSetting;
+    bool K2_MoveUpdatedComponent(FVector Delta, FRotator NewRotation, FHitResult& OutHit, bool bSweep, bool bTeleport);
+    void PhysicsVolumeChanged(class APhysicsVolume* NewVolume);
+    void SetPlaneConstraintAxisSetting(TEnum<EPlaneConstraintAxisSetting> NewAxisSetting);
+    void SetPlaneConstraintEnabled(bool bEnabled);
+    void SetPlaneConstraintFromVectors(FVector Forward, FVector Up);
+    void SetPlaneConstraintNormal(FVector PlaneNormal);
+    void SetPlaneConstraintOrigin(FVector PlaneOrigin);
+    void SetUpdatedComponent(class USceneComponent* NewUpdatedComponent);
+    void SnapUpdatedComponentToPlane();
+    void StopMovementImmediately();
+    UE_PURE FVector ConstrainDirectionToPlane(FVector Direction) const;
+    UE_PURE FVector ConstrainLocationToPlane(FVector Location) const;
+    UE_PURE FVector ConstrainNormalToPlane(FVector Normal) const;
+    UE_PURE float GetGravityZ() const;
+    UE_PURE float GetMaxSpeed() const;
+    UE_PURE class APhysicsVolume* GetPhysicsVolume() const;
+    UE_PURE TEnum<EPlaneConstraintAxisSetting> GetPlaneConstraintAxisSetting() const;
+    UE_PURE FVector GetPlaneConstraintNormal() const;
+    UE_PURE FVector GetPlaneConstraintOrigin() const;
+    UE_PURE bool IsExceedingMaxSpeed(float MaxSpeed) const;
+    UE_PURE float K2_GetMaxSpeedModifier() const;
+    UE_PURE float K2_GetModifiedMaxSpeed() const;
+};
+
+class UProjectileMovementComponent : public UMovementComponent
+{
+public:
+    UE_CLASS("/Script/Engine", "ProjectileMovementComponent");
+    float InitialSpeed;
+    float MaxSpeed;
+    bool bRotationFollowsVelocity;
+    bool bRotationRemainsVertical;
+    bool bShouldBounce;
+    bool bInitialVelocityInLocalSpace;
+    bool bForceSubStepping;
+    bool bSimulationEnabled;
+    bool bSweepCollision;
+    bool bIsHomingProjectile;
+    bool bBounceAngleAffectsFriction;
+    UE_READONLY bool bIsSliding;
+    bool bInterpMovement;
+    bool bInterpRotation;
+    UE_READONLY float PreviousHitTime;
+    UE_READONLY FVector PreviousHitNormal;
+    float ProjectileGravityScale;
+    float Buoyancy;
+    float Bounciness;
+    float Friction;
+    float BounceVelocityStopSimulatingThreshold;
+    float MinFrictionFraction;
+    TMulticastInlineDelegate<void(FHitResult ImpactResult, FVector ImpactVelocity)> OnProjectileBounce;
+    TMulticastInlineDelegate<void(FHitResult ImpactResult)> OnProjectileStop;
+    float HomingAccelerationMagnitude;
+    TWeakObjectPtr<class USceneComponent> HomingTargetComponent;
+    float MaxSimulationTimeStep;
+    int MaxSimulationIterations;
+    int BounceAdditionalIterations;
+    float InterpLocationTime;
+    float InterpRotationTime;
+    float InterpLocationMaxLagDistance;
+    float InterpLocationSnapToTargetDistance;
+    void MoveInterpolationTarget(const FVector& NewLocation, const FRotator& NewRotation);
+    void ResetInterpolation();
+    void SetInterpolatedComponent(class USceneComponent* Component);
+    void SetVelocityInLocalSpace(FVector NewVelocity);
+    void StopSimulating(const FHitResult& HitResult);
+    UE_PURE bool IsInterpolationComplete() const;
+    UE_PURE bool IsVelocityUnderSimulationThreshold() const;
+    UE_PURE FVector LimitVelocity(FVector NewVelocity) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnProjectileBounce__UeDispatcher = "Assignable";
+        static constexpr const char* OnProjectileStop__UeDispatcher = "Assignable";
+    };
+};
+
+class UMaterialExpressionCameraPositionWS : public UMaterialExpression
+{
+public:
+    UE_CLASS("/Script/Engine", "MaterialExpressionCameraPositionWS");
 };
 
 class UInstancedStaticMeshComponent : public UStaticMeshComponent
@@ -15833,88 +15689,6 @@ public:
     bool RemoveInstances(const TArray<int>& InstancesToRemove);
 };
 
-class UFontFace : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "FontFace");
-    UE_READONLY FString SourceFilename;
-    TEnum<EFontHinting> Hinting;
-    TEnum<EFontLoadingPolicy> LoadingPolicy;
-    TEnum<EFontLayoutMethod> LayoutMethod;
-};
-
-class UMaterialExpressionTextureObjectParameter : public UMaterialExpressionTextureSampleParameter
-{
-public:
-    UE_CLASS("/Script/Engine", "MaterialExpressionTextureObjectParameter");
-};
-
-class UCameraShakePattern : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "CameraShakePattern");
-};
-
-class UVectorField : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "VectorField");
-    FBox Bounds;
-    float Intensity;
-};
-
-class UVectorFieldStatic : public UVectorField
-{
-public:
-    UE_CLASS("/Script/Engine", "VectorFieldStatic");
-    int SizeX;
-    int SizeY;
-    int SizeZ;
-    bool bAllowCPUAccess;
-};
-
-class UMovementComponent : public UActorComponent
-{
-public:
-    UE_CLASS("/Script/Engine", "MovementComponent");
-    UE_READONLY class USceneComponent* UpdatedComponent;
-    UE_READONLY class UPrimitiveComponent* UpdatedPrimitive;
-    FVector Velocity;
-    UE_READONLY FVector PlaneConstraintNormal;
-    UE_READONLY FVector PlaneConstraintOrigin;
-    bool bUpdateOnlyIfRendered;
-    UE_READONLY bool bAutoUpdateTickRegistration;
-    UE_READONLY bool bTickBeforeOwner;
-    UE_READONLY bool bAutoRegisterUpdatedComponent;
-    UE_READONLY bool bConstrainToPlane;
-    UE_READONLY bool bSnapToPlaneAtStart;
-    UE_READONLY bool bAutoRegisterPhysicsVolumeUpdates;
-    UE_READONLY bool bComponentShouldUpdatePhysicsVolume;
-    TEnum<EPlaneConstraintAxisSetting> PlaneConstraintAxisSetting;
-    bool K2_MoveUpdatedComponent(FVector Delta, FRotator NewRotation, FHitResult& OutHit, bool bSweep, bool bTeleport);
-    void PhysicsVolumeChanged(class APhysicsVolume* NewVolume);
-    void SetPlaneConstraintAxisSetting(TEnum<EPlaneConstraintAxisSetting> NewAxisSetting);
-    void SetPlaneConstraintEnabled(bool bEnabled);
-    void SetPlaneConstraintFromVectors(FVector Forward, FVector Up);
-    void SetPlaneConstraintNormal(FVector PlaneNormal);
-    void SetPlaneConstraintOrigin(FVector PlaneOrigin);
-    void SetUpdatedComponent(class USceneComponent* NewUpdatedComponent);
-    void SnapUpdatedComponentToPlane();
-    void StopMovementImmediately();
-    UE_PURE FVector ConstrainDirectionToPlane(FVector Direction) const;
-    UE_PURE FVector ConstrainLocationToPlane(FVector Location) const;
-    UE_PURE FVector ConstrainNormalToPlane(FVector Normal) const;
-    UE_PURE float GetGravityZ() const;
-    UE_PURE float GetMaxSpeed() const;
-    UE_PURE class APhysicsVolume* GetPhysicsVolume() const;
-    UE_PURE TEnum<EPlaneConstraintAxisSetting> GetPlaneConstraintAxisSetting() const;
-    UE_PURE FVector GetPlaneConstraintNormal() const;
-    UE_PURE FVector GetPlaneConstraintOrigin() const;
-    UE_PURE bool IsExceedingMaxSpeed(float MaxSpeed) const;
-    UE_PURE float K2_GetMaxSpeedModifier() const;
-    UE_PURE float K2_GetModifiedMaxSpeed() const;
-};
-
 class UNavMovementComponent : public UMovementComponent
 {
 public:
@@ -15949,19 +15723,72 @@ public:
     UE_PURE FVector K2_GetInputVector() const;
 };
 
-class UInterpData : public UObject
+class UFloatingPawnMovement : public UPawnMovementComponent
 {
 public:
-    UE_CLASS("/Script/Engine", "InterpData");
-    UE_READONLY float InterpLength;
-    float PathBuildTime;
-    UE_READONLY TArray<class UInterpGroup*> InterpGroups;
-    class UInterpCurveEdSetup* CurveEdSetup;
-    float EdSectionStart;
-    float EdSectionEnd;
-    bool bShouldBakeAndPrune;
-    class UInterpGroupDirector* CachedDirectorGroup;
-    TArray<FName> AllEventNames;
+    UE_CLASS("/Script/Engine", "FloatingPawnMovement");
+    float MaxSpeed;
+    float Acceleration;
+    float Deceleration;
+    float TurningBoost;
+    bool bPositionCorrected;
+};
+
+class UMaterialExpressionTextureCoordinate : public UMaterialExpression
+{
+public:
+    UE_CLASS("/Script/Engine", "MaterialExpressionTextureCoordinate");
+    int CoordinateIndex;
+    float UTiling;
+    float VTiling;
+    bool UnMirrorU;
+    bool UnMirrorV;
+};
+
+class UCameraShakePattern : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "CameraShakePattern");
+};
+
+class UInterpTrackFloatParticleParam : public UInterpTrackFloatBase
+{
+public:
+    UE_CLASS("/Script/Engine", "InterpTrackFloatParticleParam");
+    FName ParamName;
+};
+
+class UVectorField : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "VectorField");
+    FBox Bounds;
+    float Intensity;
+};
+
+class UVectorFieldAnimated : public UVectorField
+{
+public:
+    UE_CLASS("/Script/Engine", "VectorFieldAnimated");
+    class UTexture2D* Texture;
+    TEnum<EVectorFieldConstructionOp> ConstructionOp;
+    int VolumeSizeX;
+    int VolumeSizeY;
+    int VolumeSizeZ;
+    int SubImagesX;
+    int SubImagesY;
+    int FrameCount;
+    float FramesPerSecond;
+    bool bLoop;
+    class UVectorFieldStatic* NoiseField;
+    float NoiseScale;
+    float NoiseMax;
+};
+
+class IInterface_PreviewMeshProvider
+{
+public:
+    UE_CLASS("/Script/Engine", "Interface_PreviewMeshProvider");
 };
 
 class UParticleModuleLifetimeBase : public UParticleModule
@@ -15970,35 +15797,12 @@ public:
     UE_CLASS("/Script/Engine", "ParticleModuleLifetimeBase");
 };
 
-class UParticleModuleLifetime : public UParticleModuleLifetimeBase
+class UParticleModuleVectorFieldRotation : public UParticleModuleVectorFieldBase
 {
 public:
-    UE_CLASS("/Script/Engine", "ParticleModuleLifetime");
-    FRawDistributionFloat LifeTime;
-};
-
-class UParticleModuleLifetime_Seeded : public UParticleModuleLifetime
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleModuleLifetime_Seeded");
-    FParticleRandomSeedInfo RandomSeedInfo;
-};
-
-class UParticleModuleVectorFieldScale : public UParticleModuleVectorFieldBase
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleModuleVectorFieldScale");
-    class UDistributionFloat* VectorFieldScale;
-    FRawDistributionFloat VectorFieldScaleRaw;
-};
-
-class UAnimationAsset : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "AnimationAsset");
-    class USkeleton* Skeleton;
-    TArray<class UAnimMetaData*> MetaData;
-    TArray<class UAssetUserData*> AssetUserData;
+    UE_CLASS("/Script/Engine", "ParticleModuleVectorFieldRotation");
+    FVector MinInitialRotation;
+    FVector MaxInitialRotation;
 };
 
 class UBlendSpaceBase : public UAnimationAsset
@@ -16017,41 +15821,98 @@ public:
     FBlendParameter BlendParameters[3];
 };
 
-class UBlendSpace1D : public UBlendSpaceBase
+class UBlendSpace : public UBlendSpaceBase
 {
 public:
-    UE_CLASS("/Script/Engine", "BlendSpace1D");
-    bool bScaleAnimation;
+    UE_CLASS("/Script/Engine", "BlendSpace");
+    TEnum<EBlendSpaceAxis> AxisToScaleAnimation;
 };
 
-class UMaterialExpressionCloudSampleAttribute : public UMaterialExpression
+class UMaterialExpressionClamp : public UMaterialExpression
 {
 public:
-    UE_CLASS("/Script/Engine", "MaterialExpressionCloudSampleAttribute");
+    UE_CLASS("/Script/Engine", "MaterialExpressionClamp");
+    FExpressionInput Input;
+    FExpressionInput Min;
+    FExpressionInput Max;
+    TEnum<EClampMode> ClampMode;
+    float MinDefault;
+    float MaxDefault;
 };
 
-class UFloatingPawnMovement : public UPawnMovementComponent
+class UExponentialHeightFogComponent : public USceneComponent
 {
 public:
-    UE_CLASS("/Script/Engine", "FloatingPawnMovement");
-    float MaxSpeed;
-    float Acceleration;
-    float Deceleration;
-    float TurningBoost;
-    bool bPositionCorrected;
+    UE_CLASS("/Script/Engine", "ExponentialHeightFogComponent");
+    UE_READONLY float FogDensity;
+    UE_READONLY float FogHeightFalloff;
+    UE_READONLY FExponentialHeightFogData SecondFogData;
+    UE_READONLY FLinearColor FogInscatteringColor;
+    UE_READONLY class UTextureCube* InscatteringColorCubemap;
+    UE_READONLY float InscatteringColorCubemapAngle;
+    UE_READONLY FLinearColor InscatteringTextureTint;
+    UE_READONLY float FullyDirectionalInscatteringColorDistance;
+    UE_READONLY float NonDirectionalInscatteringColorDistance;
+    UE_READONLY float DirectionalInscatteringExponent;
+    UE_READONLY float DirectionalInscatteringStartDistance;
+    UE_READONLY FLinearColor DirectionalInscatteringColor;
+    UE_READONLY float FogMaxOpacity;
+    UE_READONLY float StartDistance;
+    UE_READONLY float FogCutoffDistance;
+    UE_READONLY bool bEnableVolumetricFog;
+    UE_READONLY float VolumetricFogScatteringDistribution;
+    UE_READONLY FColor VolumetricFogAlbedo;
+    UE_READONLY FLinearColor VolumetricFogEmissive;
+    UE_READONLY float VolumetricFogExtinctionScale;
+    UE_READONLY float VolumetricFogDistance;
+    UE_READONLY float VolumetricFogStaticLightingScatteringIntensity;
+    UE_READONLY bool bOverrideLightColorsWithFogInscatteringColors;
+    void SetDirectionalInscatteringColor(FLinearColor Value);
+    void SetDirectionalInscatteringExponent(float Value);
+    void SetDirectionalInscatteringStartDistance(float Value);
+    void SetFogCutoffDistance(float Value);
+    void SetFogDensity(float Value);
+    void SetFogHeightFalloff(float Value);
+    void SetFogInscatteringColor(FLinearColor Value);
+    void SetFogMaxOpacity(float Value);
+    void SetFullyDirectionalInscatteringColorDistance(float Value);
+    void SetInscatteringColorCubemap(class UTextureCube* Value);
+    void SetInscatteringColorCubemapAngle(float Value);
+    void SetInscatteringTextureTint(FLinearColor Value);
+    void SetNonDirectionalInscatteringColorDistance(float Value);
+    void SetStartDistance(float Value);
+    void SetVolumetricFog(bool bNewValue);
+    void SetVolumetricFogAlbedo(FColor NewValue);
+    void SetVolumetricFogDistance(float NewValue);
+    void SetVolumetricFogEmissive(FLinearColor NewValue);
+    void SetVolumetricFogExtinctionScale(float NewValue);
+    void SetVolumetricFogScatteringDistribution(float NewValue);
 };
 
-class UVirtualTexture : public UObject
+class AVectorFieldVolume : public AActor
 {
 public:
-    UE_CLASS("/Script/Engine", "VirtualTexture");
+    UE_CLASS("/Script/Engine", "VectorFieldVolume");
+    UE_READONLY class UVectorFieldComponent* VectorFieldComponent;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* RootComponent__UeSubobject = "VectorFieldComponent0 /Script/Engine.VectorFieldComponent";
+        static constexpr const char* VectorFieldComponent__UeSubobject = "VectorFieldComponent0 /Script/Engine.VectorFieldComponent";
+    };
 };
 
-class UMaterialExpressionThinTranslucentMaterialOutput : public UMaterialExpressionCustomOutput
+class UMaterialExpressionTextureSampleParameter2D : public UMaterialExpressionTextureSampleParameter
 {
 public:
-    UE_CLASS("/Script/Engine", "MaterialExpressionThinTranslucentMaterialOutput");
-    FExpressionInput TransmittanceColor;
+    UE_CLASS("/Script/Engine", "MaterialExpressionTextureSampleParameter2D");
+};
+
+class UMaterialExpressionTextureSampleParameterSubUV : public UMaterialExpressionTextureSampleParameter2D
+{
+public:
+    UE_CLASS("/Script/Engine", "MaterialExpressionTextureSampleParameterSubUV");
+    bool bBlend;
 };
 
 class UStereoLayerShape : public UObject
@@ -16060,11 +15921,22 @@ public:
     UE_CLASS("/Script/Engine", "StereoLayerShape");
 };
 
-class UAssetMappingTable : public UObject
+class UAssetExportTask : public UObject
 {
 public:
-    UE_CLASS("/Script/Engine", "AssetMappingTable");
-    TArray<FAssetMapping> MappedAssets;
+    UE_CLASS("/Script/Engine", "AssetExportTask");
+    class UObject* Object;
+    class UExporter* Exporter;
+    FString Filename;
+    bool bSelected;
+    bool bReplaceIdentical;
+    bool bPrompt;
+    bool bAutomated;
+    bool bUseFileArchive;
+    bool bWriteEmptyFiles;
+    TArray<class UObject*> IgnoreObjectList;
+    class UObject* options;
+    TArray<FString> Errors;
 };
 
 class UPrimaryDataAsset : public UDataAsset
@@ -16073,23 +15945,54 @@ public:
     UE_CLASS("/Script/Engine", "PrimaryDataAsset");
 };
 
-class UEdGraphSchema : public UObject
+class UEdGraphNode : public UObject
 {
 public:
-    UE_CLASS("/Script/Engine", "EdGraphSchema");
+    UE_CLASS("/Script/Engine", "EdGraphNode");
+    TArray<class UEdGraphPin_Deprecated*> DeprecatedPins;
+    int NodePosX;
+    int NodePosY;
+    int NodeWidth;
+    int NodeHeight;
+    TEnum<ENodeAdvancedPins> AdvancedPinDisplay;
+    TEnum<ENodeEnabledState> EnabledState;
+    bool bDisplayAsDisabled;
+    bool bUserSetEnabledState;
+    bool bIsNodeEnabled;
+    bool bHasCompilerMessage;
+    FString NodeComment;
+    int ErrorType;
+    FString ErrorMsg;
+    FGuid NodeGuid;
 };
 
-class UVolumeTexture : public UTexture
+class UEdGraphNode_Documentation : public UEdGraphNode
 {
 public:
-    UE_CLASS("/Script/Engine", "VolumeTexture");
+    UE_CLASS("/Script/Engine", "EdGraphNode_Documentation");
+    FString Link;
+    FString Excerpt;
 };
 
-class UModelComponent : public UPrimitiveComponent
+class UVOIPTalker : public UActorComponent
 {
 public:
-    UE_CLASS("/Script/Engine", "ModelComponent");
-    class UBodySetup* ModelBodySetup;
+    UE_CLASS("/Script/Engine", "VOIPTalker");
+    FVoiceSettings Settings;
+    static class UVOIPTalker* CreateTalkerForPlayer(class APlayerState* OwningState);
+    void BPOnTalkingBegin(class UAudioComponent* AudioComponent);
+    void BPOnTalkingEnd();
+    float GetVoiceLevel();
+    void RegisterWithPlayerState(class APlayerState* OwningState);
+};
+
+class UMeshVertexPainterKismetLibrary : public UBlueprintFunctionLibrary
+{
+public:
+    UE_CLASS("/Script/Engine", "MeshVertexPainterKismetLibrary");
+    static void PaintVerticesLerpAlongAxis(class UStaticMeshComponent* StaticMeshComponent, const FLinearColor& StartColor, const FLinearColor& EndColor, TEnum<EVertexPaintAxis> Axis, bool bConvertToSRGB);
+    static void PaintVerticesSingleColor(class UStaticMeshComponent* StaticMeshComponent, const FLinearColor& FillColor, bool bConvertToSRGB);
+    static void RemovePaintedVertices(class UStaticMeshComponent* StaticMeshComponent);
 };
 
 class UStereoLayerShapeQuad : public UStereoLayerShape
@@ -16098,98 +16001,10 @@ public:
     UE_CLASS("/Script/Engine", "StereoLayerShapeQuad");
 };
 
-class UAnimNotify_PlaySound : public UAnimNotify
+class UEngineHandlerComponentFactory : public UHandlerComponentFactory
 {
 public:
-    UE_CLASS("/Script/Engine", "AnimNotify_PlaySound");
-    UE_READONLY class USoundBase* Sound;
-    UE_READONLY float VolumeMultiplier;
-    UE_READONLY float PitchMultiplier;
-    UE_READONLY bool bFollow;
-    UE_READONLY FName AttachName;
-};
-
-class ULevelStreaming : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "LevelStreaming");
-    UE_READONLY TSoftObjectPtr<class UWorld> WorldAsset;
-    FName PackageNameToLoad;
-    TArray<FName> LODPackageNames;
-    FTransform LevelTransform;
-    int LevelLODIndex;
-    int StreamingPriority;
-    bool bShouldBeVisible;
-    bool bShouldBeLoaded;
-    bool bLocked;
-    bool bIsStatic;
-    bool bShouldBlockOnLoad;
-    bool bShouldBlockOnUnload;
-    bool bDisableDistanceStreaming;
-    bool bDrawOnLevelStatusMap;
-    FLinearColor LevelColor;
-    TArray<class ALevelStreamingVolume*> EditorStreamingVolumes;
-    float MinTimeBetweenVolumeUnloadRequests;
-    TMulticastInlineDelegate<void()> OnLevelLoaded;
-    TMulticastInlineDelegate<void()> OnLevelUnloaded;
-    TMulticastInlineDelegate<void()> OnLevelShown;
-    TMulticastInlineDelegate<void()> OnLevelHidden;
-    class ULevel* LoadedLevel;
-    class ULevel* PendingUnloadLevel;
-    class ULevelStreaming* CreateInstance(FString UniqueInstanceName);
-    UE_PURE class ALevelScriptActor* GetLevelScriptActor();
-    void SetIsRequestingUnloadAndRemoval(bool bInIsRequestingUnloadAndRemoval);
-    void SetLevelLODIndex(int LODIndex);
-    void SetPriority(int NewPriority);
-    void SetShouldBeLoaded(bool bInShouldBeLoaded);
-    void SetShouldBeVisible(bool bInShouldBeVisible);
-    UE_PURE bool GetIsRequestingUnloadAndRemoval() const;
-    UE_PURE class ULevel* GetLoadedLevel() const;
-    UE_PURE FName GetWorldAssetPackageFName() const;
-    UE_PURE bool IsLevelLoaded() const;
-    UE_PURE bool IsLevelVisible() const;
-    UE_PURE bool IsStreamingStatePending() const;
-    UE_PURE bool ShouldBeLoaded() const;
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* OnLevelLoaded__UeDispatcher = "Assignable";
-        static constexpr const char* OnLevelUnloaded__UeDispatcher = "Assignable";
-        static constexpr const char* OnLevelShown__UeDispatcher = "Assignable";
-        static constexpr const char* OnLevelHidden__UeDispatcher = "Assignable";
-    };
-};
-
-class ULevelStreamingDynamic : public ULevelStreaming
-{
-public:
-    UE_CLASS("/Script/Engine", "LevelStreamingDynamic");
-    bool bInitiallyLoaded;
-    bool bInitiallyVisible;
-    static class ULevelStreamingDynamic* LoadLevelInstance(class UObject* WorldContextObject, FString LevelName, FVector Location, FRotator Rotation, bool& bOutSuccess, FString OptionalLevelNameOverride);
-    static class ULevelStreamingDynamic* LoadLevelInstance(FString LevelName, FVector Location, FRotator Rotation, bool& bOutSuccess, FString OptionalLevelNameOverride);
-    static class ULevelStreamingDynamic* LoadLevelInstanceBySoftObjectPtr(class UObject* WorldContextObject, TSoftObjectPtr<class UWorld> Level, FVector Location, FRotator Rotation, bool& bOutSuccess, FString OptionalLevelNameOverride);
-    static class ULevelStreamingDynamic* LoadLevelInstanceBySoftObjectPtr(TSoftObjectPtr<class UWorld> Level, FVector Location, FRotator Rotation, bool& bOutSuccess, FString OptionalLevelNameOverride);
-};
-
-class ULocalMessage : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "LocalMessage");
-};
-
-class UEngineMessage : public ULocalMessage
-{
-public:
-    UE_CLASS("/Script/Engine", "EngineMessage");
-    FString FailedPlaceMessage;
-    FString MaxedOutMessage;
-    FString EnteredMessage;
-    FString LeftMessage;
-    FString GlobalNameChange;
-    FString SpecEnteredMessage;
-    FString NewPlayerMessage;
-    FString NewSpecMessage;
+    UE_CLASS("/Script/Engine", "EngineHandlerComponentFactory");
 };
 
 class USoundSubmixBase : public UObject
@@ -16199,162 +16014,102 @@ public:
     UE_READONLY TArray<class USoundSubmixBase*> ChildSubmixes;
 };
 
-class USoundfieldEndpointSubmix : public USoundSubmixBase
+class USoundSubmixWithParentBase : public USoundSubmixBase
 {
 public:
-    UE_CLASS("/Script/Engine", "SoundfieldEndpointSubmix");
-    FName SoundfieldEndpointType;
-    TSubclassOf<class UAudioEndpointSettingsBase> EndpointSettingsClass;
-    class USoundfieldEndpointSettingsBase* EndpointSettings;
-    TSubclassOf<class USoundfieldEncodingSettingsBase> EncodingSettingsClass;
+    UE_CLASS("/Script/Engine", "SoundSubmixWithParentBase");
+    UE_READONLY class USoundSubmixBase* ParentSubmix;
+};
+
+class USoundfieldSubmix : public USoundSubmixWithParentBase
+{
+public:
+    UE_CLASS("/Script/Engine", "SoundfieldSubmix");
+    FName SoundfieldEncodingFormat;
     class USoundfieldEncodingSettingsBase* EncodingSettings;
     TArray<class USoundfieldEffectBase*> SoundfieldEffectChain;
+    TSubclassOf<class USoundfieldEncodingSettingsBase> EncodingSettingsClass;
 };
 
-class UBlueprintPathsLibrary : public UBlueprintFunctionLibrary
+class UBlueprintExtension : public UObject
 {
 public:
-    UE_CLASS("/Script/Engine", "BlueprintPathsLibrary");
-    UE_PURE static FString AutomationDir();
-    UE_PURE static FString AutomationLogDir();
-    UE_PURE static FString AutomationTransientDir();
-    UE_PURE static FString BugItDir();
-    UE_PURE static FString ChangeExtension(FString InPath, FString InNewExtension);
-    UE_PURE static FString CloudDir();
-    static bool CollapseRelativeDirectories(FString InPath, FString& outPath);
-    UE_PURE static FString Combine(const TArray<FString>& InPaths);
-    UE_PURE static FString ConvertFromSandboxPath(FString InPath, FString InSandboxName);
-    UE_PURE static FString ConvertRelativePathToFull(FString InPath, FString InBasePath);
-    UE_PURE static FString ConvertToSandboxPath(FString InPath, FString InSandboxName);
-    static FString CreateTempFilename(FString Path, FString Prefix, FString Extension);
-    UE_PURE static FString DiffDir();
-    UE_PURE static bool DirectoryExists(FString InPath);
-    UE_PURE static FString EngineConfigDir();
-    UE_PURE static FString EngineContentDir();
-    UE_PURE static FString EngineDir();
-    UE_PURE static FString EngineIntermediateDir();
-    UE_PURE static FString EnginePluginsDir();
-    UE_PURE static FString EngineSavedDir();
-    UE_PURE static FString EngineSourceDir();
-    UE_PURE static FString EngineUserDir();
-    UE_PURE static FString EngineVersionAgnosticUserDir();
-    UE_PURE static FString EnterpriseDir();
-    UE_PURE static FString EnterpriseFeaturePackDir();
-    UE_PURE static FString EnterprisePluginsDir();
-    UE_PURE static FString FeaturePackDir();
-    UE_PURE static bool FileExists(FString InPath);
-    UE_PURE static FString GameAgnosticSavedDir();
-    UE_PURE static FString GameDevelopersDir();
-    UE_PURE static FString GameSourceDir();
-    UE_PURE static FString GameUserDeveloperDir();
-    UE_PURE static FString GeneratedConfigDir();
-    UE_PURE static FString GetBaseFilename(FString InPath, bool bRemovePath);
-    UE_PURE static FString GetCleanFilename(FString InPath);
-    UE_PURE static TArray<FString> GetEditorLocalizationPaths();
-    UE_PURE static TArray<FString> GetEngineLocalizationPaths();
-    UE_PURE static FString GetExtension(FString InPath, bool bIncludeDot);
-    UE_PURE static TArray<FString> GetGameLocalizationPaths();
-    UE_PURE static FString GetInvalidFileSystemChars();
-    UE_PURE static FString GetPath(FString InPath);
-    UE_PURE static FString GetProjectFilePath();
-    UE_PURE static TArray<FString> GetPropertyNameLocalizationPaths();
-    UE_PURE static FString GetRelativePathToRoot();
-    UE_PURE static TArray<FString> GetRestrictedFolderNames();
-    UE_PURE static TArray<FString> GetToolTipLocalizationPaths();
-    UE_PURE static bool HasProjectPersistentDownloadDir();
-    UE_PURE static bool IsDrive(FString InPath);
-    UE_PURE static bool IsProjectFilePathSet();
-    UE_PURE static bool IsRelative(FString InPath);
-    UE_PURE static bool IsRestrictedPath(FString InPath);
-    UE_PURE static bool IsSamePath(FString PathA, FString PathB);
-    UE_PURE static FString LaunchDir();
-    static bool MakePathRelativeTo(FString InPath, FString InRelativeTo, FString& outPath);
-    static void MakePlatformFilename(FString InPath, FString& outPath);
-    static void MakeStandardFilename(FString InPath, FString& outPath);
-    UE_PURE static FString MakeValidFileName(FString inString, FString InReplacementChar);
-    static void NormalizeDirectoryName(FString InPath, FString& outPath);
-    static void NormalizeFilename(FString InPath, FString& outPath);
-    UE_PURE static FString ProfilingDir();
-    UE_PURE static FString ProjectConfigDir();
-    UE_PURE static FString ProjectContentDir();
-    UE_PURE static FString ProjectDir();
-    UE_PURE static FString ProjectIntermediateDir();
-    UE_PURE static FString ProjectLogDir();
-    UE_PURE static FString ProjectModsDir();
-    UE_PURE static FString ProjectPersistentDownloadDir();
-    UE_PURE static FString ProjectPluginsDir();
-    UE_PURE static FString ProjectSavedDir();
-    UE_PURE static FString ProjectUserDir();
-    static void RemoveDuplicateSlashes(FString InPath, FString& outPath);
-    UE_PURE static FString RootDir();
-    UE_PURE static FString SandboxesDir();
-    UE_PURE static FString ScreenShotDir();
-    UE_PURE static FString SetExtension(FString InPath, FString InNewExtension);
-    static void SetProjectFilePath(FString NewGameProjectFilePath);
-    UE_PURE static FString ShaderWorkingDir();
-    UE_PURE static bool ShouldSaveToUserDir();
-    UE_PURE static FString SourceConfigDir();
-    static void Split(FString InPath, FString& PathPart, FString& FilenamePart, FString& ExtensionPart);
-    static void ValidatePath(FString InPath, bool& bDidSucceed, FText& OutReason);
-    UE_PURE static FString VideoCaptureDir();
+    UE_CLASS("/Script/Engine", "BlueprintExtension");
 };
 
-class UInterpTrackDirector : public UInterpTrack
+class UInterpTrackColorProp : public UInterpTrackVectorBase
 {
 public:
-    UE_CLASS("/Script/Engine", "InterpTrackDirector");
-    TArray<FDirectorTrackCut> CutTrack;
-    bool bSimulateCameraCutsOnClients;
+    UE_CLASS("/Script/Engine", "InterpTrackColorProp");
+    FName PropertyName;
 };
 
-class UVOIPStatics : public UBlueprintFunctionLibrary
+class UChannel : public UObject
 {
 public:
-    UE_CLASS("/Script/Engine", "VOIPStatics");
-    static void SetMicThreshold(float InThreshold);
+    UE_CLASS("/Script/Engine", "Channel");
+    class UNetConnection* Connection;
 };
 
-class UDebugCameraControllerSettings : public UDeveloperSettings
+class UVoiceChannel : public UChannel
 {
 public:
-    UE_CLASS("/Script/Engine", "DebugCameraControllerSettings");
-    TArray<FDebugCameraControllerSettingsViewModeIndex> CycleViewModes;
+    UE_CLASS("/Script/Engine", "VoiceChannel");
 };
 
-class UAnimNotifyState_TimedParticleEffect : public UAnimNotifyState
+class UDataTableFunctionLibrary : public UBlueprintFunctionLibrary
 {
 public:
-    UE_CLASS("/Script/Engine", "AnimNotifyState_TimedParticleEffect");
-    UE_READONLY class UParticleSystem* PSTemplate;
-    UE_READONLY FName SocketName;
-    UE_READONLY FVector LocationOffset;
-    UE_READONLY FRotator RotationOffset;
-    UE_READONLY bool bDestroyAtEnd;
+    UE_CLASS("/Script/Engine", "DataTableFunctionLibrary");
+    static bool DoesDataTableRowExist(class UDataTable* Table, FName RowName);
+    static void EvaluateCurveTableRow(class UCurveTable* CurveTable, FName RowName, float InXY, EEvaluateCurveTableResult& OutResult, float& OutXY, FString ContextString);
+    static TArray<FString> GetDataTableColumnAsString(class UDataTable* DataTable, FName PropertyName);
+    static bool GetDataTableRowFromName(class UDataTable* Table, FName RowName, FTableRowBase& OutRow);
+    static void GetDataTableRowNames(class UDataTable* Table, TArray<FName>& OutRowNames);
 };
 
-class UDynamicBlueprintBinding : public UObject
+class UInputSettings : public UObject
 {
 public:
-    UE_CLASS("/Script/Engine", "DynamicBlueprintBinding");
-};
-
-class UInputDelegateBinding : public UDynamicBlueprintBinding
-{
-public:
-    UE_CLASS("/Script/Engine", "InputDelegateBinding");
-};
-
-class UInputAxisKeyDelegateBinding : public UInputDelegateBinding
-{
-public:
-    UE_CLASS("/Script/Engine", "InputAxisKeyDelegateBinding");
-    TArray<FBlueprintInputAxisKeyDelegateBinding> InputAxisKeyDelegateBindings;
-};
-
-class UInputVectorAxisDelegateBinding : public UInputAxisKeyDelegateBinding
-{
-public:
-    UE_CLASS("/Script/Engine", "InputVectorAxisDelegateBinding");
+    UE_CLASS("/Script/Engine", "InputSettings");
+    TArray<FInputAxisConfigEntry> AxisConfig;
+    bool bAltEnterTogglesFullscreen;
+    bool bF11TogglesFullscreen;
+    bool bUseMouseForTouch;
+    bool bEnableMouseSmoothing;
+    bool bEnableFOVScaling;
+    bool bCaptureMouseOnLaunch;
+    bool bDefaultViewportMouseLock;
+    bool bAlwaysShowTouchInterface;
+    bool bShowConsoleOnFourFingerTap;
+    bool bEnableGestureRecognizer;
+    bool bUseAutocorrect;
+    TArray<FString> ExcludedAutocorrectOS;
+    TArray<FString> ExcludedAutocorrectCultures;
+    TArray<FString> ExcludedAutocorrectDeviceModels;
+    TEnum<EMouseCaptureMode> DefaultViewportMouseCaptureMode;
+    TEnum<EMouseLockMode> DefaultViewportMouseLockMode;
+    float FOVScale;
+    float DoubleClickTime;
+    TArray<FInputActionKeyMapping> ActionMappings;
+    TArray<FInputAxisKeyMapping> AxisMappings;
+    TArray<FInputActionSpeechMapping> SpeechMappings;
+    TSoftClassPtr<class UClass> DefaultPlayerInputClass;
+    TSoftClassPtr<class UClass> DefaultInputComponentClass;
+    FSoftObjectPath DefaultTouchInterface;
+    FKey ConsoleKey;
+    TArray<FKey> ConsoleKeys;
+    UE_PURE static class UInputSettings* GetInputSettings();
+    void AddActionMapping(const FInputActionKeyMapping& KeyMapping, bool bForceRebuildKeymaps);
+    void AddAxisMapping(const FInputAxisKeyMapping& KeyMapping, bool bForceRebuildKeymaps);
+    void ForceRebuildKeymaps();
+    void RemoveActionMapping(const FInputActionKeyMapping& KeyMapping, bool bForceRebuildKeymaps);
+    void RemoveAxisMapping(const FInputAxisKeyMapping& KeyMapping, bool bForceRebuildKeymaps);
+    void SaveKeyMappings();
+    void GetActionMappingByName(FName InActionName, TArray<FInputActionKeyMapping>& OutMappings) const;
+    void GetActionNames(TArray<FName>& ActionNames) const;
+    void GetAxisMappingByName(FName InAxisName, TArray<FInputAxisKeyMapping>& OutMappings) const;
+    void GetAxisNames(TArray<FName>& AxisNames) const;
 };
 
 class USkeletalMeshComponent : public USkinnedMeshComponent
@@ -16519,17 +16274,29 @@ private:
     };
 };
 
-class IInterface_ActorSubobject
+class UAnimNotifyState_TimedParticleEffect : public UAnimNotifyState
 {
 public:
-    UE_CLASS("/Script/Engine", "Interface_ActorSubobject");
+    UE_CLASS("/Script/Engine", "AnimNotifyState_TimedParticleEffect");
+    UE_READONLY class UParticleSystem* PSTemplate;
+    UE_READONLY FName SocketName;
+    UE_READONLY FVector LocationOffset;
+    UE_READONLY FRotator RotationOffset;
+    UE_READONLY bool bDestroyAtEnd;
 };
 
-class USoundNodeGroupControl : public USoundNode
+class UBookmarkBase : public UObject
 {
 public:
-    UE_CLASS("/Script/Engine", "SoundNodeGroupControl");
-    TArray<int> GroupSizes;
+    UE_CLASS("/Script/Engine", "BookmarkBase");
+};
+
+class UBookMark2D : public UBookmarkBase
+{
+public:
+    UE_CLASS("/Script/Engine", "BookMark2D");
+    float Zoom2D;
+    FIntPoint Location;
 };
 
 class UInputTouchDelegateBinding : public UInputDelegateBinding
@@ -16539,30 +16306,42 @@ public:
     TArray<FBlueprintInputTouchDelegateBinding> InputTouchDelegateBindings;
 };
 
-class UCameraModifier : public UObject
+class USoundNodeDoppler : public USoundNode
 {
 public:
-    UE_CLASS("/Script/Engine", "CameraModifier");
-    bool bDebug;
-    UE_READONLY bool bExclusive;
-    UE_READONLY uint8 Priority;
-    UE_READONLY class APlayerCameraManager* CameraOwner;
-    UE_READONLY float AlphaInTime;
-    UE_READONLY float AlphaOutTime;
-    UE_READONLY float alpha;
-    UE_COSMETIC void BlueprintModifyCamera(float DeltaTime, FVector ViewLocation, FRotator ViewRotation, float FOV, FVector& NewViewLocation, FRotator& NewViewRotation, float& NewFOV);
-    UE_COSMETIC void BlueprintModifyPostProcess(float DeltaTime, float& PostProcessBlendWeight, FPostProcessSettings& PostProcessSettings);
-    void DisableModifier(bool bImmediate);
-    void EnableModifier();
-    UE_PURE class AActor* GetViewTarget() const;
-    UE_PURE bool IsDisabled() const;
+    UE_CLASS("/Script/Engine", "SoundNodeDoppler");
+    float DopplerIntensity;
+    bool bUseSmoothing;
+    float SmoothingInterpSpeed;
 };
 
-class UMaterialExpressionConstant3Vector : public UMaterialExpression
+class UInputKeyDelegateBinding : public UInputDelegateBinding
 {
 public:
-    UE_CLASS("/Script/Engine", "MaterialExpressionConstant3Vector");
-    FLinearColor Constant;
+    UE_CLASS("/Script/Engine", "InputKeyDelegateBinding");
+    TArray<FBlueprintInputKeyDelegateBinding> InputKeyDelegateBindings;
+};
+
+class UButtonStyleAsset : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "ButtonStyleAsset");
+    FButtonStyle ButtonStyle;
+};
+
+class UMaterialExpressionConstant : public UMaterialExpression
+{
+public:
+    UE_CLASS("/Script/Engine", "MaterialExpressionConstant");
+    float R;
+};
+
+class UMaterialExpressionDistance : public UMaterialExpression
+{
+public:
+    UE_CLASS("/Script/Engine", "MaterialExpressionDistance");
+    FExpressionInput A;
+    FExpressionInput B;
 };
 
 class UPoseableMeshComponent : public USkinnedMeshComponent
@@ -16581,145 +16360,17 @@ public:
     void SetBoneTransformByName(FName BoneName, const FTransform& InTransform, TEnum<EBoneSpaces> BoneSpace);
 };
 
-class UInterpTrackInstMove : public UInterpTrackInst
+class UInterpTrackInstFloatProp : public UInterpTrackInstProperty
 {
 public:
-    UE_CLASS("/Script/Engine", "InterpTrackInstMove");
-    FVector ResetLocation;
-    FRotator ResetRotation;
+    UE_CLASS("/Script/Engine", "InterpTrackInstFloatProp");
+    float ResetFloat;
 };
 
-class ASceneCapture : public AActor
+class ILODSyncInterface
 {
 public:
-    UE_CLASS("/Script/Engine", "SceneCapture");
-    class UStaticMeshComponent* MeshComp;
-    UE_READONLY class USceneComponent* SceneComponent;
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* RootComponent__UeSubobject = "SceneComponent /Script/Engine.SceneComponent";
-        static constexpr const char* SceneComponent__UeSubobject = "SceneComponent /Script/Engine.SceneComponent";
-    };
-};
-
-class UMaterial : public UMaterialInterface
-{
-public:
-    UE_CLASS("/Script/Engine", "Material");
-    class UPhysicalMaterial* PhysMaterial;
-    class UPhysicalMaterialMask* PhysMaterialMask;
-    class UPhysicalMaterial* PhysicalMaterialMap[8];
-    FScalarMaterialInput Metallic;
-    FScalarMaterialInput Specular;
-    FScalarMaterialInput Anisotropy;
-    FVectorMaterialInput Normal;
-    FVectorMaterialInput Tangent;
-    FColorMaterialInput EmissiveColor;
-    UE_READONLY TEnum<EMaterialDomain> MaterialDomain;
-    UE_READONLY TEnum<EBlendMode> BlendMode;
-    TEnum<EDecalBlendMode> DecalBlendMode;
-    bool bDecalIgnoreSubsurface;
-    UE_READONLY TEnum<EMaterialDecalResponse> MaterialDecalResponse;
-    TEnum<EMaterialShadingModel> ShadingModel;
-    bool bCastDynamicShadowAsMasked;
-    FMaterialShadingModelField ShadingModels;
-    float OpacityMaskClipValue;
-    FVectorMaterialInput WorldPositionOffset;
-    FScalarMaterialInput Refraction;
-    FMaterialAttributesInput MaterialAttributes;
-    FScalarMaterialInput PixelDepthOffset;
-    FShadingModelMaterialInput ShadingModelFromMaterialExpression;
-    bool bEnableSeparateTranslucency;
-    bool bEnableResponsiveAA;
-    bool bScreenSpaceReflections;
-    bool bContactShadows;
-    bool TwoSided;
-    bool DitheredLODTransition;
-    bool DitherOpacityMask;
-    bool bAllowNegativeEmissiveColor;
-    TEnum<ETranslucencyLightingMode> TranslucencyLightingMode;
-    bool bEnableMobileSeparateTranslucency;
-    int NumCustomizedUVs;
-    float TranslucencyDirectionalLightingIntensity;
-    float TranslucentShadowDensityScale;
-    float TranslucentSelfShadowDensityScale;
-    float TranslucentSelfShadowSecondDensityScale;
-    float TranslucentSelfShadowSecondOpacity;
-    float TranslucentBackscatteringExponent;
-    FLinearColor TranslucentMultipleScatteringExtinction;
-    float TranslucentShadowStartOffset;
-    bool bDisableDepthTest;
-    bool bWriteOnlyAlpha;
-    bool bGenerateSphericalParticleNormals;
-    bool bTangentSpaceNormal;
-    bool bUseEmissiveForDynamicAreaLighting;
-    bool bBlockGI;
-    bool bUsedAsSpecialEngineMaterial;
-    UE_READONLY bool bUsedWithSkeletalMesh;
-    UE_READONLY bool bUsedWithEditorCompositing;
-    UE_READONLY bool bUsedWithParticleSprites;
-    UE_READONLY bool bUsedWithBeamTrails;
-    UE_READONLY bool bUsedWithMeshParticles;
-    UE_READONLY bool bUsedWithNiagaraSprites;
-    UE_READONLY bool bUsedWithNiagaraRibbons;
-    UE_READONLY bool bUsedWithNiagaraMeshParticles;
-    UE_READONLY bool bUsedWithGeometryCache;
-    UE_READONLY bool bUsedWithStaticLighting;
-    UE_READONLY bool bUsedWithMorphTargets;
-    UE_READONLY bool bUsedWithSplineMeshes;
-    UE_READONLY bool bUsedWithInstancedStaticMeshes;
-    UE_READONLY bool bUsedWithGeometryCollections;
-    bool bUsesDistortion;
-    UE_READONLY bool bUsedWithClothing;
-    UE_READONLY bool bUsedWithWater;
-    UE_READONLY bool bUsedWithHairStrands;
-    UE_READONLY bool bUsedWithLidarPointCloud;
-    UE_READONLY bool bUsedWithVirtualHeightfieldMesh;
-    bool bUsedWithUI;
-    UE_READONLY bool bAutomaticallySetUsageInEditor;
-    UE_READONLY bool bFullyRough;
-    UE_READONLY bool bUseFullPrecision;
-    UE_READONLY bool bUseLightmapDirectionality;
-    UE_READONLY bool bUseAlphaToCoverage;
-    UE_READONLY bool bForwardRenderUsePreintegratedGFForSimpleIBL;
-    UE_READONLY bool bUseHQForwardReflections;
-    UE_READONLY bool bForwardBlendsSkyLightCubemaps;
-    UE_READONLY bool bUsePlanarForwardReflections;
-    UE_READONLY bool bNormalCurvatureToRoughness;
-    UE_READONLY TEnum<EMaterialTessellationMode> D3D11TessellationMode;
-    UE_READONLY bool bEnableCrackFreeDisplacement;
-    UE_READONLY bool bEnableAdaptiveTessellation;
-    bool AllowTranslucentCustomDepthWrites;
-    bool Wireframe;
-    bool WriteDepthToTranslucentMaterial;
-    TEnum<EMaterialShadingRate> ShadingRate;
-    bool bCanMaskedBeAssumedOpaque;
-    bool bIsMasked;
-    bool bIsPreviewMaterial;
-    bool bIsFunctionPreviewMaterial;
-    bool bUseMaterialAttributes;
-    bool bCastRayTracedShadows;
-    bool bUseTranslucencyVertexFog;
-    bool bApplyCloudFogging;
-    bool bIsSky;
-    bool bComputeFogPerPixel;
-    bool bOutputTranslucentVelocity;
-    bool bAllowDevelopmentShaderCompile;
-    bool bIsMaterialEditorStatsMaterial;
-    TEnum<EBlendableLocation> BlendableLocation;
-    bool BlendableOutputAlpha;
-    bool bEnableStencilTest;
-    TEnum<EMaterialStencilCompare> StencilCompare;
-    uint8 StencilRefValue;
-    TEnum<ERefractionMode> RefractionMode;
-    int BlendablePriority;
-    bool bIsBlendable;
-    uint32 UsageFlagWarnings;
-    float RefractionDepthBias;
-    FGuid StateId;
-    float MaxDisplacement;
-    FMaterialCachedExpressionData CachedExpressionData;
+    UE_CLASS("/Script/Engine", "LODSyncInterface");
 };
 
 class ASceneCapture2D : public ASceneCapture
@@ -16736,160 +16387,72 @@ private:
     };
 };
 
-class USoundNodeEnveloper : public USoundNode
+class USoundNodeDistanceCrossFade : public USoundNode
 {
 public:
-    UE_CLASS("/Script/Engine", "SoundNodeEnveloper");
-    float LoopStart;
-    float LoopEnd;
-    float DurationAfterLoop;
-    int LoopCount;
-    bool bLoopIndefinitely;
-    bool bLoop;
-    class UDistributionFloatConstantCurve* VolumeInterpCurve;
-    class UDistributionFloatConstantCurve* PitchInterpCurve;
-    FRuntimeFloatCurve VolumeCurve;
-    FRuntimeFloatCurve PitchCurve;
-    float PitchMin;
-    float PitchMax;
-    float VolumeMin;
-    float VolumeMax;
+    UE_CLASS("/Script/Engine", "SoundNodeDistanceCrossFade");
+    TArray<FDistanceDatum> CrossFadeInput;
 };
 
-class UDecalComponent : public USceneComponent
+class UDebugDrawService : public UBlueprintFunctionLibrary
 {
 public:
-    UE_CLASS("/Script/Engine", "DecalComponent");
-    UE_READONLY class UMaterialInterface* DecalMaterial;
-    UE_READONLY int SortOrder;
-    UE_READONLY float FadeScreenSize;
-    UE_READONLY float FadeStartDelay;
-    UE_READONLY float FadeDuration;
-    UE_READONLY float FadeInDuration;
-    UE_READONLY float FadeInStartDelay;
-    UE_READONLY bool bDestroyOwnerAfterFade;
-    UE_READONLY FVector DecalSize;
-    class UMaterialInstanceDynamic* CreateDynamicMaterialInstance();
-    void SetDecalMaterial(class UMaterialInterface* NewDecalMaterial);
-    void SetFadeIn(float StartDelay, float Duaration);
-    void SetFadeOut(float StartDelay, float Duration, bool DestroyOwnerAfterFade);
-    void SetFadeScreenSize(float NewFadeScreenSize);
-    void SetSortOrder(int Value);
-    UE_PURE class UMaterialInterface* GetDecalMaterial() const;
-    UE_PURE float GetFadeDuration() const;
-    UE_PURE float GetFadeInDuration() const;
-    UE_PURE float GetFadeInStartDelay() const;
-    UE_PURE float GetFadeStartDelay() const;
+    UE_CLASS("/Script/Engine", "DebugDrawService");
 };
 
-class UMaterialExpressionHairColor : public UMaterialExpression
+class UMaterialExpressionGIReplace : public UMaterialExpression
 {
 public:
-    UE_CLASS("/Script/Engine", "MaterialExpressionHairColor");
-    FExpressionInput Melanin;
-    FExpressionInput Redness;
-    FExpressionInput DyeColor;
+    UE_CLASS("/Script/Engine", "MaterialExpressionGIReplace");
+    FExpressionInput Default;
+    FExpressionInput StaticIndirect;
+    FExpressionInput DynamicIndirect;
 };
 
-class UParticleModuleRotationRateBase : public UParticleModule
+class UParticleModuleRotationBase : public UParticleModule
 {
 public:
-    UE_CLASS("/Script/Engine", "ParticleModuleRotationRateBase");
+    UE_CLASS("/Script/Engine", "ParticleModuleRotationBase");
 };
 
-class UParticleModuleRotationRate : public UParticleModuleRotationRateBase
+class UParticleModuleRotation : public UParticleModuleRotationBase
 {
 public:
-    UE_CLASS("/Script/Engine", "ParticleModuleRotationRate");
-    FRawDistributionFloat StartRotationRate;
+    UE_CLASS("/Script/Engine", "ParticleModuleRotation");
+    FRawDistributionFloat StartRotation;
 };
 
-class AWorldSettings : public AInfo
+class UParticleModuleRotation_Seeded : public UParticleModuleRotation
 {
 public:
-    UE_CLASS("/Script/Engine", "WorldSettings");
-    int VisibilityCellSize;
-    TEnum<EVisibilityAggressiveness> VisibilityAggressiveness;
-    bool bPrecomputeVisibility;
-    bool bPlaceCellsOnlyAlongCameraTracks;
-    UE_READONLY bool bEnableWorldBoundsChecks;
-    UE_READONLY bool bEnableNavigationSystem;
-    UE_READONLY bool bEnableAISystem;
-    UE_READONLY bool bEnableWorldComposition;
-    UE_READONLY bool bUseClientSideLevelStreamingVolumes;
-    UE_READONLY bool bEnableWorldOriginRebasing;
-    bool bWorldGravitySet;
-    UE_READONLY bool bGlobalGravitySet;
-    bool bMinimizeBSPSections;
-    bool bForceNoPrecomputedLighting;
-    bool bHighPriorityLoading;
-    bool bHighPriorityLoadingLocal;
-    bool bOverrideDefaultBroadphaseSettings;
-    UE_READONLY class UNavigationSystemConfig* NavigationSystemConfig;
-    class UNavigationSystemConfig* NavigationSystemConfigOverride;
-    UE_READONLY float WorldToMeters;
-    UE_READONLY float KillZ;
-    UE_READONLY TSubclassOf<class UDamageType> KillZDamageType;
-    float WorldGravityZ;
-    UE_READONLY float GlobalGravityZ;
-    UE_READONLY TSubclassOf<class ADefaultPhysicsVolume> DefaultPhysicsVolumeClass;
-    UE_READONLY TSubclassOf<class UPhysicsCollisionHandler> PhysicsCollisionHandlerClass;
-    UE_READONLY TSubclassOf<class AGameModeBase> DefaultGameMode;
-    TSubclassOf<class AGameNetworkManager> GameNetworkManagerClass;
-    int PackedLightAndShadowMapTextureSize;
-    UE_READONLY FVector DefaultColorScale;
-    float DefaultMaxDistanceFieldOcclusionDistance;
-    float GlobalDistanceFieldViewDistance;
-    float DynamicIndirectShadowsSelfShadowingIntensity;
-    FReverbSettings DefaultReverbSettings;
-    FInteriorSettings DefaultAmbientZoneSettings;
-    class USoundMix* DefaultBaseSoundMix;
-    float TimeDilation;
-    float MatineeTimeDilation;
-    float DemoPlayTimeDilation;
-    float MinGlobalTimeDilation;
-    float MaxGlobalTimeDilation;
-    float MinUndilatedFrameTime;
-    float MaxUndilatedFrameTime;
-    FBroadphaseSettings BroadphaseSettings;
-    class APlayerState* Pauser;
-    TArray<FNetViewer> ReplicationViewers;
-    TArray<class UAssetUserData*> AssetUserData;
-    class APlayerState* PauserPlayerState;
-    int MaxNumberOfBookmarks;
-    TSubclassOf<class UBookmarkBase> DefaultBookmarkClass;
-    TArray<class UBookmarkBase*> BookmarkArray;
-    TSubclassOf<class UBookmarkBase> LastBookmarkClass;
-    void OnRep_WorldGravityZ();
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* bHighPriorityLoading__Replicated = ":";
-        static constexpr const char* WorldGravityZ__Replicated = "OnRep_WorldGravityZ:";
-        static constexpr const char* TimeDilation__Replicated = ":";
-        static constexpr const char* MatineeTimeDilation__Replicated = ":";
-        static constexpr const char* PauserPlayerState__Replicated = ":";
-    };
+    UE_CLASS("/Script/Engine", "ParticleModuleRotation_Seeded");
+    FParticleRandomSeedInfo RandomSeedInfo;
 };
 
-class UMaterialExpressionComment : public UMaterialExpression
+class UMaterialExpressionCloudSampleAttribute : public UMaterialExpression
 {
 public:
-    UE_CLASS("/Script/Engine", "MaterialExpressionComment");
-    int SizeX;
-    int SizeY;
-    FString Text;
-    FLinearColor CommentColor;
-    int FontSize;
+    UE_CLASS("/Script/Engine", "MaterialExpressionCloudSampleAttribute");
 };
 
-class URotatingMovementComponent : public UMovementComponent
+class UReverbEffect : public UObject
 {
 public:
-    UE_CLASS("/Script/Engine", "RotatingMovementComponent");
-    FRotator RotationRate;
-    FVector PivotTranslation;
-    bool bRotationInLocalSpace;
+    UE_CLASS("/Script/Engine", "ReverbEffect");
+    bool bBypassEarlyReflections;
+    float ReflectionsDelay;
+    float GainHF;
+    float ReflectionsGain;
+    bool bBypassLateReflections;
+    float LateDelay;
+    float DecayTime;
+    float Density;
+    float Diffusion;
+    float AirAbsorptionGainHF;
+    float DecayHFRatio;
+    float LateGain;
+    float Gain;
+    float RoomRolloffFactor;
 };
 
 class UCapsuleComponent : public UShapeComponent
@@ -16914,61 +16477,128 @@ public:
     void GetUnscaledCapsuleSize_WithoutHemisphere(float& OutRadius, float& OutHalfHeightWithoutHemisphere) const;
 };
 
-class UAssetManagerSettings : public UDeveloperSettings
+class UArrowComponent : public UPrimitiveComponent
 {
 public:
-    UE_CLASS("/Script/Engine", "AssetManagerSettings");
-    TArray<FPrimaryAssetTypeInfo> PrimaryAssetTypesToScan;
-    TArray<FDirectoryPath> DirectoriesToExclude;
-    TArray<FPrimaryAssetRulesOverride> PrimaryAssetRules;
-    TArray<FPrimaryAssetRulesCustomOverride> CustomPrimaryAssetRules;
-    bool bOnlyCookProductionAssets;
-    bool bShouldManagerDetermineTypeAndName;
-    bool bShouldGuessTypeAndNameInEditor;
-    bool bShouldAcquireMissingChunksOnLoad;
-    TArray<FAssetManagerRedirect> PrimaryAssetIdRedirects;
-    TArray<FAssetManagerRedirect> PrimaryAssetTypeRedirects;
-    TArray<FAssetManagerRedirect> AssetPathRedirects;
-    TSet<FName> MetaDataTagsForAssetRegistry;
+    UE_CLASS("/Script/Engine", "ArrowComponent");
+    FColor ArrowColor;
+    float ArrowSize;
+    float ArrowLength;
+    float ScreenSize;
+    bool bIsScreenSizeScaled;
+    bool bTreatAsASprite;
+    void SetArrowColor(FLinearColor NewColor);
 };
 
-class UMaterialExpressionArctangent : public UMaterialExpression
+class UMaterialExpressionArcsine : public UMaterialExpression
 {
 public:
-    UE_CLASS("/Script/Engine", "MaterialExpressionArctangent");
+    UE_CLASS("/Script/Engine", "MaterialExpressionArcsine");
     FExpressionInput Input;
 };
 
-class UInterpTrackEvent : public UInterpTrack
+class UAnimNotify_PlaySound : public UAnimNotify
 {
 public:
-    UE_CLASS("/Script/Engine", "InterpTrackEvent");
-    TArray<FEventTrackKey> EventTrack;
-    bool bFireEventsWhenForwards;
-    bool bFireEventsWhenBackwards;
-    bool bFireEventsWhenJumpingForwards;
-    bool bUseCustomEventName;
+    UE_CLASS("/Script/Engine", "AnimNotify_PlaySound");
+    UE_READONLY class USoundBase* Sound;
+    UE_READONLY float VolumeMultiplier;
+    UE_READONLY float PitchMultiplier;
+    UE_READONLY bool bFollow;
+    UE_READONLY FName AttachName;
 };
 
-class UActorComponentInstanceDataTransientOuter : public UObject
+class ULevelStreaming : public UObject
 {
 public:
-    UE_CLASS("/Script/Engine", "ActorComponentInstanceDataTransientOuter");
+    UE_CLASS("/Script/Engine", "LevelStreaming");
+    UE_READONLY TSoftObjectPtr<class UWorld> WorldAsset;
+    FName PackageNameToLoad;
+    TArray<FName> LODPackageNames;
+    FTransform LevelTransform;
+    int LevelLODIndex;
+    int StreamingPriority;
+    bool bShouldBeVisible;
+    bool bShouldBeLoaded;
+    bool bLocked;
+    bool bIsStatic;
+    bool bShouldBlockOnLoad;
+    bool bShouldBlockOnUnload;
+    bool bDisableDistanceStreaming;
+    bool bDrawOnLevelStatusMap;
+    FLinearColor LevelColor;
+    TArray<class ALevelStreamingVolume*> EditorStreamingVolumes;
+    float MinTimeBetweenVolumeUnloadRequests;
+    TMulticastInlineDelegate<void()> OnLevelLoaded;
+    TMulticastInlineDelegate<void()> OnLevelUnloaded;
+    TMulticastInlineDelegate<void()> OnLevelShown;
+    TMulticastInlineDelegate<void()> OnLevelHidden;
+    class ULevel* LoadedLevel;
+    class ULevel* PendingUnloadLevel;
+    class ULevelStreaming* CreateInstance(FString UniqueInstanceName);
+    UE_PURE class ALevelScriptActor* GetLevelScriptActor();
+    void SetIsRequestingUnloadAndRemoval(bool bInIsRequestingUnloadAndRemoval);
+    void SetLevelLODIndex(int LODIndex);
+    void SetPriority(int NewPriority);
+    void SetShouldBeLoaded(bool bInShouldBeLoaded);
+    void SetShouldBeVisible(bool bInShouldBeVisible);
+    UE_PURE bool GetIsRequestingUnloadAndRemoval() const;
+    UE_PURE class ULevel* GetLoadedLevel() const;
+    UE_PURE FName GetWorldAssetPackageFName() const;
+    UE_PURE bool IsLevelLoaded() const;
+    UE_PURE bool IsLevelVisible() const;
+    UE_PURE bool IsStreamingStatePending() const;
+    UE_PURE bool ShouldBeLoaded() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnLevelLoaded__UeDispatcher = "Assignable";
+        static constexpr const char* OnLevelUnloaded__UeDispatcher = "Assignable";
+        static constexpr const char* OnLevelShown__UeDispatcher = "Assignable";
+        static constexpr const char* OnLevelHidden__UeDispatcher = "Assignable";
+    };
 };
 
-class UInterpTrackFade : public UInterpTrackFloatBase
+class ULevelStreamingAlwaysLoaded : public ULevelStreaming
 {
 public:
-    UE_CLASS("/Script/Engine", "InterpTrackFade");
-    bool bPersistFade;
-    bool bFadeAudio;
-    FLinearColor FadeColor;
+    UE_CLASS("/Script/Engine", "LevelStreamingAlwaysLoaded");
 };
 
-class UDrawSphereComponent : public USphereComponent
+class UInterpTrackColorScale : public UInterpTrackVectorBase
 {
 public:
-    UE_CLASS("/Script/Engine", "DrawSphereComponent");
+    UE_CLASS("/Script/Engine", "InterpTrackColorScale");
+};
+
+class UCollisionProfile : public UDeveloperSettings
+{
+public:
+    UE_CLASS("/Script/Engine", "CollisionProfile");
+    TArray<FCollisionResponseTemplate> Profiles;
+    TArray<FCustomChannelSetup> DefaultChannelResponses;
+    TArray<FCustomProfile> EditProfiles;
+    TArray<FRedirector> ProfileRedirects;
+    TArray<FRedirector> CollisionChannelRedirects;
+};
+
+class UInterpTrackDirector : public UInterpTrack
+{
+public:
+    UE_CLASS("/Script/Engine", "InterpTrackDirector");
+    TArray<FDirectorTrackCut> CutTrack;
+    bool bSimulateCameraCutsOnClients;
+};
+
+class ADocumentationActor : public AActor
+{
+public:
+    UE_CLASS("/Script/Engine", "DocumentationActor");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* RootComponent__UeSubobject = "SceneComp /Script/Engine.SceneComponent";
+    };
 };
 
 class UAssetManager : public UObject
@@ -16991,36 +16621,95 @@ public:
     int NumberOfSpawnedNotifications;
 };
 
-class UTextureLODSettings : public UObject
+class IDestructibleInterface
 {
 public:
-    UE_CLASS("/Script/Engine", "TextureLODSettings");
-    TArray<FTextureLODGroup> TextureLODGroups;
+    UE_CLASS("/Script/Engine", "DestructibleInterface");
 };
 
-class ATriggerBase : public AActor
+class UKismetMaterialLibrary : public UBlueprintFunctionLibrary
 {
 public:
-    UE_CLASS("/Script/Engine", "TriggerBase");
-    UE_READONLY class UShapeComponent* CollisionComponent;
+    UE_CLASS("/Script/Engine", "KismetMaterialLibrary");
+    static class UMaterialInstanceDynamic* CreateDynamicMaterialInstance(class UObject* WorldContextObject, class UMaterialInterface* Parent, FName OptionalName, TEnum<EMIDCreationFlags> CreationFlags);
+    static class UMaterialInstanceDynamic* CreateDynamicMaterialInstance(class UMaterialInterface* Parent, FName OptionalName, TEnum<EMIDCreationFlags> CreationFlags);
+    static float GetScalarParameterValue(class UObject* WorldContextObject, class UMaterialParameterCollection* Collection, FName ParameterName);
+    static float GetScalarParameterValue(class UMaterialParameterCollection* Collection, FName ParameterName);
+    static FLinearColor GetVectorParameterValue(class UObject* WorldContextObject, class UMaterialParameterCollection* Collection, FName ParameterName);
+    static FLinearColor GetVectorParameterValue(class UMaterialParameterCollection* Collection, FName ParameterName);
+    static void SetScalarParameterValue(class UObject* WorldContextObject, class UMaterialParameterCollection* Collection, FName ParameterName, float ParameterValue);
+    static void SetScalarParameterValue(class UMaterialParameterCollection* Collection, FName ParameterName, float ParameterValue);
+    static void SetVectorParameterValue(class UObject* WorldContextObject, class UMaterialParameterCollection* Collection, FName ParameterName, const FLinearColor& ParameterValue);
+    static void SetVectorParameterValue(class UMaterialParameterCollection* Collection, FName ParameterName, const FLinearColor& ParameterValue);
 };
 
-class ATriggerCapsule : public ATriggerBase
+class UCheatManager : public UObject
 {
 public:
-    UE_CLASS("/Script/Engine", "TriggerCapsule");
+    UE_CLASS("/Script/Engine", "CheatManager");
+    class ADebugCameraController* DebugCameraControllerRef;
+    UE_READONLY TSubclassOf<class ADebugCameraController> DebugCameraControllerClass;
+    TArray<class UCheatManagerExtension*> CheatManagerExtensions;
+    void BugIt(FString ScreenShotDescription);
+    void BugItGo(float X, float Y, float Z, float Pitch, float Yaw, float Roll);
+    void BugItStringCreator(FVector ViewLocation, FRotator ViewRotation, FString& GoString, FString& LocString);
+    void ChangeSize(float F);
+    void CheatScript(FString ScriptName);
+    void DamageTarget(float damageAmount);
+    void DebugCapsuleSweep();
+    void DebugCapsuleSweepCapture();
+    void DebugCapsuleSweepChannel(TEnum<ECollisionChannel> Channel);
+    void DebugCapsuleSweepClear();
+    void DebugCapsuleSweepComplex(bool bTraceComplex);
+    void DebugCapsuleSweepPawn();
+    void DebugCapsuleSweepSize(float HalfHeight, float Radius);
+    void DestroyAll(TSubclassOf<class AActor> aClass);
+    void DestroyAllPawnsExceptTarget();
+    void DestroyPawns(TSubclassOf<class APawn> aClass);
+    void DestroyServerStatReplicator();
+    void DestroyTarget();
+    void DisableDebugCamera();
+    void DumpChatState();
+    void DumpOnlineSessionState();
+    void DumpPartyState();
+    void DumpVoiceMutingState();
+    void EnableDebugCamera();
+    void FlushLog();
+    void Fly();
+    void FreezeFrame(float Delay);
+    void Ghost();
+    void God();
+    void InvertMouse();
+    void LogLoc();
+    void OnlyLoadLevel(FName PackageName);
+    void PlayersOnly();
+    void ReceiveEndPlay();
+    void ReceiveInitCheatManager();
+    UE_SERVER UE_RELIABLE void ServerToggleAILogging();
+    void SetMouseSensitivityToDefault();
+    void SetWorldOrigin();
+    void Slomo(float NewTimeDilation);
+    void SpawnServerStatReplicator();
+    void StreamLevelIn(FName PackageName);
+    void StreamLevelOut(FName PackageName);
+    void Summon(FString ClassName);
+    void Teleport();
+    void TestCollisionDistance();
+    void ToggleAILogging();
+    void ToggleDebugCamera();
+    void ToggleServerStatReplicatorClientOverwrite();
+    void ToggleServerStatReplicatorUpdateStatNet();
+    void UpdateSafeArea();
+    void ViewActor(FName ActorName);
+    void ViewClass(TSubclassOf<class AActor> DesiredClass);
+    void ViewPlayer(FString S);
+    void ViewSelf();
+    void Walk();
 private:
     struct UeMarkers
     {
-        static constexpr const char* CollisionComponent__UeSubobject = "CollisionComp /Script/Engine.CapsuleComponent";
-        static constexpr const char* RootComponent__UeSubobject = "CollisionComp /Script/Engine.CapsuleComponent";
+        static constexpr const char* UeClassTail = "0x00000000 /Script/Engine.PlayerController Engine";
     };
-};
-
-class UAnimNotify_PauseClothingSimulation : public UAnimNotify
-{
-public:
-    UE_CLASS("/Script/Engine", "AnimNotify_PauseClothingSimulation");
 };
 
 class UKismetMathLibrary : public UBlueprintFunctionLibrary
@@ -17702,127 +17391,18 @@ public:
     UE_PURE static int Xor_IntInt(int A, int B);
 };
 
-class UCheatManager : public UObject
+class UMaterialExpressionDDX : public UMaterialExpression
 {
 public:
-    UE_CLASS("/Script/Engine", "CheatManager");
-    class ADebugCameraController* DebugCameraControllerRef;
-    UE_READONLY TSubclassOf<class ADebugCameraController> DebugCameraControllerClass;
-    TArray<class UCheatManagerExtension*> CheatManagerExtensions;
-    void BugIt(FString ScreenShotDescription);
-    void BugItGo(float X, float Y, float Z, float Pitch, float Yaw, float Roll);
-    void BugItStringCreator(FVector ViewLocation, FRotator ViewRotation, FString& GoString, FString& LocString);
-    void ChangeSize(float F);
-    void CheatScript(FString ScriptName);
-    void DamageTarget(float damageAmount);
-    void DebugCapsuleSweep();
-    void DebugCapsuleSweepCapture();
-    void DebugCapsuleSweepChannel(TEnum<ECollisionChannel> Channel);
-    void DebugCapsuleSweepClear();
-    void DebugCapsuleSweepComplex(bool bTraceComplex);
-    void DebugCapsuleSweepPawn();
-    void DebugCapsuleSweepSize(float HalfHeight, float Radius);
-    void DestroyAll(TSubclassOf<class AActor> aClass);
-    void DestroyAllPawnsExceptTarget();
-    void DestroyPawns(TSubclassOf<class APawn> aClass);
-    void DestroyServerStatReplicator();
-    void DestroyTarget();
-    void DisableDebugCamera();
-    void DumpChatState();
-    void DumpOnlineSessionState();
-    void DumpPartyState();
-    void DumpVoiceMutingState();
-    void EnableDebugCamera();
-    void FlushLog();
-    void Fly();
-    void FreezeFrame(float Delay);
-    void Ghost();
-    void God();
-    void InvertMouse();
-    void LogLoc();
-    void OnlyLoadLevel(FName PackageName);
-    void PlayersOnly();
-    void ReceiveEndPlay();
-    void ReceiveInitCheatManager();
-    UE_SERVER UE_RELIABLE void ServerToggleAILogging();
-    void SetMouseSensitivityToDefault();
-    void SetWorldOrigin();
-    void Slomo(float NewTimeDilation);
-    void SpawnServerStatReplicator();
-    void StreamLevelIn(FName PackageName);
-    void StreamLevelOut(FName PackageName);
-    void Summon(FString ClassName);
-    void Teleport();
-    void TestCollisionDistance();
-    void ToggleAILogging();
-    void ToggleDebugCamera();
-    void ToggleServerStatReplicatorClientOverwrite();
-    void ToggleServerStatReplicatorUpdateStatNet();
-    void UpdateSafeArea();
-    void ViewActor(FName ActorName);
-    void ViewClass(TSubclassOf<class AActor> DesiredClass);
-    void ViewPlayer(FString S);
-    void ViewSelf();
-    void Walk();
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* UeClassTail = "0x00000000 /Script/Engine.PlayerController Engine";
-    };
+    UE_CLASS("/Script/Engine", "MaterialExpressionDDX");
+    FExpressionInput Value;
 };
 
-class UKismetNodeHelperLibrary : public UBlueprintFunctionLibrary
+class UMaterialExpressionDDY : public UMaterialExpression
 {
 public:
-    UE_CLASS("/Script/Engine", "KismetNodeHelperLibrary");
-    static bool BitIsMarked(int Data, int Index_0);
-    static void ClearAllBits(int& Data);
-    static void ClearBit(int& Data, int Index_0);
-    UE_PURE static FName GetEnumeratorName(class UEnum* Enum, uint8 EnumeratorValue);
-    UE_PURE static FString GetEnumeratorUserFriendlyName(class UEnum* Enum, uint8 EnumeratorValue);
-    UE_PURE static uint8 GetEnumeratorValueFromIndex(class UEnum* Enum, uint8 EnumeratorIndex);
-    static int GetFirstUnmarkedBit(int Data, int StartIdx, int NumBits);
-    static int GetRandomUnmarkedBit(int Data, int StartIdx, int NumBits);
-    static int GetUnmarkedBit(int Data, int StartIdx, int NumBits, bool bRandom);
-    UE_PURE static uint8 GetValidValue(class UEnum* Enum, uint8 EnumeratorValue);
-    static bool HasMarkedBit(int Data, int NumBits);
-    static bool HasUnmarkedBit(int Data, int NumBits);
-    static void MarkBit(int& Data, int Index_0);
-};
-
-class UDPICustomScalingRule : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "DPICustomScalingRule");
-};
-
-class UMaterialExpressionCollectionParameter : public UMaterialExpression
-{
-public:
-    UE_CLASS("/Script/Engine", "MaterialExpressionCollectionParameter");
-    class UMaterialParameterCollection* Collection;
-    FName ParameterName;
-    FGuid ParameterId;
-};
-
-class UKismetStringTableLibrary : public UBlueprintFunctionLibrary
-{
-public:
-    UE_CLASS("/Script/Engine", "KismetStringTableLibrary");
-    UE_PURE static TArray<FString> GetKeysFromStringTable(FName TableId);
-    UE_PURE static TArray<FName> GetMetaDataIdsFromStringTableEntry(FName TableId, FString Key);
-    UE_PURE static TArray<FName> GetRegisteredStringTables();
-    UE_PURE static FString GetTableEntryMetaData(FName TableId, FString Key, FName MetadataId);
-    UE_PURE static FString GetTableEntrySourceString(FName TableId, FString Key);
-    UE_PURE static FString GetTableNamespace(FName TableId);
-    UE_PURE static bool IsRegisteredTableEntry(FName TableId, FString Key);
-    UE_PURE static bool IsRegisteredTableId(FName TableId);
-};
-
-class UMaterialExpressionDecalDerivative : public UMaterialExpression
-{
-public:
-    UE_CLASS("/Script/Engine", "MaterialExpressionDecalDerivative");
+    UE_CLASS("/Script/Engine", "MaterialExpressionDDY");
+    FExpressionInput Value;
 };
 
 class AGameSession : public AInfo
@@ -17837,30 +17417,25 @@ public:
     FName SessionName;
 };
 
-class UCheatManagerExtension : public UObject
+class UMaterialExpressionDepthFade : public UMaterialExpression
 {
 public:
-    UE_CLASS("/Script/Engine", "CheatManagerExtension");
+    UE_CLASS("/Script/Engine", "MaterialExpressionDepthFade");
+    FExpressionInput InOpacity;
+    FExpressionInput FadeDistance;
+    float OpacityDefault;
+    float FadeDistanceDefault;
 };
 
-class ALevelBounds : public AActor
+class ALevelScriptActor : public AActor
 {
 public:
-    UE_CLASS("/Script/Engine", "LevelBounds");
-    class UBoxComponent* BoxComponent;
-    bool bAutoUpdateBounds;
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* BoxComponent__UeSubobject = "BoxComponent0 /Script/Engine.BoxComponent";
-        static constexpr const char* RootComponent__UeSubobject = "BoxComponent0 /Script/Engine.BoxComponent";
-    };
-};
-
-class UParticleModuleRotationBase : public UParticleModule
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleModuleRotationBase");
+    UE_CLASS("/Script/Engine", "LevelScriptActor");
+    bool bInputEnabled;
+    UE_AUTHORITY_ONLY void LevelReset();
+    bool RemoteEvent(FName EventName);
+    void SetCinematicMode(bool bCinematicMode, bool bHidePlayer, bool bAffectsHUD, bool bAffectsMovement, bool bAffectsTurning);
+    void WorldOriginLocationChanged(FIntVector OldOriginLocation, FIntVector NewOriginLocation);
 };
 
 class ULevelScriptBlueprint : public UBlueprint
@@ -17869,47 +17444,20 @@ public:
     UE_CLASS("/Script/Engine", "LevelScriptBlueprint");
 };
 
-class UWorld : public UObject
+class UParticleModuleSizeBase : public UParticleModule
 {
 public:
-    UE_CLASS("/Script/Engine", "World");
-    class ULevel* PersistentLevel;
-    class UNetDriver* NetDriver;
-    class ULineBatchComponent* LineBatcher;
-    class ULineBatchComponent* PersistentLineBatcher;
-    class ULineBatchComponent* ForegroundLineBatcher;
-    class AGameNetworkManager* NetworkManager;
-    class UPhysicsCollisionHandler* PhysicsCollisionHandler;
-    TArray<class UObject*> ExtraReferencedObjects;
-    TArray<class UObject*> PerModuleDataObjects;
-    TArray<class ULevelStreaming*> StreamingLevels;
-    FStreamingLevelsToConsider StreamingLevelsToConsider;
-    FString StreamingLevelsPrefix;
-    class ULevel* CurrentLevelPendingVisibility;
-    class ULevel* CurrentLevelPendingInvisibility;
-    class UDemoNetDriver* DemoNetDriver;
-    class AParticleEventManager* MyParticleEventManager;
-    class APhysicsVolume* DefaultPhysicsVolume;
-    bool bAreConstraintsDirty;
-    class UNavigationSystemBase* NavigationSystem;
-    class AGameModeBase* AuthorityGameMode;
-    class AGameStateBase* GameState;
-    class UAISystemBase* AISystem;
-    class UAvoidanceManager* AvoidanceManager;
-    TArray<class ULevel*> Levels;
-    TArray<FLevelCollection> LevelCollections;
-    class UGameInstance* OwningGameInstance;
-    TArray<class UMaterialParameterCollectionInstance*> ParameterCollectionInstances;
-    class UCanvas* CanvasForRenderingToTarget;
-    class UCanvas* CanvasForDrawMaterialToRenderTarget;
-    class UPhysicsFieldComponent* PhysicsField;
-    TSet<class UActorComponent*> ComponentsThatNeedPreEndOfFrameSync;
-    TArray<class UActorComponent*> ComponentsThatNeedEndOfFrameUpdate;
-    TArray<class UActorComponent*> ComponentsThatNeedEndOfFrameUpdate_OnGameThread;
-    class UWorldComposition* WorldComposition;
-    FWorldPSCPool PSCPool;
-    void HandleTimelineScrubbed();
-    class AWorldSettings* K2_GetWorldSettings();
+    UE_CLASS("/Script/Engine", "ParticleModuleSizeBase");
+};
+
+class UParticleModuleSizeMultiplyLife : public UParticleModuleSizeBase
+{
+public:
+    UE_CLASS("/Script/Engine", "ParticleModuleSizeMultiplyLife");
+    FRawDistributionVector LifeMultiplier;
+    bool MultiplyX;
+    bool MultiplyY;
+    bool MultiplyZ;
 };
 
 class UGameUserSettings : public UObject
@@ -18024,19 +17572,30 @@ private:
     };
 };
 
-class ULODSyncComponent : public UActorComponent
+class ALODActor : public AActor
 {
 public:
-    UE_CLASS("/Script/Engine", "LODSyncComponent");
-    int NumLODs;
-    int ForcedLOD;
-    TArray<FComponentSync> ComponentsToSync;
-    TMap<FName, FLODMappingData> CustomLODMapping;
-    int CurrentLOD;
-    int CurrentNumLODs;
-    TArray<class UPrimitiveComponent*> DriveComponents;
-    TArray<class UPrimitiveComponent*> SubComponents;
-    UE_PURE FString GetLODSyncDebugText() const;
+    UE_CLASS("/Script/Engine", "LODActor");
+    class UStaticMeshComponent* StaticMeshComponent;
+    TMap<FHLODInstancingKey, class UInstancedStaticMeshComponent*> InstancedStaticMeshComponents;
+    class UHLODProxy* Proxy;
+    FName Key;
+    float LODDrawDistance;
+    int LODLevel;
+    TArray<class AActor*> SubActors;
+    uint8 CachedNumHLODLevels;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* RootComponent__UeSubobject = "StaticMeshComponent0 /Script/Engine.StaticMeshComponent";
+        static constexpr const char* StaticMeshComponent__UeSubobject = "StaticMeshComponent0 /Script/Engine.StaticMeshComponent";
+    };
+};
+
+class ULevelStreamingPersistent : public ULevelStreaming
+{
+public:
+    UE_CLASS("/Script/Engine", "LevelStreamingPersistent");
 };
 
 class UKismetArrayLibrary : public UBlueprintFunctionLibrary
@@ -18047,53 +17606,31 @@ public:
     static void SetArrayPropertyByName(class UObject* Object, FName PropertyName, const TArray<int>& Value);
 };
 
-class UInterpTrackInstAnimControl : public UInterpTrackInst
+class UInterpTrackParticleReplay : public UInterpTrack
 {
 public:
-    UE_CLASS("/Script/Engine", "InterpTrackInstAnimControl");
-    float LastUpdatePosition;
+    UE_CLASS("/Script/Engine", "InterpTrackParticleReplay");
+    TArray<FParticleReplayTrackKey> TrackKeys;
 };
 
-class UBookmarkBase : public UObject
+class UHLODProxy : public UObject
 {
 public:
-    UE_CLASS("/Script/Engine", "BookmarkBase");
+    UE_CLASS("/Script/Engine", "HLODProxy");
+    TArray<FHLODProxyMesh> ProxyMeshes;
+    TMap<class UHLODProxyDesc*, FHLODProxyMesh> HLODActors;
 };
 
-class UBookMark2D : public UBookmarkBase
+class UDataDrivenCVarEngineSubsystem : public UEngineSubsystem
 {
 public:
-    UE_CLASS("/Script/Engine", "BookMark2D");
-    float Zoom2D;
-    FIntPoint Location;
-};
-
-class UHapticFeedbackEffect_Base : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "HapticFeedbackEffect_Base");
-};
-
-class UHapticFeedbackEffect_Curve : public UHapticFeedbackEffect_Base
-{
-public:
-    UE_CLASS("/Script/Engine", "HapticFeedbackEffect_Curve");
-    FHapticFeedbackDetails_Curve HapticDetails;
-};
-
-class ANavigationObjectBase : public AActor
-{
-public:
-    UE_CLASS("/Script/Engine", "NavigationObjectBase");
-    class UCapsuleComponent* CapsuleComponent;
-    class UBillboardComponent* GoodSprite;
-    class UBillboardComponent* BadSprite;
-    bool bIsPIEPlayerStart;
+    UE_CLASS("/Script/Engine", "DataDrivenCVarEngineSubsystem");
+    TMulticastInlineDelegate<void(FString CVarName)> OnDataDrivenCVarDelegate;
+    static UDataDrivenCVarEngineSubsystem* Get();
 private:
     struct UeMarkers
     {
-        static constexpr const char* CapsuleComponent__UeSubobject = "CollisionCapsule /Script/Engine.CapsuleComponent";
-        static constexpr const char* RootComponent__UeSubobject = "CollisionCapsule /Script/Engine.CapsuleComponent";
+        static constexpr const char* OnDataDrivenCVarDelegate__UeDispatcher = "Assignable";
     };
 };
 
@@ -18103,159 +17640,25 @@ public:
     UE_CLASS("/Script/Engine", "HLODProxyDesc");
 };
 
-class UCameraAnim : public UObject
+class UParticleModuleSpawnBase : public UParticleModule
 {
 public:
-    UE_CLASS("/Script/Engine", "CameraAnim");
-    class UInterpGroup* CameraInterpGroup;
-    float AnimLength;
-    FBox BoundingBox;
-    bool bRelativeToInitialTransform;
-    bool bRelativeToInitialFOV;
-    float BaseFOV;
-    FPostProcessSettings BasePostProcessSettings;
-    float BasePostProcessBlendWeight;
+    UE_CLASS("/Script/Engine", "ParticleModuleSpawnBase");
+    bool bProcessSpawnRate;
+    bool bProcessBurstList;
 };
 
-class APlayerStart : public ANavigationObjectBase
+class IImportantToggleSettingInterface
 {
 public:
-    UE_CLASS("/Script/Engine", "PlayerStart");
-    FName PlayerStartTag;
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* CapsuleComponent__UeSubobject = "CollisionCapsule /Script/Engine.CapsuleComponent";
-        static constexpr const char* RootComponent__UeSubobject = "CollisionCapsule /Script/Engine.CapsuleComponent";
-    };
+    UE_CLASS("/Script/Engine", "ImportantToggleSettingInterface");
 };
 
-class UImportanceSamplingLibrary : public UBlueprintFunctionLibrary
+class AReflectionCapture : public AActor
 {
 public:
-    UE_CLASS("/Script/Engine", "ImportanceSamplingLibrary");
-    static void BreakImportanceTexture(const FImportanceTexture& ImportanceTexture, class UTexture2D*& Texture, EImportanceWeight& WeightingFunc);
-    static void ImportanceSample(const FImportanceTexture& Texture, const FVector2D& Rand, int Samples, float Intensity, FVector2D& SamplePosition, FLinearColor& SampleColor, float& SampleIntensity, float& SampleSize);
-    UE_PURE static FImportanceTexture MakeImportanceTexture(class UTexture2D* Texture, TEnum<EImportanceWeight> WeightingFunc);
-    UE_PURE static FVector2D NextSobolCell2D(int Index_0, int NumCells, FVector2D PreviousValue);
-    UE_PURE static FVector NextSobolCell3D(int Index_0, int NumCells, FVector PreviousValue);
-    UE_PURE static float NextSobolFloat(int Index_0, int Dimension, float PreviousValue);
-    static FVector2D RandomSobolCell2D(int Index_0, int NumCells, FVector2D Cell, FVector2D Seed);
-    static FVector RandomSobolCell3D(int Index_0, int NumCells, FVector Cell, FVector Seed);
-    static float RandomSobolFloat(int Index_0, int Dimension, float Seed);
-};
-
-class UKismetGuidLibrary : public UBlueprintFunctionLibrary
-{
-public:
-    UE_CLASS("/Script/Engine", "KismetGuidLibrary");
-    UE_PURE static FString Conv_GuidToString(const FGuid& InGuid);
-    UE_PURE static bool EqualEqual_GuidGuid(const FGuid& A, const FGuid& B);
-    static void Invalidate_Guid(FGuid& InGuid);
-    UE_PURE static bool IsValid_Guid(const FGuid& InGuid);
-    static FGuid NewGuid();
-    UE_PURE static bool NotEqual_GuidGuid(const FGuid& A, const FGuid& B);
-    static void Parse_StringToGuid(FString GuidString, FGuid& OutGuid, bool& success);
-};
-
-class UProjectileMovementComponent : public UMovementComponent
-{
-public:
-    UE_CLASS("/Script/Engine", "ProjectileMovementComponent");
-    float InitialSpeed;
-    float MaxSpeed;
-    bool bRotationFollowsVelocity;
-    bool bRotationRemainsVertical;
-    bool bShouldBounce;
-    bool bInitialVelocityInLocalSpace;
-    bool bForceSubStepping;
-    bool bSimulationEnabled;
-    bool bSweepCollision;
-    bool bIsHomingProjectile;
-    bool bBounceAngleAffectsFriction;
-    UE_READONLY bool bIsSliding;
-    bool bInterpMovement;
-    bool bInterpRotation;
-    UE_READONLY float PreviousHitTime;
-    UE_READONLY FVector PreviousHitNormal;
-    float ProjectileGravityScale;
-    float Buoyancy;
-    float Bounciness;
-    float Friction;
-    float BounceVelocityStopSimulatingThreshold;
-    float MinFrictionFraction;
-    TMulticastInlineDelegate<void(FHitResult ImpactResult, FVector ImpactVelocity)> OnProjectileBounce;
-    TMulticastInlineDelegate<void(FHitResult ImpactResult)> OnProjectileStop;
-    float HomingAccelerationMagnitude;
-    TWeakObjectPtr<class USceneComponent> HomingTargetComponent;
-    float MaxSimulationTimeStep;
-    int MaxSimulationIterations;
-    int BounceAdditionalIterations;
-    float InterpLocationTime;
-    float InterpRotationTime;
-    float InterpLocationMaxLagDistance;
-    float InterpLocationSnapToTargetDistance;
-    void MoveInterpolationTarget(const FVector& NewLocation, const FRotator& NewRotation);
-    void ResetInterpolation();
-    void SetInterpolatedComponent(class USceneComponent* Component);
-    void SetVelocityInLocalSpace(FVector NewVelocity);
-    void StopSimulating(const FHitResult& HitResult);
-    UE_PURE bool IsInterpolationComplete() const;
-    UE_PURE bool IsVelocityUnderSimulationThreshold() const;
-    UE_PURE FVector LimitVelocity(FVector NewVelocity) const;
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* OnProjectileBounce__UeDispatcher = "Assignable";
-        static constexpr const char* OnProjectileStop__UeDispatcher = "Assignable";
-    };
-};
-
-class UBlueprintPlatformLibrary : public UBlueprintFunctionLibrary
-{
-public:
-    UE_CLASS("/Script/Engine", "BlueprintPlatformLibrary");
-    static void CancelLocalNotification(FString ActivationEvent);
-    static void CancelLocalNotificationById(int NotificationId);
-    static void ClearAllLocalNotifications();
-    UE_PURE static TEnum<EScreenOrientation> GetDeviceOrientation();
-    static void GetLaunchNotification(bool& NotificationLaunchedApp, FString& ActivationEvent, int& FireDate);
-    static int ScheduleLocalNotificationAtTime(const FDateTime& FireDateTime, bool LocalTime, const FText& Title, const FText& Body, const FText& Action, FString ActivationEvent);
-    static int ScheduleLocalNotificationBadgeAtTime(const FDateTime& FireDateTime, bool LocalTime, FString ActivationEvent);
-    static void ScheduleLocalNotificationBadgeFromNow(int inSecondsFromNow, FString ActivationEvent);
-    static int ScheduleLocalNotificationFromNow(int inSecondsFromNow, const FText& Title, const FText& Body, const FText& Action, FString ActivationEvent);
-};
-
-class UInputActionDelegateBinding : public UInputDelegateBinding
-{
-public:
-    UE_CLASS("/Script/Engine", "InputActionDelegateBinding");
-    TArray<FBlueprintInputActionDelegateBinding> InputActionDelegateBindings;
-};
-
-class URuntimeVirtualTexture : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "RuntimeVirtualTexture");
-    UE_READONLY int TileCount;
-    UE_READONLY int TileSize;
-    UE_READONLY int TileBorderSize;
-    UE_READONLY TEnum<ERuntimeVirtualTextureMaterialType> MaterialType;
-    UE_READONLY bool bCompressTextures;
-    bool bClearTextures;
-    bool bSinglePhysicalSpace;
-    bool bPrivateSpace;
-    bool bAdaptive;
-    bool bContinuousUpdate;
-    int RemoveLowMips;
-    TEnum<ETextureGroup> LODGroup;
-    int Size;
-    class URuntimeVirtualTextureStreamingProxy* StreamingTexture;
-    UE_PURE int GetPageTableSize() const;
-    UE_PURE int GetSize() const;
-    UE_PURE int GetTileBorderSize() const;
-    UE_PURE int GetTileCount() const;
-    UE_PURE int GetTileSize() const;
+    UE_CLASS("/Script/Engine", "ReflectionCapture");
+    UE_READONLY class UReflectionCaptureComponent* CaptureComponent;
 };
 
 class USaveGame : public UObject
@@ -18264,33 +17667,81 @@ public:
     UE_CLASS("/Script/Engine", "SaveGame");
 };
 
-class USkeleton : public UObject
+class AWorldSettings : public AInfo
 {
 public:
-    UE_CLASS("/Script/Engine", "Skeleton");
-    TArray<FBoneNode> BoneTree;
-    TArray<FTransform> RefLocalPoses;
-    FGuid VirtualBoneGuid;
-    TArray<FVirtualBone> VirtualBones;
-    TArray<class USkeletalMeshSocket*> Sockets;
-    FSmartNameContainer SmartNames;
-    TArray<class UBlendProfile*> BlendProfiles;
-    TArray<FAnimSlotGroup> SlotGroups;
+    UE_CLASS("/Script/Engine", "WorldSettings");
+    int VisibilityCellSize;
+    TEnum<EVisibilityAggressiveness> VisibilityAggressiveness;
+    bool bPrecomputeVisibility;
+    bool bPlaceCellsOnlyAlongCameraTracks;
+    UE_READONLY bool bEnableWorldBoundsChecks;
+    UE_READONLY bool bEnableNavigationSystem;
+    UE_READONLY bool bEnableAISystem;
+    UE_READONLY bool bEnableWorldComposition;
+    UE_READONLY bool bUseClientSideLevelStreamingVolumes;
+    UE_READONLY bool bEnableWorldOriginRebasing;
+    bool bWorldGravitySet;
+    UE_READONLY bool bGlobalGravitySet;
+    bool bMinimizeBSPSections;
+    bool bForceNoPrecomputedLighting;
+    bool bHighPriorityLoading;
+    bool bHighPriorityLoadingLocal;
+    bool bOverrideDefaultBroadphaseSettings;
+    UE_READONLY class UNavigationSystemConfig* NavigationSystemConfig;
+    class UNavigationSystemConfig* NavigationSystemConfigOverride;
+    UE_READONLY float WorldToMeters;
+    UE_READONLY float KillZ;
+    UE_READONLY TSubclassOf<class UDamageType> KillZDamageType;
+    float WorldGravityZ;
+    UE_READONLY float GlobalGravityZ;
+    UE_READONLY TSubclassOf<class ADefaultPhysicsVolume> DefaultPhysicsVolumeClass;
+    UE_READONLY TSubclassOf<class UPhysicsCollisionHandler> PhysicsCollisionHandlerClass;
+    UE_READONLY TSubclassOf<class AGameModeBase> DefaultGameMode;
+    TSubclassOf<class AGameNetworkManager> GameNetworkManagerClass;
+    int PackedLightAndShadowMapTextureSize;
+    UE_READONLY FVector DefaultColorScale;
+    float DefaultMaxDistanceFieldOcclusionDistance;
+    float GlobalDistanceFieldViewDistance;
+    float DynamicIndirectShadowsSelfShadowingIntensity;
+    FReverbSettings DefaultReverbSettings;
+    FInteriorSettings DefaultAmbientZoneSettings;
+    class USoundMix* DefaultBaseSoundMix;
+    float TimeDilation;
+    float MatineeTimeDilation;
+    float DemoPlayTimeDilation;
+    float MinGlobalTimeDilation;
+    float MaxGlobalTimeDilation;
+    float MinUndilatedFrameTime;
+    float MaxUndilatedFrameTime;
+    FBroadphaseSettings BroadphaseSettings;
+    class APlayerState* Pauser;
+    TArray<FNetViewer> ReplicationViewers;
     TArray<class UAssetUserData*> AssetUserData;
+    class APlayerState* PauserPlayerState;
+    int MaxNumberOfBookmarks;
+    TSubclassOf<class UBookmarkBase> DefaultBookmarkClass;
+    TArray<class UBookmarkBase*> BookmarkArray;
+    TSubclassOf<class UBookmarkBase> LastBookmarkClass;
+    void OnRep_WorldGravityZ();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* bHighPriorityLoading__Replicated = ":";
+        static constexpr const char* WorldGravityZ__Replicated = "OnRep_WorldGravityZ:";
+        static constexpr const char* TimeDilation__Replicated = ":";
+        static constexpr const char* MatineeTimeDilation__Replicated = ":";
+        static constexpr const char* PauserPlayerState__Replicated = ":";
+    };
 };
 
-class ULevelStreamingAlwaysLoaded : public ULevelStreaming
+class UMaterialExpressionCollectionParameter : public UMaterialExpression
 {
 public:
-    UE_CLASS("/Script/Engine", "LevelStreamingAlwaysLoaded");
-};
-
-class UInterpTrackMoveAxis : public UInterpTrackFloatBase
-{
-public:
-    UE_CLASS("/Script/Engine", "InterpTrackMoveAxis");
-    TEnum<EInterpMoveAxis> MoveAxis;
-    FInterpLookupTrack LookupTrack;
+    UE_CLASS("/Script/Engine", "MaterialExpressionCollectionParameter");
+    class UMaterialParameterCollection* Collection;
+    FName ParameterName;
+    FGuid ParameterId;
 };
 
 class UCharacterMovementComponent : public UPawnMovementComponent
@@ -18489,18 +17940,55 @@ public:
     UE_PURE float K2_GetWalkableFloorZ() const;
 };
 
-class USoundNodeLooping : public USoundNode
+class UTexture2D : public UTexture
 {
 public:
-    UE_CLASS("/Script/Engine", "SoundNodeLooping");
-    int LoopCount;
-    bool bLoopIndefinitely;
+    UE_CLASS("/Script/Engine", "Texture2D");
+    int LevelIndex;
+    int FirstResourceMemMip;
+    bool bTemporarilyDisableStreaming;
+    TEnum<ETextureAddress> AddressX;
+    TEnum<ETextureAddress> AddressY;
+    FIntPoint ImportedSize;
+    UE_PURE int Blueprint_GetSizeX() const;
+    UE_PURE int Blueprint_GetSizeY() const;
 };
 
-class UAnimCurveCompressionCodec_UniformlySampled : public UAnimCurveCompressionCodec
+class ULightMapVirtualTexture2D : public UTexture2D
 {
 public:
-    UE_CLASS("/Script/Engine", "AnimCurveCompressionCodec_UniformlySampled");
+    UE_CLASS("/Script/Engine", "LightMapVirtualTexture2D");
+    TArray<int8> TypeToLayer;
+};
+
+class USoundNodeBranch : public USoundNode
+{
+public:
+    UE_CLASS("/Script/Engine", "SoundNodeBranch");
+    FName BoolParameterName;
+};
+
+class UReflectionCaptureComponent : public USceneComponent
+{
+public:
+    UE_CLASS("/Script/Engine", "ReflectionCaptureComponent");
+    class UBillboardComponent* CaptureOffsetComponent;
+    UE_READONLY TEnum<EReflectionSourceType> ReflectionSourceType;
+    UE_READONLY TEnum<EMobileReflectionCompression> MobileReflectionCompression;
+    UE_READONLY class UTextureCube* Cubemap;
+    UE_READONLY float SourceCubemapAngle;
+    UE_READONLY float Brightness;
+    UE_READONLY bool bModifyMaxValueRGBM;
+    UE_READONLY float MaxValueRGBM;
+    FVector CaptureOffset;
+    FGuid MapBuildDataId;
+    class UTextureCube* CachedEncodedHDRCubemap;
+};
+
+class IBoneReferenceSkeletonProvider
+{
+public:
+    UE_CLASS("/Script/Engine", "BoneReferenceSkeletonProvider");
 };
 
 class USceneCaptureComponent2D : public USceneCaptureComponent
@@ -18529,33 +18017,6 @@ public:
     void RemoveBlendable(TScriptInterface<class IBlendableInterface> InBlendableObject);
 };
 
-class UDistributionFloat : public UDistribution
-{
-public:
-    UE_CLASS("/Script/Engine", "DistributionFloat");
-    bool bCanBeBaked;
-    bool bBakedDataSuccesfully;
-};
-
-class UDistributionFloatConstant : public UDistributionFloat
-{
-public:
-    UE_CLASS("/Script/Engine", "DistributionFloatConstant");
-    float Constant;
-};
-
-class UAnimCurveCompressionSettings : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "AnimCurveCompressionSettings");
-    class UAnimCurveCompressionCodec* Codec;
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* Codec__UeSubobject = "CurveCompressionCodec /Script/Engine.AnimCurveCompressionCodec_CompressedRichCurve";
-    };
-};
-
 class UInterpGroup : public UObject
 {
 public:
@@ -18570,25 +18031,76 @@ public:
     bool bIsSelected;
 };
 
-class UParticleModuleColorScaleOverLife : public UParticleModuleColorBase
+class UParticleModuleKillBase : public UParticleModule
 {
 public:
-    UE_CLASS("/Script/Engine", "ParticleModuleColorScaleOverLife");
-    FRawDistributionVector ColorScaleOverLife;
-    FRawDistributionFloat AlphaScaleOverLife;
-    bool bEmitterTime;
+    UE_CLASS("/Script/Engine", "ParticleModuleKillBase");
 };
 
-class USimulatedClientNetConnection : public UNetConnection
+class UParticleModuleKillBox : public UParticleModuleKillBase
 {
 public:
-    UE_CLASS("/Script/Engine", "SimulatedClientNetConnection");
+    UE_CLASS("/Script/Engine", "ParticleModuleKillBox");
+    FRawDistributionVector LowerLeftCorner;
+    FRawDistributionVector UpperRightCorner;
+    bool bAbsolute;
+    bool bKillInside;
+    bool bAxisAlignedAndFixedSize;
 };
 
-class UPackageMapClient : public UPackageMap
+class UInterpToMovementComponent : public UMovementComponent
 {
 public:
-    UE_CLASS("/Script/Engine", "PackageMapClient");
+    UE_CLASS("/Script/Engine", "InterpToMovementComponent");
+    float Duration;
+    bool bPauseOnImpact;
+    bool bSweep;
+    TEnum<ETeleportType> TeleportType;
+    TEnum<EInterpToBehaviourType> BehaviourType;
+    bool bCheckIfStillInWorld;
+    bool bForceSubStepping;
+    TMulticastInlineDelegate<void(FHitResult ImpactResult, float Time)> OnInterpToReverse;
+    TMulticastInlineDelegate<void(FHitResult ImpactResult, float Time)> OnInterpToStop;
+    TMulticastInlineDelegate<void(FHitResult ImpactResult, float Time)> OnWaitBeginDelegate;
+    TMulticastInlineDelegate<void(FHitResult ImpactResult, float Time)> OnWaitEndDelegate;
+    TMulticastInlineDelegate<void(FHitResult ImpactResult, float Time)> OnResetDelegate;
+    float MaxSimulationTimeStep;
+    int MaxSimulationIterations;
+    TArray<FInterpControlPoint> ControlPoints;
+    void AddControlPointPosition(FVector Pos, bool bPositionIsRelative);
+    void FinaliseControlPoints();
+    void ResetControlPoints();
+    void RestartMovement(float InitialDirection);
+    void StopSimulating(const FHitResult& HitResult);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnInterpToReverse__UeDispatcher = "Assignable";
+        static constexpr const char* OnInterpToStop__UeDispatcher = "Assignable";
+        static constexpr const char* OnWaitBeginDelegate__UeDispatcher = "Assignable";
+        static constexpr const char* OnWaitEndDelegate__UeDispatcher = "Assignable";
+        static constexpr const char* OnResetDelegate__UeDispatcher = "Assignable";
+    };
+};
+
+class UParticleModuleEventSendToGame : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "ParticleModuleEventSendToGame");
+};
+
+class UHapticFeedbackEffect_Base : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "HapticFeedbackEffect_Base");
+};
+
+class UParticleModuleAcceleration : public UParticleModuleAccelerationBase
+{
+public:
+    UE_CLASS("/Script/Engine", "ParticleModuleAcceleration");
+    FRawDistributionVector Acceleration;
+    bool bApplyOwnerScale;
 };
 
 class UBoxComponent : public UShapeComponent
@@ -18602,17 +18114,11 @@ public:
     UE_PURE FVector GetUnscaledBoxExtent() const;
 };
 
-class UAnimCurveCompressionCodec_UniformIndexable : public UAnimCurveCompressionCodec
+class UHLODEngineSubsystem : public UEngineSubsystem
 {
 public:
-    UE_CLASS("/Script/Engine", "AnimCurveCompressionCodec_UniformIndexable");
-};
-
-class UInterpFilter : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "InterpFilter");
-    FString Caption;
+    UE_CLASS("/Script/Engine", "HLODEngineSubsystem");
+    static UHLODEngineSubsystem* Get();
 };
 
 class USplineMeshComponent : public UStaticMeshComponent
@@ -18667,110 +18173,75 @@ private:
     };
 };
 
-class UMaterialExpressionAtmosphericLightColor : public UMaterialExpression
+class ACameraShakeSourceActor : public AActor
 {
 public:
-    UE_CLASS("/Script/Engine", "MaterialExpressionAtmosphericLightColor");
+    UE_CLASS("/Script/Engine", "CameraShakeSourceActor");
+    UE_READONLY class UCameraShakeSourceComponent* CameraShakeSourceComponent;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* CameraShakeSourceComponent__UeSubobject = "CameraShakeSourceComponent /Script/Engine.CameraShakeSourceComponent";
+        static constexpr const char* RootComponent__UeSubobject = "CameraShakeSourceComponent /Script/Engine.CameraShakeSourceComponent";
+    };
 };
 
-class UForceFeedbackAttenuation : public UObject
+class UMaterialExpressionArctangentFast : public UMaterialExpression
 {
 public:
-    UE_CLASS("/Script/Engine", "ForceFeedbackAttenuation");
-    UE_READONLY FForceFeedbackAttenuationSettings Attenuation;
+    UE_CLASS("/Script/Engine", "MaterialExpressionArctangentFast");
+    FExpressionInput Input;
 };
 
-class UKismetRenderingLibrary : public UBlueprintFunctionLibrary
+class ULevelActorContainer : public UObject
 {
 public:
-    UE_CLASS("/Script/Engine", "KismetRenderingLibrary");
-    static void BeginDrawCanvasToRenderTarget(class UObject* WorldContextObject, class UTextureRenderTarget2D* TextureRenderTarget, class UCanvas*& Canvas, FVector2D& Size, FDrawToRenderTargetContext& Context);
-    static void BeginDrawCanvasToRenderTarget(class UTextureRenderTarget2D* TextureRenderTarget, class UCanvas*& Canvas, FVector2D& Size, FDrawToRenderTargetContext& Context);
-    static void BreakSkinWeightInfo(FSkelMeshSkinWeightInfo InWeight, int& Bone0, uint8& Weight0, int& Bone1, uint8& Weight1, int& Bone2, uint8& Weight2, int& Bone3, uint8& Weight3);
-    static void ClearRenderTarget2D(class UObject* WorldContextObject, class UTextureRenderTarget2D* TextureRenderTarget, FLinearColor ClearColor);
-    static void ClearRenderTarget2D(class UTextureRenderTarget2D* TextureRenderTarget, FLinearColor ClearColor);
-    static void ConvertRenderTargetToTexture2DEditorOnly(class UObject* WorldContextObject, class UTextureRenderTarget2D* RenderTarget, class UTexture2D* Texture);
-    static void ConvertRenderTargetToTexture2DEditorOnly(class UTextureRenderTarget2D* RenderTarget, class UTexture2D* Texture);
-    static class UTextureRenderTarget2D* CreateRenderTarget2D(class UObject* WorldContextObject, int Width, int Height, TEnum<ETextureRenderTargetFormat> Format, FLinearColor ClearColor, bool bAutoGenerateMipMaps);
-    static class UTextureRenderTarget2D* CreateRenderTarget2D(int Width, int Height, TEnum<ETextureRenderTargetFormat> Format, FLinearColor ClearColor, bool bAutoGenerateMipMaps);
-    static class UTextureRenderTarget2DArray* CreateRenderTarget2DArray(class UObject* WorldContextObject, int Width, int Height, int Slices, TEnum<ETextureRenderTargetFormat> Format, FLinearColor ClearColor, bool bAutoGenerateMipMaps);
-    static class UTextureRenderTarget2DArray* CreateRenderTarget2DArray(int Width, int Height, int Slices, TEnum<ETextureRenderTargetFormat> Format, FLinearColor ClearColor, bool bAutoGenerateMipMaps);
-    static class UTextureRenderTargetVolume* CreateRenderTargetVolume(class UObject* WorldContextObject, int Width, int Height, int Depth, TEnum<ETextureRenderTargetFormat> Format, FLinearColor ClearColor, bool bAutoGenerateMipMaps);
-    static class UTextureRenderTargetVolume* CreateRenderTargetVolume(int Width, int Height, int Depth, TEnum<ETextureRenderTargetFormat> Format, FLinearColor ClearColor, bool bAutoGenerateMipMaps);
-    static void DrawMaterialToRenderTarget(class UObject* WorldContextObject, class UTextureRenderTarget2D* TextureRenderTarget, class UMaterialInterface* Material);
-    static void DrawMaterialToRenderTarget(class UTextureRenderTarget2D* TextureRenderTarget, class UMaterialInterface* Material);
-    static void EndDrawCanvasToRenderTarget(class UObject* WorldContextObject, const FDrawToRenderTargetContext& Context);
-    static void EndDrawCanvasToRenderTarget(const FDrawToRenderTargetContext& Context);
-    static void ExportRenderTarget(class UObject* WorldContextObject, class UTextureRenderTarget2D* TextureRenderTarget, FString FilePath, FString Filename);
-    static void ExportRenderTarget(class UTextureRenderTarget2D* TextureRenderTarget, FString FilePath, FString Filename);
-    static void ExportTexture2D(class UObject* WorldContextObject, class UTexture2D* Texture, FString FilePath, FString Filename);
-    static void ExportTexture2D(class UTexture2D* Texture, FString FilePath, FString Filename);
-    static class UTexture2D* ImportBufferAsTexture2D(class UObject* WorldContextObject, const TArray<uint8>& Buffer);
-    static class UTexture2D* ImportBufferAsTexture2D(const TArray<uint8>& Buffer);
-    static class UTexture2D* ImportFileAsTexture2D(class UObject* WorldContextObject, FString Filename);
-    static class UTexture2D* ImportFileAsTexture2D(FString Filename);
-    UE_PURE static FSkelMeshSkinWeightInfo MakeSkinWeightInfo(int Bone0, uint8 Weight0, int Bone1, uint8 Weight1, int Bone2, uint8 Weight2, int Bone3, uint8 Weight3);
-    static FColor ReadRenderTargetPixel(class UObject* WorldContextObject, class UTextureRenderTarget2D* TextureRenderTarget, int X, int Y);
-    static FColor ReadRenderTargetPixel(class UTextureRenderTarget2D* TextureRenderTarget, int X, int Y);
-    static FLinearColor ReadRenderTargetRawPixel(class UObject* WorldContextObject, class UTextureRenderTarget2D* TextureRenderTarget, int X, int Y);
-    static FLinearColor ReadRenderTargetRawPixel(class UTextureRenderTarget2D* TextureRenderTarget, int X, int Y);
-    static FLinearColor ReadRenderTargetRawUV(class UObject* WorldContextObject, class UTextureRenderTarget2D* TextureRenderTarget, float U, float V);
-    static FLinearColor ReadRenderTargetRawUV(class UTextureRenderTarget2D* TextureRenderTarget, float U, float V);
-    static FColor ReadRenderTargetUV(class UObject* WorldContextObject, class UTextureRenderTarget2D* TextureRenderTarget, float U, float V);
-    static FColor ReadRenderTargetUV(class UTextureRenderTarget2D* TextureRenderTarget, float U, float V);
-    static void ReleaseRenderTarget2D(class UTextureRenderTarget2D* TextureRenderTarget);
-    static class UTexture2D* RenderTargetCreateStaticTexture2DEditorOnly(class UTextureRenderTarget2D* RenderTarget, FString Name_0, TEnum<ETextureCompressionSettings> CompressionSettings, TEnum<ETextureMipGenSettings> MipSettings);
-    static void SetCastInsetShadowForAllAttachments(class UPrimitiveComponent* PrimitiveComponent, bool bCastInsetShadow, bool bLightAttachmentsAsGroup);
+    UE_CLASS("/Script/Engine", "LevelActorContainer");
+    TArray<class AActor*> Actors;
 };
 
-class AGameNetworkManager : public AInfo
+class UMaterialInterface : public UObject
 {
 public:
-    UE_CLASS("/Script/Engine", "GameNetworkManager");
-    float BadPacketLossThreshold;
-    float SeverePacketLossThreshold;
-    int BadPingThreshold;
-    int SeverePingThreshold;
-    int AdjustedNetSpeed;
-    float LastNetSpeedUpdateTime;
-    int TotalNetBandwidth;
-    int MinDynamicBandwidth;
-    int MaxDynamicBandwidth;
-    bool bIsStandbyCheckingEnabled;
-    bool bHasStandbyCheatTriggered;
-    float StandbyRxCheatTime;
-    float StandbyTxCheatTime;
-    float PercentMissingForRxStandby;
-    float PercentMissingForTxStandby;
-    float PercentForBadPing;
-    float JoinInProgressStandbyWaitTime;
-    float MoveRepSize;
-    float MAXPOSITIONERRORSQUARED;
-    float MAXNEARZEROVELOCITYSQUARED;
-    float CLIENTADJUSTUPDATECOST;
-    float MAXCLIENTUPDATEINTERVAL;
-    float MaxClientForcedUpdateDuration;
-    float ServerForcedUpdateHitchThreshold;
-    float ServerForcedUpdateHitchCooldown;
-    float MaxMoveDeltaTime;
-    float MaxClientSmoothingDeltaTime;
-    float ClientNetSendMoveDeltaTime;
-    float ClientNetSendMoveDeltaTimeThrottled;
-    float ClientNetSendMoveDeltaTimeStationary;
-    int ClientNetSendMoveThrottleAtNetSpeed;
-    int ClientNetSendMoveThrottleOverPlayerCount;
-    bool ClientAuthorativePosition;
-    float ClientErrorUpdateRateLimit;
-    float ClientNetCamUpdateDeltaTime;
-    float ClientNetCamUpdatePositionLimit;
-    bool bMovementTimeDiscrepancyDetection;
-    bool bMovementTimeDiscrepancyResolution;
-    float MovementTimeDiscrepancyMaxTimeMargin;
-    float MovementTimeDiscrepancyMinTimeMargin;
-    float MovementTimeDiscrepancyResolutionRate;
-    float MovementTimeDiscrepancyDriftAllowance;
-    bool bMovementTimeDiscrepancyForceCorrectionsDuringResolution;
-    bool bUseDistanceBasedRelevancy;
+    UE_CLASS("/Script/Engine", "MaterialInterface");
+    UE_READONLY class USubsurfaceProfile* SubsurfaceProfile;
+    FLightmassMaterialInterfaceSettings LightmassSettings;
+    TArray<FMaterialTextureInfo> TextureStreamingData;
+    TArray<class UAssetUserData*> AssetUserData;
+    class UMaterial* GetBaseMaterial();
+    void SetForceMipLevelsToBeResident(bool OverrideForceMiplevelsToBeResident, bool bForceMiplevelsToBeResidentValue, float ForceDuration, int CinematicTextureGroups, bool bFastResponse);
+    UE_PURE FMaterialParameterInfo GetParameterInfo(TEnum<EMaterialParameterAssociation> Association, FName ParameterName, class UMaterialFunctionInterface* LayerFunction) const;
+    UE_PURE class UPhysicalMaterial* GetPhysicalMaterial() const;
+    UE_PURE class UPhysicalMaterial* GetPhysicalMaterialFromMap(int Index_0) const;
+    UE_PURE class UPhysicalMaterialMask* GetPhysicalMaterialMask() const;
+};
+
+class UDistributionFloat : public UDistribution
+{
+public:
+    UE_CLASS("/Script/Engine", "DistributionFloat");
+    bool bCanBeBaked;
+    bool bBakedDataSuccesfully;
+};
+
+class UMaterialInstance : public UMaterialInterface
+{
+public:
+    UE_CLASS("/Script/Engine", "MaterialInstance");
+    class UPhysicalMaterial* PhysMaterial;
+    class UPhysicalMaterial* PhysicalMaterialMap[8];
+    UE_READONLY class UMaterialInterface* Parent;
+    bool bHasStaticPermutationResource;
+    UE_READONLY bool bOverrideSubsurfaceProfile;
+    UE_READONLY TArray<FScalarParameterValue> ScalarParameterValues;
+    UE_READONLY TArray<FVectorParameterValue> VectorParameterValues;
+    UE_READONLY TArray<FTextureParameterValue> TextureParameterValues;
+    UE_READONLY TArray<FRuntimeVirtualTextureParameterValue> RuntimeVirtualTextureParameterValues;
+    UE_READONLY TArray<FFontParameterValue> FontParameterValues;
+    FMaterialInstanceBasePropertyOverrides BasePropertyOverrides;
+    FStaticParameterSet StaticParameters;
+    FMaterialCachedParameters CachedLayerParameters;
+    TArray<class UObject*> CachedReferencedTextures;
 };
 
 class UMaterialInstanceConstant : public UMaterialInstance
@@ -18783,35 +18254,19 @@ public:
     FLinearColor K2_GetVectorParameterValue(FName ParameterName);
 };
 
-class UDistributionFloatConstantCurve : public UDistributionFloat
+class UDialogueVoice : public UObject
 {
 public:
-    UE_CLASS("/Script/Engine", "DistributionFloatConstantCurve");
-    FInterpCurveFloat ConstantCurve;
+    UE_CLASS("/Script/Engine", "DialogueVoice");
+    TEnum<EGrammaticalGender> Gender;
+    TEnum<EGrammaticalNumber> Plurality;
+    FGuid LocalizationGUID;
 };
 
-class UDistributionFloatParameterBase : public UDistributionFloatConstant
+class UMaterialExpressionCustomOutput : public UMaterialExpression
 {
 public:
-    UE_CLASS("/Script/Engine", "DistributionFloatParameterBase");
-    FName ParameterName;
-    float MinInput;
-    float MaxInput;
-    float MinOutput;
-    float MaxOutput;
-    TEnum<EDistributionParamMode> ParamMode;
-};
-
-class UDistributionFloatParticleParameter : public UDistributionFloatParameterBase
-{
-public:
-    UE_CLASS("/Script/Engine", "DistributionFloatParticleParameter");
-};
-
-class INavRelevantInterface
-{
-public:
-    UE_CLASS("/Script/Engine", "NavRelevantInterface");
+    UE_CLASS("/Script/Engine", "MaterialExpressionCustomOutput");
 };
 
 class UEngineCustomTimeStep : public UObject
@@ -18820,109 +18275,47 @@ public:
     UE_CLASS("/Script/Engine", "EngineCustomTimeStep");
 };
 
-class UParticleModuleRotationRate_Seeded : public UParticleModuleRotationRate
+class UInterpTrackInstColorScale : public UInterpTrackInst
 {
 public:
-    UE_CLASS("/Script/Engine", "ParticleModuleRotationRate_Seeded");
-    FParticleRandomSeedInfo RandomSeedInfo;
+    UE_CLASS("/Script/Engine", "InterpTrackInstColorScale");
 };
 
-class UAnimSequenceBase : public UAnimationAsset
+class ULightmappedSurfaceCollection : public UObject
 {
 public:
-    UE_CLASS("/Script/Engine", "AnimSequenceBase");
-    TArray<FAnimNotifyEvent> Notifies;
-    UE_READONLY float SequenceLength;
-    float RateScale;
-    FRawCurveTracks RawCurveData;
-    float GetPlayLength();
+    UE_CLASS("/Script/Engine", "LightmappedSurfaceCollection");
+    class UModel* SourceModel;
+    TArray<int> Surfaces;
 };
 
-class UAnimCompositeBase : public UAnimSequenceBase
+class UInterpTrackInstFloatParticleParam : public UInterpTrackInst
 {
 public:
-    UE_CLASS("/Script/Engine", "AnimCompositeBase");
+    UE_CLASS("/Script/Engine", "InterpTrackInstFloatParticleParam");
+    float ResetFloat;
 };
 
-class UAnimMontage : public UAnimCompositeBase
+class USoundMix : public UObject
 {
 public:
-    UE_CLASS("/Script/Engine", "AnimMontage");
-    FAlphaBlend BlendIn;
-    float BlendInTime;
-    FAlphaBlend BlendOut;
-    float BlendOutTime;
-    float BlendOutTriggerTime;
-    FName SyncGroup;
-    int SyncSlotIndex;
-    FMarkerSyncData MarkerData;
-    TArray<FCompositeSection> CompositeSections;
-    TArray<FSlotAnimationTrack> SlotAnimTracks;
-    TArray<FBranchingPoint> BranchingPoints;
-    bool bEnableRootMotionTranslation;
-    bool bEnableRootMotionRotation;
-    bool bEnableAutoBlendOut;
-    TEnum<ERootMotionRootLock> RootMotionRootLock;
-    TArray<FBranchingPointMarker> BranchingPointMarkers;
-    TArray<int> BranchingPointStateNotifyIndices;
-    FTimeStretchCurve TimeStretchCurve;
-    FName TimeStretchCurveName;
-    UE_PURE float GetDefaultBlendOutTime() const;
+    UE_CLASS("/Script/Engine", "SoundMix");
+    bool bApplyEQ;
+    float EQPriority;
+    FAudioEQEffect EQSettings;
+    UE_READONLY TArray<FSoundClassAdjuster> SoundClassEffects;
+    float InitialDelay;
+    float FadeInTime;
+    float Duration;
+    float FadeOutTime;
 };
 
-class UTimecodeProvider : public UObject
+class UReplaySubsystem : public UGameInstanceSubsystem
 {
 public:
-    UE_CLASS("/Script/Engine", "TimecodeProvider");
-    float FrameDelay;
-    void FetchAndUpdate();
-    bool FetchTimecode(FQualifiedFrameTime& OutFrameTime);
-    UE_PURE FQualifiedFrameTime GetDelayedQualifiedFrameTime() const;
-    UE_PURE FTimecode GetDelayedTimecode() const;
-    UE_PURE FFrameRate GetFrameRate() const;
-    UE_PURE FQualifiedFrameTime GetQualifiedFrameTime() const;
-    UE_PURE TEnum<ETimecodeProviderSynchronizationState> GetSynchronizationState() const;
-    UE_PURE FTimecode GetTimecode() const;
-};
-
-class UMaterialExpressionPrecomputedAOMask : public UMaterialExpression
-{
-public:
-    UE_CLASS("/Script/Engine", "MaterialExpressionPrecomputedAOMask");
-};
-
-class ULevelStreamingPersistent : public ULevelStreaming
-{
-public:
-    UE_CLASS("/Script/Engine", "LevelStreamingPersistent");
-};
-
-class UInterpTrackInstEvent : public UInterpTrackInst
-{
-public:
-    UE_CLASS("/Script/Engine", "InterpTrackInstEvent");
-    float LastUpdatePosition;
-};
-
-class UPluginCommandlet : public UCommandlet
-{
-public:
-    UE_CLASS("/Script/Engine", "PluginCommandlet");
-};
-
-class UInterpTrackLinearColorBase : public UInterpTrack
-{
-public:
-    UE_CLASS("/Script/Engine", "InterpTrackLinearColorBase");
-    FInterpCurveLinearColor LinearColorTrack;
-    float CurveTension;
-};
-
-class UInterpTrackLinearColorProp : public UInterpTrackLinearColorBase
-{
-public:
-    UE_CLASS("/Script/Engine", "InterpTrackLinearColorProp");
-    FName PropertyName;
+    UE_CLASS("/Script/Engine", "ReplaySubsystem");
+    bool bLoadDefaultMapOnStop;
+    static UReplaySubsystem* Get(class UObject* WorldContextObject = nullptr);
 };
 
 class UModel : public UObject
@@ -18931,24 +18324,132 @@ public:
     UE_CLASS("/Script/Engine", "Model");
 };
 
-class UMaterialExpressionDeriveNormalZ : public UMaterialExpression
+class UMaterialExpressionCeil : public UMaterialExpression
 {
 public:
-    UE_CLASS("/Script/Engine", "MaterialExpressionDeriveNormalZ");
-    FExpressionInput InXY;
+    UE_CLASS("/Script/Engine", "MaterialExpressionCeil");
+    FExpressionInput Input;
 };
 
-class UChannel : public UObject
+class USplineComponent : public UPrimitiveComponent
 {
 public:
-    UE_CLASS("/Script/Engine", "Channel");
-    class UNetConnection* Connection;
-};
-
-class UReplicationConnectionDriver : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "ReplicationConnectionDriver");
+    UE_CLASS("/Script/Engine", "SplineComponent");
+    FSplineCurves SplineCurves;
+    FInterpCurveVector SplineInfo;
+    FInterpCurveQuat SplineRotInfo;
+    FInterpCurveVector SplineScaleInfo;
+    FInterpCurveFloat SplineReparamTable;
+    bool bAllowSplineEditingPerInstance;
+    int ReparamStepsPerSegment;
+    float Duration;
+    bool bStationaryEndpoints;
+    bool bSplineHasBeenEdited;
+    bool bModifiedByConstructionScript;
+    bool bInputSplinePointsToConstructionScript;
+    bool bDrawDebug;
+    bool bClosedLoop;
+    bool bLoopPositionOverride;
+    float LoopPosition;
+    FVector DefaultUpVector;
+    void AddPoint(const FSplinePoint& Point, bool bUpdateSpline);
+    void AddPoints(const TArray<FSplinePoint>& Points, bool bUpdateSpline);
+    void AddSplineLocalPoint(const FVector& Position);
+    void AddSplinePoint(const FVector& Position, TEnum<ESplineCoordinateSpace> CoordinateSpace, bool bUpdateSpline);
+    void AddSplinePointAtIndex(const FVector& Position, int Index_0, TEnum<ESplineCoordinateSpace> CoordinateSpace, bool bUpdateSpline);
+    void AddSplineWorldPoint(const FVector& Position);
+    void ClearSplinePoints(bool bUpdateSpline);
+    void RemoveSplinePoint(int Index_0, bool bUpdateSpline);
+    void SetClosedLoop(bool bInClosedLoop, bool bUpdateSpline);
+    void SetClosedLoopAtPosition(bool bInClosedLoop, float Key, bool bUpdateSpline);
+    void SetDefaultUpVector(const FVector& UpVector, TEnum<ESplineCoordinateSpace> CoordinateSpace);
+    void SetDrawDebug(bool bShow);
+    void SetLocationAtSplinePoint(int PointIndex, const FVector& InLocation, TEnum<ESplineCoordinateSpace> CoordinateSpace, bool bUpdateSpline);
+    void SetRotationAtSplinePoint(int PointIndex, const FRotator& InRotation, TEnum<ESplineCoordinateSpace> CoordinateSpace, bool bUpdateSpline);
+    void SetScaleAtSplinePoint(int PointIndex, const FVector& InScaleVector, bool bUpdateSpline);
+    void SetSelectedSplineSegmentColor(const FLinearColor& SegmentColor);
+    void SetSplineLocalPoints(const TArray<FVector>& Points);
+    void SetSplinePoints(const TArray<FVector>& Points, TEnum<ESplineCoordinateSpace> CoordinateSpace, bool bUpdateSpline);
+    void SetSplinePointType(int PointIndex, TEnum<ESplinePointType> Type, bool bUpdateSpline);
+    void SetSplineWorldPoints(const TArray<FVector>& Points);
+    void SetTangentAtSplinePoint(int PointIndex, const FVector& InTangent, TEnum<ESplineCoordinateSpace> CoordinateSpace, bool bUpdateSpline);
+    void SetTangentColor(const FLinearColor& TangentColor);
+    void SetTangentsAtSplinePoint(int PointIndex, const FVector& InArriveTangent, const FVector& InLeaveTangent, TEnum<ESplineCoordinateSpace> CoordinateSpace, bool bUpdateSpline);
+    void SetUnselectedSplineSegmentColor(const FLinearColor& SegmentColor);
+    void SetUpVectorAtSplinePoint(int PointIndex, const FVector& InUpVector, TEnum<ESplineCoordinateSpace> CoordinateSpace, bool bUpdateSpline);
+    void SetWorldLocationAtSplinePoint(int PointIndex, const FVector& InLocation);
+    void UpdateSpline();
+    UE_PURE FVector FindDirectionClosestToWorldLocation(const FVector& WorldLocation, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
+    UE_PURE float FindInputKeyClosestToWorldLocation(const FVector& WorldLocation) const;
+    UE_PURE FVector FindLocationClosestToWorldLocation(const FVector& WorldLocation, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
+    UE_PURE FVector FindRightVectorClosestToWorldLocation(const FVector& WorldLocation, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
+    UE_PURE float FindRollClosestToWorldLocation(const FVector& WorldLocation, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
+    UE_PURE FRotator FindRotationClosestToWorldLocation(const FVector& WorldLocation, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
+    UE_PURE FVector FindScaleClosestToWorldLocation(const FVector& WorldLocation) const;
+    UE_PURE FVector FindTangentClosestToWorldLocation(const FVector& WorldLocation, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
+    UE_PURE FTransform FindTransformClosestToWorldLocation(const FVector& WorldLocation, TEnum<ESplineCoordinateSpace> CoordinateSpace, bool bUseScale) const;
+    UE_PURE FVector FindUpVectorClosestToWorldLocation(const FVector& WorldLocation, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
+    UE_PURE FVector GetArriveTangentAtSplinePoint(int PointIndex, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
+    UE_PURE FVector GetDefaultUpVector(TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
+    UE_PURE FVector GetDirectionAtDistanceAlongSpline(float Distance, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
+    UE_PURE FVector GetDirectionAtSplineInputKey(float InKey, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
+    UE_PURE FVector GetDirectionAtSplinePoint(int PointIndex, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
+    UE_PURE FVector GetDirectionAtTime(float Time, TEnum<ESplineCoordinateSpace> CoordinateSpace, bool bUseConstantVelocity) const;
+    UE_PURE float GetDistanceAlongSplineAtSplineInputKey(float InKey) const;
+    UE_PURE float GetDistanceAlongSplineAtSplinePoint(int PointIndex) const;
+    UE_PURE float GetFloatPropertyAtSplineInputKey(float InKey, FName PropertyName) const;
+    UE_PURE float GetFloatPropertyAtSplinePoint(int Index_0, FName PropertyName) const;
+    UE_PURE float GetInputKeyAtDistanceAlongSpline(float Distance) const;
+    UE_PURE FVector GetLeaveTangentAtSplinePoint(int PointIndex, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
+    void GetLocalLocationAndTangentAtSplinePoint(int PointIndex, FVector& LocalLocation, FVector& LocalTangent) const;
+    void GetLocationAndTangentAtSplinePoint(int PointIndex, FVector& Location, FVector& Tangent, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
+    UE_PURE FVector GetLocationAtDistanceAlongSpline(float Distance, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
+    UE_PURE FVector GetLocationAtSplineInputKey(float InKey, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
+    UE_PURE FVector GetLocationAtSplinePoint(int PointIndex, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
+    UE_PURE FVector GetLocationAtTime(float Time, TEnum<ESplineCoordinateSpace> CoordinateSpace, bool bUseConstantVelocity) const;
+    UE_PURE int GetNumberOfSplinePoints() const;
+    UE_PURE int GetNumberOfSplineSegments() const;
+    UE_PURE FVector GetRightVectorAtDistanceAlongSpline(float Distance, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
+    UE_PURE FVector GetRightVectorAtSplineInputKey(float InKey, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
+    UE_PURE FVector GetRightVectorAtSplinePoint(int PointIndex, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
+    UE_PURE FVector GetRightVectorAtTime(float Time, TEnum<ESplineCoordinateSpace> CoordinateSpace, bool bUseConstantVelocity) const;
+    UE_PURE float GetRollAtDistanceAlongSpline(float Distance, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
+    UE_PURE float GetRollAtSplineInputKey(float InKey, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
+    UE_PURE float GetRollAtSplinePoint(int PointIndex, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
+    UE_PURE float GetRollAtTime(float Time, TEnum<ESplineCoordinateSpace> CoordinateSpace, bool bUseConstantVelocity) const;
+    UE_PURE FRotator GetRotationAtDistanceAlongSpline(float Distance, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
+    UE_PURE FRotator GetRotationAtSplineInputKey(float InKey, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
+    UE_PURE FRotator GetRotationAtSplinePoint(int PointIndex, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
+    UE_PURE FRotator GetRotationAtTime(float Time, TEnum<ESplineCoordinateSpace> CoordinateSpace, bool bUseConstantVelocity) const;
+    UE_PURE FVector GetScaleAtDistanceAlongSpline(float Distance) const;
+    UE_PURE FVector GetScaleAtSplineInputKey(float InKey) const;
+    UE_PURE FVector GetScaleAtSplinePoint(int PointIndex) const;
+    UE_PURE FVector GetScaleAtTime(float Time, bool bUseConstantVelocity) const;
+    UE_PURE float GetSplineLength() const;
+    UE_PURE TEnum<ESplinePointType> GetSplinePointType(int PointIndex) const;
+    UE_PURE FVector GetTangentAtDistanceAlongSpline(float Distance, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
+    UE_PURE FVector GetTangentAtSplineInputKey(float InKey, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
+    UE_PURE FVector GetTangentAtSplinePoint(int PointIndex, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
+    UE_PURE FVector GetTangentAtTime(float Time, TEnum<ESplineCoordinateSpace> CoordinateSpace, bool bUseConstantVelocity) const;
+    UE_PURE FTransform GetTransformAtDistanceAlongSpline(float Distance, TEnum<ESplineCoordinateSpace> CoordinateSpace, bool bUseScale) const;
+    UE_PURE FTransform GetTransformAtSplineInputKey(float InKey, TEnum<ESplineCoordinateSpace> CoordinateSpace, bool bUseScale) const;
+    UE_PURE FTransform GetTransformAtSplinePoint(int PointIndex, TEnum<ESplineCoordinateSpace> CoordinateSpace, bool bUseScale) const;
+    UE_PURE FTransform GetTransformAtTime(float Time, TEnum<ESplineCoordinateSpace> CoordinateSpace, bool bUseConstantVelocity, bool bUseScale) const;
+    UE_PURE FVector GetUpVectorAtDistanceAlongSpline(float Distance, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
+    UE_PURE FVector GetUpVectorAtSplineInputKey(float InKey, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
+    UE_PURE FVector GetUpVectorAtSplinePoint(int PointIndex, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
+    UE_PURE FVector GetUpVectorAtTime(float Time, TEnum<ESplineCoordinateSpace> CoordinateSpace, bool bUseConstantVelocity) const;
+    UE_PURE FVector GetVectorPropertyAtSplineInputKey(float InKey, FName PropertyName) const;
+    UE_PURE FVector GetVectorPropertyAtSplinePoint(int Index_0, FName PropertyName) const;
+    UE_PURE FVector GetWorldDirectionAtDistanceAlongSpline(float Distance) const;
+    UE_PURE FVector GetWorldDirectionAtTime(float Time, bool bUseConstantVelocity) const;
+    UE_PURE FVector GetWorldLocationAtDistanceAlongSpline(float Distance) const;
+    UE_PURE FVector GetWorldLocationAtSplinePoint(int PointIndex) const;
+    UE_PURE FVector GetWorldLocationAtTime(float Time, bool bUseConstantVelocity) const;
+    UE_PURE FRotator GetWorldRotationAtDistanceAlongSpline(float Distance) const;
+    UE_PURE FRotator GetWorldRotationAtTime(float Time, bool bUseConstantVelocity) const;
+    UE_PURE FVector GetWorldTangentAtDistanceAlongSpline(float Distance) const;
+    UE_PURE bool IsClosedLoop() const;
 };
 
 class UActorChannel : public UChannel
@@ -18959,39 +18460,177 @@ public:
     TArray<class UObject*> CreateSubObjects;
 };
 
-class UMaterialExpressionParameter : public UMaterialExpression
+class UMaterialExpressionConstantBiasScale : public UMaterialExpression
 {
 public:
-    UE_CLASS("/Script/Engine", "MaterialExpressionParameter");
-    FName ParameterName;
-    FGuid ExpressionGUID;
+    UE_CLASS("/Script/Engine", "MaterialExpressionConstantBiasScale");
+    FExpressionInput Input;
+    float Bias;
+    float Scale;
 };
 
-class UMaterialExpressionVectorParameter : public UMaterialExpressionParameter
+class UParticleModuleTrailBase : public UParticleModule
 {
 public:
-    UE_CLASS("/Script/Engine", "MaterialExpressionVectorParameter");
-    FLinearColor DefaultValue;
-    bool bUseCustomPrimitiveData;
-    uint8 PrimitiveDataIndex;
+    UE_CLASS("/Script/Engine", "ParticleModuleTrailBase");
 };
 
-class USpotLightComponent : public UPointLightComponent
+class UParticleModuleTrailSource : public UParticleModuleTrailBase
 {
 public:
-    UE_CLASS("/Script/Engine", "SpotLightComponent");
-    UE_READONLY float InnerConeAngle;
-    UE_READONLY float OuterConeAngle;
-    void SetInnerConeAngle(float NewInnerConeAngle);
-    void SetOuterConeAngle(float NewOuterConeAngle);
+    UE_CLASS("/Script/Engine", "ParticleModuleTrailSource");
+    TEnum<ETrail2SourceMethod> SourceMethod;
+    FName SourceName;
+    FRawDistributionFloat SourceStrength;
+    bool bLockSourceStength;
+    int SourceOffsetCount;
+    TArray<FVector> SourceOffsetDefaults;
+    TEnum<EParticleSourceSelectionMethod> SelectionMethod;
+    bool bInheritRotation;
 };
 
-class UMaterialExpressionCrossProduct : public UMaterialExpression
+class UPluginCommandlet : public UCommandlet
 {
 public:
-    UE_CLASS("/Script/Engine", "MaterialExpressionCrossProduct");
-    FExpressionInput A;
-    FExpressionInput B;
+    UE_CLASS("/Script/Engine", "PluginCommandlet");
+};
+
+class UVolumetricCloudComponent : public USceneComponent
+{
+public:
+    UE_CLASS("/Script/Engine", "VolumetricCloudComponent");
+    UE_READONLY float LayerBottomAltitude;
+    UE_READONLY float LayerHeight;
+    UE_READONLY float TracingStartMaxDistance;
+    UE_READONLY float TracingMaxDistance;
+    UE_READONLY float PlanetRadius;
+    UE_READONLY FColor GroundAlbedo;
+    UE_READONLY class UMaterialInterface* Material;
+    UE_READONLY bool bUsePerSampleAtmosphericLightTransmittance;
+    UE_READONLY float SkyLightCloudBottomOcclusion;
+    UE_READONLY float ViewSampleCountScale;
+    UE_READONLY float ReflectionSampleCountScale;
+    UE_READONLY float ShadowViewSampleCountScale;
+    UE_READONLY float ShadowReflectionSampleCountScale;
+    UE_READONLY float ShadowTracingDistance;
+    UE_READONLY float StopTracingTransmittanceThreshold;
+    void SetbUsePerSampleAtmosphericLightTransmittance(bool NewValue);
+    void SetGroundAlbedo(FColor NewValue);
+    void SetLayerBottomAltitude(float NewValue);
+    void SetLayerHeight(float NewValue);
+    void SetMaterial(class UMaterialInterface* NewValue);
+    void SetPlanetRadius(float NewValue);
+    void SetReflectionSampleCountScale(float NewValue);
+    void SetShadowReflectionSampleCountScale(float NewValue);
+    void SetShadowTracingDistance(float NewValue);
+    void SetShadowViewSampleCountScale(float NewValue);
+    void SetSkyLightCloudBottomOcclusion(float NewValue);
+    void SetStopTracingTransmittanceThreshold(float NewValue);
+    void SetTracingMaxDistance(float NewValue);
+    void SetTracingStartMaxDistance(float NewValue);
+    void SetViewSampleCountScale(float NewValue);
+};
+
+class UAimOffsetBlendSpace : public UBlendSpace
+{
+public:
+    UE_CLASS("/Script/Engine", "AimOffsetBlendSpace");
+};
+
+class UMapBuildDataRegistry : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "MapBuildDataRegistry");
+    TEnum<ELightingBuildQuality> LevelLightingQuality;
+};
+
+class UBlendSpace1D : public UBlendSpaceBase
+{
+public:
+    UE_CLASS("/Script/Engine", "BlendSpace1D");
+    bool bScaleAnimation;
+};
+
+class UAimOffsetBlendSpace1D : public UBlendSpace1D
+{
+public:
+    UE_CLASS("/Script/Engine", "AimOffsetBlendSpace1D");
+};
+
+class UMaterialExpressionComment : public UMaterialExpression
+{
+public:
+    UE_CLASS("/Script/Engine", "MaterialExpressionComment");
+    int SizeX;
+    int SizeY;
+    FString Text;
+    FLinearColor CommentColor;
+    int FontSize;
+};
+
+class UReplicationConnectionDriver : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "ReplicationConnectionDriver");
+};
+
+class AAmbientSound : public AActor
+{
+public:
+    UE_CLASS("/Script/Engine", "AmbientSound");
+    UE_READONLY class UAudioComponent* AudioComponent;
+    void AdjustVolume(float AdjustVolumeDuration, float AdjustVolumeLevel);
+    void FadeIn(float FadeInDuration, float FadeVolumeLevel);
+    void FadeOut(float FadeoutDuration, float FadeVolumeLevel);
+    void Play(float StartTime);
+    void Stop();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* AudioComponent__UeSubobject = "AudioComponent0 /Script/Engine.AudioComponent";
+        static constexpr const char* RootComponent__UeSubobject = "AudioComponent0 /Script/Engine.AudioComponent";
+    };
+};
+
+class UMaterialExpressionDecalDerivative : public UMaterialExpression
+{
+public:
+    UE_CLASS("/Script/Engine", "MaterialExpressionDecalDerivative");
+};
+
+class UAnimationSettings : public UDeveloperSettings
+{
+public:
+    UE_CLASS("/Script/Engine", "AnimationSettings");
+    int CompressCommandletVersion;
+    TArray<FString> KeyEndEffectorsMatchNameArray;
+    bool ForceRecompression;
+    bool bForceBelowThreshold;
+    bool bFirstRecompressUsingCurrentOrDefault;
+    bool bRaiseMaxErrorToExisting;
+    bool bEnablePerformanceLog;
+    bool bStripAnimationDataOnDedicatedServer;
+    bool bTickAnimationOnSkeletalMeshInit;
+    TArray<FCustomAttributeSetting> BoneCustomAttributesNames;
+    TArray<FString> BoneNamesWithCustomAttributes;
+    TMap<FName, ECustomAttributeBlendType> AttributeBlendModes;
+    TEnum<ECustomAttributeBlendType> DefaultAttributeBlendMode;
+};
+
+class UAnimBlueprint : public UBlueprint
+{
+public:
+    UE_CLASS("/Script/Engine", "AnimBlueprint");
+    class USkeleton* TargetSkeleton;
+    TArray<FAnimGroupInfo> Groups;
+    bool bUseMultiThreadedAnimationUpdate;
+    bool bWarnAboutBlueprintUsage;
+};
+
+class UDialogueSoundWaveProxy : public USoundBase
+{
+public:
+    UE_CLASS("/Script/Engine", "DialogueSoundWaveProxy");
 };
 
 class UParticleModuleTypeDataBase : public UParticleModule
@@ -19024,136 +18663,6 @@ public:
     bool RenderTessellation;
 };
 
-class UBlendSpace : public UBlendSpaceBase
-{
-public:
-    UE_CLASS("/Script/Engine", "BlendSpace");
-    TEnum<EBlendSpaceAxis> AxisToScaleAnimation;
-};
-
-class UPolys : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "Polys");
-};
-
-class UAimOffsetBlendSpace : public UBlendSpace
-{
-public:
-    UE_CLASS("/Script/Engine", "AimOffsetBlendSpace");
-};
-
-class AVolumetricLightmapDensityVolume : public AVolume
-{
-public:
-    UE_CLASS("/Script/Engine", "VolumetricLightmapDensityVolume");
-    FInt32Interval AllowedMipLevelRange;
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* BrushComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
-        static constexpr const char* RootComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
-    };
-};
-
-class UAimOffsetBlendSpace1D : public UBlendSpace1D
-{
-public:
-    UE_CLASS("/Script/Engine", "AimOffsetBlendSpace1D");
-};
-
-class UMaterialBillboardComponent : public UPrimitiveComponent
-{
-public:
-    UE_CLASS("/Script/Engine", "MaterialBillboardComponent");
-    UE_READONLY TArray<FMaterialSpriteElement> Elements;
-    void AddElement(class UMaterialInterface* Material, class UCurveFloat* DistanceToOpacityCurve, bool bSizeIsInScreenSpace, float BaseSizeX, float BaseSizeY, class UCurveFloat* DistanceToSizeCurve);
-    void SetElements(const TArray<FMaterialSpriteElement>& NewElements);
-};
-
-class UParticleModuleRotationOverLifetime : public UParticleModuleRotationBase
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleModuleRotationOverLifetime");
-    FRawDistributionFloat RotationOverLife;
-    bool Scale;
-};
-
-class AAmbientSound : public AActor
-{
-public:
-    UE_CLASS("/Script/Engine", "AmbientSound");
-    UE_READONLY class UAudioComponent* AudioComponent;
-    void AdjustVolume(float AdjustVolumeDuration, float AdjustVolumeLevel);
-    void FadeIn(float FadeInDuration, float FadeVolumeLevel);
-    void FadeOut(float FadeoutDuration, float FadeVolumeLevel);
-    void Play(float StartTime);
-    void Stop();
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* AudioComponent__UeSubobject = "AudioComponent0 /Script/Engine.AudioComponent";
-        static constexpr const char* RootComponent__UeSubobject = "AudioComponent0 /Script/Engine.AudioComponent";
-    };
-};
-
-class UAnimationSettings : public UDeveloperSettings
-{
-public:
-    UE_CLASS("/Script/Engine", "AnimationSettings");
-    int CompressCommandletVersion;
-    TArray<FString> KeyEndEffectorsMatchNameArray;
-    bool ForceRecompression;
-    bool bForceBelowThreshold;
-    bool bFirstRecompressUsingCurrentOrDefault;
-    bool bRaiseMaxErrorToExisting;
-    bool bEnablePerformanceLog;
-    bool bStripAnimationDataOnDedicatedServer;
-    bool bTickAnimationOnSkeletalMeshInit;
-    TArray<FCustomAttributeSetting> BoneCustomAttributesNames;
-    TArray<FString> BoneNamesWithCustomAttributes;
-    TMap<FName, ECustomAttributeBlendType> AttributeBlendModes;
-    TEnum<ECustomAttributeBlendType> DefaultAttributeBlendMode;
-};
-
-class UMaterialExpressionConstant : public UMaterialExpression
-{
-public:
-    UE_CLASS("/Script/Engine", "MaterialExpressionConstant");
-    float R;
-};
-
-class UReporterBase : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "ReporterBase");
-};
-
-class UReporterGraph : public UReporterBase
-{
-public:
-    UE_CLASS("/Script/Engine", "ReporterGraph");
-};
-
-class UAnimBlueprint : public UBlueprint
-{
-public:
-    UE_CLASS("/Script/Engine", "AnimBlueprint");
-    class USkeleton* TargetSkeleton;
-    TArray<FAnimGroupInfo> Groups;
-    bool bUseMultiThreadedAnimationUpdate;
-    bool bWarnAboutBlueprintUsage;
-};
-
-class UMaterialExpressionDecalMipmapLevel : public UMaterialExpression
-{
-public:
-    UE_CLASS("/Script/Engine", "MaterialExpressionDecalMipmapLevel");
-    FExpressionInput TextureSize;
-    float ConstWidth;
-    float ConstHeight;
-};
-
 class UAnimBlueprintGeneratedClass : public UBlueprintGeneratedClass
 {
 public:
@@ -19169,6 +18678,484 @@ public:
     FPropertyAccessLibrary PropertyAccessLibrary;
 };
 
+class ADefaultPhysicsVolume : public APhysicsVolume
+{
+public:
+    UE_CLASS("/Script/Engine", "DefaultPhysicsVolume");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* BrushComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
+        static constexpr const char* RootComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
+    };
+};
+
+class UVirtualTexturePoolConfig : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "VirtualTexturePoolConfig");
+    int DefaultSizeInMegabyte;
+    TArray<FVirtualTextureSpacePoolConfig> Pools;
+};
+
+class UParticleModuleOrbitBase : public UParticleModule
+{
+public:
+    UE_CLASS("/Script/Engine", "ParticleModuleOrbitBase");
+    bool bUseEmitterTime;
+};
+
+class UParticleModuleOrbit : public UParticleModuleOrbitBase
+{
+public:
+    UE_CLASS("/Script/Engine", "ParticleModuleOrbit");
+    TEnum<EOrbitChainMode> ChainMode;
+    FRawDistributionVector OffsetAmount;
+    FOrbitOptions OffsetOptions;
+    FRawDistributionVector RotationAmount;
+    FOrbitOptions RotationOptions;
+    FRawDistributionVector RotationRateAmount;
+    FOrbitOptions RotationRateOptions;
+};
+
+class UAnimBoneCompressionSettings : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "AnimBoneCompressionSettings");
+    TArray<class UAnimBoneCompressionCodec*> Codecs;
+};
+
+class UAnimClassData : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "AnimClassData");
+    TArray<FBakedAnimationStateMachine> BakedStateMachines;
+    class USkeleton* TargetSkeleton;
+    TArray<FAnimNotifyEvent> AnimNotifies;
+    TMap<FName, FCachedPoseIndices> OrderedSavedPoseIndicesMap;
+    TArray<FAnimBlueprintFunction> AnimBlueprintFunctions;
+    TArray<FAnimBlueprintFunctionData> AnimBlueprintFunctionData;
+    TMap<FName, FGraphAssetPlayerInformation> GraphNameAssetPlayers;
+    TArray<FName> SyncGroupNames;
+    TArray<FExposedValueHandler> EvaluateGraphExposedInputs;
+    TMap<FName, FAnimGraphBlendOptions> GraphBlendOptions;
+    FPropertyAccessLibrary PropertyAccessLibrary;
+};
+
+class ALight : public AActor
+{
+public:
+    UE_CLASS("/Script/Engine", "Light");
+    UE_READONLY class ULightComponent* LightComponent;
+    bool bEnabled;
+    void OnRep_bEnabled();
+    void SetAffectTranslucentLighting(bool bNewValue);
+    void SetBrightness(float NewBrightness);
+    void SetCastShadows(bool bNewValue);
+    void SetEnabled(bool bSetEnabled);
+    void SetLightColor(FLinearColor NewLightColor);
+    void SetLightFunctionFadeDistance(float NewLightFunctionFadeDistance);
+    void SetLightFunctionMaterial(class UMaterialInterface* NewLightFunctionMaterial);
+    void SetLightFunctionScale(FVector NewLightFunctionScale);
+    void ToggleEnabled();
+    UE_PURE float GetBrightness() const;
+    UE_PURE FLinearColor GetLightColor() const;
+    UE_PURE bool IsEnabled() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* bEnabled__Replicated = "OnRep_bEnabled):";
+    };
+};
+
+class ADirectionalLight : public ALight
+{
+public:
+    UE_CLASS("/Script/Engine", "DirectionalLight");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* LightComponent__UeSubobject = "LightComponent0 /Script/Engine.DirectionalLightComponent";
+        static constexpr const char* RootComponent__UeSubobject = "LightComponent0 /Script/Engine.DirectionalLightComponent";
+    };
+};
+
+class IAnimClassInterface
+{
+public:
+    UE_CLASS("/Script/Engine", "AnimClassInterface");
+};
+
+class UFont : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "Font");
+    TEnum<EFontCacheType> FontCacheType;
+    TArray<FFontCharacter> Characters;
+    TArray<class UTexture2D*> Textures;
+    int IsRemapped;
+    float EmScale;
+    float Ascent;
+    float Descent;
+    float Leading;
+    int Kerning;
+    FFontImportOptionsData ImportOptions;
+    int NumCharacters;
+    TArray<int> MaxCharHeight;
+    float ScalingFactor;
+    int LegacyFontSize;
+    FName LegacyFontName;
+    FCompositeFont CompositeFont;
+};
+
+class UAnimCompositeBase : public UAnimSequenceBase
+{
+public:
+    UE_CLASS("/Script/Engine", "AnimCompositeBase");
+};
+
+class UAnimComposite : public UAnimCompositeBase
+{
+public:
+    UE_CLASS("/Script/Engine", "AnimComposite");
+    FAnimTrack AnimationTrack;
+};
+
+class UDistributionFloatConstant : public UDistributionFloat
+{
+public:
+    UE_CLASS("/Script/Engine", "DistributionFloatConstant");
+    float Constant;
+};
+
+class UDeviceProfileFragment : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "DeviceProfileFragment");
+};
+
+class UTireType : public UDataAsset
+{
+public:
+    UE_CLASS("/Script/Engine", "TireType");
+    float FrictionScale;
+};
+
+class UAnimCompress_RemoveLinearKeys : public UAnimCompress
+{
+public:
+    UE_CLASS("/Script/Engine", "AnimCompress_RemoveLinearKeys");
+    float MaxPosDiff;
+    float MaxAngleDiff;
+    float MaxScaleDiff;
+    float MaxEffectorDiff;
+    float MinEffectorDiff;
+    float EffectorDiffSocket;
+    float ParentKeyScale;
+    bool bRetarget;
+    bool bActuallyFilterLinearKeys;
+};
+
+class UDistributionFloatUniform : public UDistributionFloat
+{
+public:
+    UE_CLASS("/Script/Engine", "DistributionFloatUniform");
+    float Min;
+    float Max;
+};
+
+class USoundNodeMixer : public USoundNode
+{
+public:
+    UE_CLASS("/Script/Engine", "SoundNodeMixer");
+    TArray<float> InputVolume;
+};
+
+class UAnimCompress_PerTrackCompression : public UAnimCompress_RemoveLinearKeys
+{
+public:
+    UE_CLASS("/Script/Engine", "AnimCompress_PerTrackCompression");
+    float MaxZeroingThreshold;
+    float MaxPosDiffBitwise;
+    float MaxAngleDiffBitwise;
+    float MaxScaleDiffBitwise;
+    TArray<EAnimationCompressionFormat> AllowedRotationFormats;
+    TArray<EAnimationCompressionFormat> AllowedTranslationFormats;
+    TArray<EAnimationCompressionFormat> AllowedScaleFormats;
+    bool bResampleAnimation;
+    float ResampledFramerate;
+    int MinKeysForResampling;
+    bool bUseAdaptiveError;
+    bool bUseOverrideForEndEffectors;
+    int TrackHeightBias;
+    float ParentingDivisor;
+    float ParentingDivisorExponent;
+    bool bUseAdaptiveError2;
+    float RotationErrorSourceRatio;
+    float TranslationErrorSourceRatio;
+    float ScaleErrorSourceRatio;
+    float MaxErrorPerTrackRatio;
+    float PerturbationProbeSize;
+};
+
+class ADecalActor : public AActor
+{
+public:
+    UE_CLASS("/Script/Engine", "DecalActor");
+    UE_READONLY class UDecalComponent* Decal;
+    class UMaterialInstanceDynamic* CreateDynamicMaterialInstance();
+    void SetDecalMaterial(class UMaterialInterface* NewDecalMaterial);
+    UE_PURE class UMaterialInterface* GetDecalMaterial() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Decal__UeSubobject = "NewDecalComponent /Script/Engine.DecalComponent";
+        static constexpr const char* RootComponent__UeSubobject = "NewDecalComponent /Script/Engine.DecalComponent";
+    };
+};
+
+class UAnimCompress_RemoveEverySecondKey : public UAnimCompress
+{
+public:
+    UE_CLASS("/Script/Engine", "AnimCompress_RemoveEverySecondKey");
+    int MinKeys;
+    bool bStartAtSecondKey;
+};
+
+class UAnimCurveCompressionCodec : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "AnimCurveCompressionCodec");
+};
+
+class UInterpCurveEdSetup : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "InterpCurveEdSetup");
+    TArray<FCurveEdTab> Tabs;
+    int ActiveTab;
+};
+
+class USoundNodeEnveloper : public USoundNode
+{
+public:
+    UE_CLASS("/Script/Engine", "SoundNodeEnveloper");
+    float LoopStart;
+    float LoopEnd;
+    float DurationAfterLoop;
+    int LoopCount;
+    bool bLoopIndefinitely;
+    bool bLoop;
+    class UDistributionFloatConstantCurve* VolumeInterpCurve;
+    class UDistributionFloatConstantCurve* PitchInterpCurve;
+    FRuntimeFloatCurve VolumeCurve;
+    FRuntimeFloatCurve PitchCurve;
+    float PitchMin;
+    float PitchMax;
+    float VolumeMin;
+    float VolumeMax;
+};
+
+class UAnimCurveCompressionCodec_CompressedRichCurve : public UAnimCurveCompressionCodec
+{
+public:
+    UE_CLASS("/Script/Engine", "AnimCurveCompressionCodec_CompressedRichCurve");
+};
+
+class UAnimCurveCompressionCodec_UniformIndexable : public UAnimCurveCompressionCodec
+{
+public:
+    UE_CLASS("/Script/Engine", "AnimCurveCompressionCodec_UniformIndexable");
+};
+
+class UAnimCurveCompressionCodec_UniformlySampled : public UAnimCurveCompressionCodec
+{
+public:
+    UE_CLASS("/Script/Engine", "AnimCurveCompressionCodec_UniformlySampled");
+};
+
+class USoundAttenuation : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "SoundAttenuation");
+    UE_READONLY FSoundAttenuationSettings Attenuation;
+};
+
+class UAnimCurveCompressionSettings : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "AnimCurveCompressionSettings");
+    class UAnimCurveCompressionCodec* Codec;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Codec__UeSubobject = "CurveCompressionCodec /Script/Engine.AnimCurveCompressionCodec_CompressedRichCurve";
+    };
+};
+
+class UInterpFilter : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "InterpFilter");
+    FString Caption;
+};
+
+class UInterpFilter_Custom : public UInterpFilter
+{
+public:
+    UE_CLASS("/Script/Engine", "InterpFilter_Custom");
+};
+
+class UParticleModuleRotationOverLifetime : public UParticleModuleRotationBase
+{
+public:
+    UE_CLASS("/Script/Engine", "ParticleModuleRotationOverLifetime");
+    FRawDistributionFloat RotationOverLife;
+    bool Scale;
+};
+
+class IAnimLayerInterface
+{
+public:
+    UE_CLASS("/Script/Engine", "AnimLayerInterface");
+};
+
+class UPendingNetGame : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "PendingNetGame");
+    class UNetDriver* NetDriver;
+    class UDemoNetDriver* DemoNetDriver;
+};
+
+class UDemoPendingNetGame : public UPendingNetGame
+{
+public:
+    UE_CLASS("/Script/Engine", "DemoPendingNetGame");
+};
+
+class ATriggerBase : public AActor
+{
+public:
+    UE_CLASS("/Script/Engine", "TriggerBase");
+    UE_READONLY class UShapeComponent* CollisionComponent;
+};
+
+class UAnimMetaData : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "AnimMetaData");
+};
+
+class UPhysicsConstraintTemplate : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "PhysicsConstraintTemplate");
+    FConstraintInstance DefaultInstance;
+    TArray<FPhysicsConstraintProfileHandle> ProfileHandles;
+    FConstraintProfileProperties DefaultProfile;
+};
+
+class UAnimMontage : public UAnimCompositeBase
+{
+public:
+    UE_CLASS("/Script/Engine", "AnimMontage");
+    FAlphaBlend BlendIn;
+    float BlendInTime;
+    FAlphaBlend BlendOut;
+    float BlendOutTime;
+    float BlendOutTriggerTime;
+    FName SyncGroup;
+    int SyncSlotIndex;
+    FMarkerSyncData MarkerData;
+    TArray<FCompositeSection> CompositeSections;
+    TArray<FSlotAnimationTrack> SlotAnimTracks;
+    TArray<FBranchingPoint> BranchingPoints;
+    bool bEnableRootMotionTranslation;
+    bool bEnableRootMotionRotation;
+    bool bEnableAutoBlendOut;
+    TEnum<ERootMotionRootLock> RootMotionRootLock;
+    TArray<FBranchingPointMarker> BranchingPointMarkers;
+    TArray<int> BranchingPointStateNotifyIndices;
+    FTimeStretchCurve TimeStretchCurve;
+    FName TimeStretchCurveName;
+    UE_PURE float GetDefaultBlendOutTime() const;
+};
+
+class UHierarchicalLODSetup : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "HierarchicalLODSetup");
+    TArray<FHierarchicalSimplification> HierarchicalLODSetup;
+    TSoftObjectPtr<class UMaterialInterface> OverrideBaseMaterial;
+};
+
+class UAnimNotify_PauseClothingSimulation : public UAnimNotify
+{
+public:
+    UE_CLASS("/Script/Engine", "AnimNotify_PauseClothingSimulation");
+};
+
+class UInterpGroupInst : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "InterpGroupInst");
+    class UInterpGroup* Group;
+    class AActor* GroupActor;
+    TArray<class UInterpTrackInst*> TrackInst;
+};
+
+class UPlaneReflectionCaptureComponent : public UReflectionCaptureComponent
+{
+public:
+    UE_CLASS("/Script/Engine", "PlaneReflectionCaptureComponent");
+    float InfluenceRadiusScale;
+    class UDrawSphereComponent* PreviewInfluenceRadius;
+    class UBoxComponent* PreviewCaptureBox;
+};
+
+class UAnimNotify_PlayParticleEffect : public UAnimNotify
+{
+public:
+    UE_CLASS("/Script/Engine", "AnimNotify_PlayParticleEffect");
+    UE_READONLY class UParticleSystem* PSTemplate;
+    UE_READONLY FVector LocationOffset;
+    UE_READONLY FRotator RotationOffset;
+    UE_READONLY FVector Scale;
+    UE_READONLY bool Attached;
+    UE_READONLY FName SocketName;
+};
+
+class UAnimNotify_ResetClothingSimulation : public UAnimNotify
+{
+public:
+    UE_CLASS("/Script/Engine", "AnimNotify_ResetClothingSimulation");
+};
+
+class USplineMetadata : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "SplineMetadata");
+};
+
+class UAnimNotify_ResetDynamics : public UAnimNotify
+{
+public:
+    UE_CLASS("/Script/Engine", "AnimNotify_ResetDynamics");
+};
+
+class UAnimNotify_ResumeClothingSimulation : public UAnimNotify
+{
+public:
+    UE_CLASS("/Script/Engine", "AnimNotify_ResumeClothingSimulation");
+};
+
+class UAnimNotifyState_DisableRootMotion : public UAnimNotifyState
+{
+public:
+    UE_CLASS("/Script/Engine", "AnimNotifyState_DisableRootMotion");
+};
+
 class UDialogueWave : public UObject
 {
 public:
@@ -19179,6 +19166,105 @@ public:
     UE_READONLY FString SubtitleOverride;
     TArray<FDialogueContextMapping> ContextMappings;
     FGuid LocalizationGUID;
+};
+
+class USoundConcurrency : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "SoundConcurrency");
+    UE_READONLY FSoundConcurrencySettings Concurrency;
+};
+
+class UAnimNotifyState_Trail : public UAnimNotifyState
+{
+public:
+    UE_CLASS("/Script/Engine", "AnimNotifyState_Trail");
+    UE_READONLY class UParticleSystem* PSTemplate;
+    UE_READONLY FName FirstSocketName;
+    UE_READONLY FName SecondSocketName;
+    UE_READONLY TEnum<ETrailWidthMode> WidthScaleMode;
+    UE_READONLY FName WidthScaleCurve;
+    UE_READONLY bool bRecycleSpawnedSystems;
+    class UParticleSystem* OverridePSTemplate(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation) const;
+};
+
+class UAnimSet : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "AnimSet");
+    bool bAnimRotationOnly;
+    TArray<FName> TrackBoneNames;
+    TArray<FAnimSetMeshLinkup> LinkupCache;
+    TArray<uint8> BoneUseAnimTranslation;
+    TArray<uint8> ForceUseMeshTranslation;
+    TArray<FName> UseTranslationBoneNames;
+    TArray<FName> ForceMeshTranslationBoneNames;
+    FName PreviewSkelMeshName;
+    FName BestRatioSkelMeshName;
+};
+
+class UViewModeUtils : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "ViewModeUtils");
+};
+
+class UAnimSingleNodeInstance : public UAnimInstance
+{
+public:
+    UE_CLASS("/Script/Engine", "AnimSingleNodeInstance");
+    class UAnimationAsset* CurrentAsset;
+    TDelegate<void()> PostEvaluateAnimEvent;
+    float GetLength();
+    void PlayAnim(bool bIsLooping, float InPlayRate, float InStartPosition);
+    void SetAnimationAsset(class UAnimationAsset* NewAsset, bool bIsLooping, float InPlayRate);
+    void SetBlendSpaceInput(const FVector& InBlendInput);
+    void SetLooping(bool bIsLooping);
+    void SetPlaying(bool bIsPlaying);
+    void SetPlayRate(float InPlayRate);
+    void SetPosition(float InPosition, bool bFireNotifies);
+    void SetPositionWithPreviousTime(float InPosition, float InPreviousTime, bool bFireNotifies);
+    void SetPreviewCurveOverride(const FName& PoseName, float Value, bool bRemoveIfZero);
+    void SetReverse(bool bInReverse);
+    void StopAnim();
+    UE_PURE class UAnimationAsset* GetAnimationAsset() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeClassTail = "0x00800000 /Script/Engine.SkeletalMeshComponent Engine";
+    };
+};
+
+class UMaterialExpressionAntialiasedTextureMask : public UMaterialExpressionTextureSampleParameter2D
+{
+public:
+    UE_CLASS("/Script/Engine", "MaterialExpressionAntialiasedTextureMask");
+    float Threshold;
+    TEnum<ETextureColorChannel> Channel;
+};
+
+class UDrawFrustumComponent : public UPrimitiveComponent
+{
+public:
+    UE_CLASS("/Script/Engine", "DrawFrustumComponent");
+    FColor FrustumColor;
+    float FrustumAngle;
+    float FrustumAspectRatio;
+    float FrustumStartDist;
+    float FrustumEndDist;
+    class UTexture* Texture;
+};
+
+class ISlateTextureAtlasInterface
+{
+public:
+    UE_CLASS("/Script/Engine", "SlateTextureAtlasInterface");
+};
+
+class UAnimStateMachineTypes : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "AnimStateMachineTypes");
 };
 
 class UParticleModuleTypeDataMesh : public UParticleModuleTypeDataBase
@@ -19204,359 +19290,6 @@ public:
     bool bCollisionsConsiderPartilceSize;
 };
 
-class UAnimBoneCompressionSettings : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "AnimBoneCompressionSettings");
-    TArray<class UAnimBoneCompressionCodec*> Codecs;
-};
-
-class UDemoNetDriver : public UNetDriver
-{
-public:
-    UE_CLASS("/Script/Engine", "DemoNetDriver");
-    TMap<FString, FRollbackNetStartupActorInfo> RollbackNetStartupActors;
-    float CheckpointSaveMaxMSPerFrame;
-    TArray<FMulticastRecordOptions> MulticastRecordOptions;
-    bool bIsLocalReplay;
-    TArray<class APlayerController*> SpectatorControllers;
-};
-
-class IVisualLoggerDebugSnapshotInterface
-{
-public:
-    UE_CLASS("/Script/Engine", "VisualLoggerDebugSnapshotInterface");
-};
-
-class UAnimClassData : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "AnimClassData");
-    TArray<FBakedAnimationStateMachine> BakedStateMachines;
-    class USkeleton* TargetSkeleton;
-    TArray<FAnimNotifyEvent> AnimNotifies;
-    TMap<FName, FCachedPoseIndices> OrderedSavedPoseIndicesMap;
-    TArray<FAnimBlueprintFunction> AnimBlueprintFunctions;
-    TArray<FAnimBlueprintFunctionData> AnimBlueprintFunctionData;
-    TMap<FName, FGraphAssetPlayerInformation> GraphNameAssetPlayers;
-    TArray<FName> SyncGroupNames;
-    TArray<FExposedValueHandler> EvaluateGraphExposedInputs;
-    TMap<FName, FAnimGraphBlendOptions> GraphBlendOptions;
-    FPropertyAccessLibrary PropertyAccessLibrary;
-};
-
-class UParticleModuleOrientationBase : public UParticleModule
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleModuleOrientationBase");
-};
-
-class UParticleModuleOrientationAxisLock : public UParticleModuleOrientationBase
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleModuleOrientationAxisLock");
-    TEnum<EParticleAxisLock> LockAxisFlags;
-};
-
-class IAnimClassInterface
-{
-public:
-    UE_CLASS("/Script/Engine", "AnimClassInterface");
-};
-
-class UFontImportOptions : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "FontImportOptions");
-    FFontImportOptionsData Data;
-};
-
-class UAnimComposite : public UAnimCompositeBase
-{
-public:
-    UE_CLASS("/Script/Engine", "AnimComposite");
-    FAnimTrack AnimationTrack;
-};
-
-class UAnimCompress_BitwiseCompressOnly : public UAnimCompress
-{
-public:
-    UE_CLASS("/Script/Engine", "AnimCompress_BitwiseCompressOnly");
-};
-
-class UAnimCompress_LeastDestructive : public UAnimCompress_BitwiseCompressOnly
-{
-public:
-    UE_CLASS("/Script/Engine", "AnimCompress_LeastDestructive");
-};
-
-class UDialogueSoundWaveProxy : public USoundBase
-{
-public:
-    UE_CLASS("/Script/Engine", "DialogueSoundWaveProxy");
-};
-
-class UAnimCompress_RemoveEverySecondKey : public UAnimCompress
-{
-public:
-    UE_CLASS("/Script/Engine", "AnimCompress_RemoveEverySecondKey");
-    int MinKeys;
-    bool bStartAtSecondKey;
-};
-
-class USoundNodeModulatorContinuous : public USoundNode
-{
-public:
-    UE_CLASS("/Script/Engine", "SoundNodeModulatorContinuous");
-    FModulatorContinuousParams PitchModulationParams;
-    FModulatorContinuousParams VolumeModulationParams;
-};
-
-class UAnimCompress_RemoveTrivialKeys : public UAnimCompress
-{
-public:
-    UE_CLASS("/Script/Engine", "AnimCompress_RemoveTrivialKeys");
-    float MaxPosDiff;
-    float MaxAngleDiff;
-    float MaxScaleDiff;
-};
-
-class IAnimLayerInterface
-{
-public:
-    UE_CLASS("/Script/Engine", "AnimLayerInterface");
-};
-
-class USoundConcurrency : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "SoundConcurrency");
-    UE_READONLY FSoundConcurrencySettings Concurrency;
-};
-
-class UAnimMetaData : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "AnimMetaData");
-};
-
-class UInterpGroupCamera : public UInterpGroup
-{
-public:
-    UE_CLASS("/Script/Engine", "InterpGroupCamera");
-    class UCameraAnim* CameraAnimInst;
-    float CompressTolerance;
-};
-
-class UPhysicsHandleComponent : public UActorComponent
-{
-public:
-    UE_CLASS("/Script/Engine", "PhysicsHandleComponent");
-    class UPrimitiveComponent* GrabbedComponent;
-    UE_READONLY bool bSoftAngularConstraint;
-    UE_READONLY bool bSoftLinearConstraint;
-    bool bInterpolateTarget;
-    UE_READONLY float LinearDamping;
-    UE_READONLY float LinearStiffness;
-    UE_READONLY float AngularDamping;
-    UE_READONLY float AngularStiffness;
-    UE_READONLY float InterpolationSpeed;
-    void GrabComponent(class UPrimitiveComponent* Component, FName InBoneName, FVector GrabLocation, bool bConstrainRotation);
-    void GrabComponentAtLocation(class UPrimitiveComponent* Component, FName InBoneName, FVector GrabLocation);
-    void GrabComponentAtLocationWithRotation(class UPrimitiveComponent* Component, FName InBoneName, FVector Location, FRotator Rotation);
-    void ReleaseComponent();
-    void SetAngularDamping(float NewAngularDamping);
-    void SetAngularStiffness(float NewAngularStiffness);
-    void SetInterpolationSpeed(float NewInterpolationSpeed);
-    void SetLinearDamping(float NewLinearDamping);
-    void SetLinearStiffness(float NewLinearStiffness);
-    void SetTargetLocation(FVector NewLocation);
-    void SetTargetLocationAndRotation(FVector NewLocation, FRotator NewRotation);
-    void SetTargetRotation(FRotator NewRotation);
-    UE_PURE class UPrimitiveComponent* GetGrabbedComponent() const;
-    void GetTargetLocationAndRotation(FVector& TargetLocation, FRotator& TargetRotation) const;
-};
-
-class UAnimNotify_PlayParticleEffect : public UAnimNotify
-{
-public:
-    UE_CLASS("/Script/Engine", "AnimNotify_PlayParticleEffect");
-    UE_READONLY class UParticleSystem* PSTemplate;
-    UE_READONLY FVector LocationOffset;
-    UE_READONLY FRotator RotationOffset;
-    UE_READONLY FVector Scale;
-    UE_READONLY bool Attached;
-    UE_READONLY FName SocketName;
-};
-
-class UAnimNotify_ResetClothingSimulation : public UAnimNotify
-{
-public:
-    UE_CLASS("/Script/Engine", "AnimNotify_ResetClothingSimulation");
-};
-
-class UInterpGroupInst : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "InterpGroupInst");
-    class UInterpGroup* Group;
-    class AActor* GroupActor;
-    TArray<class UInterpTrackInst*> TrackInst;
-};
-
-class UInterpGroupInstDirector : public UInterpGroupInst
-{
-public:
-    UE_CLASS("/Script/Engine", "InterpGroupInstDirector");
-};
-
-class UPlatformInterfaceWebResponse : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "PlatformInterfaceWebResponse");
-    FString OriginalURL;
-    int ResponseCode;
-    int Tag;
-    FString StringResponse;
-    TArray<uint8> BinaryResponse;
-    void GetHeader(int HeaderIndex, FString& Header, FString& Value);
-    FString GetHeaderValue(FString HeaderName);
-    int GetNumHeaders();
-};
-
-class UAnimNotify_ResetDynamics : public UAnimNotify
-{
-public:
-    UE_CLASS("/Script/Engine", "AnimNotify_ResetDynamics");
-};
-
-class UDistributionVectorConstantCurve : public UDistributionVector
-{
-public:
-    UE_CLASS("/Script/Engine", "DistributionVectorConstantCurve");
-    FInterpCurveVector ConstantCurve;
-    bool bLockAxes;
-    TEnum<EDistributionVectorLockFlags> LockedAxes;
-};
-
-class UAnimNotify_ResumeClothingSimulation : public UAnimNotify
-{
-public:
-    UE_CLASS("/Script/Engine", "AnimNotify_ResumeClothingSimulation");
-};
-
-class ASplineMeshActor : public AActor
-{
-public:
-    UE_CLASS("/Script/Engine", "SplineMeshActor");
-    UE_READONLY class USplineMeshComponent* SplineMeshComponent;
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* RootComponent__UeSubobject = "SplineMeshComponent0 /Script/Engine.SplineMeshComponent";
-        static constexpr const char* SplineMeshComponent__UeSubobject = "SplineMeshComponent0 /Script/Engine.SplineMeshComponent";
-    };
-};
-
-class UAnimNotifyState_DisableRootMotion : public UAnimNotifyState
-{
-public:
-    UE_CLASS("/Script/Engine", "AnimNotifyState_DisableRootMotion");
-};
-
-class UAnimNotifyState_Trail : public UAnimNotifyState
-{
-public:
-    UE_CLASS("/Script/Engine", "AnimNotifyState_Trail");
-    UE_READONLY class UParticleSystem* PSTemplate;
-    UE_READONLY FName FirstSocketName;
-    UE_READONLY FName SecondSocketName;
-    UE_READONLY TEnum<ETrailWidthMode> WidthScaleMode;
-    UE_READONLY FName WidthScaleCurve;
-    UE_READONLY bool bRecycleSpawnedSystems;
-    class UParticleSystem* OverridePSTemplate(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation) const;
-};
-
-class UInterpTrackAnimControl : public UInterpTrackFloatBase
-{
-public:
-    UE_CLASS("/Script/Engine", "InterpTrackAnimControl");
-    FName slotName;
-    TArray<FAnimControlTrackKey> AnimSeqs;
-    bool bSkipAnimNotifiers;
-};
-
-class UAnimSequence : public UAnimSequenceBase
-{
-public:
-    UE_CLASS("/Script/Engine", "AnimSequence");
-    int NumFrames;
-    TArray<FTrackToSkeletonMap> TrackToSkeletonMapTable;
-    class UAnimBoneCompressionSettings* BoneCompressionSettings;
-    class UAnimCurveCompressionSettings* CurveCompressionSettings;
-    TEnum<EAdditiveAnimationType> AdditiveAnimType;
-    TEnum<EAdditiveBasePoseType> RefPoseType;
-    class UAnimSequence* RefPoseSeq;
-    int RefFrameIndex;
-    FName RetargetSource;
-    TArray<FTransform> RetargetSourceAssetReferencePose;
-    TEnum<EAnimInterpolationType> Interpolation;
-    bool bEnableRootMotion;
-    TEnum<ERootMotionRootLock> RootMotionRootLock;
-    bool bForceRootLock;
-    bool bUseNormalizedRootMotionScale;
-    bool bRootMotionSettingsCopiedFromMontage;
-    TArray<FAnimSyncMarker> AuthoredSyncMarkers;
-    TArray<FBakedCustomAttributePerBoneData> BakedPerBoneCustomAttributeData;
-};
-
-class ADirectionalLight : public ALight
-{
-public:
-    UE_CLASS("/Script/Engine", "DirectionalLight");
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* LightComponent__UeSubobject = "LightComponent0 /Script/Engine.DirectionalLightComponent";
-        static constexpr const char* RootComponent__UeSubobject = "LightComponent0 /Script/Engine.DirectionalLightComponent";
-    };
-};
-
-class USoundEffectSourcePresetChain : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "SoundEffectSourcePresetChain");
-    TArray<FSourceEffectChainEntry> Chain;
-    bool bPlayEffectChainTails;
-};
-
-class UAnimSet : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "AnimSet");
-    bool bAnimRotationOnly;
-    TArray<FName> TrackBoneNames;
-    TArray<FAnimSetMeshLinkup> LinkupCache;
-    TArray<uint8> BoneUseAnimTranslation;
-    TArray<uint8> ForceUseMeshTranslation;
-    TArray<FName> UseTranslationBoneNames;
-    TArray<FName> ForceMeshTranslationBoneNames;
-    FName PreviewSkelMeshName;
-    FName BestRatioSkelMeshName;
-};
-
-class UAnimStateMachineTypes : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "AnimStateMachineTypes");
-};
-
-class UEngineHandlerComponentFactory : public UHandlerComponentFactory
-{
-public:
-    UE_CLASS("/Script/Engine", "EngineHandlerComponentFactory");
-};
-
 class UAnimStreamable : public UAnimSequenceBase
 {
 public:
@@ -19570,31 +19303,6 @@ public:
     TEnum<ERootMotionRootLock> RootMotionRootLock;
     bool bForceRootLock;
     bool bUseNormalizedRootMotionScale;
-};
-
-class UMaterialExpressionArccosine : public UMaterialExpression
-{
-public:
-    UE_CLASS("/Script/Engine", "MaterialExpressionArccosine");
-    FExpressionInput Input;
-};
-
-class UEdGraph : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "EdGraph");
-    TSubclassOf<class UEdGraphSchema> Schema;
-    TArray<class UEdGraphNode*> Nodes;
-    bool bEditable;
-    bool bAllowDeletion;
-    bool bAllowRenaming;
-};
-
-class USoundAttenuation : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "SoundAttenuation");
-    UE_READONLY FSoundAttenuationSettings Attenuation;
 };
 
 class UApplicationLifecycleComponent : public UActorComponent
@@ -19625,64 +19333,68 @@ private:
     };
 };
 
-class UParticleModuleTypeDataAnimTrail : public UParticleModuleTypeDataBase
+class ULocalMessage : public UObject
 {
 public:
-    UE_CLASS("/Script/Engine", "ParticleModuleTypeDataAnimTrail");
-    bool bDeadTrailsOnDeactivate;
-    bool bEnablePreviousTangentRecalculation;
-    bool bTangentRecalculationEveryFrame;
-    float TilingDistance;
-    float DistanceTessellationStepSize;
-    float TangentTessellationStepSize;
-    float WidthTessellationStepSize;
+    UE_CLASS("/Script/Engine", "LocalMessage");
 };
 
-class UArrowComponent : public UPrimitiveComponent
+class UEngineMessage : public ULocalMessage
 {
 public:
-    UE_CLASS("/Script/Engine", "ArrowComponent");
-    FColor ArrowColor;
-    float ArrowSize;
-    float ArrowLength;
-    float ScreenSize;
-    bool bIsScreenSizeScaled;
-    bool bTreatAsASprite;
-    void SetArrowColor(FLinearColor NewColor);
+    UE_CLASS("/Script/Engine", "EngineMessage");
+    FString FailedPlaceMessage;
+    FString MaxedOutMessage;
+    FString EnteredMessage;
+    FString LeftMessage;
+    FString GlobalNameChange;
+    FString SpecEnteredMessage;
+    FString NewPlayerMessage;
+    FString NewSpecMessage;
 };
 
-class UAssetExportTask : public UObject
+class UAssetManagerSettings : public UDeveloperSettings
 {
 public:
-    UE_CLASS("/Script/Engine", "AssetExportTask");
-    class UObject* Object;
-    class UExporter* Exporter;
-    FString Filename;
-    bool bSelected;
-    bool bReplaceIdentical;
-    bool bPrompt;
-    bool bAutomated;
-    bool bUseFileArchive;
-    bool bWriteEmptyFiles;
-    TArray<class UObject*> IgnoreObjectList;
-    class UObject* options;
-    TArray<FString> Errors;
+    UE_CLASS("/Script/Engine", "AssetManagerSettings");
+    TArray<FPrimaryAssetTypeInfo> PrimaryAssetTypesToScan;
+    TArray<FDirectoryPath> DirectoriesToExclude;
+    TArray<FPrimaryAssetRulesOverride> PrimaryAssetRules;
+    TArray<FPrimaryAssetRulesCustomOverride> CustomPrimaryAssetRules;
+    bool bOnlyCookProductionAssets;
+    bool bShouldManagerDetermineTypeAndName;
+    bool bShouldGuessTypeAndNameInEditor;
+    bool bShouldAcquireMissingChunksOnLoad;
+    TArray<FAssetManagerRedirect> PrimaryAssetIdRedirects;
+    TArray<FAssetManagerRedirect> PrimaryAssetTypeRedirects;
+    TArray<FAssetManagerRedirect> AssetPathRedirects;
+    TSet<FName> MetaDataTagsForAssetRegistry;
 };
 
-class AExponentialHeightFog : public AInfo
+class UAssetMappingTable : public UObject
 {
 public:
-    UE_CLASS("/Script/Engine", "ExponentialHeightFog");
-    UE_READONLY class UExponentialHeightFogComponent* Component;
-    bool bEnabled;
-    void OnRep_bEnabled();
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* bEnabled__Replicated = "OnRep_bEnabled):";
-        static constexpr const char* Component__UeSubobject = "HeightFogComponent0 /Script/Engine.ExponentialHeightFogComponent";
-        static constexpr const char* RootComponent__UeSubobject = "HeightFogComponent0 /Script/Engine.ExponentialHeightFogComponent";
-    };
+    UE_CLASS("/Script/Engine", "AssetMappingTable");
+    TArray<FAssetMapping> MappedAssets;
+};
+
+class UExporter : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "Exporter");
+    TSubclassOf<class UObject> SupportedClass;
+    class UObject* ExportRootScope;
+    TArray<FString> FormatExtension;
+    TArray<FString> FormatDescription;
+    int PreferredFormatIndex;
+    int TextIndent;
+    bool bText;
+    bool bSelectedOnly;
+    bool bForceFileOperations;
+    class UAssetExportTask* ExportTask;
+    static bool RunAssetExportTask(class UAssetExportTask* Task);
+    static bool RunAssetExportTasks(const TArray<class UAssetExportTask*>& ExportTasks);
+    bool ScriptRunAssetExportTask(class UAssetExportTask* Task);
 };
 
 class UAsyncActionHandleSaveGame : public UBlueprintAsyncActionBase
@@ -19702,26 +19414,49 @@ private:
     };
 };
 
-class UFont : public UObject
+class UMaterialExpressionArctangent2Fast : public UMaterialExpression
 {
 public:
-    UE_CLASS("/Script/Engine", "Font");
-    TEnum<EFontCacheType> FontCacheType;
-    TArray<FFontCharacter> Characters;
-    TArray<class UTexture2D*> Textures;
-    int IsRemapped;
-    float EmScale;
-    float Ascent;
-    float Descent;
-    float Leading;
-    int Kerning;
-    FFontImportOptionsData ImportOptions;
-    int NumCharacters;
-    TArray<int> MaxCharHeight;
-    float ScalingFactor;
-    int LegacyFontSize;
-    FName LegacyFontName;
-    FCompositeFont CompositeFont;
+    UE_CLASS("/Script/Engine", "MaterialExpressionArctangent2Fast");
+    FExpressionInput Y;
+    FExpressionInput X;
+};
+
+class AEmitter : public AActor
+{
+public:
+    UE_CLASS("/Script/Engine", "Emitter");
+    UE_READONLY class UParticleSystemComponent* ParticleSystemComponent;
+    bool bDestroyOnSystemFinish;
+    bool bPostUpdateTickGroup;
+    bool bCurrentlyActive;
+    TMulticastInlineDelegate<void(FName EventName, float EmitterTime, FVector Location, FVector Velocity)> OnParticleSpawn;
+    TMulticastInlineDelegate<void(FName EventName, float EmitterTime, int ParticleCount)> OnParticleBurst;
+    TMulticastInlineDelegate<void(FName EventName, float EmitterTime, int ParticleTime, FVector Location, FVector Velocity, FVector Direction)> OnParticleDeath;
+    TMulticastInlineDelegate<void(FName EventName, float EmitterTime, int ParticleTime, FVector Location, FVector Velocity, FVector Direction, FVector Normal, FName BoneName, class UPhysicalMaterial* PhysMat)> OnParticleCollide;
+    void Activate();
+    void Deactivate();
+    void OnParticleSystemFinished(class UParticleSystemComponent* FinishedComponent);
+    void OnRep_bCurrentlyActive();
+    void SetActorParameter(FName ParameterName, class AActor* Param);
+    void SetColorParameter(FName ParameterName, FLinearColor Param);
+    void SetFloatParameter(FName ParameterName, float Param);
+    void SetMaterialParameter(FName ParameterName, class UMaterialInterface* Param);
+    void SetTemplate(class UParticleSystem* NewTemplate);
+    void SetVectorParameter(FName ParameterName, FVector Param);
+    void ToggleActive();
+    UE_PURE bool IsActive() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* bCurrentlyActive__Replicated = "OnRep_bCurrentlyActive):";
+        static constexpr const char* OnParticleSpawn__UeDispatcher = "Assignable";
+        static constexpr const char* OnParticleBurst__UeDispatcher = "Assignable";
+        static constexpr const char* OnParticleDeath__UeDispatcher = "Assignable";
+        static constexpr const char* OnParticleCollide__UeDispatcher = "Assignable";
+        static constexpr const char* ParticleSystemComponent__UeSubobject = "ParticleSystemComponent0 /Script/Engine.ParticleSystemComponent";
+        static constexpr const char* RootComponent__UeSubobject = "ParticleSystemComponent0 /Script/Engine.ParticleSystemComponent";
+    };
 };
 
 class UAsyncActionLoadPrimaryAsset : public UAsyncActionLoadPrimaryAssetBase
@@ -19738,17 +19473,17 @@ private:
     };
 };
 
-class UMaterialExpressionAtmosphericFogColor : public UMaterialExpression
+class AVolumetricLightmapDensityVolume : public AVolume
 {
 public:
-    UE_CLASS("/Script/Engine", "MaterialExpressionAtmosphericFogColor");
-    FExpressionInput WorldPosition;
-};
-
-class UViewModeUtils : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "ViewModeUtils");
+    UE_CLASS("/Script/Engine", "VolumetricLightmapDensityVolume");
+    FInt32Interval AllowedMipLevelRange;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* BrushComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
+        static constexpr const char* RootComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
+    };
 };
 
 class UAsyncActionLoadPrimaryAssetClass : public UAsyncActionLoadPrimaryAssetBase
@@ -19765,36 +19500,38 @@ private:
     };
 };
 
-class UAsyncActionLoadPrimaryAssetList : public UAsyncActionLoadPrimaryAssetBase
+class UFontImportOptions : public UObject
 {
 public:
-    UE_CLASS("/Script/Engine", "AsyncActionLoadPrimaryAssetList");
-    TMulticastInlineDelegate<void(TArray<class UObject*> Loaded)> Completed;
-    static class UAsyncActionLoadPrimaryAssetList* AsyncLoadPrimaryAssetList(class UObject* WorldContextObject, const TArray<FPrimaryAssetId>& PrimaryAssetList, const TArray<FName>& LoadBundles);
-    static class UAsyncActionLoadPrimaryAssetList* AsyncLoadPrimaryAssetList(const TArray<FPrimaryAssetId>& PrimaryAssetList, const TArray<FName>& LoadBundles);
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* Completed__UeDispatcher = "Assignable";
-    };
+    UE_CLASS("/Script/Engine", "FontImportOptions");
+    FFontImportOptionsData Data;
 };
 
-class UWindDirectionalSourceComponent : public USceneComponent
+class UDistributionVectorConstant : public UDistributionVector
 {
 public:
-    UE_CLASS("/Script/Engine", "WindDirectionalSourceComponent");
-    float Strength;
-    float Speed;
-    UE_READONLY float MinGustAmount;
-    UE_READONLY float MaxGustAmount;
-    float Radius;
-    UE_READONLY bool bPointWind;
-    void SetMaximumGustAmount(float InNewMaxGust);
-    void SetMinimumGustAmount(float InNewMinGust);
-    void SetRadius(float InNewRadius);
-    void SetSpeed(float InNewSpeed);
-    void SetStrength(float InNewStrength);
-    void SetWindType(TEnum<EWindSourceType> InNewType);
+    UE_CLASS("/Script/Engine", "DistributionVectorConstant");
+    FVector Constant;
+    bool bLockAxes;
+    TEnum<EDistributionVectorLockFlags> LockedAxes;
+};
+
+class UDistributionVectorParameterBase : public UDistributionVectorConstant
+{
+public:
+    UE_CLASS("/Script/Engine", "DistributionVectorParameterBase");
+    FName ParameterName;
+    FVector MinInput;
+    FVector MaxInput;
+    FVector MinOutput;
+    FVector MaxOutput;
+    TEnum<EDistributionParamMode> ParamModes[3];
+};
+
+class UDistributionVectorParticleParameter : public UDistributionVectorParameterBase
+{
+public:
+    UE_CLASS("/Script/Engine", "DistributionVectorParticleParameter");
 };
 
 class UAsyncActionLoadPrimaryAssetClassList : public UAsyncActionLoadPrimaryAssetBase
@@ -19811,43 +19548,20 @@ private:
     };
 };
 
-class UForceFeedbackComponent : public USceneComponent
+class UAsyncActionChangePrimaryAssetBundles : public UAsyncActionLoadPrimaryAssetBase
 {
 public:
-    UE_CLASS("/Script/Engine", "ForceFeedbackComponent");
-    UE_READONLY class UForceFeedbackEffect* ForceFeedbackEffect;
-    bool bAutoDestroy;
-    bool bStopWhenOwnerDestroyed;
-    bool bLooping;
-    bool bIgnoreTimeDilation;
-    bool bOverrideAttenuation;
-    float IntensityMultiplier;
-    class UForceFeedbackAttenuation* AttenuationSettings;
-    FForceFeedbackAttenuationSettings AttenuationOverrides;
-    TMulticastInlineDelegate<void(class UForceFeedbackComponent* ForceFeedbackComponent)> OnForceFeedbackFinished;
-    void AdjustAttenuation(const FForceFeedbackAttenuationSettings& InAttenuationSettings);
-    void Play(float StartTime);
-    void SetForceFeedbackEffect(class UForceFeedbackEffect* NewForceFeedbackEffect);
-    void SetIntensityMultiplier(float NewIntensityMultiplier);
-    void Stop();
-    bool BP_GetAttenuationSettingsToApply(FForceFeedbackAttenuationSettings& OutAttenuationSettings) const;
+    UE_CLASS("/Script/Engine", "AsyncActionChangePrimaryAssetBundles");
+    TMulticastInlineDelegate<void()> Completed;
+    static class UAsyncActionChangePrimaryAssetBundles* AsyncChangeBundleStateForMatchingPrimaryAssets(class UObject* WorldContextObject, const TArray<FName>& NewBundles, const TArray<FName>& OldBundles);
+    static class UAsyncActionChangePrimaryAssetBundles* AsyncChangeBundleStateForMatchingPrimaryAssets(const TArray<FName>& NewBundles, const TArray<FName>& OldBundles);
+    static class UAsyncActionChangePrimaryAssetBundles* AsyncChangeBundleStateForPrimaryAssetList(class UObject* WorldContextObject, const TArray<FPrimaryAssetId>& PrimaryAssetList, const TArray<FName>& AddBundles, const TArray<FName>& RemoveBundles);
+    static class UAsyncActionChangePrimaryAssetBundles* AsyncChangeBundleStateForPrimaryAssetList(const TArray<FPrimaryAssetId>& PrimaryAssetList, const TArray<FName>& AddBundles, const TArray<FName>& RemoveBundles);
 private:
     struct UeMarkers
     {
-        static constexpr const char* OnForceFeedbackFinished__UeDispatcher = "Assignable";
+        static constexpr const char* Completed__UeDispatcher = "Assignable";
     };
-};
-
-class UDistributionVectorUniformCurve : public UDistributionVector
-{
-public:
-    UE_CLASS("/Script/Engine", "DistributionVectorUniformCurve");
-    FInterpCurveTwoVectors ConstantCurve;
-    bool bLockAxes1;
-    bool bLockAxes2;
-    TEnum<EDistributionVectorLockFlags> LockedAxes[2];
-    TEnum<EDistributionVectorMirrorFlags> MirrorFlags[3];
-    bool bUseExtremes;
 };
 
 class AAtmosphericFog : public AInfo
@@ -19863,16 +19577,26 @@ private:
     };
 };
 
-class ASphereReflectionCapture : public AReflectionCapture
+class ADebugCameraHUD : public AHUD
 {
 public:
-    UE_CLASS("/Script/Engine", "SphereReflectionCapture");
-    class UDrawSphereComponent* DrawCaptureRadius;
+    UE_CLASS("/Script/Engine", "DebugCameraHUD");
 private:
     struct UeMarkers
     {
-        static constexpr const char* CaptureComponent__UeSubobject = "NewReflectionComponent /Script/Engine.SphereReflectionCaptureComponent";
+        static constexpr const char* UeClassTail = "0x00800004 /Script/CoreUObject.Object Game";
     };
+};
+
+class UStaticMeshSocket : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "StaticMeshSocket");
+    UE_READONLY FName SocketName;
+    FVector RelativeLocation;
+    FRotator RelativeRotation;
+    FVector RelativeScale;
+    FString Tag;
 };
 
 class UAtmosphericFogComponent : public USceneComponent
@@ -19913,33 +19637,27 @@ public:
     void StartPrecompute();
 };
 
+class AExponentialHeightFog : public AInfo
+{
+public:
+    UE_CLASS("/Script/Engine", "ExponentialHeightFog");
+    UE_READONLY class UExponentialHeightFogComponent* Component;
+    bool bEnabled;
+    void OnRep_bEnabled();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* bEnabled__Replicated = "OnRep_bEnabled):";
+        static constexpr const char* Component__UeSubobject = "HeightFogComponent0 /Script/Engine.ExponentialHeightFogComponent";
+        static constexpr const char* RootComponent__UeSubobject = "HeightFogComponent0 /Script/Engine.ExponentialHeightFogComponent";
+    };
+};
+
 class UAudioBus : public UObject
 {
 public:
     UE_CLASS("/Script/Engine", "AudioBus");
     TEnum<EAudioBusChannels> AudioBusChannels;
-};
-
-class ADecalActor : public AActor
-{
-public:
-    UE_CLASS("/Script/Engine", "DecalActor");
-    UE_READONLY class UDecalComponent* Decal;
-    class UMaterialInstanceDynamic* CreateDynamicMaterialInstance();
-    void SetDecalMaterial(class UMaterialInterface* NewDecalMaterial);
-    UE_PURE class UMaterialInterface* GetDecalMaterial() const;
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* Decal__UeSubobject = "NewDecalComponent /Script/Engine.DecalComponent";
-        static constexpr const char* RootComponent__UeSubobject = "NewDecalComponent /Script/Engine.DecalComponent";
-    };
-};
-
-class UStereoLayerShapeCubemap : public UStereoLayerShape
-{
-public:
-    UE_CLASS("/Script/Engine", "StereoLayerShapeCubemap");
 };
 
 class UAudioSettings : public UDeveloperSettings
@@ -19973,25 +19691,6 @@ public:
     class USoundClass* DefaultSoundClass;
     class USoundClass* DefaultMediaSoundClass;
     class USoundConcurrency* DefaultSoundConcurrency;
-};
-
-class UExporter : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "Exporter");
-    TSubclassOf<class UObject> SupportedClass;
-    class UObject* ExportRootScope;
-    TArray<FString> FormatExtension;
-    TArray<FString> FormatDescription;
-    int PreferredFormatIndex;
-    int TextIndent;
-    bool bText;
-    bool bSelectedOnly;
-    bool bForceFileOperations;
-    class UAssetExportTask* ExportTask;
-    static bool RunAssetExportTask(class UAssetExportTask* Task);
-    static bool RunAssetExportTasks(const TArray<class UAssetExportTask*>& ExportTasks);
-    bool ScriptRunAssetExportTask(class UAssetExportTask* Task);
 };
 
 class AAudioVolume : public AVolume
@@ -20029,21 +19728,22 @@ public:
     static UAutoDestroySubsystem* Get(class UObject* WorldContextObject = nullptr);
 };
 
-class USoundSubmixWithParentBase : public USoundSubmixBase
+class UWindDirectionalSourceComponent : public USceneComponent
 {
 public:
-    UE_CLASS("/Script/Engine", "SoundSubmixWithParentBase");
-    UE_READONLY class USoundSubmixBase* ParentSubmix;
-};
-
-class USoundfieldSubmix : public USoundSubmixWithParentBase
-{
-public:
-    UE_CLASS("/Script/Engine", "SoundfieldSubmix");
-    FName SoundfieldEncodingFormat;
-    class USoundfieldEncodingSettingsBase* EncodingSettings;
-    TArray<class USoundfieldEffectBase*> SoundfieldEffectChain;
-    TSubclassOf<class USoundfieldEncodingSettingsBase> EncodingSettingsClass;
+    UE_CLASS("/Script/Engine", "WindDirectionalSourceComponent");
+    float Strength;
+    float Speed;
+    UE_READONLY float MinGustAmount;
+    UE_READONLY float MaxGustAmount;
+    float Radius;
+    UE_READONLY bool bPointWind;
+    void SetMaximumGustAmount(float InNewMaxGust);
+    void SetMinimumGustAmount(float InNewMinGust);
+    void SetRadius(float InNewRadius);
+    void SetSpeed(float InNewSpeed);
+    void SetStrength(float InNewStrength);
+    void SetWindType(TEnum<EWindSourceType> InNewType);
 };
 
 class UAutomationTestSettings : public UObject
@@ -20068,48 +19768,127 @@ public:
     float PIETestDuration;
 };
 
-class APhysicsVolume : public AVolume
+class URendererSettings : public UDeveloperSettings
 {
 public:
-    UE_CLASS("/Script/Engine", "PhysicsVolume");
-    float TerminalVelocity;
-    int Priority;
-    float FluidFriction;
-    bool bWaterVolume;
-    bool bPhysicsOnContact;
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* BrushComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
-        static constexpr const char* RootComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
-    };
-};
-
-class ADefaultPhysicsVolume : public APhysicsVolume
-{
-public:
-    UE_CLASS("/Script/Engine", "DefaultPhysicsVolume");
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* BrushComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
-        static constexpr const char* RootComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
-    };
-};
-
-class UParticleModuleVelocity : public UParticleModuleVelocityBase
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleModuleVelocity");
-    FRawDistributionVector StartVelocity;
-    FRawDistributionFloat StartVelocityRadial;
-};
-
-class UParticleModuleVelocity_Seeded : public UParticleModuleVelocity
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleModuleVelocity_Seeded");
-    FParticleRandomSeedInfo RandomSeedInfo;
+    UE_CLASS("/Script/Engine", "RendererSettings");
+    bool bMobileDisableVertexFog;
+    int MaxMobileCascades;
+    TEnum<EMobileMSAASampleCount> MobileMSAASampleCount;
+    bool bMobileAllowDitheredLODTransition;
+    bool bMobileAllowSoftwareOcclusionCulling;
+    bool bMobileVirtualTextures;
+    bool bDiscardUnusedQualityLevels;
+    bool bOcclusionCulling;
+    float MinScreenRadiusForLights;
+    float MinScreenRadiusForEarlyZPass;
+    float MinScreenRadiusForCSMdepth;
+    bool bPrecomputedVisibilityWarning;
+    bool bTextureStreaming;
+    bool bUseDXT5NormalMaps;
+    bool bVirtualTextures;
+    bool bVirtualTextureEnableAutoImport;
+    bool bVirtualTexturedLightmaps;
+    uint32 VirtualTextureTileSize;
+    uint32 VirtualTextureTileBorderSize;
+    uint32 VirtualTextureFeedbackFactor;
+    bool bVirtualTextureEnableCompressZlib;
+    bool bVirtualTextureEnableCompressCrunch;
+    bool bClearCoatEnableSecondNormal;
+    int ReflectionCaptureResolution;
+    bool bReflectionCaptureCompression;
+    bool ReflectionEnvironmentLightmapMixBasedOnRoughness;
+    bool bForwardShading;
+    bool bVertexFoggingForOpaque;
+    bool bAllowStaticLighting;
+    bool bUseNormalMapsForStaticLighting;
+    bool bGenerateMeshDistanceFields;
+    bool bEightBitMeshDistanceFields;
+    bool bGenerateLandscapeGIData;
+    bool bCompressMeshDistanceFields;
+    float TessellationAdaptivePixelsPerTriangle;
+    bool bSeparateTranslucency;
+    TEnum<ETranslucentSortPolicy> TranslucentSortPolicy;
+    FVector TranslucentSortAxis;
+    TEnum<EFixedFoveationLevels> HMDFixedFoveationLevel;
+    TEnum<ECustomDepthStencil> CustomDepthStencil;
+    bool bCustomDepthTaaJitter;
+    TEnum<EAlphaChannelMode> bEnableAlphaChannelInPostProcessing;
+    bool bDefaultFeatureBloom;
+    bool bDefaultFeatureAmbientOcclusion;
+    bool bDefaultFeatureAmbientOcclusionStaticFraction;
+    bool bDefaultFeatureAutoExposure;
+    TEnum<EAutoExposureMethodUI> DefaultFeatureAutoExposure;
+    float DefaultFeatureAutoExposureBias;
+    bool bExtendDefaultLuminanceRangeInAutoExposureSettings;
+    bool bUsePreExposure;
+    bool bEnablePreExposureOnlyInTheEditor;
+    bool bDefaultFeatureMotionBlur;
+    bool bDefaultFeatureLensFlare;
+    bool bTemporalUpsampling;
+    bool bSSGI;
+    TEnum<EAntiAliasingMethod> DefaultFeatureAntiAliasing;
+    TEnum<ELightUnits> DefaultLightUnits;
+    TEnum<EDefaultBackBufferPixelFormat> DefaultBackBufferPixelFormat;
+    bool bRenderUnbuiltPreviewShadowsInGame;
+    bool bStencilForLODDither;
+    TEnum<EEarlyZPass> EarlyZPass;
+    bool bEarlyZPassOnlyMaterialMasking;
+    bool bDBuffer;
+    TEnum<EClearSceneOptions> ClearSceneMethod;
+    bool bBasePassOutputsVelocity;
+    bool bVertexDeformationOutputsVelocity;
+    bool bSelectiveBasePassOutputs;
+    bool bDefaultParticleCutouts;
+    int GPUSimulationTextureSizeX;
+    int GPUSimulationTextureSizeY;
+    bool bGlobalClipPlane;
+    TEnum<EGBufferFormat> GBufferFormat;
+    bool bUseGPUMorphTargets;
+    bool bNvidiaAftermathEnabled;
+    bool bMultiView;
+    bool bMobilePostProcessing;
+    bool bMobileMultiView;
+    bool bMobileUseHWsRGBEncoding;
+    bool bRoundRobinOcclusion;
+    bool bODSCapture;
+    bool bMeshStreaming;
+    float WireframeCullThreshold;
+    bool bEnableRayTracing;
+    bool bEnableRayTracingTextureLOD;
+    bool bSupportStationarySkylight;
+    bool bSupportLowQualityLightmaps;
+    bool bSupportPointLightWholeSceneShadows;
+    bool bSupportAtmosphericFog;
+    bool bSupportSkyAtmosphere;
+    bool bSupportSkyAtmosphereAffectsHeightFog;
+    bool bSupportSkinCacheShaders;
+    TEnum<ESkinCacheDefaultBehavior> DefaultSkinCacheBehavior;
+    float SkinCacheSceneMemoryLimitInMB;
+    bool bMobileEnableStaticAndCSMShadowReceivers;
+    bool bMobileEnableMovableLightCSMShaderCulling;
+    bool bMobileAllowDistanceFieldShadows;
+    bool bMobileAllowMovableDirectionalLights;
+    uint32 MobileNumDynamicPointLights;
+    bool bMobileDynamicPointLightsUseStaticBranch;
+    bool bMobileAllowMovableSpotlights;
+    bool bMobileAllowMovableSpotlightShadows;
+    bool bSupport16BitBoneIndex;
+    bool bGPUSkinLimit2BoneInfluences;
+    bool bSupportDepthOnlyIndexBuffers;
+    bool bSupportReversedIndexBuffers;
+    bool bLPV;
+    bool bMobileAmbientOcclusion;
+    bool bUseUnlimitedBoneInfluences;
+    int UnlimitedBonInfluencesThreshold;
+    FPerPlatformInt MaxSkinBones;
+    TEnum<EMobilePlanarReflectionMode> MobilePlanarReflectionMode;
+    bool bMobileSupportsGen4TAA;
+    FPerPlatformBool bStreamSkeletalMeshLODs;
+    FPerPlatformBool bDiscardSkeletalMeshOptionalLODs;
+    FSoftObjectPath VisualizeCalibrationColorMaterialPath;
+    FSoftObjectPath VisualizeCalibrationCustomMaterialPath;
+    FSoftObjectPath VisualizeCalibrationGrayscaleMaterialPath;
 };
 
 class UAvoidanceManager : public UObject
@@ -20129,30 +19908,12 @@ public:
     bool RegisterMovementComponent(class UMovementComponent* MovementComp, float AvoidanceWeight);
 };
 
-class UEdGraphPin_Deprecated : public UObject
+class USoundNodeDialoguePlayer : public USoundNode
 {
 public:
-    UE_CLASS("/Script/Engine", "EdGraphPin_Deprecated");
-    FString PinName;
-    FString PinToolTip;
-    TEnum<EEdGraphPinDirection> Direction;
-    FEdGraphPinType PinType;
-    FString DefaultValue;
-    FString AutogeneratedDefaultValue;
-    class UObject* DefaultObject;
-    FText DefaultTextValue;
-    TArray<class UEdGraphPin_Deprecated*> LinkedTo;
-    TArray<class UEdGraphPin_Deprecated*> SubPins;
-    class UEdGraphPin_Deprecated* ParentPin;
-    class UEdGraphPin_Deprecated* ReferencePassThroughConnection;
-};
-
-class UHierarchicalLODSetup : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "HierarchicalLODSetup");
-    TArray<FHierarchicalSimplification> HierarchicalLODSetup;
-    TSoftObjectPtr<class UMaterialInterface> OverrideBaseMaterial;
+    UE_CLASS("/Script/Engine", "SoundNodeDialoguePlayer");
+    FDialogueWaveParameter DialogueWaveParameter;
+    bool bLooping;
 };
 
 class ABandwidthTestActor : public AActor
@@ -20167,10 +19928,24 @@ private:
     };
 };
 
-class UReplayNetConnection : public UNetConnection
+class UDemoNetDriver : public UNetDriver
 {
 public:
-    UE_CLASS("/Script/Engine", "ReplayNetConnection");
+    UE_CLASS("/Script/Engine", "DemoNetDriver");
+    TMap<FString, FRollbackNetStartupActorInfo> RollbackNetStartupActors;
+    float CheckpointSaveMaxMSPerFrame;
+    TArray<FMulticastRecordOptions> MulticastRecordOptions;
+    bool bIsLocalReplay;
+    TArray<class APlayerController*> SpectatorControllers;
+};
+
+class URotatingMovementComponent : public UMovementComponent
+{
+public:
+    UE_CLASS("/Script/Engine", "RotatingMovementComponent");
+    FRotator RotationRate;
+    FVector PivotTranslation;
+    bool bRotationInLocalSpace;
 };
 
 class UBillboardComponent : public UPrimitiveComponent
@@ -20189,13 +19964,31 @@ public:
     void SetUV(int NewU, int NewUL, int NewV, int NewVL);
 };
 
-class USoundNodeDoppler : public USoundNode
+class UForceFeedbackComponent : public USceneComponent
 {
 public:
-    UE_CLASS("/Script/Engine", "SoundNodeDoppler");
-    float DopplerIntensity;
-    bool bUseSmoothing;
-    float SmoothingInterpSpeed;
+    UE_CLASS("/Script/Engine", "ForceFeedbackComponent");
+    UE_READONLY class UForceFeedbackEffect* ForceFeedbackEffect;
+    bool bAutoDestroy;
+    bool bStopWhenOwnerDestroyed;
+    bool bLooping;
+    bool bIgnoreTimeDilation;
+    bool bOverrideAttenuation;
+    float IntensityMultiplier;
+    class UForceFeedbackAttenuation* AttenuationSettings;
+    FForceFeedbackAttenuationSettings AttenuationOverrides;
+    TMulticastInlineDelegate<void(class UForceFeedbackComponent* ForceFeedbackComponent)> OnForceFeedbackFinished;
+    void AdjustAttenuation(const FForceFeedbackAttenuationSettings& InAttenuationSettings);
+    void Play(float StartTime);
+    void SetForceFeedbackEffect(class UForceFeedbackEffect* NewForceFeedbackEffect);
+    void SetIntensityMultiplier(float NewIntensityMultiplier);
+    void Stop();
+    bool BP_GetAttenuationSettingsToApply(FForceFeedbackAttenuationSettings& OutAttenuationSettings) const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnForceFeedbackFinished__UeDispatcher = "Assignable";
+    };
 };
 
 class IBlendableInterface
@@ -20204,242 +19997,33 @@ public:
     UE_CLASS("/Script/Engine", "BlendableInterface");
 };
 
-class UPendingNetGame : public UObject
+class UPlatformInterfaceWebResponse : public UObject
 {
 public:
-    UE_CLASS("/Script/Engine", "PendingNetGame");
-    class UNetDriver* NetDriver;
-    class UDemoNetDriver* DemoNetDriver;
+    UE_CLASS("/Script/Engine", "PlatformInterfaceWebResponse");
+    FString OriginalURL;
+    int ResponseCode;
+    int Tag;
+    FString StringResponse;
+    TArray<uint8> BinaryResponse;
+    void GetHeader(int HeaderIndex, FString& Header, FString& Value);
+    FString GetHeaderValue(FString HeaderName);
+    int GetNumHeaders();
 };
 
-class UDemoPendingNetGame : public UPendingNetGame
+class USkeleton : public UObject
 {
 public:
-    UE_CLASS("/Script/Engine", "DemoPendingNetGame");
-};
-
-class UEngine : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "Engine");
-    class UFont* TinyFont;
-    FSoftObjectPath TinyFontName;
-    class UFont* SmallFont;
-    FSoftObjectPath SmallFontName;
-    class UFont* MediumFont;
-    FSoftObjectPath MediumFontName;
-    class UFont* LargeFont;
-    FSoftObjectPath LargeFontName;
-    class UFont* SubtitleFont;
-    FSoftObjectPath SubtitleFontName;
-    TArray<class UFont*> AdditionalFonts;
-    TArray<FString> AdditionalFontNames;
-    TSubclassOf<class UConsole> ConsoleClass;
-    FSoftClassPath ConsoleClassName;
-    TSubclassOf<class UGameViewportClient> GameViewportClientClass;
-    FSoftClassPath GameViewportClientClassName;
-    TSubclassOf<class ULocalPlayer> LocalPlayerClass;
-    FSoftClassPath LocalPlayerClassName;
-    TSubclassOf<class AWorldSettings> WorldSettingsClass;
-    FSoftClassPath WorldSettingsClassName;
-    FSoftClassPath NavigationSystemClassName;
-    TSubclassOf<class UNavigationSystemBase> NavigationSystemClass;
-    FSoftClassPath NavigationSystemConfigClassName;
-    TSubclassOf<class UNavigationSystemConfig> NavigationSystemConfigClass;
-    FSoftClassPath AvoidanceManagerClassName;
-    TSubclassOf<class UAvoidanceManager> AvoidanceManagerClass;
-    FSoftClassPath AIControllerClassName;
-    TSubclassOf<class UPhysicsCollisionHandler> PhysicsCollisionHandlerClass;
-    FSoftClassPath PhysicsCollisionHandlerClassName;
-    FSoftClassPath GameUserSettingsClassName;
-    TSubclassOf<class UGameUserSettings> GameUserSettingsClass;
-    class UGameUserSettings* GameUserSettings;
-    TSubclassOf<class ALevelScriptActor> LevelScriptActorClass;
-    FSoftClassPath LevelScriptActorClassName;
-    FSoftClassPath DefaultBlueprintBaseClassName;
-    FSoftClassPath GameSingletonClassName;
-    class UObject* GameSingleton;
-    FSoftClassPath AssetManagerClassName;
-    class UAssetManager* AssetManager;
-    class UTexture2D* DefaultTexture;
-    FSoftObjectPath DefaultTextureName;
-    class UTexture* DefaultDiffuseTexture;
-    FSoftObjectPath DefaultDiffuseTextureName;
-    class UTexture2D* DefaultBSPVertexTexture;
-    FSoftObjectPath DefaultBSPVertexTextureName;
-    class UTexture2D* HighFrequencyNoiseTexture;
-    FSoftObjectPath HighFrequencyNoiseTextureName;
-    class UTexture2D* DefaultBokehTexture;
-    FSoftObjectPath DefaultBokehTextureName;
-    class UTexture2D* DefaultBloomKernelTexture;
-    FSoftObjectPath DefaultBloomKernelTextureName;
-    class UMaterial* WireframeMaterial;
-    FString WireframeMaterialName;
-    class UMaterial* DebugMeshMaterial;
-    FSoftObjectPath DebugMeshMaterialName;
-    class UMaterial* EmissiveMeshMaterial;
-    FSoftObjectPath EmissiveMeshMaterialName;
-    class UMaterial* LevelColorationLitMaterial;
-    FString LevelColorationLitMaterialName;
-    class UMaterial* LevelColorationUnlitMaterial;
-    FString LevelColorationUnlitMaterialName;
-    class UMaterial* LightingTexelDensityMaterial;
-    FString LightingTexelDensityName;
-    class UMaterial* ShadedLevelColorationLitMaterial;
-    FString ShadedLevelColorationLitMaterialName;
-    class UMaterial* ShadedLevelColorationUnlitMaterial;
-    FString ShadedLevelColorationUnlitMaterialName;
-    class UMaterial* RemoveSurfaceMaterial;
-    FSoftObjectPath RemoveSurfaceMaterialName;
-    class UMaterial* VertexColorMaterial;
-    FString VertexColorMaterialName;
-    class UMaterial* VertexColorViewModeMaterial_ColorOnly;
-    FString VertexColorViewModeMaterialName_ColorOnly;
-    class UMaterial* VertexColorViewModeMaterial_AlphaAsColor;
-    FString VertexColorViewModeMaterialName_AlphaAsColor;
-    class UMaterial* VertexColorViewModeMaterial_RedOnly;
-    FString VertexColorViewModeMaterialName_RedOnly;
-    class UMaterial* VertexColorViewModeMaterial_GreenOnly;
-    FString VertexColorViewModeMaterialName_GreenOnly;
-    class UMaterial* VertexColorViewModeMaterial_BlueOnly;
-    FString VertexColorViewModeMaterialName_BlueOnly;
-    FSoftObjectPath DebugEditorMaterialName;
-    class UMaterial* ConstraintLimitMaterial;
-    class UMaterialInstanceDynamic* ConstraintLimitMaterialX;
-    class UMaterialInstanceDynamic* ConstraintLimitMaterialXAxis;
-    class UMaterialInstanceDynamic* ConstraintLimitMaterialY;
-    class UMaterialInstanceDynamic* ConstraintLimitMaterialYAxis;
-    class UMaterialInstanceDynamic* ConstraintLimitMaterialZ;
-    class UMaterialInstanceDynamic* ConstraintLimitMaterialZAxis;
-    class UMaterialInstanceDynamic* ConstraintLimitMaterialPrismatic;
-    class UMaterial* InvalidLightmapSettingsMaterial;
-    FSoftObjectPath InvalidLightmapSettingsMaterialName;
-    class UMaterial* PreviewShadowsIndicatorMaterial;
-    FSoftObjectPath PreviewShadowsIndicatorMaterialName;
-    class UMaterial* ArrowMaterial;
-    class UMaterialInstanceDynamic* ArrowMaterialYellow;
-    FSoftObjectPath ArrowMaterialName;
-    FLinearColor LightingOnlyBrightness;
-    TArray<FLinearColor> ShaderComplexityColors;
-    TArray<FLinearColor> QuadComplexityColors;
-    TArray<FLinearColor> LightComplexityColors;
-    TArray<FLinearColor> StationaryLightOverlapColors;
-    TArray<FLinearColor> LODColorationColors;
-    TArray<FLinearColor> HLODColorationColors;
-    TArray<FLinearColor> StreamingAccuracyColors;
-    float MaxPixelShaderAdditiveComplexityCount;
-    float MaxES3PixelShaderAdditiveComplexityCount;
-    float MinLightMapDensity;
-    float IdealLightMapDensity;
-    float MaxLightMapDensity;
-    bool bRenderLightMapDensityGrayscale;
-    float RenderLightMapDensityGrayscaleScale;
-    float RenderLightMapDensityColorScale;
-    FLinearColor LightMapDensityVertexMappedColor;
-    FLinearColor LightMapDensitySelectedColor;
-    TArray<FStatColorMapping> StatColorMappings;
-    class UPhysicalMaterial* DefaultPhysMaterial;
-    FSoftObjectPath DefaultPhysMaterialName;
-    TArray<FGameNameRedirect> ActiveGameNameRedirects;
-    TArray<FClassRedirect> ActiveClassRedirects;
-    TArray<FPluginRedirect> ActivePluginRedirects;
-    TArray<FStructRedirect> ActiveStructRedirects;
-    class UTexture2D* PreIntegratedSkinBRDFTexture;
-    FSoftObjectPath PreIntegratedSkinBRDFTextureName;
-    class UTexture2D* BlueNoiseTexture;
-    FSoftObjectPath BlueNoiseTextureName;
-    class UTexture2D* MiniFontTexture;
-    FSoftObjectPath MiniFontTextureName;
-    class UTexture* WeightMapPlaceholderTexture;
-    FSoftObjectPath WeightMapPlaceholderTextureName;
-    class UTexture2D* LightMapDensityTexture;
-    FSoftObjectPath LightMapDensityTextureName;
-    class UGameViewportClient* GameViewport;
-    TArray<FString> DeferredCommands;
-    float NearClipPlane;
-    bool bSubtitlesEnabled;
-    bool bSubtitlesForcedOff;
-    int MaximumLoopIterationCount;
-    bool bCanBlueprintsTickByDefault;
-    bool bOptimizeAnimBlueprintMemberVariableAccess;
-    bool bAllowMultiThreadedAnimationUpdate;
-    bool bEnableEditorPSysRealtimeLOD;
-    bool bSmoothFrameRate;
-    bool bUseFixedFrameRate;
-    float FixedFrameRate;
-    FFloatRange SmoothedFrameRateRange;
-    class UEngineCustomTimeStep* CustomTimeStep;
-    FSoftClassPath CustomTimeStepClassName;
-    class UTimecodeProvider* TimecodeProvider;
-    FSoftClassPath TimecodeProviderClassName;
-    bool bGenerateDefaultTimecode;
-    FFrameRate GenerateDefaultTimecodeFrameRate;
-    float GenerateDefaultTimecodeFrameDelay;
-    bool bCheckForMultiplePawnsSpawnedInAFrame;
-    int NumPawnsAllowedToBeSpawnedInAFrame;
-    bool bShouldGenerateLowQualityLightmaps;
-    FColor C_WorldBox;
-    FColor C_BrushWire;
-    FColor C_AddWire;
-    FColor C_SubtractWire;
-    FColor C_SemiSolidWire;
-    FColor C_NonSolidWire;
-    FColor C_WireBackground;
-    FColor C_ScaleBoxHi;
-    FColor C_VolumeCollision;
-    FColor C_BSPCollision;
-    FColor C_OrthoBackground;
-    FColor C_Volume;
-    FColor C_BrushShape;
-    float StreamingDistanceFactor;
-    FDirectoryPath GameScreenshotSaveDirectory;
-    TEnum<ETransitionType> TransitionType;
-    FString TransitionDescription;
-    FString TransitionGameMode;
-    bool bAllowMatureLanguage;
-    float CameraRotationThreshold;
-    float CameraTranslationThreshold;
-    float PrimitiveProbablyVisibleTime;
-    float MaxOcclusionPixelsFraction;
-    bool bPauseOnLossOfFocus;
-    int MaxParticleResize;
-    int MaxParticleResizeWarn;
-    TArray<FDropNoteInfo> PendingDroppedNotes;
-    float NetClientTicksPerSecond;
-    float DisplayGamma;
-    float MinDesiredFrameRate;
-    FLinearColor DefaultSelectedMaterialColor;
-    FLinearColor SelectedMaterialColor;
-    FLinearColor SelectionOutlineColor;
-    FLinearColor SubduedSelectionOutlineColor;
-    FLinearColor SelectedMaterialColorOverride;
-    bool bIsOverridingSelectedColor;
-    bool bEnableOnScreenDebugMessages;
-    bool bEnableOnScreenDebugMessagesDisplay;
-    bool bSuppressMapWarnings;
-    bool bDisableAILogging;
-    uint32 bEnableVisualLogRecordingOnStart;
-    int ScreenSaverInhibitorSemaphore;
-    bool bLockReadOnlyLevels;
-    FString ParticleEventManagerClassPath;
-    float SelectionHighlightIntensity;
-    float BSPSelectionHighlightIntensity;
-    float SelectionHighlightIntensityBillboards;
-    TArray<FNetDriverDefinition> NetDriverDefinitions;
-    TArray<FString> ServerActors;
-    TArray<FString> RuntimeServerActors;
-    float NetErrorLogInterval;
-    bool bStartedLoadMapMovie;
-    int NextWorldContextHandle;
-};
-
-class UGameEngine : public UEngine
-{
-public:
-    UE_CLASS("/Script/Engine", "GameEngine");
-    float MaxDeltaTime;
-    float ServerFlushLogInterval;
-    class UGameInstance* GameInstance;
+    UE_CLASS("/Script/Engine", "Skeleton");
+    TArray<FBoneNode> BoneTree;
+    TArray<FTransform> RefLocalPoses;
+    FGuid VirtualBoneGuid;
+    TArray<FVirtualBone> VirtualBones;
+    TArray<class USkeletalMeshSocket*> Sockets;
+    FSmartNameContainer SmartNames;
+    TArray<class UBlendProfile*> BlendProfiles;
+    TArray<FAnimSlotGroup> SlotGroups;
+    TArray<class UAssetUserData*> AssetUserData;
 };
 
 class UBlendProfile : public UObject
@@ -20450,16 +20034,11 @@ public:
     TArray<FBlendProfileBoneEntry> ProfileEntries;
 };
 
-class APlayerStartPIE : public APlayerStart
+class UTextureLODSettings : public UObject
 {
 public:
-    UE_CLASS("/Script/Engine", "PlayerStartPIE");
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* CapsuleComponent__UeSubobject = "CollisionCapsule /Script/Engine.CapsuleComponent";
-        static constexpr const char* RootComponent__UeSubobject = "CollisionCapsule /Script/Engine.CapsuleComponent";
-    };
+    UE_CLASS("/Script/Engine", "TextureLODSettings");
+    TArray<FTextureLODGroup> TextureLODGroups;
 };
 
 class ABlockingVolume : public AVolume
@@ -20474,16 +20053,11 @@ private:
     };
 };
 
-class UBlueprintExtension : public UObject
+class UParticleModuleSourceMovement : public UParticleModuleLocationBase
 {
 public:
-    UE_CLASS("/Script/Engine", "BlueprintExtension");
-};
-
-class UDeviceProfileFragment : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "DeviceProfileFragment");
+    UE_CLASS("/Script/Engine", "ParticleModuleSourceMovement");
+    FRawDistributionVector SourceMovementScale;
 };
 
 class UBlueprintMapLibrary : public UBlueprintFunctionLibrary
@@ -20493,24 +20067,106 @@ public:
     static void SetMapPropertyByName(class UObject* Object, FName PropertyName, const TMap<int, int>& Value);
 };
 
-class UParticleModuleSpawnBase : public UParticleModule
+class UBlueprintPathsLibrary : public UBlueprintFunctionLibrary
 {
 public:
-    UE_CLASS("/Script/Engine", "ParticleModuleSpawnBase");
-    bool bProcessSpawnRate;
-    bool bProcessBurstList;
+    UE_CLASS("/Script/Engine", "BlueprintPathsLibrary");
+    UE_PURE static FString AutomationDir();
+    UE_PURE static FString AutomationLogDir();
+    UE_PURE static FString AutomationTransientDir();
+    UE_PURE static FString BugItDir();
+    UE_PURE static FString ChangeExtension(FString InPath, FString InNewExtension);
+    UE_PURE static FString CloudDir();
+    static bool CollapseRelativeDirectories(FString InPath, FString& outPath);
+    UE_PURE static FString Combine(const TArray<FString>& InPaths);
+    UE_PURE static FString ConvertFromSandboxPath(FString InPath, FString InSandboxName);
+    UE_PURE static FString ConvertRelativePathToFull(FString InPath, FString InBasePath);
+    UE_PURE static FString ConvertToSandboxPath(FString InPath, FString InSandboxName);
+    static FString CreateTempFilename(FString Path, FString Prefix, FString Extension);
+    UE_PURE static FString DiffDir();
+    UE_PURE static bool DirectoryExists(FString InPath);
+    UE_PURE static FString EngineConfigDir();
+    UE_PURE static FString EngineContentDir();
+    UE_PURE static FString EngineDir();
+    UE_PURE static FString EngineIntermediateDir();
+    UE_PURE static FString EnginePluginsDir();
+    UE_PURE static FString EngineSavedDir();
+    UE_PURE static FString EngineSourceDir();
+    UE_PURE static FString EngineUserDir();
+    UE_PURE static FString EngineVersionAgnosticUserDir();
+    UE_PURE static FString EnterpriseDir();
+    UE_PURE static FString EnterpriseFeaturePackDir();
+    UE_PURE static FString EnterprisePluginsDir();
+    UE_PURE static FString FeaturePackDir();
+    UE_PURE static bool FileExists(FString InPath);
+    UE_PURE static FString GameAgnosticSavedDir();
+    UE_PURE static FString GameDevelopersDir();
+    UE_PURE static FString GameSourceDir();
+    UE_PURE static FString GameUserDeveloperDir();
+    UE_PURE static FString GeneratedConfigDir();
+    UE_PURE static FString GetBaseFilename(FString InPath, bool bRemovePath);
+    UE_PURE static FString GetCleanFilename(FString InPath);
+    UE_PURE static TArray<FString> GetEditorLocalizationPaths();
+    UE_PURE static TArray<FString> GetEngineLocalizationPaths();
+    UE_PURE static FString GetExtension(FString InPath, bool bIncludeDot);
+    UE_PURE static TArray<FString> GetGameLocalizationPaths();
+    UE_PURE static FString GetInvalidFileSystemChars();
+    UE_PURE static FString GetPath(FString InPath);
+    UE_PURE static FString GetProjectFilePath();
+    UE_PURE static TArray<FString> GetPropertyNameLocalizationPaths();
+    UE_PURE static FString GetRelativePathToRoot();
+    UE_PURE static TArray<FString> GetRestrictedFolderNames();
+    UE_PURE static TArray<FString> GetToolTipLocalizationPaths();
+    UE_PURE static bool HasProjectPersistentDownloadDir();
+    UE_PURE static bool IsDrive(FString InPath);
+    UE_PURE static bool IsProjectFilePathSet();
+    UE_PURE static bool IsRelative(FString InPath);
+    UE_PURE static bool IsRestrictedPath(FString InPath);
+    UE_PURE static bool IsSamePath(FString PathA, FString PathB);
+    UE_PURE static FString LaunchDir();
+    static bool MakePathRelativeTo(FString InPath, FString InRelativeTo, FString& outPath);
+    static void MakePlatformFilename(FString InPath, FString& outPath);
+    static void MakeStandardFilename(FString InPath, FString& outPath);
+    UE_PURE static FString MakeValidFileName(FString inString, FString InReplacementChar);
+    static void NormalizeDirectoryName(FString InPath, FString& outPath);
+    static void NormalizeFilename(FString InPath, FString& outPath);
+    UE_PURE static FString ProfilingDir();
+    UE_PURE static FString ProjectConfigDir();
+    UE_PURE static FString ProjectContentDir();
+    UE_PURE static FString ProjectDir();
+    UE_PURE static FString ProjectIntermediateDir();
+    UE_PURE static FString ProjectLogDir();
+    UE_PURE static FString ProjectModsDir();
+    UE_PURE static FString ProjectPersistentDownloadDir();
+    UE_PURE static FString ProjectPluginsDir();
+    UE_PURE static FString ProjectSavedDir();
+    UE_PURE static FString ProjectUserDir();
+    static void RemoveDuplicateSlashes(FString InPath, FString& outPath);
+    UE_PURE static FString RootDir();
+    UE_PURE static FString SandboxesDir();
+    UE_PURE static FString ScreenShotDir();
+    UE_PURE static FString SetExtension(FString InPath, FString InNewExtension);
+    static void SetProjectFilePath(FString NewGameProjectFilePath);
+    UE_PURE static FString ShaderWorkingDir();
+    UE_PURE static bool ShouldSaveToUserDir();
+    UE_PURE static FString SourceConfigDir();
+    static void Split(FString InPath, FString& PathPart, FString& FilenamePart, FString& ExtensionPart);
+    static void ValidatePath(FString InPath, bool& bDidSucceed, FText& OutReason);
+    UE_PURE static FString VideoCaptureDir();
 };
 
-class UParticleModuleSpawn : public UParticleModuleSpawnBase
+class UInheritableComponentHandler : public UObject
 {
 public:
-    UE_CLASS("/Script/Engine", "ParticleModuleSpawn");
-    FRawDistributionFloat Rate;
-    FRawDistributionFloat RateScale;
-    TEnum<EParticleBurstMethod> ParticleBurstMethod;
-    TArray<FParticleBurst> BurstList;
-    FRawDistributionFloat BurstScale;
-    bool bApplyGlobalSpawnRateScale;
+    UE_CLASS("/Script/Engine", "InheritableComponentHandler");
+    TArray<FComponentOverrideRecord> Records;
+    TArray<class UActorComponent*> UnnecessaryComponents;
+};
+
+class UReplayNetConnection : public UNetConnection
+{
+public:
+    UE_CLASS("/Script/Engine", "ReplayNetConnection");
 };
 
 class UPlatformGameInstance : public UGameInstance
@@ -20550,10 +20206,44 @@ private:
     };
 };
 
-class UReplicationDriver : public UObject
+class UHapticFeedbackEffect_Buffer : public UHapticFeedbackEffect_Base
 {
 public:
-    UE_CLASS("/Script/Engine", "ReplicationDriver");
+    UE_CLASS("/Script/Engine", "HapticFeedbackEffect_Buffer");
+    TArray<uint8> Amplitudes;
+    int SampleRate;
+};
+
+class UBlueprintPlatformLibrary : public UBlueprintFunctionLibrary
+{
+public:
+    UE_CLASS("/Script/Engine", "BlueprintPlatformLibrary");
+    static void CancelLocalNotification(FString ActivationEvent);
+    static void CancelLocalNotificationById(int NotificationId);
+    static void ClearAllLocalNotifications();
+    UE_PURE static TEnum<EScreenOrientation> GetDeviceOrientation();
+    static void GetLaunchNotification(bool& NotificationLaunchedApp, FString& ActivationEvent, int& FireDate);
+    static int ScheduleLocalNotificationAtTime(const FDateTime& FireDateTime, bool LocalTime, const FText& Title, const FText& Body, const FText& Action, FString ActivationEvent);
+    static int ScheduleLocalNotificationBadgeAtTime(const FDateTime& FireDateTime, bool LocalTime, FString ActivationEvent);
+    static void ScheduleLocalNotificationBadgeFromNow(int inSecondsFromNow, FString ActivationEvent);
+    static int ScheduleLocalNotificationFromNow(int inSecondsFromNow, const FText& Title, const FText& Body, const FText& Action, FString ActivationEvent);
+};
+
+class UPhysicsSpringComponent : public USceneComponent
+{
+public:
+    UE_CLASS("/Script/Engine", "PhysicsSpringComponent");
+    float SpringStiffness;
+    float SpringDamping;
+    float SpringLengthAtRest;
+    float SpringRadius;
+    TEnum<ECollisionChannel> SpringChannel;
+    bool bIgnoreSelf;
+    UE_READONLY float SpringCompression;
+    UE_PURE float GetNormalizedCompressionScalar() const;
+    UE_PURE FVector GetSpringCurrentEndPoint() const;
+    UE_PURE FVector GetSpringDirection() const;
+    UE_PURE FVector GetSpringRestingPoint() const;
 };
 
 class UBlueprintSetLibrary : public UBlueprintFunctionLibrary
@@ -20563,39 +20253,6 @@ public:
     static void SetSetPropertyByName(class UObject* Object, FName PropertyName, const TSet<int>& Value);
 };
 
-class UHapticFeedbackEffect_SoundWave : public UHapticFeedbackEffect_Base
-{
-public:
-    UE_CLASS("/Script/Engine", "HapticFeedbackEffect_SoundWave");
-    class USoundWave* SoundWave;
-};
-
-class UBodySetup : public UBodySetupCore
-{
-public:
-    UE_CLASS("/Script/Engine", "BodySetup");
-    FKAggregateGeom AggGeom;
-    bool bAlwaysFullAnimWeight;
-    bool bConsiderForBounds;
-    bool bMeshCollideAll;
-    bool bDoubleSidedGeometry;
-    bool bGenerateNonMirroredCollision;
-    bool bSharedCookedData;
-    bool bGenerateMirroredCollision;
-    bool bSupportUVsAndFaceRemap;
-    class UPhysicalMaterial* PhysMaterial;
-    FWalkableSlopeOverride WalkableSlopeOverride;
-    FBodyInstance DefaultInstance;
-    FVector BuildScale3D;
-};
-
-class UPhysicsThrusterComponent : public USceneComponent
-{
-public:
-    UE_CLASS("/Script/Engine", "PhysicsThrusterComponent");
-    float ThrustStrength;
-};
-
 class UBoneMaskFilter : public UObject
 {
 public:
@@ -20603,11 +20260,11 @@ public:
     TArray<FInputBlendPose> BlendPoses;
 };
 
-class UInputKeyDelegateBinding : public UInputDelegateBinding
+class UInterpTrackFloatProp : public UInterpTrackFloatBase
 {
 public:
-    UE_CLASS("/Script/Engine", "InputKeyDelegateBinding");
-    TArray<FBlueprintInputKeyDelegateBinding> InputKeyDelegateBindings;
+    UE_CLASS("/Script/Engine", "InterpTrackFloatProp");
+    FName PropertyName;
 };
 
 class UBookMark : public UBookmarkBase
@@ -20617,6 +20274,18 @@ public:
     FVector Location;
     FRotator Rotation;
     TArray<FString> HiddenLevels;
+};
+
+class UParticleModuleSpawn : public UParticleModuleSpawnBase
+{
+public:
+    UE_CLASS("/Script/Engine", "ParticleModuleSpawn");
+    FRawDistributionFloat Rate;
+    FRawDistributionFloat RateScale;
+    TEnum<EParticleBurstMethod> ParticleBurstMethod;
+    TArray<FParticleBurst> BurstList;
+    FRawDistributionFloat BurstScale;
+    bool bApplyGlobalSpawnRateScale;
 };
 
 class UBoundsCopyComponent : public UActorComponent
@@ -20633,10 +20302,12 @@ public:
     bool bCopyZBounds;
 };
 
-class UParticleModuleSubUVBase : public UParticleModule
+class UParticleModuleMeshRotation : public UParticleModuleRotationBase
 {
 public:
-    UE_CLASS("/Script/Engine", "ParticleModuleSubUVBase");
+    UE_CLASS("/Script/Engine", "ParticleModuleMeshRotation");
+    FRawDistributionVector StartRotation;
+    bool bInheritParent;
 };
 
 class ABoxReflectionCapture : public AReflectionCapture
@@ -20650,45 +20321,6 @@ private:
     };
 };
 
-class UParticleModuleSpawnPerUnit : public UParticleModuleSpawnBase
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleModuleSpawnPerUnit");
-    float UnitScalar;
-    float MovementTolerance;
-    FRawDistributionFloat SpawnPerUnit;
-    float MaxFrameDistance;
-    bool bIgnoreSpawnRateWhenMoving;
-    bool bIgnoreMovementAlongX;
-    bool bIgnoreMovementAlongY;
-    bool bIgnoreMovementAlongZ;
-};
-
-class UInheritableComponentHandler : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "InheritableComponentHandler");
-    TArray<FComponentOverrideRecord> Records;
-    TArray<class UActorComponent*> UnnecessaryComponents;
-};
-
-class UReflectionCaptureComponent : public USceneComponent
-{
-public:
-    UE_CLASS("/Script/Engine", "ReflectionCaptureComponent");
-    class UBillboardComponent* CaptureOffsetComponent;
-    UE_READONLY TEnum<EReflectionSourceType> ReflectionSourceType;
-    UE_READONLY TEnum<EMobileReflectionCompression> MobileReflectionCompression;
-    UE_READONLY class UTextureCube* Cubemap;
-    UE_READONLY float SourceCubemapAngle;
-    UE_READONLY float Brightness;
-    UE_READONLY bool bModifyMaxValueRGBM;
-    UE_READONLY float MaxValueRGBM;
-    FVector CaptureOffset;
-    FGuid MapBuildDataId;
-    class UTextureCube* CachedEncodedHDRCubemap;
-};
-
 class UBoxReflectionCaptureComponent : public UReflectionCaptureComponent
 {
 public:
@@ -20696,806 +20328,6 @@ public:
     float BoxTransitionDistance;
     class UBoxComponent* PreviewInfluenceBox;
     class UBoxComponent* PreviewCaptureBox;
-};
-
-class UBreakpoint : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "Breakpoint");
-    bool bEnabled;
-    class UEdGraphNode* Node;
-    bool bStepOnce;
-    bool bStepOnce_WasPreviouslyDisabled;
-    bool bStepOnce_RemoveAfterHit;
-};
-
-class IInterface_PostProcessVolume
-{
-public:
-    UE_CLASS("/Script/Engine", "Interface_PostProcessVolume");
-};
-
-class UVectorFieldComponent : public UPrimitiveComponent
-{
-public:
-    UE_CLASS("/Script/Engine", "VectorFieldComponent");
-    class UVectorField* VectorField;
-    float Intensity;
-    float Tightness;
-    bool bPreviewVectorField;
-    void SetIntensity(float NewIntensity);
-};
-
-class UBrushBuilder : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "BrushBuilder");
-    FString BitmapFilename;
-    FString ToolTip;
-    bool NotifyBadParams;
-    TArray<FVector> Vertices;
-    TArray<FBuilderPoly> Polys;
-    FName Layer;
-    bool MergeCoplanars;
-};
-
-class ASpotLight : public ALight
-{
-public:
-    UE_CLASS("/Script/Engine", "SpotLight");
-    UE_READONLY class USpotLightComponent* SpotLightComponent;
-    void SetInnerConeAngle(float NewInnerConeAngle);
-    void SetOuterConeAngle(float NewOuterConeAngle);
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* LightComponent__UeSubobject = "LightComponent0 /Script/Engine.SpotLightComponent";
-        static constexpr const char* RootComponent__UeSubobject = "LightComponent0 /Script/Engine.SpotLightComponent";
-        static constexpr const char* SpotLightComponent__UeSubobject = "LightComponent0 /Script/Engine.SpotLightComponent";
-    };
-};
-
-class AGeneratedMeshAreaLight : public ASpotLight
-{
-public:
-    UE_CLASS("/Script/Engine", "GeneratedMeshAreaLight");
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* LightComponent__UeSubobject = "LightComponent0 /Script/Engine.SpotLightComponent";
-        static constexpr const char* RootComponent__UeSubobject = "LightComponent0 /Script/Engine.SpotLightComponent";
-        static constexpr const char* SpotLightComponent__UeSubobject = "LightComponent0 /Script/Engine.SpotLightComponent";
-    };
-};
-
-class UBrushComponent : public UPrimitiveComponent
-{
-public:
-    UE_CLASS("/Script/Engine", "BrushComponent");
-    class UModel* Brush;
-    class UBodySetup* BrushBodySetup;
-};
-
-class UTimelineTemplate : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "TimelineTemplate");
-    float TimelineLength;
-    TEnum<ETimelineLengthMode> LengthMode;
-    bool bAutoPlay;
-    bool bLoop;
-    bool bReplicated;
-    bool bIgnoreTimeDilation;
-    TArray<FTTEventTrack> EventTracks;
-    TArray<FTTFloatTrack> FloatTracks;
-    TArray<FTTVectorTrack> VectorTracks;
-    TArray<FTTLinearColorTrack> LinearColorTracks;
-    TArray<FBPVariableMetaDataEntry> MetaDataArray;
-    FGuid TimelineGuid;
-    TEnum<ETickingGroup> TimelineTickGroup;
-    FName VariableName;
-    FName DirectionPropertyName;
-    FName UpdateFunctionName;
-    FName FinishedFunctionName;
-};
-
-class ABrushShape : public ABrush
-{
-public:
-    UE_CLASS("/Script/Engine", "BrushShape");
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* BrushComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
-        static constexpr const char* RootComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
-    };
-};
-
-class UButtonStyleAsset : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "ButtonStyleAsset");
-    FButtonStyle ButtonStyle;
-};
-
-class UKismetMaterialLibrary : public UBlueprintFunctionLibrary
-{
-public:
-    UE_CLASS("/Script/Engine", "KismetMaterialLibrary");
-    static class UMaterialInstanceDynamic* CreateDynamicMaterialInstance(class UObject* WorldContextObject, class UMaterialInterface* Parent, FName OptionalName, TEnum<EMIDCreationFlags> CreationFlags);
-    static class UMaterialInstanceDynamic* CreateDynamicMaterialInstance(class UMaterialInterface* Parent, FName OptionalName, TEnum<EMIDCreationFlags> CreationFlags);
-    static float GetScalarParameterValue(class UObject* WorldContextObject, class UMaterialParameterCollection* Collection, FName ParameterName);
-    static float GetScalarParameterValue(class UMaterialParameterCollection* Collection, FName ParameterName);
-    static FLinearColor GetVectorParameterValue(class UObject* WorldContextObject, class UMaterialParameterCollection* Collection, FName ParameterName);
-    static FLinearColor GetVectorParameterValue(class UMaterialParameterCollection* Collection, FName ParameterName);
-    static void SetScalarParameterValue(class UObject* WorldContextObject, class UMaterialParameterCollection* Collection, FName ParameterName, float ParameterValue);
-    static void SetScalarParameterValue(class UMaterialParameterCollection* Collection, FName ParameterName, float ParameterValue);
-    static void SetVectorParameterValue(class UObject* WorldContextObject, class UMaterialParameterCollection* Collection, FName ParameterName, const FLinearColor& ParameterValue);
-    static void SetVectorParameterValue(class UMaterialParameterCollection* Collection, FName ParameterName, const FLinearColor& ParameterValue);
-};
-
-class ACameraBlockingVolume : public AVolume
-{
-public:
-    UE_CLASS("/Script/Engine", "CameraBlockingVolume");
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* BrushComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
-        static constexpr const char* RootComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
-    };
-};
-
-class UCameraModifier_CameraShake : public UCameraModifier
-{
-public:
-    UE_CLASS("/Script/Engine", "CameraModifier_CameraShake");
-    TArray<FActiveCameraShakeInfo> ActiveShakes;
-    TMap<TSubclassOf<class UCameraShakeBase>, FPooledCameraShakes> ExpiredPooledShakesMap;
-    float SplitScreenShakeScale;
-};
-
-class UTextureRenderTarget : public UTexture
-{
-public:
-    UE_CLASS("/Script/Engine", "TextureRenderTarget");
-    float TargetGamma;
-};
-
-class UTextureRenderTarget2DArray : public UTextureRenderTarget
-{
-public:
-    UE_CLASS("/Script/Engine", "TextureRenderTarget2DArray");
-    int SizeX;
-    int SizeY;
-    int Slices;
-    FLinearColor ClearColor;
-    TEnum<EPixelFormat> OverrideFormat;
-    UE_READONLY bool bHDR;
-    bool bForceLinearGamma;
-};
-
-class ACameraShakeSourceActor : public AActor
-{
-public:
-    UE_CLASS("/Script/Engine", "CameraShakeSourceActor");
-    UE_READONLY class UCameraShakeSourceComponent* CameraShakeSourceComponent;
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* CameraShakeSourceComponent__UeSubobject = "CameraShakeSourceComponent /Script/Engine.CameraShakeSourceComponent";
-        static constexpr const char* RootComponent__UeSubobject = "CameraShakeSourceComponent /Script/Engine.CameraShakeSourceComponent";
-    };
-};
-
-class UKismetStringLibrary : public UBlueprintFunctionLibrary
-{
-public:
-    UE_CLASS("/Script/Engine", "KismetStringLibrary");
-    UE_PURE static FString BuildString_Bool(FString AppendTo, FString Prefix, bool InBool, FString Suffix);
-    UE_PURE static FString BuildString_Color(FString AppendTo, FString Prefix, FLinearColor InColor, FString Suffix);
-    UE_PURE static FString BuildString_Float(FString AppendTo, FString Prefix, float InFloat, FString Suffix);
-    UE_PURE static FString BuildString_Int(FString AppendTo, FString Prefix, int inInt, FString Suffix);
-    UE_PURE static FString BuildString_IntVector(FString AppendTo, FString Prefix, FIntVector InIntVector, FString Suffix);
-    UE_PURE static FString BuildString_Name(FString AppendTo, FString Prefix, FName InName, FString Suffix);
-    UE_PURE static FString BuildString_Object(FString AppendTo, FString Prefix, class UObject* InObj, FString Suffix);
-    UE_PURE static FString BuildString_Rotator(FString AppendTo, FString Prefix, FRotator InRot, FString Suffix);
-    UE_PURE static FString BuildString_Vector(FString AppendTo, FString Prefix, FVector InVector, FString Suffix);
-    UE_PURE static FString BuildString_Vector2d(FString AppendTo, FString Prefix, FVector2D InVector2D, FString Suffix);
-    UE_PURE static FString Concat_StrStr(FString A, FString B);
-    UE_PURE static bool Contains(FString SearchIn, FString Substring, bool bUseCase, bool bSearchFromEnd);
-    UE_PURE static FString Conv_BoolToString(bool InBool);
-    UE_PURE static FString Conv_ByteToString(uint8 InByte);
-    UE_PURE static FString Conv_ColorToString(FLinearColor InColor);
-    UE_PURE static FString Conv_FloatToString(float InFloat);
-    UE_PURE static FString Conv_IntPointToString(FIntPoint InIntPoint);
-    UE_PURE static FString Conv_IntToString(int inInt);
-    UE_PURE static FString Conv_IntVectorToString(FIntVector InIntVec);
-    UE_PURE static FString Conv_MatrixToString(const FMatrix& InMatrix);
-    UE_PURE static FString Conv_NameToString(FName InName);
-    UE_PURE static FString Conv_ObjectToString(class UObject* InObj);
-    UE_PURE static FString Conv_RotatorToString(FRotator InRot);
-    static void Conv_StringToColor(FString inString, FLinearColor& OutConvertedColor, bool& OutIsValid);
-    UE_PURE static float Conv_StringToFloat(FString inString);
-    UE_PURE static int Conv_StringToInt(FString inString);
-    UE_PURE static FName Conv_StringToName(FString inString);
-    static void Conv_StringToRotator(FString inString, FRotator& OutConvertedRotator, bool& OutIsValid);
-    static void Conv_StringToVector(FString inString, FVector& OutConvertedVector, bool& OutIsValid);
-    static void Conv_StringToVector2D(FString inString, FVector2D& OutConvertedVector2D, bool& OutIsValid);
-    UE_PURE static FString Conv_TransformToString(const FTransform& InTrans);
-    UE_PURE static FString Conv_Vector2dToString(FVector2D InVec);
-    UE_PURE static FString Conv_VectorToString(FVector InVec);
-    static int CullArray(FString SourceString, TArray<FString>& inArray);
-    UE_PURE static bool EndsWith(FString SourceString, FString InSuffix, TEnum<ESearchCase> SearchCase);
-    UE_PURE static bool EqualEqual_StriStri(FString A, FString B);
-    UE_PURE static bool EqualEqual_StrStr(FString A, FString B);
-    UE_PURE static int FindSubstring(FString SearchIn, FString Substring, bool bUseCase, bool bSearchFromEnd, int StartPosition);
-    UE_PURE static TArray<FString> GetCharacterArrayFromString(FString SourceString);
-    UE_PURE static int GetCharacterAsNumber(FString SourceString, int Index_0);
-    UE_PURE static FString GetSubstring(FString SourceString, int StartIndex, int Length);
-    UE_PURE static bool isEmpty(FString inString);
-    UE_PURE static bool IsNumeric(FString SourceString);
-    UE_PURE static FString JoinStringArray(const TArray<FString>& SourceArray, FString Separator);
-    UE_PURE static FString Left(FString SourceString, int Count);
-    UE_PURE static FString LeftChop(FString SourceString, int Count);
-    UE_PURE static FString LeftPad(FString SourceString, int ChCount);
-    UE_PURE static int Len(FString S);
-    UE_PURE static bool MatchesWildcard(FString SourceString, FString Wildcard, TEnum<ESearchCase> SearchCase);
-    UE_PURE static FString Mid(FString SourceString, int Start, int Count);
-    UE_PURE static bool NotEqual_StriStri(FString A, FString B);
-    UE_PURE static bool NotEqual_StrStr(FString A, FString B);
-    UE_PURE static TArray<FString> ParseIntoArray(FString SourceString, FString Delimiter, bool CullEmptyStrings);
-    UE_PURE static FString Replace(FString SourceString, FString from, FString to, TEnum<ESearchCase> SearchCase);
-    static int ReplaceInline(FString& SourceString, FString SearchText, FString ReplacementText, TEnum<ESearchCase> SearchCase);
-    UE_PURE static FString Reverse(FString SourceString);
-    UE_PURE static FString Right(FString SourceString, int Count);
-    UE_PURE static FString RightChop(FString SourceString, int Count);
-    UE_PURE static FString RightPad(FString SourceString, int ChCount);
-    static bool Split(FString SourceString, FString InStr, FString& LeftS, FString& RightS, TEnum<ESearchCase> SearchCase, TEnum<ESearchDir> SearchDir);
-    UE_PURE static bool StartsWith(FString SourceString, FString InPrefix, TEnum<ESearchCase> SearchCase);
-    UE_PURE static FString TimeSecondsToString(float InSeconds);
-    UE_PURE static FString ToLower(FString SourceString);
-    UE_PURE static FString ToUpper(FString SourceString);
-    UE_PURE static FString Trim(FString SourceString);
-    UE_PURE static FString TrimTrailing(FString SourceString);
-};
-
-class USmokeTestCommandlet : public UCommandlet
-{
-public:
-    UE_CLASS("/Script/Engine", "SmokeTestCommandlet");
-};
-
-class UCameraAnimInst : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "CameraAnimInst");
-    class UCameraAnim* CamAnim;
-    class UInterpGroupInst* InterpGroupInst;
-    float PlayRate;
-    class UInterpTrackMove* MoveTrack;
-    class UInterpTrackInstMove* MoveInst;
-    TEnum<ECameraShakePlaySpace> PlaySpace;
-    void SetDuration(float NewDuration);
-    void SetScale(float NewDuration);
-    void Stop(bool bImmediate);
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* InterpGroupInst__UeSubobject = "InterpGroupInst0 /Script/Engine.InterpGroupInst";
-    };
-};
-
-class UCanvas : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "Canvas");
-    float OrgX;
-    float OrgY;
-    float ClipX;
-    float ClipY;
-    FColor DrawColor;
-    bool bCenterX;
-    bool bCenterY;
-    bool bNoSmooth;
-    int SizeX;
-    int SizeY;
-    FPlane ColorModulate;
-    class UTexture2D* DefaultTexture;
-    class UTexture2D* GradientTexture0;
-    class UReporterGraph* ReporterGraph;
-    void K2_Deproject(FVector2D ScreenPosition, FVector& WorldOrigin, FVector& WorldDirection);
-    void K2_DrawBorder(class UTexture* BorderTexture, class UTexture* BackgroundTexture, class UTexture* LeftBorderTexture, class UTexture* RightBorderTexture, class UTexture* TopBorderTexture, class UTexture* BottomBorderTexture, FVector2D ScreenPosition, FVector2D ScreenSize, FVector2D CoordinatePosition, FVector2D CoordinateSize, FLinearColor RenderColor, FVector2D BorderScale, FVector2D BackgroundScale, float Rotation, FVector2D PivotPoint, FVector2D CornerSize);
-    void K2_DrawBox(FVector2D ScreenPosition, FVector2D ScreenSize, float Thickness, FLinearColor RenderColor);
-    void K2_DrawLine(FVector2D ScreenPositionA, FVector2D ScreenPositionB, float Thickness, FLinearColor RenderColor);
-    void K2_DrawMaterial(class UMaterialInterface* RenderMaterial, FVector2D ScreenPosition, FVector2D ScreenSize, FVector2D CoordinatePosition, FVector2D CoordinateSize, float Rotation, FVector2D PivotPoint);
-    void K2_DrawMaterialTriangle(class UMaterialInterface* RenderMaterial, TArray<FCanvasUVTri> Triangles);
-    void K2_DrawPolygon(class UTexture* RenderTexture, FVector2D ScreenPosition, FVector2D Radius, int NumberOfSides, FLinearColor RenderColor);
-    void K2_DrawText(class UFont* RenderFont, FString RenderText, FVector2D ScreenPosition, FVector2D Scale, FLinearColor RenderColor, float Kerning, FLinearColor ShadowColor, FVector2D ShadowOffset, bool bCentreX, bool bCentreY, bool bOutlined, FLinearColor OutlineColor);
-    void K2_DrawTexture(class UTexture* RenderTexture, FVector2D ScreenPosition, FVector2D ScreenSize, FVector2D CoordinatePosition, FVector2D CoordinateSize, FLinearColor RenderColor, TEnum<EBlendMode> BlendMode, float Rotation, FVector2D PivotPoint);
-    void K2_DrawTriangle(class UTexture* RenderTexture, TArray<FCanvasUVTri> Triangles);
-    FVector K2_Project(FVector WorldLocation);
-    FVector2D K2_StrLen(class UFont* RenderFont, FString RenderText);
-    FVector2D K2_TextSize(class UFont* RenderFont, FString RenderText, FVector2D Scale);
-};
-
-class ULayer : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "Layer");
-    FName LayerName;
-    bool bIsVisible;
-    TArray<FLayerActorStats> ActorStats;
-};
-
-class USoundNodeBranch : public USoundNode
-{
-public:
-    UE_CLASS("/Script/Engine", "SoundNodeBranch");
-    FName BoolParameterName;
-};
-
-class UInterpCurveEdSetup : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "InterpCurveEdSetup");
-    TArray<FCurveEdTab> Tabs;
-    int ActiveTab;
-};
-
-class UTextureRenderTarget2D : public UTextureRenderTarget
-{
-public:
-    UE_CLASS("/Script/Engine", "TextureRenderTarget2D");
-    UE_READONLY int SizeX;
-    UE_READONLY int SizeY;
-    UE_READONLY FLinearColor ClearColor;
-    TEnum<ETextureAddress> AddressX;
-    TEnum<ETextureAddress> AddressY;
-    bool bForceLinearGamma;
-    bool bHDR;
-    UE_READONLY bool bGPUSharedFlag;
-    UE_READONLY TEnum<ETextureRenderTargetFormat> RenderTargetFormat;
-    UE_READONLY bool bAutoGenerateMips;
-    UE_READONLY TEnum<ETextureFilter> MipsSamplerFilter;
-    UE_READONLY TEnum<ETextureAddress> MipsAddressU;
-    UE_READONLY TEnum<ETextureAddress> MipsAddressV;
-    TEnum<EPixelFormat> OverrideFormat;
-};
-
-class UWorldComposition : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "WorldComposition");
-    TArray<class ULevelStreaming*> TilesStreaming;
-    double TilesStreamingTimeThreshold;
-    bool bLoadAllTilesDuringCinematic;
-    bool bRebaseOriginIn3DSpace;
-    float RebaseOriginDistance;
-};
-
-class UCanvasRenderTarget2D : public UTextureRenderTarget2D
-{
-public:
-    UE_CLASS("/Script/Engine", "CanvasRenderTarget2D");
-    TMulticastInlineDelegate<void(class UCanvas* Canvas, int Width, int Height)> OnCanvasRenderTargetUpdate;
-    TWeakObjectPtr<class UWorld> World;
-    bool bShouldClearRenderTargetOnReceiveUpdate;
-    static class UCanvasRenderTarget2D* CreateCanvasRenderTarget2D(class UObject* WorldContextObject, TSubclassOf<class UCanvasRenderTarget2D> CanvasRenderTarget2DClass, int Width, int Height);
-    static class UCanvasRenderTarget2D* CreateCanvasRenderTarget2D(TSubclassOf<class UCanvasRenderTarget2D> CanvasRenderTarget2DClass, int Width, int Height);
-    void GetSize(int& Width, int& Height);
-    void ReceiveUpdate(class UCanvas* Canvas, int Width, int Height);
-    void UpdateResource();
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* OnCanvasRenderTargetUpdate__UeDispatcher = "Assignable";
-    };
-};
-
-class UParticleModuleParameterBase : public UParticleModule
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleModuleParameterBase");
-};
-
-class UParticleModuleParameterDynamic : public UParticleModuleParameterBase
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleModuleParameterDynamic");
-    TArray<FEmitterDynamicParameter> DynamicParams;
-    int UpdateFlags;
-    bool bUsesVelocity;
-};
-
-class UCheckBoxStyleAsset : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "CheckBoxStyleAsset");
-    FCheckBoxStyle CheckBoxStyle;
-};
-
-class UTextureRenderTargetVolume : public UTextureRenderTarget
-{
-public:
-    UE_CLASS("/Script/Engine", "TextureRenderTargetVolume");
-    int SizeX;
-    int SizeY;
-    int SizeZ;
-    FLinearColor ClearColor;
-    TEnum<EPixelFormat> OverrideFormat;
-    UE_READONLY bool bHDR;
-    bool bForceLinearGamma;
-};
-
-class UChildActorComponent : public USceneComponent
-{
-public:
-    UE_CLASS("/Script/Engine", "ChildActorComponent");
-    UE_READONLY TSubclassOf<class AActor> ChildActorClass;
-    UE_READONLY class AActor* ChildActor;
-    class AActor* ChildActorTemplate;
-    void SetChildActorClass(TSubclassOf<class AActor> InClass);
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* ChildActor__Replicated = ":";
-    };
-};
-
-class UPhysicsAsset : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "PhysicsAsset");
-    TArray<int> BoundsBodies;
-    TArray<class USkeletalBodySetup*> SkeletalBodySetups;
-    TArray<class UPhysicsConstraintTemplate*> ConstraintSetup;
-    FSolverIterations SolverIterations;
-    TEnum<EPhysicsAssetSolverType> SolverType;
-    bool bNotForDedicatedServer;
-    class UThumbnailInfo* ThumbnailInfo;
-    TArray<class UBodySetup*> BodySetup;
-};
-
-class UChildConnection : public UNetConnection
-{
-public:
-    UE_CLASS("/Script/Engine", "ChildConnection");
-    class UNetConnection* Parent;
-};
-
-class UPlatformInterfaceBase : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "PlatformInterfaceBase");
-    TArray<FDelegateArray> AllDelegates;
-};
-
-class UInterpTrackVectorBase : public UInterpTrack
-{
-public:
-    UE_CLASS("/Script/Engine", "InterpTrackVectorBase");
-    FInterpCurveVector VectorTrack;
-    float CurveTension;
-};
-
-class UInterpTrackColorProp : public UInterpTrackVectorBase
-{
-public:
-    UE_CLASS("/Script/Engine", "InterpTrackColorProp");
-    FName PropertyName;
-};
-
-class UParticleModuleOrbitBase : public UParticleModule
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleModuleOrbitBase");
-    bool bUseEmitterTime;
-};
-
-class UParticleModuleOrbit : public UParticleModuleOrbitBase
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleModuleOrbit");
-    TEnum<EOrbitChainMode> ChainMode;
-    FRawDistributionVector OffsetAmount;
-    FOrbitOptions OffsetOptions;
-    FRawDistributionVector RotationAmount;
-    FOrbitOptions RotationOptions;
-    FRawDistributionVector RotationRateAmount;
-    FOrbitOptions RotationRateOptions;
-};
-
-class UCloudStorageBase : public UPlatformInterfaceBase
-{
-public:
-    UE_CLASS("/Script/Engine", "CloudStorageBase");
-    TArray<FString> LocalCloudFiles;
-    bool bSuppressDelegateCalls;
-};
-
-class UTexture2D : public UTexture
-{
-public:
-    UE_CLASS("/Script/Engine", "Texture2D");
-    int LevelIndex;
-    int FirstResourceMemMip;
-    bool bTemporarilyDisableStreaming;
-    TEnum<ETextureAddress> AddressX;
-    TEnum<ETextureAddress> AddressY;
-    FIntPoint ImportedSize;
-    UE_PURE int Blueprint_GetSizeX() const;
-    UE_PURE int Blueprint_GetSizeY() const;
-};
-
-class UTextureLightProfile : public UTexture2D
-{
-public:
-    UE_CLASS("/Script/Engine", "TextureLightProfile");
-    float Brightness;
-    float TextureMultiplier;
-};
-
-class UCollisionProfile : public UDeveloperSettings
-{
-public:
-    UE_CLASS("/Script/Engine", "CollisionProfile");
-    TArray<FCollisionResponseTemplate> Profiles;
-    TArray<FCustomChannelSetup> DefaultChannelResponses;
-    TArray<FCustomProfile> EditProfiles;
-    TArray<FRedirector> ProfileRedirects;
-    TArray<FRedirector> CollisionChannelRedirects;
-};
-
-class UComponentDelegateBinding : public UDynamicBlueprintBinding
-{
-public:
-    UE_CLASS("/Script/Engine", "ComponentDelegateBinding");
-    TArray<FBlueprintComponentDelegateBinding> ComponentDelegateBindings;
-};
-
-class UCurveTable : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "CurveTable");
-};
-
-class UDistributionFloatUniform : public UDistributionFloat
-{
-public:
-    UE_CLASS("/Script/Engine", "DistributionFloatUniform");
-    float Min;
-    float Max;
-};
-
-class UCompositeCurveTable : public UCurveTable
-{
-public:
-    UE_CLASS("/Script/Engine", "CompositeCurveTable");
-    UE_READONLY TArray<class UCurveTable*> ParentTables;
-    TArray<class UCurveTable*> OldParentTables;
-};
-
-class UDataTable : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "DataTable");
-    class UScriptStruct* RowStruct;
-    bool bStripFromClientBuilds;
-    bool bIgnoreExtraFields;
-    bool bIgnoreMissingFields;
-    FString ImportKeyField;
-};
-
-class UCompositeDataTable : public UDataTable
-{
-public:
-    UE_CLASS("/Script/Engine", "CompositeDataTable");
-    UE_READONLY TArray<class UDataTable*> ParentTables;
-    TArray<class UDataTable*> OldParentTables;
-};
-
-class UInterpTrackFloatProp : public UInterpTrackFloatBase
-{
-public:
-    UE_CLASS("/Script/Engine", "InterpTrackFloatProp");
-    FName PropertyName;
-};
-
-class UInterpTrackAudioMaster : public UInterpTrackVectorBase
-{
-public:
-    UE_CLASS("/Script/Engine", "InterpTrackAudioMaster");
-};
-
-class UScriptViewportClient : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "ScriptViewportClient");
-};
-
-class UParticleModuleSubUV : public UParticleModuleSubUVBase
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleModuleSubUV");
-    class USubUVAnimation* Animation;
-    FRawDistributionFloat SubImageIndex;
-    bool bUseRealTime;
-};
-
-class UParticleModuleSubUVMovie : public UParticleModuleSubUV
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleModuleSubUVMovie");
-    bool bUseEmitterTime;
-    FRawDistributionFloat FrameRate;
-    int StartingFrame;
-};
-
-class UGameViewportClient : public UScriptViewportClient
-{
-public:
-    UE_CLASS("/Script/Engine", "GameViewportClient");
-    class UConsole* ViewportConsole;
-    TArray<FDebugDisplayProperty> DebugProperties;
-    int MaxSplitscreenPlayers;
-    class UWorld* World;
-    class UGameInstance* GameInstance;
-    void SetConsoleTarget(int PlayerIndex);
-    void ShowTitleSafeArea();
-    void SSSwapControllers();
-};
-
-class UConsole : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "Console");
-    class ULocalPlayer* ConsoleTargetPlayer;
-    class UTexture2D* DefaultTexture_Black;
-    class UTexture2D* DefaultTexture_White;
-    TArray<FString> HistoryBuffer;
-};
-
-class USkeletalMesh : public UStreamableRenderAsset
-{
-public:
-    UE_CLASS("/Script/Engine", "SkeletalMesh");
-    UE_READONLY class USkeleton* Skeleton;
-    FBoxSphereBounds ImportedBounds;
-    FBoxSphereBounds ExtendedBounds;
-    UE_READONLY FVector PositiveBoundsExtension;
-    UE_READONLY FVector NegativeBoundsExtension;
-    TArray<FSkeletalMaterial> Materials;
-    TArray<FBoneMirrorInfo> SkelMirrorTable;
-    TArray<FSkeletalMeshLODInfo> LODInfo;
-    FPerPlatformInt MinLOD;
-    FPerPlatformBool DisableBelowMinLodStripping;
-    TEnum<EAxis> SkelMirrorAxis;
-    TEnum<EAxis> SkelMirrorFlipAxis;
-    bool bUseFullPrecisionUVs;
-    bool bUseHighPrecisionTangentBasis;
-    bool bHasBeenSimplified;
-    bool bHasVertexColors;
-    bool bEnablePerPolyCollision;
-    class UBodySetup* BodySetup;
-    UE_READONLY class UPhysicsAsset* PhysicsAsset;
-    UE_READONLY class UPhysicsAsset* ShadowPhysicsAsset;
-    UE_READONLY TArray<class UNodeMappingContainer*> NodeMappingData;
-    bool bSupportRayTracing;
-    TArray<class UMorphTarget*> MorphTargets;
-    UE_READONLY TSubclassOf<class UAnimInstance> PostProcessAnimBlueprint;
-    TArray<class UClothingAssetBase*> MeshClothingAssets;
-    FSkeletalMeshSamplingInfo SamplingInfo;
-    TArray<class UAssetUserData*> AssetUserData;
-    TArray<class USkeletalMeshSocket*> Sockets;
-    TArray<FSkinWeightProfileInfo> SkinWeightProfiles;
-    void SetDefaultAnimatingRig(TSoftObjectPtr<class UObject> InAnimatingRig);
-    void SetLODSettings(class USkeletalMeshLODSettings* InLODSettings);
-    void SetMaterials(const TArray<FSkeletalMaterial>& InMaterials);
-    void SetMeshClothingAssets(const TArray<class UClothingAssetBase*>& InMeshClothingAssets);
-    void SetMorphTargets(const TArray<class UMorphTarget*>& InMorphTargets);
-    UE_PURE class USkeletalMeshSocket* FindSocket(FName InSocketName) const;
-    class USkeletalMeshSocket* FindSocketAndIndex(FName InSocketName, int& OutIndex) const;
-    class USkeletalMeshSocket* FindSocketInfo(FName InSocketName, FTransform& outTransform, int& outBoneIndex, int& OutIndex) const;
-    UE_PURE FBoxSphereBounds GetBounds() const;
-    UE_PURE TSoftObjectPtr<class UObject> GetDefaultAnimatingRig() const;
-    UE_PURE FBoxSphereBounds GetImportedBounds() const;
-    UE_PURE class USkeletalMeshLODSettings* GetLODSettings() const;
-    UE_PURE TArray<FSkeletalMaterial> GetMaterials() const;
-    UE_PURE TArray<class UClothingAssetBase*> GetMeshClothingAssets() const;
-    UE_PURE TArray<class UMorphTarget*> GetMorphTargets() const;
-    UE_PURE class UNodeMappingContainer* GetNodeMappingContainer(class UBlueprint* SourceAsset) const;
-    UE_PURE TArray<class UNodeMappingContainer*> GetNodeMappingData() const;
-    UE_PURE class UPhysicsAsset* GetPhysicsAsset() const;
-    UE_PURE class UPhysicsAsset* GetShadowPhysicsAsset() const;
-    UE_PURE class USkeleton* GetSkeleton() const;
-    UE_PURE class USkeletalMeshSocket* GetSocketByIndex(int Index_0) const;
-    UE_PURE bool IsSectionUsingCloth(int InSectionIndex, bool bCheckCorrespondingSections) const;
-    UE_PURE TArray<FString> K2_GetAllMorphTargetNames() const;
-    UE_PURE int NumSockets() const;
-};
-
-class UControlChannel : public UChannel
-{
-public:
-    UE_CLASS("/Script/Engine", "ControlChannel");
-};
-
-class UInterpFilter_Custom : public UInterpFilter
-{
-public:
-    UE_CLASS("/Script/Engine", "InterpFilter_Custom");
-};
-
-class UStreamingSettings : public UDeveloperSettings
-{
-public:
-    UE_CLASS("/Script/Engine", "StreamingSettings");
-    bool AsyncLoadingThreadEnabled;
-    bool WarnIfTimeLimitExceeded;
-    float TimeLimitExceededMultiplier;
-    float TimeLimitExceededMinTime;
-    int MinBulkDataSizeForAsyncLoading;
-    bool UseBackgroundLevelStreaming;
-    bool AsyncLoadingUseFullTimeLimit;
-    float AsyncLoadingTimeLimit;
-    float PriorityAsyncLoadingExtraTime;
-    float LevelStreamingActorsUpdateTimeLimit;
-    float PriorityLevelStreamingActorsUpdateExtraTime;
-    int LevelStreamingComponentsRegistrationGranularity;
-    float LevelStreamingUnregisterComponentsTimeLimit;
-    int LevelStreamingComponentsUnregistrationGranularity;
-    bool FlushStreamingOnExit;
-    bool EventDrivenLoaderEnabled;
-};
-
-class AVolumetricCloud : public AInfo
-{
-public:
-    UE_CLASS("/Script/Engine", "VolumetricCloud");
-    UE_READONLY class UVolumetricCloudComponent* VolumetricCloudComponent;
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* RootComponent__UeSubobject = "VolumetricCloudComponent /Script/Engine.VolumetricCloudComponent";
-        static constexpr const char* VolumetricCloudComponent__UeSubobject = "VolumetricCloudComponent /Script/Engine.VolumetricCloudComponent";
-    };
-};
-
-class UGarbageCollectionSettings : public UDeveloperSettings
-{
-public:
-    UE_CLASS("/Script/Engine", "GarbageCollectionSettings");
-    float TimeBetweenPurgingPendingKillObjects;
-    bool FlushStreamingOnGC;
-    bool AllowParallelGC;
-    bool IncrementalBeginDestroyEnabled;
-    bool MultithreadedDestructionEnabled;
-    bool CreateGCClusters;
-    bool AssetClusteringEnabled;
-    bool ActorClusteringEnabled;
-    bool BlueprintClusteringEnabled;
-    bool UseDisregardForGCOnDedicatedServers;
-    int MinGCClusterSize;
-    int NumRetriesBeforeForcingGC;
-    int MaxObjectsNotConsideredByGC;
-    int SizeOfPermanentObjectPool;
-    int MaxObjectsInGame;
-    int MaxObjectsInEditor;
-};
-
-class ACullDistanceVolume : public AVolume
-{
-public:
-    UE_CLASS("/Script/Engine", "CullDistanceVolume");
-    UE_READONLY TArray<FCullDistanceSizePair> CullDistances;
-    UE_READONLY bool bEnabled;
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* BrushComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
-        static constexpr const char* RootComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
-    };
 };
 
 class UGameplayStatics : public UBlueprintFunctionLibrary
@@ -21719,12 +20551,1288 @@ public:
     static void UnRetainAllSoundsInSoundClass(class USoundClass* InSoundClass);
 };
 
-class UCurveBase : public UObject
+class UBreakpoint : public UObject
 {
 public:
-    UE_CLASS("/Script/Engine", "CurveBase");
-    void GetTimeRange(float& MinTime, float& MaxTime) const;
-    void GetValueRange(float& MinValue, float& MaxValue) const;
+    UE_CLASS("/Script/Engine", "Breakpoint");
+    bool bEnabled;
+    class UEdGraphNode* Node;
+    bool bStepOnce;
+    bool bStepOnce_WasPreviouslyDisabled;
+    bool bStepOnce_RemoveAfterHit;
+};
+
+class UThumbnailInfo : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "ThumbnailInfo");
+};
+
+class UBrushBuilder : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "BrushBuilder");
+    FString BitmapFilename;
+    FString ToolTip;
+    bool NotifyBadParams;
+    TArray<FVector> Vertices;
+    TArray<FBuilderPoly> Polys;
+    FName Layer;
+    bool MergeCoplanars;
+};
+
+class UBrushComponent : public UPrimitiveComponent
+{
+public:
+    UE_CLASS("/Script/Engine", "BrushComponent");
+    class UModel* Brush;
+    class UBodySetup* BrushBodySetup;
+};
+
+class UKismetInputLibrary : public UBlueprintFunctionLibrary
+{
+public:
+    UE_CLASS("/Script/Engine", "KismetInputLibrary");
+    static void CalibrateTilt();
+    UE_PURE static bool EqualEqual_InputChordInputChord(FInputChord A, FInputChord B);
+    UE_PURE static bool EqualEqual_KeyKey(FKey A, FKey B);
+    UE_PURE static float GetAnalogValue(const FAnalogInputEvent& Input);
+    UE_PURE static FKey GetKey(const FKeyEvent& Input);
+    UE_PURE static int GetUserIndex(const FKeyEvent& Input);
+    UE_PURE static FText InputChord_GetDisplayName(const FInputChord& Key);
+    UE_PURE static bool InputEvent_IsAltDown(const FInputEvent& Input);
+    UE_PURE static bool InputEvent_IsCommandDown(const FInputEvent& Input);
+    UE_PURE static bool InputEvent_IsControlDown(const FInputEvent& Input);
+    UE_PURE static bool InputEvent_IsLeftAltDown(const FInputEvent& Input);
+    UE_PURE static bool InputEvent_IsLeftCommandDown(const FInputEvent& Input);
+    UE_PURE static bool InputEvent_IsLeftControlDown(const FInputEvent& Input);
+    UE_PURE static bool InputEvent_IsLeftShiftDown(const FInputEvent& Input);
+    UE_PURE static bool InputEvent_IsRepeat(const FInputEvent& Input);
+    UE_PURE static bool InputEvent_IsRightAltDown(const FInputEvent& Input);
+    UE_PURE static bool InputEvent_IsRightCommandDown(const FInputEvent& Input);
+    UE_PURE static bool InputEvent_IsRightControlDown(const FInputEvent& Input);
+    UE_PURE static bool InputEvent_IsRightShiftDown(const FInputEvent& Input);
+    UE_PURE static bool InputEvent_IsShiftDown(const FInputEvent& Input);
+    UE_PURE static FText Key_GetDisplayName(const FKey& Key);
+    UE_PURE static TEnum<EUINavigationAction> Key_GetNavigationAction(const FKey& InKey);
+    UE_PURE static TEnum<EUINavigationAction> Key_GetNavigationActionFromKey(const FKeyEvent& InKeyEvent);
+    UE_PURE static TEnum<EUINavigation> Key_GetNavigationDirectionFromAnalog(const FAnalogInputEvent& InAnalogEvent);
+    UE_PURE static TEnum<EUINavigation> Key_GetNavigationDirectionFromKey(const FKeyEvent& InKeyEvent);
+    UE_PURE static bool Key_IsAnalog(const FKey& Key);
+    UE_PURE static bool Key_IsAxis1D(const FKey& Key);
+    UE_PURE static bool Key_IsAxis2D(const FKey& Key);
+    UE_PURE static bool Key_IsAxis3D(const FKey& Key);
+    UE_PURE static bool Key_IsButtonAxis(const FKey& Key);
+    UE_PURE static bool Key_IsDigital(const FKey& Key);
+    UE_PURE static bool Key_IsGamepadKey(const FKey& Key);
+    UE_PURE static bool Key_IsKeyboardKey(const FKey& Key);
+    UE_PURE static bool Key_IsModifierKey(const FKey& Key);
+    UE_PURE static bool Key_IsMouseButton(const FKey& Key);
+    UE_PURE static bool Key_IsValid(const FKey& Key);
+    UE_PURE static bool Key_IsVectorAxis(const FKey& Key);
+    UE_PURE static FVector2D PointerEvent_GetCursorDelta(const FPointerEvent& Input);
+    UE_PURE static FKey PointerEvent_GetEffectingButton(const FPointerEvent& Input);
+    UE_PURE static FVector2D PointerEvent_GetGestureDelta(const FPointerEvent& Input);
+    UE_PURE static TEnum<ESlateGesture> PointerEvent_GetGestureType(const FPointerEvent& Input);
+    UE_PURE static FVector2D PointerEvent_GetLastScreenSpacePosition(const FPointerEvent& Input);
+    UE_PURE static int PointerEvent_GetPointerIndex(const FPointerEvent& Input);
+    UE_PURE static FVector2D PointerEvent_GetScreenSpacePosition(const FPointerEvent& Input);
+    UE_PURE static int PointerEvent_GetTouchpadIndex(const FPointerEvent& Input);
+    UE_PURE static int PointerEvent_GetUserIndex(const FPointerEvent& Input);
+    UE_PURE static float PointerEvent_GetWheelDelta(const FPointerEvent& Input);
+    UE_PURE static bool PointerEvent_IsMouseButtonDown(const FPointerEvent& Input, FKey MouseButton);
+    UE_PURE static bool PointerEvent_IsTouchEvent(const FPointerEvent& Input);
+};
+
+class UPlatformInterfaceBase : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "PlatformInterfaceBase");
+    TArray<FDelegateArray> AllDelegates;
+};
+
+class UTwitterIntegrationBase : public UPlatformInterfaceBase
+{
+public:
+    UE_CLASS("/Script/Engine", "TwitterIntegrationBase");
+    bool AuthorizeAccounts();
+    bool CanShowTweetUI();
+    FString GetAccountName(int AccountIndex);
+    int GetNumAccounts();
+    void Init();
+    bool ShowTweetUI(FString InitialMessage, FString URL, FString Picture);
+    bool TwitterRequest(FString URL, const TArray<FString>& ParamKeysAndValues, TEnum<ETwitterRequestMethod> RequestMethod, int AccountIndex);
+};
+
+class ABrushShape : public ABrush
+{
+public:
+    UE_CLASS("/Script/Engine", "BrushShape");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* BrushComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
+        static constexpr const char* RootComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
+    };
+};
+
+class ACameraBlockingVolume : public AVolume
+{
+public:
+    UE_CLASS("/Script/Engine", "CameraBlockingVolume");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* BrushComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
+        static constexpr const char* RootComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
+    };
+};
+
+class UTextureLightProfile : public UTexture2D
+{
+public:
+    UE_CLASS("/Script/Engine", "TextureLightProfile");
+    float Brightness;
+    float TextureMultiplier;
+};
+
+class UKismetNodeHelperLibrary : public UBlueprintFunctionLibrary
+{
+public:
+    UE_CLASS("/Script/Engine", "KismetNodeHelperLibrary");
+    static bool BitIsMarked(int Data, int Index_0);
+    static void ClearAllBits(int& Data);
+    static void ClearBit(int& Data, int Index_0);
+    UE_PURE static FName GetEnumeratorName(class UEnum* Enum, uint8 EnumeratorValue);
+    UE_PURE static FString GetEnumeratorUserFriendlyName(class UEnum* Enum, uint8 EnumeratorValue);
+    UE_PURE static uint8 GetEnumeratorValueFromIndex(class UEnum* Enum, uint8 EnumeratorIndex);
+    static int GetFirstUnmarkedBit(int Data, int StartIdx, int NumBits);
+    static int GetRandomUnmarkedBit(int Data, int StartIdx, int NumBits);
+    static int GetUnmarkedBit(int Data, int StartIdx, int NumBits, bool bRandom);
+    UE_PURE static uint8 GetValidValue(class UEnum* Enum, uint8 EnumeratorValue);
+    static bool HasMarkedBit(int Data, int NumBits);
+    static bool HasUnmarkedBit(int Data, int NumBits);
+    static void MarkBit(int& Data, int Index_0);
+};
+
+class USlateBrushAsset : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "SlateBrushAsset");
+    FSlateBrush Brush;
+};
+
+class UCameraShakeSourceComponent : public USceneComponent
+{
+public:
+    UE_CLASS("/Script/Engine", "CameraShakeSourceComponent");
+    TEnum<ECameraShakeAttenuation> Attenuation;
+    float InnerAttenuationRadius;
+    float OuterAttenuationRadius;
+    TSubclassOf<class UCameraShakeBase> CameraShake;
+    bool bAutoStart;
+    void Start();
+    void StartCameraShake(TSubclassOf<class UCameraShakeBase> InCameraShake, float Scale, TEnum<ECameraShakePlaySpace> PlaySpace, FRotator UserPlaySpaceRot);
+    void StopAllCameraShakes(bool bImmediately);
+    void StopAllCameraShakesOfType(TSubclassOf<class UCameraShakeBase> InCameraShake, bool bImmediately);
+    UE_PURE float GetAttenuationFactor(const FVector& Location) const;
+};
+
+class UCameraAnim : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "CameraAnim");
+    class UInterpGroup* CameraInterpGroup;
+    float AnimLength;
+    FBox BoundingBox;
+    bool bRelativeToInitialTransform;
+    bool bRelativeToInitialFOV;
+    float BaseFOV;
+    FPostProcessSettings BasePostProcessSettings;
+    float BasePostProcessBlendWeight;
+};
+
+class UKismetSystemLibrary : public UBlueprintFunctionLibrary
+{
+public:
+    UE_CLASS("/Script/Engine", "KismetSystemLibrary");
+    static FDebugFloatHistory AddFloatHistorySample(float Value, const FDebugFloatHistory& FloatHistory);
+    static int BeginTransaction(FString Context, FText Description, class UObject* PrimaryObject);
+    static bool BoxOverlapActors(class UObject* WorldContextObject, FVector BoxPos, FVector BoxExtent, const TArray<EObjectTypeQuery>& ObjectTypes, class UClass* ActorClassFilter, const TArray<class AActor*>& ActorsToIgnore, TArray<class AActor*>& OutActors);
+    static bool BoxOverlapActors(FVector BoxPos, FVector BoxExtent, const TArray<EObjectTypeQuery>& ObjectTypes, class UClass* ActorClassFilter, const TArray<class AActor*>& ActorsToIgnore, TArray<class AActor*>& OutActors);
+    static bool BoxOverlapComponents(class UObject* WorldContextObject, FVector BoxPos, FVector Extent, const TArray<EObjectTypeQuery>& ObjectTypes, class UClass* ComponentClassFilter, const TArray<class AActor*>& ActorsToIgnore, TArray<class UPrimitiveComponent*>& OutComponents);
+    static bool BoxOverlapComponents(FVector BoxPos, FVector Extent, const TArray<EObjectTypeQuery>& ObjectTypes, class UClass* ComponentClassFilter, const TArray<class AActor*>& ActorsToIgnore, TArray<class UPrimitiveComponent*>& OutComponents);
+    static bool BoxTraceMulti(class UObject* WorldContextObject, FVector Start, FVector End, FVector HalfSize, FRotator Orientation, TEnum<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool BoxTraceMulti(FVector Start, FVector End, FVector HalfSize, FRotator Orientation, TEnum<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool BoxTraceMultiByProfile(class UObject* WorldContextObject, FVector Start, FVector End, FVector HalfSize, FRotator Orientation, FName ProfileName, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool BoxTraceMultiByProfile(FVector Start, FVector End, FVector HalfSize, FRotator Orientation, FName ProfileName, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool BoxTraceMultiForObjects(class UObject* WorldContextObject, FVector Start, FVector End, FVector HalfSize, FRotator Orientation, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool BoxTraceMultiForObjects(FVector Start, FVector End, FVector HalfSize, FRotator Orientation, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool BoxTraceSingle(class UObject* WorldContextObject, FVector Start, FVector End, FVector HalfSize, FRotator Orientation, TEnum<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool BoxTraceSingle(FVector Start, FVector End, FVector HalfSize, FRotator Orientation, TEnum<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool BoxTraceSingleByProfile(class UObject* WorldContextObject, FVector Start, FVector End, FVector HalfSize, FRotator Orientation, FName ProfileName, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool BoxTraceSingleByProfile(FVector Start, FVector End, FVector HalfSize, FRotator Orientation, FName ProfileName, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool BoxTraceSingleForObjects(class UObject* WorldContextObject, FVector Start, FVector End, FVector HalfSize, FRotator Orientation, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool BoxTraceSingleForObjects(FVector Start, FVector End, FVector HalfSize, FRotator Orientation, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static void BreakSoftClassPath(FSoftClassPath InSoftClassPath, FString& PathString);
+    static void BreakSoftObjectPath(FSoftObjectPath InSoftObjectPath, FString& PathString);
+    static void CancelTransaction(int Index_0);
+    static bool CanLaunchURL(FString URL);
+    static bool CapsuleOverlapActors(class UObject* WorldContextObject, FVector CapsulePos, float Radius, float HalfHeight, const TArray<EObjectTypeQuery>& ObjectTypes, class UClass* ActorClassFilter, const TArray<class AActor*>& ActorsToIgnore, TArray<class AActor*>& OutActors);
+    static bool CapsuleOverlapActors(FVector CapsulePos, float Radius, float HalfHeight, const TArray<EObjectTypeQuery>& ObjectTypes, class UClass* ActorClassFilter, const TArray<class AActor*>& ActorsToIgnore, TArray<class AActor*>& OutActors);
+    static bool CapsuleOverlapComponents(class UObject* WorldContextObject, FVector CapsulePos, float Radius, float HalfHeight, const TArray<EObjectTypeQuery>& ObjectTypes, class UClass* ComponentClassFilter, const TArray<class AActor*>& ActorsToIgnore, TArray<class UPrimitiveComponent*>& OutComponents);
+    static bool CapsuleOverlapComponents(FVector CapsulePos, float Radius, float HalfHeight, const TArray<EObjectTypeQuery>& ObjectTypes, class UClass* ComponentClassFilter, const TArray<class AActor*>& ActorsToIgnore, TArray<class UPrimitiveComponent*>& OutComponents);
+    static bool CapsuleTraceMulti(class UObject* WorldContextObject, FVector Start, FVector End, float Radius, float HalfHeight, TEnum<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool CapsuleTraceMulti(FVector Start, FVector End, float Radius, float HalfHeight, TEnum<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool CapsuleTraceMultiByProfile(class UObject* WorldContextObject, FVector Start, FVector End, float Radius, float HalfHeight, FName ProfileName, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool CapsuleTraceMultiByProfile(FVector Start, FVector End, float Radius, float HalfHeight, FName ProfileName, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool CapsuleTraceMultiForObjects(class UObject* WorldContextObject, FVector Start, FVector End, float Radius, float HalfHeight, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool CapsuleTraceMultiForObjects(FVector Start, FVector End, float Radius, float HalfHeight, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool CapsuleTraceSingle(class UObject* WorldContextObject, FVector Start, FVector End, float Radius, float HalfHeight, TEnum<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool CapsuleTraceSingle(FVector Start, FVector End, float Radius, float HalfHeight, TEnum<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool CapsuleTraceSingleByProfile(class UObject* WorldContextObject, FVector Start, FVector End, float Radius, float HalfHeight, FName ProfileName, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool CapsuleTraceSingleByProfile(FVector Start, FVector End, float Radius, float HalfHeight, FName ProfileName, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool CapsuleTraceSingleForObjects(class UObject* WorldContextObject, FVector Start, FVector End, float Radius, float HalfHeight, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool CapsuleTraceSingleForObjects(FVector Start, FVector End, float Radius, float HalfHeight, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static void CollectGarbage();
+    static bool ComponentOverlapActors(class UPrimitiveComponent* Component, const FTransform& ComponentTransform, const TArray<EObjectTypeQuery>& ObjectTypes, class UClass* ActorClassFilter, const TArray<class AActor*>& ActorsToIgnore, TArray<class AActor*>& OutActors);
+    static bool ComponentOverlapComponents(class UPrimitiveComponent* Component, const FTransform& ComponentTransform, const TArray<EObjectTypeQuery>& ObjectTypes, class UClass* ComponentClassFilter, const TArray<class AActor*>& ActorsToIgnore, TArray<class UPrimitiveComponent*>& OutComponents);
+    static void ControlScreensaver(bool bAllowScreenSaver);
+    UE_PURE static TSoftClassPtr<class UClass> Conv_ClassToSoftClassReference(const TSubclassOf<class UObject>& Class_0);
+    UE_PURE static class UObject* Conv_InterfaceToObject(const TScriptInterface<class IInterface>& Interface);
+    UE_PURE static TSoftObjectPtr<class UObject> Conv_ObjectToSoftObjectReference(class UObject* Object);
+    UE_PURE static FString Conv_PrimaryAssetIdToString(FPrimaryAssetId PrimaryAssetId);
+    UE_PURE static FString Conv_PrimaryAssetTypeToString(FPrimaryAssetType PrimaryAssetType);
+    UE_PURE static TSoftClassPtr<class UClass> Conv_SoftClassPathToSoftClassRef(const FSoftClassPath& SoftClassPath);
+    UE_PURE static TSubclassOf<class UObject> Conv_SoftClassReferenceToClass(const TSoftClassPtr<class UClass>& SoftClass);
+    UE_PURE static FString Conv_SoftClassReferenceToString(const TSoftClassPtr<class UClass>& SoftClassReference);
+    UE_PURE static class UObject* Conv_SoftObjectReferenceToObject(const TSoftObjectPtr<class UObject>& SoftObject);
+    UE_PURE static FString Conv_SoftObjectReferenceToString(const TSoftObjectPtr<class UObject>& SoftObjectReference);
+    UE_PURE static TSoftObjectPtr<class UObject> Conv_SoftObjPathToSoftObjRef(const FSoftObjectPath& SoftObjectPath);
+    UE_PURE static FString ConvertToAbsolutePath(FString Filename);
+    UE_PURE static FString ConvertToRelativePath(FString Filename);
+    static void CreateCopyForUndoBuffer(class UObject* ObjectToModify);
+    static void Delay(class UObject* WorldContextObject, float Duration, FLatentActionInfo LatentInfo);
+    static void Delay(float Duration, FLatentActionInfo LatentInfo);
+    static void Delay(class UObject* WorldContextObject, float Duration);
+    static void Delay(float Duration);
+    UE_PURE static bool DoesImplementInterface(class UObject* TestObject, TSubclassOf<class IInterface> Interface);
+    static void DrawDebugArrow(class UObject* WorldContextObject, FVector LineStart, FVector LineEnd, float ArrowSize, FLinearColor LineColor, float Duration, float Thickness);
+    static void DrawDebugArrow(FVector LineStart, FVector LineEnd, float ArrowSize, FLinearColor LineColor, float Duration, float Thickness);
+    static void DrawDebugBox(class UObject* WorldContextObject, FVector Center, FVector Extent, FLinearColor LineColor, FRotator Rotation, float Duration, float Thickness);
+    static void DrawDebugBox(FVector Center, FVector Extent, FLinearColor LineColor, FRotator Rotation, float Duration, float Thickness);
+    static void DrawDebugCamera(class ACameraActor* CameraActor, FLinearColor CameraColor, float Duration);
+    static void DrawDebugCapsule(class UObject* WorldContextObject, FVector Center, float HalfHeight, float Radius, FRotator Rotation, FLinearColor LineColor, float Duration, float Thickness);
+    static void DrawDebugCapsule(FVector Center, float HalfHeight, float Radius, FRotator Rotation, FLinearColor LineColor, float Duration, float Thickness);
+    static void DrawDebugCircle(class UObject* WorldContextObject, FVector Center, float Radius, int NumSegments, FLinearColor LineColor, float Duration, float Thickness, FVector YAxis, FVector ZAxis, bool bDrawAxis);
+    static void DrawDebugCircle(FVector Center, float Radius, int NumSegments, FLinearColor LineColor, float Duration, float Thickness, FVector YAxis, FVector ZAxis, bool bDrawAxis);
+    static void DrawDebugCone(class UObject* WorldContextObject, FVector Origin, FVector Direction, float Length, float AngleWidth, float AngleHeight, int NumSides, FLinearColor LineColor, float Duration, float Thickness);
+    static void DrawDebugCone(FVector Origin, FVector Direction, float Length, float AngleWidth, float AngleHeight, int NumSides, FLinearColor LineColor, float Duration, float Thickness);
+    static void DrawDebugConeInDegrees(class UObject* WorldContextObject, FVector Origin, FVector Direction, float Length, float AngleWidth, float AngleHeight, int NumSides, FLinearColor LineColor, float Duration, float Thickness);
+    static void DrawDebugConeInDegrees(FVector Origin, FVector Direction, float Length, float AngleWidth, float AngleHeight, int NumSides, FLinearColor LineColor, float Duration, float Thickness);
+    static void DrawDebugCoordinateSystem(class UObject* WorldContextObject, FVector AxisLoc, FRotator AxisRot, float Scale, float Duration, float Thickness);
+    static void DrawDebugCoordinateSystem(FVector AxisLoc, FRotator AxisRot, float Scale, float Duration, float Thickness);
+    static void DrawDebugCylinder(class UObject* WorldContextObject, FVector Start, FVector End, float Radius, int Segments, FLinearColor LineColor, float Duration, float Thickness);
+    static void DrawDebugCylinder(FVector Start, FVector End, float Radius, int Segments, FLinearColor LineColor, float Duration, float Thickness);
+    static void DrawDebugFloatHistoryLocation(class UObject* WorldContextObject, const FDebugFloatHistory& FloatHistory, FVector DrawLocation, FVector2D DrawSize, FLinearColor DrawColor, float Duration);
+    static void DrawDebugFloatHistoryLocation(const FDebugFloatHistory& FloatHistory, FVector DrawLocation, FVector2D DrawSize, FLinearColor DrawColor, float Duration);
+    static void DrawDebugFloatHistoryTransform(class UObject* WorldContextObject, const FDebugFloatHistory& FloatHistory, const FTransform& DrawTransform, FVector2D DrawSize, FLinearColor DrawColor, float Duration);
+    static void DrawDebugFloatHistoryTransform(const FDebugFloatHistory& FloatHistory, const FTransform& DrawTransform, FVector2D DrawSize, FLinearColor DrawColor, float Duration);
+    static void DrawDebugFrustum(class UObject* WorldContextObject, const FTransform& FrustumTransform, FLinearColor FrustumColor, float Duration, float Thickness);
+    static void DrawDebugFrustum(const FTransform& FrustumTransform, FLinearColor FrustumColor, float Duration, float Thickness);
+    static void DrawDebugLine(class UObject* WorldContextObject, FVector LineStart, FVector LineEnd, FLinearColor LineColor, float Duration, float Thickness);
+    static void DrawDebugLine(FVector LineStart, FVector LineEnd, FLinearColor LineColor, float Duration, float Thickness);
+    static void DrawDebugPlane(class UObject* WorldContextObject, const FPlane& PlaneCoordinates, FVector Location, float Size, FLinearColor PlaneColor, float Duration);
+    static void DrawDebugPlane(const FPlane& PlaneCoordinates, FVector Location, float Size, FLinearColor PlaneColor, float Duration);
+    static void DrawDebugPoint(class UObject* WorldContextObject, FVector Position, float Size, FLinearColor PointColor, float Duration);
+    static void DrawDebugPoint(FVector Position, float Size, FLinearColor PointColor, float Duration);
+    static void DrawDebugSphere(class UObject* WorldContextObject, FVector Center, float Radius, int Segments, FLinearColor LineColor, float Duration, float Thickness);
+    static void DrawDebugSphere(FVector Center, float Radius, int Segments, FLinearColor LineColor, float Duration, float Thickness);
+    static void DrawDebugString(class UObject* WorldContextObject, FVector TextLocation, FString Text, class AActor* TestBaseActor, FLinearColor TextColor, float Duration);
+    static void DrawDebugString(FVector TextLocation, FString Text, class AActor* TestBaseActor, FLinearColor TextColor, float Duration);
+    static int EndTransaction();
+    UE_PURE static bool EqualEqual_PrimaryAssetId(FPrimaryAssetId A, FPrimaryAssetId B);
+    UE_PURE static bool EqualEqual_PrimaryAssetType(FPrimaryAssetType A, FPrimaryAssetType B);
+    UE_PURE static bool EqualEqual_SoftClassReference(const TSoftClassPtr<class UClass>& A, const TSoftClassPtr<class UClass>& B);
+    UE_PURE static bool EqualEqual_SoftObjectReference(const TSoftObjectPtr<class UObject>& A, const TSoftObjectPtr<class UObject>& B);
+    static void ExecuteConsoleCommand(class UObject* WorldContextObject, FString Command, class APlayerController* SpecificPlayer);
+    static void ExecuteConsoleCommand(FString Command, class APlayerController* SpecificPlayer);
+    static void FlushDebugStrings(class UObject* WorldContextObject);
+    static void FlushDebugStrings();
+    static void FlushPersistentDebugLines(class UObject* WorldContextObject);
+    static void FlushPersistentDebugLines();
+    static void ForceCloseAdBanner();
+    static void GetActorBounds(class AActor* Actor, FVector& Origin, FVector& BoxExtent);
+    static void GetActorListFromComponentList(const TArray<class UPrimitiveComponent*>& ComponentList, class UClass* ActorClassFilter, TArray<class AActor*>& OutActorList);
+    UE_PURE static int GetAdIDCount();
+    UE_PURE static FString GetClassDisplayName(class UClass* Class_0);
+    UE_PURE static TSubclassOf<class UObject> GetClassFromPrimaryAssetId(FPrimaryAssetId PrimaryAssetId);
+    static FString GetCommandLine();
+    static void GetComponentBounds(class USceneComponent* Component, FVector& Origin, FVector& BoxExtent, float& SphereRadius);
+    static bool GetConsoleVariableBoolValue(FString VariableName);
+    static float GetConsoleVariableFloatValue(FString VariableName);
+    static int GetConsoleVariableIntValue(FString VariableName);
+    static bool GetConvenientWindowedResolutions(TArray<FIntPoint>& Resolutions);
+    static bool GetCurrentBundleState(FPrimaryAssetId PrimaryAssetId, bool bForceCurrentState, TArray<FName>& OutBundles);
+    UE_PURE static FString GetDefaultLanguage();
+    UE_PURE static FString GetDefaultLocale();
+    UE_PURE static FString GetDeviceId();
+    UE_PURE static FString GetDisplayName(class UObject* Object);
+    UE_PURE static FString GetEngineVersion();
+    UE_PURE static int64 GetFrameCount();
+    UE_PURE static FString GetGameBundleId();
+    UE_PURE static FString GetGameName();
+    UE_PURE static class UTexture2D* GetGamepadButtonGlyph(FString ButtonKey, int ControllerIndex);
+    UE_PURE static FString GetGamepadControllerName(int ControllerId);
+    UE_PURE static float GetGameTimeInSeconds(class UObject* WorldContextObject);
+    UE_PURE static float GetGameTimeInSeconds();
+    static FString GetLocalCurrencyCode();
+    static FString GetLocalCurrencySymbol();
+    UE_PURE static int GetMinYResolutionFor3DView();
+    UE_PURE static int GetMinYResolutionForUI();
+    UE_PURE static class UObject* GetObjectFromPrimaryAssetId(FPrimaryAssetId PrimaryAssetId);
+    UE_PURE static FString GetObjectName(class UObject* Object);
+    UE_PURE static class UObject* GetOuterObject(class UObject* Object);
+    UE_PURE static FString GetPathName(class UObject* Object);
+    UE_PURE static FString GetPlatformUserDir();
+    UE_PURE static FString GetPlatformUserName();
+    static TArray<FString> GetPreferredLanguages();
+    UE_PURE static FPrimaryAssetId GetPrimaryAssetIdFromClass(TSubclassOf<class UObject> Class_0);
+    UE_PURE static FPrimaryAssetId GetPrimaryAssetIdFromObject(class UObject* Object);
+    UE_PURE static FPrimaryAssetId GetPrimaryAssetIdFromSoftClassReference(TSoftClassPtr<class UClass> SoftClassReference);
+    UE_PURE static FPrimaryAssetId GetPrimaryAssetIdFromSoftObjectReference(TSoftObjectPtr<class UObject> SoftObjectReference);
+    static void GetPrimaryAssetIdList(FPrimaryAssetType PrimaryAssetType, TArray<FPrimaryAssetId>& OutPrimaryAssetIdList);
+    static void GetPrimaryAssetsWithBundleState(const TArray<FName>& RequiredBundles, const TArray<FName>& ExcludedBundles, const TArray<FPrimaryAssetType>& ValidTypes, bool bForceCurrentState, TArray<FPrimaryAssetId>& OutPrimaryAssetIdList);
+    UE_PURE static FString GetProjectContentDirectory();
+    UE_PURE static FString GetProjectDirectory();
+    UE_PURE static FString GetProjectSavedDirectory();
+    UE_PURE static int GetRenderingDetailMode();
+    UE_PURE static int GetRenderingMaterialQualityLevel();
+    UE_PURE static TSoftClassPtr<class UClass> GetSoftClassReferenceFromPrimaryAssetId(FPrimaryAssetId PrimaryAssetId);
+    UE_PURE static TSoftObjectPtr<class UObject> GetSoftObjectReferenceFromPrimaryAssetId(FPrimaryAssetId PrimaryAssetId);
+    static bool GetSupportedFullscreenResolutions(TArray<FIntPoint>& Resolutions);
+    UE_PURE static FString GetSystemPath(class UObject* Object);
+    UE_PURE static FString GetUniqueDeviceId();
+    UE_PURE static bool GetVolumeButtonsHandledBySystem();
+    static void HideAdBanner();
+    UE_PURE static bool IsControllerAssignedToGamepad(int ControllerId);
+    UE_PURE static bool IsDedicatedServer(class UObject* WorldContextObject);
+    UE_PURE static bool IsDedicatedServer();
+    static bool IsInterstitialAdAvailable();
+    static bool IsInterstitialAdRequested();
+    UE_PURE static bool IsLoggedIn(class APlayerController* SpecificPlayer);
+    UE_PURE static bool IsPackagedForDistribution();
+    static bool IsScreensaverEnabled();
+    UE_PURE static bool IsServer(class UObject* WorldContextObject);
+    UE_PURE static bool IsServer();
+    UE_PURE static bool IsSplitScreen(class UObject* WorldContextObject);
+    UE_PURE static bool IsSplitScreen();
+    UE_PURE static bool IsStandalone(class UObject* WorldContextObject);
+    UE_PURE static bool IsStandalone();
+    UE_PURE static bool IsUnattended();
+    UE_PURE static bool IsValid(class UObject* Object);
+    UE_PURE static bool IsValidClass(class UClass* Class_0);
+    UE_PURE static bool IsValidPrimaryAssetId(FPrimaryAssetId PrimaryAssetId);
+    UE_PURE static bool IsValidPrimaryAssetType(FPrimaryAssetType PrimaryAssetType);
+    UE_PURE static bool IsValidSoftClassReference(const TSoftClassPtr<class UClass>& SoftClassReference);
+    UE_PURE static bool IsValidSoftObjectReference(const TSoftObjectPtr<class UObject>& SoftObjectReference);
+    static void K2_ClearAndInvalidateTimerHandle(class UObject* WorldContextObject, FTimerHandle& Handle);
+    static void K2_ClearAndInvalidateTimerHandle(FTimerHandle& Handle);
+    static void K2_ClearTimer(class UObject* Object, FString FunctionName);
+    static void K2_ClearTimerDelegate(TDelegate<void()> Delegate);
+    static void K2_ClearTimerHandle(class UObject* WorldContextObject, FTimerHandle Handle);
+    static void K2_ClearTimerHandle(FTimerHandle Handle);
+    UE_PURE static float K2_GetTimerElapsedTime(class UObject* Object, FString FunctionName);
+    UE_PURE static float K2_GetTimerElapsedTimeDelegate(TDelegate<void()> Delegate);
+    UE_PURE static float K2_GetTimerElapsedTimeHandle(class UObject* WorldContextObject, FTimerHandle Handle);
+    UE_PURE static float K2_GetTimerElapsedTimeHandle(FTimerHandle Handle);
+    UE_PURE static float K2_GetTimerRemainingTime(class UObject* Object, FString FunctionName);
+    UE_PURE static float K2_GetTimerRemainingTimeDelegate(TDelegate<void()> Delegate);
+    UE_PURE static float K2_GetTimerRemainingTimeHandle(class UObject* WorldContextObject, FTimerHandle Handle);
+    UE_PURE static float K2_GetTimerRemainingTimeHandle(FTimerHandle Handle);
+    static FTimerHandle K2_InvalidateTimerHandle(FTimerHandle& Handle);
+    UE_PURE static bool K2_IsTimerActive(class UObject* Object, FString FunctionName);
+    UE_PURE static bool K2_IsTimerActiveDelegate(TDelegate<void()> Delegate);
+    UE_PURE static bool K2_IsTimerActiveHandle(class UObject* WorldContextObject, FTimerHandle Handle);
+    UE_PURE static bool K2_IsTimerActiveHandle(FTimerHandle Handle);
+    UE_PURE static bool K2_IsTimerPaused(class UObject* Object, FString FunctionName);
+    UE_PURE static bool K2_IsTimerPausedDelegate(TDelegate<void()> Delegate);
+    UE_PURE static bool K2_IsTimerPausedHandle(class UObject* WorldContextObject, FTimerHandle Handle);
+    UE_PURE static bool K2_IsTimerPausedHandle(FTimerHandle Handle);
+    UE_PURE static bool K2_IsValidTimerHandle(FTimerHandle Handle);
+    static void K2_PauseTimer(class UObject* Object, FString FunctionName);
+    static void K2_PauseTimerDelegate(TDelegate<void()> Delegate);
+    static void K2_PauseTimerHandle(class UObject* WorldContextObject, FTimerHandle Handle);
+    static void K2_PauseTimerHandle(FTimerHandle Handle);
+    static FTimerHandle K2_SetTimer(class UObject* Object, FString FunctionName, float Time, bool bLooping, float InitialStartDelay, float InitialStartDelayVariance);
+    static FTimerHandle K2_SetTimerDelegate(TDelegate<void()> Delegate, float Time, bool bLooping, float InitialStartDelay, float InitialStartDelayVariance);
+    UE_PURE static bool K2_TimerExists(class UObject* Object, FString FunctionName);
+    UE_PURE static bool K2_TimerExistsDelegate(TDelegate<void()> Delegate);
+    UE_PURE static bool K2_TimerExistsHandle(class UObject* WorldContextObject, FTimerHandle Handle);
+    UE_PURE static bool K2_TimerExistsHandle(FTimerHandle Handle);
+    static void K2_UnPauseTimer(class UObject* Object, FString FunctionName);
+    static void K2_UnPauseTimerDelegate(TDelegate<void()> Delegate);
+    static void K2_UnPauseTimerHandle(class UObject* WorldContextObject, FTimerHandle Handle);
+    static void K2_UnPauseTimerHandle(FTimerHandle Handle);
+    static void LaunchURL(FString URL);
+    static bool LineTraceMulti(class UObject* WorldContextObject, FVector Start, FVector End, TEnum<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool LineTraceMulti(FVector Start, FVector End, TEnum<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool LineTraceMultiByProfile(class UObject* WorldContextObject, FVector Start, FVector End, FName ProfileName, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool LineTraceMultiByProfile(FVector Start, FVector End, FName ProfileName, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool LineTraceMultiForObjects(class UObject* WorldContextObject, FVector Start, FVector End, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool LineTraceMultiForObjects(FVector Start, FVector End, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool LineTraceSingle(class UObject* WorldContextObject, FVector Start, FVector End, TEnum<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool LineTraceSingle(FVector Start, FVector End, TEnum<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool LineTraceSingleByProfile(class UObject* WorldContextObject, FVector Start, FVector End, FName ProfileName, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool LineTraceSingleByProfile(FVector Start, FVector End, FName ProfileName, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool LineTraceSingleForObjects(class UObject* WorldContextObject, FVector Start, FVector End, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool LineTraceSingleForObjects(FVector Start, FVector End, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static void LoadAsset(class UObject* WorldContextObject, TSoftObjectPtr<class UObject> Asset, TDelegate<void(class UObject* Loaded)> OnLoaded, FLatentActionInfo LatentInfo);
+    static void LoadAsset(TSoftObjectPtr<class UObject> Asset, TDelegate<void(class UObject* Loaded)> OnLoaded, FLatentActionInfo LatentInfo);
+    static void LoadAsset(class UObject* WorldContextObject, TSoftObjectPtr<class UObject> Asset, TDelegate<void(class UObject* Loaded)> OnLoaded);
+    static void LoadAsset(TSoftObjectPtr<class UObject> Asset, TDelegate<void(class UObject* Loaded)> OnLoaded);
+    static class UObject* LoadAsset(class UObject* WorldContextObject, TSoftObjectPtr<class UObject> Asset);
+    static class UObject* LoadAsset(TSoftObjectPtr<class UObject> Asset);
+    static class UObject* LoadAsset_Blocking(TSoftObjectPtr<class UObject> Asset);
+    static void LoadAssetClass(class UObject* WorldContextObject, TSoftClassPtr<class UClass> AssetClass, TDelegate<void(TSubclassOf<class UObject> Loaded)> OnLoaded, FLatentActionInfo LatentInfo);
+    static void LoadAssetClass(TSoftClassPtr<class UClass> AssetClass, TDelegate<void(TSubclassOf<class UObject> Loaded)> OnLoaded, FLatentActionInfo LatentInfo);
+    static void LoadAssetClass(class UObject* WorldContextObject, TSoftClassPtr<class UClass> AssetClass, TDelegate<void(TSubclassOf<class UObject> Loaded)> OnLoaded);
+    static void LoadAssetClass(TSoftClassPtr<class UClass> AssetClass, TDelegate<void(TSubclassOf<class UObject> Loaded)> OnLoaded);
+    static TSubclassOf<class UObject> LoadAssetClass(class UObject* WorldContextObject, TSoftClassPtr<class UClass> AssetClass);
+    static TSubclassOf<class UObject> LoadAssetClass(TSoftClassPtr<class UClass> AssetClass);
+    static class UClass* LoadClassAsset_Blocking(TSoftClassPtr<class UClass> AssetClass);
+    static void LoadInterstitialAd(int AdIdIndex);
+    UE_PURE static bool MakeLiteralBool(bool Value);
+    UE_PURE static uint8 MakeLiteralByte(uint8 Value);
+    UE_PURE static float MakeLiteralFloat(float Value);
+    UE_PURE static int MakeLiteralInt(int Value);
+    UE_PURE static FName MakeLiteralName(FName Value);
+    UE_PURE static FString MakeLiteralString(FString Value);
+    UE_PURE static FText MakeLiteralText(FText Value);
+    UE_PURE static FSoftClassPath MakeSoftClassPath(FString PathString);
+    static FSoftObjectPath MakeSoftObjectPath(FString PathString);
+    static void MoveComponentTo(class USceneComponent* Component, FVector TargetRelativeLocation, FRotator TargetRelativeRotation, bool bEaseOut, bool bEaseIn, float OverTime, bool bForceShortestRotationPath, TEnum<EMoveComponentAction> MoveAction, FLatentActionInfo LatentInfo);
+    static void MoveComponentTo(class USceneComponent* Component, FVector TargetRelativeLocation, FRotator TargetRelativeRotation, bool bEaseOut, bool bEaseIn, float OverTime, bool bForceShortestRotationPath, TEnum<EMoveComponentAction> MoveAction);
+    UE_PURE static FString NormalizeFilename(FString InFilename);
+    UE_PURE static bool NotEqual_PrimaryAssetId(FPrimaryAssetId A, FPrimaryAssetId B);
+    UE_PURE static bool NotEqual_PrimaryAssetType(FPrimaryAssetType A, FPrimaryAssetType B);
+    UE_PURE static bool NotEqual_SoftClassReference(const TSoftClassPtr<class UClass>& A, const TSoftClassPtr<class UClass>& B);
+    UE_PURE static bool NotEqual_SoftObjectReference(const TSoftObjectPtr<class UObject>& A, const TSoftObjectPtr<class UObject>& B);
+    static void ParseCommandLine(FString InCmdLine, TArray<FString>& OutTokens, TArray<FString>& OutSwitches, TMap<FString, FString>& OutParams);
+    UE_PURE static bool ParseParam(FString inString, FString InParam);
+    static bool ParseParamValue(FString inString, FString InParam, FString& OutValue);
+    static void PrintString(class UObject* WorldContextObject, FString inString, bool bPrintToScreen, bool bPrintToLog, FLinearColor TextColor, float Duration);
+    static void PrintString(FString inString, bool bPrintToScreen, bool bPrintToLog, FLinearColor TextColor, float Duration);
+    static void PrintText(class UObject* WorldContextObject, FText InText, bool bPrintToScreen, bool bPrintToLog, FLinearColor TextColor, float Duration);
+    static void PrintText(FText InText, bool bPrintToScreen, bool bPrintToLog, FLinearColor TextColor, float Duration);
+    static void PrintWarning(FString inString);
+    static void QuitGame(class UObject* WorldContextObject, class APlayerController* SpecificPlayer, TEnum<EQuitPreference> QuitPreference, bool bIgnorePlatformRestrictions);
+    static void QuitGame(class APlayerController* SpecificPlayer, TEnum<EQuitPreference> QuitPreference, bool bIgnorePlatformRestrictions);
+    static void RegisterForRemoteNotifications();
+    static void ResetGamepadAssignments();
+    static void ResetGamepadAssignmentToController(int ControllerId);
+    static void RetriggerableDelay(class UObject* WorldContextObject, float Duration, FLatentActionInfo LatentInfo);
+    static void RetriggerableDelay(float Duration, FLatentActionInfo LatentInfo);
+    static void RetriggerableDelay(class UObject* WorldContextObject, float Duration);
+    static void RetriggerableDelay(float Duration);
+    static void SetBoolPropertyByName(class UObject* Object, FName PropertyName, bool Value);
+    static void SetBytePropertyByName(class UObject* Object, FName PropertyName, uint8 Value);
+    static void SetClassPropertyByName(class UObject* Object, FName PropertyName, TSubclassOf<class UObject> Value);
+    static void SetCollisionProfileNameProperty(class UObject* Object, FName PropertyName, const FCollisionProfileName& Value);
+    static void SetColorPropertyByName(class UObject* Object, FName PropertyName, const FColor& Value);
+    static void SetFloatPropertyByName(class UObject* Object, FName PropertyName, float Value);
+    static void SetGamepadsBlockDeviceFeedback(bool bBlock);
+    static void SetInt64PropertyByName(class UObject* Object, FName PropertyName, int64 Value);
+    static void SetInterfacePropertyByName(class UObject* Object, FName PropertyName, const TScriptInterface<class IInterface>& Value);
+    static void SetIntPropertyByName(class UObject* Object, FName PropertyName, int Value);
+    static void SetLinearColorPropertyByName(class UObject* Object, FName PropertyName, const FLinearColor& Value);
+    static void SetNamePropertyByName(class UObject* Object, FName PropertyName, const FName& Value);
+    static void SetObjectPropertyByName(class UObject* Object, FName PropertyName, class UObject* Value);
+    static void SetRotatorPropertyByName(class UObject* Object, FName PropertyName, const FRotator& Value);
+    static void SetSoftClassPropertyByName(class UObject* Object, FName PropertyName, const TSoftClassPtr<class UClass>& Value);
+    static void SetSoftObjectPropertyByName(class UObject* Object, FName PropertyName, const TSoftObjectPtr<class UObject>& Value);
+    static void SetStringPropertyByName(class UObject* Object, FName PropertyName, FString Value);
+    static void SetStructurePropertyByName(class UObject* Object, FName PropertyName, const FGenericStruct& Value);
+    static void SetSuppressViewportTransitionMessage(class UObject* WorldContextObject, bool bState);
+    static void SetSuppressViewportTransitionMessage(bool bState);
+    static void SetTextPropertyByName(class UObject* Object, FName PropertyName, const FText& Value);
+    static void SetTransformPropertyByName(class UObject* Object, FName PropertyName, const FTransform& Value);
+    static void SetUserActivity(const FUserActivity& UserActivity);
+    static void SetVectorPropertyByName(class UObject* Object, FName PropertyName, const FVector& Value);
+    static void SetVolumeButtonsHandledBySystem(bool bEnabled);
+    static void SetWindowTitle(const FText& Title);
+    static void ShowAdBanner(int AdIdIndex, bool bShowOnBottomOfScreen);
+    static void ShowInterstitialAd();
+    static void ShowPlatformSpecificAchievementsScreen(class APlayerController* SpecificPlayer);
+    static void ShowPlatformSpecificLeaderboardScreen(FString CategoryName);
+    static void SnapshotObject(class UObject* Object);
+    static bool SphereOverlapActors(class UObject* WorldContextObject, FVector SpherePos, float SphereRadius, const TArray<EObjectTypeQuery>& ObjectTypes, class UClass* ActorClassFilter, const TArray<class AActor*>& ActorsToIgnore, TArray<class AActor*>& OutActors);
+    static bool SphereOverlapActors(FVector SpherePos, float SphereRadius, const TArray<EObjectTypeQuery>& ObjectTypes, class UClass* ActorClassFilter, const TArray<class AActor*>& ActorsToIgnore, TArray<class AActor*>& OutActors);
+    static bool SphereOverlapComponents(class UObject* WorldContextObject, FVector SpherePos, float SphereRadius, const TArray<EObjectTypeQuery>& ObjectTypes, class UClass* ComponentClassFilter, const TArray<class AActor*>& ActorsToIgnore, TArray<class UPrimitiveComponent*>& OutComponents);
+    static bool SphereOverlapComponents(FVector SpherePos, float SphereRadius, const TArray<EObjectTypeQuery>& ObjectTypes, class UClass* ComponentClassFilter, const TArray<class AActor*>& ActorsToIgnore, TArray<class UPrimitiveComponent*>& OutComponents);
+    static bool SphereTraceMulti(class UObject* WorldContextObject, FVector Start, FVector End, float Radius, TEnum<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool SphereTraceMulti(FVector Start, FVector End, float Radius, TEnum<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool SphereTraceMultiByProfile(class UObject* WorldContextObject, FVector Start, FVector End, float Radius, FName ProfileName, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool SphereTraceMultiByProfile(FVector Start, FVector End, float Radius, FName ProfileName, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool SphereTraceMultiForObjects(class UObject* WorldContextObject, FVector Start, FVector End, float Radius, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool SphereTraceMultiForObjects(FVector Start, FVector End, float Radius, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, TArray<FHitResult>& OutHits, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool SphereTraceSingle(class UObject* WorldContextObject, FVector Start, FVector End, float Radius, TEnum<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool SphereTraceSingle(FVector Start, FVector End, float Radius, TEnum<ETraceTypeQuery> TraceChannel, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool SphereTraceSingleByProfile(class UObject* WorldContextObject, FVector Start, FVector End, float Radius, FName ProfileName, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool SphereTraceSingleByProfile(FVector Start, FVector End, float Radius, FName ProfileName, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool SphereTraceSingleForObjects(class UObject* WorldContextObject, FVector Start, FVector End, float Radius, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static bool SphereTraceSingleForObjects(FVector Start, FVector End, float Radius, const TArray<EObjectTypeQuery>& ObjectTypes, bool bTraceComplex, const TArray<class AActor*>& ActorsToIgnore, TEnum<EDrawDebugTrace> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime);
+    static void StackTrace();
+    static void TransactObject(class UObject* Object);
+    static void UnloadPrimaryAsset(FPrimaryAssetId PrimaryAssetId);
+    static void UnloadPrimaryAssetList(const TArray<FPrimaryAssetId>& PrimaryAssetIdList);
+    static void UnregisterForRemoteNotifications();
+};
+
+class USoundNodeAssetReferencer : public USoundNode
+{
+public:
+    UE_CLASS("/Script/Engine", "SoundNodeAssetReferencer");
+};
+
+class UCameraAnimInst : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "CameraAnimInst");
+    class UCameraAnim* CamAnim;
+    class UInterpGroupInst* InterpGroupInst;
+    float PlayRate;
+    class UInterpTrackMove* MoveTrack;
+    class UInterpTrackInstMove* MoveInst;
+    TEnum<ECameraShakePlaySpace> PlaySpace;
+    void SetDuration(float NewDuration);
+    void SetScale(float NewDuration);
+    void Stop(bool bImmediate);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* InterpGroupInst__UeSubobject = "InterpGroupInst0 /Script/Engine.InterpGroupInst";
+    };
+};
+
+class IInterface_PostProcessVolume
+{
+public:
+    UE_CLASS("/Script/Engine", "Interface_PostProcessVolume");
+};
+
+class UCanvas : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "Canvas");
+    float OrgX;
+    float OrgY;
+    float ClipX;
+    float ClipY;
+    FColor DrawColor;
+    bool bCenterX;
+    bool bCenterY;
+    bool bNoSmooth;
+    int SizeX;
+    int SizeY;
+    FPlane ColorModulate;
+    class UTexture2D* DefaultTexture;
+    class UTexture2D* GradientTexture0;
+    class UReporterGraph* ReporterGraph;
+    void K2_Deproject(FVector2D ScreenPosition, FVector& WorldOrigin, FVector& WorldDirection);
+    void K2_DrawBorder(class UTexture* BorderTexture, class UTexture* BackgroundTexture, class UTexture* LeftBorderTexture, class UTexture* RightBorderTexture, class UTexture* TopBorderTexture, class UTexture* BottomBorderTexture, FVector2D ScreenPosition, FVector2D ScreenSize, FVector2D CoordinatePosition, FVector2D CoordinateSize, FLinearColor RenderColor, FVector2D BorderScale, FVector2D BackgroundScale, float Rotation, FVector2D PivotPoint, FVector2D CornerSize);
+    void K2_DrawBox(FVector2D ScreenPosition, FVector2D ScreenSize, float Thickness, FLinearColor RenderColor);
+    void K2_DrawLine(FVector2D ScreenPositionA, FVector2D ScreenPositionB, float Thickness, FLinearColor RenderColor);
+    void K2_DrawMaterial(class UMaterialInterface* RenderMaterial, FVector2D ScreenPosition, FVector2D ScreenSize, FVector2D CoordinatePosition, FVector2D CoordinateSize, float Rotation, FVector2D PivotPoint);
+    void K2_DrawMaterialTriangle(class UMaterialInterface* RenderMaterial, TArray<FCanvasUVTri> Triangles);
+    void K2_DrawPolygon(class UTexture* RenderTexture, FVector2D ScreenPosition, FVector2D Radius, int NumberOfSides, FLinearColor RenderColor);
+    void K2_DrawText(class UFont* RenderFont, FString RenderText, FVector2D ScreenPosition, FVector2D Scale, FLinearColor RenderColor, float Kerning, FLinearColor ShadowColor, FVector2D ShadowOffset, bool bCentreX, bool bCentreY, bool bOutlined, FLinearColor OutlineColor);
+    void K2_DrawTexture(class UTexture* RenderTexture, FVector2D ScreenPosition, FVector2D ScreenSize, FVector2D CoordinatePosition, FVector2D CoordinateSize, FLinearColor RenderColor, TEnum<EBlendMode> BlendMode, float Rotation, FVector2D PivotPoint);
+    void K2_DrawTriangle(class UTexture* RenderTexture, TArray<FCanvasUVTri> Triangles);
+    FVector K2_Project(FVector WorldLocation);
+    FVector2D K2_StrLen(class UFont* RenderFont, FString RenderText);
+    FVector2D K2_TextSize(class UFont* RenderFont, FString RenderText, FVector2D Scale);
+};
+
+class AWindDirectionalSource : public AInfo
+{
+public:
+    UE_CLASS("/Script/Engine", "WindDirectionalSource");
+    UE_READONLY class UWindDirectionalSourceComponent* Component;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* Component__UeSubobject = "WindDirectionalSourceComponent0 /Script/Engine.WindDirectionalSourceComponent";
+        static constexpr const char* RootComponent__UeSubobject = "WindDirectionalSourceComponent0 /Script/Engine.WindDirectionalSourceComponent";
+    };
+};
+
+class UTextureRenderTarget : public UTexture
+{
+public:
+    UE_CLASS("/Script/Engine", "TextureRenderTarget");
+    float TargetGamma;
+};
+
+class UTextureRenderTarget2D : public UTextureRenderTarget
+{
+public:
+    UE_CLASS("/Script/Engine", "TextureRenderTarget2D");
+    UE_READONLY int SizeX;
+    UE_READONLY int SizeY;
+    UE_READONLY FLinearColor ClearColor;
+    TEnum<ETextureAddress> AddressX;
+    TEnum<ETextureAddress> AddressY;
+    bool bForceLinearGamma;
+    bool bHDR;
+    UE_READONLY bool bGPUSharedFlag;
+    UE_READONLY TEnum<ETextureRenderTargetFormat> RenderTargetFormat;
+    UE_READONLY bool bAutoGenerateMips;
+    UE_READONLY TEnum<ETextureFilter> MipsSamplerFilter;
+    UE_READONLY TEnum<ETextureAddress> MipsAddressU;
+    UE_READONLY TEnum<ETextureAddress> MipsAddressV;
+    TEnum<EPixelFormat> OverrideFormat;
+};
+
+class ULevel : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "Level");
+    class UWorld* OwningWorld;
+    class UModel* Model;
+    TArray<class UModelComponent*> ModelComponents;
+    class ULevelActorContainer* ActorCluster;
+    int NumTextureStreamingUnbuiltComponents;
+    int NumTextureStreamingDirtyResources;
+    class ALevelScriptActor* LevelScriptActor;
+    class ANavigationObjectBase* NavListStart;
+    class ANavigationObjectBase* NavListEnd;
+    TArray<class UNavigationDataChunk*> NavDataChunks;
+    float LightmapTotalSize;
+    float ShadowmapTotalSize;
+    TArray<FVector> StaticNavigableGeometry;
+    TArray<FGuid> StreamingTextureGuids;
+    FGuid LevelBuildDataId;
+    class UMapBuildDataRegistry* MapBuildData;
+    FIntVector LightBuildLevelOffset;
+    bool bIsLightingScenario;
+    bool bTextureStreamingRotationChanged;
+    bool bStaticComponentsRegisteredInStreamingManager;
+    bool bIsVisible;
+    class AWorldSettings* WorldSettings;
+    TArray<class UAssetUserData*> AssetUserData;
+    TArray<FReplicatedStaticActorDestructionInfo> DestroyedReplicatedStaticActors;
+};
+
+class UParticleModuleOrientationBase : public UParticleModule
+{
+public:
+    UE_CLASS("/Script/Engine", "ParticleModuleOrientationBase");
+};
+
+class UParticleModuleOrientationAxisLock : public UParticleModuleOrientationBase
+{
+public:
+    UE_CLASS("/Script/Engine", "ParticleModuleOrientationAxisLock");
+    TEnum<EParticleAxisLock> LockAxisFlags;
+};
+
+class UCanvasRenderTarget2D : public UTextureRenderTarget2D
+{
+public:
+    UE_CLASS("/Script/Engine", "CanvasRenderTarget2D");
+    TMulticastInlineDelegate<void(class UCanvas* Canvas, int Width, int Height)> OnCanvasRenderTargetUpdate;
+    TWeakObjectPtr<class UWorld> World;
+    bool bShouldClearRenderTargetOnReceiveUpdate;
+    static class UCanvasRenderTarget2D* CreateCanvasRenderTarget2D(class UObject* WorldContextObject, TSubclassOf<class UCanvasRenderTarget2D> CanvasRenderTarget2DClass, int Width, int Height);
+    static class UCanvasRenderTarget2D* CreateCanvasRenderTarget2D(TSubclassOf<class UCanvasRenderTarget2D> CanvasRenderTarget2DClass, int Width, int Height);
+    void GetSize(int& Width, int& Height);
+    void ReceiveUpdate(class UCanvas* Canvas, int Width, int Height);
+    void UpdateResource();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnCanvasRenderTargetUpdate__UeDispatcher = "Assignable";
+    };
+};
+
+class UInputActionDelegateBinding : public UInputDelegateBinding
+{
+public:
+    UE_CLASS("/Script/Engine", "InputActionDelegateBinding");
+    TArray<FBlueprintInputActionDelegateBinding> InputActionDelegateBindings;
+};
+
+class UTextureRenderTarget2DArray : public UTextureRenderTarget
+{
+public:
+    UE_CLASS("/Script/Engine", "TextureRenderTarget2DArray");
+    int SizeX;
+    int SizeY;
+    int Slices;
+    FLinearColor ClearColor;
+    TEnum<EPixelFormat> OverrideFormat;
+    UE_READONLY bool bHDR;
+    bool bForceLinearGamma;
+};
+
+class UCheatManagerExtension : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "CheatManagerExtension");
+};
+
+class UPhysicalAnimationComponent : public UActorComponent
+{
+public:
+    UE_CLASS("/Script/Engine", "PhysicalAnimationComponent");
+    UE_READONLY float StrengthMultiplyer;
+    class USkeletalMeshComponent* SkeletalMeshComponent;
+    void ApplyPhysicalAnimationProfileBelow(FName BodyName, FName ProfileName, bool bIncludeSelf, bool bClearNotFound);
+    void ApplyPhysicalAnimationSettings(FName BodyName, const FPhysicalAnimationData& PhysicalAnimationData);
+    void ApplyPhysicalAnimationSettingsBelow(FName BodyName, const FPhysicalAnimationData& PhysicalAnimationData, bool bIncludeSelf);
+    void SetSkeletalMeshComponent(class USkeletalMeshComponent* InSkeletalMeshComponent);
+    void SetStrengthMultiplyer(float InStrengthMultiplyer);
+    UE_PURE FTransform GetBodyTargetTransform(FName BodyName) const;
+};
+
+class UCheckBoxStyleAsset : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "CheckBoxStyleAsset");
+    FCheckBoxStyle CheckBoxStyle;
+};
+
+class UChildActorComponent : public USceneComponent
+{
+public:
+    UE_CLASS("/Script/Engine", "ChildActorComponent");
+    UE_READONLY TSubclassOf<class AActor> ChildActorClass;
+    UE_READONLY class AActor* ChildActor;
+    class AActor* ChildActorTemplate;
+    void SetChildActorClass(TSubclassOf<class AActor> InClass);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* ChildActor__Replicated = ":";
+    };
+};
+
+class UInterpTrackAudioMaster : public UInterpTrackVectorBase
+{
+public:
+    UE_CLASS("/Script/Engine", "InterpTrackAudioMaster");
+};
+
+class UParticleModuleRotationRateBase : public UParticleModule
+{
+public:
+    UE_CLASS("/Script/Engine", "ParticleModuleRotationRateBase");
+};
+
+class UParticleModuleMeshRotationRateOverLife : public UParticleModuleRotationRateBase
+{
+public:
+    UE_CLASS("/Script/Engine", "ParticleModuleMeshRotationRateOverLife");
+    FRawDistributionVector RotRate;
+    bool bScaleRotRate;
+};
+
+class UChildConnection : public UNetConnection
+{
+public:
+    UE_CLASS("/Script/Engine", "ChildConnection");
+    class UNetConnection* Parent;
+};
+
+class UInterpGroupCamera : public UInterpGroup
+{
+public:
+    UE_CLASS("/Script/Engine", "InterpGroupCamera");
+    class UCameraAnim* CameraAnimInst;
+    float CompressTolerance;
+};
+
+class UTexture2DArray : public UTexture
+{
+public:
+    UE_CLASS("/Script/Engine", "Texture2DArray");
+    TEnum<ETextureAddress> AddressX;
+    TEnum<ETextureAddress> AddressY;
+    TEnum<ETextureAddress> AddressZ;
+};
+
+class UReplicationDriver : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "ReplicationDriver");
+};
+
+class UCloudStorageBase : public UPlatformInterfaceBase
+{
+public:
+    UE_CLASS("/Script/Engine", "CloudStorageBase");
+    TArray<FString> LocalCloudFiles;
+    bool bSuppressDelegateCalls;
+};
+
+class UComponentDelegateBinding : public UDynamicBlueprintBinding
+{
+public:
+    UE_CLASS("/Script/Engine", "ComponentDelegateBinding");
+    TArray<FBlueprintComponentDelegateBinding> ComponentDelegateBindings;
+};
+
+class UDistributionFloatParameterBase : public UDistributionFloatConstant
+{
+public:
+    UE_CLASS("/Script/Engine", "DistributionFloatParameterBase");
+    FName ParameterName;
+    float MinInput;
+    float MaxInput;
+    float MinOutput;
+    float MaxOutput;
+    TEnum<EDistributionParamMode> ParamMode;
+};
+
+class UActorComponentInstanceDataTransientOuter : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "ActorComponentInstanceDataTransientOuter");
+};
+
+class UCurveTable : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "CurveTable");
+};
+
+class UCompositeCurveTable : public UCurveTable
+{
+public:
+    UE_CLASS("/Script/Engine", "CompositeCurveTable");
+    UE_READONLY TArray<class UCurveTable*> ParentTables;
+    TArray<class UCurveTable*> OldParentTables;
+};
+
+class UInterpTrackFloatMaterialParam : public UInterpTrackFloatBase
+{
+public:
+    UE_CLASS("/Script/Engine", "InterpTrackFloatMaterialParam");
+    TArray<class UMaterialInterface*> TargetMaterials;
+    FName ParamName;
+};
+
+class UDataTable : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "DataTable");
+    class UScriptStruct* RowStruct;
+    bool bStripFromClientBuilds;
+    bool bIgnoreExtraFields;
+    bool bIgnoreMissingFields;
+    FString ImportKeyField;
+};
+
+class UInterpTrackAnimControl : public UInterpTrackFloatBase
+{
+public:
+    UE_CLASS("/Script/Engine", "InterpTrackAnimControl");
+    FName slotName;
+    TArray<FAnimControlTrackKey> AnimSeqs;
+    bool bSkipAnimNotifiers;
+};
+
+class UCompositeDataTable : public UDataTable
+{
+public:
+    UE_CLASS("/Script/Engine", "CompositeDataTable");
+    UE_READONLY TArray<class UDataTable*> ParentTables;
+    TArray<class UDataTable*> OldParentTables;
+};
+
+class UParticleModuleSubUVBase : public UParticleModule
+{
+public:
+    UE_CLASS("/Script/Engine", "ParticleModuleSubUVBase");
+};
+
+class UEngine : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "Engine");
+    class UFont* TinyFont;
+    FSoftObjectPath TinyFontName;
+    class UFont* SmallFont;
+    FSoftObjectPath SmallFontName;
+    class UFont* MediumFont;
+    FSoftObjectPath MediumFontName;
+    class UFont* LargeFont;
+    FSoftObjectPath LargeFontName;
+    class UFont* SubtitleFont;
+    FSoftObjectPath SubtitleFontName;
+    TArray<class UFont*> AdditionalFonts;
+    TArray<FString> AdditionalFontNames;
+    TSubclassOf<class UConsole> ConsoleClass;
+    FSoftClassPath ConsoleClassName;
+    TSubclassOf<class UGameViewportClient> GameViewportClientClass;
+    FSoftClassPath GameViewportClientClassName;
+    TSubclassOf<class ULocalPlayer> LocalPlayerClass;
+    FSoftClassPath LocalPlayerClassName;
+    TSubclassOf<class AWorldSettings> WorldSettingsClass;
+    FSoftClassPath WorldSettingsClassName;
+    FSoftClassPath NavigationSystemClassName;
+    TSubclassOf<class UNavigationSystemBase> NavigationSystemClass;
+    FSoftClassPath NavigationSystemConfigClassName;
+    TSubclassOf<class UNavigationSystemConfig> NavigationSystemConfigClass;
+    FSoftClassPath AvoidanceManagerClassName;
+    TSubclassOf<class UAvoidanceManager> AvoidanceManagerClass;
+    FSoftClassPath AIControllerClassName;
+    TSubclassOf<class UPhysicsCollisionHandler> PhysicsCollisionHandlerClass;
+    FSoftClassPath PhysicsCollisionHandlerClassName;
+    FSoftClassPath GameUserSettingsClassName;
+    TSubclassOf<class UGameUserSettings> GameUserSettingsClass;
+    class UGameUserSettings* GameUserSettings;
+    TSubclassOf<class ALevelScriptActor> LevelScriptActorClass;
+    FSoftClassPath LevelScriptActorClassName;
+    FSoftClassPath DefaultBlueprintBaseClassName;
+    FSoftClassPath GameSingletonClassName;
+    class UObject* GameSingleton;
+    FSoftClassPath AssetManagerClassName;
+    class UAssetManager* AssetManager;
+    class UTexture2D* DefaultTexture;
+    FSoftObjectPath DefaultTextureName;
+    class UTexture* DefaultDiffuseTexture;
+    FSoftObjectPath DefaultDiffuseTextureName;
+    class UTexture2D* DefaultBSPVertexTexture;
+    FSoftObjectPath DefaultBSPVertexTextureName;
+    class UTexture2D* HighFrequencyNoiseTexture;
+    FSoftObjectPath HighFrequencyNoiseTextureName;
+    class UTexture2D* DefaultBokehTexture;
+    FSoftObjectPath DefaultBokehTextureName;
+    class UTexture2D* DefaultBloomKernelTexture;
+    FSoftObjectPath DefaultBloomKernelTextureName;
+    class UMaterial* WireframeMaterial;
+    FString WireframeMaterialName;
+    class UMaterial* DebugMeshMaterial;
+    FSoftObjectPath DebugMeshMaterialName;
+    class UMaterial* EmissiveMeshMaterial;
+    FSoftObjectPath EmissiveMeshMaterialName;
+    class UMaterial* LevelColorationLitMaterial;
+    FString LevelColorationLitMaterialName;
+    class UMaterial* LevelColorationUnlitMaterial;
+    FString LevelColorationUnlitMaterialName;
+    class UMaterial* LightingTexelDensityMaterial;
+    FString LightingTexelDensityName;
+    class UMaterial* ShadedLevelColorationLitMaterial;
+    FString ShadedLevelColorationLitMaterialName;
+    class UMaterial* ShadedLevelColorationUnlitMaterial;
+    FString ShadedLevelColorationUnlitMaterialName;
+    class UMaterial* RemoveSurfaceMaterial;
+    FSoftObjectPath RemoveSurfaceMaterialName;
+    class UMaterial* VertexColorMaterial;
+    FString VertexColorMaterialName;
+    class UMaterial* VertexColorViewModeMaterial_ColorOnly;
+    FString VertexColorViewModeMaterialName_ColorOnly;
+    class UMaterial* VertexColorViewModeMaterial_AlphaAsColor;
+    FString VertexColorViewModeMaterialName_AlphaAsColor;
+    class UMaterial* VertexColorViewModeMaterial_RedOnly;
+    FString VertexColorViewModeMaterialName_RedOnly;
+    class UMaterial* VertexColorViewModeMaterial_GreenOnly;
+    FString VertexColorViewModeMaterialName_GreenOnly;
+    class UMaterial* VertexColorViewModeMaterial_BlueOnly;
+    FString VertexColorViewModeMaterialName_BlueOnly;
+    FSoftObjectPath DebugEditorMaterialName;
+    class UMaterial* ConstraintLimitMaterial;
+    class UMaterialInstanceDynamic* ConstraintLimitMaterialX;
+    class UMaterialInstanceDynamic* ConstraintLimitMaterialXAxis;
+    class UMaterialInstanceDynamic* ConstraintLimitMaterialY;
+    class UMaterialInstanceDynamic* ConstraintLimitMaterialYAxis;
+    class UMaterialInstanceDynamic* ConstraintLimitMaterialZ;
+    class UMaterialInstanceDynamic* ConstraintLimitMaterialZAxis;
+    class UMaterialInstanceDynamic* ConstraintLimitMaterialPrismatic;
+    class UMaterial* InvalidLightmapSettingsMaterial;
+    FSoftObjectPath InvalidLightmapSettingsMaterialName;
+    class UMaterial* PreviewShadowsIndicatorMaterial;
+    FSoftObjectPath PreviewShadowsIndicatorMaterialName;
+    class UMaterial* ArrowMaterial;
+    class UMaterialInstanceDynamic* ArrowMaterialYellow;
+    FSoftObjectPath ArrowMaterialName;
+    FLinearColor LightingOnlyBrightness;
+    TArray<FLinearColor> ShaderComplexityColors;
+    TArray<FLinearColor> QuadComplexityColors;
+    TArray<FLinearColor> LightComplexityColors;
+    TArray<FLinearColor> StationaryLightOverlapColors;
+    TArray<FLinearColor> LODColorationColors;
+    TArray<FLinearColor> HLODColorationColors;
+    TArray<FLinearColor> StreamingAccuracyColors;
+    float MaxPixelShaderAdditiveComplexityCount;
+    float MaxES3PixelShaderAdditiveComplexityCount;
+    float MinLightMapDensity;
+    float IdealLightMapDensity;
+    float MaxLightMapDensity;
+    bool bRenderLightMapDensityGrayscale;
+    float RenderLightMapDensityGrayscaleScale;
+    float RenderLightMapDensityColorScale;
+    FLinearColor LightMapDensityVertexMappedColor;
+    FLinearColor LightMapDensitySelectedColor;
+    TArray<FStatColorMapping> StatColorMappings;
+    class UPhysicalMaterial* DefaultPhysMaterial;
+    FSoftObjectPath DefaultPhysMaterialName;
+    TArray<FGameNameRedirect> ActiveGameNameRedirects;
+    TArray<FClassRedirect> ActiveClassRedirects;
+    TArray<FPluginRedirect> ActivePluginRedirects;
+    TArray<FStructRedirect> ActiveStructRedirects;
+    class UTexture2D* PreIntegratedSkinBRDFTexture;
+    FSoftObjectPath PreIntegratedSkinBRDFTextureName;
+    class UTexture2D* BlueNoiseTexture;
+    FSoftObjectPath BlueNoiseTextureName;
+    class UTexture2D* MiniFontTexture;
+    FSoftObjectPath MiniFontTextureName;
+    class UTexture* WeightMapPlaceholderTexture;
+    FSoftObjectPath WeightMapPlaceholderTextureName;
+    class UTexture2D* LightMapDensityTexture;
+    FSoftObjectPath LightMapDensityTextureName;
+    class UGameViewportClient* GameViewport;
+    TArray<FString> DeferredCommands;
+    float NearClipPlane;
+    bool bSubtitlesEnabled;
+    bool bSubtitlesForcedOff;
+    int MaximumLoopIterationCount;
+    bool bCanBlueprintsTickByDefault;
+    bool bOptimizeAnimBlueprintMemberVariableAccess;
+    bool bAllowMultiThreadedAnimationUpdate;
+    bool bEnableEditorPSysRealtimeLOD;
+    bool bSmoothFrameRate;
+    bool bUseFixedFrameRate;
+    float FixedFrameRate;
+    FFloatRange SmoothedFrameRateRange;
+    class UEngineCustomTimeStep* CustomTimeStep;
+    FSoftClassPath CustomTimeStepClassName;
+    class UTimecodeProvider* TimecodeProvider;
+    FSoftClassPath TimecodeProviderClassName;
+    bool bGenerateDefaultTimecode;
+    FFrameRate GenerateDefaultTimecodeFrameRate;
+    float GenerateDefaultTimecodeFrameDelay;
+    bool bCheckForMultiplePawnsSpawnedInAFrame;
+    int NumPawnsAllowedToBeSpawnedInAFrame;
+    bool bShouldGenerateLowQualityLightmaps;
+    FColor C_WorldBox;
+    FColor C_BrushWire;
+    FColor C_AddWire;
+    FColor C_SubtractWire;
+    FColor C_SemiSolidWire;
+    FColor C_NonSolidWire;
+    FColor C_WireBackground;
+    FColor C_ScaleBoxHi;
+    FColor C_VolumeCollision;
+    FColor C_BSPCollision;
+    FColor C_OrthoBackground;
+    FColor C_Volume;
+    FColor C_BrushShape;
+    float StreamingDistanceFactor;
+    FDirectoryPath GameScreenshotSaveDirectory;
+    TEnum<ETransitionType> TransitionType;
+    FString TransitionDescription;
+    FString TransitionGameMode;
+    bool bAllowMatureLanguage;
+    float CameraRotationThreshold;
+    float CameraTranslationThreshold;
+    float PrimitiveProbablyVisibleTime;
+    float MaxOcclusionPixelsFraction;
+    bool bPauseOnLossOfFocus;
+    int MaxParticleResize;
+    int MaxParticleResizeWarn;
+    TArray<FDropNoteInfo> PendingDroppedNotes;
+    float NetClientTicksPerSecond;
+    float DisplayGamma;
+    float MinDesiredFrameRate;
+    FLinearColor DefaultSelectedMaterialColor;
+    FLinearColor SelectedMaterialColor;
+    FLinearColor SelectionOutlineColor;
+    FLinearColor SubduedSelectionOutlineColor;
+    FLinearColor SelectedMaterialColorOverride;
+    bool bIsOverridingSelectedColor;
+    bool bEnableOnScreenDebugMessages;
+    bool bEnableOnScreenDebugMessagesDisplay;
+    bool bSuppressMapWarnings;
+    bool bDisableAILogging;
+    uint32 bEnableVisualLogRecordingOnStart;
+    int ScreenSaverInhibitorSemaphore;
+    bool bLockReadOnlyLevels;
+    FString ParticleEventManagerClassPath;
+    float SelectionHighlightIntensity;
+    float BSPSelectionHighlightIntensity;
+    float SelectionHighlightIntensityBillboards;
+    TArray<FNetDriverDefinition> NetDriverDefinitions;
+    TArray<FString> ServerActors;
+    TArray<FString> RuntimeServerActors;
+    float NetErrorLogInterval;
+    bool bStartedLoadMapMovie;
+    int NextWorldContextHandle;
+};
+
+class UScriptViewportClient : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "ScriptViewportClient");
+};
+
+class UInterpTrackInstAnimControl : public UInterpTrackInst
+{
+public:
+    UE_CLASS("/Script/Engine", "InterpTrackInstAnimControl");
+    float LastUpdatePosition;
+};
+
+class UShadowMapTexture2D : public UTexture2D
+{
+public:
+    UE_CLASS("/Script/Engine", "ShadowMapTexture2D");
+    TEnum<EShadowMapFlags> ShadowmapFlags;
+};
+
+class UGameViewportClient : public UScriptViewportClient
+{
+public:
+    UE_CLASS("/Script/Engine", "GameViewportClient");
+    class UConsole* ViewportConsole;
+    TArray<FDebugDisplayProperty> DebugProperties;
+    int MaxSplitscreenPlayers;
+    class UWorld* World;
+    class UGameInstance* GameInstance;
+    void SetConsoleTarget(int PlayerIndex);
+    void ShowTitleSafeArea();
+    void SSSwapControllers();
+};
+
+class UConsole : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "Console");
+    class ULocalPlayer* ConsoleTargetPlayer;
+    class UTexture2D* DefaultTexture_Black;
+    class UTexture2D* DefaultTexture_White;
+    TArray<FString> HistoryBuffer;
+};
+
+class UVolumeTexture : public UTexture
+{
+public:
+    UE_CLASS("/Script/Engine", "VolumeTexture");
+};
+
+class UControlChannel : public UChannel
+{
+public:
+    UE_CLASS("/Script/Engine", "ControlChannel");
+};
+
+class UStreamingSettings : public UDeveloperSettings
+{
+public:
+    UE_CLASS("/Script/Engine", "StreamingSettings");
+    bool AsyncLoadingThreadEnabled;
+    bool WarnIfTimeLimitExceeded;
+    float TimeLimitExceededMultiplier;
+    float TimeLimitExceededMinTime;
+    int MinBulkDataSizeForAsyncLoading;
+    bool UseBackgroundLevelStreaming;
+    bool AsyncLoadingUseFullTimeLimit;
+    float AsyncLoadingTimeLimit;
+    float PriorityAsyncLoadingExtraTime;
+    float LevelStreamingActorsUpdateTimeLimit;
+    float PriorityLevelStreamingActorsUpdateExtraTime;
+    int LevelStreamingComponentsRegistrationGranularity;
+    float LevelStreamingUnregisterComponentsTimeLimit;
+    int LevelStreamingComponentsUnregistrationGranularity;
+    bool FlushStreamingOnExit;
+    bool EventDrivenLoaderEnabled;
+};
+
+class UGameEngine : public UEngine
+{
+public:
+    UE_CLASS("/Script/Engine", "GameEngine");
+    float MaxDeltaTime;
+    float ServerFlushLogInterval;
+    class UGameInstance* GameInstance;
+};
+
+class UGarbageCollectionSettings : public UDeveloperSettings
+{
+public:
+    UE_CLASS("/Script/Engine", "GarbageCollectionSettings");
+    float TimeBetweenPurgingPendingKillObjects;
+    bool FlushStreamingOnGC;
+    bool AllowParallelGC;
+    bool IncrementalBeginDestroyEnabled;
+    bool MultithreadedDestructionEnabled;
+    bool CreateGCClusters;
+    bool AssetClusteringEnabled;
+    bool ActorClusteringEnabled;
+    bool BlueprintClusteringEnabled;
+    bool UseDisregardForGCOnDedicatedServers;
+    int MinGCClusterSize;
+    int NumRetriesBeforeForcingGC;
+    int MaxObjectsNotConsideredByGC;
+    int SizeOfPermanentObjectPool;
+    int MaxObjectsInGame;
+    int MaxObjectsInEditor;
+};
+
+class IVisualLoggerDebugSnapshotInterface
+{
+public:
+    UE_CLASS("/Script/Engine", "VisualLoggerDebugSnapshotInterface");
+};
+
+class UCurveEdPresetCurve : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "CurveEdPresetCurve");
+};
+
+class ASpotLight : public ALight
+{
+public:
+    UE_CLASS("/Script/Engine", "SpotLight");
+    UE_READONLY class USpotLightComponent* SpotLightComponent;
+    void SetInnerConeAngle(float NewInnerConeAngle);
+    void SetOuterConeAngle(float NewOuterConeAngle);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* LightComponent__UeSubobject = "LightComponent0 /Script/Engine.SpotLightComponent";
+        static constexpr const char* RootComponent__UeSubobject = "LightComponent0 /Script/Engine.SpotLightComponent";
+        static constexpr const char* SpotLightComponent__UeSubobject = "LightComponent0 /Script/Engine.SpotLightComponent";
+    };
+};
+
+class AGeneratedMeshAreaLight : public ASpotLight
+{
+public:
+    UE_CLASS("/Script/Engine", "GeneratedMeshAreaLight");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* LightComponent__UeSubobject = "LightComponent0 /Script/Engine.SpotLightComponent";
+        static constexpr const char* RootComponent__UeSubobject = "LightComponent0 /Script/Engine.SpotLightComponent";
+        static constexpr const char* SpotLightComponent__UeSubobject = "LightComponent0 /Script/Engine.SpotLightComponent";
+    };
+};
+
+class ARuntimeVirtualTextureVolume : public AActor
+{
+public:
+    UE_CLASS("/Script/Engine", "RuntimeVirtualTextureVolume");
+    UE_READONLY class URuntimeVirtualTextureComponent* VirtualTextureComponent;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* RootComponent__UeSubobject = "VirtualTextureComponent /Script/Engine.RuntimeVirtualTextureComponent";
+        static constexpr const char* VirtualTextureComponent__UeSubobject = "VirtualTextureComponent /Script/Engine.RuntimeVirtualTextureComponent";
+    };
 };
 
 class UCurveFloat : public UCurveBase
@@ -21736,10 +21844,10 @@ public:
     UE_PURE float GetFloatValue(float InTime) const;
 };
 
-class UVoiceChannel : public UChannel
+class UInterpGroupInstDirector : public UInterpGroupInst
 {
 public:
-    UE_CLASS("/Script/Engine", "VoiceChannel");
+    UE_CLASS("/Script/Engine", "InterpGroupInstDirector");
 };
 
 class UCurveLinearColor : public UCurveBase
@@ -21759,18 +21867,25 @@ public:
     UE_PURE FLinearColor GetUnadjustedLinearColorValue(float InTime) const;
 };
 
-class UHapticFeedbackEffect_Buffer : public UHapticFeedbackEffect_Base
+class USoundNodeWavePlayer : public USoundNodeAssetReferencer
 {
 public:
-    UE_CLASS("/Script/Engine", "HapticFeedbackEffect_Buffer");
-    TArray<uint8> Amplitudes;
-    int SampleRate;
+    UE_CLASS("/Script/Engine", "SoundNodeWavePlayer");
+    TSoftObjectPtr<class USoundWave> SoundWaveAssetPtr;
+    class USoundWave* SoundWave;
+    bool bLooping;
 };
 
-class UScene : public UObject
+class ATriggerCapsule : public ATriggerBase
 {
 public:
-    UE_CLASS("/Script/Engine", "Scene");
+    UE_CLASS("/Script/Engine", "TriggerCapsule");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* CollisionComponent__UeSubobject = "CollisionComp /Script/Engine.CapsuleComponent";
+        static constexpr const char* RootComponent__UeSubobject = "CollisionComp /Script/Engine.CapsuleComponent";
+    };
 };
 
 class UCurveLinearColorAtlas : public UTexture2D
@@ -21784,6 +21899,25 @@ public:
     bool GetCurvePosition(class UCurveLinearColor* InCurve, float& Position);
 };
 
+class UHapticFeedbackEffect_SoundWave : public UHapticFeedbackEffect_Base
+{
+public:
+    UE_CLASS("/Script/Engine", "HapticFeedbackEffect_SoundWave");
+    class USoundWave* SoundWave;
+};
+
+class ASphereReflectionCapture : public AReflectionCapture
+{
+public:
+    UE_CLASS("/Script/Engine", "SphereReflectionCapture");
+    class UDrawSphereComponent* DrawCaptureRadius;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* CaptureComponent__UeSubobject = "NewReflectionComponent /Script/Engine.SphereReflectionCaptureComponent";
+    };
+};
+
 class ICurveSourceInterface
 {
 public:
@@ -21793,45 +21927,17 @@ public:
     float GetCurveValue(FName CurveName) const;
 };
 
-class ATriggerVolume : public AVolume
+class UParticleModuleTypeDataAnimTrail : public UParticleModuleTypeDataBase
 {
 public:
-    UE_CLASS("/Script/Engine", "TriggerVolume");
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* BrushComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
-        static constexpr const char* RootComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
-    };
-};
-
-class UCurveVector : public UCurveBase
-{
-public:
-    UE_CLASS("/Script/Engine", "CurveVector");
-    FRichCurve FloatCurves[3];
-    UE_PURE FVector GetVectorValue(float InTime) const;
-};
-
-class UHLODEngineSubsystem : public UEngineSubsystem
-{
-public:
-    UE_CLASS("/Script/Engine", "HLODEngineSubsystem");
-    static UHLODEngineSubsystem* Get();
-};
-
-class USplineMetadata : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "SplineMetadata");
-};
-
-class USoundNodeDelay : public USoundNode
-{
-public:
-    UE_CLASS("/Script/Engine", "SoundNodeDelay");
-    float DelayMin;
-    float DelayMax;
+    UE_CLASS("/Script/Engine", "ParticleModuleTypeDataAnimTrail");
+    bool bDeadTrailsOnDeactivate;
+    bool bEnablePreviousTangentRecalculation;
+    bool bTangentRecalculationEveryFrame;
+    float TilingDistance;
+    float DistanceTessellationStepSize;
+    float TangentTessellationStepSize;
+    float WidthTessellationStepSize;
 };
 
 class UDataDrivenConsoleVariableSettings : public UDeveloperSettings
@@ -21841,30 +21947,10 @@ public:
     TArray<FDataDrivenConsoleVariable> CVarsArray;
 };
 
-class UDataTableFunctionLibrary : public UBlueprintFunctionLibrary
+class IPreviewCollectionInterface
 {
 public:
-    UE_CLASS("/Script/Engine", "DataTableFunctionLibrary");
-    static bool DoesDataTableRowExist(class UDataTable* Table, FName RowName);
-    static void EvaluateCurveTableRow(class UCurveTable* CurveTable, FName RowName, float InXY, EEvaluateCurveTableResult& OutResult, float& OutXY, FString ContextString);
-    static TArray<FString> GetDataTableColumnAsString(class UDataTable* DataTable, FName PropertyName);
-    static bool GetDataTableRowFromName(class UDataTable* Table, FName RowName, FTableRowBase& OutRow);
-    static void GetDataTableRowNames(class UDataTable* Table, TArray<FName>& OutRowNames);
-};
-
-class IImportantToggleSettingInterface
-{
-public:
-    UE_CLASS("/Script/Engine", "ImportantToggleSettingInterface");
-};
-
-class UParticleModuleVectorFieldGlobal : public UParticleModuleVectorFieldBase
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleModuleVectorFieldGlobal");
-    bool bOverrideGlobalVectorFieldTightness;
-    float GlobalVectorFieldScale;
-    float GlobalVectorFieldTightness;
+    UE_CLASS("/Script/Engine", "PreviewCollectionInterface");
 };
 
 class ADebugCameraController : public APlayerController
@@ -21905,45 +21991,43 @@ private:
     };
 };
 
-class UPrimaryAssetLabel : public UPrimaryDataAsset
+class UDebugCameraControllerSettings : public UDeveloperSettings
 {
 public:
-    UE_CLASS("/Script/Engine", "PrimaryAssetLabel");
-    FPrimaryAssetRules Rules;
-    bool bLabelAssetsInMyDirectory;
-    bool bIsRuntimeLabel;
-    TArray<TSoftObjectPtr<class UObject>> ExplicitAssets;
-    TArray<TSoftClassPtr<class UClass>> ExplicitBlueprints;
-    FCollectionReference AssetCollection;
+    UE_CLASS("/Script/Engine", "DebugCameraControllerSettings");
+    TArray<FDebugCameraControllerSettingsViewModeIndex> CycleViewModes;
 };
 
-class ADebugCameraHUD : public AHUD
+class UDecalComponent : public USceneComponent
 {
 public:
-    UE_CLASS("/Script/Engine", "DebugCameraHUD");
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* UeClassTail = "0x00800004 /Script/CoreUObject.Object Game";
-    };
-};
-
-class UDebugDrawService : public UBlueprintFunctionLibrary
-{
-public:
-    UE_CLASS("/Script/Engine", "DebugDrawService");
+    UE_CLASS("/Script/Engine", "DecalComponent");
+    UE_READONLY class UMaterialInterface* DecalMaterial;
+    UE_READONLY int SortOrder;
+    UE_READONLY float FadeScreenSize;
+    UE_READONLY float FadeStartDelay;
+    UE_READONLY float FadeDuration;
+    UE_READONLY float FadeInDuration;
+    UE_READONLY float FadeInStartDelay;
+    UE_READONLY bool bDestroyOwnerAfterFade;
+    UE_READONLY FVector DecalSize;
+    class UMaterialInstanceDynamic* CreateDynamicMaterialInstance();
+    void SetDecalMaterial(class UMaterialInterface* NewDecalMaterial);
+    void SetFadeIn(float StartDelay, float Duaration);
+    void SetFadeOut(float StartDelay, float Duration, bool DestroyOwnerAfterFade);
+    void SetFadeScreenSize(float NewFadeScreenSize);
+    void SetSortOrder(int Value);
+    UE_PURE class UMaterialInterface* GetDecalMaterial() const;
+    UE_PURE float GetFadeDuration() const;
+    UE_PURE float GetFadeInDuration() const;
+    UE_PURE float GetFadeInStartDelay() const;
+    UE_PURE float GetFadeStartDelay() const;
 };
 
 class UDemoNetConnection : public UNetConnection
 {
 public:
     UE_CLASS("/Script/Engine", "DemoNetConnection");
-};
-
-class IDestructibleInterface
-{
-public:
-    UE_CLASS("/Script/Engine", "DestructibleInterface");
 };
 
 class UDeviceProfile : public UTextureLODSettings
@@ -21963,13 +22047,13 @@ public:
     TArray<class UObject*> Profiles;
 };
 
-class UDialogueVoice : public UObject
+class USystemTimeTimecodeProvider : public UTimecodeProvider
 {
 public:
-    UE_CLASS("/Script/Engine", "DialogueVoice");
-    TEnum<EGrammaticalGender> Gender;
-    TEnum<EGrammaticalNumber> Plurality;
-    FGuid LocalizationGUID;
+    UE_CLASS("/Script/Engine", "SystemTimeTimecodeProvider");
+    FFrameRate FrameRate;
+    bool bGenerateFullFrame;
+    bool bUseHighPerformanceClock;
 };
 
 class UDirectionalLightComponent : public ULightComponent
@@ -22029,13 +22113,23 @@ public:
     void SetShadowDistanceFadeoutFraction(float NewValue);
 };
 
-class UTextPropertyTestObject : public UObject
+class UDistributionFloatConstantCurve : public UDistributionFloat
 {
 public:
-    UE_CLASS("/Script/Engine", "TextPropertyTestObject");
-    FText DefaultedText;
-    FText UndefaultedText;
-    FText TransientText;
+    UE_CLASS("/Script/Engine", "DistributionFloatConstantCurve");
+    FInterpCurveFloat ConstantCurve;
+};
+
+class UDistributionFloatParticleParameter : public UDistributionFloatParameterBase
+{
+public:
+    UE_CLASS("/Script/Engine", "DistributionFloatParticleParameter");
+};
+
+class USelection : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "Selection");
 };
 
 class UDistributionFloatUniformCurve : public UDistributionFloat
@@ -22045,22 +22139,31 @@ public:
     FInterpCurveVector2D ConstantCurve;
 };
 
-class UShadowMapTexture2D : public UTexture2D
+class USpringArmComponent : public USceneComponent
 {
 public:
-    UE_CLASS("/Script/Engine", "ShadowMapTexture2D");
-    TEnum<EShadowMapFlags> ShadowmapFlags;
-};
-
-class UStaticMeshSocket : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "StaticMeshSocket");
-    UE_READONLY FName SocketName;
-    FVector RelativeLocation;
-    FRotator RelativeRotation;
-    FVector RelativeScale;
-    FString Tag;
+    UE_CLASS("/Script/Engine", "SpringArmComponent");
+    float TargetArmLength;
+    FVector SocketOffset;
+    FVector TargetOffset;
+    float ProbeSize;
+    TEnum<ECollisionChannel> ProbeChannel;
+    bool bDoCollisionTest;
+    bool bUsePawnControlRotation;
+    bool bInheritPitch;
+    bool bInheritYaw;
+    bool bInheritRoll;
+    bool bEnableCameraLag;
+    bool bEnableCameraRotationLag;
+    bool bUseCameraLagSubstepping;
+    bool bDrawDebugLagMarkers;
+    float CameraLagSpeed;
+    float CameraRotationLagSpeed;
+    float CameraLagMaxTimeStep;
+    float CameraLagMaxDistance;
+    UE_PURE FRotator GetTargetRotation() const;
+    UE_PURE FVector GetUnfixedCameraPosition() const;
+    UE_PURE bool IsCollisionFixApplied() const;
 };
 
 class UDistributionVectorUniform : public UDistributionVector
@@ -22075,40 +22178,73 @@ public:
     bool bUseExtremes;
 };
 
-class ADocumentationActor : public AActor
+class UPhysicsSettings : public UPhysicsSettingsCore
 {
 public:
-    UE_CLASS("/Script/Engine", "DocumentationActor");
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* RootComponent__UeSubobject = "SceneComp /Script/Engine.SceneComponent";
-    };
+    UE_CLASS("/Script/Engine", "PhysicsSettings");
+    FRigidBodyErrorCorrection PhysicErrorCorrection;
+    TEnum<ESettingsLockedAxis> LockedAxis;
+    TEnum<ESettingsDOF> DefaultDegreesOfFreedom;
+    bool bSuppressFaceRemapTable;
+    bool bSupportUVFromHitResults;
+    bool bDisableActiveActors;
+    bool bDisableKinematicStaticPairs;
+    bool bDisableKinematicKinematicPairs;
+    bool bDisableCCD;
+    bool bEnableEnhancedDeterminism;
+    float AnimPhysicsMinDeltaTime;
+    bool bSimulateAnimPhysicsAfterReset;
+    float MaxPhysicsDeltaTime;
+    bool bSubstepping;
+    bool bSubsteppingAsync;
+    float MaxSubstepDeltaTime;
+    int MaxSubsteps;
+    float SyncSceneSmoothingFactor;
+    float InitialAverageFrameRate;
+    int PhysXTreeRebuildRate;
+    TArray<FPhysicalSurfaceName> PhysicalSurfaces;
+    FBroadphaseSettings DefaultBroadphaseSettings;
+    float MinDeltaVelocityForHitEvents;
+    FChaosPhysicsSettings ChaosSettings;
 };
 
-class APhysicsThruster : public ARigidBodyBase
+class UDistributionVectorUniformCurve : public UDistributionVector
 {
 public:
-    UE_CLASS("/Script/Engine", "PhysicsThruster");
-    UE_READONLY class UPhysicsThrusterComponent* ThrusterComponent;
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* RootComponent__UeSubobject = "Thruster0 /Script/Engine.PhysicsThrusterComponent";
-        static constexpr const char* ThrusterComponent__UeSubobject = "Thruster0 /Script/Engine.PhysicsThrusterComponent";
-    };
+    UE_CLASS("/Script/Engine", "DistributionVectorUniformCurve");
+    FInterpCurveTwoVectors ConstantCurve;
+    bool bLockAxes1;
+    bool bLockAxes2;
+    TEnum<EDistributionVectorLockFlags> LockedAxes[2];
+    TEnum<EDistributionVectorMirrorFlags> MirrorFlags[3];
+    bool bUseExtremes;
 };
 
-class UDrawFrustumComponent : public UPrimitiveComponent
+class UDrawSphereComponent : public USphereComponent
 {
 public:
-    UE_CLASS("/Script/Engine", "DrawFrustumComponent");
-    FColor FrustumColor;
-    float FrustumAngle;
-    float FrustumAspectRatio;
-    float FrustumStartDist;
-    float FrustumEndDist;
-    class UTexture* Texture;
+    UE_CLASS("/Script/Engine", "DrawSphereComponent");
+};
+
+class USpotLightComponent : public UPointLightComponent
+{
+public:
+    UE_CLASS("/Script/Engine", "SpotLightComponent");
+    UE_READONLY float InnerConeAngle;
+    UE_READONLY float OuterConeAngle;
+    void SetInnerConeAngle(float NewInnerConeAngle);
+    void SetOuterConeAngle(float NewOuterConeAngle);
+};
+
+class UEdGraph : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "EdGraph");
+    TSubclassOf<class UEdGraphSchema> Schema;
+    TArray<class UEdGraphNode*> Nodes;
+    bool bEditable;
+    bool bAllowDeletion;
+    bool bAllowRenaming;
 };
 
 class UGraphNodeContextMenuContext : public UObject
@@ -22121,118 +22257,28 @@ public:
     bool bIsDebugging;
 };
 
-class UStaticMesh : public UStreamableRenderAsset
+class UEdGraphPin_Deprecated : public UObject
 {
 public:
-    UE_CLASS("/Script/Engine", "StaticMesh");
-    FPerPlatformInt MinLOD;
-    UE_READONLY float LpvBiasMultiplier;
-    TArray<FStaticMaterial> StaticMaterials;
-    float LightmapUVDensity;
-    int LightMapResolution;
-    int LightMapCoordinateIndex;
-    float DistanceFieldSelfShadowBias;
-    class UBodySetup* BodySetup;
-    int LODForCollision;
-    bool bGenerateMeshDistanceField;
-    bool bStripComplexCollisionForConsole;
-    bool bHasNavigationData;
-    bool bSupportUniformlyDistributedSampling;
-    bool bSupportPhysicalMaterialMasks;
-    bool bSupportRayTracing;
-    bool bIsBuiltAtRuntime;
-    bool bAllowCPUAccess;
-    bool bSupportGpuUniformlyDistributedSampling;
-    TArray<class UStaticMeshSocket*> Sockets;
-    FVector PositiveBoundsExtension;
-    FVector NegativeBoundsExtension;
-    FBoxSphereBounds ExtendedBounds;
-    int ElementToIgnoreForTexFactor;
-    TArray<class UAssetUserData*> AssetUserData;
-    class UObject* EditableMesh;
-    class UNavCollisionBase* NavCollision;
-    static class UStaticMeshDescription* CreateStaticMeshDescription(class UObject* Outer_0);
-    FName AddMaterial(class UMaterialInterface* Material);
-    void AddSocket(class UStaticMeshSocket* Socket);
-    void BuildFromStaticMeshDescriptions(const TArray<class UStaticMeshDescription*>& StaticMeshDescriptions, bool bBuildSimpleCollision);
-    void RemoveSocket(class UStaticMeshSocket* Socket);
-    void SetStaticMaterials(const TArray<FStaticMaterial>& InStaticMaterials);
-    UE_PURE class UStaticMeshSocket* FindSocket(FName InSocketName) const;
-    UE_PURE FBox GetBoundingBox() const;
-    UE_PURE FBoxSphereBounds GetBounds() const;
-    UE_PURE class UMaterialInterface* GetMaterial(int MaterialIndex) const;
-    UE_PURE int GetMaterialIndex(FName MaterialSlotName) const;
-    UE_PURE int GetMinimumLODForPlatform(const FName& PlatformName) const;
-    void GetMinimumLODForPlatforms(TMap<FName, int>& PlatformMinimumLODs) const;
-    UE_PURE int GetNumLODs() const;
-    UE_PURE int GetNumSections(int InLOD) const;
-    UE_PURE TArray<FStaticMaterial> GetStaticMaterials() const;
+    UE_CLASS("/Script/Engine", "EdGraphPin_Deprecated");
+    FString PinName;
+    FString PinToolTip;
+    TEnum<EEdGraphPinDirection> Direction;
+    FEdGraphPinType PinType;
+    FString DefaultValue;
+    FString AutogeneratedDefaultValue;
+    class UObject* DefaultObject;
+    FText DefaultTextValue;
+    TArray<class UEdGraphPin_Deprecated*> LinkedTo;
+    TArray<class UEdGraphPin_Deprecated*> SubPins;
+    class UEdGraphPin_Deprecated* ParentPin;
+    class UEdGraphPin_Deprecated* ReferencePassThroughConnection;
 };
 
-class UEdGraphNode : public UObject
+class UEdGraphSchema : public UObject
 {
 public:
-    UE_CLASS("/Script/Engine", "EdGraphNode");
-    TArray<class UEdGraphPin_Deprecated*> DeprecatedPins;
-    int NodePosX;
-    int NodePosY;
-    int NodeWidth;
-    int NodeHeight;
-    TEnum<ENodeAdvancedPins> AdvancedPinDisplay;
-    TEnum<ENodeEnabledState> EnabledState;
-    bool bDisplayAsDisabled;
-    bool bUserSetEnabledState;
-    bool bIsNodeEnabled;
-    bool bHasCompilerMessage;
-    FString NodeComment;
-    int ErrorType;
-    FString ErrorMsg;
-    FGuid NodeGuid;
-};
-
-class UEdGraphNode_Documentation : public UEdGraphNode
-{
-public:
-    UE_CLASS("/Script/Engine", "EdGraphNode_Documentation");
-    FString Link;
-    FString Excerpt;
-};
-
-class AEmitter : public AActor
-{
-public:
-    UE_CLASS("/Script/Engine", "Emitter");
-    UE_READONLY class UParticleSystemComponent* ParticleSystemComponent;
-    bool bDestroyOnSystemFinish;
-    bool bPostUpdateTickGroup;
-    bool bCurrentlyActive;
-    TMulticastInlineDelegate<void(FName EventName, float EmitterTime, FVector Location, FVector Velocity)> OnParticleSpawn;
-    TMulticastInlineDelegate<void(FName EventName, float EmitterTime, int ParticleCount)> OnParticleBurst;
-    TMulticastInlineDelegate<void(FName EventName, float EmitterTime, int ParticleTime, FVector Location, FVector Velocity, FVector Direction)> OnParticleDeath;
-    TMulticastInlineDelegate<void(FName EventName, float EmitterTime, int ParticleTime, FVector Location, FVector Velocity, FVector Direction, FVector Normal, FName BoneName, class UPhysicalMaterial* PhysMat)> OnParticleCollide;
-    void Activate();
-    void Deactivate();
-    void OnParticleSystemFinished(class UParticleSystemComponent* FinishedComponent);
-    void OnRep_bCurrentlyActive();
-    void SetActorParameter(FName ParameterName, class AActor* Param);
-    void SetColorParameter(FName ParameterName, FLinearColor Param);
-    void SetFloatParameter(FName ParameterName, float Param);
-    void SetMaterialParameter(FName ParameterName, class UMaterialInterface* Param);
-    void SetTemplate(class UParticleSystem* NewTemplate);
-    void SetVectorParameter(FName ParameterName, FVector Param);
-    void ToggleActive();
-    UE_PURE bool IsActive() const;
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* bCurrentlyActive__Replicated = "OnRep_bCurrentlyActive):";
-        static constexpr const char* OnParticleSpawn__UeDispatcher = "Assignable";
-        static constexpr const char* OnParticleBurst__UeDispatcher = "Assignable";
-        static constexpr const char* OnParticleDeath__UeDispatcher = "Assignable";
-        static constexpr const char* OnParticleCollide__UeDispatcher = "Assignable";
-        static constexpr const char* ParticleSystemComponent__UeSubobject = "ParticleSystemComponent0 /Script/Engine.ParticleSystemComponent";
-        static constexpr const char* RootComponent__UeSubobject = "ParticleSystemComponent0 /Script/Engine.ParticleSystemComponent";
-    };
+    UE_CLASS("/Script/Engine", "EdGraphSchema");
 };
 
 class AEmitterCameraLensEffectBase : public AEmitter
@@ -22262,72 +22308,41 @@ public:
     UE_CLASS("/Script/Engine", "EngineBaseTypes");
 };
 
+class UVirtualTexture : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "VirtualTexture");
+};
+
 class UEngineTypes : public UObject
 {
 public:
     UE_CLASS("/Script/Engine", "EngineTypes");
 };
 
-class URuntimeVirtualTextureStreamingProxy : public UTexture2D
+class UFontFace : public UObject
 {
 public:
-    UE_CLASS("/Script/Engine", "RuntimeVirtualTextureStreamingProxy");
+    UE_CLASS("/Script/Engine", "FontFace");
+    UE_READONLY FString SourceFilename;
+    TEnum<EFontHinting> Hinting;
+    TEnum<EFontLoadingPolicy> LoadingPolicy;
+    TEnum<EFontLayoutMethod> LayoutMethod;
 };
 
-class UExponentialHeightFogComponent : public USceneComponent
+class USoundNodeLooping : public USoundNode
 {
 public:
-    UE_CLASS("/Script/Engine", "ExponentialHeightFogComponent");
-    UE_READONLY float FogDensity;
-    UE_READONLY float FogHeightFalloff;
-    UE_READONLY FExponentialHeightFogData SecondFogData;
-    UE_READONLY FLinearColor FogInscatteringColor;
-    UE_READONLY class UTextureCube* InscatteringColorCubemap;
-    UE_READONLY float InscatteringColorCubemapAngle;
-    UE_READONLY FLinearColor InscatteringTextureTint;
-    UE_READONLY float FullyDirectionalInscatteringColorDistance;
-    UE_READONLY float NonDirectionalInscatteringColorDistance;
-    UE_READONLY float DirectionalInscatteringExponent;
-    UE_READONLY float DirectionalInscatteringStartDistance;
-    UE_READONLY FLinearColor DirectionalInscatteringColor;
-    UE_READONLY float FogMaxOpacity;
-    UE_READONLY float StartDistance;
-    UE_READONLY float FogCutoffDistance;
-    UE_READONLY bool bEnableVolumetricFog;
-    UE_READONLY float VolumetricFogScatteringDistribution;
-    UE_READONLY FColor VolumetricFogAlbedo;
-    UE_READONLY FLinearColor VolumetricFogEmissive;
-    UE_READONLY float VolumetricFogExtinctionScale;
-    UE_READONLY float VolumetricFogDistance;
-    UE_READONLY float VolumetricFogStaticLightingScatteringIntensity;
-    UE_READONLY bool bOverrideLightColorsWithFogInscatteringColors;
-    void SetDirectionalInscatteringColor(FLinearColor Value);
-    void SetDirectionalInscatteringExponent(float Value);
-    void SetDirectionalInscatteringStartDistance(float Value);
-    void SetFogCutoffDistance(float Value);
-    void SetFogDensity(float Value);
-    void SetFogHeightFalloff(float Value);
-    void SetFogInscatteringColor(FLinearColor Value);
-    void SetFogMaxOpacity(float Value);
-    void SetFullyDirectionalInscatteringColorDistance(float Value);
-    void SetInscatteringColorCubemap(class UTextureCube* Value);
-    void SetInscatteringColorCubemapAngle(float Value);
-    void SetInscatteringTextureTint(FLinearColor Value);
-    void SetNonDirectionalInscatteringColorDistance(float Value);
-    void SetStartDistance(float Value);
-    void SetVolumetricFog(bool bNewValue);
-    void SetVolumetricFogAlbedo(FColor NewValue);
-    void SetVolumetricFogDistance(float NewValue);
-    void SetVolumetricFogEmissive(FLinearColor NewValue);
-    void SetVolumetricFogExtinctionScale(float NewValue);
-    void SetVolumetricFogScatteringDistribution(float NewValue);
+    UE_CLASS("/Script/Engine", "SoundNodeLooping");
+    int LoopCount;
+    bool bLoopIndefinitely;
 };
 
-class USoundNodeMixer : public USoundNode
+class UForceFeedbackAttenuation : public UObject
 {
 public:
-    UE_CLASS("/Script/Engine", "SoundNodeMixer");
-    TArray<float> InputVolume;
+    UE_CLASS("/Script/Engine", "ForceFeedbackAttenuation");
+    UE_READONLY FForceFeedbackAttenuationSettings Attenuation;
 };
 
 class UForceFeedbackEffect : public UObject
@@ -22338,17 +22353,73 @@ public:
     UE_READONLY float Duration;
 };
 
-class UTwitterIntegrationBase : public UPlatformInterfaceBase
+class ATriggerSphere : public ATriggerBase
 {
 public:
-    UE_CLASS("/Script/Engine", "TwitterIntegrationBase");
-    bool AuthorizeAccounts();
-    bool CanShowTweetUI();
-    FString GetAccountName(int AccountIndex);
-    int GetNumAccounts();
-    void Init();
-    bool ShowTweetUI(FString InitialMessage, FString URL, FString Picture);
-    bool TwitterRequest(FString URL, const TArray<FString>& ParamKeysAndValues, TEnum<ETwitterRequestMethod> RequestMethod, int AccountIndex);
+    UE_CLASS("/Script/Engine", "TriggerSphere");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* CollisionComponent__UeSubobject = "CollisionComp /Script/Engine.SphereComponent";
+        static constexpr const char* RootComponent__UeSubobject = "CollisionComp /Script/Engine.SphereComponent";
+    };
+};
+
+class AGameNetworkManager : public AInfo
+{
+public:
+    UE_CLASS("/Script/Engine", "GameNetworkManager");
+    float BadPacketLossThreshold;
+    float SeverePacketLossThreshold;
+    int BadPingThreshold;
+    int SeverePingThreshold;
+    int AdjustedNetSpeed;
+    float LastNetSpeedUpdateTime;
+    int TotalNetBandwidth;
+    int MinDynamicBandwidth;
+    int MaxDynamicBandwidth;
+    bool bIsStandbyCheckingEnabled;
+    bool bHasStandbyCheatTriggered;
+    float StandbyRxCheatTime;
+    float StandbyTxCheatTime;
+    float PercentMissingForRxStandby;
+    float PercentMissingForTxStandby;
+    float PercentForBadPing;
+    float JoinInProgressStandbyWaitTime;
+    float MoveRepSize;
+    float MAXPOSITIONERRORSQUARED;
+    float MAXNEARZEROVELOCITYSQUARED;
+    float CLIENTADJUSTUPDATECOST;
+    float MAXCLIENTUPDATEINTERVAL;
+    float MaxClientForcedUpdateDuration;
+    float ServerForcedUpdateHitchThreshold;
+    float ServerForcedUpdateHitchCooldown;
+    float MaxMoveDeltaTime;
+    float MaxClientSmoothingDeltaTime;
+    float ClientNetSendMoveDeltaTime;
+    float ClientNetSendMoveDeltaTimeThrottled;
+    float ClientNetSendMoveDeltaTimeStationary;
+    int ClientNetSendMoveThrottleAtNetSpeed;
+    int ClientNetSendMoveThrottleOverPlayerCount;
+    bool ClientAuthorativePosition;
+    float ClientErrorUpdateRateLimit;
+    float ClientNetCamUpdateDeltaTime;
+    float ClientNetCamUpdatePositionLimit;
+    bool bMovementTimeDiscrepancyDetection;
+    bool bMovementTimeDiscrepancyResolution;
+    float MovementTimeDiscrepancyMaxTimeMargin;
+    float MovementTimeDiscrepancyMinTimeMargin;
+    float MovementTimeDiscrepancyResolutionRate;
+    float MovementTimeDiscrepancyDriftAllowance;
+    bool bMovementTimeDiscrepancyForceCorrectionsDuringResolution;
+    bool bUseDistanceBasedRelevancy;
+};
+
+class UHapticFeedbackEffect_Curve : public UHapticFeedbackEffect_Base
+{
+public:
+    UE_CLASS("/Script/Engine", "HapticFeedbackEffect_Curve");
+    FHapticFeedbackDetails_Curve HapticDetails;
 };
 
 class UHealthSnapshotBlueprintLibrary : public UBlueprintFunctionLibrary
@@ -22360,12 +22431,19 @@ public:
     static void StopPerformanceSnapshots();
 };
 
-class UHLODProxy : public UObject
+class UImportanceSamplingLibrary : public UBlueprintFunctionLibrary
 {
 public:
-    UE_CLASS("/Script/Engine", "HLODProxy");
-    TArray<FHLODProxyMesh> ProxyMeshes;
-    TMap<class UHLODProxyDesc*, FHLODProxyMesh> HLODActors;
+    UE_CLASS("/Script/Engine", "ImportanceSamplingLibrary");
+    static void BreakImportanceTexture(const FImportanceTexture& ImportanceTexture, class UTexture2D*& Texture, EImportanceWeight& WeightingFunc);
+    static void ImportanceSample(const FImportanceTexture& Texture, const FVector2D& Rand, int Samples, float Intensity, FVector2D& SamplePosition, FLinearColor& SampleColor, float& SampleIntensity, float& SampleSize);
+    UE_PURE static FImportanceTexture MakeImportanceTexture(class UTexture2D* Texture, TEnum<EImportanceWeight> WeightingFunc);
+    UE_PURE static FVector2D NextSobolCell2D(int Index_0, int NumCells, FVector2D PreviousValue);
+    UE_PURE static FVector NextSobolCell3D(int Index_0, int NumCells, FVector PreviousValue);
+    UE_PURE static float NextSobolFloat(int Index_0, int Dimension, float PreviousValue);
+    static FVector2D RandomSobolCell2D(int Index_0, int NumCells, FVector2D Cell, FVector2D Seed);
+    static FVector RandomSobolCell3D(int Index_0, int NumCells, FVector Cell, FVector Seed);
+    static float RandomSobolFloat(int Index_0, int Dimension, float Seed);
 };
 
 class UInGameAdManager : public UPlatformInterfaceBase
@@ -22400,54 +22478,22 @@ public:
     UE_PURE bool WasControllerKeyJustReleased(FKey Key) const;
 };
 
-class UInputSettings : public UObject
+class IInterface_ActorSubobject
 {
 public:
-    UE_CLASS("/Script/Engine", "InputSettings");
-    TArray<FInputAxisConfigEntry> AxisConfig;
-    bool bAltEnterTogglesFullscreen;
-    bool bF11TogglesFullscreen;
-    bool bUseMouseForTouch;
-    bool bEnableMouseSmoothing;
-    bool bEnableFOVScaling;
-    bool bCaptureMouseOnLaunch;
-    bool bDefaultViewportMouseLock;
-    bool bAlwaysShowTouchInterface;
-    bool bShowConsoleOnFourFingerTap;
-    bool bEnableGestureRecognizer;
-    bool bUseAutocorrect;
-    TArray<FString> ExcludedAutocorrectOS;
-    TArray<FString> ExcludedAutocorrectCultures;
-    TArray<FString> ExcludedAutocorrectDeviceModels;
-    TEnum<EMouseCaptureMode> DefaultViewportMouseCaptureMode;
-    TEnum<EMouseLockMode> DefaultViewportMouseLockMode;
-    float FOVScale;
-    float DoubleClickTime;
-    TArray<FInputActionKeyMapping> ActionMappings;
-    TArray<FInputAxisKeyMapping> AxisMappings;
-    TArray<FInputActionSpeechMapping> SpeechMappings;
-    TSoftClassPtr<class UClass> DefaultPlayerInputClass;
-    TSoftClassPtr<class UClass> DefaultInputComponentClass;
-    FSoftObjectPath DefaultTouchInterface;
-    FKey ConsoleKey;
-    TArray<FKey> ConsoleKeys;
-    UE_PURE static class UInputSettings* GetInputSettings();
-    void AddActionMapping(const FInputActionKeyMapping& KeyMapping, bool bForceRebuildKeymaps);
-    void AddAxisMapping(const FInputAxisKeyMapping& KeyMapping, bool bForceRebuildKeymaps);
-    void ForceRebuildKeymaps();
-    void RemoveActionMapping(const FInputActionKeyMapping& KeyMapping, bool bForceRebuildKeymaps);
-    void RemoveAxisMapping(const FInputAxisKeyMapping& KeyMapping, bool bForceRebuildKeymaps);
-    void SaveKeyMappings();
-    void GetActionMappingByName(FName InActionName, TArray<FInputActionKeyMapping>& OutMappings) const;
-    void GetActionNames(TArray<FName>& ActionNames) const;
-    void GetAxisMappingByName(FName InAxisName, TArray<FInputAxisKeyMapping>& OutMappings) const;
-    void GetAxisNames(TArray<FName>& AxisNames) const;
+    UE_CLASS("/Script/Engine", "Interface_ActorSubobject");
 };
 
-class IBoneReferenceSkeletonProvider
+class IInterface_AssetUserData
 {
 public:
-    UE_CLASS("/Script/Engine", "BoneReferenceSkeletonProvider");
+    UE_CLASS("/Script/Engine", "Interface_AssetUserData");
+};
+
+class UStereoLayerShapeCubemap : public UStereoLayerShape
+{
+public:
+    UE_CLASS("/Script/Engine", "StereoLayerShapeCubemap");
 };
 
 class IInterface_CollisionDataProvider
@@ -22456,44 +22502,19 @@ public:
     UE_CLASS("/Script/Engine", "Interface_CollisionDataProvider");
 };
 
-class UStereoLayerComponent : public USceneComponent
+class UInterpData : public UObject
 {
 public:
-    UE_CLASS("/Script/Engine", "StereoLayerComponent");
-    bool bLiveTexture;
-    bool bSupportsDepth;
-    bool bNoAlphaChannel;
-    UE_READONLY class UTexture* Texture;
-    UE_READONLY class UTexture* LeftTexture;
-    bool bQuadPreserveTextureRatio;
-    UE_READONLY FVector2D QuadSize;
-    UE_READONLY FBox2D UVRect;
-    float CylinderRadius;
-    float CylinderOverlayArc;
-    int CylinderHeight;
-    FEquirectProps EquirectProps;
-    UE_READONLY TEnum<EStereoLayerType> StereoLayerType;
-    TEnum<EStereoLayerShape> StereoLayerShape;
-    UE_READONLY class UStereoLayerShape* Shape;
-    UE_READONLY int Priority;
-    void MarkTextureForUpdate();
-    void SetEquirectProps(FEquirectProps InScaleBiases);
-    void SetLeftTexture(class UTexture* InTexture);
-    void SetPriority(int InPriority);
-    void SetQuadSize(FVector2D InQuadSize);
-    void SetTexture(class UTexture* InTexture);
-    void SetUVRect(FBox2D InUVRect);
-    UE_PURE class UTexture* GetLeftTexture() const;
-    UE_PURE int GetPriority() const;
-    UE_PURE FVector2D GetQuadSize() const;
-    UE_PURE class UTexture* GetTexture() const;
-    UE_PURE FBox2D GetUVRect() const;
-};
-
-class IInterface_PreviewMeshProvider
-{
-public:
-    UE_CLASS("/Script/Engine", "Interface_PreviewMeshProvider");
+    UE_CLASS("/Script/Engine", "InterpData");
+    UE_READONLY float InterpLength;
+    float PathBuildTime;
+    UE_READONLY TArray<class UInterpGroup*> InterpGroups;
+    class UInterpCurveEdSetup* CurveEdSetup;
+    float EdSectionStart;
+    float EdSectionEnd;
+    bool bShouldBakeAndPrune;
+    class UInterpGroupDirector* CachedDirectorGroup;
+    TArray<FName> AllEventNames;
 };
 
 class UInterpFilter_Classes : public UInterpFilter
@@ -22514,45 +22535,23 @@ public:
     UE_CLASS("/Script/Engine", "InterpGroupInstCamera");
 };
 
-class UInterpToMovementComponent : public UMovementComponent
+class UInterpTrackBoolProp : public UInterpTrack
 {
 public:
-    UE_CLASS("/Script/Engine", "InterpToMovementComponent");
-    float Duration;
-    bool bPauseOnImpact;
-    bool bSweep;
-    TEnum<ETeleportType> TeleportType;
-    TEnum<EInterpToBehaviourType> BehaviourType;
-    bool bCheckIfStillInWorld;
-    bool bForceSubStepping;
-    TMulticastInlineDelegate<void(FHitResult ImpactResult, float Time)> OnInterpToReverse;
-    TMulticastInlineDelegate<void(FHitResult ImpactResult, float Time)> OnInterpToStop;
-    TMulticastInlineDelegate<void(FHitResult ImpactResult, float Time)> OnWaitBeginDelegate;
-    TMulticastInlineDelegate<void(FHitResult ImpactResult, float Time)> OnWaitEndDelegate;
-    TMulticastInlineDelegate<void(FHitResult ImpactResult, float Time)> OnResetDelegate;
-    float MaxSimulationTimeStep;
-    int MaxSimulationIterations;
-    TArray<FInterpControlPoint> ControlPoints;
-    void AddControlPointPosition(FVector Pos, bool bPositionIsRelative);
-    void FinaliseControlPoints();
-    void ResetControlPoints();
-    void RestartMovement(float InitialDirection);
-    void StopSimulating(const FHitResult& HitResult);
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* OnInterpToReverse__UeDispatcher = "Assignable";
-        static constexpr const char* OnInterpToStop__UeDispatcher = "Assignable";
-        static constexpr const char* OnWaitBeginDelegate__UeDispatcher = "Assignable";
-        static constexpr const char* OnWaitEndDelegate__UeDispatcher = "Assignable";
-        static constexpr const char* OnResetDelegate__UeDispatcher = "Assignable";
-    };
+    UE_CLASS("/Script/Engine", "InterpTrackBoolProp");
+    TArray<FBoolTrackKey> BoolTrack;
+    FName PropertyName;
 };
 
-class UInterpTrackColorScale : public UInterpTrackVectorBase
+class UInterpTrackEvent : public UInterpTrack
 {
 public:
-    UE_CLASS("/Script/Engine", "InterpTrackColorScale");
+    UE_CLASS("/Script/Engine", "InterpTrackEvent");
+    TArray<FEventTrackKey> EventTrack;
+    bool bFireEventsWhenForwards;
+    bool bFireEventsWhenBackwards;
+    bool bFireEventsWhenJumpingForwards;
+    bool bUseCustomEventName;
 };
 
 class UInterpTrackFloatAnimBPParam : public UInterpTrackFloatBase
@@ -22561,13 +22560,6 @@ public:
     UE_CLASS("/Script/Engine", "InterpTrackFloatAnimBPParam");
     class UClass* AnimBlueprintClass;
     TSubclassOf<class UAnimInstance> AnimClass;
-    FName ParamName;
-};
-
-class UInterpTrackFloatParticleParam : public UInterpTrackFloatBase
-{
-public:
-    UE_CLASS("/Script/Engine", "InterpTrackFloatParticleParam");
     FName ParamName;
 };
 
@@ -22584,30 +22576,11 @@ public:
     bool ResetBool;
 };
 
-class UParticleModuleSizeBase : public UParticleModule
+class UInterpTrackInstColorProp : public UInterpTrackInstProperty
 {
 public:
-    UE_CLASS("/Script/Engine", "ParticleModuleSizeBase");
-};
-
-class UParticleModuleSize : public UParticleModuleSizeBase
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleModuleSize");
-    FRawDistributionVector StartSize;
-};
-
-class UParticleModuleSize_Seeded : public UParticleModuleSize
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleModuleSize_Seeded");
-    FParticleRandomSeedInfo RandomSeedInfo;
-};
-
-class UInterpTrackInstColorScale : public UInterpTrackInst
-{
-public:
-    UE_CLASS("/Script/Engine", "InterpTrackInstColorScale");
+    UE_CLASS("/Script/Engine", "InterpTrackInstColorProp");
+    FColor ResetColor;
 };
 
 class UInterpTrackInstDirector : public UInterpTrackInst
@@ -22615,6 +22588,13 @@ class UInterpTrackInstDirector : public UInterpTrackInst
 public:
     UE_CLASS("/Script/Engine", "InterpTrackInstDirector");
     class AActor* OldViewTarget;
+};
+
+class UInterpTrackInstEvent : public UInterpTrackInst
+{
+public:
+    UE_CLASS("/Script/Engine", "InterpTrackInstEvent");
+    float LastUpdatePosition;
 };
 
 class UInterpTrackInstFade : public UInterpTrackInst
@@ -22641,25 +22621,19 @@ public:
     class UInterpTrackFloatMaterialParam* InstancedTrack;
 };
 
-class UInterpTrackInstFloatParticleParam : public UInterpTrackInst
-{
-public:
-    UE_CLASS("/Script/Engine", "InterpTrackInstFloatParticleParam");
-    float ResetFloat;
-};
-
-class UInterpTrackInstFloatProp : public UInterpTrackInstProperty
-{
-public:
-    UE_CLASS("/Script/Engine", "InterpTrackInstFloatProp");
-    float ResetFloat;
-};
-
 class UInterpTrackInstLinearColorProp : public UInterpTrackInstProperty
 {
 public:
     UE_CLASS("/Script/Engine", "InterpTrackInstLinearColorProp");
     FLinearColor ResetColor;
+};
+
+class UInterpTrackInstMove : public UInterpTrackInst
+{
+public:
+    UE_CLASS("/Script/Engine", "InterpTrackInstMove");
+    FVector ResetLocation;
+    FRotator ResetRotation;
 };
 
 class UInterpTrackInstParticleReplay : public UInterpTrackInst
@@ -22684,6 +22658,21 @@ public:
     class UAudioComponent* PlayAudioComp;
 };
 
+class UMaterialExpressionDeriveNormalZ : public UMaterialExpression
+{
+public:
+    UE_CLASS("/Script/Engine", "MaterialExpressionDeriveNormalZ");
+    FExpressionInput InXY;
+};
+
+class UPreviewMeshCollection : public UDataAsset
+{
+public:
+    UE_CLASS("/Script/Engine", "PreviewMeshCollection");
+    class USkeleton* Skeleton;
+    TArray<FPreviewMeshCollectionEntry> SkeletalMeshes;
+};
+
 class UInterpTrackInstToggle : public UInterpTrackInst
 {
 public:
@@ -22703,21 +22692,6 @@ public:
     class UInterpTrackVectorMaterialParam* InstancedTrack;
 };
 
-class UMaterialExpressionDistance : public UMaterialExpression
-{
-public:
-    UE_CLASS("/Script/Engine", "MaterialExpressionDistance");
-    FExpressionInput A;
-    FExpressionInput B;
-};
-
-class UProxyLODMeshSimplificationSettings : public UDeveloperSettings
-{
-public:
-    UE_CLASS("/Script/Engine", "ProxyLODMeshSimplificationSettings");
-    FName ProxyLODMeshReductionModuleName;
-};
-
 class UInterpTrackInstVectorProp : public UInterpTrackInstProperty
 {
 public:
@@ -22731,6 +22705,21 @@ public:
     UE_CLASS("/Script/Engine", "InterpTrackInstVisibility");
     TEnum<EVisibilityTrackAction> Action;
     float LastUpdatePosition;
+};
+
+class UInterpTrackLinearColorBase : public UInterpTrack
+{
+public:
+    UE_CLASS("/Script/Engine", "InterpTrackLinearColorBase");
+    FInterpCurveLinearColor LinearColorTrack;
+    float CurveTension;
+};
+
+class UInterpTrackLinearColorProp : public UInterpTrackLinearColorBase
+{
+public:
+    UE_CLASS("/Script/Engine", "InterpTrackLinearColorProp");
+    FName PropertyName;
 };
 
 class UInterpTrackMove : public UInterpTrack
@@ -22752,11 +22741,12 @@ public:
     TEnum<EInterpTrackMoveRotMode> RotMode;
 };
 
-class UInterpTrackParticleReplay : public UInterpTrack
+class UInterpTrackMoveAxis : public UInterpTrackFloatBase
 {
 public:
-    UE_CLASS("/Script/Engine", "InterpTrackParticleReplay");
-    TArray<FParticleReplayTrackKey> TrackKeys;
+    UE_CLASS("/Script/Engine", "InterpTrackMoveAxis");
+    TEnum<EInterpMoveAxis> MoveAxis;
+    FInterpLookupTrack LookupTrack;
 };
 
 class UInterpTrackSlomo : public UInterpTrackFloatBase
@@ -22789,6 +22779,13 @@ public:
     bool bFireEventsWhenJumpingForwards;
 };
 
+class UParticleModuleMeshRotation_Seeded : public UParticleModuleMeshRotation
+{
+public:
+    UE_CLASS("/Script/Engine", "ParticleModuleMeshRotation_Seeded");
+    FParticleRandomSeedInfo RandomSeedInfo;
+};
+
 class UInterpTrackVectorMaterialParam : public UInterpTrackVectorBase
 {
 public:
@@ -22797,18 +22794,33 @@ public:
     FName ParamName;
 };
 
+class UParticleModuleLocationSkelVertSurface : public UParticleModuleLocationBase
+{
+public:
+    UE_CLASS("/Script/Engine", "ParticleModuleLocationSkelVertSurface");
+    TEnum<ELocationSkelVertSurfaceSource> SourceType;
+    FVector UniversalOffset;
+    bool bUpdatePositionEachFrame;
+    bool bOrientMeshEmitters;
+    bool bInheritBoneVelocity;
+    float InheritVelocityScale;
+    FName SkelMeshActorParamName;
+    TArray<FName> ValidAssociatedBones;
+    bool bEnforceNormalCheck;
+    FVector NormalToCompare;
+    float NormalCheckToleranceDegrees;
+    float NormalCheckTolerance;
+    TArray<int> ValidMaterialIndices;
+    bool bInheritVertexColor;
+    bool bInheritUV;
+    uint32 InheritUVChannel;
+};
+
 class UInterpTrackVectorProp : public UInterpTrackVectorBase
 {
 public:
     UE_CLASS("/Script/Engine", "InterpTrackVectorProp");
     FName PropertyName;
-};
-
-class UParticleModuleMeshRotationRate : public UParticleModuleRotationRateBase
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleModuleMeshRotationRate");
-    FRawDistributionVector StartRotationRate;
 };
 
 class UInterpTrackVisibility : public UInterpTrack
@@ -22819,28 +22831,6 @@ public:
     bool bFireEventsWhenForwards;
     bool bFireEventsWhenBackwards;
     bool bFireEventsWhenJumpingForwards;
-};
-
-class UParticleModuleLocation : public UParticleModuleLocationBase
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleModuleLocation");
-    FRawDistributionVector StartLocation;
-    float DistributeOverNPoints;
-    float DistributeThreshold;
-};
-
-class UParticleModuleLocationWorldOffset : public UParticleModuleLocation
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleModuleLocationWorldOffset");
-};
-
-class UParticleModuleLocationWorldOffset_Seeded : public UParticleModuleLocationWorldOffset
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleModuleLocationWorldOffset_Seeded");
-    FParticleRandomSeedInfo RandomSeedInfo;
 };
 
 class UIntSerialization : public UObject
@@ -22857,43 +22847,24 @@ public:
     int SignedInt32Variable;
 };
 
-class AKillZVolume : public APhysicsVolume
+class UParticleModuleVelocityInheritParent : public UParticleModuleVelocityBase
 {
 public:
-    UE_CLASS("/Script/Engine", "KillZVolume");
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* BrushComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
-        static constexpr const char* RootComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
-    };
+    UE_CLASS("/Script/Engine", "ParticleModuleVelocityInheritParent");
+    FRawDistributionVector Scale;
 };
 
-class UParticleEmitter : public UObject
+class UKismetGuidLibrary : public UBlueprintFunctionLibrary
 {
 public:
-    UE_CLASS("/Script/Engine", "ParticleEmitter");
-    FName EmitterName;
-    int SubUVDataOffset;
-    TEnum<EEmitterRenderMode> EmitterRenderMode;
-    TEnum<EParticleSignificanceLevel> SignificanceLevel;
-    bool bUseLegacySpawningBehavior;
-    bool ConvertedModules;
-    bool bIsSoloing;
-    bool bCookedOut;
-    bool bDisabledLODsKeepEmitterAlive;
-    bool bDisableWhenInsignficant;
-    TArray<class UParticleLODLevel*> LODLevels;
-    int PeakActiveParticles;
-    int InitialAllocationCount;
-    float QualityLevelSpawnRateScale;
-    uint32 DetailModeBitmask;
-};
-
-class UParticleSpriteEmitter : public UParticleEmitter
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleSpriteEmitter");
+    UE_CLASS("/Script/Engine", "KismetGuidLibrary");
+    UE_PURE static FString Conv_GuidToString(const FGuid& InGuid);
+    UE_PURE static bool EqualEqual_GuidGuid(const FGuid& A, const FGuid& B);
+    static void Invalidate_Guid(FGuid& InGuid);
+    UE_PURE static bool IsValid_Guid(const FGuid& InGuid);
+    static FGuid NewGuid();
+    UE_PURE static bool NotEqual_GuidGuid(const FGuid& A, const FGuid& B);
+    static void Parse_StringToGuid(FString GuidString, FGuid& OutGuid, bool& success);
 };
 
 class UKismetInternationalizationLibrary : public UBlueprintFunctionLibrary
@@ -22914,6 +22885,63 @@ public:
     static bool SetCurrentLanguage(FString Culture, bool SaveToConfig);
     static bool SetCurrentLanguageAndLocale(FString Culture, bool SaveToConfig);
     static bool SetCurrentLocale(FString Culture, bool SaveToConfig);
+};
+
+class UKismetRenderingLibrary : public UBlueprintFunctionLibrary
+{
+public:
+    UE_CLASS("/Script/Engine", "KismetRenderingLibrary");
+    static void BeginDrawCanvasToRenderTarget(class UObject* WorldContextObject, class UTextureRenderTarget2D* TextureRenderTarget, class UCanvas*& Canvas, FVector2D& Size, FDrawToRenderTargetContext& Context);
+    static void BeginDrawCanvasToRenderTarget(class UTextureRenderTarget2D* TextureRenderTarget, class UCanvas*& Canvas, FVector2D& Size, FDrawToRenderTargetContext& Context);
+    static void BreakSkinWeightInfo(FSkelMeshSkinWeightInfo InWeight, int& Bone0, uint8& Weight0, int& Bone1, uint8& Weight1, int& Bone2, uint8& Weight2, int& Bone3, uint8& Weight3);
+    static void ClearRenderTarget2D(class UObject* WorldContextObject, class UTextureRenderTarget2D* TextureRenderTarget, FLinearColor ClearColor);
+    static void ClearRenderTarget2D(class UTextureRenderTarget2D* TextureRenderTarget, FLinearColor ClearColor);
+    static void ConvertRenderTargetToTexture2DEditorOnly(class UObject* WorldContextObject, class UTextureRenderTarget2D* RenderTarget, class UTexture2D* Texture);
+    static void ConvertRenderTargetToTexture2DEditorOnly(class UTextureRenderTarget2D* RenderTarget, class UTexture2D* Texture);
+    static class UTextureRenderTarget2D* CreateRenderTarget2D(class UObject* WorldContextObject, int Width, int Height, TEnum<ETextureRenderTargetFormat> Format, FLinearColor ClearColor, bool bAutoGenerateMipMaps);
+    static class UTextureRenderTarget2D* CreateRenderTarget2D(int Width, int Height, TEnum<ETextureRenderTargetFormat> Format, FLinearColor ClearColor, bool bAutoGenerateMipMaps);
+    static class UTextureRenderTarget2DArray* CreateRenderTarget2DArray(class UObject* WorldContextObject, int Width, int Height, int Slices, TEnum<ETextureRenderTargetFormat> Format, FLinearColor ClearColor, bool bAutoGenerateMipMaps);
+    static class UTextureRenderTarget2DArray* CreateRenderTarget2DArray(int Width, int Height, int Slices, TEnum<ETextureRenderTargetFormat> Format, FLinearColor ClearColor, bool bAutoGenerateMipMaps);
+    static class UTextureRenderTargetVolume* CreateRenderTargetVolume(class UObject* WorldContextObject, int Width, int Height, int Depth, TEnum<ETextureRenderTargetFormat> Format, FLinearColor ClearColor, bool bAutoGenerateMipMaps);
+    static class UTextureRenderTargetVolume* CreateRenderTargetVolume(int Width, int Height, int Depth, TEnum<ETextureRenderTargetFormat> Format, FLinearColor ClearColor, bool bAutoGenerateMipMaps);
+    static void DrawMaterialToRenderTarget(class UObject* WorldContextObject, class UTextureRenderTarget2D* TextureRenderTarget, class UMaterialInterface* Material);
+    static void DrawMaterialToRenderTarget(class UTextureRenderTarget2D* TextureRenderTarget, class UMaterialInterface* Material);
+    static void EndDrawCanvasToRenderTarget(class UObject* WorldContextObject, const FDrawToRenderTargetContext& Context);
+    static void EndDrawCanvasToRenderTarget(const FDrawToRenderTargetContext& Context);
+    static void ExportRenderTarget(class UObject* WorldContextObject, class UTextureRenderTarget2D* TextureRenderTarget, FString FilePath, FString Filename);
+    static void ExportRenderTarget(class UTextureRenderTarget2D* TextureRenderTarget, FString FilePath, FString Filename);
+    static void ExportTexture2D(class UObject* WorldContextObject, class UTexture2D* Texture, FString FilePath, FString Filename);
+    static void ExportTexture2D(class UTexture2D* Texture, FString FilePath, FString Filename);
+    static class UTexture2D* ImportBufferAsTexture2D(class UObject* WorldContextObject, const TArray<uint8>& Buffer);
+    static class UTexture2D* ImportBufferAsTexture2D(const TArray<uint8>& Buffer);
+    static class UTexture2D* ImportFileAsTexture2D(class UObject* WorldContextObject, FString Filename);
+    static class UTexture2D* ImportFileAsTexture2D(FString Filename);
+    UE_PURE static FSkelMeshSkinWeightInfo MakeSkinWeightInfo(int Bone0, uint8 Weight0, int Bone1, uint8 Weight1, int Bone2, uint8 Weight2, int Bone3, uint8 Weight3);
+    static FColor ReadRenderTargetPixel(class UObject* WorldContextObject, class UTextureRenderTarget2D* TextureRenderTarget, int X, int Y);
+    static FColor ReadRenderTargetPixel(class UTextureRenderTarget2D* TextureRenderTarget, int X, int Y);
+    static FLinearColor ReadRenderTargetRawPixel(class UObject* WorldContextObject, class UTextureRenderTarget2D* TextureRenderTarget, int X, int Y);
+    static FLinearColor ReadRenderTargetRawPixel(class UTextureRenderTarget2D* TextureRenderTarget, int X, int Y);
+    static FLinearColor ReadRenderTargetRawUV(class UObject* WorldContextObject, class UTextureRenderTarget2D* TextureRenderTarget, float U, float V);
+    static FLinearColor ReadRenderTargetRawUV(class UTextureRenderTarget2D* TextureRenderTarget, float U, float V);
+    static FColor ReadRenderTargetUV(class UObject* WorldContextObject, class UTextureRenderTarget2D* TextureRenderTarget, float U, float V);
+    static FColor ReadRenderTargetUV(class UTextureRenderTarget2D* TextureRenderTarget, float U, float V);
+    static void ReleaseRenderTarget2D(class UTextureRenderTarget2D* TextureRenderTarget);
+    static class UTexture2D* RenderTargetCreateStaticTexture2DEditorOnly(class UTextureRenderTarget2D* RenderTarget, FString Name_0, TEnum<ETextureCompressionSettings> CompressionSettings, TEnum<ETextureMipGenSettings> MipSettings);
+    static void SetCastInsetShadowForAllAttachments(class UPrimitiveComponent* PrimitiveComponent, bool bCastInsetShadow, bool bLightAttachmentsAsGroup);
+};
+
+class UKismetStringTableLibrary : public UBlueprintFunctionLibrary
+{
+public:
+    UE_CLASS("/Script/Engine", "KismetStringTableLibrary");
+    UE_PURE static TArray<FString> GetKeysFromStringTable(FName TableId);
+    UE_PURE static TArray<FName> GetMetaDataIdsFromStringTableEntry(FName TableId, FString Key);
+    UE_PURE static TArray<FName> GetRegisteredStringTables();
+    UE_PURE static FString GetTableEntryMetaData(FName TableId, FString Key, FName MetadataId);
+    UE_PURE static FString GetTableEntrySourceString(FName TableId, FString Key);
+    UE_PURE static FString GetTableNamespace(FName TableId);
+    UE_PURE static bool IsRegisteredTableEntry(FName TableId, FString Key);
+    UE_PURE static bool IsRegisteredTableId(FName TableId);
 };
 
 class UKismetTextLibrary : public UBlueprintFunctionLibrary
@@ -22967,58 +22995,94 @@ public:
     UE_PURE static FText TextTrimTrailing(const FText& InText);
 };
 
+class ULayer : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "Layer");
+    FName LayerName;
+    bool bIsVisible;
+    TArray<FLayerActorStats> ActorStats;
+};
+
 class ILevelPartitionInterface
 {
 public:
     UE_CLASS("/Script/Engine", "LevelPartitionInterface");
 };
 
-class ULevel : public UObject
+class UParticleModuleMaterialBase : public UParticleModule
 {
 public:
-    UE_CLASS("/Script/Engine", "Level");
-    class UWorld* OwningWorld;
-    class UModel* Model;
-    TArray<class UModelComponent*> ModelComponents;
-    class ULevelActorContainer* ActorCluster;
-    int NumTextureStreamingUnbuiltComponents;
-    int NumTextureStreamingDirtyResources;
-    class ALevelScriptActor* LevelScriptActor;
-    class ANavigationObjectBase* NavListStart;
-    class ANavigationObjectBase* NavListEnd;
-    TArray<class UNavigationDataChunk*> NavDataChunks;
-    float LightmapTotalSize;
-    float ShadowmapTotalSize;
-    TArray<FVector> StaticNavigableGeometry;
-    TArray<FGuid> StreamingTextureGuids;
-    FGuid LevelBuildDataId;
-    class UMapBuildDataRegistry* MapBuildData;
-    FIntVector LightBuildLevelOffset;
-    bool bIsLightingScenario;
-    bool bTextureStreamingRotationChanged;
-    bool bStaticComponentsRegisteredInStreamingManager;
-    bool bIsVisible;
-    class AWorldSettings* WorldSettings;
-    TArray<class UAssetUserData*> AssetUserData;
-    TArray<FReplicatedStaticActorDestructionInfo> DestroyedReplicatedStaticActors;
+    UE_CLASS("/Script/Engine", "ParticleModuleMaterialBase");
 };
 
-class ULevelActorContainer : public UObject
+class ALevelBounds : public AActor
 {
 public:
-    UE_CLASS("/Script/Engine", "LevelActorContainer");
-    TArray<class AActor*> Actors;
+    UE_CLASS("/Script/Engine", "LevelBounds");
+    class UBoxComponent* BoxComponent;
+    bool bAutoUpdateBounds;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* BoxComponent__UeSubobject = "BoxComponent0 /Script/Engine.BoxComponent";
+        static constexpr const char* RootComponent__UeSubobject = "BoxComponent0 /Script/Engine.BoxComponent";
+    };
 };
 
-class ALevelScriptActor : public AActor
+class UWorld : public UObject
 {
 public:
-    UE_CLASS("/Script/Engine", "LevelScriptActor");
-    bool bInputEnabled;
-    UE_AUTHORITY_ONLY void LevelReset();
-    bool RemoteEvent(FName EventName);
-    void SetCinematicMode(bool bCinematicMode, bool bHidePlayer, bool bAffectsHUD, bool bAffectsMovement, bool bAffectsTurning);
-    void WorldOriginLocationChanged(FIntVector OldOriginLocation, FIntVector NewOriginLocation);
+    UE_CLASS("/Script/Engine", "World");
+    class ULevel* PersistentLevel;
+    class UNetDriver* NetDriver;
+    class ULineBatchComponent* LineBatcher;
+    class ULineBatchComponent* PersistentLineBatcher;
+    class ULineBatchComponent* ForegroundLineBatcher;
+    class AGameNetworkManager* NetworkManager;
+    class UPhysicsCollisionHandler* PhysicsCollisionHandler;
+    TArray<class UObject*> ExtraReferencedObjects;
+    TArray<class UObject*> PerModuleDataObjects;
+    TArray<class ULevelStreaming*> StreamingLevels;
+    FStreamingLevelsToConsider StreamingLevelsToConsider;
+    FString StreamingLevelsPrefix;
+    class ULevel* CurrentLevelPendingVisibility;
+    class ULevel* CurrentLevelPendingInvisibility;
+    class UDemoNetDriver* DemoNetDriver;
+    class AParticleEventManager* MyParticleEventManager;
+    class APhysicsVolume* DefaultPhysicsVolume;
+    bool bAreConstraintsDirty;
+    class UNavigationSystemBase* NavigationSystem;
+    class AGameModeBase* AuthorityGameMode;
+    class AGameStateBase* GameState;
+    class UAISystemBase* AISystem;
+    class UAvoidanceManager* AvoidanceManager;
+    TArray<class ULevel*> Levels;
+    TArray<FLevelCollection> LevelCollections;
+    class UGameInstance* OwningGameInstance;
+    TArray<class UMaterialParameterCollectionInstance*> ParameterCollectionInstances;
+    class UCanvas* CanvasForRenderingToTarget;
+    class UCanvas* CanvasForDrawMaterialToRenderTarget;
+    class UPhysicsFieldComponent* PhysicsField;
+    TSet<class UActorComponent*> ComponentsThatNeedPreEndOfFrameSync;
+    TArray<class UActorComponent*> ComponentsThatNeedEndOfFrameUpdate;
+    TArray<class UActorComponent*> ComponentsThatNeedEndOfFrameUpdate_OnGameThread;
+    class UWorldComposition* WorldComposition;
+    FWorldPSCPool PSCPool;
+    void HandleTimelineScrubbed();
+    class AWorldSettings* K2_GetWorldSettings();
+};
+
+class ULevelStreamingDynamic : public ULevelStreaming
+{
+public:
+    UE_CLASS("/Script/Engine", "LevelStreamingDynamic");
+    bool bInitiallyLoaded;
+    bool bInitiallyVisible;
+    static class ULevelStreamingDynamic* LoadLevelInstance(class UObject* WorldContextObject, FString LevelName, FVector Location, FRotator Rotation, bool& bOutSuccess, FString OptionalLevelNameOverride);
+    static class ULevelStreamingDynamic* LoadLevelInstance(FString LevelName, FVector Location, FRotator Rotation, bool& bOutSuccess, FString OptionalLevelNameOverride);
+    static class ULevelStreamingDynamic* LoadLevelInstanceBySoftObjectPtr(class UObject* WorldContextObject, TSoftObjectPtr<class UWorld> Level, FVector Location, FRotator Rotation, bool& bOutSuccess, FString OptionalLevelNameOverride);
+    static class ULevelStreamingDynamic* LoadLevelInstanceBySoftObjectPtr(TSoftObjectPtr<class UWorld> Level, FVector Location, FRotator Rotation, bool& bOutSuccess, FString OptionalLevelNameOverride);
 };
 
 class ALevelStreamingVolume : public AVolume
@@ -23037,25 +23101,19 @@ private:
     };
 };
 
-class ULightmappedSurfaceCollection : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "LightmappedSurfaceCollection");
-    class UModel* SourceModel;
-    TArray<int> Surfaces;
-};
-
 class ULightMapTexture2D : public UTexture2D
 {
 public:
     UE_CLASS("/Script/Engine", "LightMapTexture2D");
 };
 
-class ULightMapVirtualTexture2D : public UTexture2D
+class UParticleModuleSubUV : public UParticleModuleSubUVBase
 {
 public:
-    UE_CLASS("/Script/Engine", "LightMapVirtualTexture2D");
-    TArray<int8> TypeToLayer;
+    UE_CLASS("/Script/Engine", "ParticleModuleSubUV");
+    class USubUVAnimation* Animation;
+    FRawDistributionFloat SubImageIndex;
+    bool bUseRealTime;
 };
 
 class ALightmassCharacterIndirectDetailVolume : public AVolume
@@ -23070,6 +23128,16 @@ private:
     };
 };
 
+class UParticleModuleSizeScale : public UParticleModuleSizeBase
+{
+public:
+    UE_CLASS("/Script/Engine", "ParticleModuleSizeScale");
+    FRawDistributionVector SizeScale;
+    bool EnableX;
+    bool EnableY;
+    bool EnableZ;
+};
+
 class ALightmassImportanceVolume : public AVolume
 {
 public:
@@ -23080,12 +23148,6 @@ private:
         static constexpr const char* BrushComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
         static constexpr const char* RootComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
     };
-};
-
-class UParticleModuleTrailBase : public UParticleModule
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleModuleTrailBase");
 };
 
 class ALightmassPortal : public AActor
@@ -23100,13 +23162,6 @@ private:
     };
 };
 
-class UParticleModuleSourceMovement : public UParticleModuleLocationBase
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleModuleSourceMovement");
-    FRawDistributionVector SourceMovementScale;
-};
-
 class ULightmassPortalComponent : public USceneComponent
 {
 public:
@@ -23119,6 +23174,17 @@ class ULightmassPrimitiveSettingsObject : public UObject
 public:
     UE_CLASS("/Script/Engine", "LightmassPrimitiveSettingsObject");
     FLightmassPrimitiveSettings LightmassSettings;
+};
+
+class UPoseAsset : public UAnimationAsset
+{
+public:
+    UE_CLASS("/Script/Engine", "PoseAsset");
+    FPoseDataContainer PoseContainer;
+    bool bAdditivePose;
+    int BasePoseIndex;
+    FName RetargetSource;
+    TArray<FTransform> RetargetSourceAssetReferencePose;
 };
 
 class ULineBatchComponent : public UPrimitiveComponent
@@ -23138,64 +23204,160 @@ public:
     int ControllerId;
 };
 
-class UPostProcessComponent : public USceneComponent
-{
-public:
-    UE_CLASS("/Script/Engine", "PostProcessComponent");
-    FPostProcessSettings Settings;
-    float Priority;
-    float BlendRadius;
-    float BlendWeight;
-    bool bEnabled;
-    bool bUnbound;
-    void AddOrUpdateBlendable(TScriptInterface<class IBlendableInterface> InBlendableObject, float InWeight);
-};
-
 class ULocalPlayerSubsystem : public USubsystem
 {
 public:
     UE_CLASS("/Script/Engine", "LocalPlayerSubsystem");
 };
 
-class ALODActor : public AActor
+class ULODSyncComponent : public UActorComponent
 {
 public:
-    UE_CLASS("/Script/Engine", "LODActor");
-    class UStaticMeshComponent* StaticMeshComponent;
-    TMap<FHLODInstancingKey, class UInstancedStaticMeshComponent*> InstancedStaticMeshComponents;
-    class UHLODProxy* Proxy;
-    FName Key;
-    float LODDrawDistance;
-    int LODLevel;
-    TArray<class AActor*> SubActors;
-    uint8 CachedNumHLODLevels;
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* RootComponent__UeSubobject = "StaticMeshComponent0 /Script/Engine.StaticMeshComponent";
-        static constexpr const char* StaticMeshComponent__UeSubobject = "StaticMeshComponent0 /Script/Engine.StaticMeshComponent";
-    };
+    UE_CLASS("/Script/Engine", "LODSyncComponent");
+    int NumLODs;
+    int ForcedLOD;
+    TArray<FComponentSync> ComponentsToSync;
+    TMap<FName, FLODMappingData> CustomLODMapping;
+    int CurrentLOD;
+    int CurrentNumLODs;
+    TArray<class UPrimitiveComponent*> DriveComponents;
+    TArray<class UPrimitiveComponent*> SubComponents;
+    UE_PURE FString GetLODSyncDebugText() const;
 };
 
-class UParticleModuleSizeScaleBySpeed : public UParticleModuleSizeBase
+class UMaterial : public UMaterialInterface
 {
 public:
-    UE_CLASS("/Script/Engine", "ParticleModuleSizeScaleBySpeed");
-    FVector2D SpeedScale;
-    FVector2D MaxScale;
+    UE_CLASS("/Script/Engine", "Material");
+    class UPhysicalMaterial* PhysMaterial;
+    class UPhysicalMaterialMask* PhysMaterialMask;
+    class UPhysicalMaterial* PhysicalMaterialMap[8];
+    FScalarMaterialInput Metallic;
+    FScalarMaterialInput Specular;
+    FScalarMaterialInput Anisotropy;
+    FVectorMaterialInput Normal;
+    FVectorMaterialInput Tangent;
+    FColorMaterialInput EmissiveColor;
+    UE_READONLY TEnum<EMaterialDomain> MaterialDomain;
+    UE_READONLY TEnum<EBlendMode> BlendMode;
+    TEnum<EDecalBlendMode> DecalBlendMode;
+    bool bDecalIgnoreSubsurface;
+    UE_READONLY TEnum<EMaterialDecalResponse> MaterialDecalResponse;
+    TEnum<EMaterialShadingModel> ShadingModel;
+    bool bCastDynamicShadowAsMasked;
+    FMaterialShadingModelField ShadingModels;
+    float OpacityMaskClipValue;
+    FVectorMaterialInput WorldPositionOffset;
+    FScalarMaterialInput Refraction;
+    FMaterialAttributesInput MaterialAttributes;
+    FScalarMaterialInput PixelDepthOffset;
+    FShadingModelMaterialInput ShadingModelFromMaterialExpression;
+    bool bEnableSeparateTranslucency;
+    bool bEnableResponsiveAA;
+    bool bScreenSpaceReflections;
+    bool bContactShadows;
+    bool TwoSided;
+    bool DitheredLODTransition;
+    bool DitherOpacityMask;
+    bool bAllowNegativeEmissiveColor;
+    TEnum<ETranslucencyLightingMode> TranslucencyLightingMode;
+    bool bEnableMobileSeparateTranslucency;
+    int NumCustomizedUVs;
+    float TranslucencyDirectionalLightingIntensity;
+    float TranslucentShadowDensityScale;
+    float TranslucentSelfShadowDensityScale;
+    float TranslucentSelfShadowSecondDensityScale;
+    float TranslucentSelfShadowSecondOpacity;
+    float TranslucentBackscatteringExponent;
+    FLinearColor TranslucentMultipleScatteringExtinction;
+    float TranslucentShadowStartOffset;
+    bool bDisableDepthTest;
+    bool bWriteOnlyAlpha;
+    bool bGenerateSphericalParticleNormals;
+    bool bTangentSpaceNormal;
+    bool bUseEmissiveForDynamicAreaLighting;
+    bool bBlockGI;
+    bool bUsedAsSpecialEngineMaterial;
+    UE_READONLY bool bUsedWithSkeletalMesh;
+    UE_READONLY bool bUsedWithEditorCompositing;
+    UE_READONLY bool bUsedWithParticleSprites;
+    UE_READONLY bool bUsedWithBeamTrails;
+    UE_READONLY bool bUsedWithMeshParticles;
+    UE_READONLY bool bUsedWithNiagaraSprites;
+    UE_READONLY bool bUsedWithNiagaraRibbons;
+    UE_READONLY bool bUsedWithNiagaraMeshParticles;
+    UE_READONLY bool bUsedWithGeometryCache;
+    UE_READONLY bool bUsedWithStaticLighting;
+    UE_READONLY bool bUsedWithMorphTargets;
+    UE_READONLY bool bUsedWithSplineMeshes;
+    UE_READONLY bool bUsedWithInstancedStaticMeshes;
+    UE_READONLY bool bUsedWithGeometryCollections;
+    bool bUsesDistortion;
+    UE_READONLY bool bUsedWithClothing;
+    UE_READONLY bool bUsedWithWater;
+    UE_READONLY bool bUsedWithHairStrands;
+    UE_READONLY bool bUsedWithLidarPointCloud;
+    UE_READONLY bool bUsedWithVirtualHeightfieldMesh;
+    bool bUsedWithUI;
+    UE_READONLY bool bAutomaticallySetUsageInEditor;
+    UE_READONLY bool bFullyRough;
+    UE_READONLY bool bUseFullPrecision;
+    UE_READONLY bool bUseLightmapDirectionality;
+    UE_READONLY bool bUseAlphaToCoverage;
+    UE_READONLY bool bForwardRenderUsePreintegratedGFForSimpleIBL;
+    UE_READONLY bool bUseHQForwardReflections;
+    UE_READONLY bool bForwardBlendsSkyLightCubemaps;
+    UE_READONLY bool bUsePlanarForwardReflections;
+    UE_READONLY bool bNormalCurvatureToRoughness;
+    UE_READONLY TEnum<EMaterialTessellationMode> D3D11TessellationMode;
+    UE_READONLY bool bEnableCrackFreeDisplacement;
+    UE_READONLY bool bEnableAdaptiveTessellation;
+    bool AllowTranslucentCustomDepthWrites;
+    bool Wireframe;
+    bool WriteDepthToTranslucentMaterial;
+    TEnum<EMaterialShadingRate> ShadingRate;
+    bool bCanMaskedBeAssumedOpaque;
+    bool bIsMasked;
+    bool bIsPreviewMaterial;
+    bool bIsFunctionPreviewMaterial;
+    bool bUseMaterialAttributes;
+    bool bCastRayTracedShadows;
+    bool bUseTranslucencyVertexFog;
+    bool bApplyCloudFogging;
+    bool bIsSky;
+    bool bComputeFogPerPixel;
+    bool bOutputTranslucentVelocity;
+    bool bAllowDevelopmentShaderCompile;
+    bool bIsMaterialEditorStatsMaterial;
+    TEnum<EBlendableLocation> BlendableLocation;
+    bool BlendableOutputAlpha;
+    bool bEnableStencilTest;
+    TEnum<EMaterialStencilCompare> StencilCompare;
+    uint8 StencilRefValue;
+    TEnum<ERefractionMode> RefractionMode;
+    int BlendablePriority;
+    bool bIsBlendable;
+    uint32 UsageFlagWarnings;
+    float RefractionDepthBias;
+    FGuid StateId;
+    float MaxDisplacement;
+    FMaterialCachedExpressionData CachedExpressionData;
 };
 
-class ILODSyncInterface
+class UParticleModulePivotOffset : public UParticleModuleLocationBase
 {
 public:
-    UE_CLASS("/Script/Engine", "LODSyncInterface");
+    UE_CLASS("/Script/Engine", "ParticleModulePivotOffset");
+    FVector2D PivotOffset;
 };
 
-class UMapBuildDataRegistry : public UObject
+class UMaterialBillboardComponent : public UPrimitiveComponent
 {
 public:
-    UE_CLASS("/Script/Engine", "MapBuildDataRegistry");
-    TEnum<ELightingBuildQuality> LevelLightingQuality;
+    UE_CLASS("/Script/Engine", "MaterialBillboardComponent");
+    UE_READONLY TArray<FMaterialSpriteElement> Elements;
+    void AddElement(class UMaterialInterface* Material, class UCurveFloat* DistanceToOpacityCurve, bool bSizeIsInScreenSpace, float BaseSizeX, float BaseSizeY, class UCurveFloat* DistanceToSizeCurve);
+    void SetElements(const TArray<FMaterialSpriteElement>& NewElements);
 };
 
 class UMaterialExpressionAbs : public UMaterialExpression
@@ -23203,13 +23365,6 @@ class UMaterialExpressionAbs : public UMaterialExpression
 public:
     UE_CLASS("/Script/Engine", "MaterialExpressionAbs");
     FExpressionInput Input;
-};
-
-class UParticleModuleRotation : public UParticleModuleRotationBase
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleModuleRotation");
-    FRawDistributionFloat StartRotation;
 };
 
 class UMaterialExpressionActorPositionWS : public UMaterialExpression
@@ -23228,39 +23383,33 @@ public:
     float ConstB;
 };
 
-class UMaterialExpressionTextureSampleParameter2D : public UMaterialExpressionTextureSampleParameter
+class USoundNodeOscillator : public USoundNode
 {
 public:
-    UE_CLASS("/Script/Engine", "MaterialExpressionTextureSampleParameter2D");
+    UE_CLASS("/Script/Engine", "SoundNodeOscillator");
+    bool bModulateVolume;
+    bool bModulatePitch;
+    float AmplitudeMin;
+    float AmplitudeMax;
+    float FrequencyMin;
+    float FrequencyMax;
+    float OffsetMin;
+    float OffsetMax;
+    float CenterMin;
+    float CenterMax;
 };
 
-class UMaterialExpressionAntialiasedTextureMask : public UMaterialExpressionTextureSampleParameter2D
+class UMaterialExpressionArccosine : public UMaterialExpression
 {
 public:
-    UE_CLASS("/Script/Engine", "MaterialExpressionAntialiasedTextureMask");
-    float Threshold;
-    TEnum<ETextureColorChannel> Channel;
+    UE_CLASS("/Script/Engine", "MaterialExpressionArccosine");
+    FExpressionInput Input;
 };
 
-class USoundNodeQualityLevel : public USoundNode
+class UMaterialExpressionArccosineFast : public UMaterialExpression
 {
 public:
-    UE_CLASS("/Script/Engine", "SoundNodeQualityLevel");
-    int CookedQualityLevelIndex;
-};
-
-class UMaterialExpressionAppendVector : public UMaterialExpression
-{
-public:
-    UE_CLASS("/Script/Engine", "MaterialExpressionAppendVector");
-    FExpressionInput A;
-    FExpressionInput B;
-};
-
-class UMaterialExpressionArcsine : public UMaterialExpression
-{
-public:
-    UE_CLASS("/Script/Engine", "MaterialExpressionArcsine");
+    UE_CLASS("/Script/Engine", "MaterialExpressionArccosineFast");
     FExpressionInput Input;
 };
 
@@ -23271,6 +23420,20 @@ public:
     FExpressionInput Input;
 };
 
+class UMaterialExpressionArctangent : public UMaterialExpression
+{
+public:
+    UE_CLASS("/Script/Engine", "MaterialExpressionArctangent");
+    FExpressionInput Input;
+};
+
+class UParticleModuleRotationRateMultiplyLife : public UParticleModuleRotationRateBase
+{
+public:
+    UE_CLASS("/Script/Engine", "ParticleModuleRotationRateMultiplyLife");
+    FRawDistributionFloat LifeMultiplier;
+};
+
 class UMaterialExpressionArctangent2 : public UMaterialExpression
 {
 public:
@@ -23279,79 +23442,23 @@ public:
     FExpressionInput X;
 };
 
-class UMaterialExpressionArctangent2Fast : public UMaterialExpression
+class UMaterialExpressionAtmosphericFogColor : public UMaterialExpression
 {
 public:
-    UE_CLASS("/Script/Engine", "MaterialExpressionArctangent2Fast");
-    FExpressionInput Y;
-    FExpressionInput X;
+    UE_CLASS("/Script/Engine", "MaterialExpressionAtmosphericFogColor");
+    FExpressionInput WorldPosition;
 };
 
-class UMaterialExpressionArctangentFast : public UMaterialExpression
+class ARigidBodyBase : public AActor
 {
 public:
-    UE_CLASS("/Script/Engine", "MaterialExpressionArctangentFast");
-    FExpressionInput Input;
+    UE_CLASS("/Script/Engine", "RigidBodyBase");
 };
 
-class UMaterialExpressionAtmosphericLightVector : public UMaterialExpression
+class UMaterialExpressionAtmosphericLightColor : public UMaterialExpression
 {
 public:
-    UE_CLASS("/Script/Engine", "MaterialExpressionAtmosphericLightVector");
-};
-
-class UPhysicsConstraintComponent : public USceneComponent
-{
-public:
-    UE_CLASS("/Script/Engine", "PhysicsConstraintComponent");
-    class AActor* ConstraintActor1;
-    FConstrainComponentPropName ComponentName1;
-    class AActor* ConstraintActor2;
-    FConstrainComponentPropName ComponentName2;
-    class UPhysicsConstraintTemplate* ConstraintSetup;
-    TMulticastInlineDelegate<void(int ConstraintIndex)> OnConstraintBroken;
-    FConstraintInstance ConstraintInstance;
-    void BreakConstraint();
-    void GetConstraintForce(FVector& OutLinearForce, FVector& OutAngularForce);
-    bool IsBroken();
-    void SetAngularBreakable(bool bAngularBreakable, float AngularBreakThreshold);
-    void SetAngularDriveMode(TEnum<EAngularDriveMode> DriveMode);
-    void SetAngularDriveParams(float PositionStrength, float VelocityStrength, float InForceLimit);
-    void SetAngularOrientationDrive(bool bEnableSwingDrive, bool bEnableTwistDrive);
-    void SetAngularOrientationTarget(const FRotator& InPosTarget);
-    void SetAngularPlasticity(bool bAngularPlasticity, float AngularPlasticityThreshold);
-    void SetAngularSwing1Limit(TEnum<EAngularConstraintMotion> MotionType, float Swing1LimitAngle);
-    void SetAngularSwing2Limit(TEnum<EAngularConstraintMotion> MotionType, float Swing2LimitAngle);
-    void SetAngularTwistLimit(TEnum<EAngularConstraintMotion> ConstraintType, float TwistLimitAngle);
-    void SetAngularVelocityDrive(bool bEnableSwingDrive, bool bEnableTwistDrive);
-    void SetAngularVelocityDriveSLERP(bool bEnableSLERP);
-    void SetAngularVelocityDriveTwistAndSwing(bool bEnableTwistDrive, bool bEnableSwingDrive);
-    void SetAngularVelocityTarget(const FVector& InVelTarget);
-    void SetConstrainedComponents(class UPrimitiveComponent* Component1, FName BoneName1, class UPrimitiveComponent* Component2, FName BoneName2);
-    void SetConstraintReferenceFrame(TEnum<EConstraintFrame> Frame, const FTransform& RefFrame);
-    void SetConstraintReferenceOrientation(TEnum<EConstraintFrame> Frame, const FVector& PriAxis, const FVector& SecAxis);
-    void SetConstraintReferencePosition(TEnum<EConstraintFrame> Frame, const FVector& RefPosition);
-    void SetDisableCollision(bool bDisableCollision);
-    void SetLinearBreakable(bool bLinearBreakable, float LinearBreakThreshold);
-    void SetLinearDriveParams(float PositionStrength, float VelocityStrength, float InForceLimit);
-    void SetLinearPlasticity(bool bLinearPlasticity, float LinearPlasticityThreshold);
-    void SetLinearPositionDrive(bool bEnableDriveX, bool bEnableDriveY, bool bEnableDriveZ);
-    void SetLinearPositionTarget(const FVector& InPosTarget);
-    void SetLinearVelocityDrive(bool bEnableDriveX, bool bEnableDriveY, bool bEnableDriveZ);
-    void SetLinearVelocityTarget(const FVector& InVelTarget);
-    void SetLinearXLimit(TEnum<ELinearConstraintMotion> ConstraintType, float LimitSize);
-    void SetLinearYLimit(TEnum<ELinearConstraintMotion> ConstraintType, float LimitSize);
-    void SetLinearZLimit(TEnum<ELinearConstraintMotion> ConstraintType, float LimitSize);
-    void SetOrientationDriveSLERP(bool bEnableSLERP);
-    void SetOrientationDriveTwistAndSwing(bool bEnableTwistDrive, bool bEnableSwingDrive);
-    UE_PURE float GetCurrentSwing1() const;
-    UE_PURE float GetCurrentSwing2() const;
-    UE_PURE float GetCurrentTwist() const;
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* OnConstraintBroken__UeDispatcher = "Assignable";
-    };
+    UE_CLASS("/Script/Engine", "MaterialExpressionAtmosphericLightColor");
 };
 
 class UMaterialExpressionBentNormalCustomOutput : public UMaterialExpressionCustomOutput
@@ -23361,15 +23468,25 @@ public:
     FExpressionInput Input;
 };
 
-class UMaterialExpressionBlendMaterialAttributes : public UMaterialExpression
+class UMaterialExpressionBlackBody : public UMaterialExpression
 {
 public:
-    UE_CLASS("/Script/Engine", "MaterialExpressionBlendMaterialAttributes");
-    FMaterialAttributesInput A;
-    FMaterialAttributesInput B;
-    FExpressionInput alpha;
-    TEnum<EMaterialAttributeBlend> PixelAttributeBlendType;
-    TEnum<EMaterialAttributeBlend> VertexAttributeBlendType;
+    UE_CLASS("/Script/Engine", "MaterialExpressionBlackBody");
+    FExpressionInput Temp;
+};
+
+class ASceneCaptureCube : public ASceneCapture
+{
+public:
+    UE_CLASS("/Script/Engine", "SceneCaptureCube");
+    UE_READONLY class USceneCaptureComponentCube* CaptureComponentCube;
+    void OnInterpToggle(bool bEnable);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* CaptureComponentCube__UeSubobject = "NewSceneCaptureComponentCube /Script/Engine.SceneCaptureComponentCube";
+        static constexpr const char* SceneComponent__UeSubobject = "SceneComponent /Script/Engine.SceneComponent";
+    };
 };
 
 class UMaterialExpressionBreakMaterialAttributes : public UMaterialExpression
@@ -23379,16 +23496,16 @@ public:
     FMaterialAttributesInput MaterialAttributes;
 };
 
-class USelection : public UObject
+class UMaterialExpressionBumpOffset : public UMaterialExpression
 {
 public:
-    UE_CLASS("/Script/Engine", "Selection");
-};
-
-class UMaterialExpressionCameraPositionWS : public UMaterialExpression
-{
-public:
-    UE_CLASS("/Script/Engine", "MaterialExpressionCameraPositionWS");
+    UE_CLASS("/Script/Engine", "MaterialExpressionBumpOffset");
+    FExpressionInput Coordinate;
+    FExpressionInput Height;
+    FExpressionInput HeightRatioInput;
+    float HeightRatio;
+    float ReferencePlane;
+    uint32 ConstCoordinate;
 };
 
 class UMaterialExpressionCameraVectorWS : public UMaterialExpression
@@ -23397,23 +23514,28 @@ public:
     UE_CLASS("/Script/Engine", "MaterialExpressionCameraVectorWS");
 };
 
+class UMaterialExpressionParameter : public UMaterialExpression
+{
+public:
+    UE_CLASS("/Script/Engine", "MaterialExpressionParameter");
+    FName ParameterName;
+    FGuid ExpressionGUID;
+};
+
+class UMaterialExpressionVectorParameter : public UMaterialExpressionParameter
+{
+public:
+    UE_CLASS("/Script/Engine", "MaterialExpressionVectorParameter");
+    FLinearColor DefaultValue;
+    bool bUseCustomPrimitiveData;
+    uint8 PrimitiveDataIndex;
+};
+
 class UMaterialExpressionChannelMaskParameter : public UMaterialExpressionVectorParameter
 {
 public:
     UE_CLASS("/Script/Engine", "MaterialExpressionChannelMaskParameter");
     TEnum<EChannelMaskParameterColor> MaskChannel;
-};
-
-class UMaterialExpressionClamp : public UMaterialExpression
-{
-public:
-    UE_CLASS("/Script/Engine", "MaterialExpressionClamp");
-    FExpressionInput Input;
-    FExpressionInput Min;
-    FExpressionInput Max;
-    TEnum<EClampMode> ClampMode;
-    float MinDefault;
-    float MaxDefault;
 };
 
 class UMaterialExpressionClearCoatNormalCustomOutput : public UMaterialExpressionCustomOutput
@@ -23434,6 +23556,15 @@ public:
     bool A;
 };
 
+class UPhysicalMaterialMask : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "PhysicalMaterialMask");
+    int UVChannelIndex;
+    TEnum<ETextureAddress> AddressX;
+    TEnum<ETextureAddress> AddressY;
+};
+
 class UMaterialExpressionConstant2Vector : public UMaterialExpression
 {
 public:
@@ -23442,12 +23573,11 @@ public:
     float G;
 };
 
-class USkeletalBodySetup : public UBodySetup
+class UMaterialExpressionConstant3Vector : public UMaterialExpression
 {
 public:
-    UE_CLASS("/Script/Engine", "SkeletalBodySetup");
-    bool bSkipScaleFromAnimation;
-    TArray<FPhysicalAnimationProfile> PhysicalAnimationData;
+    UE_CLASS("/Script/Engine", "MaterialExpressionConstant3Vector");
+    FLinearColor Constant;
 };
 
 class UMaterialExpressionConstant4Vector : public UMaterialExpression
@@ -23457,21 +23587,20 @@ public:
     FLinearColor Constant;
 };
 
-class UMaterialExpressionConstantBiasScale : public UMaterialExpression
-{
-public:
-    UE_CLASS("/Script/Engine", "MaterialExpressionConstantBiasScale");
-    FExpressionInput Input;
-    float Bias;
-    float Scale;
-};
-
 class UMaterialExpressionCosine : public UMaterialExpression
 {
 public:
     UE_CLASS("/Script/Engine", "MaterialExpressionCosine");
     FExpressionInput Input;
     float Period;
+};
+
+class UMaterialExpressionCrossProduct : public UMaterialExpression
+{
+public:
+    UE_CLASS("/Script/Engine", "MaterialExpressionCrossProduct");
+    FExpressionInput A;
+    FExpressionInput B;
 };
 
 class UMaterialExpressionScalarParameter : public UMaterialExpressionParameter
@@ -23492,24 +23621,21 @@ public:
     FExpressionInput InputTime;
 };
 
-class UMaterialExpressionCustom : public UMaterialExpression
+class URadialForceComponent : public USceneComponent
 {
 public:
-    UE_CLASS("/Script/Engine", "MaterialExpressionCustom");
-    FString code;
-    TEnum<ECustomMaterialOutputType> OutputType;
-    FString Description;
-    TArray<FCustomInput> Inputs;
-    TArray<FCustomOutput> AdditionalOutputs;
-    TArray<FCustomDefine> AdditionalDefines;
-    TArray<FString> IncludeFilePaths;
-};
-
-class UMaterialExpressionDDX : public UMaterialExpression
-{
-public:
-    UE_CLASS("/Script/Engine", "MaterialExpressionDDX");
-    FExpressionInput Value;
+    UE_CLASS("/Script/Engine", "RadialForceComponent");
+    float Radius;
+    TEnum<ERadialImpulseFalloff> Falloff;
+    float ImpulseStrength;
+    bool bImpulseVelChange;
+    bool bIgnoreOwningActor;
+    float ForceStrength;
+    float DestructibleDamage;
+    TArray<EObjectTypeQuery> ObjectTypesToAffect;
+    void AddObjectTypeToAffect(TEnum<EObjectTypeQuery> ObjectType);
+    void FireImpulse();
+    void RemoveObjectTypeToAffect(TEnum<EObjectTypeQuery> ObjectType);
 };
 
 class UMaterialExpressionDecalLifetimeOpacity : public UMaterialExpression
@@ -23518,42 +23644,34 @@ public:
     UE_CLASS("/Script/Engine", "MaterialExpressionDecalLifetimeOpacity");
 };
 
-class URectLightComponent : public ULocalLightComponent
+class APrecomputedVisibilityOverrideVolume : public AVolume
 {
 public:
-    UE_CLASS("/Script/Engine", "RectLightComponent");
-    UE_READONLY float SourceWidth;
-    UE_READONLY float SourceHeight;
-    UE_READONLY float BarnDoorAngle;
-    UE_READONLY float BarnDoorLength;
-    UE_READONLY class UTexture* SourceTexture;
-    void SetBarnDoorAngle(float NewValue);
-    void SetBarnDoorLength(float NewValue);
-    void SetSourceHeight(float NewValue);
-    void SetSourceTexture(class UTexture* bNewValue);
-    void SetSourceWidth(float bNewValue);
+    UE_CLASS("/Script/Engine", "PrecomputedVisibilityOverrideVolume");
+    TArray<class AActor*> OverrideVisibleActors;
+    TArray<class AActor*> OverrideInvisibleActors;
+    TArray<FName> OverrideInvisibleLevels;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* BrushComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
+        static constexpr const char* RootComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
+    };
+};
+
+class UMaterialExpressionDecalMipmapLevel : public UMaterialExpression
+{
+public:
+    UE_CLASS("/Script/Engine", "MaterialExpressionDecalMipmapLevel");
+    FExpressionInput TextureSize;
+    float ConstWidth;
+    float ConstHeight;
 };
 
 class UMaterialExpressionDeltaTime : public UMaterialExpression
 {
 public:
     UE_CLASS("/Script/Engine", "MaterialExpressionDeltaTime");
-};
-
-class IPreviewCollectionInterface
-{
-public:
-    UE_CLASS("/Script/Engine", "PreviewCollectionInterface");
-};
-
-class UMaterialExpressionDepthFade : public UMaterialExpression
-{
-public:
-    UE_CLASS("/Script/Engine", "MaterialExpressionDepthFade");
-    FExpressionInput InOpacity;
-    FExpressionInput FadeDistance;
-    float OpacityDefault;
-    float FadeDistanceDefault;
 };
 
 class UMaterialExpressionDepthOfFieldFunction : public UMaterialExpression
@@ -23573,6 +23691,14 @@ public:
     FLinearColor LuminanceFactors;
 };
 
+class USoundNodeDelay : public USoundNode
+{
+public:
+    UE_CLASS("/Script/Engine", "SoundNodeDelay");
+    float DelayMin;
+    float DelayMax;
+};
+
 class UMaterialExpressionDistanceCullFade : public UMaterialExpression
 {
 public:
@@ -23586,13 +23712,6 @@ public:
     FExpressionInput Position;
 };
 
-class USoundNodeDistanceCrossFade : public USoundNode
-{
-public:
-    UE_CLASS("/Script/Engine", "SoundNodeDistanceCrossFade");
-    TArray<FDistanceDatum> CrossFadeInput;
-};
-
 class UMaterialExpressionDistanceFieldsRenderingSwitch : public UMaterialExpression
 {
 public:
@@ -23601,11 +23720,37 @@ public:
     FExpressionInput Yes;
 };
 
+class UParticleModuleSpawnPerUnit : public UParticleModuleSpawnBase
+{
+public:
+    UE_CLASS("/Script/Engine", "ParticleModuleSpawnPerUnit");
+    float UnitScalar;
+    float MovementTolerance;
+    FRawDistributionFloat SpawnPerUnit;
+    float MaxFrameDistance;
+    bool bIgnoreSpawnRateWhenMoving;
+    bool bIgnoreMovementAlongX;
+    bool bIgnoreMovementAlongY;
+    bool bIgnoreMovementAlongZ;
+};
+
 class UMaterialExpressionDistanceToNearestSurface : public UMaterialExpression
 {
 public:
     UE_CLASS("/Script/Engine", "MaterialExpressionDistanceToNearestSurface");
     FExpressionInput Position;
+};
+
+class UPrimaryAssetLabel : public UPrimaryDataAsset
+{
+public:
+    UE_CLASS("/Script/Engine", "PrimaryAssetLabel");
+    FPrimaryAssetRules Rules;
+    bool bLabelAssetsInMyDirectory;
+    bool bIsRuntimeLabel;
+    TArray<TSoftObjectPtr<class UObject>> ExplicitAssets;
+    TArray<TSoftClassPtr<class UClass>> ExplicitBlueprints;
+    FCollectionReference AssetCollection;
 };
 
 class UMaterialExpressionDivide : public UMaterialExpression
@@ -23626,23 +23771,6 @@ public:
     FExpressionInput B;
 };
 
-class ARadialForceActor : public ARigidBodyBase
-{
-public:
-    UE_CLASS("/Script/Engine", "RadialForceActor");
-    UE_READONLY class URadialForceComponent* ForceComponent;
-    void DisableForce();
-    void EnableForce();
-    void FireImpulse();
-    void ToggleForce();
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* ForceComponent__UeSubobject = "ForceComponent0 /Script/Engine.RadialForceComponent";
-        static constexpr const char* RootComponent__UeSubobject = "ForceComponent0 /Script/Engine.RadialForceComponent";
-    };
-};
-
 class UMaterialExpressionDynamicParameter : public UMaterialExpression
 {
 public:
@@ -23652,10 +23780,23 @@ public:
     uint32 ParameterIndex;
 };
 
+class UParticleModuleParameterBase : public UParticleModule
+{
+public:
+    UE_CLASS("/Script/Engine", "ParticleModuleParameterBase");
+};
+
 class UMaterialExpressionEyeAdaptation : public UMaterialExpression
 {
 public:
     UE_CLASS("/Script/Engine", "MaterialExpressionEyeAdaptation");
+};
+
+class UPhysicsThrusterComponent : public USceneComponent
+{
+public:
+    UE_CLASS("/Script/Engine", "PhysicsThrusterComponent");
+    float ThrustStrength;
 };
 
 class UMaterialExpressionFeatureLevelSwitch : public UMaterialExpression
@@ -23665,38 +23806,11 @@ public:
     FExpressionInput Default;
 };
 
-class UParticleModuleParameterDynamic_Seeded : public UParticleModuleParameterDynamic
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleModuleParameterDynamic_Seeded");
-    FParticleRandomSeedInfo RandomSeedInfo;
-};
-
 class UMaterialExpressionFloor : public UMaterialExpression
 {
 public:
     UE_CLASS("/Script/Engine", "MaterialExpressionFloor");
     FExpressionInput Input;
-};
-
-class UPlanarReflectionComponent : public USceneCaptureComponent
-{
-public:
-    UE_CLASS("/Script/Engine", "PlanarReflectionComponent");
-    class UBoxComponent* PreviewBox;
-    float NormalDistortionStrength;
-    float PrefilterRoughness;
-    float PrefilterRoughnessDistance;
-    int ScreenPercentage;
-    float ExtraFOV;
-    float DistanceFromPlaneFadeStart;
-    float DistanceFromPlaneFadeEnd;
-    float DistanceFromPlaneFadeoutStart;
-    float DistanceFromPlaneFadeoutEnd;
-    float AngleFromPlaneFadeStart;
-    float AngleFromPlaneFadeEnd;
-    bool bShowPreviewPlane;
-    bool bRenderSceneTwoSided;
 };
 
 class UMaterialExpressionFmod : public UMaterialExpression
@@ -23777,27 +23891,43 @@ public:
     TArray<FGuid> AttributeGetTypes;
 };
 
-class UParticleModuleMeshRotationRate_Seeded : public UParticleModuleMeshRotationRate
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleModuleMeshRotationRate_Seeded");
-    FParticleRandomSeedInfo RandomSeedInfo;
-};
-
-class UMaterialExpressionGIReplace : public UMaterialExpression
-{
-public:
-    UE_CLASS("/Script/Engine", "MaterialExpressionGIReplace");
-    FExpressionInput Default;
-    FExpressionInput StaticIndirect;
-    FExpressionInput DynamicIndirect;
-};
-
 class UMaterialExpressionHairAttributes : public UMaterialExpression
 {
 public:
     UE_CLASS("/Script/Engine", "MaterialExpressionHairAttributes");
     bool bUseTangentSpace;
+};
+
+class UTimelineTemplate : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "TimelineTemplate");
+    float TimelineLength;
+    TEnum<ETimelineLengthMode> LengthMode;
+    bool bAutoPlay;
+    bool bLoop;
+    bool bReplicated;
+    bool bIgnoreTimeDilation;
+    TArray<FTTEventTrack> EventTracks;
+    TArray<FTTFloatTrack> FloatTracks;
+    TArray<FTTVectorTrack> VectorTracks;
+    TArray<FTTLinearColorTrack> LinearColorTracks;
+    TArray<FBPVariableMetaDataEntry> MetaDataArray;
+    FGuid TimelineGuid;
+    TEnum<ETickingGroup> TimelineTickGroup;
+    FName VariableName;
+    FName DirectionPropertyName;
+    FName UpdateFunctionName;
+    FName FinishedFunctionName;
+};
+
+class UMaterialExpressionHairColor : public UMaterialExpression
+{
+public:
+    UE_CLASS("/Script/Engine", "MaterialExpressionHairColor");
+    FExpressionInput Melanin;
+    FExpressionInput Redness;
+    FExpressionInput DyeColor;
 };
 
 class UMaterialExpressionIf : public UMaterialExpression
@@ -23812,20 +23942,6 @@ public:
     float EqualsThreshold;
     float ConstB;
     float ConstAEqualsB;
-};
-
-class UTouchInterface : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "TouchInterface");
-    TArray<FTouchInputControl> Controls;
-    float ActiveOpacity;
-    float InactiveOpacity;
-    float TimeUntilDeactive;
-    float TimeUntilReset;
-    float ActivationDelay;
-    bool bPreventRecenter;
-    float StartupDelay;
 };
 
 class UMaterialExpressionInverseLinearInterpolate : public UMaterialExpression
@@ -23880,6 +23996,12 @@ public:
     FExpressionInput X;
 };
 
+class USmokeTestCommandlet : public UCommandlet
+{
+public:
+    UE_CLASS("/Script/Engine", "SmokeTestCommandlet");
+};
+
 class UMaterialExpressionLogarithm2 : public UMaterialExpression
 {
 public:
@@ -23914,16 +24036,6 @@ public:
     FExpressionInput ShadingModel;
 };
 
-class USoundClass : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "SoundClass");
-    UE_READONLY FSoundClassProperties Properties;
-    UE_READONLY TArray<class USoundClass*> ChildClasses;
-    UE_READONLY TArray<FPassiveSoundMixModifier> PassiveSoundMixModifiers;
-    UE_READONLY class USoundClass* ParentClass;
-};
-
 class UMaterialExpressionMapARPassthroughCameraUV : public UMaterialExpression
 {
 public:
@@ -23946,6 +24058,19 @@ public:
     bool bIsLayerGraphBuilt;
 };
 
+class ASplineMeshActor : public AActor
+{
+public:
+    UE_CLASS("/Script/Engine", "SplineMeshActor");
+    UE_READONLY class USplineMeshComponent* SplineMeshComponent;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* RootComponent__UeSubobject = "SplineMeshComponent0 /Script/Engine.SplineMeshComponent";
+        static constexpr const char* SplineMeshComponent__UeSubobject = "SplineMeshComponent0 /Script/Engine.SplineMeshComponent";
+    };
+};
+
 class UMaterialExpressionMaterialFunctionCall : public UMaterialExpression
 {
 public:
@@ -23958,33 +24083,6 @@ class UMaterialExpressionMaterialLayerOutput : public UMaterialExpressionFunctio
 {
 public:
     UE_CLASS("/Script/Engine", "MaterialExpressionMaterialLayerOutput");
-};
-
-class USpringArmComponent : public USceneComponent
-{
-public:
-    UE_CLASS("/Script/Engine", "SpringArmComponent");
-    float TargetArmLength;
-    FVector SocketOffset;
-    FVector TargetOffset;
-    float ProbeSize;
-    TEnum<ECollisionChannel> ProbeChannel;
-    bool bDoCollisionTest;
-    bool bUsePawnControlRotation;
-    bool bInheritPitch;
-    bool bInheritYaw;
-    bool bInheritRoll;
-    bool bEnableCameraLag;
-    bool bEnableCameraRotationLag;
-    bool bUseCameraLagSubstepping;
-    bool bDrawDebugLagMarkers;
-    float CameraLagSpeed;
-    float CameraRotationLagSpeed;
-    float CameraLagMaxTimeStep;
-    float CameraLagMaxDistance;
-    UE_PURE FRotator GetTargetRotation() const;
-    UE_PURE FVector GetUnfixedCameraPosition() const;
-    UE_PURE bool IsCollisionFixApplied() const;
 };
 
 class UMaterialExpressionMaterialProxyReplace : public UMaterialExpression
@@ -24003,6 +24101,13 @@ public:
     FExpressionInput B;
     float ConstA;
     float ConstB;
+};
+
+class UParticleModuleMeshMaterial : public UParticleModuleMaterialBase
+{
+public:
+    UE_CLASS("/Script/Engine", "ParticleModuleMeshMaterial");
+    TArray<class UMaterialInterface*> MeshMaterials;
 };
 
 class UMaterialExpressionMin : public UMaterialExpression
@@ -24025,14 +24130,6 @@ public:
     float ConstB;
 };
 
-class UParticleModuleMeshRotation : public UParticleModuleRotationBase
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleModuleMeshRotation");
-    FRawDistributionVector StartRotation;
-    bool bInheritParent;
-};
-
 class UMaterialExpressionRerouteBase : public UMaterialExpression
 {
 public:
@@ -24043,6 +24140,12 @@ class UMaterialExpressionNamedRerouteBase : public UMaterialExpressionRerouteBas
 {
 public:
     UE_CLASS("/Script/Engine", "MaterialExpressionNamedRerouteBase");
+};
+
+class UReporterBase : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "ReporterBase");
 };
 
 class UMaterialExpressionNamedRerouteDeclaration : public UMaterialExpressionNamedRerouteBase
@@ -24059,49 +24162,12 @@ private:
     };
 };
 
-class UParticleModuleVectorFieldLocal : public UParticleModuleVectorFieldBase
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleModuleVectorFieldLocal");
-    class UVectorField* VectorField;
-    FVector RelativeTranslation;
-    FRotator RelativeRotation;
-    FVector RelativeScale3D;
-    float Intensity;
-    float Tightness;
-    bool bIgnoreComponentTransform;
-    bool bTileX;
-    bool bTileY;
-    bool bTileZ;
-    bool bUseFixDT;
-};
-
 class UMaterialExpressionNamedRerouteUsage : public UMaterialExpressionNamedRerouteBase
 {
 public:
     UE_CLASS("/Script/Engine", "MaterialExpressionNamedRerouteUsage");
     class UMaterialExpressionNamedRerouteDeclaration* Declaration;
     FGuid DeclarationGuid;
-};
-
-class UReverbEffect : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "ReverbEffect");
-    bool bBypassEarlyReflections;
-    float ReflectionsDelay;
-    float GainHF;
-    float ReflectionsGain;
-    bool bBypassLateReflections;
-    float LateDelay;
-    float DecayTime;
-    float Density;
-    float Diffusion;
-    float AirAbsorptionGainHF;
-    float DecayHFRatio;
-    float LateGain;
-    float Gain;
-    float RoomRolloffFactor;
 };
 
 class UMaterialExpressionNoise : public UMaterialExpression
@@ -24153,6 +24219,15 @@ public:
     UE_CLASS("/Script/Engine", "MaterialExpressionObjectRadius");
 };
 
+class UParticleModuleSubUVMovie : public UParticleModuleSubUV
+{
+public:
+    UE_CLASS("/Script/Engine", "ParticleModuleSubUVMovie");
+    bool bUseEmitterTime;
+    FRawDistributionFloat FrameRate;
+    int StartingFrame;
+};
+
 class UMaterialExpressionOneMinus : public UMaterialExpression
 {
 public:
@@ -24173,20 +24248,6 @@ public:
     bool bFractionalPart;
 };
 
-class UParticleModuleTrailSource : public UParticleModuleTrailBase
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleModuleTrailSource");
-    TEnum<ETrail2SourceMethod> SourceMethod;
-    FName SourceName;
-    FRawDistributionFloat SourceStrength;
-    bool bLockSourceStength;
-    int SourceOffsetCount;
-    TArray<FVector> SourceOffsetDefaults;
-    TEnum<EParticleSourceSelectionMethod> SelectionMethod;
-    bool bInheritRotation;
-};
-
 class UMaterialExpressionParticleColor : public UMaterialExpression
 {
 public:
@@ -24199,6 +24260,19 @@ public:
     UE_CLASS("/Script/Engine", "MaterialExpressionParticleDirection");
 };
 
+class AVolumetricCloud : public AInfo
+{
+public:
+    UE_CLASS("/Script/Engine", "VolumetricCloud");
+    UE_READONLY class UVolumetricCloudComponent* VolumetricCloudComponent;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* RootComponent__UeSubobject = "VolumetricCloudComponent /Script/Engine.VolumetricCloudComponent";
+        static constexpr const char* VolumetricCloudComponent__UeSubobject = "VolumetricCloudComponent /Script/Engine.VolumetricCloudComponent";
+    };
+};
+
 class UMaterialExpressionParticleMacroUV : public UMaterialExpression
 {
 public:
@@ -24209,19 +24283,6 @@ class UMaterialExpressionParticleMotionBlurFade : public UMaterialExpression
 {
 public:
     UE_CLASS("/Script/Engine", "MaterialExpressionParticleMotionBlurFade");
-};
-
-class AWindDirectionalSource : public AInfo
-{
-public:
-    UE_CLASS("/Script/Engine", "WindDirectionalSource");
-    UE_READONLY class UWindDirectionalSourceComponent* Component;
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* Component__UeSubobject = "WindDirectionalSourceComponent0 /Script/Engine.WindDirectionalSourceComponent";
-        static constexpr const char* RootComponent__UeSubobject = "WindDirectionalSourceComponent0 /Script/Engine.WindDirectionalSourceComponent";
-    };
 };
 
 class UMaterialExpressionParticlePositionWS : public UMaterialExpression
@@ -24273,50 +24334,6 @@ public:
     UE_CLASS("/Script/Engine", "MaterialExpressionParticleSubUVProperties");
 };
 
-class USoundSubmix : public USoundSubmixWithParentBase
-{
-public:
-    UE_CLASS("/Script/Engine", "SoundSubmix");
-    UE_READONLY bool bMuteWhenBackgrounded;
-    UE_READONLY TArray<class USoundEffectSubmixPreset*> SubmixEffectChain;
-    class USoundfieldEncodingSettingsBase* AmbisonicsPluginSettings;
-    int EnvelopeFollowerAttackTime;
-    int EnvelopeFollowerReleaseTime;
-    TEnum<EGainParamMode> GainMode;
-    float OutputVolume;
-    float WetLevel;
-    float DryLevel;
-    FSoundModulationDestinationSettings OutputVolumeModulation;
-    FSoundModulationDestinationSettings WetLevelModulation;
-    FSoundModulationDestinationSettings DryLevelModulation;
-    TMulticastInlineDelegate<void(class USoundWave* ResultingSoundWave)> OnSubmixRecordedFileDone;
-    void AddEnvelopeFollowerDelegate(class UObject* WorldContextObject, TDelegate<void(TArray<float> Envelope)> OnSubmixEnvelopeBP);
-    void AddEnvelopeFollowerDelegate(TDelegate<void(TArray<float> Envelope)> OnSubmixEnvelopeBP);
-    void AddSpectralAnalysisDelegate(class UObject* WorldContextObject, const TArray<FSoundSubmixSpectralAnalysisBandSettings>& InBandSettings, TDelegate<void(TArray<float> Magnitude)> OnSubmixSpectralAnalysisBP, float UpdateRate, float DecibelNoiseFloor, bool bDoNormalize, bool bDoAutoRange, float AutoRangeAttackTime, float AutoRangeReleaseTime);
-    void AddSpectralAnalysisDelegate(const TArray<FSoundSubmixSpectralAnalysisBandSettings>& InBandSettings, TDelegate<void(TArray<float> Magnitude)> OnSubmixSpectralAnalysisBP, float UpdateRate, float DecibelNoiseFloor, bool bDoNormalize, bool bDoAutoRange, float AutoRangeAttackTime, float AutoRangeReleaseTime);
-    void RemoveSpectralAnalysisDelegate(class UObject* WorldContextObject, TDelegate<void(TArray<float> Magnitude)> OnSubmixSpectralAnalysisBP);
-    void RemoveSpectralAnalysisDelegate(TDelegate<void(TArray<float> Magnitude)> OnSubmixSpectralAnalysisBP);
-    void SetSubmixOutputVolume(class UObject* WorldContextObject, float InOutputVolume);
-    void SetSubmixOutputVolume(float InOutputVolume);
-    void StartEnvelopeFollowing(class UObject* WorldContextObject);
-    void StartEnvelopeFollowing();
-    void StartRecordingOutput(class UObject* WorldContextObject, float ExpectedDuration);
-    void StartRecordingOutput(float ExpectedDuration);
-    void StartSpectralAnalysis(class UObject* WorldContextObject, TEnum<EFFTSize> FFTSize, TEnum<EFFTPeakInterpolationMethod> InterpolationMethod, TEnum<EFFTWindowType> WindowType, float HopSize, TEnum<EAudioSpectrumType> SpectrumType);
-    void StartSpectralAnalysis(TEnum<EFFTSize> FFTSize, TEnum<EFFTPeakInterpolationMethod> InterpolationMethod, TEnum<EFFTWindowType> WindowType, float HopSize, TEnum<EAudioSpectrumType> SpectrumType);
-    void StopEnvelopeFollowing(class UObject* WorldContextObject);
-    void StopEnvelopeFollowing();
-    void StopRecordingOutput(class UObject* WorldContextObject, TEnum<EAudioRecordingExportType> ExportType, FString Name_0, FString Path, class USoundWave* ExistingSoundWaveToOverwrite);
-    void StopRecordingOutput(TEnum<EAudioRecordingExportType> ExportType, FString Name_0, FString Path, class USoundWave* ExistingSoundWaveToOverwrite);
-    void StopSpectralAnalysis(class UObject* WorldContextObject);
-    void StopSpectralAnalysis();
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* OnSubmixRecordedFileDone__UeDispatcher = "Assignable";
-    };
-};
-
 class UMaterialExpressionPerInstanceCustomData : public UMaterialExpression
 {
 public:
@@ -24332,6 +24349,18 @@ public:
     UE_CLASS("/Script/Engine", "MaterialExpressionPerInstanceFadeAmount");
 };
 
+class ATriggerBox : public ATriggerBase
+{
+public:
+    UE_CLASS("/Script/Engine", "TriggerBox");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* CollisionComponent__UeSubobject = "CollisionComp /Script/Engine.BoxComponent";
+        static constexpr const char* RootComponent__UeSubobject = "CollisionComp /Script/Engine.BoxComponent";
+    };
+};
+
 class UMaterialExpressionPerInstanceRandom : public UMaterialExpression
 {
 public:
@@ -24344,22 +24373,17 @@ public:
     UE_CLASS("/Script/Engine", "MaterialExpressionPixelDepth");
 };
 
-class ATriggerSphere : public ATriggerBase
-{
-public:
-    UE_CLASS("/Script/Engine", "TriggerSphere");
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* CollisionComponent__UeSubobject = "CollisionComp /Script/Engine.SphereComponent";
-        static constexpr const char* RootComponent__UeSubobject = "CollisionComp /Script/Engine.SphereComponent";
-    };
-};
-
 class UMaterialExpressionPixelNormalWS : public UMaterialExpression
 {
 public:
     UE_CLASS("/Script/Engine", "MaterialExpressionPixelNormalWS");
+};
+
+class UProxyLODMeshSimplificationSettings : public UDeveloperSettings
+{
+public:
+    UE_CLASS("/Script/Engine", "ProxyLODMeshSimplificationSettings");
+    FName ProxyLODMeshReductionModuleName;
 };
 
 class UMaterialExpressionPower : public UMaterialExpression
@@ -24371,21 +24395,17 @@ public:
     float ConstExponent;
 };
 
-class URadialForceComponent : public USceneComponent
+class USoundNodeParamCrossFade : public USoundNodeDistanceCrossFade
 {
 public:
-    UE_CLASS("/Script/Engine", "RadialForceComponent");
-    float Radius;
-    TEnum<ERadialImpulseFalloff> Falloff;
-    float ImpulseStrength;
-    bool bImpulseVelChange;
-    bool bIgnoreOwningActor;
-    float ForceStrength;
-    float DestructibleDamage;
-    TArray<EObjectTypeQuery> ObjectTypesToAffect;
-    void AddObjectTypeToAffect(TEnum<EObjectTypeQuery> ObjectType);
-    void FireImpulse();
-    void RemoveObjectTypeToAffect(TEnum<EObjectTypeQuery> ObjectType);
+    UE_CLASS("/Script/Engine", "SoundNodeParamCrossFade");
+    FName ParamName;
+};
+
+class UMaterialExpressionPrecomputedAOMask : public UMaterialExpression
+{
+public:
+    UE_CLASS("/Script/Engine", "MaterialExpressionPrecomputedAOMask");
 };
 
 class UMaterialExpressionPreSkinnedLocalBounds : public UMaterialExpression
@@ -24394,29 +24414,26 @@ public:
     UE_CLASS("/Script/Engine", "MaterialExpressionPreSkinnedLocalBounds");
 };
 
-class USoundNodeRandom : public USoundNode
-{
-public:
-    UE_CLASS("/Script/Engine", "SoundNodeRandom");
-    TArray<float> Weights;
-    TArray<bool> HasBeenUsed;
-    int NumRandomUsed;
-    int PreselectAtLevelLoad;
-    bool bShouldExcludeFromBranchCulling;
-    bool bSoundCueExcludedFromBranchCulling;
-    bool bRandomizeWithoutReplacement;
-};
-
 class UMaterialExpressionPreSkinnedNormal : public UMaterialExpression
 {
 public:
     UE_CLASS("/Script/Engine", "MaterialExpressionPreSkinnedNormal");
 };
 
-class UMaterialExpressionPreSkinnedPosition : public UMaterialExpression
+class USoundCue : public USoundBase
 {
 public:
-    UE_CLASS("/Script/Engine", "MaterialExpressionPreSkinnedPosition");
+    UE_CLASS("/Script/Engine", "SoundCue");
+    bool bPrimeOnLoad;
+    class USoundNode* FirstNode;
+    UE_READONLY float VolumeMultiplier;
+    UE_READONLY float PitchMultiplier;
+    FSoundAttenuationSettings AttenuationOverrides;
+    float SubtitlePriority;
+    bool bOverrideAttenuation;
+    bool bExcludeFromRandomNodeBranchCulling;
+    int CookedQualityIndex;
+    bool bHasPlayWhenSilent;
 };
 
 class UMaterialExpressionPreviousFrameSwitch : public UMaterialExpression
@@ -24427,11 +24444,12 @@ public:
     FExpressionInput PreviousFrame;
 };
 
-class USoundGroups : public UObject
+class UMaterialExpressionQualitySwitch : public UMaterialExpression
 {
 public:
-    UE_CLASS("/Script/Engine", "SoundGroups");
-    TArray<FSoundGroup> SoundGroupProfiles;
+    UE_CLASS("/Script/Engine", "MaterialExpressionQualitySwitch");
+    FExpressionInput Default;
+    FExpressionInput Inputs[4];
 };
 
 class UMaterialExpressionRayTracingQualitySwitch : public UMaterialExpression
@@ -24476,6 +24494,13 @@ public:
     float Period;
 };
 
+class UParticleModuleMeshRotationRate : public UParticleModuleRotationRateBase
+{
+public:
+    UE_CLASS("/Script/Engine", "ParticleModuleMeshRotationRate");
+    FRawDistributionVector StartRotationRate;
+};
+
 class UMaterialExpressionRotator : public UMaterialExpression
 {
 public:
@@ -24488,18 +24513,27 @@ public:
     uint32 ConstCoordinate;
 };
 
+class APhysicsConstraintActor : public ARigidBodyBase
+{
+public:
+    UE_CLASS("/Script/Engine", "PhysicsConstraintActor");
+    UE_READONLY class UPhysicsConstraintComponent* ConstraintComp;
+    class AActor* ConstraintActor1;
+    class AActor* ConstraintActor2;
+    bool bDisableCollision;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* ConstraintComp__UeSubobject = "MyConstraintComp /Script/Engine.PhysicsConstraintComponent";
+        static constexpr const char* RootComponent__UeSubobject = "MyConstraintComp /Script/Engine.PhysicsConstraintComponent";
+    };
+};
+
 class UMaterialExpressionRound : public UMaterialExpression
 {
 public:
     UE_CLASS("/Script/Engine", "MaterialExpressionRound");
     FExpressionInput Input;
-};
-
-class UParticleModuleMeshRotationRateMultiplyLife : public UParticleModuleRotationRateBase
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleModuleMeshRotationRateMultiplyLife");
-    FRawDistributionVector LifeMultiplier;
 };
 
 class UMaterialExpressionRuntimeVirtualTextureOutput : public UMaterialExpressionCustomOutput
@@ -24513,15 +24547,6 @@ public:
     FExpressionInput WorldHeight;
     FExpressionInput Opacity;
     FExpressionInput Mask;
-};
-
-class UPhysicsConstraintTemplate : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "PhysicsConstraintTemplate");
-    FConstraintInstance DefaultInstance;
-    TArray<FPhysicsConstraintProfileHandle> ProfileHandles;
-    FConstraintProfileProperties DefaultProfile;
 };
 
 class UMaterialExpressionRuntimeVirtualTextureReplace : public UMaterialExpression
@@ -24617,6 +24642,13 @@ public:
     float FallbackDepth;
 };
 
+class UTexture2DDynamic : public UTexture
+{
+public:
+    UE_CLASS("/Script/Engine", "Texture2DDynamic");
+    TEnum<EPixelFormat> Format;
+};
+
 class UMaterialExpressionSceneTexelSize : public UMaterialExpression
 {
 public:
@@ -24632,12 +24664,6 @@ public:
     bool bFiltered;
 };
 
-class UTextureMipDataProviderFactory : public UAssetUserData
-{
-public:
-    UE_CLASS("/Script/Engine", "TextureMipDataProviderFactory");
-};
-
 class UMaterialExpressionScreenPosition : public UMaterialExpression
 {
 public:
@@ -24650,6 +24676,17 @@ public:
     UE_CLASS("/Script/Engine", "MaterialExpressionSetMaterialAttributes");
     TArray<FExpressionInput> Inputs;
     TArray<FGuid> AttributeSetTypes;
+};
+
+class UWorldComposition : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "WorldComposition");
+    TArray<class ULevelStreaming*> TilesStreaming;
+    double TilesStreamingTimeThreshold;
+    bool bLoadAllTilesDuringCinematic;
+    bool bRebaseOriginIn3DSpace;
+    float RebaseOriginDistance;
 };
 
 class UMaterialExpressionShaderStageSwitch : public UMaterialExpression
@@ -24683,36 +24720,25 @@ public:
     FExpressionInput Shadow;
 };
 
+class UPhysicsAsset : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "PhysicsAsset");
+    TArray<int> BoundsBodies;
+    TArray<class USkeletalBodySetup*> SkeletalBodySetups;
+    TArray<class UPhysicsConstraintTemplate*> ConstraintSetup;
+    FSolverIterations SolverIterations;
+    TEnum<EPhysicsAssetSolverType> SolverType;
+    bool bNotForDedicatedServer;
+    class UThumbnailInfo* ThumbnailInfo;
+    TArray<class UBodySetup*> BodySetup;
+};
+
 class UMaterialExpressionSign : public UMaterialExpression
 {
 public:
     UE_CLASS("/Script/Engine", "MaterialExpressionSign");
     FExpressionInput Input;
-};
-
-class UParticleModuleMeshRotation_Seeded : public UParticleModuleMeshRotation
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleModuleMeshRotation_Seeded");
-    FParticleRandomSeedInfo RandomSeedInfo;
-};
-
-class UMaterialExpressionSine : public UMaterialExpression
-{
-public:
-    UE_CLASS("/Script/Engine", "MaterialExpressionSine");
-    FExpressionInput Input;
-    float Period;
-};
-
-class UPhysicsCollisionHandler : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "PhysicsCollisionHandler");
-    float ImpactThreshold;
-    float ImpactReFireDelay;
-    class USoundBase* DefaultImpactSound;
-    float LastImpactSoundTime;
 };
 
 class UMaterialExpressionSingleLayerWaterMaterialOutput : public UMaterialExpressionCustomOutput
@@ -24725,19 +24751,32 @@ public:
     FExpressionInput ColorScaleBehindWater;
 };
 
+class UReporterGraph : public UReporterBase
+{
+public:
+    UE_CLASS("/Script/Engine", "ReporterGraph");
+};
+
+class UMaterialExpressionSkinningVertexOffsets : public UMaterialExpression
+{
+public:
+    UE_CLASS("/Script/Engine", "MaterialExpressionSkinningVertexOffsets");
+};
+
+class UEndpointSubmix : public USoundSubmixBase
+{
+public:
+    UE_CLASS("/Script/Engine", "EndpointSubmix");
+    FName EndpointType;
+    TSubclassOf<class UAudioEndpointSettingsBase> EndpointSettingsClass;
+    class UAudioEndpointSettingsBase* EndpointSettings;
+};
+
 class UMaterialExpressionSkyAtmosphereLightDirection : public UMaterialExpression
 {
 public:
     UE_CLASS("/Script/Engine", "MaterialExpressionSkyAtmosphereLightDirection");
     int LightIndex;
-};
-
-class URig : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "Rig");
-    TArray<FTransformBase> TransformBases;
-    TArray<FNode> Nodes;
 };
 
 class UMaterialExpressionSkyAtmosphereLightIlluminance : public UMaterialExpression
@@ -24802,6 +24841,20 @@ private:
     };
 };
 
+class ARectLight : public ALight
+{
+public:
+    UE_CLASS("/Script/Engine", "RectLight");
+    UE_READONLY class URectLightComponent* RectLightComponent;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* LightComponent__UeSubobject = "LightComponent0 /Script/Engine.RectLightComponent";
+        static constexpr const char* RectLightComponent__UeSubobject = "LightComponent0 /Script/Engine.RectLightComponent";
+        static constexpr const char* RootComponent__UeSubobject = "LightComponent0 /Script/Engine.RectLightComponent";
+    };
+};
+
 class UMaterialExpressionSpeedTree : public UMaterialExpression
 {
 public:
@@ -24827,129 +24880,6 @@ public:
     FExpressionInput Hardness;
     float AttenuationRadius;
     float HardnessPercent;
-};
-
-class URendererSettings : public UDeveloperSettings
-{
-public:
-    UE_CLASS("/Script/Engine", "RendererSettings");
-    bool bMobileDisableVertexFog;
-    int MaxMobileCascades;
-    TEnum<EMobileMSAASampleCount> MobileMSAASampleCount;
-    bool bMobileAllowDitheredLODTransition;
-    bool bMobileAllowSoftwareOcclusionCulling;
-    bool bMobileVirtualTextures;
-    bool bDiscardUnusedQualityLevels;
-    bool bOcclusionCulling;
-    float MinScreenRadiusForLights;
-    float MinScreenRadiusForEarlyZPass;
-    float MinScreenRadiusForCSMdepth;
-    bool bPrecomputedVisibilityWarning;
-    bool bTextureStreaming;
-    bool bUseDXT5NormalMaps;
-    bool bVirtualTextures;
-    bool bVirtualTextureEnableAutoImport;
-    bool bVirtualTexturedLightmaps;
-    uint32 VirtualTextureTileSize;
-    uint32 VirtualTextureTileBorderSize;
-    uint32 VirtualTextureFeedbackFactor;
-    bool bVirtualTextureEnableCompressZlib;
-    bool bVirtualTextureEnableCompressCrunch;
-    bool bClearCoatEnableSecondNormal;
-    int ReflectionCaptureResolution;
-    bool bReflectionCaptureCompression;
-    bool ReflectionEnvironmentLightmapMixBasedOnRoughness;
-    bool bForwardShading;
-    bool bVertexFoggingForOpaque;
-    bool bAllowStaticLighting;
-    bool bUseNormalMapsForStaticLighting;
-    bool bGenerateMeshDistanceFields;
-    bool bEightBitMeshDistanceFields;
-    bool bGenerateLandscapeGIData;
-    bool bCompressMeshDistanceFields;
-    float TessellationAdaptivePixelsPerTriangle;
-    bool bSeparateTranslucency;
-    TEnum<ETranslucentSortPolicy> TranslucentSortPolicy;
-    FVector TranslucentSortAxis;
-    TEnum<EFixedFoveationLevels> HMDFixedFoveationLevel;
-    TEnum<ECustomDepthStencil> CustomDepthStencil;
-    bool bCustomDepthTaaJitter;
-    TEnum<EAlphaChannelMode> bEnableAlphaChannelInPostProcessing;
-    bool bDefaultFeatureBloom;
-    bool bDefaultFeatureAmbientOcclusion;
-    bool bDefaultFeatureAmbientOcclusionStaticFraction;
-    bool bDefaultFeatureAutoExposure;
-    TEnum<EAutoExposureMethodUI> DefaultFeatureAutoExposure;
-    float DefaultFeatureAutoExposureBias;
-    bool bExtendDefaultLuminanceRangeInAutoExposureSettings;
-    bool bUsePreExposure;
-    bool bEnablePreExposureOnlyInTheEditor;
-    bool bDefaultFeatureMotionBlur;
-    bool bDefaultFeatureLensFlare;
-    bool bTemporalUpsampling;
-    bool bSSGI;
-    TEnum<EAntiAliasingMethod> DefaultFeatureAntiAliasing;
-    TEnum<ELightUnits> DefaultLightUnits;
-    TEnum<EDefaultBackBufferPixelFormat> DefaultBackBufferPixelFormat;
-    bool bRenderUnbuiltPreviewShadowsInGame;
-    bool bStencilForLODDither;
-    TEnum<EEarlyZPass> EarlyZPass;
-    bool bEarlyZPassOnlyMaterialMasking;
-    bool bDBuffer;
-    TEnum<EClearSceneOptions> ClearSceneMethod;
-    bool bBasePassOutputsVelocity;
-    bool bVertexDeformationOutputsVelocity;
-    bool bSelectiveBasePassOutputs;
-    bool bDefaultParticleCutouts;
-    int GPUSimulationTextureSizeX;
-    int GPUSimulationTextureSizeY;
-    bool bGlobalClipPlane;
-    TEnum<EGBufferFormat> GBufferFormat;
-    bool bUseGPUMorphTargets;
-    bool bNvidiaAftermathEnabled;
-    bool bMultiView;
-    bool bMobilePostProcessing;
-    bool bMobileMultiView;
-    bool bMobileUseHWsRGBEncoding;
-    bool bRoundRobinOcclusion;
-    bool bODSCapture;
-    bool bMeshStreaming;
-    float WireframeCullThreshold;
-    bool bEnableRayTracing;
-    bool bEnableRayTracingTextureLOD;
-    bool bSupportStationarySkylight;
-    bool bSupportLowQualityLightmaps;
-    bool bSupportPointLightWholeSceneShadows;
-    bool bSupportAtmosphericFog;
-    bool bSupportSkyAtmosphere;
-    bool bSupportSkyAtmosphereAffectsHeightFog;
-    bool bSupportSkinCacheShaders;
-    TEnum<ESkinCacheDefaultBehavior> DefaultSkinCacheBehavior;
-    float SkinCacheSceneMemoryLimitInMB;
-    bool bMobileEnableStaticAndCSMShadowReceivers;
-    bool bMobileEnableMovableLightCSMShaderCulling;
-    bool bMobileAllowDistanceFieldShadows;
-    bool bMobileAllowMovableDirectionalLights;
-    uint32 MobileNumDynamicPointLights;
-    bool bMobileDynamicPointLightsUseStaticBranch;
-    bool bMobileAllowMovableSpotlights;
-    bool bMobileAllowMovableSpotlightShadows;
-    bool bSupport16BitBoneIndex;
-    bool bGPUSkinLimit2BoneInfluences;
-    bool bSupportDepthOnlyIndexBuffers;
-    bool bSupportReversedIndexBuffers;
-    bool bLPV;
-    bool bMobileAmbientOcclusion;
-    bool bUseUnlimitedBoneInfluences;
-    int UnlimitedBonInfluencesThreshold;
-    FPerPlatformInt MaxSkinBones;
-    TEnum<EMobilePlanarReflectionMode> MobilePlanarReflectionMode;
-    bool bMobileSupportsGen4TAA;
-    FPerPlatformBool bStreamSkeletalMeshLODs;
-    FPerPlatformBool bDiscardSkeletalMeshOptionalLODs;
-    FSoftObjectPath VisualizeCalibrationColorMaterialPath;
-    FSoftObjectPath VisualizeCalibrationCustomMaterialPath;
-    FSoftObjectPath VisualizeCalibrationGrayscaleMaterialPath;
 };
 
 class UMaterialExpressionSphericalParticleOpacity : public UMaterialExpression
@@ -25035,6 +24965,12 @@ public:
     float Period;
 };
 
+class UVisualLoggerAutomationTests : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "VisualLoggerAutomationTests");
+};
+
 class UMaterialExpressionTangentOutput : public UMaterialExpressionCustomOutput
 {
 public:
@@ -25057,37 +24993,16 @@ private:
     };
 };
 
-class UVisualLoggerKismetLibrary : public UBlueprintFunctionLibrary
-{
-public:
-    UE_CLASS("/Script/Engine", "VisualLoggerKismetLibrary");
-    static void EnableRecording(bool bEnabled);
-    static void LogBox(class UObject* WorldContextObject, FBox BoxShape, FString Text, FLinearColor ObjectColor, FName LogCategory, bool bAddToMessageLog);
-    static void LogBox(FBox BoxShape, FString Text, FLinearColor ObjectColor, FName LogCategory, bool bAddToMessageLog);
-    static void LogLocation(class UObject* WorldContextObject, FVector Location, FString Text, FLinearColor ObjectColor, float Radius, FName LogCategory, bool bAddToMessageLog);
-    static void LogLocation(FVector Location, FString Text, FLinearColor ObjectColor, float Radius, FName LogCategory, bool bAddToMessageLog);
-    static void LogSegment(class UObject* WorldContextObject, FVector SegmentStart, FVector SegmentEnd, FString Text, FLinearColor ObjectColor, float Thickness, FName CategoryName, bool bAddToMessageLog);
-    static void LogSegment(FVector SegmentStart, FVector SegmentEnd, FString Text, FLinearColor ObjectColor, float Thickness, FName CategoryName, bool bAddToMessageLog);
-    static void LogText(class UObject* WorldContextObject, FString Text, FName LogCategory, bool bAddToMessageLog);
-    static void LogText(FString Text, FName LogCategory, bool bAddToMessageLog);
-    static void RedirectVislog(class UObject* SourceOwner, class UObject* DestinationOwner);
-};
-
-class UMaterialExpressionTextureCoordinate : public UMaterialExpression
-{
-public:
-    UE_CLASS("/Script/Engine", "MaterialExpressionTextureCoordinate");
-    int CoordinateIndex;
-    float UTiling;
-    float VTiling;
-    bool UnMirrorU;
-    bool UnMirrorV;
-};
-
 class UMaterialExpressionTextureObject : public UMaterialExpressionTextureBase
 {
 public:
     UE_CLASS("/Script/Engine", "MaterialExpressionTextureObject");
+};
+
+class UMaterialExpressionTextureObjectParameter : public UMaterialExpressionTextureSampleParameter
+{
+public:
+    UE_CLASS("/Script/Engine", "MaterialExpressionTextureObjectParameter");
 };
 
 class UMaterialExpressionTextureProperty : public UMaterialExpression
@@ -25104,17 +25019,25 @@ public:
     UE_CLASS("/Script/Engine", "MaterialExpressionTextureSampleParameter2DArray");
 };
 
-class UMaterialExpressionTextureSampleParameterCube : public UMaterialExpressionTextureSampleParameter
+class UMaterialExpressionTextureSampleParameterVolume : public UMaterialExpressionTextureSampleParameter
 {
 public:
-    UE_CLASS("/Script/Engine", "MaterialExpressionTextureSampleParameterCube");
+    UE_CLASS("/Script/Engine", "MaterialExpressionTextureSampleParameterVolume");
 };
 
-class UMaterialExpressionTextureSampleParameterSubUV : public UMaterialExpressionTextureSampleParameter2D
+class UMaterialExpressionThinTranslucentMaterialOutput : public UMaterialExpressionCustomOutput
 {
 public:
-    UE_CLASS("/Script/Engine", "MaterialExpressionTextureSampleParameterSubUV");
-    bool bBlend;
+    UE_CLASS("/Script/Engine", "MaterialExpressionThinTranslucentMaterialOutput");
+    FExpressionInput TransmittanceColor;
+};
+
+class USoundEffectSourcePresetChain : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "SoundEffectSourcePresetChain");
+    TArray<FSourceEffectChainEntry> Chain;
+    bool bPlayEffectChainTails;
 };
 
 class UMaterialExpressionTime : public UMaterialExpression
@@ -25126,6 +25049,17 @@ public:
     float Period;
 };
 
+class UTextureRenderTargetCube : public UTextureRenderTarget
+{
+public:
+    UE_CLASS("/Script/Engine", "TextureRenderTargetCube");
+    int SizeX;
+    FLinearColor ClearColor;
+    TEnum<EPixelFormat> OverrideFormat;
+    UE_READONLY bool bHDR;
+    bool bForceLinearGamma;
+};
+
 class UMaterialExpressionTransform : public UMaterialExpression
 {
 public:
@@ -25133,20 +25067,6 @@ public:
     FExpressionInput Input;
     TEnum<EMaterialVectorCoordTransformSource> TransformSourceType;
     TEnum<EMaterialVectorCoordTransform> TransformType;
-};
-
-class USoundMix : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "SoundMix");
-    bool bApplyEQ;
-    float EQPriority;
-    FAudioEQEffect EQSettings;
-    UE_READONLY TArray<FSoundClassAdjuster> SoundClassEffects;
-    float InitialDelay;
-    float FadeInTime;
-    float Duration;
-    float FadeOutTime;
 };
 
 class UMaterialExpressionTransformPosition : public UMaterialExpression
@@ -25158,17 +25078,18 @@ public:
     TEnum<EMaterialPositionTransformSource> TransformType;
 };
 
-class UThumbnailInfo : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "ThumbnailInfo");
-};
-
 class UMaterialExpressionTruncate : public UMaterialExpression
 {
 public:
     UE_CLASS("/Script/Engine", "MaterialExpressionTruncate");
     FExpressionInput Input;
+};
+
+class UParticleModuleSize : public UParticleModuleSizeBase
+{
+public:
+    UE_CLASS("/Script/Engine", "ParticleModuleSize");
+    FRawDistributionVector StartSize;
 };
 
 class UMaterialExpressionTwoSidedSign : public UMaterialExpression
@@ -25188,16 +25109,6 @@ public:
     uint32 TileSize;
 };
 
-class UParticleModuleSizeMultiplyLife : public UParticleModuleSizeBase
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleModuleSizeMultiplyLife");
-    FRawDistributionVector LifeMultiplier;
-    bool MultiplyX;
-    bool MultiplyY;
-    bool MultiplyZ;
-};
-
 class UMaterialExpressionVertexColor : public UMaterialExpression
 {
 public:
@@ -25211,10 +25122,77 @@ public:
     FExpressionInput Input;
 };
 
+class UPhysicsConstraintComponent : public USceneComponent
+{
+public:
+    UE_CLASS("/Script/Engine", "PhysicsConstraintComponent");
+    class AActor* ConstraintActor1;
+    FConstrainComponentPropName ComponentName1;
+    class AActor* ConstraintActor2;
+    FConstrainComponentPropName ComponentName2;
+    class UPhysicsConstraintTemplate* ConstraintSetup;
+    TMulticastInlineDelegate<void(int ConstraintIndex)> OnConstraintBroken;
+    FConstraintInstance ConstraintInstance;
+    void BreakConstraint();
+    void GetConstraintForce(FVector& OutLinearForce, FVector& OutAngularForce);
+    bool IsBroken();
+    void SetAngularBreakable(bool bAngularBreakable, float AngularBreakThreshold);
+    void SetAngularDriveMode(TEnum<EAngularDriveMode> DriveMode);
+    void SetAngularDriveParams(float PositionStrength, float VelocityStrength, float InForceLimit);
+    void SetAngularOrientationDrive(bool bEnableSwingDrive, bool bEnableTwistDrive);
+    void SetAngularOrientationTarget(const FRotator& InPosTarget);
+    void SetAngularPlasticity(bool bAngularPlasticity, float AngularPlasticityThreshold);
+    void SetAngularSwing1Limit(TEnum<EAngularConstraintMotion> MotionType, float Swing1LimitAngle);
+    void SetAngularSwing2Limit(TEnum<EAngularConstraintMotion> MotionType, float Swing2LimitAngle);
+    void SetAngularTwistLimit(TEnum<EAngularConstraintMotion> ConstraintType, float TwistLimitAngle);
+    void SetAngularVelocityDrive(bool bEnableSwingDrive, bool bEnableTwistDrive);
+    void SetAngularVelocityDriveSLERP(bool bEnableSLERP);
+    void SetAngularVelocityDriveTwistAndSwing(bool bEnableTwistDrive, bool bEnableSwingDrive);
+    void SetAngularVelocityTarget(const FVector& InVelTarget);
+    void SetConstrainedComponents(class UPrimitiveComponent* Component1, FName BoneName1, class UPrimitiveComponent* Component2, FName BoneName2);
+    void SetConstraintReferenceFrame(TEnum<EConstraintFrame> Frame, const FTransform& RefFrame);
+    void SetConstraintReferenceOrientation(TEnum<EConstraintFrame> Frame, const FVector& PriAxis, const FVector& SecAxis);
+    void SetConstraintReferencePosition(TEnum<EConstraintFrame> Frame, const FVector& RefPosition);
+    void SetDisableCollision(bool bDisableCollision);
+    void SetLinearBreakable(bool bLinearBreakable, float LinearBreakThreshold);
+    void SetLinearDriveParams(float PositionStrength, float VelocityStrength, float InForceLimit);
+    void SetLinearPlasticity(bool bLinearPlasticity, float LinearPlasticityThreshold);
+    void SetLinearPositionDrive(bool bEnableDriveX, bool bEnableDriveY, bool bEnableDriveZ);
+    void SetLinearPositionTarget(const FVector& InPosTarget);
+    void SetLinearVelocityDrive(bool bEnableDriveX, bool bEnableDriveY, bool bEnableDriveZ);
+    void SetLinearVelocityTarget(const FVector& InVelTarget);
+    void SetLinearXLimit(TEnum<ELinearConstraintMotion> ConstraintType, float LimitSize);
+    void SetLinearYLimit(TEnum<ELinearConstraintMotion> ConstraintType, float LimitSize);
+    void SetLinearZLimit(TEnum<ELinearConstraintMotion> ConstraintType, float LimitSize);
+    void SetOrientationDriveSLERP(bool bEnableSLERP);
+    void SetOrientationDriveTwistAndSwing(bool bEnableTwistDrive, bool bEnableSwingDrive);
+    UE_PURE float GetCurrentSwing1() const;
+    UE_PURE float GetCurrentSwing2() const;
+    UE_PURE float GetCurrentTwist() const;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnConstraintBroken__UeDispatcher = "Assignable";
+    };
+};
+
 class UMaterialExpressionVertexNormalWS : public UMaterialExpression
 {
 public:
     UE_CLASS("/Script/Engine", "MaterialExpressionVertexNormalWS");
+};
+
+class ASkyAtmosphere : public AInfo
+{
+public:
+    UE_CLASS("/Script/Engine", "SkyAtmosphere");
+    UE_READONLY class USkyAtmosphereComponent* SkyAtmosphereComponent;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* RootComponent__UeSubobject = "SkyAtmosphereComponent /Script/Engine.SkyAtmosphereComponent";
+        static constexpr const char* SkyAtmosphereComponent__UeSubobject = "SkyAtmosphereComponent /Script/Engine.SkyAtmosphereComponent";
+    };
 };
 
 class UMaterialExpressionVertexTangentWS : public UMaterialExpression
@@ -25223,24 +25201,11 @@ public:
     UE_CLASS("/Script/Engine", "MaterialExpressionVertexTangentWS");
 };
 
-class UPhysicsFieldComponent : public USceneComponent
-{
-public:
-    UE_CLASS("/Script/Engine", "PhysicsFieldComponent");
-};
-
 class UMaterialExpressionViewProperty : public UMaterialExpression
 {
 public:
     UE_CLASS("/Script/Engine", "MaterialExpressionViewProperty");
     TEnum<EMaterialExposedViewProperty> Property;
-};
-
-class USlateBrushAsset : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "SlateBrushAsset");
-    FSlateBrush Brush;
 };
 
 class UMaterialExpressionViewSize : public UMaterialExpression
@@ -25301,6 +25266,21 @@ public:
     FString Description;
     bool bExposeToLibrary;
     bool bPrefixParameterNames;
+};
+
+class UMaterialFunctionInstance : public UMaterialFunctionInterface
+{
+public:
+    UE_CLASS("/Script/Engine", "MaterialFunctionInstance");
+    UE_READONLY class UMaterialFunctionInterface* Parent;
+    class UMaterialFunctionInterface* Base;
+    TArray<FScalarParameterValue> ScalarParameterValues;
+    TArray<FVectorParameterValue> VectorParameterValues;
+    TArray<FTextureParameterValue> TextureParameterValues;
+    TArray<FFontParameterValue> FontParameterValues;
+    TArray<FStaticSwitchParameter> StaticSwitchParameterValues;
+    TArray<FStaticComponentMaskParameter> StaticComponentMaskParameterValues;
+    TArray<FRuntimeVirtualTextureParameterValue> RuntimeVirtualTextureParameterValues;
 };
 
 class UMaterialFunctionMaterialLayer : public UMaterialFunction
@@ -25377,80 +25357,17 @@ public:
     class UMaterialParameterCollection* Collection;
 };
 
-class AMatineeActor : public AActor
+class USkeletalMeshLODSettings : public UDataAsset
 {
 public:
-    UE_CLASS("/Script/Engine", "MatineeActor");
-    class UInterpData* MatineeData;
-    FName MatineeControllerName;
-    float PlayRate;
-    bool bPlayOnLevelLoad;
-    bool bForceStartPos;
-    float ForceStartPosition;
-    bool bLooping;
-    bool bRewindOnPlay;
-    bool bNoResetOnRewind;
-    bool bRewindIfAlreadyPlaying;
-    bool bDisableRadioFilter;
-    bool bClientSideOnly;
-    bool bSkipUpdateIfNotVisible;
-    bool bIsSkippable;
-    int PreferredSplitScreenNum;
-    bool bDisableMovementInput;
-    bool bDisableLookAtInput;
-    bool bHidePlayer;
-    bool bHideHud;
-    TArray<FInterpGroupActorInfo> GroupActorInfos;
-    bool bShouldShowGore;
-    TArray<class UInterpGroupInst*> GroupInst;
-    TArray<FCameraCutInfo> CameraCuts;
-    UE_READONLY bool bIsPlaying;
-    bool bReversePlayback;
-    bool bPaused;
-    bool bPendingStop;
-    UE_READONLY float InterpPosition;
-    uint8 ReplicationForceIsPlaying;
-    TMulticastInlineDelegate<void()> OnPlay;
-    TMulticastInlineDelegate<void()> OnStop;
-    TMulticastInlineDelegate<void()> OnPause;
-    void ChangePlaybackDirection();
-    void EnableGroupByName(FString GroupName, bool bEnable);
-    void Pause();
-    void Play();
-    void Reverse();
-    void SetLoopingState(bool bNewLooping);
-    void SetPosition(float NewPosition, bool bJump);
-    void Stop();
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* MatineeData__Replicated = ":";
-        static constexpr const char* PlayRate__Replicated = ":";
-        static constexpr const char* bLooping__Replicated = ":";
-        static constexpr const char* GroupActorInfos__Replicated = ":";
-        static constexpr const char* bIsPlaying__Replicated = ":";
-        static constexpr const char* bReversePlayback__Replicated = ":";
-        static constexpr const char* bPaused__Replicated = ":";
-        static constexpr const char* bPendingStop__Replicated = ":";
-        static constexpr const char* InterpPosition__Replicated = ":";
-        static constexpr const char* ReplicationForceIsPlaying__Replicated = ":";
-        static constexpr const char* OnPlay__UeDispatcher = "Assignable";
-        static constexpr const char* OnStop__UeDispatcher = "Assignable";
-        static constexpr const char* OnPause__UeDispatcher = "Assignable";
-        static constexpr const char* RootComponent__UeSubobject = "SceneComp /Script/Engine.SceneComponent";
-    };
-};
-
-class AMatineeActorCameraAnim : public AMatineeActor
-{
-public:
-    UE_CLASS("/Script/Engine", "MatineeActorCameraAnim");
-    class UCameraAnim* CameraAnim;
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* RootComponent__UeSubobject = "SceneComp /Script/Engine.SceneComponent";
-    };
+    UE_CLASS("/Script/Engine", "SkeletalMeshLODSettings");
+    FPerPlatformInt MinLOD;
+    FPerPlatformBool DisableBelowMinLodStripping;
+    bool bOverrideLODStreamingSettings;
+    FPerPlatformBool bSupportLODStreaming;
+    FPerPlatformInt MaxNumStreamedLODs;
+    FPerPlatformInt MaxNumOptionalLODs;
+    TArray<FSkeletalMeshLODGroupSettings> LODGroups;
 };
 
 class IMatineeAnimInterface
@@ -25459,18 +25376,10 @@ public:
     UE_CLASS("/Script/Engine", "MatineeAnimInterface");
 };
 
-class USkeletalMeshSocket : public UObject
+class IMatineeInterface
 {
 public:
-    UE_CLASS("/Script/Engine", "SkeletalMeshSocket");
-    UE_READONLY FName SocketName;
-    UE_READONLY FName BoneName;
-    UE_READONLY FVector RelativeLocation;
-    UE_READONLY FRotator RelativeRotation;
-    UE_READONLY FVector RelativeScale;
-    UE_READONLY bool bForceAlwaysAnimated;
-    void InitializeSocketFromLocation(class USkeletalMeshComponent* SkelComp, FVector WorldLocation, FVector WorldNormal);
-    UE_PURE FVector GetSocketLocation(class USkeletalMeshComponent* SkelComp) const;
+    UE_CLASS("/Script/Engine", "MatineeInterface");
 };
 
 class AMeshMergeCullingVolume : public AVolume
@@ -25485,27 +25394,23 @@ private:
     };
 };
 
+class USoundfieldEndpointSubmix : public USoundSubmixBase
+{
+public:
+    UE_CLASS("/Script/Engine", "SoundfieldEndpointSubmix");
+    FName SoundfieldEndpointType;
+    TSubclassOf<class UAudioEndpointSettingsBase> EndpointSettingsClass;
+    class USoundfieldEndpointSettingsBase* EndpointSettings;
+    TSubclassOf<class USoundfieldEncodingSettingsBase> EncodingSettingsClass;
+    class USoundfieldEncodingSettingsBase* EncodingSettings;
+    TArray<class USoundfieldEffectBase*> SoundfieldEffectChain;
+};
+
 class UMeshSimplificationSettings : public UDeveloperSettings
 {
 public:
     UE_CLASS("/Script/Engine", "MeshSimplificationSettings");
     FName MeshReductionModuleName;
-};
-
-class UMeshVertexPainterKismetLibrary : public UBlueprintFunctionLibrary
-{
-public:
-    UE_CLASS("/Script/Engine", "MeshVertexPainterKismetLibrary");
-    static void PaintVerticesLerpAlongAxis(class UStaticMeshComponent* StaticMeshComponent, const FLinearColor& StartColor, const FLinearColor& EndColor, TEnum<EVertexPaintAxis> Axis, bool bConvertToSRGB);
-    static void PaintVerticesSingleColor(class UStaticMeshComponent* StaticMeshComponent, const FLinearColor& FillColor, bool bConvertToSRGB);
-    static void RemovePaintedVertices(class UStaticMeshComponent* StaticMeshComponent);
-};
-
-class USpectatorPawnMovement : public UFloatingPawnMovement
-{
-public:
-    UE_CLASS("/Script/Engine", "SpectatorPawnMovement");
-    bool bIgnoreTimeDilation;
 };
 
 class UMicroTransactionBase : public UPlatformInterfaceBase
@@ -25515,6 +25420,21 @@ public:
     TArray<FPurchaseInfo> AvailableProducts;
     FString LastError;
     FString LastErrorSolution;
+};
+
+class UModelComponent : public UPrimitiveComponent
+{
+public:
+    UE_CLASS("/Script/Engine", "ModelComponent");
+    class UBodySetup* ModelBodySetup;
+};
+
+class UParticleModuleVelocityOverLifetime : public UParticleModuleVelocityBase
+{
+public:
+    UE_CLASS("/Script/Engine", "ParticleModuleVelocityOverLifetime");
+    FRawDistributionVector VelOverLife;
+    bool Absolute;
 };
 
 class UMorphTarget : public UObject
@@ -25530,13 +25450,6 @@ public:
     UE_CLASS("/Script/Engine", "NavAgentInterface");
 };
 
-class UParticleSystemReplay : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleSystemReplay");
-    int ClipIDNumber;
-};
-
 class UNavAreaBase : public UObject
 {
 public:
@@ -25550,10 +25463,33 @@ public:
     bool bIsDynamicObstacle;
 };
 
+class URectLightComponent : public ULocalLightComponent
+{
+public:
+    UE_CLASS("/Script/Engine", "RectLightComponent");
+    UE_READONLY float SourceWidth;
+    UE_READONLY float SourceHeight;
+    UE_READONLY float BarnDoorAngle;
+    UE_READONLY float BarnDoorLength;
+    UE_READONLY class UTexture* SourceTexture;
+    void SetBarnDoorAngle(float NewValue);
+    void SetBarnDoorLength(float NewValue);
+    void SetSourceHeight(float NewValue);
+    void SetSourceTexture(class UTexture* bNewValue);
+    void SetSourceWidth(float bNewValue);
+};
+
 class INavEdgeProviderInterface
 {
 public:
     UE_CLASS("/Script/Engine", "NavEdgeProviderInterface");
+};
+
+class USoundNodeSwitch : public USoundNode
+{
+public:
+    UE_CLASS("/Script/Engine", "SoundNodeSwitch");
+    FName IntParameterName;
 };
 
 class UNavigationDataChunk : public UObject
@@ -25563,27 +25499,10 @@ public:
     FName NavigationDataName;
 };
 
-class URendererOverrideSettings : public UDeveloperSettings
-{
-public:
-    UE_CLASS("/Script/Engine", "RendererOverrideSettings");
-    bool bSupportAllShaderPermutations;
-    bool bForceRecomputeTangents;
-};
-
 class INavigationDataInterface
 {
 public:
     UE_CLASS("/Script/Engine", "NavigationDataInterface");
-};
-
-class USoundNodeWavePlayer : public USoundNodeAssetReferencer
-{
-public:
-    UE_CLASS("/Script/Engine", "SoundNodeWavePlayer");
-    TSoftObjectPtr<class USoundWave> SoundWaveAssetPtr;
-    class USoundWave* SoundWave;
-    bool bLooping;
 };
 
 class UNavigationSystemBase : public UObject
@@ -25620,6 +25539,26 @@ class INavPathObserverInterface
 {
 public:
     UE_CLASS("/Script/Engine", "NavPathObserverInterface");
+};
+
+class UParticleModuleSizeScaleBySpeed : public UParticleModuleSizeBase
+{
+public:
+    UE_CLASS("/Script/Engine", "ParticleModuleSizeScaleBySpeed");
+    FVector2D SpeedScale;
+    FVector2D MaxScale;
+};
+
+class INavRelevantInterface
+{
+public:
+    UE_CLASS("/Script/Engine", "NavRelevantInterface");
+};
+
+class USimulatedClientNetConnection : public UNetConnection
+{
+public:
+    UE_CLASS("/Script/Engine", "SimulatedClientNetConnection");
 };
 
 class UNetPushModelHelpers : public UBlueprintFunctionLibrary
@@ -25700,6 +25639,22 @@ public:
     static UObjectTraceWorldSubsystem* Get(class UObject* WorldContextObject = nullptr);
 };
 
+class UPackageMapClient : public UPackageMap
+{
+public:
+    UE_CLASS("/Script/Engine", "PackageMapClient");
+};
+
+class UViewportStatsSubsystem : public UWorldSubsystem
+{
+public:
+    UE_CLASS("/Script/Engine", "ViewportStatsSubsystem");
+    int AddDisplayDelegate(TDelegate<void(FText& OutText, FLinearColor& OutColor)> Delegate);
+    void AddTimedDisplay(FText Text, FLinearColor Color, float Duration);
+    void RemoveDisplayDelegate(int IndexToRemove);
+    static UViewportStatsSubsystem* Get(class UObject* WorldContextObject = nullptr);
+};
+
 class APainCausingVolume : public APhysicsVolume
 {
 public:
@@ -25719,10 +25674,25 @@ private:
     };
 };
 
-class ULightMapVirtualTexture : public UVirtualTexture
+class UParticleEmitter : public UObject
 {
 public:
-    UE_CLASS("/Script/Engine", "LightMapVirtualTexture");
+    UE_CLASS("/Script/Engine", "ParticleEmitter");
+    FName EmitterName;
+    int SubUVDataOffset;
+    TEnum<EEmitterRenderMode> EmitterRenderMode;
+    TEnum<EParticleSignificanceLevel> SignificanceLevel;
+    bool bUseLegacySpawningBehavior;
+    bool ConvertedModules;
+    bool bIsSoloing;
+    bool bCookedOut;
+    bool bDisabledLODsKeepEmitterAlive;
+    bool bDisableWhenInsignficant;
+    TArray<class UParticleLODLevel*> LODLevels;
+    int PeakActiveParticles;
+    int InitialAllocationCount;
+    float QualityLevelSpawnRateScale;
+    uint32 DetailModeBitmask;
 };
 
 class AParticleEventManager : public AActor
@@ -25749,6 +25719,19 @@ public:
     TArray<class UParticleModuleEventReceiverBase*> EventReceiverModules;
     bool ConvertedModules;
     int PeakActiveParticles;
+};
+
+class UTextureRenderTargetVolume : public UTextureRenderTarget
+{
+public:
+    UE_CLASS("/Script/Engine", "TextureRenderTargetVolume");
+    int SizeX;
+    int SizeY;
+    int SizeZ;
+    FLinearColor ClearColor;
+    TEnum<EPixelFormat> OverrideFormat;
+    UE_READONLY bool bHDR;
+    bool bForceLinearGamma;
 };
 
 class UParticleSystem : public UFXSystemAsset
@@ -25794,63 +25777,20 @@ public:
     bool ContainsEmitterType(class UClass* TypeData);
 };
 
-class UTimelineComponent : public UActorComponent
-{
-public:
-    UE_CLASS("/Script/Engine", "TimelineComponent");
-    FTimeline TheTimeline;
-    bool bIgnoreTimeDilation;
-    void OnRep_Timeline();
-    void Play();
-    void PlayFromStart();
-    void Reverse();
-    void ReverseFromEnd();
-    void SetFloatCurve(class UCurveFloat* NewFloatCurve, FName FloatTrackName);
-    void SetIgnoreTimeDilation(bool bNewIgnoreTimeDilation);
-    void SetLinearColorCurve(class UCurveLinearColor* NewLinearColorCurve, FName LinearColorTrackName);
-    void SetLooping(bool bNewLooping);
-    void SetNewTime(float newTime);
-    void SetPlaybackPosition(float NewPosition, bool bFireEvents, bool bFireUpdate);
-    void SetPlayRate(float NewRate);
-    void SetTimelineLength(float NewLength);
-    void SetTimelineLengthMode(TEnum<ETimelineLengthMode> NewLengthMode);
-    void SetVectorCurve(class UCurveVector* NewVectorCurve, FName VectorTrackName);
-    void Stop();
-    UE_PURE bool GetIgnoreTimeDilation() const;
-    UE_PURE float GetPlaybackPosition() const;
-    UE_PURE float GetPlayRate() const;
-    UE_PURE float GetTimelineLength() const;
-    UE_PURE bool IsLooping() const;
-    UE_PURE bool IsPlaying() const;
-    UE_PURE bool IsReversing() const;
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* TheTimeline__Replicated = "OnRep_Timeline:";
-    };
-};
-
-class UParticleModuleAcceleration : public UParticleModuleAccelerationBase
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleModuleAcceleration");
-    FRawDistributionVector Acceleration;
-    bool bApplyOwnerScale;
-};
-
-class UParticleModuleAccelerationConstant : public UParticleModuleAccelerationBase
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleModuleAccelerationConstant");
-    FVector Acceleration;
-};
-
 class UParticleModuleAccelerationDrag : public UParticleModuleAccelerationBase
 {
 public:
     UE_CLASS("/Script/Engine", "ParticleModuleAccelerationDrag");
     class UDistributionFloat* DragCoefficient;
     FRawDistributionFloat DragCoefficientRaw;
+};
+
+class UParticleModuleAccelerationDragScaleOverLife : public UParticleModuleAccelerationBase
+{
+public:
+    UE_CLASS("/Script/Engine", "ParticleModuleAccelerationDragScaleOverLife");
+    class UDistributionFloat* DragScale;
+    FRawDistributionFloat DragScaleRaw;
 };
 
 class UParticleModuleAccelerationOverLifetime : public UParticleModuleAccelerationBase
@@ -25860,10 +25800,58 @@ public:
     FRawDistributionVector AccelOverLife;
 };
 
+class USkyLightComponent : public ULightComponentBase
+{
+public:
+    UE_CLASS("/Script/Engine", "SkyLightComponent");
+    UE_READONLY bool bRealTimeCapture;
+    UE_READONLY TEnum<ESkyLightSourceType> SourceType;
+    UE_READONLY class UTextureCube* Cubemap;
+    UE_READONLY float SourceCubemapAngle;
+    UE_READONLY int CubemapResolution;
+    UE_READONLY float SkyDistanceThreshold;
+    UE_READONLY bool bCaptureEmissiveOnly;
+    UE_READONLY bool bLowerHemisphereIsBlack;
+    UE_READONLY FLinearColor LowerHemisphereColor;
+    UE_READONLY float OcclusionMaxDistance;
+    UE_READONLY float Contrast;
+    UE_READONLY float OcclusionExponent;
+    UE_READONLY float MinOcclusion;
+    UE_READONLY FColor OcclusionTint;
+    UE_READONLY bool bCloudAmbientOcclusion;
+    UE_READONLY float CloudAmbientOcclusionStrength;
+    UE_READONLY float CloudAmbientOcclusionExtent;
+    UE_READONLY float CloudAmbientOcclusionMapResolutionScale;
+    UE_READONLY float CloudAmbientOcclusionApertureScale;
+    UE_READONLY TEnum<EOcclusionCombineMode> OcclusionCombineMode;
+    class UTextureCube* BlendDestinationCubemap;
+    void RecaptureSky();
+    void SetCubemap(class UTextureCube* NewCubemap);
+    void SetCubemapBlend(class UTextureCube* SourceCubemap, class UTextureCube* DestinationCubemap, float InBlendFraction);
+    void SetIndirectLightingIntensity(float NewIntensity);
+    void SetIntensity(float NewIntensity);
+    void SetLightColor(FLinearColor NewLightColor);
+    void SetLowerHemisphereColor(const FLinearColor& InLowerHemisphereColor);
+    void SetMinOcclusion(float InMinOcclusion);
+    void SetOcclusionContrast(float InOcclusionContrast);
+    void SetOcclusionExponent(float InOcclusionExponent);
+    void SetOcclusionTint(const FColor& InTint);
+    void SetVolumetricScatteringIntensity(float NewIntensity);
+};
+
 class UParticleModuleAttractorBase : public UParticleModule
 {
 public:
     UE_CLASS("/Script/Engine", "ParticleModuleAttractorBase");
+};
+
+class UTextPropertyTestObject : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "TextPropertyTestObject");
+    FText DefaultedText;
+    FText UndefaultedText;
+    FText TransientText;
 };
 
 class UParticleModuleAttractorLine : public UParticleModuleAttractorBase
@@ -25874,12 +25862,6 @@ public:
     FVector EndPoint1;
     FRawDistributionFloat range;
     FRawDistributionFloat Strength;
-};
-
-class ISlateTextureAtlasInterface
-{
-public:
-    UE_CLASS("/Script/Engine", "SlateTextureAtlasInterface");
 };
 
 class UParticleModuleAttractorParticle : public UParticleModuleAttractorBase
@@ -25895,39 +25877,6 @@ public:
     bool bRenewSource;
     bool bInheritSourceVel;
     int LastSelIndex;
-};
-
-class UTextRenderComponent : public UPrimitiveComponent
-{
-public:
-    UE_CLASS("/Script/Engine", "TextRenderComponent");
-    UE_READONLY FText Text;
-    UE_READONLY class UMaterialInterface* TextMaterial;
-    UE_READONLY class UFont* Font;
-    UE_READONLY TEnum<EHorizTextAligment> HorizontalAlignment;
-    UE_READONLY TEnum<EVerticalTextAligment> VerticalAlignment;
-    UE_READONLY FColor TextRenderColor;
-    UE_READONLY float XScale;
-    UE_READONLY float YScale;
-    UE_READONLY float WorldSize;
-    float InvDefaultSize;
-    UE_READONLY float HorizSpacingAdjust;
-    UE_READONLY float VertSpacingAdjust;
-    UE_READONLY bool bAlwaysRenderAsText;
-    void K2_SetText(const FText& Value);
-    void SetFont(class UFont* Value);
-    void SetHorizontalAlignment(TEnum<EHorizTextAligment> Value);
-    void SetHorizSpacingAdjust(float Value);
-    void SetText(FString Value);
-    void SetTextMaterial(class UMaterialInterface* Material);
-    void SetTextRenderColor(FColor Value);
-    void SetVerticalAlignment(TEnum<EVerticalTextAligment> Value);
-    void SetVertSpacingAdjust(float Value);
-    void SetWorldSize(float Value);
-    void SetXScale(float Value);
-    void SetYScale(float Value);
-    UE_PURE FVector GetTextLocalSize() const;
-    UE_PURE FVector GetTextWorldSize() const;
 };
 
 class UParticleModuleAttractorPoint : public UParticleModuleAttractorBase
@@ -25949,6 +25898,57 @@ public:
     bool Negative_Z;
 };
 
+class UParticleModuleRequired : public UParticleModule
+{
+public:
+    UE_CLASS("/Script/Engine", "ParticleModuleRequired");
+    class UMaterialInterface* Material;
+    float MinFacingCameraBlendDistance;
+    float MaxFacingCameraBlendDistance;
+    FVector EmitterOrigin;
+    FRotator EmitterRotation;
+    TEnum<EParticleScreenAlignment> ScreenAlignment;
+    bool bUseLocalSpace;
+    bool bKillOnDeactivate;
+    bool bKillOnCompleted;
+    TEnum<EParticleSortMode> SortMode;
+    bool bUseLegacyEmitterTime;
+    bool bRemoveHMDRoll;
+    bool bEmitterDurationUseRange;
+    float EmitterDuration;
+    FRawDistributionFloat SpawnRate;
+    TArray<FParticleBurst> BurstList;
+    float EmitterDelay;
+    float EmitterDelayLow;
+    bool bDelayFirstLoopOnly;
+    TEnum<EParticleSubUVInterpMethod> InterpolationMethod;
+    bool bScaleUV;
+    bool bEmitterDelayUseRange;
+    TEnum<EParticleBurstMethod> ParticleBurstMethod;
+    bool bOverrideSystemMacroUV;
+    bool bUseMaxDrawCount;
+    TEnum<EOpacitySourceMode> OpacitySourceMode;
+    TEnum<EEmitterNormalsMode> EmitterNormalsMode;
+    bool bOrbitModuleAffectsVelocityAlignment;
+    int SubImages_Horizontal;
+    int SubImages_Vertical;
+    float RandomImageTime;
+    int RandomImageChanges;
+    FVector MacroUVPosition;
+    float MacroUVRadius;
+    TEnum<EParticleUVFlipMode> UVFlippingMode;
+    TEnum<ESubUVBoundingVertexCount> BoundingMode;
+    bool bDurationRecalcEachLoop;
+    FVector NormalsSphereCenter;
+    float AlphaThreshold;
+    int EmitterLoops;
+    class UTexture2D* CutoutTexture;
+    int MaxDrawCount;
+    float EmitterDurationLow;
+    FVector NormalsCylinderDirection;
+    TArray<FName> NamedMaterialOverrides;
+};
+
 class UParticleModuleAttractorPointGravity : public UParticleModuleAttractorBase
 {
 public:
@@ -25963,13 +25963,6 @@ class UParticleModuleBeamBase : public UParticleModule
 {
 public:
     UE_CLASS("/Script/Engine", "ParticleModuleBeamBase");
-};
-
-class UParticleModuleRotation_Seeded : public UParticleModuleRotation
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleModuleRotation_Seeded");
-    FParticleRandomSeedInfo RandomSeedInfo;
 };
 
 class UParticleModuleBeamModifier : public UParticleModuleBeamBase
@@ -26012,6 +26005,20 @@ public:
     FRawDistributionFloat NoiseScale;
 };
 
+class UPawnNoiseEmitterComponent : public UActorComponent
+{
+public:
+    UE_CLASS("/Script/Engine", "PawnNoiseEmitterComponent");
+    bool bAIPerceptionSystemCompatibilityMode;
+    FVector LastRemoteNoisePosition;
+    float NoiseLifetime;
+    float LastRemoteNoiseVolume;
+    float LastRemoteNoiseTime;
+    float LastLocalNoiseVolume;
+    float LastLocalNoiseTime;
+    UE_AUTHORITY_ONLY void MakeNoise(class AActor* NoiseMaker, float Loudness, const FVector& NoiseLocation);
+};
+
 class UParticleModuleBeamSource : public UParticleModuleBeamBase
 {
 public:
@@ -26043,15 +26050,6 @@ public:
     FRawDistributionFloat TargetStrength;
     bool bLockTargetStength;
     float LockRadius;
-};
-
-class UPhysicalMaterialMask : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "PhysicalMaterialMask");
-    int UVChannelIndex;
-    TEnum<ETextureAddress> AddressX;
-    TEnum<ETextureAddress> AddressY;
 };
 
 class UParticleModuleCameraBase : public UParticleModule
@@ -26113,20 +26111,36 @@ public:
     TEnum<EParticleCollisionMode> CollisionMode;
 };
 
-class UParticleModuleColor : public UParticleModuleColorBase
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleModuleColor");
-    FRawDistributionVector StartColor;
-    FRawDistributionFloat StartAlpha;
-    bool bClampAlpha;
-};
-
 class UParticleModuleColor_Seeded : public UParticleModuleColor
 {
 public:
     UE_CLASS("/Script/Engine", "ParticleModuleColor_Seeded");
     FParticleRandomSeedInfo RandomSeedInfo;
+};
+
+class UParticleModuleColorOverLife : public UParticleModuleColorBase
+{
+public:
+    UE_CLASS("/Script/Engine", "ParticleModuleColorOverLife");
+    FRawDistributionVector ColorOverLife;
+    FRawDistributionFloat AlphaOverLife;
+    bool bClampAlpha;
+};
+
+class UParticleModuleColorScaleOverLife : public UParticleModuleColorBase
+{
+public:
+    UE_CLASS("/Script/Engine", "ParticleModuleColorScaleOverLife");
+    FRawDistributionVector ColorScaleOverLife;
+    FRawDistributionFloat AlphaScaleOverLife;
+    bool bEmitterTime;
+};
+
+class USkeletalMeshSimplificationSettings : public UDeveloperSettings
+{
+public:
+    UE_CLASS("/Script/Engine", "SkeletalMeshSimplificationSettings");
+    FName SkeletalMeshReductionModuleName;
 };
 
 class UParticleModuleEventBase : public UParticleModule
@@ -26135,59 +26149,22 @@ public:
     UE_CLASS("/Script/Engine", "ParticleModuleEventBase");
 };
 
+class USubsystemBlueprintLibrary : public UBlueprintFunctionLibrary
+{
+public:
+    UE_CLASS("/Script/Engine", "SubsystemBlueprintLibrary");
+    UE_PURE static class UEngineSubsystem* GetEngineSubsystem(TSubclassOf<class UEngineSubsystem> Class_0);
+    UE_PURE static class UGameInstanceSubsystem* GetGameInstanceSubsystem(class UObject* contextObject, TSubclassOf<class UGameInstanceSubsystem> Class_0);
+    UE_PURE static class ULocalPlayerSubsystem* GetLocalPlayerSubsystem(class UObject* contextObject, TSubclassOf<class ULocalPlayerSubsystem> Class_0);
+    UE_PURE static class ULocalPlayerSubsystem* GetLocalPlayerSubSystemFromPlayerController(class APlayerController* PlayerController, TSubclassOf<class ULocalPlayerSubsystem> Class_0);
+    UE_PURE static class UWorldSubsystem* GetWorldSubsystem(class UObject* contextObject, TSubclassOf<class UWorldSubsystem> Class_0);
+};
+
 class UParticleModuleEventGenerator : public UParticleModuleEventBase
 {
 public:
     UE_CLASS("/Script/Engine", "ParticleModuleEventGenerator");
     TArray<FParticleEvent_GenerateInfo> Events;
-};
-
-class USkyAtmosphereComponent : public USceneComponent
-{
-public:
-    UE_CLASS("/Script/Engine", "SkyAtmosphereComponent");
-    UE_READONLY TEnum<ESkyAtmosphereTransformMode> TransformMode;
-    UE_READONLY float BottomRadius;
-    UE_READONLY FColor GroundAlbedo;
-    UE_READONLY float AtmosphereHeight;
-    UE_READONLY float MultiScatteringFactor;
-    UE_READONLY float TraceSampleCountScale;
-    UE_READONLY float RayleighScatteringScale;
-    UE_READONLY FLinearColor RayleighScattering;
-    UE_READONLY float RayleighExponentialDistribution;
-    UE_READONLY float MieScatteringScale;
-    UE_READONLY FLinearColor MieScattering;
-    UE_READONLY float MieAbsorptionScale;
-    UE_READONLY FLinearColor MieAbsorption;
-    UE_READONLY float MieAnisotropy;
-    UE_READONLY float MieExponentialDistribution;
-    UE_READONLY float OtherAbsorptionScale;
-    UE_READONLY FLinearColor OtherAbsorption;
-    UE_READONLY FTentDistribution OtherTentDistribution;
-    UE_READONLY FLinearColor SkyLuminanceFactor;
-    UE_READONLY float AerialPespectiveViewDistanceScale;
-    UE_READONLY float HeightFogContribution;
-    UE_READONLY float TransmittanceMinLightElevationAngle;
-    UE_READONLY float AerialPerspectiveStartDepth;
-    FGuid bStaticLightingBuiltGUID;
-    FLinearColor GetAtmosphereTransmitanceOnGroundAtPlanetTop(class UDirectionalLightComponent* DirectionalLight);
-    void OverrideAtmosphereLightDirection(int AtmosphereLightIndex, const FVector& LightDirection);
-    void SetAerialPespectiveViewDistanceScale(float NewValue);
-    void SetAtmosphereHeight(float NewValue);
-    void SetHeightFogContribution(float NewValue);
-    void SetMieAbsorption(FLinearColor NewValue);
-    void SetMieAbsorptionScale(float NewValue);
-    void SetMieAnisotropy(float NewValue);
-    void SetMieExponentialDistribution(float NewValue);
-    void SetMieScattering(FLinearColor NewValue);
-    void SetMieScatteringScale(float NewValue);
-    void SetMultiScatteringFactor(float NewValue);
-    void SetOtherAbsorption(FLinearColor NewValue);
-    void SetOtherAbsorptionScale(float NewValue);
-    void SetRayleighExponentialDistribution(float NewValue);
-    void SetRayleighScattering(FLinearColor NewValue);
-    void SetRayleighScatteringScale(float NewValue);
-    void SetSkyLuminanceFactor(FLinearColor NewValue);
 };
 
 class UParticleModuleEventReceiverBase : public UParticleModuleEventBase
@@ -26198,20 +26175,18 @@ public:
     FName EventName;
 };
 
-class USystemTimeTimecodeProvider : public UTimecodeProvider
-{
-public:
-    UE_CLASS("/Script/Engine", "SystemTimeTimecodeProvider");
-    FFrameRate FrameRate;
-    bool bGenerateFullFrame;
-    bool bUseHighPerformanceClock;
-};
-
 class UParticleModuleEventReceiverKillParticles : public UParticleModuleEventReceiverBase
 {
 public:
     UE_CLASS("/Script/Engine", "ParticleModuleEventReceiverKillParticles");
     bool bStopSpawning;
+};
+
+class UVOIPStatics : public UBlueprintFunctionLibrary
+{
+public:
+    UE_CLASS("/Script/Engine", "VOIPStatics");
+    static void SetMicThreshold(float InThreshold);
 };
 
 class UParticleModuleEventReceiverSpawn : public UParticleModuleEventReceiverBase
@@ -26227,63 +26202,21 @@ public:
     bool bBanPhysicalMaterials;
 };
 
-class UParticleModuleEventSendToGame : public UObject
+class USCS_Node : public UObject
 {
 public:
-    UE_CLASS("/Script/Engine", "ParticleModuleEventSendToGame");
-};
-
-class UVolumetricCloudComponent : public USceneComponent
-{
-public:
-    UE_CLASS("/Script/Engine", "VolumetricCloudComponent");
-    UE_READONLY float LayerBottomAltitude;
-    UE_READONLY float LayerHeight;
-    UE_READONLY float TracingStartMaxDistance;
-    UE_READONLY float TracingMaxDistance;
-    UE_READONLY float PlanetRadius;
-    UE_READONLY FColor GroundAlbedo;
-    UE_READONLY class UMaterialInterface* Material;
-    UE_READONLY bool bUsePerSampleAtmosphericLightTransmittance;
-    UE_READONLY float SkyLightCloudBottomOcclusion;
-    UE_READONLY float ViewSampleCountScale;
-    UE_READONLY float ReflectionSampleCountScale;
-    UE_READONLY float ShadowViewSampleCountScale;
-    UE_READONLY float ShadowReflectionSampleCountScale;
-    UE_READONLY float ShadowTracingDistance;
-    UE_READONLY float StopTracingTransmittanceThreshold;
-    void SetbUsePerSampleAtmosphericLightTransmittance(bool NewValue);
-    void SetGroundAlbedo(FColor NewValue);
-    void SetLayerBottomAltitude(float NewValue);
-    void SetLayerHeight(float NewValue);
-    void SetMaterial(class UMaterialInterface* NewValue);
-    void SetPlanetRadius(float NewValue);
-    void SetReflectionSampleCountScale(float NewValue);
-    void SetShadowReflectionSampleCountScale(float NewValue);
-    void SetShadowTracingDistance(float NewValue);
-    void SetShadowViewSampleCountScale(float NewValue);
-    void SetSkyLightCloudBottomOcclusion(float NewValue);
-    void SetStopTracingTransmittanceThreshold(float NewValue);
-    void SetTracingMaxDistance(float NewValue);
-    void SetTracingStartMaxDistance(float NewValue);
-    void SetViewSampleCountScale(float NewValue);
-};
-
-class UParticleModuleKillBase : public UParticleModule
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleModuleKillBase");
-};
-
-class UParticleModuleKillBox : public UParticleModuleKillBase
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleModuleKillBox");
-    FRawDistributionVector LowerLeftCorner;
-    FRawDistributionVector UpperRightCorner;
-    bool bAbsolute;
-    bool bKillInside;
-    bool bAxisAlignedAndFixedSize;
+    UE_CLASS("/Script/Engine", "SCS_Node");
+    class UClass* ComponentClass;
+    class UActorComponent* ComponentTemplate;
+    FBlueprintCookedComponentInstancingData CookedComponentInstancingData;
+    FName AttachToName;
+    FName ParentComponentOrVariableName;
+    FName ParentComponentOwnerClassName;
+    bool bIsParentComponentNative;
+    TArray<class USCS_Node*> ChildNodes;
+    TArray<FBPVariableMetaDataEntry> MetaDataArray;
+    FGuid VariableGuid;
+    FName InternalVariableName;
 };
 
 class UParticleModuleKillHeight : public UParticleModuleKillBase
@@ -26294,6 +26227,571 @@ public:
     bool bAbsolute;
     bool bFloor;
     bool bApplyPSysScale;
+};
+
+class UParticleModuleLifetime : public UParticleModuleLifetimeBase
+{
+public:
+    UE_CLASS("/Script/Engine", "ParticleModuleLifetime");
+    FRawDistributionFloat LifeTime;
+};
+
+class UParticleModuleLifetime_Seeded : public UParticleModuleLifetime
+{
+public:
+    UE_CLASS("/Script/Engine", "ParticleModuleLifetime_Seeded");
+    FParticleRandomSeedInfo RandomSeedInfo;
+};
+
+class USoundNodeWaveParam : public USoundNode
+{
+public:
+    UE_CLASS("/Script/Engine", "SoundNodeWaveParam");
+    FName WaveParameterName;
+};
+
+class UParticleModuleLightBase : public UParticleModule
+{
+public:
+    UE_CLASS("/Script/Engine", "ParticleModuleLightBase");
+};
+
+class URuntimeVirtualTextureStreamingProxy : public UTexture2D
+{
+public:
+    UE_CLASS("/Script/Engine", "RuntimeVirtualTextureStreamingProxy");
+};
+
+class UParticleModuleLight : public UParticleModuleLightBase
+{
+public:
+    UE_CLASS("/Script/Engine", "ParticleModuleLight");
+    bool bUseInverseSquaredFalloff;
+    bool bAffectsTranslucency;
+    bool bPreviewLightRadius;
+    float SpawnFraction;
+    FRawDistributionVector ColorScaleOverLife;
+    FRawDistributionFloat BrightnessOverLife;
+    FRawDistributionFloat RadiusScale;
+    FRawDistributionFloat LightExponent;
+    UE_READONLY FLightingChannels LightingChannels;
+    UE_READONLY float VolumetricScatteringIntensity;
+    bool bHighQualityLights;
+    bool bShadowCastingLights;
+};
+
+class UParticleModuleLight_Seeded : public UParticleModuleLight
+{
+public:
+    UE_CLASS("/Script/Engine", "ParticleModuleLight_Seeded");
+    FParticleRandomSeedInfo RandomSeedInfo;
+};
+
+class UParticleModuleVectorFieldRotationRate : public UParticleModuleVectorFieldBase
+{
+public:
+    UE_CLASS("/Script/Engine", "ParticleModuleVectorFieldRotationRate");
+    FVector RotationRate;
+};
+
+class UParticleModuleLocation_Seeded : public UParticleModuleLocation
+{
+public:
+    UE_CLASS("/Script/Engine", "ParticleModuleLocation_Seeded");
+    FParticleRandomSeedInfo RandomSeedInfo;
+};
+
+class UParticleModuleLocationBoneSocket : public UParticleModuleLocationBase
+{
+public:
+    UE_CLASS("/Script/Engine", "ParticleModuleLocationBoneSocket");
+    TEnum<ELocationBoneSocketSource> SourceType;
+    FVector UniversalOffset;
+    TArray<FLocationBoneSocketInfo> SourceLocations;
+    TEnum<ELocationBoneSocketSelectionMethod> SelectionMethod;
+    bool bUpdatePositionEachFrame;
+    bool bOrientMeshEmitters;
+    bool bInheritBoneVelocity;
+    float InheritVelocityScale;
+    FName SkelMeshActorParamName;
+    int NumPreSelectedIndices;
+};
+
+class UParticleModuleLocationDirect : public UParticleModuleLocationBase
+{
+public:
+    UE_CLASS("/Script/Engine", "ParticleModuleLocationDirect");
+    FRawDistributionVector Location;
+    FRawDistributionVector LocationOffset;
+    FRawDistributionVector ScaleFactor;
+    FRawDistributionVector Direction;
+};
+
+class APrecomputedVisibilityVolume : public AVolume
+{
+public:
+    UE_CLASS("/Script/Engine", "PrecomputedVisibilityVolume");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* BrushComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
+        static constexpr const char* RootComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
+    };
+};
+
+class UParticleModuleLocationEmitter : public UParticleModuleLocationBase
+{
+public:
+    UE_CLASS("/Script/Engine", "ParticleModuleLocationEmitter");
+    FName EmitterName;
+    TEnum<ELocationEmitterSelectionMethod> SelectionMethod;
+    bool InheritSourceVelocity;
+    float InheritSourceVelocityScale;
+    bool bInheritSourceRotation;
+    float InheritSourceRotationScale;
+};
+
+class UParticleModuleLocationEmitterDirect : public UParticleModuleLocationBase
+{
+public:
+    UE_CLASS("/Script/Engine", "ParticleModuleLocationEmitterDirect");
+    FName EmitterName;
+};
+
+class UParticleModuleLocationPrimitiveCylinder : public UParticleModuleLocationPrimitiveBase
+{
+public:
+    UE_CLASS("/Script/Engine", "ParticleModuleLocationPrimitiveCylinder");
+    bool RadialVelocity;
+    FRawDistributionFloat StartRadius;
+    FRawDistributionFloat StartHeight;
+    TEnum<ECylinderHeightAxis> HeightAxis;
+};
+
+class UParticleModuleLocationPrimitiveCylinder_Seeded : public UParticleModuleLocationPrimitiveCylinder
+{
+public:
+    UE_CLASS("/Script/Engine", "ParticleModuleLocationPrimitiveCylinder_Seeded");
+    FParticleRandomSeedInfo RandomSeedInfo;
+};
+
+class UParticleModuleLocationPrimitiveSphere_Seeded : public UParticleModuleLocationPrimitiveSphere
+{
+public:
+    UE_CLASS("/Script/Engine", "ParticleModuleLocationPrimitiveSphere_Seeded");
+    FParticleRandomSeedInfo RandomSeedInfo;
+};
+
+class UParticleModuleLocationPrimitiveTriangle : public UParticleModuleLocationBase
+{
+public:
+    UE_CLASS("/Script/Engine", "ParticleModuleLocationPrimitiveTriangle");
+    FRawDistributionVector StartOffset;
+    FRawDistributionFloat Height;
+    FRawDistributionFloat Angle;
+    FRawDistributionFloat Thickness;
+};
+
+class UParticleModuleMeshRotationRate_Seeded : public UParticleModuleMeshRotationRate
+{
+public:
+    UE_CLASS("/Script/Engine", "ParticleModuleMeshRotationRate_Seeded");
+    FParticleRandomSeedInfo RandomSeedInfo;
+};
+
+class UParticleModuleMeshRotationRateMultiplyLife : public UParticleModuleRotationRateBase
+{
+public:
+    UE_CLASS("/Script/Engine", "ParticleModuleMeshRotationRateMultiplyLife");
+    FRawDistributionVector LifeMultiplier;
+};
+
+class UParticleModuleParameterDynamic : public UParticleModuleParameterBase
+{
+public:
+    UE_CLASS("/Script/Engine", "ParticleModuleParameterDynamic");
+    TArray<FEmitterDynamicParameter> DynamicParams;
+    int UpdateFlags;
+    bool bUsesVelocity;
+};
+
+class UParticleModuleParameterDynamic_Seeded : public UParticleModuleParameterDynamic
+{
+public:
+    UE_CLASS("/Script/Engine", "ParticleModuleParameterDynamic_Seeded");
+    FParticleRandomSeedInfo RandomSeedInfo;
+};
+
+class UParticleModuleRotationRate : public UParticleModuleRotationRateBase
+{
+public:
+    UE_CLASS("/Script/Engine", "ParticleModuleRotationRate");
+    FRawDistributionFloat StartRotationRate;
+};
+
+class UParticleModuleRotationRate_Seeded : public UParticleModuleRotationRate
+{
+public:
+    UE_CLASS("/Script/Engine", "ParticleModuleRotationRate_Seeded");
+    FParticleRandomSeedInfo RandomSeedInfo;
+};
+
+class UParticleModuleSize_Seeded : public UParticleModuleSize
+{
+public:
+    UE_CLASS("/Script/Engine", "ParticleModuleSize_Seeded");
+    FParticleRandomSeedInfo RandomSeedInfo;
+};
+
+class UParticleModuleTypeDataGpu : public UParticleModuleTypeDataBase
+{
+public:
+    UE_CLASS("/Script/Engine", "ParticleModuleTypeDataGpu");
+    FGPUSpriteEmitterInfo EmitterInfo;
+    FGPUSpriteResourceData ResourceData;
+    float CameraMotionBlurAmount;
+    bool bClearExistingParticlesOnInit;
+};
+
+class UParticleModuleTypeDataRibbon : public UParticleModuleTypeDataBase
+{
+public:
+    UE_CLASS("/Script/Engine", "ParticleModuleTypeDataRibbon");
+    int MaxTessellationBetweenParticles;
+    int SheetsPerTrail;
+    int MaxTrailCount;
+    int MaxParticleInTrailCount;
+    bool bDeadTrailsOnDeactivate;
+    bool bDeadTrailsOnSourceLoss;
+    bool bClipSourceSegement;
+    bool bEnablePreviousTangentRecalculation;
+    bool bTangentRecalculationEveryFrame;
+    bool bSpawnInitialParticle;
+    TEnum<ETrailsRenderAxisOption> RenderAxis;
+    float TangentSpawningScalar;
+    bool bRenderGeometry;
+    bool bRenderSpawnPoints;
+    bool bRenderTangents;
+    bool bRenderTessellation;
+    float TilingDistance;
+    float DistanceTessellationStepSize;
+    bool bEnableTangentDiffInterpScale;
+    float TangentTessellationScalar;
+};
+
+class UParticleModuleVectorFieldGlobal : public UParticleModuleVectorFieldBase
+{
+public:
+    UE_CLASS("/Script/Engine", "ParticleModuleVectorFieldGlobal");
+    bool bOverrideGlobalVectorFieldTightness;
+    float GlobalVectorFieldScale;
+    float GlobalVectorFieldTightness;
+};
+
+class UParticleModuleVectorFieldScale : public UParticleModuleVectorFieldBase
+{
+public:
+    UE_CLASS("/Script/Engine", "ParticleModuleVectorFieldScale");
+    class UDistributionFloat* VectorFieldScale;
+    FRawDistributionFloat VectorFieldScaleRaw;
+};
+
+class UParticleModuleVectorFieldScaleOverLife : public UParticleModuleVectorFieldBase
+{
+public:
+    UE_CLASS("/Script/Engine", "ParticleModuleVectorFieldScaleOverLife");
+    class UDistributionFloat* VectorFieldScaleOverLife;
+    FRawDistributionFloat VectorFieldScaleOverLifeRaw;
+};
+
+class UParticleModuleVelocity : public UParticleModuleVelocityBase
+{
+public:
+    UE_CLASS("/Script/Engine", "ParticleModuleVelocity");
+    FRawDistributionVector StartVelocity;
+    FRawDistributionFloat StartVelocityRadial;
+};
+
+class UParticleModuleVelocity_Seeded : public UParticleModuleVelocity
+{
+public:
+    UE_CLASS("/Script/Engine", "ParticleModuleVelocity_Seeded");
+    FParticleRandomSeedInfo RandomSeedInfo;
+};
+
+class UParticleSpriteEmitter : public UParticleEmitter
+{
+public:
+    UE_CLASS("/Script/Engine", "ParticleSpriteEmitter");
+};
+
+class UParticleSystemReplay : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "ParticleSystemReplay");
+    int ClipIDNumber;
+};
+
+class UPhysicsCollisionHandler : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "PhysicsCollisionHandler");
+    float ImpactThreshold;
+    float ImpactReFireDelay;
+    class USoundBase* DefaultImpactSound;
+    float LastImpactSoundTime;
+};
+
+class UPhysicsHandleComponent : public UActorComponent
+{
+public:
+    UE_CLASS("/Script/Engine", "PhysicsHandleComponent");
+    class UPrimitiveComponent* GrabbedComponent;
+    UE_READONLY bool bSoftAngularConstraint;
+    UE_READONLY bool bSoftLinearConstraint;
+    bool bInterpolateTarget;
+    UE_READONLY float LinearDamping;
+    UE_READONLY float LinearStiffness;
+    UE_READONLY float AngularDamping;
+    UE_READONLY float AngularStiffness;
+    UE_READONLY float InterpolationSpeed;
+    void GrabComponent(class UPrimitiveComponent* Component, FName InBoneName, FVector GrabLocation, bool bConstrainRotation);
+    void GrabComponentAtLocation(class UPrimitiveComponent* Component, FName InBoneName, FVector GrabLocation);
+    void GrabComponentAtLocationWithRotation(class UPrimitiveComponent* Component, FName InBoneName, FVector Location, FRotator Rotation);
+    void ReleaseComponent();
+    void SetAngularDamping(float NewAngularDamping);
+    void SetAngularStiffness(float NewAngularStiffness);
+    void SetInterpolationSpeed(float NewInterpolationSpeed);
+    void SetLinearDamping(float NewLinearDamping);
+    void SetLinearStiffness(float NewLinearStiffness);
+    void SetTargetLocation(FVector NewLocation);
+    void SetTargetLocationAndRotation(FVector NewLocation, FRotator NewRotation);
+    void SetTargetRotation(FRotator NewRotation);
+    UE_PURE class UPrimitiveComponent* GetGrabbedComponent() const;
+    void GetTargetLocationAndRotation(FVector& TargetLocation, FRotator& TargetRotation) const;
+};
+
+class APhysicsThruster : public ARigidBodyBase
+{
+public:
+    UE_CLASS("/Script/Engine", "PhysicsThruster");
+    UE_READONLY class UPhysicsThrusterComponent* ThrusterComponent;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* RootComponent__UeSubobject = "Thruster0 /Script/Engine.PhysicsThrusterComponent";
+        static constexpr const char* ThrusterComponent__UeSubobject = "Thruster0 /Script/Engine.PhysicsThrusterComponent";
+    };
+};
+
+class UPlanarReflectionComponent : public USceneCaptureComponent
+{
+public:
+    UE_CLASS("/Script/Engine", "PlanarReflectionComponent");
+    class UBoxComponent* PreviewBox;
+    float NormalDistortionStrength;
+    float PrefilterRoughness;
+    float PrefilterRoughnessDistance;
+    int ScreenPercentage;
+    float ExtraFOV;
+    float DistanceFromPlaneFadeStart;
+    float DistanceFromPlaneFadeEnd;
+    float DistanceFromPlaneFadeoutStart;
+    float DistanceFromPlaneFadeoutEnd;
+    float AngleFromPlaneFadeStart;
+    float AngleFromPlaneFadeEnd;
+    bool bShowPreviewPlane;
+    bool bRenderSceneTwoSided;
+};
+
+class APlaneReflectionCapture : public AReflectionCapture
+{
+public:
+    UE_CLASS("/Script/Engine", "PlaneReflectionCapture");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* CaptureComponent__UeSubobject = "NewReflectionComponent /Script/Engine.PlaneReflectionCaptureComponent";
+    };
+};
+
+class UPlatformEventsComponent : public UActorComponent
+{
+public:
+    UE_CLASS("/Script/Engine", "PlatformEventsComponent");
+    TMulticastInlineDelegate<void()> PlatformChangedToLaptopModeDelegate;
+    TMulticastInlineDelegate<void()> PlatformChangedToTabletModeDelegate;
+    bool IsInLaptopMode();
+    bool IsInTabletMode();
+    bool SupportsConvertibleLaptops();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* PlatformChangedToLaptopModeDelegate__UeDispatcher = "Assignable";
+        static constexpr const char* PlatformChangedToTabletModeDelegate__UeDispatcher = "Assignable";
+    };
+};
+
+class UPlayerInput : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "PlayerInput");
+    TArray<FKeyBind> DebugExecBindings;
+    TArray<FName> InvertedAxis;
+    void ClearSmoothing();
+    void InvertAxis(FName AxisName);
+    void InvertAxisKey(FKey AxisKey);
+    void SetBind(FName BindName, FString Command);
+    void SetMouseSensitivity(float Sensitivity);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeClassTail = "0x0000000c /Script/Engine.PlayerController Input";
+    };
+};
+
+class APointLight : public ALight
+{
+public:
+    UE_CLASS("/Script/Engine", "PointLight");
+    UE_READONLY class UPointLightComponent* PointLightComponent;
+    void SetLightFalloffExponent(float NewLightFalloffExponent);
+    void SetRadius(float NewRadius);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* LightComponent__UeSubobject = "LightComponent0 /Script/Engine.PointLightComponent";
+        static constexpr const char* PointLightComponent__UeSubobject = "LightComponent0 /Script/Engine.PointLightComponent";
+        static constexpr const char* RootComponent__UeSubobject = "LightComponent0 /Script/Engine.PointLightComponent";
+    };
+};
+
+class UPolys : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "Polys");
+};
+
+class UPostProcessComponent : public USceneComponent
+{
+public:
+    UE_CLASS("/Script/Engine", "PostProcessComponent");
+    FPostProcessSettings Settings;
+    float Priority;
+    float BlendRadius;
+    float BlendWeight;
+    bool bEnabled;
+    bool bUnbound;
+    void AddOrUpdateBlendable(TScriptInterface<class IBlendableInterface> InBlendableObject, float InWeight);
+};
+
+class APostProcessVolume : public AVolume
+{
+public:
+    UE_CLASS("/Script/Engine", "PostProcessVolume");
+    FPostProcessSettings Settings;
+    float Priority;
+    float BlendRadius;
+    float BlendWeight;
+    bool bEnabled;
+    bool bUnbound;
+    void AddOrUpdateBlendable(TScriptInterface<class IBlendableInterface> InBlendableObject, float InWeight);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* BrushComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
+        static constexpr const char* RootComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
+    };
+};
+
+class ARadialForceActor : public ARigidBodyBase
+{
+public:
+    UE_CLASS("/Script/Engine", "RadialForceActor");
+    UE_READONLY class URadialForceComponent* ForceComponent;
+    void DisableForce();
+    void EnableForce();
+    void FireImpulse();
+    void ToggleForce();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* ForceComponent__UeSubobject = "ForceComponent0 /Script/Engine.RadialForceComponent";
+        static constexpr const char* RootComponent__UeSubobject = "ForceComponent0 /Script/Engine.RadialForceComponent";
+    };
+};
+
+class URendererOverrideSettings : public UDeveloperSettings
+{
+public:
+    UE_CLASS("/Script/Engine", "RendererOverrideSettings");
+    bool bSupportAllShaderPermutations;
+    bool bForceRecomputeTangents;
+};
+
+class URig : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "Rig");
+    TArray<FTransformBase> TransformBases;
+    TArray<FNode> Nodes;
+};
+
+class URuntimeOptionsBase : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "RuntimeOptionsBase");
+};
+
+class URuntimeVirtualTexture : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "RuntimeVirtualTexture");
+    UE_READONLY int TileCount;
+    UE_READONLY int TileSize;
+    UE_READONLY int TileBorderSize;
+    UE_READONLY TEnum<ERuntimeVirtualTextureMaterialType> MaterialType;
+    UE_READONLY bool bCompressTextures;
+    bool bClearTextures;
+    bool bSinglePhysicalSpace;
+    bool bPrivateSpace;
+    bool bAdaptive;
+    bool bContinuousUpdate;
+    int RemoveLowMips;
+    TEnum<ETextureGroup> LODGroup;
+    int Size;
+    class URuntimeVirtualTextureStreamingProxy* StreamingTexture;
+    UE_PURE int GetPageTableSize() const;
+    UE_PURE int GetSize() const;
+    UE_PURE int GetTileBorderSize() const;
+    UE_PURE int GetTileCount() const;
+    UE_PURE int GetTileSize() const;
+};
+
+class URuntimeVirtualTextureComponent : public USceneComponent
+{
+public:
+    UE_CLASS("/Script/Engine", "RuntimeVirtualTextureComponent");
+    TSoftObjectPtr<class AActor> BoundsAlignActor;
+    bool bSetBoundsButton;
+    bool bSnapBoundsToLandscape;
+    UE_READONLY class URuntimeVirtualTexture* VirtualTexture;
+    bool bEnableScalability;
+    uint32 ScalabilityGroup;
+    bool bHidePrimitives;
+    UE_READONLY class UVirtualTextureBuilder* StreamingTexture;
+    int StreamLowMips;
+    bool bBuildStreamingMipsButton;
+    bool bEnableCompressCrunch;
+    bool bUseStreamingLowMipsInEditor;
+    UE_READONLY bool bBuildDebugStreamingMips;
+    void Invalidate(const FBoxSphereBounds& WorldBounds);
+};
+
+class UScene : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "Scene");
 };
 
 class AServerStatReplicator : public AInfo
@@ -26402,574 +26900,6 @@ private:
     };
 };
 
-class UParticleModuleLightBase : public UParticleModule
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleModuleLightBase");
-};
-
-class UParticleModuleLight : public UParticleModuleLightBase
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleModuleLight");
-    bool bUseInverseSquaredFalloff;
-    bool bAffectsTranslucency;
-    bool bPreviewLightRadius;
-    float SpawnFraction;
-    FRawDistributionVector ColorScaleOverLife;
-    FRawDistributionFloat BrightnessOverLife;
-    FRawDistributionFloat RadiusScale;
-    FRawDistributionFloat LightExponent;
-    UE_READONLY FLightingChannels LightingChannels;
-    UE_READONLY float VolumetricScatteringIntensity;
-    bool bHighQualityLights;
-    bool bShadowCastingLights;
-};
-
-class USoundSourceBus : public USoundWave
-{
-public:
-    UE_CLASS("/Script/Engine", "SoundSourceBus");
-    TEnum<ESourceBusChannels> SourceBusChannels;
-    float SourceBusDuration;
-    class UAudioBus* AudioBus;
-    bool bAutoDeactivateWhenSilent;
-};
-
-class UParticleModuleLight_Seeded : public UParticleModuleLight
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleModuleLight_Seeded");
-    FParticleRandomSeedInfo RandomSeedInfo;
-};
-
-class UVirtualTextureBuilder : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "VirtualTextureBuilder");
-    UE_READONLY class UVirtualTexture2D* Texture;
-    uint64 BuildHash;
-};
-
-class UParticleModuleLocation_Seeded : public UParticleModuleLocation
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleModuleLocation_Seeded");
-    FParticleRandomSeedInfo RandomSeedInfo;
-};
-
-class UParticleModuleVectorFieldScaleOverLife : public UParticleModuleVectorFieldBase
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleModuleVectorFieldScaleOverLife");
-    class UDistributionFloat* VectorFieldScaleOverLife;
-    FRawDistributionFloat VectorFieldScaleOverLifeRaw;
-};
-
-class UParticleModuleLocationBoneSocket : public UParticleModuleLocationBase
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleModuleLocationBoneSocket");
-    TEnum<ELocationBoneSocketSource> SourceType;
-    FVector UniversalOffset;
-    TArray<FLocationBoneSocketInfo> SourceLocations;
-    TEnum<ELocationBoneSocketSelectionMethod> SelectionMethod;
-    bool bUpdatePositionEachFrame;
-    bool bOrientMeshEmitters;
-    bool bInheritBoneVelocity;
-    float InheritVelocityScale;
-    FName SkelMeshActorParamName;
-    int NumPreSelectedIndices;
-};
-
-class UParticleModuleLocationDirect : public UParticleModuleLocationBase
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleModuleLocationDirect");
-    FRawDistributionVector Location;
-    FRawDistributionVector LocationOffset;
-    FRawDistributionVector ScaleFactor;
-    FRawDistributionVector Direction;
-};
-
-class UParticleModuleLocationEmitter : public UParticleModuleLocationBase
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleModuleLocationEmitter");
-    FName EmitterName;
-    TEnum<ELocationEmitterSelectionMethod> SelectionMethod;
-    bool InheritSourceVelocity;
-    float InheritSourceVelocityScale;
-    bool bInheritSourceRotation;
-    float InheritSourceRotationScale;
-};
-
-class UParticleModuleLocationEmitterDirect : public UParticleModuleLocationBase
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleModuleLocationEmitterDirect");
-    FName EmitterName;
-};
-
-class UPreviewMeshCollection : public UDataAsset
-{
-public:
-    UE_CLASS("/Script/Engine", "PreviewMeshCollection");
-    class USkeleton* Skeleton;
-    TArray<FPreviewMeshCollectionEntry> SkeletalMeshes;
-};
-
-class UParticleModuleLocationPrimitiveBase : public UParticleModuleLocationBase
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleModuleLocationPrimitiveBase");
-    bool Positive_X;
-    bool Positive_Y;
-    bool Positive_Z;
-    bool Negative_X;
-    bool Negative_Y;
-    bool Negative_Z;
-    bool SurfaceOnly;
-    bool Velocity;
-    FRawDistributionFloat VelocityScale;
-    FRawDistributionVector StartLocation;
-};
-
-class UParticleModuleLocationPrimitiveCylinder : public UParticleModuleLocationPrimitiveBase
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleModuleLocationPrimitiveCylinder");
-    bool RadialVelocity;
-    FRawDistributionFloat StartRadius;
-    FRawDistributionFloat StartHeight;
-    TEnum<ECylinderHeightAxis> HeightAxis;
-};
-
-class UParticleModuleLocationPrimitiveCylinder_Seeded : public UParticleModuleLocationPrimitiveCylinder
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleModuleLocationPrimitiveCylinder_Seeded");
-    FParticleRandomSeedInfo RandomSeedInfo;
-};
-
-class UParticleModuleLocationPrimitiveSphere : public UParticleModuleLocationPrimitiveBase
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleModuleLocationPrimitiveSphere");
-    FRawDistributionFloat StartRadius;
-};
-
-class UParticleModuleLocationPrimitiveSphere_Seeded : public UParticleModuleLocationPrimitiveSphere
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleModuleLocationPrimitiveSphere_Seeded");
-    FParticleRandomSeedInfo RandomSeedInfo;
-};
-
-class UParticleModuleLocationSkelVertSurface : public UParticleModuleLocationBase
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleModuleLocationSkelVertSurface");
-    TEnum<ELocationSkelVertSurfaceSource> SourceType;
-    FVector UniversalOffset;
-    bool bUpdatePositionEachFrame;
-    bool bOrientMeshEmitters;
-    bool bInheritBoneVelocity;
-    float InheritVelocityScale;
-    FName SkelMeshActorParamName;
-    TArray<FName> ValidAssociatedBones;
-    bool bEnforceNormalCheck;
-    FVector NormalToCompare;
-    float NormalCheckToleranceDegrees;
-    float NormalCheckTolerance;
-    TArray<int> ValidMaterialIndices;
-    bool bInheritVertexColor;
-    bool bInheritUV;
-    uint32 InheritUVChannel;
-};
-
-class UParticleModuleMeshRotationRateOverLife : public UParticleModuleRotationRateBase
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleModuleMeshRotationRateOverLife");
-    FRawDistributionVector RotRate;
-    bool bScaleRotRate;
-};
-
-class UParticleModulePivotOffset : public UParticleModuleLocationBase
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleModulePivotOffset");
-    FVector2D PivotOffset;
-};
-
-class UParticleModuleRequired : public UParticleModule
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleModuleRequired");
-    class UMaterialInterface* Material;
-    float MinFacingCameraBlendDistance;
-    float MaxFacingCameraBlendDistance;
-    FVector EmitterOrigin;
-    FRotator EmitterRotation;
-    TEnum<EParticleScreenAlignment> ScreenAlignment;
-    bool bUseLocalSpace;
-    bool bKillOnDeactivate;
-    bool bKillOnCompleted;
-    TEnum<EParticleSortMode> SortMode;
-    bool bUseLegacyEmitterTime;
-    bool bRemoveHMDRoll;
-    bool bEmitterDurationUseRange;
-    float EmitterDuration;
-    FRawDistributionFloat SpawnRate;
-    TArray<FParticleBurst> BurstList;
-    float EmitterDelay;
-    float EmitterDelayLow;
-    bool bDelayFirstLoopOnly;
-    TEnum<EParticleSubUVInterpMethod> InterpolationMethod;
-    bool bScaleUV;
-    bool bEmitterDelayUseRange;
-    TEnum<EParticleBurstMethod> ParticleBurstMethod;
-    bool bOverrideSystemMacroUV;
-    bool bUseMaxDrawCount;
-    TEnum<EOpacitySourceMode> OpacitySourceMode;
-    TEnum<EEmitterNormalsMode> EmitterNormalsMode;
-    bool bOrbitModuleAffectsVelocityAlignment;
-    int SubImages_Horizontal;
-    int SubImages_Vertical;
-    float RandomImageTime;
-    int RandomImageChanges;
-    FVector MacroUVPosition;
-    float MacroUVRadius;
-    TEnum<EParticleUVFlipMode> UVFlippingMode;
-    TEnum<ESubUVBoundingVertexCount> BoundingMode;
-    bool bDurationRecalcEachLoop;
-    FVector NormalsSphereCenter;
-    float AlphaThreshold;
-    int EmitterLoops;
-    class UTexture2D* CutoutTexture;
-    int MaxDrawCount;
-    float EmitterDurationLow;
-    FVector NormalsCylinderDirection;
-    TArray<FName> NamedMaterialOverrides;
-};
-
-class UParticleModuleRotationRateMultiplyLife : public UParticleModuleRotationRateBase
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleModuleRotationRateMultiplyLife");
-    FRawDistributionFloat LifeMultiplier;
-};
-
-class UParticleModuleSizeScale : public UParticleModuleSizeBase
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleModuleSizeScale");
-    FRawDistributionVector SizeScale;
-    bool EnableX;
-    bool EnableY;
-    bool EnableZ;
-};
-
-class UParticleModuleTypeDataGpu : public UParticleModuleTypeDataBase
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleModuleTypeDataGpu");
-    FGPUSpriteEmitterInfo EmitterInfo;
-    FGPUSpriteResourceData ResourceData;
-    float CameraMotionBlurAmount;
-    bool bClearExistingParticlesOnInit;
-};
-
-class UParticleModuleTypeDataRibbon : public UParticleModuleTypeDataBase
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleModuleTypeDataRibbon");
-    int MaxTessellationBetweenParticles;
-    int SheetsPerTrail;
-    int MaxTrailCount;
-    int MaxParticleInTrailCount;
-    bool bDeadTrailsOnDeactivate;
-    bool bDeadTrailsOnSourceLoss;
-    bool bClipSourceSegement;
-    bool bEnablePreviousTangentRecalculation;
-    bool bTangentRecalculationEveryFrame;
-    bool bSpawnInitialParticle;
-    TEnum<ETrailsRenderAxisOption> RenderAxis;
-    float TangentSpawningScalar;
-    bool bRenderGeometry;
-    bool bRenderSpawnPoints;
-    bool bRenderTangents;
-    bool bRenderTessellation;
-    float TilingDistance;
-    float DistanceTessellationStepSize;
-    bool bEnableTangentDiffInterpScale;
-    float TangentTessellationScalar;
-};
-
-class UParticleModuleVectorFieldRotation : public UParticleModuleVectorFieldBase
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleModuleVectorFieldRotation");
-    FVector MinInitialRotation;
-    FVector MaxInitialRotation;
-};
-
-class UParticleModuleVelocityCone : public UParticleModuleVelocityBase
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleModuleVelocityCone");
-    FRawDistributionFloat Angle;
-    FRawDistributionFloat Velocity;
-    FVector Direction;
-};
-
-class UParticleModuleVelocityInheritParent : public UParticleModuleVelocityBase
-{
-public:
-    UE_CLASS("/Script/Engine", "ParticleModuleVelocityInheritParent");
-    FRawDistributionVector Scale;
-};
-
-class IPathFollowingAgentInterface
-{
-public:
-    UE_CLASS("/Script/Engine", "PathFollowingAgentInterface");
-};
-
-class UPawnNoiseEmitterComponent : public UActorComponent
-{
-public:
-    UE_CLASS("/Script/Engine", "PawnNoiseEmitterComponent");
-    bool bAIPerceptionSystemCompatibilityMode;
-    FVector LastRemoteNoisePosition;
-    float NoiseLifetime;
-    float LastRemoteNoiseVolume;
-    float LastRemoteNoiseTime;
-    float LastLocalNoiseVolume;
-    float LastLocalNoiseTime;
-    UE_AUTHORITY_ONLY void MakeNoise(class AActor* NoiseMaker, float Loudness, const FVector& NoiseLocation);
-};
-
-class APhysicsConstraintActor : public ARigidBodyBase
-{
-public:
-    UE_CLASS("/Script/Engine", "PhysicsConstraintActor");
-    UE_READONLY class UPhysicsConstraintComponent* ConstraintComp;
-    class AActor* ConstraintActor1;
-    class AActor* ConstraintActor2;
-    bool bDisableCollision;
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* ConstraintComp__UeSubobject = "MyConstraintComp /Script/Engine.PhysicsConstraintComponent";
-        static constexpr const char* RootComponent__UeSubobject = "MyConstraintComp /Script/Engine.PhysicsConstraintComponent";
-    };
-};
-
-class UPhysicsSpringComponent : public USceneComponent
-{
-public:
-    UE_CLASS("/Script/Engine", "PhysicsSpringComponent");
-    float SpringStiffness;
-    float SpringDamping;
-    float SpringLengthAtRest;
-    float SpringRadius;
-    TEnum<ECollisionChannel> SpringChannel;
-    bool bIgnoreSelf;
-    UE_READONLY float SpringCompression;
-    UE_PURE float GetNormalizedCompressionScalar() const;
-    UE_PURE FVector GetSpringCurrentEndPoint() const;
-    UE_PURE FVector GetSpringDirection() const;
-    UE_PURE FVector GetSpringRestingPoint() const;
-};
-
-class APlanarReflection : public ASceneCapture
-{
-public:
-    UE_CLASS("/Script/Engine", "PlanarReflection");
-    UE_READONLY class UPlanarReflectionComponent* PlanarReflectionComponent;
-    bool bShowPreviewPlane;
-    void OnInterpToggle(bool bEnable);
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* PlanarReflectionComponent__UeSubobject = "NewPlanarReflectionComponent /Script/Engine.PlanarReflectionComponent";
-        static constexpr const char* SceneComponent__UeSubobject = "SceneComponent /Script/Engine.SceneComponent";
-    };
-};
-
-class UPlaneReflectionCaptureComponent : public UReflectionCaptureComponent
-{
-public:
-    UE_CLASS("/Script/Engine", "PlaneReflectionCaptureComponent");
-    float InfluenceRadiusScale;
-    class UDrawSphereComponent* PreviewInfluenceRadius;
-    class UBoxComponent* PreviewCaptureBox;
-};
-
-class UPlatformEventsComponent : public UActorComponent
-{
-public:
-    UE_CLASS("/Script/Engine", "PlatformEventsComponent");
-    TMulticastInlineDelegate<void()> PlatformChangedToLaptopModeDelegate;
-    TMulticastInlineDelegate<void()> PlatformChangedToTabletModeDelegate;
-    bool IsInLaptopMode();
-    bool IsInTabletMode();
-    bool SupportsConvertibleLaptops();
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* PlatformChangedToLaptopModeDelegate__UeDispatcher = "Assignable";
-        static constexpr const char* PlatformChangedToTabletModeDelegate__UeDispatcher = "Assignable";
-    };
-};
-
-class UPlayerInput : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "PlayerInput");
-    TArray<FKeyBind> DebugExecBindings;
-    TArray<FName> InvertedAxis;
-    void ClearSmoothing();
-    void InvertAxis(FName AxisName);
-    void InvertAxisKey(FKey AxisKey);
-    void SetBind(FName BindName, FString Command);
-    void SetMouseSensitivity(float Sensitivity);
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* UeClassTail = "0x0000000c /Script/Engine.PlayerController Input";
-    };
-};
-
-class UPoseAsset : public UAnimationAsset
-{
-public:
-    UE_CLASS("/Script/Engine", "PoseAsset");
-    FPoseDataContainer PoseContainer;
-    bool bAdditivePose;
-    int BasePoseIndex;
-    FName RetargetSource;
-    TArray<FTransform> RetargetSourceAssetReferencePose;
-};
-
-class UPoseWatch : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "PoseWatch");
-    class UEdGraphNode* Node;
-    FColor PoseWatchColour;
-};
-
-class APrecomputedVisibilityOverrideVolume : public AVolume
-{
-public:
-    UE_CLASS("/Script/Engine", "PrecomputedVisibilityOverrideVolume");
-    TArray<class AActor*> OverrideVisibleActors;
-    TArray<class AActor*> OverrideInvisibleActors;
-    TArray<FName> OverrideInvisibleLevels;
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* BrushComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
-        static constexpr const char* RootComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
-    };
-};
-
-class APrecomputedVisibilityVolume : public AVolume
-{
-public:
-    UE_CLASS("/Script/Engine", "PrecomputedVisibilityVolume");
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* BrushComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
-        static constexpr const char* RootComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
-    };
-};
-
-class ARectLight : public ALight
-{
-public:
-    UE_CLASS("/Script/Engine", "RectLight");
-    UE_READONLY class URectLightComponent* RectLightComponent;
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* LightComponent__UeSubobject = "LightComponent0 /Script/Engine.RectLightComponent";
-        static constexpr const char* RectLightComponent__UeSubobject = "LightComponent0 /Script/Engine.RectLightComponent";
-        static constexpr const char* RootComponent__UeSubobject = "LightComponent0 /Script/Engine.RectLightComponent";
-    };
-};
-
-class UReplaySubsystem : public UGameInstanceSubsystem
-{
-public:
-    UE_CLASS("/Script/Engine", "ReplaySubsystem");
-    bool bLoadDefaultMapOnStop;
-    static UReplaySubsystem* Get(class UObject* WorldContextObject = nullptr);
-};
-
-class URuntimeOptionsBase : public UObject
-{
-public:
-    UE_CLASS("/Script/Engine", "RuntimeOptionsBase");
-};
-
-class URuntimeVirtualTextureComponent : public USceneComponent
-{
-public:
-    UE_CLASS("/Script/Engine", "RuntimeVirtualTextureComponent");
-    TSoftObjectPtr<class AActor> BoundsAlignActor;
-    bool bSetBoundsButton;
-    bool bSnapBoundsToLandscape;
-    UE_READONLY class URuntimeVirtualTexture* VirtualTexture;
-    bool bEnableScalability;
-    uint32 ScalabilityGroup;
-    bool bHidePrimitives;
-    UE_READONLY class UVirtualTextureBuilder* StreamingTexture;
-    int StreamLowMips;
-    bool bBuildStreamingMipsButton;
-    bool bEnableCompressCrunch;
-    bool bUseStreamingLowMipsInEditor;
-    UE_READONLY bool bBuildDebugStreamingMips;
-    void Invalidate(const FBoxSphereBounds& WorldBounds);
-};
-
-class ARuntimeVirtualTextureVolume : public AActor
-{
-public:
-    UE_CLASS("/Script/Engine", "RuntimeVirtualTextureVolume");
-    UE_READONLY class URuntimeVirtualTextureComponent* VirtualTextureComponent;
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* RootComponent__UeSubobject = "VirtualTextureComponent /Script/Engine.RuntimeVirtualTextureComponent";
-        static constexpr const char* VirtualTextureComponent__UeSubobject = "VirtualTextureComponent /Script/Engine.RuntimeVirtualTextureComponent";
-    };
-};
-
-class IRVOAvoidanceInterface
-{
-public:
-    UE_CLASS("/Script/Engine", "RVOAvoidanceInterface");
-};
-
-class ASceneCaptureCube : public ASceneCapture
-{
-public:
-    UE_CLASS("/Script/Engine", "SceneCaptureCube");
-    UE_READONLY class USceneCaptureComponentCube* CaptureComponentCube;
-    void OnInterpToggle(bool bEnable);
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* CaptureComponentCube__UeSubobject = "NewSceneCaptureComponentCube /Script/Engine.SceneCaptureComponentCube";
-        static constexpr const char* SceneComponent__UeSubobject = "SceneComponent /Script/Engine.SceneComponent";
-    };
-};
-
 class USimpleConstructionScript : public UObject
 {
 public:
@@ -26979,98 +26909,141 @@ public:
     class USCS_Node* DefaultSceneRootNode;
 };
 
+class USkeletalMesh : public UStreamableRenderAsset
+{
+public:
+    UE_CLASS("/Script/Engine", "SkeletalMesh");
+    UE_READONLY class USkeleton* Skeleton;
+    FBoxSphereBounds ImportedBounds;
+    FBoxSphereBounds ExtendedBounds;
+    UE_READONLY FVector PositiveBoundsExtension;
+    UE_READONLY FVector NegativeBoundsExtension;
+    TArray<FSkeletalMaterial> Materials;
+    TArray<FBoneMirrorInfo> SkelMirrorTable;
+    TArray<FSkeletalMeshLODInfo> LODInfo;
+    FPerPlatformInt MinLOD;
+    FPerPlatformBool DisableBelowMinLodStripping;
+    TEnum<EAxis> SkelMirrorAxis;
+    TEnum<EAxis> SkelMirrorFlipAxis;
+    bool bUseFullPrecisionUVs;
+    bool bUseHighPrecisionTangentBasis;
+    bool bHasBeenSimplified;
+    bool bHasVertexColors;
+    bool bEnablePerPolyCollision;
+    class UBodySetup* BodySetup;
+    UE_READONLY class UPhysicsAsset* PhysicsAsset;
+    UE_READONLY class UPhysicsAsset* ShadowPhysicsAsset;
+    UE_READONLY TArray<class UNodeMappingContainer*> NodeMappingData;
+    bool bSupportRayTracing;
+    TArray<class UMorphTarget*> MorphTargets;
+    UE_READONLY TSubclassOf<class UAnimInstance> PostProcessAnimBlueprint;
+    TArray<class UClothingAssetBase*> MeshClothingAssets;
+    FSkeletalMeshSamplingInfo SamplingInfo;
+    TArray<class UAssetUserData*> AssetUserData;
+    TArray<class USkeletalMeshSocket*> Sockets;
+    TArray<FSkinWeightProfileInfo> SkinWeightProfiles;
+    void SetDefaultAnimatingRig(TSoftObjectPtr<class UObject> InAnimatingRig);
+    void SetLODSettings(class USkeletalMeshLODSettings* InLODSettings);
+    void SetMaterials(const TArray<FSkeletalMaterial>& InMaterials);
+    void SetMeshClothingAssets(const TArray<class UClothingAssetBase*>& InMeshClothingAssets);
+    void SetMorphTargets(const TArray<class UMorphTarget*>& InMorphTargets);
+    UE_PURE class USkeletalMeshSocket* FindSocket(FName InSocketName) const;
+    class USkeletalMeshSocket* FindSocketAndIndex(FName InSocketName, int& OutIndex) const;
+    class USkeletalMeshSocket* FindSocketInfo(FName InSocketName, FTransform& outTransform, int& outBoneIndex, int& OutIndex) const;
+    UE_PURE FBoxSphereBounds GetBounds() const;
+    UE_PURE TSoftObjectPtr<class UObject> GetDefaultAnimatingRig() const;
+    UE_PURE FBoxSphereBounds GetImportedBounds() const;
+    UE_PURE class USkeletalMeshLODSettings* GetLODSettings() const;
+    UE_PURE TArray<FSkeletalMaterial> GetMaterials() const;
+    UE_PURE TArray<class UClothingAssetBase*> GetMeshClothingAssets() const;
+    UE_PURE TArray<class UMorphTarget*> GetMorphTargets() const;
+    UE_PURE class UNodeMappingContainer* GetNodeMappingContainer(class UBlueprint* SourceAsset) const;
+    UE_PURE TArray<class UNodeMappingContainer*> GetNodeMappingData() const;
+    UE_PURE class UPhysicsAsset* GetPhysicsAsset() const;
+    UE_PURE class UPhysicsAsset* GetShadowPhysicsAsset() const;
+    UE_PURE class USkeleton* GetSkeleton() const;
+    UE_PURE class USkeletalMeshSocket* GetSocketByIndex(int Index_0) const;
+    UE_PURE bool IsSectionUsingCloth(int InSectionIndex, bool bCheckCorrespondingSections) const;
+    UE_PURE TArray<FString> K2_GetAllMorphTargetNames() const;
+    UE_PURE int NumSockets() const;
+};
+
 class USkeletalMeshEditorData : public UObject
 {
 public:
     UE_CLASS("/Script/Engine", "SkeletalMeshEditorData");
 };
 
-class USkeletalMeshLODSettings : public UDataAsset
+class USkeletalMeshSocket : public UObject
 {
 public:
-    UE_CLASS("/Script/Engine", "SkeletalMeshLODSettings");
-    FPerPlatformInt MinLOD;
-    FPerPlatformBool DisableBelowMinLodStripping;
-    bool bOverrideLODStreamingSettings;
-    FPerPlatformBool bSupportLODStreaming;
-    FPerPlatformInt MaxNumStreamedLODs;
-    FPerPlatformInt MaxNumOptionalLODs;
-    TArray<FSkeletalMeshLODGroupSettings> LODGroups;
+    UE_CLASS("/Script/Engine", "SkeletalMeshSocket");
+    UE_READONLY FName SocketName;
+    UE_READONLY FName BoneName;
+    UE_READONLY FVector RelativeLocation;
+    UE_READONLY FRotator RelativeRotation;
+    UE_READONLY FVector RelativeScale;
+    UE_READONLY bool bForceAlwaysAnimated;
+    void InitializeSocketFromLocation(class USkeletalMeshComponent* SkelComp, FVector WorldLocation, FVector WorldNormal);
+    UE_PURE FVector GetSocketLocation(class USkeletalMeshComponent* SkelComp) const;
 };
 
-class USkeletalMeshSimplificationSettings : public UDeveloperSettings
+class USkyAtmosphereComponent : public USceneComponent
 {
 public:
-    UE_CLASS("/Script/Engine", "SkeletalMeshSimplificationSettings");
-    FName SkeletalMeshReductionModuleName;
+    UE_CLASS("/Script/Engine", "SkyAtmosphereComponent");
+    UE_READONLY TEnum<ESkyAtmosphereTransformMode> TransformMode;
+    UE_READONLY float BottomRadius;
+    UE_READONLY FColor GroundAlbedo;
+    UE_READONLY float AtmosphereHeight;
+    UE_READONLY float MultiScatteringFactor;
+    UE_READONLY float TraceSampleCountScale;
+    UE_READONLY float RayleighScatteringScale;
+    UE_READONLY FLinearColor RayleighScattering;
+    UE_READONLY float RayleighExponentialDistribution;
+    UE_READONLY float MieScatteringScale;
+    UE_READONLY FLinearColor MieScattering;
+    UE_READONLY float MieAbsorptionScale;
+    UE_READONLY FLinearColor MieAbsorption;
+    UE_READONLY float MieAnisotropy;
+    UE_READONLY float MieExponentialDistribution;
+    UE_READONLY float OtherAbsorptionScale;
+    UE_READONLY FLinearColor OtherAbsorption;
+    UE_READONLY FTentDistribution OtherTentDistribution;
+    UE_READONLY FLinearColor SkyLuminanceFactor;
+    UE_READONLY float AerialPespectiveViewDistanceScale;
+    UE_READONLY float HeightFogContribution;
+    UE_READONLY float TransmittanceMinLightElevationAngle;
+    UE_READONLY float AerialPerspectiveStartDepth;
+    FGuid bStaticLightingBuiltGUID;
+    FLinearColor GetAtmosphereTransmitanceOnGroundAtPlanetTop(class UDirectionalLightComponent* DirectionalLight);
+    void OverrideAtmosphereLightDirection(int AtmosphereLightIndex, const FVector& LightDirection);
+    void SetAerialPespectiveViewDistanceScale(float NewValue);
+    void SetAtmosphereHeight(float NewValue);
+    void SetHeightFogContribution(float NewValue);
+    void SetMieAbsorption(FLinearColor NewValue);
+    void SetMieAbsorptionScale(float NewValue);
+    void SetMieAnisotropy(float NewValue);
+    void SetMieExponentialDistribution(float NewValue);
+    void SetMieScattering(FLinearColor NewValue);
+    void SetMieScatteringScale(float NewValue);
+    void SetMultiScatteringFactor(float NewValue);
+    void SetOtherAbsorption(FLinearColor NewValue);
+    void SetOtherAbsorptionScale(float NewValue);
+    void SetRayleighExponentialDistribution(float NewValue);
+    void SetRayleighScattering(FLinearColor NewValue);
+    void SetRayleighScatteringScale(float NewValue);
+    void SetSkyLuminanceFactor(FLinearColor NewValue);
 };
 
-class ASkyAtmosphere : public AInfo
+class USoundClass : public UObject
 {
 public:
-    UE_CLASS("/Script/Engine", "SkyAtmosphere");
-    UE_READONLY class USkyAtmosphereComponent* SkyAtmosphereComponent;
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* RootComponent__UeSubobject = "SkyAtmosphereComponent /Script/Engine.SkyAtmosphereComponent";
-        static constexpr const char* SkyAtmosphereComponent__UeSubobject = "SkyAtmosphereComponent /Script/Engine.SkyAtmosphereComponent";
-    };
-};
-
-class USkyLightComponent : public ULightComponentBase
-{
-public:
-    UE_CLASS("/Script/Engine", "SkyLightComponent");
-    UE_READONLY bool bRealTimeCapture;
-    UE_READONLY TEnum<ESkyLightSourceType> SourceType;
-    UE_READONLY class UTextureCube* Cubemap;
-    UE_READONLY float SourceCubemapAngle;
-    UE_READONLY int CubemapResolution;
-    UE_READONLY float SkyDistanceThreshold;
-    UE_READONLY bool bCaptureEmissiveOnly;
-    UE_READONLY bool bLowerHemisphereIsBlack;
-    UE_READONLY FLinearColor LowerHemisphereColor;
-    UE_READONLY float OcclusionMaxDistance;
-    UE_READONLY float Contrast;
-    UE_READONLY float OcclusionExponent;
-    UE_READONLY float MinOcclusion;
-    UE_READONLY FColor OcclusionTint;
-    UE_READONLY bool bCloudAmbientOcclusion;
-    UE_READONLY float CloudAmbientOcclusionStrength;
-    UE_READONLY float CloudAmbientOcclusionExtent;
-    UE_READONLY float CloudAmbientOcclusionMapResolutionScale;
-    UE_READONLY float CloudAmbientOcclusionApertureScale;
-    UE_READONLY TEnum<EOcclusionCombineMode> OcclusionCombineMode;
-    class UTextureCube* BlendDestinationCubemap;
-    void RecaptureSky();
-    void SetCubemap(class UTextureCube* NewCubemap);
-    void SetCubemapBlend(class UTextureCube* SourceCubemap, class UTextureCube* DestinationCubemap, float InBlendFraction);
-    void SetIndirectLightingIntensity(float NewIntensity);
-    void SetIntensity(float NewIntensity);
-    void SetLightColor(FLinearColor NewLightColor);
-    void SetLowerHemisphereColor(const FLinearColor& InLowerHemisphereColor);
-    void SetMinOcclusion(float InMinOcclusion);
-    void SetOcclusionContrast(float InOcclusionContrast);
-    void SetOcclusionExponent(float InOcclusionExponent);
-    void SetOcclusionTint(const FColor& InTint);
-    void SetVolumetricScatteringIntensity(float NewIntensity);
-};
-
-class USoundCue : public USoundBase
-{
-public:
-    UE_CLASS("/Script/Engine", "SoundCue");
-    bool bPrimeOnLoad;
-    class USoundNode* FirstNode;
-    UE_READONLY float VolumeMultiplier;
-    UE_READONLY float PitchMultiplier;
-    FSoundAttenuationSettings AttenuationOverrides;
-    float SubtitlePriority;
-    bool bOverrideAttenuation;
-    bool bExcludeFromRandomNodeBranchCulling;
-    int CookedQualityIndex;
-    bool bHasPlayWhenSilent;
+    UE_CLASS("/Script/Engine", "SoundClass");
+    UE_READONLY FSoundClassProperties Properties;
+    UE_READONLY TArray<class USoundClass*> ChildClasses;
+    UE_READONLY TArray<FPassiveSoundMixModifier> PassiveSoundMixModifiers;
+    UE_READONLY class USoundClass* ParentClass;
 };
 
 class USoundNodeAttenuation : public USoundNode
@@ -27089,12 +27062,11 @@ public:
     TArray<float> InputVolume;
 };
 
-class USoundNodeDialoguePlayer : public USoundNode
+class USoundNodeGroupControl : public USoundNode
 {
 public:
-    UE_CLASS("/Script/Engine", "SoundNodeDialoguePlayer");
-    FDialogueWaveParameter DialogueWaveParameter;
-    bool bLooping;
+    UE_CLASS("/Script/Engine", "SoundNodeGroupControl");
+    TArray<int> GroupSizes;
 };
 
 class USoundNodeMature : public USoundNode
@@ -27113,50 +27085,93 @@ public:
     float VolumeMax;
 };
 
-class USoundNodeOscillator : public USoundNode
+class USoundNodeModulatorContinuous : public USoundNode
 {
 public:
-    UE_CLASS("/Script/Engine", "SoundNodeOscillator");
-    bool bModulateVolume;
-    bool bModulatePitch;
-    float AmplitudeMin;
-    float AmplitudeMax;
-    float FrequencyMin;
-    float FrequencyMax;
-    float OffsetMin;
-    float OffsetMax;
-    float CenterMin;
-    float CenterMax;
+    UE_CLASS("/Script/Engine", "SoundNodeModulatorContinuous");
+    FModulatorContinuousParams PitchModulationParams;
+    FModulatorContinuousParams VolumeModulationParams;
 };
 
-class USoundNodeParamCrossFade : public USoundNodeDistanceCrossFade
+class USoundNodeRandom : public USoundNode
 {
 public:
-    UE_CLASS("/Script/Engine", "SoundNodeParamCrossFade");
-    FName ParamName;
+    UE_CLASS("/Script/Engine", "SoundNodeRandom");
+    TArray<float> Weights;
+    TArray<bool> HasBeenUsed;
+    int NumRandomUsed;
+    int PreselectAtLevelLoad;
+    bool bShouldExcludeFromBranchCulling;
+    bool bSoundCueExcludedFromBranchCulling;
+    bool bRandomizeWithoutReplacement;
 };
 
-class USoundNodeSwitch : public USoundNode
+class USoundNodeSoundClass : public USoundNode
 {
 public:
-    UE_CLASS("/Script/Engine", "SoundNodeSwitch");
-    FName IntParameterName;
+    UE_CLASS("/Script/Engine", "SoundNodeSoundClass");
+    class USoundClass* SoundClassOverride;
 };
 
-class USoundNodeWaveParam : public USoundNode
+class USoundSourceBus : public USoundWave
 {
 public:
-    UE_CLASS("/Script/Engine", "SoundNodeWaveParam");
-    FName WaveParameterName;
+    UE_CLASS("/Script/Engine", "SoundSourceBus");
+    TEnum<ESourceBusChannels> SourceBusChannels;
+    float SourceBusDuration;
+    class UAudioBus* AudioBus;
+    bool bAutoDeactivateWhenSilent;
 };
 
-class UEndpointSubmix : public USoundSubmixBase
+class USoundSubmix : public USoundSubmixWithParentBase
 {
 public:
-    UE_CLASS("/Script/Engine", "EndpointSubmix");
-    FName EndpointType;
-    TSubclassOf<class UAudioEndpointSettingsBase> EndpointSettingsClass;
-    class UAudioEndpointSettingsBase* EndpointSettings;
+    UE_CLASS("/Script/Engine", "SoundSubmix");
+    UE_READONLY bool bMuteWhenBackgrounded;
+    UE_READONLY TArray<class USoundEffectSubmixPreset*> SubmixEffectChain;
+    class USoundfieldEncodingSettingsBase* AmbisonicsPluginSettings;
+    int EnvelopeFollowerAttackTime;
+    int EnvelopeFollowerReleaseTime;
+    TEnum<EGainParamMode> GainMode;
+    float OutputVolume;
+    float WetLevel;
+    float DryLevel;
+    FSoundModulationDestinationSettings OutputVolumeModulation;
+    FSoundModulationDestinationSettings WetLevelModulation;
+    FSoundModulationDestinationSettings DryLevelModulation;
+    TMulticastInlineDelegate<void(class USoundWave* ResultingSoundWave)> OnSubmixRecordedFileDone;
+    void AddEnvelopeFollowerDelegate(class UObject* WorldContextObject, TDelegate<void(TArray<float> Envelope)> OnSubmixEnvelopeBP);
+    void AddEnvelopeFollowerDelegate(TDelegate<void(TArray<float> Envelope)> OnSubmixEnvelopeBP);
+    void AddSpectralAnalysisDelegate(class UObject* WorldContextObject, const TArray<FSoundSubmixSpectralAnalysisBandSettings>& InBandSettings, TDelegate<void(TArray<float> Magnitude)> OnSubmixSpectralAnalysisBP, float UpdateRate, float DecibelNoiseFloor, bool bDoNormalize, bool bDoAutoRange, float AutoRangeAttackTime, float AutoRangeReleaseTime);
+    void AddSpectralAnalysisDelegate(const TArray<FSoundSubmixSpectralAnalysisBandSettings>& InBandSettings, TDelegate<void(TArray<float> Magnitude)> OnSubmixSpectralAnalysisBP, float UpdateRate, float DecibelNoiseFloor, bool bDoNormalize, bool bDoAutoRange, float AutoRangeAttackTime, float AutoRangeReleaseTime);
+    void RemoveSpectralAnalysisDelegate(class UObject* WorldContextObject, TDelegate<void(TArray<float> Magnitude)> OnSubmixSpectralAnalysisBP);
+    void RemoveSpectralAnalysisDelegate(TDelegate<void(TArray<float> Magnitude)> OnSubmixSpectralAnalysisBP);
+    void SetSubmixOutputVolume(class UObject* WorldContextObject, float InOutputVolume);
+    void SetSubmixOutputVolume(float InOutputVolume);
+    void StartEnvelopeFollowing(class UObject* WorldContextObject);
+    void StartEnvelopeFollowing();
+    void StartRecordingOutput(class UObject* WorldContextObject, float ExpectedDuration);
+    void StartRecordingOutput(float ExpectedDuration);
+    void StartSpectralAnalysis(class UObject* WorldContextObject, TEnum<EFFTSize> FFTSize, TEnum<EFFTPeakInterpolationMethod> InterpolationMethod, TEnum<EFFTWindowType> WindowType, float HopSize, TEnum<EAudioSpectrumType> SpectrumType);
+    void StartSpectralAnalysis(TEnum<EFFTSize> FFTSize, TEnum<EFFTPeakInterpolationMethod> InterpolationMethod, TEnum<EFFTWindowType> WindowType, float HopSize, TEnum<EAudioSpectrumType> SpectrumType);
+    void StopEnvelopeFollowing(class UObject* WorldContextObject);
+    void StopEnvelopeFollowing();
+    void StopRecordingOutput(class UObject* WorldContextObject, TEnum<EAudioRecordingExportType> ExportType, FString Name_0, FString Path, class USoundWave* ExistingSoundWaveToOverwrite);
+    void StopRecordingOutput(TEnum<EAudioRecordingExportType> ExportType, FString Name_0, FString Path, class USoundWave* ExistingSoundWaveToOverwrite);
+    void StopSpectralAnalysis(class UObject* WorldContextObject);
+    void StopSpectralAnalysis();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnSubmixRecordedFileDone__UeDispatcher = "Assignable";
+    };
+};
+
+class USpectatorPawnMovement : public UFloatingPawnMovement
+{
+public:
+    UE_CLASS("/Script/Engine", "SpectatorPawnMovement");
+    bool bIgnoreTimeDilation;
 };
 
 class USphereReflectionCaptureComponent : public UReflectionCaptureComponent
@@ -27168,125 +27183,52 @@ public:
     class UDrawSphereComponent* PreviewInfluenceRadius;
 };
 
-class USplineComponent : public UPrimitiveComponent
+class UStaticMesh : public UStreamableRenderAsset
 {
 public:
-    UE_CLASS("/Script/Engine", "SplineComponent");
-    FSplineCurves SplineCurves;
-    FInterpCurveVector SplineInfo;
-    FInterpCurveQuat SplineRotInfo;
-    FInterpCurveVector SplineScaleInfo;
-    FInterpCurveFloat SplineReparamTable;
-    bool bAllowSplineEditingPerInstance;
-    int ReparamStepsPerSegment;
-    float Duration;
-    bool bStationaryEndpoints;
-    bool bSplineHasBeenEdited;
-    bool bModifiedByConstructionScript;
-    bool bInputSplinePointsToConstructionScript;
-    bool bDrawDebug;
-    bool bClosedLoop;
-    bool bLoopPositionOverride;
-    float LoopPosition;
-    FVector DefaultUpVector;
-    void AddPoint(const FSplinePoint& Point, bool bUpdateSpline);
-    void AddPoints(const TArray<FSplinePoint>& Points, bool bUpdateSpline);
-    void AddSplineLocalPoint(const FVector& Position);
-    void AddSplinePoint(const FVector& Position, TEnum<ESplineCoordinateSpace> CoordinateSpace, bool bUpdateSpline);
-    void AddSplinePointAtIndex(const FVector& Position, int Index_0, TEnum<ESplineCoordinateSpace> CoordinateSpace, bool bUpdateSpline);
-    void AddSplineWorldPoint(const FVector& Position);
-    void ClearSplinePoints(bool bUpdateSpline);
-    void RemoveSplinePoint(int Index_0, bool bUpdateSpline);
-    void SetClosedLoop(bool bInClosedLoop, bool bUpdateSpline);
-    void SetClosedLoopAtPosition(bool bInClosedLoop, float Key, bool bUpdateSpline);
-    void SetDefaultUpVector(const FVector& UpVector, TEnum<ESplineCoordinateSpace> CoordinateSpace);
-    void SetDrawDebug(bool bShow);
-    void SetLocationAtSplinePoint(int PointIndex, const FVector& InLocation, TEnum<ESplineCoordinateSpace> CoordinateSpace, bool bUpdateSpline);
-    void SetRotationAtSplinePoint(int PointIndex, const FRotator& InRotation, TEnum<ESplineCoordinateSpace> CoordinateSpace, bool bUpdateSpline);
-    void SetScaleAtSplinePoint(int PointIndex, const FVector& InScaleVector, bool bUpdateSpline);
-    void SetSelectedSplineSegmentColor(const FLinearColor& SegmentColor);
-    void SetSplineLocalPoints(const TArray<FVector>& Points);
-    void SetSplinePoints(const TArray<FVector>& Points, TEnum<ESplineCoordinateSpace> CoordinateSpace, bool bUpdateSpline);
-    void SetSplinePointType(int PointIndex, TEnum<ESplinePointType> Type, bool bUpdateSpline);
-    void SetSplineWorldPoints(const TArray<FVector>& Points);
-    void SetTangentAtSplinePoint(int PointIndex, const FVector& InTangent, TEnum<ESplineCoordinateSpace> CoordinateSpace, bool bUpdateSpline);
-    void SetTangentColor(const FLinearColor& TangentColor);
-    void SetTangentsAtSplinePoint(int PointIndex, const FVector& InArriveTangent, const FVector& InLeaveTangent, TEnum<ESplineCoordinateSpace> CoordinateSpace, bool bUpdateSpline);
-    void SetUnselectedSplineSegmentColor(const FLinearColor& SegmentColor);
-    void SetUpVectorAtSplinePoint(int PointIndex, const FVector& InUpVector, TEnum<ESplineCoordinateSpace> CoordinateSpace, bool bUpdateSpline);
-    void SetWorldLocationAtSplinePoint(int PointIndex, const FVector& InLocation);
-    void UpdateSpline();
-    UE_PURE FVector FindDirectionClosestToWorldLocation(const FVector& WorldLocation, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
-    UE_PURE float FindInputKeyClosestToWorldLocation(const FVector& WorldLocation) const;
-    UE_PURE FVector FindLocationClosestToWorldLocation(const FVector& WorldLocation, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
-    UE_PURE FVector FindRightVectorClosestToWorldLocation(const FVector& WorldLocation, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
-    UE_PURE float FindRollClosestToWorldLocation(const FVector& WorldLocation, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
-    UE_PURE FRotator FindRotationClosestToWorldLocation(const FVector& WorldLocation, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
-    UE_PURE FVector FindScaleClosestToWorldLocation(const FVector& WorldLocation) const;
-    UE_PURE FVector FindTangentClosestToWorldLocation(const FVector& WorldLocation, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
-    UE_PURE FTransform FindTransformClosestToWorldLocation(const FVector& WorldLocation, TEnum<ESplineCoordinateSpace> CoordinateSpace, bool bUseScale) const;
-    UE_PURE FVector FindUpVectorClosestToWorldLocation(const FVector& WorldLocation, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
-    UE_PURE FVector GetArriveTangentAtSplinePoint(int PointIndex, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
-    UE_PURE FVector GetDefaultUpVector(TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
-    UE_PURE FVector GetDirectionAtDistanceAlongSpline(float Distance, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
-    UE_PURE FVector GetDirectionAtSplineInputKey(float InKey, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
-    UE_PURE FVector GetDirectionAtSplinePoint(int PointIndex, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
-    UE_PURE FVector GetDirectionAtTime(float Time, TEnum<ESplineCoordinateSpace> CoordinateSpace, bool bUseConstantVelocity) const;
-    UE_PURE float GetDistanceAlongSplineAtSplineInputKey(float InKey) const;
-    UE_PURE float GetDistanceAlongSplineAtSplinePoint(int PointIndex) const;
-    UE_PURE float GetFloatPropertyAtSplineInputKey(float InKey, FName PropertyName) const;
-    UE_PURE float GetFloatPropertyAtSplinePoint(int Index_0, FName PropertyName) const;
-    UE_PURE float GetInputKeyAtDistanceAlongSpline(float Distance) const;
-    UE_PURE FVector GetLeaveTangentAtSplinePoint(int PointIndex, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
-    void GetLocalLocationAndTangentAtSplinePoint(int PointIndex, FVector& LocalLocation, FVector& LocalTangent) const;
-    void GetLocationAndTangentAtSplinePoint(int PointIndex, FVector& Location, FVector& Tangent, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
-    UE_PURE FVector GetLocationAtDistanceAlongSpline(float Distance, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
-    UE_PURE FVector GetLocationAtSplineInputKey(float InKey, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
-    UE_PURE FVector GetLocationAtSplinePoint(int PointIndex, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
-    UE_PURE FVector GetLocationAtTime(float Time, TEnum<ESplineCoordinateSpace> CoordinateSpace, bool bUseConstantVelocity) const;
-    UE_PURE int GetNumberOfSplinePoints() const;
-    UE_PURE int GetNumberOfSplineSegments() const;
-    UE_PURE FVector GetRightVectorAtDistanceAlongSpline(float Distance, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
-    UE_PURE FVector GetRightVectorAtSplineInputKey(float InKey, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
-    UE_PURE FVector GetRightVectorAtSplinePoint(int PointIndex, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
-    UE_PURE FVector GetRightVectorAtTime(float Time, TEnum<ESplineCoordinateSpace> CoordinateSpace, bool bUseConstantVelocity) const;
-    UE_PURE float GetRollAtDistanceAlongSpline(float Distance, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
-    UE_PURE float GetRollAtSplineInputKey(float InKey, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
-    UE_PURE float GetRollAtSplinePoint(int PointIndex, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
-    UE_PURE float GetRollAtTime(float Time, TEnum<ESplineCoordinateSpace> CoordinateSpace, bool bUseConstantVelocity) const;
-    UE_PURE FRotator GetRotationAtDistanceAlongSpline(float Distance, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
-    UE_PURE FRotator GetRotationAtSplineInputKey(float InKey, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
-    UE_PURE FRotator GetRotationAtSplinePoint(int PointIndex, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
-    UE_PURE FRotator GetRotationAtTime(float Time, TEnum<ESplineCoordinateSpace> CoordinateSpace, bool bUseConstantVelocity) const;
-    UE_PURE FVector GetScaleAtDistanceAlongSpline(float Distance) const;
-    UE_PURE FVector GetScaleAtSplineInputKey(float InKey) const;
-    UE_PURE FVector GetScaleAtSplinePoint(int PointIndex) const;
-    UE_PURE FVector GetScaleAtTime(float Time, bool bUseConstantVelocity) const;
-    UE_PURE float GetSplineLength() const;
-    UE_PURE TEnum<ESplinePointType> GetSplinePointType(int PointIndex) const;
-    UE_PURE FVector GetTangentAtDistanceAlongSpline(float Distance, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
-    UE_PURE FVector GetTangentAtSplineInputKey(float InKey, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
-    UE_PURE FVector GetTangentAtSplinePoint(int PointIndex, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
-    UE_PURE FVector GetTangentAtTime(float Time, TEnum<ESplineCoordinateSpace> CoordinateSpace, bool bUseConstantVelocity) const;
-    UE_PURE FTransform GetTransformAtDistanceAlongSpline(float Distance, TEnum<ESplineCoordinateSpace> CoordinateSpace, bool bUseScale) const;
-    UE_PURE FTransform GetTransformAtSplineInputKey(float InKey, TEnum<ESplineCoordinateSpace> CoordinateSpace, bool bUseScale) const;
-    UE_PURE FTransform GetTransformAtSplinePoint(int PointIndex, TEnum<ESplineCoordinateSpace> CoordinateSpace, bool bUseScale) const;
-    UE_PURE FTransform GetTransformAtTime(float Time, TEnum<ESplineCoordinateSpace> CoordinateSpace, bool bUseConstantVelocity, bool bUseScale) const;
-    UE_PURE FVector GetUpVectorAtDistanceAlongSpline(float Distance, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
-    UE_PURE FVector GetUpVectorAtSplineInputKey(float InKey, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
-    UE_PURE FVector GetUpVectorAtSplinePoint(int PointIndex, TEnum<ESplineCoordinateSpace> CoordinateSpace) const;
-    UE_PURE FVector GetUpVectorAtTime(float Time, TEnum<ESplineCoordinateSpace> CoordinateSpace, bool bUseConstantVelocity) const;
-    UE_PURE FVector GetVectorPropertyAtSplineInputKey(float InKey, FName PropertyName) const;
-    UE_PURE FVector GetVectorPropertyAtSplinePoint(int Index_0, FName PropertyName) const;
-    UE_PURE FVector GetWorldDirectionAtDistanceAlongSpline(float Distance) const;
-    UE_PURE FVector GetWorldDirectionAtTime(float Time, bool bUseConstantVelocity) const;
-    UE_PURE FVector GetWorldLocationAtDistanceAlongSpline(float Distance) const;
-    UE_PURE FVector GetWorldLocationAtSplinePoint(int PointIndex) const;
-    UE_PURE FVector GetWorldLocationAtTime(float Time, bool bUseConstantVelocity) const;
-    UE_PURE FRotator GetWorldRotationAtDistanceAlongSpline(float Distance) const;
-    UE_PURE FRotator GetWorldRotationAtTime(float Time, bool bUseConstantVelocity) const;
-    UE_PURE FVector GetWorldTangentAtDistanceAlongSpline(float Distance) const;
-    UE_PURE bool IsClosedLoop() const;
+    UE_CLASS("/Script/Engine", "StaticMesh");
+    FPerPlatformInt MinLOD;
+    UE_READONLY float LpvBiasMultiplier;
+    TArray<FStaticMaterial> StaticMaterials;
+    float LightmapUVDensity;
+    int LightMapResolution;
+    int LightMapCoordinateIndex;
+    float DistanceFieldSelfShadowBias;
+    class UBodySetup* BodySetup;
+    int LODForCollision;
+    bool bGenerateMeshDistanceField;
+    bool bStripComplexCollisionForConsole;
+    bool bHasNavigationData;
+    bool bSupportUniformlyDistributedSampling;
+    bool bSupportPhysicalMaterialMasks;
+    bool bSupportRayTracing;
+    bool bIsBuiltAtRuntime;
+    bool bAllowCPUAccess;
+    bool bSupportGpuUniformlyDistributedSampling;
+    TArray<class UStaticMeshSocket*> Sockets;
+    FVector PositiveBoundsExtension;
+    FVector NegativeBoundsExtension;
+    FBoxSphereBounds ExtendedBounds;
+    int ElementToIgnoreForTexFactor;
+    TArray<class UAssetUserData*> AssetUserData;
+    class UObject* EditableMesh;
+    class UNavCollisionBase* NavCollision;
+    static class UStaticMeshDescription* CreateStaticMeshDescription(class UObject* Outer_0);
+    FName AddMaterial(class UMaterialInterface* Material);
+    void AddSocket(class UStaticMeshSocket* Socket);
+    void BuildFromStaticMeshDescriptions(const TArray<class UStaticMeshDescription*>& StaticMeshDescriptions, bool bBuildSimpleCollision);
+    void RemoveSocket(class UStaticMeshSocket* Socket);
+    void SetStaticMaterials(const TArray<FStaticMaterial>& InStaticMaterials);
+    UE_PURE class UStaticMeshSocket* FindSocket(FName InSocketName) const;
+    UE_PURE FBox GetBoundingBox() const;
+    UE_PURE FBoxSphereBounds GetBounds() const;
+    UE_PURE class UMaterialInterface* GetMaterial(int MaterialIndex) const;
+    UE_PURE int GetMaterialIndex(FName MaterialSlotName) const;
+    UE_PURE int GetMinimumLODForPlatform(const FName& PlatformName) const;
+    void GetMinimumLODForPlatforms(TMap<FName, int>& PlatformMinimumLODs) const;
+    UE_PURE int GetNumLODs() const;
+    UE_PURE int GetNumSections(int InLOD) const;
+    UE_PURE TArray<FStaticMaterial> GetStaticMaterials() const;
 };
 
 class UStereoLayerShapeCylinder : public UStereoLayerShape
@@ -27314,14 +27256,38 @@ public:
     void SetEquirectProps(FEquirectProps InScaleBiases);
 };
 
-class UStereoLayerFunctionLibrary : public UBlueprintFunctionLibrary
+class UStereoLayerComponent : public USceneComponent
 {
 public:
-    UE_CLASS("/Script/Engine", "StereoLayerFunctionLibrary");
-    static void EnableAutoLoadingSplashScreen(bool InAutoShowEnabled);
-    static void HideSplashScreen();
-    static void SetSplashScreen(class UTexture* Texture, FVector2D Scale, FVector Offset, bool bShowLoadingMovie, bool bShowOnSet);
-    static void ShowSplashScreen();
+    UE_CLASS("/Script/Engine", "StereoLayerComponent");
+    bool bLiveTexture;
+    bool bSupportsDepth;
+    bool bNoAlphaChannel;
+    UE_READONLY class UTexture* Texture;
+    UE_READONLY class UTexture* LeftTexture;
+    bool bQuadPreserveTextureRatio;
+    UE_READONLY FVector2D QuadSize;
+    UE_READONLY FBox2D UVRect;
+    float CylinderRadius;
+    float CylinderOverlayArc;
+    int CylinderHeight;
+    FEquirectProps EquirectProps;
+    UE_READONLY TEnum<EStereoLayerType> StereoLayerType;
+    TEnum<EStereoLayerShape> StereoLayerShape;
+    UE_READONLY class UStereoLayerShape* Shape;
+    UE_READONLY int Priority;
+    void MarkTextureForUpdate();
+    void SetEquirectProps(FEquirectProps InScaleBiases);
+    void SetLeftTexture(class UTexture* InTexture);
+    void SetPriority(int InPriority);
+    void SetQuadSize(FVector2D InQuadSize);
+    void SetTexture(class UTexture* InTexture);
+    void SetUVRect(FBox2D InUVRect);
+    UE_PURE class UTexture* GetLeftTexture() const;
+    UE_PURE int GetPriority() const;
+    UE_PURE FVector2D GetQuadSize() const;
+    UE_PURE class UTexture* GetTexture() const;
+    UE_PURE FBox2D GetUVRect() const;
 };
 
 class UStringTable : public UObject
@@ -27330,15 +27296,11 @@ public:
     UE_CLASS("/Script/Engine", "StringTable");
 };
 
-class USubsystemBlueprintLibrary : public UBlueprintFunctionLibrary
+class USubsurfaceProfile : public UObject
 {
 public:
-    UE_CLASS("/Script/Engine", "SubsystemBlueprintLibrary");
-    UE_PURE static class UEngineSubsystem* GetEngineSubsystem(TSubclassOf<class UEngineSubsystem> Class_0);
-    UE_PURE static class UGameInstanceSubsystem* GetGameInstanceSubsystem(class UObject* contextObject, TSubclassOf<class UGameInstanceSubsystem> Class_0);
-    UE_PURE static class ULocalPlayerSubsystem* GetLocalPlayerSubsystem(class UObject* contextObject, TSubclassOf<class ULocalPlayerSubsystem> Class_0);
-    UE_PURE static class ULocalPlayerSubsystem* GetLocalPlayerSubSystemFromPlayerController(class APlayerController* PlayerController, TSubclassOf<class ULocalPlayerSubsystem> Class_0);
-    UE_PURE static class UWorldSubsystem* GetWorldSubsystem(class UObject* contextObject, TSubclassOf<class UWorldSubsystem> Class_0);
+    UE_CLASS("/Script/Engine", "SubsurfaceProfile");
+    FSubsurfaceProfileStruct Settings;
 };
 
 class USubUVAnimation : public UObject
@@ -27377,49 +27339,104 @@ private:
     };
 };
 
-class UTexture2DArray : public UTexture
+class UTextRenderComponent : public UPrimitiveComponent
 {
 public:
-    UE_CLASS("/Script/Engine", "Texture2DArray");
-    TEnum<ETextureAddress> AddressX;
-    TEnum<ETextureAddress> AddressY;
-    TEnum<ETextureAddress> AddressZ;
+    UE_CLASS("/Script/Engine", "TextRenderComponent");
+    UE_READONLY FText Text;
+    UE_READONLY class UMaterialInterface* TextMaterial;
+    UE_READONLY class UFont* Font;
+    UE_READONLY TEnum<EHorizTextAligment> HorizontalAlignment;
+    UE_READONLY TEnum<EVerticalTextAligment> VerticalAlignment;
+    UE_READONLY FColor TextRenderColor;
+    UE_READONLY float XScale;
+    UE_READONLY float YScale;
+    UE_READONLY float WorldSize;
+    float InvDefaultSize;
+    UE_READONLY float HorizSpacingAdjust;
+    UE_READONLY float VertSpacingAdjust;
+    UE_READONLY bool bAlwaysRenderAsText;
+    void K2_SetText(const FText& Value);
+    void SetFont(class UFont* Value);
+    void SetHorizontalAlignment(TEnum<EHorizTextAligment> Value);
+    void SetHorizSpacingAdjust(float Value);
+    void SetText(FString Value);
+    void SetTextMaterial(class UMaterialInterface* Material);
+    void SetTextRenderColor(FColor Value);
+    void SetVerticalAlignment(TEnum<EVerticalTextAligment> Value);
+    void SetVertSpacingAdjust(float Value);
+    void SetWorldSize(float Value);
+    void SetXScale(float Value);
+    void SetYScale(float Value);
+    UE_PURE FVector GetTextLocalSize() const;
+    UE_PURE FVector GetTextWorldSize() const;
 };
 
-class UTexture2DDynamic : public UTexture
+class UTextureMipDataProviderFactory : public UAssetUserData
 {
 public:
-    UE_CLASS("/Script/Engine", "Texture2DDynamic");
-    TEnum<EPixelFormat> Format;
+    UE_CLASS("/Script/Engine", "TextureMipDataProviderFactory");
 };
 
-class UTextureRenderTargetCube : public UTextureRenderTarget
+class UTimelineComponent : public UActorComponent
 {
 public:
-    UE_CLASS("/Script/Engine", "TextureRenderTargetCube");
-    int SizeX;
-    FLinearColor ClearColor;
-    TEnum<EPixelFormat> OverrideFormat;
-    UE_READONLY bool bHDR;
-    bool bForceLinearGamma;
-};
-
-class UTireType : public UDataAsset
-{
-public:
-    UE_CLASS("/Script/Engine", "TireType");
-    float FrictionScale;
-};
-
-class ATriggerBox : public ATriggerBase
-{
-public:
-    UE_CLASS("/Script/Engine", "TriggerBox");
+    UE_CLASS("/Script/Engine", "TimelineComponent");
+    FTimeline TheTimeline;
+    bool bIgnoreTimeDilation;
+    void OnRep_Timeline();
+    void Play();
+    void PlayFromStart();
+    void Reverse();
+    void ReverseFromEnd();
+    void SetFloatCurve(class UCurveFloat* NewFloatCurve, FName FloatTrackName);
+    void SetIgnoreTimeDilation(bool bNewIgnoreTimeDilation);
+    void SetLinearColorCurve(class UCurveLinearColor* NewLinearColorCurve, FName LinearColorTrackName);
+    void SetLooping(bool bNewLooping);
+    void SetNewTime(float newTime);
+    void SetPlaybackPosition(float NewPosition, bool bFireEvents, bool bFireUpdate);
+    void SetPlayRate(float NewRate);
+    void SetTimelineLength(float NewLength);
+    void SetTimelineLengthMode(TEnum<ETimelineLengthMode> NewLengthMode);
+    void SetVectorCurve(class UCurveVector* NewVectorCurve, FName VectorTrackName);
+    void Stop();
+    UE_PURE bool GetIgnoreTimeDilation() const;
+    UE_PURE float GetPlaybackPosition() const;
+    UE_PURE float GetPlayRate() const;
+    UE_PURE float GetTimelineLength() const;
+    UE_PURE bool IsLooping() const;
+    UE_PURE bool IsPlaying() const;
+    UE_PURE bool IsReversing() const;
 private:
     struct UeMarkers
     {
-        static constexpr const char* CollisionComponent__UeSubobject = "CollisionComp /Script/Engine.BoxComponent";
-        static constexpr const char* RootComponent__UeSubobject = "CollisionComp /Script/Engine.BoxComponent";
+        static constexpr const char* TheTimeline__Replicated = "OnRep_Timeline:";
+    };
+};
+
+class UTouchInterface : public UObject
+{
+public:
+    UE_CLASS("/Script/Engine", "TouchInterface");
+    TArray<FTouchInputControl> Controls;
+    float ActiveOpacity;
+    float InactiveOpacity;
+    float TimeUntilDeactive;
+    float TimeUntilReset;
+    float ActivationDelay;
+    bool bPreventRecenter;
+    float StartupDelay;
+};
+
+class ATriggerVolume : public AVolume
+{
+public:
+    UE_CLASS("/Script/Engine", "TriggerVolume");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* BrushComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
+        static constexpr const char* RootComponent__UeSubobject = "BrushComponent0 /Script/Engine.BrushComponent";
     };
 };
 
@@ -27456,46 +27473,31 @@ public:
     class UDPICustomScalingRule* CustomScalingRule;
 };
 
-class UVectorFieldAnimated : public UVectorField
+class UVectorFieldComponent : public UPrimitiveComponent
 {
 public:
-    UE_CLASS("/Script/Engine", "VectorFieldAnimated");
-    class UTexture2D* Texture;
-    TEnum<EVectorFieldConstructionOp> ConstructionOp;
-    int VolumeSizeX;
-    int VolumeSizeY;
-    int VolumeSizeZ;
-    int SubImagesX;
-    int SubImagesY;
-    int FrameCount;
-    float FramesPerSecond;
-    bool bLoop;
-    class UVectorFieldStatic* NoiseField;
-    float NoiseScale;
-    float NoiseMax;
+    UE_CLASS("/Script/Engine", "VectorFieldComponent");
+    class UVectorField* VectorField;
+    float Intensity;
+    float Tightness;
+    bool bPreviewVectorField;
+    void SetIntensity(float NewIntensity);
 };
 
-class AVectorFieldVolume : public AActor
+class UVectorFieldStatic : public UVectorField
 {
 public:
-    UE_CLASS("/Script/Engine", "VectorFieldVolume");
-    UE_READONLY class UVectorFieldComponent* VectorFieldComponent;
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* RootComponent__UeSubobject = "VectorFieldComponent0 /Script/Engine.VectorFieldComponent";
-        static constexpr const char* VectorFieldComponent__UeSubobject = "VectorFieldComponent0 /Script/Engine.VectorFieldComponent";
-    };
+    UE_CLASS("/Script/Engine", "VectorFieldStatic");
+    int SizeX;
+    int SizeY;
+    int SizeZ;
+    bool bAllowCPUAccess;
 };
 
-class UViewportStatsSubsystem : public UWorldSubsystem
+class ULightMapVirtualTexture : public UVirtualTexture
 {
 public:
-    UE_CLASS("/Script/Engine", "ViewportStatsSubsystem");
-    int AddDisplayDelegate(TDelegate<void(FText& OutText, FLinearColor& OutColor)> Delegate);
-    void AddTimedDisplay(FText Text, FLinearColor Color, float Duration);
-    void RemoveDisplayDelegate(int IndexToRemove);
-    static UViewportStatsSubsystem* Get(class UObject* WorldContextObject = nullptr);
+    UE_CLASS("/Script/Engine", "LightMapVirtualTexture");
 };
 
 class UVirtualTexture2D : public UTexture2D
@@ -27507,39 +27509,37 @@ public:
     bool bSinglePhysicalSpace;
 };
 
-class UVirtualTexturePoolConfig : public UObject
+class UVirtualTextureBuilder : public UObject
 {
 public:
-    UE_CLASS("/Script/Engine", "VirtualTexturePoolConfig");
-    int DefaultSizeInMegabyte;
-    TArray<FVirtualTextureSpacePoolConfig> Pools;
+    UE_CLASS("/Script/Engine", "VirtualTextureBuilder");
+    UE_READONLY class UVirtualTexture2D* Texture;
+    uint64 BuildHash;
 };
 
-class UVisualLoggerAutomationTests : public UObject
+class UVisualLoggerKismetLibrary : public UBlueprintFunctionLibrary
 {
 public:
-    UE_CLASS("/Script/Engine", "VisualLoggerAutomationTests");
-};
-
-class UVOIPTalker : public UActorComponent
-{
-public:
-    UE_CLASS("/Script/Engine", "VOIPTalker");
-    FVoiceSettings Settings;
-    static class UVOIPTalker* CreateTalkerForPlayer(class APlayerState* OwningState);
-    void BPOnTalkingBegin(class UAudioComponent* AudioComponent);
-    void BPOnTalkingEnd();
-    float GetVoiceLevel();
-    void RegisterWithPlayerState(class APlayerState* OwningState);
+    UE_CLASS("/Script/Engine", "VisualLoggerKismetLibrary");
+    static void EnableRecording(bool bEnabled);
+    static void LogBox(class UObject* WorldContextObject, FBox BoxShape, FString Text, FLinearColor ObjectColor, FName LogCategory, bool bAddToMessageLog);
+    static void LogBox(FBox BoxShape, FString Text, FLinearColor ObjectColor, FName LogCategory, bool bAddToMessageLog);
+    static void LogLocation(class UObject* WorldContextObject, FVector Location, FString Text, FLinearColor ObjectColor, float Radius, FName LogCategory, bool bAddToMessageLog);
+    static void LogLocation(FVector Location, FString Text, FLinearColor ObjectColor, float Radius, FName LogCategory, bool bAddToMessageLog);
+    static void LogSegment(class UObject* WorldContextObject, FVector SegmentStart, FVector SegmentEnd, FString Text, FLinearColor ObjectColor, float Thickness, FName CategoryName, bool bAddToMessageLog);
+    static void LogSegment(FVector SegmentStart, FVector SegmentEnd, FString Text, FLinearColor ObjectColor, float Thickness, FName CategoryName, bool bAddToMessageLog);
+    static void LogText(class UObject* WorldContextObject, FString Text, FName LogCategory, bool bAddToMessageLog);
+    static void LogText(FString Text, FName LogCategory, bool bAddToMessageLog);
+    static void RedirectVislog(class UObject* SourceOwner, class UObject* DestinationOwner);
 };
 
 /* Each subsystem's Get: the USubsystemBlueprintLibrary getter for its kind, as the editor's Get node. */
 inline UTickableWorldSubsystem* UTickableWorldSubsystem::Get(class UObject* WorldContextObject) { return (UTickableWorldSubsystem*)USubsystemBlueprintLibrary::GetWorldSubsystem(WorldContextObject, UTickableWorldSubsystem::StaticClass()); }
 inline UDataDrivenCVarEngineSubsystem* UDataDrivenCVarEngineSubsystem::Get() { return (UDataDrivenCVarEngineSubsystem*)USubsystemBlueprintLibrary::GetEngineSubsystem(UDataDrivenCVarEngineSubsystem::StaticClass()); }
-inline UAutoDestroySubsystem* UAutoDestroySubsystem::Get(class UObject* WorldContextObject) { return (UAutoDestroySubsystem*)USubsystemBlueprintLibrary::GetWorldSubsystem(WorldContextObject, UAutoDestroySubsystem::StaticClass()); }
 inline UHLODEngineSubsystem* UHLODEngineSubsystem::Get() { return (UHLODEngineSubsystem*)USubsystemBlueprintLibrary::GetEngineSubsystem(UHLODEngineSubsystem::StaticClass()); }
-inline UObjectTraceWorldSubsystem* UObjectTraceWorldSubsystem::Get(class UObject* WorldContextObject) { return (UObjectTraceWorldSubsystem*)USubsystemBlueprintLibrary::GetWorldSubsystem(WorldContextObject, UObjectTraceWorldSubsystem::StaticClass()); }
 inline UReplaySubsystem* UReplaySubsystem::Get(class UObject* WorldContextObject) { return (UReplaySubsystem*)USubsystemBlueprintLibrary::GetGameInstanceSubsystem(WorldContextObject, UReplaySubsystem::StaticClass()); }
+inline UAutoDestroySubsystem* UAutoDestroySubsystem::Get(class UObject* WorldContextObject) { return (UAutoDestroySubsystem*)USubsystemBlueprintLibrary::GetWorldSubsystem(WorldContextObject, UAutoDestroySubsystem::StaticClass()); }
+inline UObjectTraceWorldSubsystem* UObjectTraceWorldSubsystem::Get(class UObject* WorldContextObject) { return (UObjectTraceWorldSubsystem*)USubsystemBlueprintLibrary::GetWorldSubsystem(WorldContextObject, UObjectTraceWorldSubsystem::StaticClass()); }
 inline UViewportStatsSubsystem* UViewportStatsSubsystem::Get(class UObject* WorldContextObject) { return (UViewportStatsSubsystem*)USubsystemBlueprintLibrary::GetWorldSubsystem(WorldContextObject, UViewportStatsSubsystem::StaticClass()); }
 
 /* What a method above forwards to (its __UeForward), the object first. */

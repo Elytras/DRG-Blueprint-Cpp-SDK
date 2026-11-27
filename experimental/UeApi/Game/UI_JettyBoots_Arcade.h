@@ -84,7 +84,7 @@ public:
     UE_COSMETIC virtual void Tick(FGeometry MyGeometry, float InDeltaTime);
     virtual void SetAudioSceneComponent(class USceneComponent* Audio_Scene_Component_0);
     UE_PRIVATE virtual void Display_State(int InLevel, int InScore, int InLives);
-    virtual void Display_HighScore(int InHighscore);
+    virtual void Display_HighScore(int InHighScore);
     virtual void Display_Score(int InValue);
     virtual void Display_Lives(int InValue, bool& OutGameOver);
     virtual void Display_Level(int InValue);

@@ -33,13 +33,13 @@ public:
     bool IsShortGlass;
     float ForceRequiredToBreak;
     bool IsBroken;
-    virtual void OnRep_IsBroken();
-    virtual void OnRep_UsedMesh();
-    UE_BLUEPRINT_CALLABLE virtual void UserConstructionScript();
-    UE_PROTECTED virtual void ReceiveBeginPlay();
-    virtual void BndEvt__BP_Anniversary_CocktailGlass_StaticMesh_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
-    virtual void BndEvt__BP_Anniversary_CocktailGlass_Sphere_K2Node_ComponentBoundEvent_2_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     virtual void ExecuteUbergraph_BP_Anniversary_CocktailGlass(int EntryPoint);
+    virtual void BndEvt__BP_Anniversary_CocktailGlass_Sphere_K2Node_ComponentBoundEvent_2_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+    virtual void BndEvt__BP_Anniversary_CocktailGlass_StaticMesh_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
+    UE_PROTECTED virtual void ReceiveBeginPlay();
+    UE_BLUEPRINT_CALLABLE virtual void UserConstructionScript();
+    virtual void OnRep_UsedMesh();
+    virtual void OnRep_IsBroken();
 private:
     struct UeMarkers
     {

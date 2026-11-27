@@ -52,7 +52,7 @@ public:
     class UBoxComponent* Box_Back;
     class UStaticMeshComponent* Mesh_Right;
     class UBoxComponent* Box_Right;
-    class UStaticMeshComponent* Mesh_Front;
+    class UStaticMeshComponent* mesh_front;
     class UBoxComponent* Box_Front;
     class USceneComponent* Doors;
     class UStaticMeshComponent* Cylinder;
@@ -124,7 +124,7 @@ private:
         static constexpr const char* Box_Back__UeScsNode = "9246b84254063342bae22cc19e969c46";
         static constexpr const char* Mesh_Right__UeScsNode = "1d1c812dff066c4787e76ada0edb11b8";
         static constexpr const char* Box_Right__UeScsNode = "f4b46fbe4a1b1b4ba8857aac955bdcba";
-        static constexpr const char* Mesh_Front__UeScsNode = "d9e5cad364a4d247b9088861b7c0bc69";
+        static constexpr const char* mesh_front__UeScsNode = "d9e5cad364a4d247b9088861b7c0bc69";
         static constexpr const char* Box_Front__UeScsNode = "df3e84272bb63049b2cc279d2425e42a";
         static constexpr const char* Doors__UeScsNode = "5632157668049e4793a40fc625701666";
         static constexpr const char* Cylinder__UeScsNode = "6f67f423b9cf1c4bb0281501338c81fb";

@@ -32,15 +32,13 @@ public:
     TMulticastInlineDelegate<void()> QuickCheatMenuRequested;
     virtual void UpdateTutorialComplete();
     UE_PURE virtual bool ShouldSkipEndscreen();
-    virtual void DestroyCharacter();
     UE_BLUEPRINT_PURE virtual void IsHUDVisible(bool& Visible);
-    virtual void OnLoaded_0556572242FB261AF5947C9A16CF353A(class UObject* Loaded);
+    virtual void DestroyCharacter();
     virtual void InpActEvt_O_K2Node_InputKeyEvent_17(FKey Key);
+    virtual void OnLoaded_0556572242FB261AF5947C9A16CF353A(class UObject* Loaded);
     virtual void InpActEvt_PushToTalk_K2Node_InputActionEvent_3(FKey Key);
     virtual void InpActEvt_PushToTalk_K2Node_InputActionEvent_2(FKey Key);
     virtual void InpActEvt_MenuButton_K2Node_InputActionEvent_1(FKey Key);
-    virtual void InpActEvt_Eight_K2Node_InputKeyEvent_16(FKey Key);
-    virtual void InpActEvt_Eight_K2Node_InputKeyEvent_15(FKey Key);
     virtual void InpActEvt_Nine_K2Node_InputKeyEvent_14(FKey Key);
     virtual void InpActEvt_Nine_K2Node_InputKeyEvent_13(FKey Key);
     virtual void InpActEvt_Zero_K2Node_InputKeyEvent_12(FKey Key);
@@ -67,9 +65,11 @@ public:
     UE_SERVER UE_RELIABLE virtual void RequestLoadScreen();
     UE_CLIENT UE_RELIABLE virtual void ShowSelectCharacterScreen();
     UE_CLIENT UE_RELIABLE virtual void ShowLoadingScrren();
-    UE_PROTECTED virtual void Receive_EndLevel_WaitForData(bool areObjectivesCompleted_Receive_EndLevel_WaitForData, int numberOfPlayersInPod_Receive_EndLevel_WaitForData);
+    UE_PROTECTED virtual void Receive_EndLevel_WaitForData(bool areObjectivesCompleted, int numberOfPlayersInPod);
     UE_SERVER UE_RELIABLE virtual void Server_SetLag();
     virtual void ExecuteUbergraph_BP_PlayerController(int EntryPoint);
+    virtual void InpActEvt_Eight_K2Node_InputKeyEvent_16(FKey Key);
+    virtual void InpActEvt_Eight_K2Node_InputKeyEvent_15(FKey Key);
 private:
     struct UeMarkers
     {

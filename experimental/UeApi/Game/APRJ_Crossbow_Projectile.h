@@ -41,7 +41,7 @@ public:
     class UNiagaraComponent* NS_Trail;
     class UParticleSystemComponent* P_Crossbow_Trail;
     class UDamageComponent* MainDamage;
-    class UStaticMeshComponent* Mesh_Front;
+    class UStaticMeshComponent* mesh_front;
     class UBoxComponent* Box;
     virtual void ExecuteUbergraph_PRJ_Crossbow_Projectile(int EntryPoint);
     UE_PROTECTED virtual void SetSimpleDamageComponentFromBP();
@@ -62,7 +62,7 @@ private:
         static constexpr const char* NS_Trail__UeScsNode = "a8a9a0d664979742aaf9e2d4f942e5d2";
         static constexpr const char* P_Crossbow_Trail__UeScsNode = "e2f3741434c31844892a570720473016";
         static constexpr const char* MainDamage__UeScsNode = "05ad9b72d163b9419d490a6a2c1dce30";
-        static constexpr const char* Mesh_Front__UeScsNode = "004861e7d35cd446a4bf9b1e968c5380";
+        static constexpr const char* mesh_front__UeScsNode = "004861e7d35cd446a4bf9b1e968c5380";
         static constexpr const char* Box__UeScsNode = "1b099cac0cab274e9af4b5a9fe099f1a";
     };
 };

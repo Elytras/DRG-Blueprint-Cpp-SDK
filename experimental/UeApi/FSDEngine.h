@@ -943,6 +943,35 @@ public:
     UE_CLASS("/Script/FSDEngine", "TerrainMaterialBase");
 };
 
+class UBuilderBase : public UObject
+{
+public:
+    UE_CLASS("/Script/FSDEngine", "BuilderBase");
+};
+
+class UCSGBase : public UBuilderBase
+{
+public:
+    UE_CLASS("/Script/FSDEngine", "CSGBase");
+    FMeshBaseProperties BaseProperties;
+    FTransform RelativeTransform;
+};
+
+class USimpleMeshWithCachedTree : public UCSGBase
+{
+public:
+    UE_CLASS("/Script/FSDEngine", "SimpleMeshWithCachedTree");
+    FBinaryTerrainMaterialCombiner Materials;
+    bool InvertCSG;
+};
+
+class UConvexMeshWithCachedTree : public USimpleMeshWithCachedTree
+{
+public:
+    UE_CLASS("/Script/FSDEngine", "ConvexMeshWithCachedTree");
+    FConvexNoiseProperties Noise;
+};
+
 class UTerrainMaterialCore : public UTerrainMaterialBase
 {
 public:
@@ -954,12 +983,6 @@ public:
     class UMaterialInterface* ScannerMaterial;
     TSoftObjectPtr<class UMaterialInterface> RenderMaterial;
     TSoftObjectPtr<class UMaterialInterface> ObjectSpaceMaterial;
-};
-
-class UBuilderBase : public UObject
-{
-public:
-    UE_CLASS("/Script/FSDEngine", "BuilderBase");
 };
 
 class UCSGBake : public UDataAsset
@@ -977,14 +1000,6 @@ public:
     TArray<class UBakeConfig*> CurrentBakeConfigs;
     class ACSGBuilder* CDO;
     void BakeCSG();
-};
-
-class UCSGBase : public UBuilderBase
-{
-public:
-    UE_CLASS("/Script/FSDEngine", "CSGBase");
-    FMeshBaseProperties BaseProperties;
-    FTransform RelativeTransform;
 };
 
 class UCSGBakedChildInstance : public UCSGBase
@@ -1088,21 +1103,6 @@ public:
     UE_CLASS("/Script/FSDEngine", "CSGChildInstanceComponent");
     FCSGChildInstanceProperties Properties;
     FGeneralTerrainMaterialCombiner Materials;
-};
-
-class USimpleMeshWithCachedTree : public UCSGBase
-{
-public:
-    UE_CLASS("/Script/FSDEngine", "SimpleMeshWithCachedTree");
-    FBinaryTerrainMaterialCombiner Materials;
-    bool InvertCSG;
-};
-
-class UConvexMeshWithCachedTree : public USimpleMeshWithCachedTree
-{
-public:
-    UE_CLASS("/Script/FSDEngine", "ConvexMeshWithCachedTree");
-    FConvexNoiseProperties Noise;
 };
 
 class UCSGConvexCollider : public UConvexMeshWithCachedTree

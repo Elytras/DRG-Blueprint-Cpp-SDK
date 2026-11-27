@@ -46,10 +46,10 @@ public:
     UWarningBox* WarningBox;
     UWarningBox* WarningBox_0;
     UE_COSMETIC UE_BLUEPRINT_CALLABLE virtual FEventReply OnKeyUp(FGeometry MyGeometry_OnKeyUp, FKeyEvent InKeyEvent_OnKeyUp);
-    virtual void FadeIt(bool FadeIn, float& Duration);
-    UE_COSMETIC virtual void PreConstruct(bool IsDesignTime_PreConstruct);
     virtual void BndEvt__Basic_ButtonScalable2_K2Node_ComponentBoundEvent_6_OnClicked__DelegateSignature();
+    virtual void FadeIt(bool FadeIn, float& Duration);
     virtual void Close();
+    UE_COSMETIC virtual void PreConstruct(bool IsDesignTime_PreConstruct);
     virtual void ExecuteUbergraph_UI_SteamLoading(int EntryPoint);
 };
 

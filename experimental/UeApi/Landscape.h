@@ -641,6 +641,13 @@ public:
     UE_CLASS("/Script/Landscape", "LandscapeGizmoActiveActor");
 };
 
+class ULandscapeSubsystem : public UTickableWorldSubsystem
+{
+public:
+    UE_CLASS("/Script/Landscape", "LandscapeSubsystem");
+    static ULandscapeSubsystem* Get(class UObject* WorldContextObject = nullptr);
+};
+
 class ULandscapeGizmoRenderComponent : public UPrimitiveComponent
 {
 public:
@@ -660,6 +667,15 @@ public:
     int EndCullDistance;
     bool RandomRotation;
     bool AlignToSurface;
+};
+
+class UMaterialExpressionLandscapeLayerSample : public UMaterialExpression
+{
+public:
+    UE_CLASS("/Script/Landscape", "MaterialExpressionLandscapeLayerSample");
+    FName ParameterName;
+    float PreviewWeight;
+    FGuid ExpressionGUID;
 };
 
 class ULandscapeHeightfieldCollisionComponent : public UPrimitiveComponent
@@ -691,22 +707,17 @@ public:
     TArray<class ALandscapeStreamingProxy*> Proxies;
 };
 
-class UMaterialExpressionLandscapeLayerWeight : public UMaterialExpression
-{
-public:
-    UE_CLASS("/Script/Landscape", "MaterialExpressionLandscapeLayerWeight");
-    FExpressionInput Base;
-    FExpressionInput Layer;
-    FName ParameterName;
-    float PreviewWeight;
-    FVector ConstBase;
-    FGuid ExpressionGUID;
-};
-
 class ULandscapeInfoMap : public UObject
 {
 public:
     UE_CLASS("/Script/Landscape", "LandscapeInfoMap");
+};
+
+class UMaterialExpressionLandscapeGrassOutput : public UMaterialExpressionCustomOutput
+{
+public:
+    UE_CLASS("/Script/Landscape", "MaterialExpressionLandscapeGrassOutput");
+    TArray<FGrassInput> GrassTypes;
 };
 
 class ULandscapeLayerInfoObject : public UObject
@@ -730,13 +741,6 @@ public:
     bool bEditorToolUsage;
 };
 
-class UMaterialExpressionLandscapeVisibilityMask : public UMaterialExpression
-{
-public:
-    UE_CLASS("/Script/Landscape", "MaterialExpressionLandscapeVisibilityMask");
-    FGuid ExpressionGUID;
-};
-
 class ULandscapeMeshCollisionComponent : public ULandscapeHeightfieldCollisionComponent
 {
 public:
@@ -755,6 +759,14 @@ private:
         static constexpr const char* LandscapeMeshProxyComponent__UeSubobject = "LandscapeMeshProxyComponent0 /Script/Landscape.LandscapeMeshProxyComponent";
         static constexpr const char* RootComponent__UeSubobject = "LandscapeMeshProxyComponent0 /Script/Landscape.LandscapeMeshProxyComponent";
     };
+};
+
+class UMaterialExpressionLandscapeLayerBlend : public UMaterialExpression
+{
+public:
+    UE_CLASS("/Script/Landscape", "MaterialExpressionLandscapeLayerBlend");
+    TArray<FLayerBlendInput> Layers;
+    FGuid ExpressionGUID;
 };
 
 class ULandscapeMeshProxyComponent : public UStaticMeshComponent
@@ -776,15 +788,6 @@ class ULandscapeSettings : public UDeveloperSettings
 public:
     UE_CLASS("/Script/Landscape", "LandscapeSettings");
     int MaxNumberOfLayers;
-};
-
-class UMaterialExpressionLandscapeLayerSample : public UMaterialExpression
-{
-public:
-    UE_CLASS("/Script/Landscape", "MaterialExpressionLandscapeLayerSample");
-    FName ParameterName;
-    float PreviewWeight;
-    FGuid ExpressionGUID;
 };
 
 class ULandscapeSplinesComponent : public UPrimitiveComponent
@@ -839,34 +842,12 @@ private:
     };
 };
 
-class ULandscapeSubsystem : public UTickableWorldSubsystem
-{
-public:
-    UE_CLASS("/Script/Landscape", "LandscapeSubsystem");
-    static ULandscapeSubsystem* Get(class UObject* WorldContextObject = nullptr);
-};
-
 class ULandscapeWeightmapUsage : public UObject
 {
 public:
     UE_CLASS("/Script/Landscape", "LandscapeWeightmapUsage");
     class ULandscapeComponent* ChannelUsage[4];
     FGuid LayerGuid;
-};
-
-class UMaterialExpressionLandscapeGrassOutput : public UMaterialExpressionCustomOutput
-{
-public:
-    UE_CLASS("/Script/Landscape", "MaterialExpressionLandscapeGrassOutput");
-    TArray<FGrassInput> GrassTypes;
-};
-
-class UMaterialExpressionLandscapeLayerBlend : public UMaterialExpression
-{
-public:
-    UE_CLASS("/Script/Landscape", "MaterialExpressionLandscapeLayerBlend");
-    TArray<FLayerBlendInput> Layers;
-    FGuid ExpressionGUID;
 };
 
 class UMaterialExpressionLandscapeLayerCoords : public UMaterialExpression
@@ -892,11 +873,30 @@ public:
     FGuid ExpressionGUID;
 };
 
+class UMaterialExpressionLandscapeLayerWeight : public UMaterialExpression
+{
+public:
+    UE_CLASS("/Script/Landscape", "MaterialExpressionLandscapeLayerWeight");
+    FExpressionInput Base;
+    FExpressionInput Layer;
+    FName ParameterName;
+    float PreviewWeight;
+    FVector ConstBase;
+    FGuid ExpressionGUID;
+};
+
 class UMaterialExpressionLandscapePhysicalMaterialOutput : public UMaterialExpressionCustomOutput
 {
 public:
     UE_CLASS("/Script/Landscape", "MaterialExpressionLandscapePhysicalMaterialOutput");
     TArray<FPhysicalMaterialInput> Inputs;
+};
+
+class UMaterialExpressionLandscapeVisibilityMask : public UMaterialExpression
+{
+public:
+    UE_CLASS("/Script/Landscape", "MaterialExpressionLandscapeVisibilityMask");
+    FGuid ExpressionGUID;
 };
 
 /* Each subsystem's Get: the USubsystemBlueprintLibrary getter for its kind, as the editor's Get node. */

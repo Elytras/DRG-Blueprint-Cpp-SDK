@@ -34,11 +34,11 @@ public:
     class UUserWidget* CharInfo;
     bool SimulateLateJoin;
     TSoftClassPtr<class UClass> CharacterSelectionClass;
-    UE_PROTECTED virtual void ReceiveBeginPlay();
     virtual void CollapseAndRemoveFromParent(class UWidget* Widget);
     virtual class UClass* GetLoaderScreenUIClass();
     virtual void CleanupUI();
     virtual void GetNonTakenHero(class UPlayerCharacterID*& SelectedClass);
+    UE_PROTECTED virtual void ReceiveBeginPlay();
     virtual void OnBack();
     virtual void OnPlayerCharacterPossesed_Event(class APawn* Pawn);
     UE_SERVER UE_RELIABLE virtual void Server_RequestNonTakenHero();

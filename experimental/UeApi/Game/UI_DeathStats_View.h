@@ -50,7 +50,7 @@ public:
     bool Debug;
     virtual void ExecuteUbergraph_UI_DeathStats_View(int EntryPoint);
     UE_COSMETIC virtual void PreConstruct(bool IsDesignTime);
-    virtual void ReBuild();
+    virtual void Rebuild();
     virtual void ChangeName(FString NewName);
     virtual void SetStatsOwner(class AFSDPlayerState* Player_State);
     virtual void Set_Selected_Item(UI_InfirmaryStats_Item* SelectedLine_0);

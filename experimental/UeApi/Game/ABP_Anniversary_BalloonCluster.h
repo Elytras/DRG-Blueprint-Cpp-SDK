@@ -21,9 +21,9 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     class USceneComponent* SoundLocation;
     bool PlaySound;
-    virtual void OnRep_PlaySound();
-    virtual void BndEvt__BP_Anniversary_BalloonCluster_SkeletalMeshComponent_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
     virtual void ExecuteUbergraph_BP_Anniversary_BalloonCluster(int EntryPoint);
+    virtual void BndEvt__BP_Anniversary_BalloonCluster_SkeletalMeshComponent_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
+    virtual void OnRep_PlaySound();
 private:
     struct UeMarkers
     {

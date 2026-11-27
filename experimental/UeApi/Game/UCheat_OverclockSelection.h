@@ -27,12 +27,12 @@ public:
     TArray<UCheat_PerkListItem*> perklistItems;
     virtual void ExecuteUbergraph_Cheat_OverclockSelection(int EntryPoint);
     virtual void On_state_change(bool Is_Checked, class UItemUpgrade* Item, TEnum<EItemCategory> Item_Category);
-    virtual void Initiate_widget(TEnum<EItemCategory> ItemCategory);
+    virtual void Initiate_Widget(TEnum<EItemCategory> ItemCategory);
 private:
     struct UeMarkers
     {
         static constexpr const char* On_state_change__UeName = "On state change";
-        static constexpr const char* Initiate_widget__UeName = "Initiate widget";
+        static constexpr const char* Initiate_Widget__UeName = "Initiate Widget";
     };
 };
 

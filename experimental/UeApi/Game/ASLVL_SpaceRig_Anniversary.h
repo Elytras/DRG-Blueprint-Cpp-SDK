@@ -18,8 +18,8 @@ public:
     using ABP_Anniversary_Sparkler = ::Game::Art::Environments::Holiday_Anniversary::Blueprint::ABP_Anniversary_Sparkler;
     FPointerToUberGraphFrame UberGraphFrame;
     ABP_Anniversary_Sparkler* BP_Anniversary_Sparkler11_2_ExecuteUbergraph_SLVL_SpaceRig_Anniversary_RefProperty;
-    UE_PROTECTED virtual void ReceiveBeginPlay();
     virtual void ExecuteUbergraph_SLVL_SpaceRig_Anniversary(int EntryPoint);
+    UE_PROTECTED virtual void ReceiveBeginPlay();
 };
 
 using SLVL_SpaceRig_Anniversary_C = ::Game::Maps::SpaceRig::ASLVL_SpaceRig_Anniversary;

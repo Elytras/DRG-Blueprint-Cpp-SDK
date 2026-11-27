@@ -51,8 +51,8 @@ public:
     UE_PURE virtual bool ShouldSkipInfoScreen();
     virtual void JoinInvite();
     virtual void OpenGameLevel();
-    virtual void DetectControllerMovement(float A);
     virtual void DetectMouseMovement(float A);
+    virtual void DetectControllerMovement(float A);
     virtual void Cleanup();
     virtual void InpActEvt_AnyKey_K2Node_InputKeyEvent_0(FKey Key);
     virtual void OnFailure_04D1FF9C451C776CE714DD955E807494();
@@ -78,7 +78,6 @@ public:
     virtual void NetworkErrorAccepted();
     virtual void OnCloseInfoscreen(UI_InfoScreen_Xbox* Screen);
     virtual void AttempReconnect(bool Yes);
-    virtual void CustomEvent_0(UI_InfoScreen_Xbox* Screen);
     virtual void OnFailedJoiningInvite();
     virtual void OnModdedSaveReady();
     virtual void OneMainSaveLeft();
@@ -88,6 +87,7 @@ public:
     virtual void Check_Info_Screen_Guid();
     virtual void Reset_Shown_Info_Screen();
     virtual void ExecuteUbergraph_Bp_StartMenu_PlayerController(int EntryPoint);
+    virtual void CustomEvent_0(UI_InfoScreen_Xbox* Screen);
 private:
     struct UeMarkers
     {

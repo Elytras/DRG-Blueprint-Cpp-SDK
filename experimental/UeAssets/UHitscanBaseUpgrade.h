@@ -60,8 +60,7 @@ UE_ASSET_AT(::UHitscanBaseUpgrade, UPG_DualMP_D_Penetration, "/Game/WeaponsNTool
 }
 namespace UeAssets::UHitscanBaseUpgrade::Game::WeaponsNTools::DualMachinePistols::Overclocks::OC_BonusesAndPenalties {
 UE_ASSET_AT(::UHitscanBaseUpgrade, Bonus_AccuracyHorizontal_DualMP, "/Game/WeaponsNTools/DualMachinePistols/Overclocks/OC_BonusesAndPenalties/Bonus_AccuracyHorizontal_DualMP");
-UE_ASSET_AT(::UHitscanBaseUpgrade, Bonus_AccuracyHorizontalBig_DualMP, "/Game/WeaponsNTools/DualMachinePistols/Overclocks/OC_BonusesAndPenalties/Bonus_AccuracyHorizontalBig_DualMP");
-UE_ASSET_AT(::UHitscanBaseUpgrade, Bonus_AccuracyVerticalBig_DualMP, "/Game/WeaponsNTools/DualMachinePistols/Overclocks/OC_BonusesAndPenalties/Bonus_AccuracyVerticalBig_DualMP");
+UE_ASSET_AT(::UHitscanBaseUpgrade, Bonus_BaseSpread_HighCaliberRounds_DualMP, "/Game/WeaponsNTools/DualMachinePistols/Overclocks/OC_BonusesAndPenalties/Bonus_BaseSpread_HighCaliberRounds_DualMP");
 UE_ASSET_AT(::UHitscanBaseUpgrade, Penalty_Accuracy_DualMP, "/Game/WeaponsNTools/DualMachinePistols/Overclocks/OC_BonusesAndPenalties/Penalty_Accuracy_DualMP");
 UE_ASSET_AT(::UHitscanBaseUpgrade, Penalty_AccuracyLarge_DualMP, "/Game/WeaponsNTools/DualMachinePistols/Overclocks/OC_BonusesAndPenalties/Penalty_AccuracyLarge_DualMP");
 }
@@ -136,4 +135,5 @@ namespace UeAssets::UHitscanBaseUpgrade::Game::WeaponsNTools::SawedOffShotgun::O
 UE_ASSET_AT(::UHitscanBaseUpgrade, OC_Bonus_HorizontalSpread_SawedOff, "/Game/WeaponsNTools/SawedOffShotgun/Overclocks/OC_BonusesAndPenalties/OC_Bonus_HorizontalSpread_SawedOff");
 UE_ASSET_AT(::UHitscanBaseUpgrade, OC_Bonus_Spread_SawedOff, "/Game/WeaponsNTools/SawedOffShotgun/Overclocks/OC_BonusesAndPenalties/OC_Bonus_Spread_SawedOff");
 UE_ASSET_AT(::UHitscanBaseUpgrade, OC_Penalty_Spread_SawedOff, "/Game/WeaponsNTools/SawedOffShotgun/Overclocks/OC_BonusesAndPenalties/OC_Penalty_Spread_SawedOff");
+UE_ASSET_AT(::UHitscanBaseUpgrade, Penalty_Spread_ShellShocker_SawedOff, "/Game/WeaponsNTools/SawedOffShotgun/Overclocks/OC_BonusesAndPenalties/Penalty_Spread_ShellShocker_SawedOff");
 }

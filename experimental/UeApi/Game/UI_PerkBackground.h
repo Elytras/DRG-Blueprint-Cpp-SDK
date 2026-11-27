@@ -34,6 +34,7 @@ public:
     FLinearColor FillColor;
     FLinearColor BorderColor;
     TEnum<EPerkTierState> PerkState;
+    bool UseNoBorderFrame;
     virtual void ExecuteUbergraph_UI_PerkBackground(int EntryPoint);
     UE_COSMETIC virtual void PreConstruct(bool IsDesignTime);
     virtual void SetDimensions(float InDimensions);

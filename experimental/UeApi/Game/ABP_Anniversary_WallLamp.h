@@ -27,11 +27,11 @@ public:
     class USceneComponent* Scene;
     UE_READONLY TArray<class USkeletalMesh*> LampMeshes;
     class USkeletalMesh* UsedLampMesh;
-    virtual void OnRep_UsedLampMesh();
-    virtual void OnCollide();
-    virtual void BndEvt__BP_Anniversary_Lamp_SK_Anniversary_WallLamp_01_K2Node_ComponentBoundEvent_1_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
-    UE_PROTECTED virtual void ReceiveBeginPlay();
     virtual void ExecuteUbergraph_BP_Anniversary_WallLamp(int EntryPoint);
+    UE_PROTECTED virtual void ReceiveBeginPlay();
+    virtual void BndEvt__BP_Anniversary_Lamp_SK_Anniversary_WallLamp_01_K2Node_ComponentBoundEvent_1_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
+    virtual void OnCollide();
+    virtual void OnRep_UsedLampMesh();
 private:
     struct UeMarkers
     {

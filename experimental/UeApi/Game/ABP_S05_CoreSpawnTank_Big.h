@@ -37,7 +37,7 @@ public:
     class USpotLightComponent* SpotLight1;
     class USpotLightComponent* SpotLight;
     class UInstantUsable* InstantUsable;
-    class UPointLightComponent* Bluelight;
+    class UPointLightComponent* BlueLight;
     bool PlayReact;
     bool MissionControlSpeak;
     float SeasonEventSpawnChance;
@@ -64,7 +64,7 @@ private:
         static constexpr const char* SpotLight1__UeScsNode = "349b854e7285df459dcfcfa8955df5fb";
         static constexpr const char* SpotLight__UeScsNode = "9e9977616adfb54fa9f26d4f379a5362";
         static constexpr const char* InstantUsable__UeScsNode = "9a49ec94a64d7d43932e70e5436915d9";
-        static constexpr const char* Bluelight__UeScsNode = "e5463b34244b0e43b2272bc2a0f2350d";
+        static constexpr const char* BlueLight__UeScsNode = "e5463b34244b0e43b2272bc2a0f2350d";
     };
 };
 

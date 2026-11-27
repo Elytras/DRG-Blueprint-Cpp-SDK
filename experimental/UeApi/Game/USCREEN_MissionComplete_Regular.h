@@ -25,7 +25,7 @@ class UVerticalBox;
 class UWidgetAnimation;
 class UWidgetSwitcher;
 namespace Game { namespace UI { namespace Art { namespace WidgetParts { class UBasic_ButtonScalable2; class UBasic_FlatGradientButton; }}}}
-namespace Game { namespace UI { namespace Global_UI_Elements { class UI_HazPlus_Condensed; }}}
+namespace Game { namespace UI { namespace Global_UI_Elements { class UI_HazPlus_Condensed; class UI_RunningText; }}}
 namespace Game { namespace UI { namespace MainOnscreenHUD { class UHUD_Milestone_Manager; }}}
 namespace Game { namespace UI { namespace Menu_MIssionCompleteMK2 { class UITM_MissionComplete_DeepDiveHeader; class UITM_MissionComplete_ResourceBox; class USCREEN_MissionComplete_Season; class UI_MissionComplete_CharacterBox; class UI_MissionComplete_CombinedRewards; }}}
 namespace Game { namespace UI { namespace Menu_MissionSelectionMK3 { class UITM_MisSel_DotMarker; class UITM_MisSel_DotMarker_MissionLength; class UITM_MisSel_DotMarker_WorkEnvironment; class UITM_MisSel_MissionIconBasic; }}}
@@ -50,6 +50,7 @@ public:
     using UI_HazPlus_Condensed = ::Game::UI::Global_UI_Elements::UI_HazPlus_Condensed;
     using UI_MissionComplete_CharacterBox = ::Game::UI::Menu_MIssionCompleteMK2::UI_MissionComplete_CharacterBox;
     using UI_MissionComplete_CombinedRewards = ::Game::UI::Menu_MIssionCompleteMK2::UI_MissionComplete_CombinedRewards;
+    using UI_RunningText = ::Game::UI::Global_UI_Elements::UI_RunningText;
     using USCREEN_MissionComplete_Season = ::Game::UI::Menu_MIssionCompleteMK2::USCREEN_MissionComplete_Season;
     FPointerToUberGraphFrame UberGraphFrame_SCREEN_MissionComplete_Regular_C;
     UE_READONLY class UWidgetAnimation* SeasonAppear;
@@ -72,6 +73,7 @@ public:
     class UTextBlock* DATA_MissionName;
     class UTextBlock* DATA_MissionTime;
     class UTextBlock* DATA_MissionType;
+    UI_RunningText* Data_NitraDebtMessage;
     class UTextBlock* Data_TotalBonus;
     class UTextBlock* DATA_Warning;
     UITM_MissionComplete_DeepDiveHeader* DeepDiveHeader;

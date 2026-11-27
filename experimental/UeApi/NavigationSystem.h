@@ -164,6 +164,12 @@ struct FSupportedAreaData
     FSupportedAreaData(FString AreaClassName, int AreaID, class UClass* AreaClass) {}
 };
 
+class UCrowdManagerBase : public UObject
+{
+public:
+    UE_CLASS("/Script/NavigationSystem", "CrowdManagerBase");
+};
+
 class UNavigationQueryFilter : public UObject
 {
 public:
@@ -171,12 +177,6 @@ public:
     TArray<FNavigationFilterArea> Areas;
     FNavigationFilterFlags IncludeFlags;
     FNavigationFilterFlags ExcludeFlags;
-};
-
-class UCrowdManagerBase : public UObject
-{
-public:
-    UE_CLASS("/Script/NavigationSystem", "CrowdManagerBase");
 };
 
 class ANavigationData : public AActor

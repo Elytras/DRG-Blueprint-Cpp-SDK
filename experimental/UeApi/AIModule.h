@@ -922,13 +922,6 @@ public:
     UE_CLASS("/Script/AIModule", "BlackboardKeyType");
 };
 
-class UBlackboardKeyType_Class : public UBlackboardKeyType
-{
-public:
-    UE_CLASS("/Script/AIModule", "BlackboardKeyType_Class");
-    class UClass* BaseClass;
-};
-
 class UBTNode : public UObject
 {
 public:
@@ -956,328 +949,6 @@ class UBTTask_BlackboardBase : public UBTTaskNode
 public:
     UE_CLASS("/Script/AIModule", "BTTask_BlackboardBase");
     FBlackboardKeySelector BlackboardKey;
-};
-
-class UAIPerceptionStimuliSourceComponent : public UActorComponent
-{
-public:
-    UE_CLASS("/Script/AIModule", "AIPerceptionStimuliSourceComponent");
-    UE_READONLY bool bAutoRegisterAsSource;
-    UE_READONLY TArray<TSubclassOf<class UAISense>> RegisterAsSourceForSenses;
-    void RegisterForSense(TSubclassOf<class UAISense> SenseClass);
-    void RegisterWithPerceptionSystem();
-    void UnregisterFromPerceptionSystem();
-    void UnregisterFromSense(TSubclassOf<class UAISense> SenseClass);
-};
-
-class UBTAuxiliaryNode : public UBTNode
-{
-public:
-    UE_CLASS("/Script/AIModule", "BTAuxiliaryNode");
-};
-
-class UBTDecorator : public UBTAuxiliaryNode
-{
-public:
-    UE_CLASS("/Script/AIModule", "BTDecorator");
-    bool bInverseCondition;
-    TEnum<EBTFlowAbortMode> FlowAbortMode;
-};
-
-class UPawnActionsComponent : public UActorComponent
-{
-public:
-    UE_CLASS("/Script/AIModule", "PawnActionsComponent");
-    UE_READONLY class APawn* ControlledPawn;
-    TArray<FPawnActionStack> ActionStacks;
-    TArray<FPawnActionEvent> ActionEvents;
-    class UPawnAction* CurrentAction;
-    static bool K2_PerformAction(class APawn* Pawn, class UPawnAction* Action, TEnum<EAIRequestPriority> Priority);
-    TEnum<EPawnActionAbortState> K2_AbortAction(class UPawnAction* ActionToAbort);
-    TEnum<EPawnActionAbortState> K2_ForceAbortAction(class UPawnAction* ActionToAbort);
-    bool K2_PushAction(class UPawnAction* NewAction, TEnum<EAIRequestPriority> Priority, class UObject* Instigator);
-};
-
-class UAISense : public UObject
-{
-public:
-    UE_CLASS("/Script/AIModule", "AISense");
-    UE_READONLY float DefaultExpirationAge;
-    UE_READONLY TEnum<EAISenseNotifyType> NotifyType;
-    UE_READONLY bool bWantsNewPawnNotification;
-    UE_READONLY bool bAutoRegisterAllPawnsAsSources;
-    class UAIPerceptionSystem* PerceptionSystemInstance;
-};
-
-class UAISense_Damage : public UAISense
-{
-public:
-    UE_CLASS("/Script/AIModule", "AISense_Damage");
-    TArray<FAIDamageEvent> RegisteredEvents;
-    static void ReportDamageEvent(class UObject* WorldContextObject, class AActor* DamagedActor, class AActor* Instigator, float damageAmount, FVector EventLocation, FVector HitLocation, FName Tag);
-    static void ReportDamageEvent(class AActor* DamagedActor, class AActor* Instigator, float damageAmount, FVector EventLocation, FVector HitLocation, FName Tag);
-};
-
-class UPawnAction : public UObject
-{
-public:
-    UE_CLASS("/Script/AIModule", "PawnAction");
-    class UPawnAction* ChildAction;
-    class UPawnAction* ParentAction;
-    class UPawnActionsComponent* OwnerComponent;
-    class UObject* Instigator;
-    class UBrainComponent* BrainComp;
-    UE_READONLY bool bAllowNewSameClassInstance;
-    bool bReplaceActiveSameClassInstance;
-    bool bShouldPauseMovement;
-    bool bAlwaysNotifyOnFinished;
-    static class UPawnAction* CreateActionInstance(class UObject* WorldContextObject, TSubclassOf<class UPawnAction> ActionClass);
-    static class UPawnAction* CreateActionInstance(TSubclassOf<class UPawnAction> ActionClass);
-    void Finish(TEnum<EPawnActionResult> WithResult);
-    UE_PURE TEnum<EAIRequestPriority> GetActionPriority();
-};
-
-class UAISenseBlueprintListener : public UUserDefinedStruct
-{
-public:
-    UE_CLASS("/Script/AIModule", "AISenseBlueprintListener");
-};
-
-class UAITask : public UGameplayTask
-{
-public:
-    UE_CLASS("/Script/AIModule", "AITask");
-    UE_READONLY class AAIController* OwnerController;
-};
-
-class UAITask_LockLogic : public UAITask
-{
-public:
-    UE_CLASS("/Script/AIModule", "AITask_LockLogic");
-};
-
-class UBlackboardKeyType_Rotator : public UBlackboardKeyType
-{
-public:
-    UE_CLASS("/Script/AIModule", "BlackboardKeyType_Rotator");
-};
-
-class UBTDecorator_BlackboardBase : public UBTDecorator
-{
-public:
-    UE_CLASS("/Script/AIModule", "BTDecorator_BlackboardBase");
-    FBlackboardKeySelector BlackboardKey;
-};
-
-class UEnvQueryItemType : public UObject
-{
-public:
-    UE_CLASS("/Script/AIModule", "EnvQueryItemType");
-};
-
-class UEnvQueryItemType_VectorBase : public UEnvQueryItemType
-{
-public:
-    UE_CLASS("/Script/AIModule", "EnvQueryItemType_VectorBase");
-};
-
-class UEnvQueryItemType_ActorBase : public UEnvQueryItemType_VectorBase
-{
-public:
-    UE_CLASS("/Script/AIModule", "EnvQueryItemType_ActorBase");
-};
-
-class UAISubsystem : public UObject
-{
-public:
-    UE_CLASS("/Script/AIModule", "AISubsystem");
-    class UAISystem* AISystem;
-};
-
-class UAIPerceptionSystem : public UAISubsystem
-{
-public:
-    UE_CLASS("/Script/AIModule", "AIPerceptionSystem");
-    TArray<class UAISense*> Senses;
-    float PerceptionAgingRate;
-    static TSubclassOf<class UAISense> GetSenseClassForStimulus(class UObject* WorldContextObject, const FAIStimulus& Stimulus);
-    static TSubclassOf<class UAISense> GetSenseClassForStimulus(const FAIStimulus& Stimulus);
-    static bool RegisterPerceptionStimuliSource(class UObject* WorldContextObject, TSubclassOf<class UAISense> Sense, class AActor* Target);
-    static bool RegisterPerceptionStimuliSource(TSubclassOf<class UAISense> Sense, class AActor* Target);
-    static void ReportPerceptionEvent(class UObject* WorldContextObject, class UAISenseEvent* PerceptionEvent);
-    static void ReportPerceptionEvent(class UAISenseEvent* PerceptionEvent);
-    void OnPerceptionStimuliSourceEndPlay(class AActor* Actor, TEnum<EEndPlayReason> EndPlayReason);
-    void ReportEvent(class UAISenseEvent* PerceptionEvent);
-};
-
-class UBrainComponent : public UActorComponent
-{
-public:
-    UE_CLASS("/Script/AIModule", "BrainComponent");
-    class UBlackboardComponent* BlackboardComp;
-    class AAIController* AIOwner;
-    void RestartLogic();
-    void StartLogic();
-    void StopLogic(FString reason);
-    UE_PURE bool IsPaused() const;
-    UE_PURE bool IsRunning() const;
-};
-
-class UBTService : public UBTAuxiliaryNode
-{
-public:
-    UE_CLASS("/Script/AIModule", "BTService");
-    float Interval;
-    float RandomDeviation;
-    bool bCallTickOnSearchStart;
-    bool bRestartTimerOnEachActivation;
-};
-
-class UAIBlueprintHelperLibrary : public UBlueprintFunctionLibrary
-{
-public:
-    UE_CLASS("/Script/AIModule", "AIBlueprintHelperLibrary");
-    static class UAIAsyncTaskBlueprintProxy* CreateMoveToProxyObject(class UObject* WorldContextObject, class APawn* Pawn, FVector Destination, class AActor* TargetActor, float AcceptanceRadius, bool bStopOnOverlap);
-    static class UAIAsyncTaskBlueprintProxy* CreateMoveToProxyObject(class APawn* Pawn, FVector Destination, class AActor* TargetActor, float AcceptanceRadius, bool bStopOnOverlap);
-    UE_PURE static class AAIController* GetAIController(class AActor* ControlledActor);
-    UE_PURE static class UBlackboardComponent* GetBlackboard(class AActor* Target);
-    UE_PURE static class UNavigationPath* GetCurrentPath(class AController* Controller);
-    UE_PURE static int GetCurrentPathIndex(class AController* Controller);
-    UE_PURE static TArray<FVector> GetCurrentPathPoints(class AController* Controller);
-    UE_PURE static int GetNextNavLinkIndex(class AController* Controller);
-    UE_PURE static bool IsValidAIDirection(FVector DirectionVector);
-    UE_PURE static bool IsValidAILocation(FVector Location);
-    UE_PURE static bool IsValidAIRotation(FRotator Rotation);
-    UE_AUTHORITY_ONLY static void LockAIResourcesWithAnimation(class UAnimInstance* AnimInstance, bool bLockMovement, bool LockAILogic);
-    static void SendAIMessage(class APawn* Target, FName Message, class UObject* MessageSource, bool bSuccess);
-    static void SimpleMoveToActor(class AController* Controller, class AActor* Goal);
-    static void SimpleMoveToLocation(class AController* Controller, const FVector& Goal);
-    static class APawn* SpawnAIFromClass(class UObject* WorldContextObject, TSubclassOf<class APawn> PawnClass, class UBehaviorTree* BehaviorTree, FVector Location, FRotator Rotation, bool bNoCollisionFail, class AActor* Owner);
-    static class APawn* SpawnAIFromClass(TSubclassOf<class APawn> PawnClass, class UBehaviorTree* BehaviorTree, FVector Location, FRotator Rotation, bool bNoCollisionFail, class AActor* Owner);
-    UE_AUTHORITY_ONLY static void UnlockAIResourcesWithAnimation(class UAnimInstance* AnimInstance, bool bUnlockMovement, bool UnlockAILogic);
-};
-
-class UEnvQueryNode : public UObject
-{
-public:
-    UE_CLASS("/Script/AIModule", "EnvQueryNode");
-    int VerNum;
-};
-
-class UBehaviorTreeComponent : public UBrainComponent
-{
-public:
-    UE_CLASS("/Script/AIModule", "BehaviorTreeComponent");
-    TArray<class UBTNode*> NodeInstances;
-    class UBehaviorTree* DefaultBehaviorTreeAsset;
-    void AddCooldownTagDuration(FGameplayTag CooldownTag, float CooldownDuration, bool bAddToExistingDuration);
-    void SetDynamicSubtree(FGameplayTag InjectTag, class UBehaviorTree* BehaviorAsset);
-    UE_PURE float GetTagCooldownEndTime(FGameplayTag CooldownTag) const;
-};
-
-class UAIAsyncTaskBlueprintProxy : public UObject
-{
-public:
-    UE_CLASS("/Script/AIModule", "AIAsyncTaskBlueprintProxy");
-    TMulticastInlineDelegate<void(EPathFollowingResult MovementResult)> OnSuccess;
-    TMulticastInlineDelegate<void(EPathFollowingResult MovementResult)> OnFail;
-    void OnMoveCompleted(FAIRequestID RequestID, TEnum<EPathFollowingResult> MovementResult);
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* OnSuccess__UeDispatcher = "Assignable";
-        static constexpr const char* OnFail__UeDispatcher = "Assignable";
-    };
-};
-
-class UEnvQueryGenerator : public UEnvQueryNode
-{
-public:
-    UE_CLASS("/Script/AIModule", "EnvQueryGenerator");
-    FString OptionName;
-    TSubclassOf<class UEnvQueryItemType> ItemType;
-    bool bAutoSortTests;
-};
-
-class UEnvQueryGenerator_CurrentLocation : public UEnvQueryGenerator
-{
-public:
-    UE_CLASS("/Script/AIModule", "EnvQueryGenerator_CurrentLocation");
-    TSubclassOf<class UEnvQueryContext> QueryContext;
-};
-
-class UAIDataProvider : public UObject
-{
-public:
-    UE_CLASS("/Script/AIModule", "AIDataProvider");
-};
-
-class UAIDataProvider_QueryParams : public UAIDataProvider
-{
-public:
-    UE_CLASS("/Script/AIModule", "AIDataProvider_QueryParams");
-    FName ParamName;
-    float FloatValue;
-    int IntValue;
-    bool boolValue;
-};
-
-class UAIDataProvider_Random : public UAIDataProvider_QueryParams
-{
-public:
-    UE_CLASS("/Script/AIModule", "AIDataProvider_Random");
-    float Min;
-    float Max;
-    bool bInteger;
-};
-
-class UAIHotSpotManager : public UObject
-{
-public:
-    UE_CLASS("/Script/AIModule", "AIHotSpotManager");
-};
-
-class UEnvQueryTest : public UEnvQueryNode
-{
-public:
-    UE_CLASS("/Script/AIModule", "EnvQueryTest");
-    int TestOrder;
-    TEnum<EEnvTestPurpose> TestPurpose;
-    FString TestComment;
-    TEnum<EEnvTestFilterOperator> MultipleContextFilterOp;
-    TEnum<EEnvTestScoreOperator> MultipleContextScoreOp;
-    TEnum<EEnvTestFilterType> FilterType;
-    FAIDataProviderBoolValue boolValue;
-    FAIDataProviderFloatValue FloatValueMin;
-    FAIDataProviderFloatValue FloatValueMax;
-    TEnum<EEnvTestScoreEquation> ScoringEquation;
-    TEnum<EEnvQueryTestClamping> ClampMinType;
-    TEnum<EEnvQueryTestClamping> ClampMaxType;
-    TEnum<EEQSNormalizationType> NormalizationType;
-    FAIDataProviderFloatValue ScoreClampMin;
-    FAIDataProviderFloatValue ScoreClampMax;
-    FAIDataProviderFloatValue ScoringFactor;
-    FAIDataProviderFloatValue ReferenceValue;
-    bool bDefineReferenceValue;
-    bool bWorkOnFloatValues;
-};
-
-class UEnvQueryTest_Pathfinding : public UEnvQueryTest
-{
-public:
-    UE_CLASS("/Script/AIModule", "EnvQueryTest_Pathfinding");
-    TEnum<EEnvTestPathfinding> TestMode;
-    TSubclassOf<class UEnvQueryContext> Context;
-    FAIDataProviderBoolValue PathFromContext;
-    FAIDataProviderBoolValue SkipUnreachable;
-    TSubclassOf<class UNavigationQueryFilter> FilterClass;
-};
-
-class UEnvQueryTest_PathfindingBatch : public UEnvQueryTest_Pathfinding
-{
-public:
-    UE_CLASS("/Script/AIModule", "EnvQueryTest_PathfindingBatch");
-    FAIDataProviderFloatValue ScanRangeMultiplier;
 };
 
 class UAIPerceptionComponent : public UActorComponent
@@ -1309,118 +980,77 @@ private:
     };
 };
 
-class IAIPerceptionListenerInterface
+class UBTAuxiliaryNode : public UBTNode
 {
 public:
-    UE_CLASS("/Script/AIModule", "AIPerceptionListenerInterface");
+    UE_CLASS("/Script/AIModule", "BTAuxiliaryNode");
 };
 
-class IAIResourceInterface
+class UBTDecorator : public UBTAuxiliaryNode
 {
 public:
-    UE_CLASS("/Script/AIModule", "AIResourceInterface");
+    UE_CLASS("/Script/AIModule", "BTDecorator");
+    bool bInverseCondition;
+    TEnum<EBTFlowAbortMode> FlowAbortMode;
 };
 
-class UPawnAction_Move : public UPawnAction
+class UPawnAction : public UObject
 {
 public:
-    UE_CLASS("/Script/AIModule", "PawnAction_Move");
-    class AActor* GoalActor;
-    FVector GoalLocation;
-    float AcceptableRadius;
-    TSubclassOf<class UNavigationQueryFilter> FilterClass;
-    bool bAllowStrafe;
-    bool bFinishOnOverlap;
-    bool bUsePathfinding;
-    bool bAllowPartialPath;
-    bool bProjectGoalToNavigation;
-    bool bUpdatePathToGoal;
-    bool bAbortChildActionOnPathChange;
+    UE_CLASS("/Script/AIModule", "PawnAction");
+    class UPawnAction* ChildAction;
+    class UPawnAction* ParentAction;
+    class UPawnActionsComponent* OwnerComponent;
+    class UObject* Instigator;
+    class UBrainComponent* BrainComp;
+    UE_READONLY bool bAllowNewSameClassInstance;
+    bool bReplaceActiveSameClassInstance;
+    bool bShouldPauseMovement;
+    bool bAlwaysNotifyOnFinished;
+    static class UPawnAction* CreateActionInstance(class UObject* WorldContextObject, TSubclassOf<class UPawnAction> ActionClass);
+    static class UPawnAction* CreateActionInstance(TSubclassOf<class UPawnAction> ActionClass);
+    void Finish(TEnum<EPawnActionResult> WithResult);
+    UE_PURE TEnum<EAIRequestPriority> GetActionPriority();
 };
 
-class UAIResource_Movement : public UGameplayTaskResource
+class UPawnAction_Sequence : public UPawnAction
 {
 public:
-    UE_CLASS("/Script/AIModule", "AIResource_Movement");
+    UE_CLASS("/Script/AIModule", "PawnAction_Sequence");
+    TArray<class UPawnAction*> ActionSequence;
+    UE_READONLY TEnum<EPawnActionFailHandling> ChildFailureHandlingMode;
+    class UPawnAction* RecentActionCopy;
 };
 
-class UAIResource_Logic : public UGameplayTaskResource
+class UAISense : public UObject
 {
 public:
-    UE_CLASS("/Script/AIModule", "AIResource_Logic");
+    UE_CLASS("/Script/AIModule", "AISense");
+    UE_READONLY float DefaultExpirationAge;
+    UE_READONLY TEnum<EAISenseNotifyType> NotifyType;
+    UE_READONLY bool bWantsNewPawnNotification;
+    UE_READONLY bool bAutoRegisterAllPawnsAsSources;
+    class UAIPerceptionSystem* PerceptionSystemInstance;
 };
 
-class AEQSTestingPawn : public ACharacter
+class UNavLocalGridManager : public UObject
 {
 public:
-    UE_CLASS("/Script/AIModule", "EQSTestingPawn");
-    class UEnvQuery* QueryTemplate;
-    TArray<FEnvNamedValue> QueryParams;
-    TArray<FAIDynamicParam> QueryConfig;
-    float TimeLimitPerStep;
-    int StepToDebugDraw;
-    TEnum<EEnvQueryHightlightMode> HighlightMode;
-    bool bDrawLabels;
-    bool bDrawFailedItems;
-    bool bReRunQueryOnlyOnFinishedMove;
-    bool bShouldBeVisibleInGame;
-    bool bTickDuringGame;
-    TEnum<EEnvQueryRunMode> QueryingMode;
-    FNavAgentProperties NavAgentProperties;
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* CapsuleComponent__UeSubobject = "CollisionCylinder /Script/Engine.CapsuleComponent";
-        static constexpr const char* CharacterMovement__UeSubobject = "CharMoveComp /Script/Engine.CharacterMovementComponent";
-        static constexpr const char* Mesh__UeSubobject = "CharacterMesh0 /Script/Engine.SkeletalMeshComponent";
-    };
-};
-
-class UAISense_Blueprint : public UAISense
-{
-public:
-    UE_CLASS("/Script/AIModule", "AISense_Blueprint");
-    TSubclassOf<class UUserDefinedStruct> ListenerDataType;
-    UE_READONLY TArray<class UAIPerceptionComponent*> ListenerContainer;
-    TArray<class UAISenseEvent*> UnprocessedEvents;
-    void K2_OnNewPawn(class APawn* NewPawn);
-    void OnListenerRegistered(class AActor* ActorListener, class UAIPerceptionComponent* PerceptionComponent);
-    void OnListenerUnregistered(class AActor* ActorListener, class UAIPerceptionComponent* PerceptionComponent);
-    void OnListenerUpdated(class AActor* ActorListener, class UAIPerceptionComponent* PerceptionComponent);
-    float OnUpdate(const TArray<class UAISenseEvent*>& EventsToProcess);
-    void GetAllListenerActors(TArray<class AActor*>& ListenerActors) const;
-    void GetAllListenerComponents(TArray<class UAIPerceptionComponent*>& ListenerComponents) const;
-};
-
-class UAISense_Hearing : public UAISense
-{
-public:
-    UE_CLASS("/Script/AIModule", "AISense_Hearing");
-    TArray<FAINoiseEvent> NoiseEvents;
-    float SpeedOfSoundSq;
-    static void ReportNoiseEvent(class UObject* WorldContextObject, FVector NoiseLocation, float Loudness, class AActor* Instigator, float MaxRange, FName Tag);
-    static void ReportNoiseEvent(FVector NoiseLocation, float Loudness, class AActor* Instigator, float MaxRange, FName Tag);
-};
-
-class UAISense_Prediction : public UAISense
-{
-public:
-    UE_CLASS("/Script/AIModule", "AISense_Prediction");
-    TArray<FAIPredictionEvent> RegisteredEvents;
-    static void RequestControllerPredictionEvent(class AAIController* Requestor, class AActor* PredictedActor, float PredictionTime);
-    static void RequestPawnPredictionEvent(class APawn* Requestor, class AActor* PredictedActor, float PredictionTime);
-};
-
-class UAISense_Sight : public UAISense
-{
-public:
-    UE_CLASS("/Script/AIModule", "AISense_Sight");
-    int MaxTracesPerTick;
-    int MinQueriesPerTimeSliceCheck;
-    double MaxTimeSlicePerTick;
-    float HighImportanceQueryDistanceThreshold;
-    float MaxQueryImportance;
-    float SightLimitQueryImportance;
+    UE_CLASS("/Script/AIModule", "NavLocalGridManager");
+    static int AddLocalNavigationGridForBox(class UObject* WorldContextObject, const FVector& Location, FVector Extent, FRotator Rotation, int Radius2D, float Height, bool bRebuildGrids);
+    static int AddLocalNavigationGridForBox(const FVector& Location, FVector Extent, FRotator Rotation, int Radius2D, float Height, bool bRebuildGrids);
+    static int AddLocalNavigationGridForCapsule(class UObject* WorldContextObject, const FVector& Location, float CapsuleRadius, float CapsuleHalfHeight, int Radius2D, float Height, bool bRebuildGrids);
+    static int AddLocalNavigationGridForCapsule(const FVector& Location, float CapsuleRadius, float CapsuleHalfHeight, int Radius2D, float Height, bool bRebuildGrids);
+    static int AddLocalNavigationGridForPoint(class UObject* WorldContextObject, const FVector& Location, int Radius2D, float Height, bool bRebuildGrids);
+    static int AddLocalNavigationGridForPoint(const FVector& Location, int Radius2D, float Height, bool bRebuildGrids);
+    static int AddLocalNavigationGridForPoints(class UObject* WorldContextObject, const TArray<FVector>& Locations, int Radius2D, float Height, bool bRebuildGrids);
+    static int AddLocalNavigationGridForPoints(const TArray<FVector>& Locations, int Radius2D, float Height, bool bRebuildGrids);
+    static bool FindLocalNavigationGridPath(class UObject* WorldContextObject, const FVector& Start, const FVector& End, TArray<FVector>& PathPoints);
+    static bool FindLocalNavigationGridPath(const FVector& Start, const FVector& End, TArray<FVector>& PathPoints);
+    static void RemoveLocalNavigationGrid(class UObject* WorldContextObject, int GridId, bool bRebuildGrids);
+    static void RemoveLocalNavigationGrid(int GridId, bool bRebuildGrids);
+    static bool SetLocalNavigationGridDensity(class UObject* WorldContextObject, float CellSize);
+    static bool SetLocalNavigationGridDensity(float CellSize);
 };
 
 class UAISense_Team : public UAISense
@@ -1428,138 +1058,6 @@ class UAISense_Team : public UAISense
 public:
     UE_CLASS("/Script/AIModule", "AISense_Team");
     TArray<FAITeamStimulusEvent> RegisteredEvents;
-};
-
-class UAISense_Touch : public UAISense
-{
-public:
-    UE_CLASS("/Script/AIModule", "AISense_Touch");
-    TArray<FAITouchEvent> RegisteredEvents;
-};
-
-class UAISenseConfig : public UObject
-{
-public:
-    UE_CLASS("/Script/AIModule", "AISenseConfig");
-    UE_READONLY FColor DebugColor;
-    UE_READONLY float MaxAge;
-    UE_READONLY bool bStartsEnabled;
-};
-
-class UAISenseConfig_Blueprint : public UAISenseConfig
-{
-public:
-    UE_CLASS("/Script/AIModule", "AISenseConfig_Blueprint");
-    UE_READONLY TSubclassOf<class UAISense_Blueprint> Implementation;
-};
-
-class UAISenseConfig_Damage : public UAISenseConfig
-{
-public:
-    UE_CLASS("/Script/AIModule", "AISenseConfig_Damage");
-    UE_READONLY TSubclassOf<class UAISense_Damage> Implementation;
-};
-
-class UEnvQueryTest_Volume : public UEnvQueryTest
-{
-public:
-    UE_CLASS("/Script/AIModule", "EnvQueryTest_Volume");
-    TSubclassOf<class UEnvQueryContext> VolumeContext;
-    TSubclassOf<class AVolume> VolumeClass;
-    bool bDoComplexVolumeTest;
-};
-
-class UAISenseConfig_Hearing : public UAISenseConfig
-{
-public:
-    UE_CLASS("/Script/AIModule", "AISenseConfig_Hearing");
-    UE_READONLY TSubclassOf<class UAISense_Hearing> Implementation;
-    UE_READONLY float HearingRange;
-    UE_READONLY float LoSHearingRange;
-    bool bUseLoSHearing;
-    UE_READONLY FAISenseAffiliationFilter DetectionByAffiliation;
-};
-
-class UAISenseConfig_Prediction : public UAISenseConfig
-{
-public:
-    UE_CLASS("/Script/AIModule", "AISenseConfig_Prediction");
-};
-
-class UEnvQueryContext : public UObject
-{
-public:
-    UE_CLASS("/Script/AIModule", "EnvQueryContext");
-};
-
-class UEnvQueryContext_Item : public UEnvQueryContext
-{
-public:
-    UE_CLASS("/Script/AIModule", "EnvQueryContext_Item");
-};
-
-class UAISenseConfig_Sight : public UAISenseConfig
-{
-public:
-    UE_CLASS("/Script/AIModule", "AISenseConfig_Sight");
-    UE_READONLY TSubclassOf<class UAISense_Sight> Implementation;
-    UE_READONLY float SightRadius;
-    UE_READONLY float LoseSightRadius;
-    UE_READONLY float PeripheralVisionAngleDegrees;
-    UE_READONLY FAISenseAffiliationFilter DetectionByAffiliation;
-    UE_READONLY float AutoSuccessRangeFromLastSeenLocation;
-    UE_READONLY float PointOfViewBackwardOffset;
-    UE_READONLY float NearClippingRadius;
-};
-
-class UAISenseConfig_Team : public UAISenseConfig
-{
-public:
-    UE_CLASS("/Script/AIModule", "AISenseConfig_Team");
-};
-
-class UVisualLoggerExtension : public UObject
-{
-public:
-    UE_CLASS("/Script/AIModule", "VisualLoggerExtension");
-};
-
-class UAISenseConfig_Touch : public UAISenseConfig
-{
-public:
-    UE_CLASS("/Script/AIModule", "AISenseConfig_Touch");
-};
-
-class UAISenseEvent : public UObject
-{
-public:
-    UE_CLASS("/Script/AIModule", "AISenseEvent");
-};
-
-class UAISenseEvent_Damage : public UAISenseEvent
-{
-public:
-    UE_CLASS("/Script/AIModule", "AISenseEvent_Damage");
-    FAIDamageEvent Event;
-};
-
-class UAISenseEvent_Hearing : public UAISenseEvent
-{
-public:
-    UE_CLASS("/Script/AIModule", "AISenseEvent_Hearing");
-    FAINoiseEvent Event;
-};
-
-class UNavFilter_AIControllerDefault : public UNavigationQueryFilter
-{
-public:
-    UE_CLASS("/Script/AIModule", "NavFilter_AIControllerDefault");
-};
-
-class IAISightTargetInterface
-{
-public:
-    UE_CLASS("/Script/AIModule", "AISightTargetInterface");
 };
 
 class UAISystem : public UAISystemBase
@@ -1590,11 +1088,501 @@ public:
     void AILoggingVerbose();
 };
 
+class UBTDecorator_BlackboardBase : public UBTDecorator
+{
+public:
+    UE_CLASS("/Script/AIModule", "BTDecorator_BlackboardBase");
+    FBlackboardKeySelector BlackboardKey;
+};
+
+class UBlackboardKeyType_NativeEnum : public UBlackboardKeyType
+{
+public:
+    UE_CLASS("/Script/AIModule", "BlackboardKeyType_NativeEnum");
+    FString EnumName;
+    class UEnum* EnumType;
+};
+
+class UEnvQueryItemType : public UObject
+{
+public:
+    UE_CLASS("/Script/AIModule", "EnvQueryItemType");
+};
+
+class UAIPerceptionStimuliSourceComponent : public UActorComponent
+{
+public:
+    UE_CLASS("/Script/AIModule", "AIPerceptionStimuliSourceComponent");
+    UE_READONLY bool bAutoRegisterAsSource;
+    UE_READONLY TArray<TSubclassOf<class UAISense>> RegisterAsSourceForSenses;
+    void RegisterForSense(TSubclassOf<class UAISense> SenseClass);
+    void RegisterWithPerceptionSystem();
+    void UnregisterFromPerceptionSystem();
+    void UnregisterFromSense(TSubclassOf<class UAISense> SenseClass);
+};
+
+class UBTService : public UBTAuxiliaryNode
+{
+public:
+    UE_CLASS("/Script/AIModule", "BTService");
+    float Interval;
+    float RandomDeviation;
+    bool bCallTickOnSearchStart;
+    bool bRestartTimerOnEachActivation;
+};
+
+class UEnvQueryContext : public UObject
+{
+public:
+    UE_CLASS("/Script/AIModule", "EnvQueryContext");
+};
+
+class UEnvQueryContext_Querier : public UEnvQueryContext
+{
+public:
+    UE_CLASS("/Script/AIModule", "EnvQueryContext_Querier");
+};
+
+class UBrainComponent : public UActorComponent
+{
+public:
+    UE_CLASS("/Script/AIModule", "BrainComponent");
+    class UBlackboardComponent* BlackboardComp;
+    class AAIController* AIOwner;
+    void RestartLogic();
+    void StartLogic();
+    void StopLogic(FString reason);
+    UE_PURE bool IsPaused() const;
+    UE_PURE bool IsRunning() const;
+};
+
+class UBehaviorTreeComponent : public UBrainComponent
+{
+public:
+    UE_CLASS("/Script/AIModule", "BehaviorTreeComponent");
+    TArray<class UBTNode*> NodeInstances;
+    class UBehaviorTree* DefaultBehaviorTreeAsset;
+    void AddCooldownTagDuration(FGameplayTag CooldownTag, float CooldownDuration, bool bAddToExistingDuration);
+    void SetDynamicSubtree(FGameplayTag InjectTag, class UBehaviorTree* BehaviorAsset);
+    UE_PURE float GetTagCooldownEndTime(FGameplayTag CooldownTag) const;
+};
+
+class UEnvQueryNode : public UObject
+{
+public:
+    UE_CLASS("/Script/AIModule", "EnvQueryNode");
+    int VerNum;
+};
+
+class UEnvQueryGenerator : public UEnvQueryNode
+{
+public:
+    UE_CLASS("/Script/AIModule", "EnvQueryGenerator");
+    FString OptionName;
+    TSubclassOf<class UEnvQueryItemType> ItemType;
+    bool bAutoSortTests;
+};
+
 class UEnvQueryGenerator_ProjectedPoints : public UEnvQueryGenerator
 {
 public:
     UE_CLASS("/Script/AIModule", "EnvQueryGenerator_ProjectedPoints");
     FEnvTraceData ProjectionData;
+};
+
+class UAIAsyncTaskBlueprintProxy : public UObject
+{
+public:
+    UE_CLASS("/Script/AIModule", "AIAsyncTaskBlueprintProxy");
+    TMulticastInlineDelegate<void(EPathFollowingResult MovementResult)> OnSuccess;
+    TMulticastInlineDelegate<void(EPathFollowingResult MovementResult)> OnFail;
+    void OnMoveCompleted(FAIRequestID RequestID, TEnum<EPathFollowingResult> MovementResult);
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* OnSuccess__UeDispatcher = "Assignable";
+        static constexpr const char* OnFail__UeDispatcher = "Assignable";
+    };
+};
+
+class UAIBlueprintHelperLibrary : public UBlueprintFunctionLibrary
+{
+public:
+    UE_CLASS("/Script/AIModule", "AIBlueprintHelperLibrary");
+    static class UAIAsyncTaskBlueprintProxy* CreateMoveToProxyObject(class UObject* WorldContextObject, class APawn* Pawn, FVector Destination, class AActor* TargetActor, float AcceptanceRadius, bool bStopOnOverlap);
+    static class UAIAsyncTaskBlueprintProxy* CreateMoveToProxyObject(class APawn* Pawn, FVector Destination, class AActor* TargetActor, float AcceptanceRadius, bool bStopOnOverlap);
+    UE_PURE static class AAIController* GetAIController(class AActor* ControlledActor);
+    UE_PURE static class UBlackboardComponent* GetBlackboard(class AActor* Target);
+    UE_PURE static class UNavigationPath* GetCurrentPath(class AController* Controller);
+    UE_PURE static int GetCurrentPathIndex(class AController* Controller);
+    UE_PURE static TArray<FVector> GetCurrentPathPoints(class AController* Controller);
+    UE_PURE static int GetNextNavLinkIndex(class AController* Controller);
+    UE_PURE static bool IsValidAIDirection(FVector DirectionVector);
+    UE_PURE static bool IsValidAILocation(FVector Location);
+    UE_PURE static bool IsValidAIRotation(FRotator Rotation);
+    UE_AUTHORITY_ONLY static void LockAIResourcesWithAnimation(class UAnimInstance* AnimInstance, bool bLockMovement, bool LockAILogic);
+    static void SendAIMessage(class APawn* Target, FName Message, class UObject* MessageSource, bool bSuccess);
+    static void SimpleMoveToActor(class AController* Controller, class AActor* Goal);
+    static void SimpleMoveToLocation(class AController* Controller, const FVector& Goal);
+    static class APawn* SpawnAIFromClass(class UObject* WorldContextObject, TSubclassOf<class APawn> PawnClass, class UBehaviorTree* BehaviorTree, FVector Location, FRotator Rotation, bool bNoCollisionFail, class AActor* Owner);
+    static class APawn* SpawnAIFromClass(TSubclassOf<class APawn> PawnClass, class UBehaviorTree* BehaviorTree, FVector Location, FRotator Rotation, bool bNoCollisionFail, class AActor* Owner);
+    UE_AUTHORITY_ONLY static void UnlockAIResourcesWithAnimation(class UAnimInstance* AnimInstance, bool bUnlockMovement, bool UnlockAILogic);
+};
+
+class UAIDataProvider : public UObject
+{
+public:
+    UE_CLASS("/Script/AIModule", "AIDataProvider");
+};
+
+class UAIDataProvider_QueryParams : public UAIDataProvider
+{
+public:
+    UE_CLASS("/Script/AIModule", "AIDataProvider_QueryParams");
+    FName ParamName;
+    float FloatValue;
+    int IntValue;
+    bool boolValue;
+};
+
+class UEnvQueryTest : public UEnvQueryNode
+{
+public:
+    UE_CLASS("/Script/AIModule", "EnvQueryTest");
+    int TestOrder;
+    TEnum<EEnvTestPurpose> TestPurpose;
+    FString TestComment;
+    TEnum<EEnvTestFilterOperator> MultipleContextFilterOp;
+    TEnum<EEnvTestScoreOperator> MultipleContextScoreOp;
+    TEnum<EEnvTestFilterType> FilterType;
+    FAIDataProviderBoolValue boolValue;
+    FAIDataProviderFloatValue FloatValueMin;
+    FAIDataProviderFloatValue FloatValueMax;
+    TEnum<EEnvTestScoreEquation> ScoringEquation;
+    TEnum<EEnvQueryTestClamping> ClampMinType;
+    TEnum<EEnvQueryTestClamping> ClampMaxType;
+    TEnum<EEQSNormalizationType> NormalizationType;
+    FAIDataProviderFloatValue ScoreClampMin;
+    FAIDataProviderFloatValue ScoreClampMax;
+    FAIDataProviderFloatValue ScoringFactor;
+    FAIDataProviderFloatValue ReferenceValue;
+    bool bDefineReferenceValue;
+    bool bWorkOnFloatValues;
+};
+
+class UEnvQueryTest_Overlap : public UEnvQueryTest
+{
+public:
+    UE_CLASS("/Script/AIModule", "EnvQueryTest_Overlap");
+    FEnvOverlapData OverlapData;
+};
+
+class UAIDataProvider_Random : public UAIDataProvider_QueryParams
+{
+public:
+    UE_CLASS("/Script/AIModule", "AIDataProvider_Random");
+    float Min;
+    float Max;
+    bool bInteger;
+};
+
+class UAIHotSpotManager : public UObject
+{
+public:
+    UE_CLASS("/Script/AIModule", "AIHotSpotManager");
+};
+
+class IAIPerceptionListenerInterface
+{
+public:
+    UE_CLASS("/Script/AIModule", "AIPerceptionListenerInterface");
+};
+
+class UAISubsystem : public UObject
+{
+public:
+    UE_CLASS("/Script/AIModule", "AISubsystem");
+    class UAISystem* AISystem;
+};
+
+class UAIPerceptionSystem : public UAISubsystem
+{
+public:
+    UE_CLASS("/Script/AIModule", "AIPerceptionSystem");
+    TArray<class UAISense*> Senses;
+    float PerceptionAgingRate;
+    static TSubclassOf<class UAISense> GetSenseClassForStimulus(class UObject* WorldContextObject, const FAIStimulus& Stimulus);
+    static TSubclassOf<class UAISense> GetSenseClassForStimulus(const FAIStimulus& Stimulus);
+    static bool RegisterPerceptionStimuliSource(class UObject* WorldContextObject, TSubclassOf<class UAISense> Sense, class AActor* Target);
+    static bool RegisterPerceptionStimuliSource(TSubclassOf<class UAISense> Sense, class AActor* Target);
+    static void ReportPerceptionEvent(class UObject* WorldContextObject, class UAISenseEvent* PerceptionEvent);
+    static void ReportPerceptionEvent(class UAISenseEvent* PerceptionEvent);
+    void OnPerceptionStimuliSourceEndPlay(class AActor* Actor, TEnum<EEndPlayReason> EndPlayReason);
+    void ReportEvent(class UAISenseEvent* PerceptionEvent);
+};
+
+class IAIResourceInterface
+{
+public:
+    UE_CLASS("/Script/AIModule", "AIResourceInterface");
+};
+
+class IEQSQueryResultSourceInterface
+{
+public:
+    UE_CLASS("/Script/AIModule", "EQSQueryResultSourceInterface");
+};
+
+class UAIResource_Movement : public UGameplayTaskResource
+{
+public:
+    UE_CLASS("/Script/AIModule", "AIResource_Movement");
+};
+
+class UAIResource_Logic : public UGameplayTaskResource
+{
+public:
+    UE_CLASS("/Script/AIModule", "AIResource_Logic");
+};
+
+class UAISense_Blueprint : public UAISense
+{
+public:
+    UE_CLASS("/Script/AIModule", "AISense_Blueprint");
+    TSubclassOf<class UUserDefinedStruct> ListenerDataType;
+    UE_READONLY TArray<class UAIPerceptionComponent*> ListenerContainer;
+    TArray<class UAISenseEvent*> UnprocessedEvents;
+    void K2_OnNewPawn(class APawn* NewPawn);
+    void OnListenerRegistered(class AActor* ActorListener, class UAIPerceptionComponent* PerceptionComponent);
+    void OnListenerUnregistered(class AActor* ActorListener, class UAIPerceptionComponent* PerceptionComponent);
+    void OnListenerUpdated(class AActor* ActorListener, class UAIPerceptionComponent* PerceptionComponent);
+    float OnUpdate(const TArray<class UAISenseEvent*>& EventsToProcess);
+    void GetAllListenerActors(TArray<class AActor*>& ListenerActors) const;
+    void GetAllListenerComponents(TArray<class UAIPerceptionComponent*>& ListenerComponents) const;
+};
+
+class UAISense_Damage : public UAISense
+{
+public:
+    UE_CLASS("/Script/AIModule", "AISense_Damage");
+    TArray<FAIDamageEvent> RegisteredEvents;
+    static void ReportDamageEvent(class UObject* WorldContextObject, class AActor* DamagedActor, class AActor* Instigator, float damageAmount, FVector EventLocation, FVector HitLocation, FName Tag);
+    static void ReportDamageEvent(class AActor* DamagedActor, class AActor* Instigator, float damageAmount, FVector EventLocation, FVector HitLocation, FName Tag);
+};
+
+class UAISense_Hearing : public UAISense
+{
+public:
+    UE_CLASS("/Script/AIModule", "AISense_Hearing");
+    TArray<FAINoiseEvent> NoiseEvents;
+    float SpeedOfSoundSq;
+    static void ReportNoiseEvent(class UObject* WorldContextObject, FVector NoiseLocation, float Loudness, class AActor* Instigator, float MaxRange, FName Tag);
+    static void ReportNoiseEvent(FVector NoiseLocation, float Loudness, class AActor* Instigator, float MaxRange, FName Tag);
+};
+
+class UVisualLoggerExtension : public UObject
+{
+public:
+    UE_CLASS("/Script/AIModule", "VisualLoggerExtension");
+};
+
+class UAISense_Prediction : public UAISense
+{
+public:
+    UE_CLASS("/Script/AIModule", "AISense_Prediction");
+    TArray<FAIPredictionEvent> RegisteredEvents;
+    static void RequestControllerPredictionEvent(class AAIController* Requestor, class AActor* PredictedActor, float PredictionTime);
+    static void RequestPawnPredictionEvent(class APawn* Requestor, class AActor* PredictedActor, float PredictionTime);
+};
+
+class UAISense_Sight : public UAISense
+{
+public:
+    UE_CLASS("/Script/AIModule", "AISense_Sight");
+    int MaxTracesPerTick;
+    int MinQueriesPerTimeSliceCheck;
+    double MaxTimeSlicePerTick;
+    float HighImportanceQueryDistanceThreshold;
+    float MaxQueryImportance;
+    float SightLimitQueryImportance;
+};
+
+class UAISense_Touch : public UAISense
+{
+public:
+    UE_CLASS("/Script/AIModule", "AISense_Touch");
+    TArray<FAITouchEvent> RegisteredEvents;
+};
+
+class UAISenseBlueprintListener : public UUserDefinedStruct
+{
+public:
+    UE_CLASS("/Script/AIModule", "AISenseBlueprintListener");
+};
+
+class UAISenseConfig : public UObject
+{
+public:
+    UE_CLASS("/Script/AIModule", "AISenseConfig");
+    UE_READONLY FColor DebugColor;
+    UE_READONLY float MaxAge;
+    UE_READONLY bool bStartsEnabled;
+};
+
+class UEnvQueryTest_Random : public UEnvQueryTest
+{
+public:
+    UE_CLASS("/Script/AIModule", "EnvQueryTest_Random");
+};
+
+class UAISenseConfig_Blueprint : public UAISenseConfig
+{
+public:
+    UE_CLASS("/Script/AIModule", "AISenseConfig_Blueprint");
+    UE_READONLY TSubclassOf<class UAISense_Blueprint> Implementation;
+};
+
+class UAISenseConfig_Damage : public UAISenseConfig
+{
+public:
+    UE_CLASS("/Script/AIModule", "AISenseConfig_Damage");
+    UE_READONLY TSubclassOf<class UAISense_Damage> Implementation;
+};
+
+class UAISenseConfig_Hearing : public UAISenseConfig
+{
+public:
+    UE_CLASS("/Script/AIModule", "AISenseConfig_Hearing");
+    UE_READONLY TSubclassOf<class UAISense_Hearing> Implementation;
+    UE_READONLY float HearingRange;
+    UE_READONLY float LoSHearingRange;
+    bool bUseLoSHearing;
+    UE_READONLY FAISenseAffiliationFilter DetectionByAffiliation;
+};
+
+class UAISenseConfig_Prediction : public UAISenseConfig
+{
+public:
+    UE_CLASS("/Script/AIModule", "AISenseConfig_Prediction");
+};
+
+class UPawnActionsComponent : public UActorComponent
+{
+public:
+    UE_CLASS("/Script/AIModule", "PawnActionsComponent");
+    UE_READONLY class APawn* ControlledPawn;
+    TArray<FPawnActionStack> ActionStacks;
+    TArray<FPawnActionEvent> ActionEvents;
+    class UPawnAction* CurrentAction;
+    static bool K2_PerformAction(class APawn* Pawn, class UPawnAction* Action, TEnum<EAIRequestPriority> Priority);
+    TEnum<EPawnActionAbortState> K2_AbortAction(class UPawnAction* ActionToAbort);
+    TEnum<EPawnActionAbortState> K2_ForceAbortAction(class UPawnAction* ActionToAbort);
+    bool K2_PushAction(class UPawnAction* NewAction, TEnum<EAIRequestPriority> Priority, class UObject* Instigator);
+};
+
+class UAISenseConfig_Sight : public UAISenseConfig
+{
+public:
+    UE_CLASS("/Script/AIModule", "AISenseConfig_Sight");
+    UE_READONLY TSubclassOf<class UAISense_Sight> Implementation;
+    UE_READONLY float SightRadius;
+    UE_READONLY float LoseSightRadius;
+    UE_READONLY float PeripheralVisionAngleDegrees;
+    UE_READONLY FAISenseAffiliationFilter DetectionByAffiliation;
+    UE_READONLY float AutoSuccessRangeFromLastSeenLocation;
+    UE_READONLY float PointOfViewBackwardOffset;
+    UE_READONLY float NearClippingRadius;
+};
+
+class UAISenseConfig_Team : public UAISenseConfig
+{
+public:
+    UE_CLASS("/Script/AIModule", "AISenseConfig_Team");
+};
+
+class UEnvQueryDebugHelpers : public UObject
+{
+public:
+    UE_CLASS("/Script/AIModule", "EnvQueryDebugHelpers");
+};
+
+class UAISenseConfig_Touch : public UAISenseConfig
+{
+public:
+    UE_CLASS("/Script/AIModule", "AISenseConfig_Touch");
+};
+
+class UAISenseEvent : public UObject
+{
+public:
+    UE_CLASS("/Script/AIModule", "AISenseEvent");
+};
+
+class AGridPathAIController : public AAIController
+{
+public:
+    UE_CLASS("/Script/AIModule", "GridPathAIController");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* ActionsComp__UeSubobject = "ActionsComp /Script/AIModule.PawnActionsComponent";
+        static constexpr const char* PathFollowingComponent__UeSubobject = "PathFollowingComponent /Script/AIModule.GridPathFollowingComponent";
+        static constexpr const char* RootComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
+        static constexpr const char* TransformComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
+    };
+};
+
+class UAISenseEvent_Damage : public UAISenseEvent
+{
+public:
+    UE_CLASS("/Script/AIModule", "AISenseEvent_Damage");
+    FAIDamageEvent Event;
+};
+
+class UAISenseEvent_Hearing : public UAISenseEvent
+{
+public:
+    UE_CLASS("/Script/AIModule", "AISenseEvent_Hearing");
+    FAINoiseEvent Event;
+};
+
+class UEnvQueryGenerator_BlueprintBase : public UEnvQueryGenerator
+{
+public:
+    UE_CLASS("/Script/AIModule", "EnvQueryGenerator_BlueprintBase");
+    FText GeneratorsActionDescription;
+    TSubclassOf<class UEnvQueryContext> Context;
+    TSubclassOf<class UEnvQueryItemType> GeneratedItemType;
+    void AddGeneratedActor(class AActor* GeneratedActor) const;
+    void AddGeneratedVector(FVector GeneratedVector) const;
+    void DoItemGeneration(const TArray<FVector>& ContextLocations) const;
+    UE_PURE class UObject* GetQuerier() const;
+};
+
+class IAISightTargetInterface
+{
+public:
+    UE_CLASS("/Script/AIModule", "AISightTargetInterface");
+};
+
+class UAITask : public UGameplayTask
+{
+public:
+    UE_CLASS("/Script/AIModule", "AITask");
+    UE_READONLY class AAIController* OwnerController;
+};
+
+class UAITask_LockLogic : public UAITask
+{
+public:
+    UE_CLASS("/Script/AIModule", "AITask_LockLogic");
+};
+
+class UEnvQueryGenerator_CurrentLocation : public UEnvQueryGenerator
+{
+public:
+    UE_CLASS("/Script/AIModule", "EnvQueryGenerator_CurrentLocation");
+    TSubclassOf<class UEnvQueryContext> QueryContext;
 };
 
 class UAITask_MoveTo : public UAITask
@@ -1620,22 +1608,21 @@ public:
     static class UAITask_RunEQS* RunEQS(class AAIController* Controller, class UEnvQuery* QueryTemplate);
 };
 
-class UEnvQueryGenerator_OnCircle : public UEnvQueryGenerator_ProjectedPoints
+class UPawnAction_Move : public UPawnAction
 {
 public:
-    UE_CLASS("/Script/AIModule", "EnvQueryGenerator_OnCircle");
-    FAIDataProviderFloatValue CircleRadius;
-    FAIDataProviderFloatValue SpaceBetween;
-    FAIDataProviderIntValue NumberOfPoints;
-    TEnum<EPointOnCircleSpacingMethod> PointOnCircleSpacingMethod;
-    FEnvDirection ArcDirection;
-    FAIDataProviderFloatValue ArcAngle;
-    float AngleRadians;
-    TSubclassOf<class UEnvQueryContext> CircleCenter;
-    bool bIgnoreAnyContextActorsWhenGeneratingCircle;
-    FAIDataProviderFloatValue CircleCenterZOffset;
-    FEnvTraceData TraceData;
-    bool bDefineArc;
+    UE_CLASS("/Script/AIModule", "PawnAction_Move");
+    class AActor* GoalActor;
+    FVector GoalLocation;
+    float AcceptableRadius;
+    TSubclassOf<class UNavigationQueryFilter> FilterClass;
+    bool bAllowStrafe;
+    bool bFinishOnOverlap;
+    bool bUsePathfinding;
+    bool bAllowPartialPath;
+    bool bProjectGoalToNavigation;
+    bool bUpdatePathToGoal;
+    bool bAbortChildActionOnPathChange;
 };
 
 class UBehaviorTree : public UObject
@@ -1655,15 +1642,6 @@ public:
     int MaxDebuggerSteps;
     TArray<FBehaviorTreeTemplateInfo> LoadedTemplates;
     TArray<class UBehaviorTreeComponent*> ActiveComponents;
-};
-
-class UPawnAction_Sequence : public UPawnAction
-{
-public:
-    UE_CLASS("/Script/AIModule", "PawnAction_Sequence");
-    TArray<class UPawnAction*> ActionSequence;
-    UE_READONLY TEnum<EPawnActionFailHandling> ChildFailureHandlingMode;
-    class UPawnAction* RecentActionCopy;
 };
 
 class UBehaviorTreeTypes : public UObject
@@ -1728,6 +1706,13 @@ public:
     UE_CLASS("/Script/AIModule", "BlackboardKeyType_Bool");
 };
 
+class UBlackboardKeyType_Class : public UBlackboardKeyType
+{
+public:
+    UE_CLASS("/Script/AIModule", "BlackboardKeyType_Class");
+    class UClass* BaseClass;
+};
+
 class UBlackboardKeyType_Enum : public UBlackboardKeyType
 {
 public:
@@ -1755,19 +1740,17 @@ public:
     UE_CLASS("/Script/AIModule", "BlackboardKeyType_Name");
 };
 
-class UBlackboardKeyType_NativeEnum : public UBlackboardKeyType
-{
-public:
-    UE_CLASS("/Script/AIModule", "BlackboardKeyType_NativeEnum");
-    FString EnumName;
-    class UEnum* EnumType;
-};
-
 class UBlackboardKeyType_Object : public UBlackboardKeyType
 {
 public:
     UE_CLASS("/Script/AIModule", "BlackboardKeyType_Object");
     class UClass* BaseClass;
+};
+
+class UBlackboardKeyType_Rotator : public UBlackboardKeyType
+{
+public:
+    UE_CLASS("/Script/AIModule", "BlackboardKeyType_Rotator");
 };
 
 class UBlackboardKeyType_String : public UBlackboardKeyType
@@ -2038,16 +2021,6 @@ public:
     UE_PURE bool IsServiceActive() const;
 };
 
-class UEnvQueryTest_Dot : public UEnvQueryTest
-{
-public:
-    UE_CLASS("/Script/AIModule", "EnvQueryTest_Dot");
-    FEnvDirection LineA;
-    FEnvDirection LineB;
-    TEnum<EEnvTestDot> TestMode;
-    bool bAbsoluteValue;
-};
-
 class UBTService_DefaultFocus : public UBTService_BlackboardBase
 {
 public:
@@ -2299,16 +2272,10 @@ public:
     void ProvideSingleLocation(class UObject* QuerierObject, class AActor* QuerierActor, FVector& ResultingLocation) const;
 };
 
-class UEnvQueryContext_Querier : public UEnvQueryContext
+class UEnvQueryContext_Item : public UEnvQueryContext
 {
 public:
-    UE_CLASS("/Script/AIModule", "EnvQueryContext_Querier");
-};
-
-class UEnvQueryDebugHelpers : public UObject
-{
-public:
-    UE_CLASS("/Script/AIModule", "EnvQueryDebugHelpers");
+    UE_CLASS("/Script/AIModule", "EnvQueryContext_Item");
 };
 
 class UEnvQueryGenerator_ActorsOfClass : public UEnvQueryGenerator
@@ -2319,19 +2286,6 @@ public:
     FAIDataProviderBoolValue GenerateOnlyActorsInRadius;
     FAIDataProviderFloatValue SearchRadius;
     TSubclassOf<class UEnvQueryContext> SearchCenter;
-};
-
-class UEnvQueryGenerator_BlueprintBase : public UEnvQueryGenerator
-{
-public:
-    UE_CLASS("/Script/AIModule", "EnvQueryGenerator_BlueprintBase");
-    FText GeneratorsActionDescription;
-    TSubclassOf<class UEnvQueryContext> Context;
-    TSubclassOf<class UEnvQueryItemType> GeneratedItemType;
-    void AddGeneratedActor(class AActor* GeneratedActor) const;
-    void AddGeneratedVector(FVector GeneratedVector) const;
-    void DoItemGeneration(const TArray<FVector>& ContextLocations) const;
-    UE_PURE class UObject* GetQuerier() const;
 };
 
 class UEnvQueryGenerator_Composite : public UEnvQueryGenerator
@@ -2368,6 +2322,24 @@ public:
     FAIDataProviderFloatValue ArcAngle;
     bool bUseSpiralPattern;
     TSubclassOf<class UEnvQueryContext> Center;
+    bool bDefineArc;
+};
+
+class UEnvQueryGenerator_OnCircle : public UEnvQueryGenerator_ProjectedPoints
+{
+public:
+    UE_CLASS("/Script/AIModule", "EnvQueryGenerator_OnCircle");
+    FAIDataProviderFloatValue CircleRadius;
+    FAIDataProviderFloatValue SpaceBetween;
+    FAIDataProviderIntValue NumberOfPoints;
+    TEnum<EPointOnCircleSpacingMethod> PointOnCircleSpacingMethod;
+    FEnvDirection ArcDirection;
+    FAIDataProviderFloatValue ArcAngle;
+    float AngleRadians;
+    TSubclassOf<class UEnvQueryContext> CircleCenter;
+    bool bIgnoreAnyContextActorsWhenGeneratingCircle;
+    FAIDataProviderFloatValue CircleCenterZOffset;
+    FEnvTraceData TraceData;
     bool bDefineArc;
 };
 
@@ -2408,6 +2380,18 @@ private:
     {
         static constexpr const char* OnQueryFinishedEvent__UeDispatcher = "Assignable";
     };
+};
+
+class UEnvQueryItemType_VectorBase : public UEnvQueryItemType
+{
+public:
+    UE_CLASS("/Script/AIModule", "EnvQueryItemType_VectorBase");
+};
+
+class UEnvQueryItemType_ActorBase : public UEnvQueryItemType_VectorBase
+{
+public:
+    UE_CLASS("/Script/AIModule", "EnvQueryItemType_ActorBase");
 };
 
 class UEnvQueryItemType_Actor : public UEnvQueryItemType_ActorBase
@@ -2459,6 +2443,16 @@ public:
     TSubclassOf<class UEnvQueryContext> DistanceTo;
 };
 
+class UEnvQueryTest_Dot : public UEnvQueryTest
+{
+public:
+    UE_CLASS("/Script/AIModule", "EnvQueryTest_Dot");
+    FEnvDirection LineA;
+    FEnvDirection LineB;
+    TEnum<EEnvTestDot> TestMode;
+    bool bAbsoluteValue;
+};
+
 class UEnvQueryTest_GameplayTags : public UEnvQueryTest
 {
 public:
@@ -2469,11 +2463,22 @@ public:
     FGameplayTagContainer GameplayTags;
 };
 
-class UEnvQueryTest_Overlap : public UEnvQueryTest
+class UEnvQueryTest_Pathfinding : public UEnvQueryTest
 {
 public:
-    UE_CLASS("/Script/AIModule", "EnvQueryTest_Overlap");
-    FEnvOverlapData OverlapData;
+    UE_CLASS("/Script/AIModule", "EnvQueryTest_Pathfinding");
+    TEnum<EEnvTestPathfinding> TestMode;
+    TSubclassOf<class UEnvQueryContext> Context;
+    FAIDataProviderBoolValue PathFromContext;
+    FAIDataProviderBoolValue SkipUnreachable;
+    TSubclassOf<class UNavigationQueryFilter> FilterClass;
+};
+
+class UEnvQueryTest_PathfindingBatch : public UEnvQueryTest_Pathfinding
+{
+public:
+    UE_CLASS("/Script/AIModule", "EnvQueryTest_PathfindingBatch");
+    FAIDataProviderFloatValue ScanRangeMultiplier;
 };
 
 class UEnvQueryTest_Project : public UEnvQueryTest
@@ -2481,12 +2486,6 @@ class UEnvQueryTest_Project : public UEnvQueryTest
 public:
     UE_CLASS("/Script/AIModule", "EnvQueryTest_Project");
     FEnvTraceData ProjectionData;
-};
-
-class UEnvQueryTest_Random : public UEnvQueryTest
-{
-public:
-    UE_CLASS("/Script/AIModule", "EnvQueryTest_Random");
 };
 
 class UEnvQueryTest_Trace : public UEnvQueryTest
@@ -2500,16 +2499,19 @@ public:
     TSubclassOf<class UEnvQueryContext> Context;
 };
 
+class UEnvQueryTest_Volume : public UEnvQueryTest
+{
+public:
+    UE_CLASS("/Script/AIModule", "EnvQueryTest_Volume");
+    TSubclassOf<class UEnvQueryContext> VolumeContext;
+    TSubclassOf<class AVolume> VolumeClass;
+    bool bDoComplexVolumeTest;
+};
+
 class UEnvQueryTypes : public UObject
 {
 public:
     UE_CLASS("/Script/AIModule", "EnvQueryTypes");
-};
-
-class IEQSQueryResultSourceInterface
-{
-public:
-    UE_CLASS("/Script/AIModule", "EQSQueryResultSourceInterface");
 };
 
 class UEQSRenderingComponent : public UPrimitiveComponent
@@ -2518,24 +2520,36 @@ public:
     UE_CLASS("/Script/AIModule", "EQSRenderingComponent");
 };
 
+class AEQSTestingPawn : public ACharacter
+{
+public:
+    UE_CLASS("/Script/AIModule", "EQSTestingPawn");
+    class UEnvQuery* QueryTemplate;
+    TArray<FEnvNamedValue> QueryParams;
+    TArray<FAIDynamicParam> QueryConfig;
+    float TimeLimitPerStep;
+    int StepToDebugDraw;
+    TEnum<EEnvQueryHightlightMode> HighlightMode;
+    bool bDrawLabels;
+    bool bDrawFailedItems;
+    bool bReRunQueryOnlyOnFinishedMove;
+    bool bShouldBeVisibleInGame;
+    bool bTickDuringGame;
+    TEnum<EEnvQueryRunMode> QueryingMode;
+    FNavAgentProperties NavAgentProperties;
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* CapsuleComponent__UeSubobject = "CollisionCylinder /Script/Engine.CapsuleComponent";
+        static constexpr const char* CharacterMovement__UeSubobject = "CharMoveComp /Script/Engine.CharacterMovementComponent";
+        static constexpr const char* Mesh__UeSubobject = "CharacterMesh0 /Script/Engine.SkeletalMeshComponent";
+    };
+};
+
 class IGenericTeamAgentInterface
 {
 public:
     UE_CLASS("/Script/AIModule", "GenericTeamAgentInterface");
-};
-
-class AGridPathAIController : public AAIController
-{
-public:
-    UE_CLASS("/Script/AIModule", "GridPathAIController");
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* ActionsComp__UeSubobject = "ActionsComp /Script/AIModule.PawnActionsComponent";
-        static constexpr const char* PathFollowingComponent__UeSubobject = "PathFollowingComponent /Script/AIModule.GridPathFollowingComponent";
-        static constexpr const char* RootComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
-        static constexpr const char* TransformComponent__UeSubobject = "TransformComponent0 /Script/Engine.SceneComponent";
-    };
 };
 
 class UGridPathFollowingComponent : public UPathFollowingComponent
@@ -2543,6 +2557,12 @@ class UGridPathFollowingComponent : public UPathFollowingComponent
 public:
     UE_CLASS("/Script/AIModule", "GridPathFollowingComponent");
     class UNavLocalGridManager* GridManager;
+};
+
+class UNavFilter_AIControllerDefault : public UNavigationQueryFilter
+{
+public:
+    UE_CLASS("/Script/AIModule", "NavFilter_AIControllerDefault");
 };
 
 class ANavLinkProxy : public AActor
@@ -2566,26 +2586,6 @@ private:
         static constexpr const char* RootComponent__UeSubobject = "PositionComponent /Script/Engine.SceneComponent";
         static constexpr const char* SmartLinkComp__UeSubobject = "SmartLinkComp /Script/NavigationSystem.NavLinkCustomComponent";
     };
-};
-
-class UNavLocalGridManager : public UObject
-{
-public:
-    UE_CLASS("/Script/AIModule", "NavLocalGridManager");
-    static int AddLocalNavigationGridForBox(class UObject* WorldContextObject, const FVector& Location, FVector Extent, FRotator Rotation, int Radius2D, float Height, bool bRebuildGrids);
-    static int AddLocalNavigationGridForBox(const FVector& Location, FVector Extent, FRotator Rotation, int Radius2D, float Height, bool bRebuildGrids);
-    static int AddLocalNavigationGridForCapsule(class UObject* WorldContextObject, const FVector& Location, float CapsuleRadius, float CapsuleHalfHeight, int Radius2D, float Height, bool bRebuildGrids);
-    static int AddLocalNavigationGridForCapsule(const FVector& Location, float CapsuleRadius, float CapsuleHalfHeight, int Radius2D, float Height, bool bRebuildGrids);
-    static int AddLocalNavigationGridForPoint(class UObject* WorldContextObject, const FVector& Location, int Radius2D, float Height, bool bRebuildGrids);
-    static int AddLocalNavigationGridForPoint(const FVector& Location, int Radius2D, float Height, bool bRebuildGrids);
-    static int AddLocalNavigationGridForPoints(class UObject* WorldContextObject, const TArray<FVector>& Locations, int Radius2D, float Height, bool bRebuildGrids);
-    static int AddLocalNavigationGridForPoints(const TArray<FVector>& Locations, int Radius2D, float Height, bool bRebuildGrids);
-    static bool FindLocalNavigationGridPath(class UObject* WorldContextObject, const FVector& Start, const FVector& End, TArray<FVector>& PathPoints);
-    static bool FindLocalNavigationGridPath(const FVector& Start, const FVector& End, TArray<FVector>& PathPoints);
-    static void RemoveLocalNavigationGrid(class UObject* WorldContextObject, int GridId, bool bRebuildGrids);
-    static void RemoveLocalNavigationGrid(int GridId, bool bRebuildGrids);
-    static bool SetLocalNavigationGridDensity(class UObject* WorldContextObject, float CellSize);
-    static bool SetLocalNavigationGridDensity(float CellSize);
 };
 
 class UPathFollowingManager : public UObject

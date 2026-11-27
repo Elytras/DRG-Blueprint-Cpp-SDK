@@ -7,6 +7,12 @@ A member is here if and only if AssetGen can compile a use of it.
 #include "UeMeta.h"
 #include "CoreUObject.h"
 
+class USoundfieldEndpointSettingsBase : public UObject
+{
+public:
+    UE_CLASS("/Script/AudioExtensions", "SoundfieldEndpointSettingsBase");
+};
+
 class UAudioEndpointSettingsBase : public UObject
 {
 public:
@@ -19,10 +25,10 @@ public:
     UE_CLASS("/Script/AudioExtensions", "SpatializationPluginSourceSettingsBase");
 };
 
-class USoundModulatorBase : public UObject
+class UOcclusionPluginSourceSettingsBase : public UObject
 {
 public:
-    UE_CLASS("/Script/AudioExtensions", "SoundModulatorBase");
+    UE_CLASS("/Script/AudioExtensions", "OcclusionPluginSourceSettingsBase");
 };
 
 class USoundfieldEncodingSettingsBase : public UObject
@@ -37,22 +43,16 @@ public:
     UE_CLASS("/Script/AudioExtensions", "DummyEndpointSettings");
 };
 
-class UOcclusionPluginSourceSettingsBase : public UObject
-{
-public:
-    UE_CLASS("/Script/AudioExtensions", "OcclusionPluginSourceSettingsBase");
-};
-
 class UReverbPluginSourceSettingsBase : public UObject
 {
 public:
     UE_CLASS("/Script/AudioExtensions", "ReverbPluginSourceSettingsBase");
 };
 
-class USoundfieldEndpointSettingsBase : public UObject
+class USoundModulatorBase : public UObject
 {
 public:
-    UE_CLASS("/Script/AudioExtensions", "SoundfieldEndpointSettingsBase");
+    UE_CLASS("/Script/AudioExtensions", "SoundModulatorBase");
 };
 
 class USoundfieldEffectSettingsBase : public UObject

@@ -159,9 +159,6 @@ public:
     FTimerHandle TimerHandle;
     FTimerHandle TickTimerHandler;
     UHUD_DamageClass_Item* StatusEffectIconToChangeTexture;
-    float DefaultFOV;
-    int Stacks;
-    int PrevStack;
     bool IsLerping;
     class UImage* ImageEffectedByIntencity;
     virtual void ExecuteUbergraph_BP_PlayerCharacter(int EntryPoint);
@@ -197,10 +194,9 @@ public:
     virtual void BndEvt__HealthComponent_K2Node_ComponentBoundEvent_0_ArmorHealedSig__DelegateSignature(float amount);
     UE_PROTECTED virtual void ReceiveBeginPlay();
     UE_PROTECTED virtual void BP_OnControllerReady();
+    virtual void SetExecutionerOverlay(float OverlayIntensity);
     UE_CLIENT UE_RELIABLE virtual void EquipIndex(int Index_0);
     UE_CLIENT UE_RELIABLE virtual void PlayExecutionerActivationSound();
-    UE_CLIENT UE_RELIABLE virtual void SetDefaultFOV(float DefaultFOV_0);
-    UE_CLIENT UE_RELIABLE virtual void SetFieldOfView(int Stacks_0, int PrevStack_0, float LerpAlpha);
     UE_CLIENT UE_RELIABLE virtual void Client_SetStatusEffectIcon(UHUD_DamageClass_Item* DamageClassItem);
     UE_CLIENT UE_RELIABLE virtual void Client_SetExecutionerIcon(class UTexture2D* New_PAF_Texture);
     UE_CLIENT UE_RELIABLE virtual void DecreasePowerPickaxeCooldown(class APickaxeItem* Target, float DecreaseCooldown);

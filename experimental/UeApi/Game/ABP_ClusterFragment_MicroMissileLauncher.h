@@ -23,8 +23,8 @@ public:
     virtual void ExecuteUbergraph_BP_ClusterFragment_MicroMissileLauncher(int EntryPoint);
     UE_PROTECTED virtual void ReceiveBeginPlay();
     virtual void ReceiveTick(float DeltaSeconds_0);
-    virtual void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
     virtual void OnInitialized();
+    virtual void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
 private:
     struct UeMarkers
     {

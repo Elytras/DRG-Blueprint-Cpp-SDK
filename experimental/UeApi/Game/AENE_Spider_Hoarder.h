@@ -74,13 +74,13 @@ public:
     virtual void DropLoot();
     virtual void BndEvt__HealthComponent_K2Node_ComponentBoundEvent_0_DamageSig__DelegateSignature(float amount);
     UE_PROTECTED virtual void ReceiveBeginPlay();
+    UE_BLUEPRINT_CALLABLE virtual void OnRagdoll();
     virtual void Timeline_2__UpdateFunc();
     virtual void Timeline_2__FinishedFunc();
     virtual void Timeline_0__UpdateFunc();
     virtual void Timeline_0__FinishedFunc();
     UE_BLUEPRINT_PURE virtual void HasLoot(bool& Has_Loot);
     virtual void UpdateTarget(float MaxDistance, bool& OutTargetChanged);
-    UE_BLUEPRINT_CALLABLE virtual void OnRagdoll();
 private:
     struct UeMarkers
     {

@@ -1026,11 +1026,10 @@ public:
     UE_CLASS("/Script/SlateCore", "SlateWidgetStyleContainerBase");
 };
 
-class USlateWidgetStyleAsset : public UObject
+class IFontProviderInterface
 {
 public:
-    UE_CLASS("/Script/SlateCore", "SlateWidgetStyleAsset");
-    class USlateWidgetStyleContainerBase* CustomStyle;
+    UE_CLASS("/Script/SlateCore", "FontProviderInterface");
 };
 
 class UFontBulkData : public UObject
@@ -1045,16 +1044,17 @@ public:
     UE_CLASS("/Script/SlateCore", "FontFaceInterface");
 };
 
-class IFontProviderInterface
-{
-public:
-    UE_CLASS("/Script/SlateCore", "FontProviderInterface");
-};
-
 class USlateTypes : public UObject
 {
 public:
     UE_CLASS("/Script/SlateCore", "SlateTypes");
+};
+
+class USlateWidgetStyleAsset : public UObject
+{
+public:
+    UE_CLASS("/Script/SlateCore", "SlateWidgetStyleAsset");
+    class USlateWidgetStyleContainerBase* CustomStyle;
 };
 
 class ISlateWidgetStyleContainerInterface

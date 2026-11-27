@@ -20,12 +20,12 @@ public:
     class UBoolUserSettingAsset* Setting;
     virtual void ExecuteUbergraph_Basic_BoolUserSetting(int EntryPoint);
     virtual void Refresh();
-    UE_BLUEPRINT_CALLABLE virtual void OnClicked(bool InChecked);
     UE_COSMETIC virtual void Construct();
-    UE_COSMETIC virtual void PreConstruct(bool IsDesignTime);
     virtual void SetBoolUserSetting(class UBoolUserSettingAsset* InSetting);
     UE_PURE virtual bool GetValue();
     virtual void SetValue(bool InValue);
+    UE_BLUEPRINT_CALLABLE virtual void OnClicked(bool InChecked);
+    UE_COSMETIC virtual void PreConstruct(bool IsDesignTime);
 private:
     struct UeMarkers
     {

@@ -50,6 +50,9 @@ public:
     int Rank;
     TArray<class UPerkAsset*> Proficiencies;
     FTimerHandle SaveTimer;
+    FText ProficiencyUpgradeDescription;
+    FText MaxedButtonText;
+    FText OwnedButtonText;
     virtual void ExecuteUbergraph_UI_Perks_Buy(int EntryPoint);
     virtual void SaveGame();
     virtual void BndEvt__UI_Perks_Buy_BTN_Upgrade_K2Node_ComponentBoundEvent_2_OnClicked__DelegateSignature(UBasic_FlatButton* Button);

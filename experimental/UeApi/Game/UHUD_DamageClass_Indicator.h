@@ -32,7 +32,7 @@ public:
     class UHorizontalBox* AfflictionBox_Right;
     UHUD_PlayerInfection* HUD_PlayerInfection;
     UHUD_PlayerTemperature* HUD_PlayerTemperature;
-    class USpacer* Spacer_left;
+    class USpacer* Spacer_Left;
     class USpacer* Spacer_right;
     class UPawnAffliction* ExecutionerPawnAffliction;
     bool IsOn;

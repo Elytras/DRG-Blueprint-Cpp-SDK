@@ -44,8 +44,8 @@ public:
     virtual void DoIndicatorPulse();
     virtual void FadeIn__UpdateFunc();
     virtual void FadeIn__FinishedFunc();
-    virtual void FadeOut__UpdateFunc();
-    virtual void FadeOut__FinishedFunc();
+    virtual void Fadeout__UpdateFunc();
+    virtual void Fadeout__FinishedFunc();
     virtual void RingPulse__UpdateFunc();
     virtual void RingPulse__FinishedFunc();
     UE_BLUEPRINT_CALLABLE virtual void UserConstructionScript();

@@ -32,7 +32,7 @@ public:
     class UDamageComponent* FullDamage;
     class URotatingMovementComponent* RotatingMovement;
     class UParticleSystemComponent* Trail;
-    class UStaticMeshComponent* Mesh_Front;
+    class UStaticMeshComponent* mesh_front;
     FVector MyStartLocation;
     FVector MyImpactVelocity;
     FVector NewVar_0;
@@ -67,7 +67,7 @@ private:
         static constexpr const char* FullDamage__UeScsNode = "56610d5d7573e34b950a4130ebae1f83";
         static constexpr const char* RotatingMovement__UeScsNode = "b045057a0815344e9889e88d7d7aa383";
         static constexpr const char* Trail__UeScsNode = "b7404f8875ec0148917917895b993c2a";
-        static constexpr const char* Mesh_Front__UeScsNode = "004861e7d35cd446a4bf9b1e968c5380";
+        static constexpr const char* mesh_front__UeScsNode = "004861e7d35cd446a4bf9b1e968c5380";
         static constexpr const char* AxeGrenadeItem__Replicated = ":";
         static constexpr const char* BndEvt__KillSmallShits_Sphere_K2Node_ComponentBoundEvent_1_ComponentBeginOverlapSignature__DelegateSignature__UeName = "BndEvt__KillSmallShits Sphere_K2Node_ComponentBoundEvent_1_ComponentBeginOverlapSignature__DelegateSignature";
     };

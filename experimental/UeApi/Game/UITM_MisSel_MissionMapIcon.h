@@ -66,7 +66,7 @@ public:
     FLinearColor Tint_MissionIconColor;
     virtual void ExecuteUbergraph_ITM_MisSel_MissionMapIcon(int EntryPoint);
     virtual void ClickFromCode();
-    virtual void ShowChallengeIcon(bool InHighlight, class UTexture2D* Icon, FLinearColor Color);
+    virtual void ShowChallengeIcon(bool inHighlight, class UTexture2D* Icon, FLinearColor Color);
     virtual void OnTeamMemberCampaignMissionChangedEvent();
     virtual void BndEvt__BTN_HostPublic_K2Node_ComponentBoundEvent_48_OnClicked__DelegateSignature();
     UE_COSMETIC virtual void PreConstruct(bool IsDesignTime);

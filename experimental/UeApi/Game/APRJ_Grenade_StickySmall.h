@@ -31,7 +31,7 @@ public:
     class UDamageComponent* SpikeDamage;
     class URotatingMovementComponent* RotatingMovement;
     class UParticleSystemComponent* Trail;
-    class UStaticMeshComponent* Mesh_Front;
+    class UStaticMeshComponent* mesh_front;
     float ExplosionDelay;
     class USoundBase* ExplosionSound;
     class UParticleSystem* ExplosionParticles;
@@ -57,7 +57,7 @@ private:
         static constexpr const char* SpikeDamage__UeScsNode = "b356f7d00f8cc9429ebf4493703fb214";
         static constexpr const char* RotatingMovement__UeScsNode = "b045057a0815344e9889e88d7d7aa383";
         static constexpr const char* Trail__UeScsNode = "b7404f8875ec0148917917895b993c2a";
-        static constexpr const char* Mesh_Front__UeScsNode = "004861e7d35cd446a4bf9b1e968c5380";
+        static constexpr const char* mesh_front__UeScsNode = "004861e7d35cd446a4bf9b1e968c5380";
     };
 };
 

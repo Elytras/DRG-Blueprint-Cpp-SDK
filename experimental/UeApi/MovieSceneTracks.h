@@ -509,11 +509,36 @@ public:
     TArray<class UMovieSceneSection*> Sections;
 };
 
-class UMovieSceneColorTrack : public UMovieScenePropertyTrack
+class UMovieScenePropertySystem : public UMovieSceneEntitySystem
 {
 public:
-    UE_CLASS("/Script/MovieSceneTracks", "MovieSceneColorTrack");
-    bool bIsSlateColor;
+    UE_CLASS("/Script/MovieSceneTracks", "MovieScenePropertySystem");
+    class UMovieScenePropertyInstantiatorSystem* InstantiatorSystem;
+};
+
+class UMovieSceneColorPropertySystem : public UMovieScenePropertySystem
+{
+public:
+    UE_CLASS("/Script/MovieSceneTracks", "MovieSceneColorPropertySystem");
+};
+
+class UIntegerChannelEvaluatorSystem : public UMovieSceneEntitySystem
+{
+public:
+    UE_CLASS("/Script/MovieSceneTracks", "IntegerChannelEvaluatorSystem");
+};
+
+class UMovieSceneEventSectionBase : public UMovieSceneSection
+{
+public:
+    UE_CLASS("/Script/MovieSceneTracks", "MovieSceneEventSectionBase");
+};
+
+class UMovieSceneEventRepeaterSection : public UMovieSceneEventSectionBase
+{
+public:
+    UE_CLASS("/Script/MovieSceneTracks", "MovieSceneEventRepeaterSection");
+    FMovieSceneEvent Event;
 };
 
 class UMovieSceneEventSystem : public UMovieSceneEntitySystem
@@ -522,20 +547,10 @@ public:
     UE_CLASS("/Script/MovieSceneTracks", "MovieSceneEventSystem");
 };
 
-class UFloatChannelEvaluatorSystem : public UMovieSceneEntitySystem
+class UMovieScenePostSpawnEventSystem : public UMovieSceneEventSystem
 {
 public:
-    UE_CLASS("/Script/MovieSceneTracks", "FloatChannelEvaluatorSystem");
-};
-
-class UMovieSceneEventTrack : public UMovieSceneNameableTrack
-{
-public:
-    UE_CLASS("/Script/MovieSceneTracks", "MovieSceneEventTrack");
-    bool bFireEventsWhenForwards;
-    bool bFireEventsWhenBackwards;
-    TEnum<EFireEventsAtPosition> EventPosition;
-    TArray<class UMovieSceneSection*> Sections;
+    UE_CLASS("/Script/MovieSceneTracks", "MovieScenePostSpawnEventSystem");
 };
 
 class UByteChannelEvaluatorSystem : public UMovieSceneEntitySystem
@@ -544,17 +559,17 @@ public:
     UE_CLASS("/Script/MovieSceneTracks", "ByteChannelEvaluatorSystem");
 };
 
+class UFloatChannelEvaluatorSystem : public UMovieSceneEntitySystem
+{
+public:
+    UE_CLASS("/Script/MovieSceneTracks", "FloatChannelEvaluatorSystem");
+};
+
 class IMovieSceneTransformOrigin
 {
 public:
     UE_CLASS("/Script/MovieSceneTracks", "MovieSceneTransformOrigin");
     UE_PURE FTransform BP_GetTransformOrigin() const;
-};
-
-class UIntegerChannelEvaluatorSystem : public UMovieSceneEntitySystem
-{
-public:
-    UE_CLASS("/Script/MovieSceneTracks", "IntegerChannelEvaluatorSystem");
 };
 
 class UMovieScene3DConstraintSection : public UMovieSceneSection
@@ -610,13 +625,6 @@ class UMovieScene3DPathTrack : public UMovieScene3DConstraintTrack
 {
 public:
     UE_CLASS("/Script/MovieSceneTracks", "MovieScene3DPathTrack");
-};
-
-class UMovieScenePropertySystem : public UMovieSceneEntitySystem
-{
-public:
-    UE_CLASS("/Script/MovieSceneTracks", "MovieScenePropertySystem");
-    class UMovieScenePropertyInstantiatorSystem* InstantiatorSystem;
 };
 
 class UMovieScene3DTransformPropertySystem : public UMovieScenePropertySystem
@@ -844,12 +852,6 @@ public:
     UE_CLASS("/Script/MovieSceneTracks", "MovieSceneCinematicShotTrack");
 };
 
-class UMovieSceneColorPropertySystem : public UMovieScenePropertySystem
-{
-public:
-    UE_CLASS("/Script/MovieSceneTracks", "MovieSceneColorPropertySystem");
-};
-
 class UMovieSceneColorSection : public UMovieSceneSection
 {
 public:
@@ -858,6 +860,13 @@ public:
     FMovieSceneFloatChannel GreenCurve;
     FMovieSceneFloatChannel BlueCurve;
     FMovieSceneFloatChannel AlphaCurve;
+};
+
+class UMovieSceneColorTrack : public UMovieScenePropertyTrack
+{
+public:
+    UE_CLASS("/Script/MovieSceneTracks", "MovieSceneColorTrack");
+    bool bIsSlateColor;
 };
 
 class UMovieSceneComponentAttachmentInvalidatorSystem : public UMovieSceneEntityInstantiatorSystem
@@ -922,19 +931,6 @@ public:
     UE_CLASS("/Script/MovieSceneTracks", "MovieSceneEulerTransformTrack");
 };
 
-class UMovieSceneEventSectionBase : public UMovieSceneSection
-{
-public:
-    UE_CLASS("/Script/MovieSceneTracks", "MovieSceneEventSectionBase");
-};
-
-class UMovieSceneEventRepeaterSection : public UMovieSceneEventSectionBase
-{
-public:
-    UE_CLASS("/Script/MovieSceneTracks", "MovieSceneEventRepeaterSection");
-    FMovieSceneEvent Event;
-};
-
 class UMovieSceneEventSection : public UMovieSceneSection
 {
 public:
@@ -949,16 +945,20 @@ public:
     UE_CLASS("/Script/MovieSceneTracks", "MovieScenePreSpawnEventSystem");
 };
 
-class UMovieScenePostSpawnEventSystem : public UMovieSceneEventSystem
-{
-public:
-    UE_CLASS("/Script/MovieSceneTracks", "MovieScenePostSpawnEventSystem");
-};
-
 class UMovieScenePostEvalEventSystem : public UMovieSceneEventSystem
 {
 public:
     UE_CLASS("/Script/MovieSceneTracks", "MovieScenePostEvalEventSystem");
+};
+
+class UMovieSceneEventTrack : public UMovieSceneNameableTrack
+{
+public:
+    UE_CLASS("/Script/MovieSceneTracks", "MovieSceneEventTrack");
+    bool bFireEventsWhenForwards;
+    bool bFireEventsWhenBackwards;
+    TEnum<EFireEventsAtPosition> EventPosition;
+    TArray<class UMovieSceneSection*> Sections;
 };
 
 class UMovieSceneEventTriggerSection : public UMovieSceneEventSectionBase

@@ -43,6 +43,9 @@ public:
     UE_READONLY bool PreviewHighlighted;
     int Size;
     TEnum<EProficiency> ProfiencyIcon;
+    class UPerkAsset* RankSourcePerk;
+    FText UpgradeLockedTooltipText;
+    FText UpgradeTooltipText;
     virtual void ExecuteUbergraph_UI_Proficiency_Item(int EntryPoint);
     virtual void BndEvt__ClickButton_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature();
     virtual void BndEvt__ClickButton_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature();

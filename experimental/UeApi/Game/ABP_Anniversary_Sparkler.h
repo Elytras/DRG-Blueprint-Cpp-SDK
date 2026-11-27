@@ -33,13 +33,13 @@ public:
     float BurnSpeed;
     float CurrentDistance;
     float InitialDistance;
-    virtual void OnRep_Burning();
-    virtual void BndEvt__BP_Anniversary_Sparkler_InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
-    virtual void ReceiveTick(float DeltaSeconds_ReceiveTick);
-    virtual void OnKnock(class APlayerCharacter* Player);
-    UE_MULTICAST virtual void All_BindGenericDelegate(class APlayerCharacter* Player);
-    UE_PROTECTED virtual void ReceiveBeginPlay();
     virtual void ExecuteUbergraph_BP_Anniversary_Sparkler(int EntryPoint);
+    UE_PROTECTED virtual void ReceiveBeginPlay();
+    UE_MULTICAST virtual void All_BindGenericDelegate(class APlayerCharacter* Player);
+    virtual void OnKnock(class APlayerCharacter* Player);
+    virtual void ReceiveTick(float DeltaSeconds);
+    virtual void BndEvt__BP_Anniversary_Sparkler_InstantUsable_K2Node_ComponentBoundEvent_0_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
+    virtual void OnRep_Burning();
 private:
     struct UeMarkers
     {

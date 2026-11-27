@@ -42,15 +42,15 @@ public:
     FRandomStream RandomStream;
     class UMaterialInterface* UsedMaterial;
     bool IsBroken;
-    virtual void OnRep_IsBroken();
-    virtual void OnRep_NumberOfImpacts();
-    virtual void OnRep_RandomSeed();
-    virtual void OnRep_KickSoundLocation();
-    virtual void BndEvt__StaticMeshComponent0_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
-    virtual void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_1_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
-    UE_PROTECTED virtual void ReceiveBeginPlay();
-    UE_MULTICAST virtual void Play_Kick(class APlayerCharacter* Kicker);
     virtual void ExecuteUbergraph_BP_Phys_Anniversary_Bottle(int EntryPoint);
+    UE_MULTICAST virtual void Play_Kick(class APlayerCharacter* Kicker);
+    UE_PROTECTED virtual void ReceiveBeginPlay();
+    virtual void BndEvt__InstantUsable_K2Node_ComponentBoundEvent_1_UsedBySignature__DelegateSignature(class APlayerCharacter* User, TEnum<EInputKeys> Key);
+    virtual void BndEvt__StaticMeshComponent0_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
+    virtual void OnRep_KickSoundLocation();
+    virtual void OnRep_RandomSeed();
+    virtual void OnRep_NumberOfImpacts();
+    virtual void OnRep_IsBroken();
 private:
     struct UeMarkers
     {

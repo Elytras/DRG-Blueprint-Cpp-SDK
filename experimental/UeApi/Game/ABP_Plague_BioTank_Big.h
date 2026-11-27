@@ -35,7 +35,7 @@ public:
     class UCapsuleComponent* Capsule;
     class UFSDAudioComponent* Idle;
     class UWidgetComponent* DisplayName2;
-    class UPointLightComponent* Bluelight;
+    class UPointLightComponent* BlueLight;
     class UNiagaraComponent* NS_Biotank_Bubbles;
     class UStaticMeshComponent* SM_Plague_Biotank_01;
     bool PlayReact;
@@ -62,7 +62,7 @@ private:
         static constexpr const char* Capsule__UeScsNode = "6b335742d029064cab6d9ffbfcf464da";
         static constexpr const char* Idle__UeScsNode = "436edef8b104ee4a966a6210277a0003";
         static constexpr const char* DisplayName2__UeScsNode = "6ae42f92219a864d9f7bed61f395e4b7";
-        static constexpr const char* Bluelight__UeScsNode = "e5463b34244b0e43b2272bc2a0f2350d";
+        static constexpr const char* BlueLight__UeScsNode = "e5463b34244b0e43b2272bc2a0f2350d";
         static constexpr const char* NS_Biotank_Bubbles__UeScsNode = "43113044913b924c82c3bd606f16e940";
         static constexpr const char* SM_Plague_Biotank_01__UeScsNode = "15392aec0b39434b9b8592faa0608347";
     };

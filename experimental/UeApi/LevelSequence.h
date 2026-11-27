@@ -130,6 +130,44 @@ public:
     UE_PURE class UObject* FindMetaDataByClass(TSubclassOf<class UObject> InClass) const;
 };
 
+class ULevelSequenceBurnInInitSettings : public UObject
+{
+public:
+    UE_CLASS("/Script/LevelSequence", "LevelSequenceBurnInInitSettings");
+};
+
+class UAnimSequenceLevelSequenceLink : public UAssetUserData
+{
+public:
+    UE_CLASS("/Script/LevelSequence", "AnimSequenceLevelSequenceLink");
+    FGuid SkelTrackGuid;
+    FSoftObjectPath PathToLevelSequence;
+};
+
+class UDefaultLevelSequenceInstanceData : public UObject
+{
+public:
+    UE_CLASS("/Script/LevelSequence", "DefaultLevelSequenceInstanceData");
+    class AActor* TransformOriginActor;
+    FTransform TransformOrigin;
+};
+
+class ILevelSequenceMetaData
+{
+public:
+    UE_CLASS("/Script/LevelSequence", "LevelSequenceMetaData");
+};
+
+class ULevelSequenceBurnInOptions : public UObject
+{
+public:
+    UE_CLASS("/Script/LevelSequence", "LevelSequenceBurnInOptions");
+    bool bUseBurnIn;
+    FSoftClassPath BurnInClass;
+    class ULevelSequenceBurnInInitSettings* Settings;
+    void SetBurnIn(FSoftClassPath InBurnInClass);
+};
+
 class ALevelSequenceActor : public AActor
 {
 public:
@@ -172,44 +210,6 @@ private:
         static constexpr const char* RootComponent__UeSubobject = "SceneComp /Script/Engine.SceneComponent";
         static constexpr const char* SequencePlayer__UeSubobject = "AnimationPlayer /Script/LevelSequence.LevelSequencePlayer";
     };
-};
-
-class UAnimSequenceLevelSequenceLink : public UAssetUserData
-{
-public:
-    UE_CLASS("/Script/LevelSequence", "AnimSequenceLevelSequenceLink");
-    FGuid SkelTrackGuid;
-    FSoftObjectPath PathToLevelSequence;
-};
-
-class UDefaultLevelSequenceInstanceData : public UObject
-{
-public:
-    UE_CLASS("/Script/LevelSequence", "DefaultLevelSequenceInstanceData");
-    class AActor* TransformOriginActor;
-    FTransform TransformOrigin;
-};
-
-class ILevelSequenceMetaData
-{
-public:
-    UE_CLASS("/Script/LevelSequence", "LevelSequenceMetaData");
-};
-
-class ULevelSequenceBurnInInitSettings : public UObject
-{
-public:
-    UE_CLASS("/Script/LevelSequence", "LevelSequenceBurnInInitSettings");
-};
-
-class ULevelSequenceBurnInOptions : public UObject
-{
-public:
-    UE_CLASS("/Script/LevelSequence", "LevelSequenceBurnInOptions");
-    bool bUseBurnIn;
-    FSoftClassPath BurnInClass;
-    class ULevelSequenceBurnInInitSettings* Settings;
-    void SetBurnIn(FSoftClassPath InBurnInClass);
 };
 
 class ULevelSequenceAnimSequenceLink : public UAssetUserData

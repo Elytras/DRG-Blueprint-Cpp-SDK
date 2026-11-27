@@ -42,6 +42,15 @@ struct FGameplayResourceSet
 {
 };
 
+class UGameplayTaskResource : public UObject
+{
+public:
+    UE_CLASS("/Script/GameplayTasks", "GameplayTaskResource");
+    UE_READONLY int ManualResourceID;
+    int8 AutoResourceID;
+    bool bManuallySetID;
+};
+
 class UGameplayTask : public UObject
 {
 public:
@@ -51,15 +60,6 @@ public:
     class UGameplayTask* ChildTask;
     void EndTask();
     void ReadyForActivation();
-};
-
-class UGameplayTaskResource : public UObject
-{
-public:
-    UE_CLASS("/Script/GameplayTasks", "GameplayTaskResource");
-    UE_READONLY int ManualResourceID;
-    int8 AutoResourceID;
-    bool bManuallySetID;
 };
 
 class UGameplayTask_ClaimResource : public UGameplayTask

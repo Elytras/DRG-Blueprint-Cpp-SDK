@@ -23,14 +23,14 @@ public:
     TArray<class UVictoryPose*> VictoryPoses;
     class UWidget* SelectedWidget;
     virtual void ExecuteUbergraph_ITM_Wardrobe_ItemSlot_VictoryMoves(int EntryPoint);
-    virtual void PreviewItem(class UVictoryPose* Item, bool Show, bool& OutSuccess);
-    UE_PRIVATE UE_BLUEPRINT_PURE virtual void GetItemDLC(class UVictoryPose* InItem, class UDLCBase*& Required_DLC);
+    UE_PROTECTED virtual void SetHovered(bool InSlotHovered);
     UE_PROTECTED virtual void ReceivePreConstruct();
     UE_PROTECTED virtual void ReceiveCreateEntryWidget(class UObject* InObject, int InIndex, class UWidget* InReuseWidget, bool IsSlotWidget, class UWidget*& OutWidget);
-    UE_PROTECTED virtual void SetHovered(bool InSlotHovered);
     UE_PROTECTED UE_BLUEPRINT_PURE virtual void ReceiveGetSelectedIndex(int& OutIndex);
     UE_PROTECTED virtual void ReceivePreviewItem(int Index_0, bool Show, bool& OutSuccess);
+    virtual void PreviewItem(class UVictoryPose* Item, bool Show, bool& OutSuccess);
     UE_PROTECTED virtual void ReceiveEquipItem(int InIndex, bool& OutSuccess);
+    UE_PRIVATE UE_BLUEPRINT_PURE virtual void GetItemDLC(class UVictoryPose* InItem, class UDLCBase*& Required_DLC);
 private:
     struct UeMarkers
     {

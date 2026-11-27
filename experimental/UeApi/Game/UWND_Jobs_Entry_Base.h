@@ -23,7 +23,7 @@ public:
     virtual void Unfold();
     virtual void Refresh();
     UE_BLUEPRINT_CALLABLE virtual void SetData(class UCampaign* Campaign);
-    virtual void Fold();
+    virtual void fold();
 };
 
 using WND_Jobs_Entry_Base_C = ::Game::UI::Menu_Jobs::UWND_Jobs_Entry_Base;

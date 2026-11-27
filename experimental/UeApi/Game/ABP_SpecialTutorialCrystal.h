@@ -28,12 +28,12 @@ public:
     TEnum<ETimelineDirection> Timeline_0__Direction_CD888BD245F644A958710A8BA8A62D72;
     class UTimelineComponent* Timeline_0;
     float InitialIntensity;
-    virtual void Timeline_0__FinishedFunc();
-    virtual void Timeline_0__UpdateFunc();
-    UE_PROTECTED virtual void ReceiveBeginPlay();
-    virtual void OnMatchStarted_Event_0();
-    virtual void BndEvt__TerrainDetect_K2Node_ComponentBoundEvent_0_PointRemovedEvent__DelegateSignature(class USceneComponent* Point);
     virtual void ExecuteUbergraph_BP_SpecialTutorialCrystal(int EntryPoint);
+    virtual void BndEvt__TerrainDetect_K2Node_ComponentBoundEvent_0_PointRemovedEvent__DelegateSignature(class USceneComponent* Point);
+    virtual void OnMatchStarted_Event_0();
+    UE_PROTECTED virtual void ReceiveBeginPlay();
+    virtual void Timeline_0__UpdateFunc();
+    virtual void Timeline_0__FinishedFunc();
 private:
     struct UeMarkers
     {

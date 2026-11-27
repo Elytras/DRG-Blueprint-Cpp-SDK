@@ -40,7 +40,7 @@ public:
     float MaxAcceleration;
     float ShakeMeshTime;
     class UMaterialInstanceDynamic* ShredderGlowDynaMatRef;
-    float LerpAlpha;
+    float lerpAlpha;
     FRotator LastRotationToTarget;
     float RotationRange;
     class AActor* GrenadeInstance;

@@ -8,9 +8,6 @@ A member is here if and only if AssetGen can compile a use of it.
 #include "../Engine.h"
 #include "../FSD.h"
 
-class UHealthComponentBase;
-class UMaterialInstanceDynamic;
-class UObject;
 class UTexture2D;
 
 namespace Game { namespace GameElements { namespace KPI { namespace Perks {
@@ -20,29 +17,28 @@ class UBP_ExecutionerComponent : public UExecutionerComponent
 public:
     UE_CLASS("/Game/GameElements/KPI/Perks/BP_ExecutionerComponent", "BP_ExecutionerComponent_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    float FOV_Change;
     bool IsLerping;
     float Lerp_Alpha;
-    float DefaultFOV;
-    int Stacks;
-    int PrevStack;
-    int MaxStacks;
-    class UObject* ExecutionerPAF;
     TArray<class UTexture2D*> ExecutionerPAFIcons;
     bool NeedsIcon;
     float Duration;
-    class UMaterialInstanceDynamic* DynamicScreenMaterial;
     FTimerHandle DurationTimerHandle;
     float DownTime;
     bool IsDownTime;
+    bool EffectActive;
+    float OverlayIntensity;
     virtual void ExecuteUbergraph_BP_ExecutionerComponent(int EntryPoint);
     virtual void DownTimeFinished();
-    virtual void ReceiveBeginPlay();
-    virtual void ReceiveTick(float DeltaSeconds);
-    virtual void OnDeath_Event_0(class UHealthComponentBase* HealthComponent);
-    virtual void ResetFieldOfView();
+    virtual void EndStreak();
     virtual void Execute();
-    virtual void DecrementStack();
+    virtual void ReceiveTick(float DeltaSeconds);
+    virtual void ReceiveBeginPlay();
+    virtual void OnRep_EffectActive();
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* EffectActive__Replicated = "OnRep_EffectActive:";
+    };
 };
 
 using BP_ExecutionerComponent_C = ::Game::GameElements::KPI::Perks::UBP_ExecutionerComponent;

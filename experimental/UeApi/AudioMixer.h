@@ -214,15 +214,6 @@ private:
     };
 };
 
-class USubmixEffectReverbPreset : public USoundEffectSubmixPreset
-{
-public:
-    UE_CLASS("/Script/AudioMixer", "SubmixEffectReverbPreset");
-    FSubmixEffectReverbSettings Settings;
-    void SetSettings(const FSubmixEffectReverbSettings& InSettings);
-    void SetSettingsWithReverbEffect(class UReverbEffect* InReverbEffect, float WetLevel, float DryLevel);
-};
-
 class USubmixEffectDynamicsProcessorPreset : public USoundEffectSubmixPreset
 {
 public:
@@ -366,6 +357,15 @@ public:
     UE_CLASS("/Script/AudioMixer", "SubmixEffectSubmixEQPreset");
     FSubmixEffectSubmixEQSettings Settings;
     void SetSettings(const FSubmixEffectSubmixEQSettings& InSettings);
+};
+
+class USubmixEffectReverbPreset : public USoundEffectSubmixPreset
+{
+public:
+    UE_CLASS("/Script/AudioMixer", "SubmixEffectReverbPreset");
+    FSubmixEffectReverbSettings Settings;
+    void SetSettings(const FSubmixEffectReverbSettings& InSettings);
+    void SetSettingsWithReverbEffect(class UReverbEffect* InReverbEffect, float WetLevel, float DryLevel);
 };
 
 class UQuartzSubsystem : public UTickableWorldSubsystem

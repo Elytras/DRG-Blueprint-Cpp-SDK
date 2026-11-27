@@ -25,7 +25,7 @@ public:
     int Preview;
     virtual void ExecuteUbergraph_UI_JettyBoots_HighScore(int EntryPoint);
     UE_COSMETIC virtual void PreConstruct(bool IsDesignTime);
-    virtual void SetHighScore(int InIndex, FJettyBootsScore InHighscore, bool InHighlight);
+    virtual void SetHighScore(int InIndex, FJettyBootsScore InHighScore, bool inHighlight);
 };
 
 using UI_JettyBoots_HighScore_C = ::Game::WeaponsNTools::HackingTool::UI::Jetboots::Arcade::UI_JettyBoots_HighScore;

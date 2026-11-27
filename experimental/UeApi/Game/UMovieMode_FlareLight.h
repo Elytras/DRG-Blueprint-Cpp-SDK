@@ -27,7 +27,7 @@ public:
     class UTextBlock* RadiusLabel_2;
     class USlider* RadiusSlider;
     virtual void ExecuteUbergraph_MovieMode_FlareLight(int EntryPoint);
-    virtual void ReBuild();
+    virtual void Rebuild();
     virtual void BndEvt__Button_291_K2Node_ComponentBoundEvent_3_OnButtonClickedEvent__DelegateSignature();
     virtual void BndEvt__RadiusSlider_K2Node_ComponentBoundEvent_2_OnFloatValueChangedEvent__DelegateSignature(float Value);
     virtual void BndEvt__ColorSlider_K2Node_ComponentBoundEvent_1_OnFloatValueChangedEvent__DelegateSignature(float Value);

@@ -18,8 +18,8 @@ public:
     FPointerToUberGraphFrame UberGraphFrame;
     class USceneComponent* DefaultSceneRoot;
     TMulticastInlineDelegate<void(FName TriggerName)> MessageReceived;
-    virtual void SendMessage(FName TriggerName);
     virtual void ExecuteUbergraph_BP_TutorialTriggerManager(int EntryPoint);
+    virtual void SendMessage(FName TriggerName);
 private:
     struct UeMarkers
     {

@@ -18,7 +18,7 @@ class ABP_NetworkPlayGameMode : public ::Game::Game::ABP_GameMode
 public:
     UE_CLASS("/Game/Game/BP_NetworkPlayGameMode", "BP_NetworkPlayGameMode_C");
     FPointerToUberGraphFrame UberGraphFrame_BP_NetworkPlayGameMode_C;
-    virtual class UClass* GetDefaultPawnClassForController(class AController* InController_GetDefaultPawnClassForController);
+    virtual class UClass* GetDefaultPawnClassForController(class AController* InController);
     virtual void RecieveAllDwarvesDown();
     virtual void ExecuteUbergraph_BP_NetworkPlayGameMode(int EntryPoint);
 private:

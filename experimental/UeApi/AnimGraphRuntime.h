@@ -1103,6 +1103,31 @@ struct FSplineIKCachedBoneData
     FSplineIKCachedBoneData(FBoneReference Bone, int RefSkeletonIndex) {}
 };
 
+class UAnimNotify_PlayMontageNotify : public UAnimNotify
+{
+public:
+    UE_CLASS("/Script/AnimGraphRuntime", "AnimNotify_PlayMontageNotify");
+    UE_READONLY FName NotifyName;
+};
+
+class UAnimSequencerInstance : public UAnimInstance
+{
+public:
+    UE_CLASS("/Script/AnimGraphRuntime", "AnimSequencerInstance");
+private:
+    struct UeMarkers
+    {
+        static constexpr const char* UeClassTail = "0x00800000 /Script/Engine.SkeletalMeshComponent Engine";
+    };
+};
+
+class UAnimNotify_PlayMontageNotifyWindow : public UAnimNotifyState
+{
+public:
+    UE_CLASS("/Script/AnimGraphRuntime", "AnimNotify_PlayMontageNotifyWindow");
+    UE_READONLY FName NotifyName;
+};
+
 class UKismetAnimationLibrary : public UBlueprintFunctionLibrary
 {
 public:
@@ -1117,31 +1142,6 @@ public:
     UE_PURE static FVector K2_MakePerlinNoiseVectorAndRemap(float X, float Y, float Z, float RangeOutMinX, float RangeOutMaxX, float RangeOutMinY, float RangeOutMaxY, float RangeOutMinZ, float RangeOutMaxZ);
     static void K2_StartProfilingTimer();
     static void K2_TwoBoneIK(const FVector& RootPos, const FVector& JointPos, const FVector& EndPos, const FVector& JointTarget, const FVector& Effector, FVector& OutJointPos, FVector& OutEndPos, bool bAllowStretching, float StartStretchRatio, float MaxStretchScale);
-};
-
-class UAnimSequencerInstance : public UAnimInstance
-{
-public:
-    UE_CLASS("/Script/AnimGraphRuntime", "AnimSequencerInstance");
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* UeClassTail = "0x00800000 /Script/Engine.SkeletalMeshComponent Engine";
-    };
-};
-
-class UAnimNotify_PlayMontageNotify : public UAnimNotify
-{
-public:
-    UE_CLASS("/Script/AnimGraphRuntime", "AnimNotify_PlayMontageNotify");
-    UE_READONLY FName NotifyName;
-};
-
-class UAnimNotify_PlayMontageNotifyWindow : public UAnimNotifyState
-{
-public:
-    UE_CLASS("/Script/AnimGraphRuntime", "AnimNotify_PlayMontageNotifyWindow");
-    UE_READONLY FName NotifyName;
 };
 
 class UPlayMontageCallbackProxy : public UObject

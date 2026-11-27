@@ -33,14 +33,14 @@ public:
     virtual void Initialize_Skin_SB();
     virtual void Initialize_Current_Item();
     virtual void BndEvt__ItemSelect_K2Node_ComponentBoundEvent_0_OnSelectionChangedEvent__DelegateSignature(FString SelectedItem, TEnum<ESelectInfo> SelectionType);
-    virtual void Initiate_widget(TEnum<EItemCategory> First_Upgrade_Item);
+    virtual void Initiate_Widget(TEnum<EItemCategory> First_Upgrade_Item);
 private:
     struct UeMarkers
     {
         static constexpr const char* Reload_Skins__UeName = "Reload Skins";
         static constexpr const char* Initialize_Skin_SB__UeName = "Initialize Skin SB";
         static constexpr const char* Initialize_Current_Item__UeName = "Initialize Current Item";
-        static constexpr const char* Initiate_widget__UeName = "Initiate widget";
+        static constexpr const char* Initiate_Widget__UeName = "Initiate Widget";
     };
 };
 

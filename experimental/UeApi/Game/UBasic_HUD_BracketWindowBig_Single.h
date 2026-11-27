@@ -29,7 +29,7 @@ public:
     class UBorder* edgeM;
     class UImage* edgeR;
     class UNamedSlot* PutStuffHere;
-    class USpacer* Spacer_left;
+    class USpacer* Spacer_Left;
     float BG_Opacity;
     FLinearColor Edge_Tint;
     bool Mirror;

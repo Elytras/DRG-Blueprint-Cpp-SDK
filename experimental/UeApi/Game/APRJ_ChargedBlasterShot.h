@@ -34,6 +34,7 @@ class APRJ_ChargedBlasterShot : public AChargedProjectile
 public:
     UE_CLASS("/Game/WeaponsNTools/ChargeBlaster/PRJ_ChargedBlasterShot", "PRJ_ChargedBlasterShot_C");
     FPointerToUberGraphFrame UberGraphFrame;
+    class UProjectileExplosion* TCFExplosion;
     class UNiagaraComponent* NS_SelfSustainingPlasma_GrowthBurst;
     class UDamageComponent* TCFDamage;
     class UAudioComponent* Audio;
@@ -63,6 +64,8 @@ public:
     FTimerHandle SelfSustainingPlasmaHandle;
     float Heat;
     class UMaterialInstanceDynamic* DynMaterial;
+    float TCFMagnifierExplosionScale;
+    float TCFEffectScale;
     virtual void ExecuteUbergraph_PRJ_ChargedBlasterShot(int EntryPoint);
     virtual void AdvanceStage();
     virtual void SetScaleBouncy(float OldScale, float NewScale);
@@ -86,11 +89,13 @@ public:
     virtual void OnRep_Heat();
     virtual void CreateDynamicMateral();
     virtual void PlayStageSound(uint8 Stage);
+    virtual void ScaleDamage(class UDamageComponent* Damage_0, float ScaleFactor);
 private:
     struct UeMarkers
     {
         static constexpr const char* UeDefaultSubobjects = "/Script/Engine.SphereComponent SphereComponent;/Script/FSD.FSDProjectileMovementComponent ProjectileComponent";
         static constexpr const char* UeTemplateSubobjects = "/Script/FSD.DamageConversionBonus Damage_GEN_VARIABLE:DamageConversionBonus_0;/Script/FSD.DamageConversionBonus Damage_GEN_VARIABLE:DamageConversionBonus_1";
+        static constexpr const char* TCFExplosion__UeScsNode = "b08a720eab1a0b42bb07fd768ae7590a";
         static constexpr const char* NS_SelfSustainingPlasma_GrowthBurst__UeScsNode = "30fd8a0917fd274991453031133ff17c";
         static constexpr const char* TCFDamage__UeScsNode = "b1f4e55571f4ef4ab9ba556a68a490e8";
         static constexpr const char* Audio__UeScsNode = "201b9d2c9b2a3f41bf758d8b37d70a21";

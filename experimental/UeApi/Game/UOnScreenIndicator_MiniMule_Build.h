@@ -17,7 +17,7 @@ class UOnScreenIndicator_MiniMule_Build : public UFSDInWorldWidget
 public:
     UE_CLASS("/Game/UI/OnScreenIndicators/OnScreenIndicator_MiniMule_Build", "OnScreenIndicator_MiniMule_Build_C");
     FPointerToUberGraphFrame UberGraphFrame;
-    class UImage* Img_Icon;
+    class UImage* IMG_Icon;
     virtual void ExecuteUbergraph_OnScreenIndicator_MiniMule_Build(int EntryPoint);
     UE_COSMETIC virtual void PreConstruct(bool IsDesignTime);
 };

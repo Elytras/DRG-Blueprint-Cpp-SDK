@@ -303,6 +303,12 @@ public:
     float BarrelSpawnChance;
     float GoldNuggetChance;
     UEWC_GravitySalvage* FieldWaveController;
+    float Terminal3Odds_Solo;
+    float Terminal4Odds_Solo;
+    float Terminal5Odds_Solo;
+    float Terminal3Odds_4Players;
+    float Terminal4Odds_4Players;
+    float Terminal5Odds_4Players;
     virtual void ExecuteUbergraph_BP_GravitySalvage(int EntryPoint);
     virtual void BndEvt__GravityZone_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     UE_MULTICAST UE_RELIABLE virtual void ALL_RestoreGravity();

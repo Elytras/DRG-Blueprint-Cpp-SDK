@@ -13,11 +13,6 @@ class USTE_Taunt_OwnerBuff : public UStatusEffect
 {
 public:
     UE_CLASS("/Game/GameElements/KPI/Perks/STE_Taunt_OwnerBuff", "STE_Taunt_OwnerBuff_C");
-private:
-    struct UeMarkers
-    {
-        static constexpr const char* UeDefaultSubobjects = "/Script/FSD.StatChangeStatusEffectItem StatChangeStatusEffectItem_0";
-    };
 };
 
 using STE_Taunt_OwnerBuff_C = ::Game::GameElements::KPI::Perks::USTE_Taunt_OwnerBuff;

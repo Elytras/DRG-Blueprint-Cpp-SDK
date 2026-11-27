@@ -19,7 +19,7 @@ namespace UeAssets::UWeaponFireComponentUpgrade::Game::WeaponsNTools::CoilGun::O
 UE_ASSET_AT(::UWeaponFireComponentUpgrade, OC_Penalty_SwitchToNonPenetratingHitScan_CoilGun, "/Game/WeaponsNTools/CoilGun/OCs/Bonuses/OC_Penalty_SwitchToNonPenetratingHitScan_CoilGun");
 }
 namespace UeAssets::UWeaponFireComponentUpgrade::Game::WeaponsNTools::HeavyParticleCannon::Overclocks::OC_BonussesAndPenalties {
-UE_ASSET_AT(::UWeaponFireComponentUpgrade, OC_PrismaticLens_Bonus_PelletHitScan_HPC, "/Game/WeaponsNTools/HeavyParticleCannon/Overclocks/OC_BonussesAndPenalties/OC_PrismaticLens_Bonus_PelletHitScan_HPC");
+UE_ASSET_AT(::UWeaponFireComponentUpgrade, OC_PrismaticLens_Bonus_LockOnHitScan_HPC, "/Game/WeaponsNTools/HeavyParticleCannon/Overclocks/OC_BonussesAndPenalties/OC_PrismaticLens_Bonus_LockOnHitScan_HPC");
 }
 namespace UeAssets::UWeaponFireComponentUpgrade::Game::WeaponsNTools::SawedOffShotgun::Overclocks::OC_BonusesAndPenalties {
 UE_ASSET_AT(::UWeaponFireComponentUpgrade, OC_Bonus_ProjectileLauncher_SawedOff_HighPressureRounds, "/Game/WeaponsNTools/SawedOffShotgun/Overclocks/OC_BonusesAndPenalties/OC_Bonus_ProjectileLauncher_SawedOff_HighPressureRounds");

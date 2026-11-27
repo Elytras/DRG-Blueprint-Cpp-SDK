@@ -28,18 +28,18 @@ public:
     class UTexture2D* DefaultItemIcon;
     UE_READONLY FText DefaultItemName;
     virtual void ExecuteUbergraph_ITM_Wardrobe_ItemSlot_Vanity(int EntryPoint);
-    virtual void SetSelectedItem(class UVanityItem* Item);
-    virtual void CreateItemWidget(bool InBackgroundVisible, bool InShowToolTip, UITM_GeneratedIcon_Item*& OutItemWidget);
-    virtual void UpdateItemWidget(UITM_GeneratedIcon_Item* InWidget, class UVanityItem* InVanityItem, bool In_Show_Tool_Tip, FName In_Cancel_Group);
-    UE_PRIVATE UE_PURE virtual FText GetVanityName(class UVanityItem* InVanityItem);
-    UE_PROTECTED UE_PURE virtual class UVanityItem* GetDefaultItem();
     virtual void PostInitilization();
     UE_PROTECTED virtual void ReceivePreConstruct();
     UE_PROTECTED virtual void ReceiveReleaseResource(class UWidget* InWidget);
+    virtual void SetSelectedItem(class UVanityItem* Item);
+    virtual void CreateItemWidget(bool InBackgroundVisible, bool InShowToolTip, UITM_GeneratedIcon_Item*& OutItemWidget);
     UE_PROTECTED virtual void ReceiveCreateEntryWidget(class UObject* InObject, int InIndex, class UWidget* InReuseWidget, bool IsSlotWidget, class UWidget*& OutWidget);
     UE_PROTECTED UE_BLUEPRINT_PURE virtual void ReceiveGetSelectedIndex(int& OutIndex);
     UE_PROTECTED virtual void ReceivePreviewItem(int Index_0, bool Show, bool& OutSuccess);
     UE_PROTECTED virtual void ReceiveEquipItem(int InIndex, bool& OutSuccess);
+    virtual void UpdateItemWidget(UITM_GeneratedIcon_Item* InWidget, class UVanityItem* InVanityItem, bool In_Show_Tool_Tip, FName In_Cancel_Group);
+    UE_PRIVATE UE_PURE virtual FText GetVanityName(class UVanityItem* InVanityItem);
+    UE_PROTECTED UE_PURE virtual class UVanityItem* GetDefaultItem();
     UE_PROTECTED UE_BLUEPRINT_PURE virtual void ReceiveShowShuffleOptions(bool& OutShowOptions);
 private:
     struct UeMarkers

@@ -38,8 +38,8 @@ public:
     virtual void EnableMuleButton();
     virtual void DestroyNetworkedActors();
     virtual void LoadToMission(class UMissionTemplate* mission);
-    virtual class UClass* GetDefaultPawnClassForController(class AController* InController_GetDefaultPawnClassForController);
-    UE_BLUEPRINT_CALLABLE virtual class AActor* ChoosePlayerStart(class AController* Player_ChoosePlayerStart);
+    virtual class UClass* GetDefaultPawnClassForController(class AController* InController);
+    UE_BLUEPRINT_CALLABLE virtual class AActor* ChoosePlayerStart(class AController* Player);
     virtual void RecieveEndLevel();
     UE_PROTECTED virtual void ReceiveBeginPlay();
     virtual void WaitForGeneration();
@@ -50,10 +50,10 @@ public:
     virtual void RemoveBosco();
     virtual void Handle_Bosco_Respawn();
     virtual void OnPlayerLeave(class AFSDPlayerState* PlayerState);
-    virtual void Loaded();
     virtual void DonkeyButtonPressed();
-    virtual void LoadSpaceRig();
+    virtual void Loaded();
     virtual void ExecuteUbergraph_BP_GameMode(int EntryPoint);
+    virtual void LoadSpaceRig();
 private:
     struct UeMarkers
     {

@@ -16,7 +16,7 @@ class UPerkAsset;
 class UTextBlock;
 class UWidgetAnimation;
 namespace Game { namespace UI { namespace Art { namespace WidgetParts { class UBasic_ButtonScalable2; }}}}
-namespace Game { namespace UI { namespace HUD_SpaceRig { namespace KPI { class UI_AvailablePerkPoints; class UI_Perks_Buy; class UI_Perks_Column_Items; class UI_Perks_Item; class UI_Proficiency_Item; }}}}
+namespace Game { namespace UI { namespace HUD_SpaceRig { namespace KPI { class UI_AvailablePerkPoints; class UI_Perks_Buy; class UI_Perks_Item; class UI_Proficiency_Column_Items; class UI_Proficiency_Item; }}}}
 
 namespace Game { namespace UI { namespace HUD_SpaceRig { namespace KPI {
 
@@ -25,8 +25,8 @@ class UI_Perks_View : public ::Game::UI::HUD_SpaceRig::KPI::UI_KPI_Tab
 public:
     UE_CLASS("/Game/UI/HUD_SpaceRig/KPI/UI_Perks_View", "UI_Perks_View_C");
     using UBasic_ButtonScalable2 = ::Game::UI::Art::WidgetParts::UBasic_ButtonScalable2;
-    using UI_Perks_Column_Items = ::Game::UI::HUD_SpaceRig::KPI::UI_Perks_Column_Items;
     using UI_Perks_Item = ::Game::UI::HUD_SpaceRig::KPI::UI_Perks_Item;
+    using UI_Proficiency_Column_Items = ::Game::UI::HUD_SpaceRig::KPI::UI_Proficiency_Column_Items;
     using UI_Proficiency_Item = ::Game::UI::HUD_SpaceRig::KPI::UI_Proficiency_Item;
     FPointerToUberGraphFrame UberGraphFrame;
     UE_READONLY class UWidgetAnimation* AnimLoadoutHint;
@@ -46,7 +46,7 @@ public:
     TArray<class UPerkAsset*> AllPerks;
     bool FirstPerkPurchase;
     UI_Proficiency_Item* SelectedProfency;
-    UI_Perks_Column_Items* ProfiencyWidget;
+    UI_Proficiency_Column_Items* ProfiencyWidget;
     float ResetHoldDuration;
     float ResetHoldTime;
     bool ResetHoldConsumed;

@@ -18,9 +18,9 @@ public:
     UE_CLASS("/Game/LevelElements/Triggers/BP_TriggerBase", "BP_TriggerBase_C");
     FPointerToUberGraphFrame UberGraphFrame;
     class USceneComponent* DefaultSceneRoot;
-    virtual void SendMessage();
-    UE_PROTECTED virtual void ReceiveBeginPlay();
     virtual void ExecuteUbergraph_BP_TriggerBase(int EntryPoint);
+    UE_PROTECTED virtual void ReceiveBeginPlay();
+    virtual void SendMessage();
 private:
     struct UeMarkers
     {
